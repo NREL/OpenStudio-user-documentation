@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+
+        <title>Creating Your Model - OpenStudio User Docs</title>
+
+        <link href="../../css/bootstrap-3.0.3.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link href="../../css/prettify-1.0.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="../..">OpenStudio User Docs</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <!-- Main navigation -->
+            <ul class="nav navbar-nav">
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Getting Started <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../../getting_started/Features/">Current Features</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../getting_started/Roadmap/">Features Roadmap</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../getting_started/GettingStarted/">Installation and Introduction to OpenStudio</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown active">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">References & Tutorials <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../sketchup_plugin_interface/">SketchUp Plug-in Interface</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../openstudio_application_interface/">OpenStudio Application Interface</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../model_objects/">Overview of OpenStudio Model Objects</a>
+                        </li>
+                    
+                        <li class="active">
+                            <a href="./">Creating Your Model</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../RunningYourSimulation/">Running Your Simulation</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Measures <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../../measures/AboutMeasures/">About Measures</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../measures/Measure-Writing-Guide/">Measure Writing Guide</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../measures/CreatingMeasures/">Creating Measures</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Comparative Analysis <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../../comparative_analysis/ParametricStudies/">ParametricAnalysisTool</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../comparative_analysis/LargeScaleAnalysis/">Large Scale Analysis</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Help <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../../help/Training/">Training</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../help/FindingModelData/">Finding Model Data</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../help/BestPractices/">Best Practices</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../help/Troubleshooting/">Troubleshooting</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../help/FAQ/">FAQ</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            </ul>
+
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+                
+                <li >
+                    <a rel="next" href="../model_objects/">
+                        <i class="fa fa-arrow-left"></i> Previous
+                    </a>
+                </li>
+                <li >
+                    <a rel="prev" href="../RunningYourSimulation/">
+                        Next <i class="fa fa-arrow-right"></i>
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#creating-your-model">Creating Your Model</a></li>
+        
+            <li><a href="#envelope">Envelope</a></li>
+        
+            <li><a href="#schedules">Schedules</a></li>
+        
+            <li><a href="#constructions">Constructions</a></li>
+        
+            <li><a href="#internal-loads">Internal Loads</a></li>
+        
+            <li><a href="#space-types">Space Types</a></li>
+        
+            <li><a href="#using-the-facility-tab-to-inspect-and-edit-your-model">Using the Facility Tab to Inspect and Edit Your Model</a></li>
+        
+            <li><a href="#thermal-zones">Thermal Zones</a></li>
+        
+            <li><a href="#air-plant-and-zone-hvac-systems">Air, Plant and Zone HVAC Systems</a></li>
+        
+            <li><a href="#radiant-systems">Radiant Systems</a></li>
+        
+            <li><a href="#service-water-heating">Service Water Heating</a></li>
+        
+            <li><a href="#refrigeration">Refrigeration</a></li>
+        
+            <li><a href="#vrf-systems">VRF Systems</a></li>
+        
+            <li><a href="#apply-measures-now">Apply Measures Now</a></li>
+        
+            <li><a href="#using-the-measures-tab">Using the Measures Tab</a></li>
+        
+            <li><a href="#lifecycle-costs">Lifecycle Costs</a></li>
+        
+            <li><a href="#calibration-with-utility-bills">Calibration with Utility Bills</a></li>
+        
+            <li><a href="#using-radiance">Using Radiance</a></li>
+        
+    
+    </ul>
+</div></div>
+            <div class="col-md-9" role="main">
+
+<h1 id="creating-your-model">Creating Your Model</h1>
+<h2 id="envelope">Envelope</h2>
+<p>The building envelope is created using the SketchUp OpenStudio Plug-in. Refer to the section on [the SketchUp Plug-in Interface Section](sketchup_plugin_interface.md) to learn more about the interface and toolbars for the plug-in.</p>
+
+<hr />
+<p><strong>Choosing a template</strong><br />
+The New OpenStudio Model From Template (<img alt="New OpenStudio Model" src="../../img/plugin_reference_guide/os_new.png" title="New OpenStudio Model" />) tool is represented by this icon in the toolbar. Templates contain data for constructions, loads, and schedules for four vintages across all U.S. climate zones. Templates do not contain any geometry.</p>
+<p><iframe width="640" height="360" src="http://www.youtube.com/embed/wzzY_W2WELo?rel=0&start=0&end=43&autoplay=0" frameborder="0" allowfullscreen></iframe></p>
+<p><em>Above: This video shows you how to choose a template before setting up you model.</em></p>
+<hr />
+<p><strong>Creating and Customizing the Envelope</strong>  </p>
+<p>Drawing a floor plan in SketchUp and extruding up from floor plan using the "The Space Diagram" tool(<img alt="New OpenStudio Model" src="/img/plugin_reference_guide/extrude.png" title="New OpenStudio Model" />) is one way to create your envelope. The video below demonstrates this workflow. </p>
+<p>Creating geometry from photographs is another option. To learn more about it watch the <a href="http://youtu.be/6IPZIrpl5vs?list=PL8CC6E4D9908F17BF">photo matching tutorial playlist on YouTube.</a> </p>
+<p><iframe width="640" height="360" src="http://www.youtube.com/embed/wzzY_W2WELo?rel=0&start=44&end=129&autoplay=0" frameborder="0" allowfullscreen></iframe></p>
+<p><em>Above: This video shows you how to create your building envelope. It uses the OpenStudio SketchUp Plug-in.</em></p>
+<hr />
+<p><strong>Fenestration</strong>
+There are many ways to add windows to your building envelope.</p>
+<ul>
+<li>Use the "Project Loose Geometry" tool for adding window.
+<iframe width="640" height="360" src="http://www.youtube.com/embed/wzzY_W2WELo?rel=0&start=129&end=171&autoplay=0" frameborder="0" allowfullscreen></iframe></li>
+</ul>
+<p><em>Above: This video shows how to create windows using the "Project Loose Geometry" tool".</em></p>
+<ul>
+<li>Set a window to wall ratio, for the whole building or for space type, by selecting all or just a space and going to "Plugins/OpenStudio User Scripts/Add or Alter Model Elements/Set Window to Wall Ratio" and edit or use defaults. This script will remove all existing windows.</li>
+</ul>
+<p><img alt="Window-to-Wall" src="/img/create_model/plugin_window_to_wall_1.png" title="User Script Set Window-to-Wall Ratio" /></p>
+<p><em>Above: Menu for setting the window to wall ratio using an OpenStudio script.</em></p>
+<p><img alt="Window-to-Wall Dialog" src="/img/create_model/plugin_window_to_wall_2.png" title="User Script Set Window-to-Wall Ratio Dialog" />
+<p><em>Above: Dialog for setting the window to wall ratio.</em></p></p>
+<hr />
+<p><strong>Defining Conditions for Heat Transfer Through Surfaces</strong></p>
+<ul>
+<li>Choose the "Render by Boundary Condition" (<img alt="Render by Boundary" src="/img/plugin_reference_guide/render_boundry.png" title="Render Boundary Condition" />) setting.</li>
+<li>Check your model to make sure the boundary settings are correct. Blue indicates exterior surfaces, green indicate interior walls, and brown indicates floors. You can use the SketchUp "Section Plane" tool to view a cross section of the model and see interior surfaces.</li>
+<li>If you have green surfaces on the outside of the mode, use the Surface Matching (<img alt="Surface Matching" src="/img/plugin_reference_guide/SurfaceMatchingSelected-24.png" title="Surface Matching Tool" />) tool to open up the dialog and hit "Interset the Entire Model." This will not work if you are inside a single space when you run it. </li>
+<li>Then select "Match the Entire Model" to correct the model. </li>
+</ul>
+<p><img alt="Surface Matching" src="/img/create_model/surface_matching.png" title="Match Surface" />  </p>
+<p><em>Above: Surface Matching dialog shown.</em></p>
+<hr />
+<p><strong>Air Walls</strong></p>
+<hr />
+<p><strong>Interior Partition Groups</strong></p>
+<hr />
+<p><strong>Site Shading</strong></p>
+<ul>
+<li>To create a shading group use the "New Shading Group" (<img alt="New Shading Surface Group" src="/img/plugin_reference_guide/NewShading-24.png" title="New Shading Shading" />). The new group looks like a transparent purple box. Double click on box to enter the group and draw the shading surface.
+ <img alt="Surface Shading Group" src="/img/create_model/shading_group.png" title="Surface Shading Group" /></li>
+</ul>
+<p><em>Above: Surface Matching dialog shown.</em></p>
+<ul>
+<li>
+<p>Add overhangs by:</p>
+</li>
+<li>
+<p>Drawing the shading surface using the SketchUp drawing tools or use a script to add.
+    <img alt="Shading" src="/img/create_model/draw_shading.png" title="Draw Shading Surface" />
+    <em>Above: Shading can be drawn on using photo matching.</em></p>
+</li>
+<li>
+<p>Using a script to automatically add overhangs.
+    <iframe width="640" height="360" src="http://www.youtube.com/embed/wzzY_W2WELo?rel=0&start=295&end=360&autoplay=0" frameborder="0" allowfullscreen></iframe></p>
+</li>
+</ul>
+<p><em>Above: This video shows you how search for specific surfaces and use a script to add overhangs to those surfaces.</em></p>
+<hr />
+<p><strong>Building Rotation</strong></p>
+<hr />
+<h2 id="schedules">Schedules</h2>
+<p><strong>Year Settings</strong>
+The Year Settings subtab lets you set the day of the week the 
+simulation should start. Define using Calendar Year or First Day Of Year buttons and pull-downs.</p>
+<p>The tab can also be used to 
+configure and turn Daylight 
+Savings Time on and off.</p>
+<p><strong>Inspecting and Adjusting Schedule Sets</strong>
+A Schedule Set is a collection of schedules for building activities or elements.</p>
+<p>A schedule set can be applied to an entire building, a story, a space type, or an individual space.</p>
+<p>This subtab has two kinds of drop zones. You can drop schedule sets from My Model or Library into the bottom of the left pane, or you can drop individual schedules into the drop zones in the main body.</p>
+<p><strong>Inspecting and Editing Ruleset Schedules</strong>
+This tab is a visual editor for Ruleset Schedules. As the name implies, a schedule consists of a series of rules. Each rule or profile can be applied for a specific date range and for specific days of the week.</p>
+<p>If two rules appear on the same day, the one with a higher priority is used. You can use the rule colors to visually scan the entire year in the calendar on the right of the body to see what rule is applied for a specific day.</p>
+<p>A new profile starts as a flat line. Double click to split the profile and then drag one segment up or down. Vertical sections can also be dragged left or right. Click Set Limits to change the vertical limits of your profile. To type precise values for a profile, mouse over the profile and enter a value with your keyboard.</p>
+<p>Although you can use 
+Compact and other schedule types in your model, you can visualize and edit only Ruleset Schedules in the OpenStudio application.</p>
+<p>The lower profile view is a navigation for when you are zoomed to 15-minute or 1-minute time steps.</p>
+<p><img src="/img/create_model/schedules.png" class="img-responsive" alt="Schedule Edit"></p>
+<p><em>Above: An annotated screenshot of the schedules editing interface.</em></p>
+<p><img src="/img/create_model/schedules.png" class="img-responsive" alt="Responsive image"></p>
+<p><iframe width="640" height="360" src="http://www.youtube.com/embed/PCcxruCaZO0?start=210&end=788&autoplay=0" frameborder="0" allowfullscreen></iframe></p>
+<p><em>Above: This video demonstrates how you can inspect, alter, and apply resource objects in the OpenStudio Application.</em></p>
+<ul>
+<li>Assigning Schedules and Schedule Sets</li>
+<li>Other Types of Schedules</li>
+<li>Constant</li>
+<li>Compact</li>
+</ul>
+<h2 id="constructions">Constructions</h2>
+<p><strong>Construction Sets</strong>
+A Construction Set object is structured very much like the Schedule Set. It can contain constructions for different surface types and boundary conditions.</p>
+<p>A construction set can be applied to an entire building, a story, a space type, or an individual space.</p>
+<p>Construction sets do not have to be complete sets. For example, you can have a construction set assigned to a story that has only an exterior wall. For the rest of the surface types, constructions will be inherited from the building object.</p>
+<p><strong>Constructions</strong></p>
+<p>The Constructions subtab lists construction objects that are in your model. You can drag additional constructions here from the library. Constructions download using the Online BCL window will appear in the library with a “BCL” flag.</p>
+<p>A construction consists of one or more material layers. You can add materials by dragging them from My Model or the Library to the drop zone. You can only add new materials to the bottom which represents the inside of the wall. You can delete any material by clicking the “x” next to the name.</p>
+<p><strong>Materials</strong></p>
+<p>Constructions are made of one or more layers of materials. The 
+Materials subtab lets you inspect and edit those materials. </p>
+<p>There are various classes of material objects. When you add a new material, first select the heading for the type of material you want to add and then click the “+” icon at the bottom of the left pane.</p>
+<p>Different types of material will have different data fields available.</p>
+<h4 id="tutorials">Tutorials</h4>
+<ul>
+<li>Inspecting and Adjusting Construction Sets</li>
+<li>Adding and Removing Materials from a Construction
+   <iframe width="640" height="360" src="http://www.youtube.com/embed/8KdVvBds_30" frameborder="0" allowfullscreen></iframe></li>
+</ul>
+<p><em>Above: This video shows you how to obtain construction and material objects from the Building Component Library and load them into your current model.</em></p>
+<h4 id="resources">Resources</h4>
+<ul>
+<li>Types of Constructions</li>
+<li>Types of Materials</li>
+<li>Proper Use of Constructions</li>
+</ul>
+<h2 id="internal-loads">Internal Loads</h2>
+<p>The Loads tab contains 
+internal load objects. The fields in the body will change appropriately when you pick a different type of load.</p>
+<p>You can assign loads to a space type or directly to a space, except for Water Use Equipment.</p>
+<p>The types of loads that can be added in this tab follow:</p>
+<ul>
+<li>People</li>
+<li>Lights</li>
+<li>Luminaires</li>
+<li>Electric Equipment</li>
+<li>Gas Equipment</li>
+<li>Steam Equipment</li>
+<li>Other Equipment</li>
+<li>Internal Mass</li>
+<li>Water Use Equipment</li>
+</ul>
+<p>Internal mass is different than the other loads in that it does not use fuel; rather, it stores heat and then dissipates the heat over time. The inputs require a surface area 
+assigned to a construction object.</p>
+<p>Water Use Equipment is also unique in that it takes schedules, and is not part of a space type. Water Use Equipment is applied in the HVAC Systems Tab.</p>
+<h4 id="tutorials_1">Tutorials</h4>
+<ul>
+<li>Adjusting Internal Loads</li>
+<li>Increasing Fidelity of Internal Loads
+  <iframe width="640" height="360" src="http://www.youtube.com/embed/PCcxruCaZO0?start=106&end=209&autoplay=0" frameborder="0" allowfullscreen></iframe></li>
+</ul>
+<p><em>Above: This video demonstrates how you can inspect, alter, and apply resource objects in the OpenStudio Application.</em></p>
+<h4 id="resources_1">Resources</h4>
+<ul>
+<li>People</li>
+<li>Lights</li>
+<li>Luminaires</li>
+<li>Electric Equipment</li>
+<li>Gas Equipment</li>
+<li>Steam Equipment</li>
+<li>Other Equipment</li>
+<li>Internal Mass</li>
+<li>Water Use Equipment</li>
+</ul>
+<h2 id="space-types">Space Types</h2>
+<p>Space types are the work horses of the resources in OpenStudio. Space types can define internal loads, schedule sets, and construction sets.</p>
+<p>Space types define specific spaces or groups of specific spaces in your model. The spaces inherit all objects of the space type. If you redefine a space type, or an underlying object, it will affect all spaces using that space type.</p>
+<p>If you scroll down to the bottom of the body in the Space Type tab, you will see a drop zone to create new loads. You can have multiple loads of the same type. </p>
+<p>The space types define loads such as lighting or electric equipment as simple area weighted power densities (e.g., W/ft2).  However, you can add loads in several possible ways.  For example, a space type could contain multiple types of lighting. You might define one lighting load for general lighting using a W/ft2 and then add another lighting load for decorative lighting using another watts per square foot. </p>
+<h4 id="tutorials_2">Tutorials</h4>
+<ul>
+<li>Inspecting and Adjusting Space Types</li>
+<li>Assigning Space Types and Default Space Types 
+  <iframe width="640" height="360" src="http://www.youtube.com/embed/8LTexVna_vw?rel=0&start=0&end=234&autoplay=0" frameborder="0" allowfullscreen></iframe></li>
+</ul>
+<p><em>Above: This video shows you how to assign space types and download space types from the Building Component Library (BCL). It uses the OpenStudio SketchUp Plug-in.</em></p>
+<h4 id="resources_2">Resources</h4>
+<ul>
+<li>
+<p>Measure Tags</p>
+<p><iframe width="640" height="360" src="http://www.youtube.com/embed/uxpIcEbxPbw?rel=0&start=&end=&autoplay=0" frameborder="0" allowfullscreen></iframe></p>
+<p><em>Above: This video shows how to use measure tags.</em></p>
+</li>
+<li>
+<p>Default Construction and Schedule Sets</p>
+</li>
+<li>
+<p>Rendering Color
+    This feature can be adjusted in the SketchUp Plug-in as well and the color selected will be used in the other application as well.</p>
+<p><img alt="New OpenStudio Model" src="/img/create_model/render_color.png" title="Render Color" />
+  * Design Specification Outdoor Air
+  * Space Infiltration Design Flow Rates
+  * Space Infiltration Effective Leakage Areas
+  * Internal Load Instances</p>
+</li>
+</ul>
+<h2 id="using-the-facility-tab-to-inspect-and-edit-your-model">Using the Facility Tab to Inspect and Edit Your Model</h2>
+<p>The Facility tab serves a number of functions. First, it allows you to see a hierarchical tree of your model. This tree can be 
+organized by building story, thermal zone, or as shown here, space type.</p>
+<p>If you are viewing the tree by space type, and a space does not have a space type assigned, it would appear under Unassigned Space Type. A similar pattern is followed for Thermal Zone and Story.</p>
+<p>The Facility tab is also where you can select spaces and assign a building story, thermal zone, and space type. This is also where you can add loads to a space. These loads would be on top of loads inherited from the space type.</p>
+<p>You can also drill down to inspect individual surfaces or subsurfaces.</p>
+<p><img src="/img/create_model/facility_bldg.png" class="img-responsive" alt="Facility Tab Building"></p>
+<p><em>Above: An annotated screenshot of the facilities tab with the building selected.</em></p>
+<p>You can view the Building object. This contains top level construction, schedule, or space type assignments, and sets the rotation for the building. </p>
+<p><img src="/img/create_model/facility.png" class="img-responsive" alt="Facility Tab"></p>
+<p><em>Above: An annotated screenshot of the facilities tab with space sort on.</em></p>
+<p>This screenshot of the Facility tab below shows a surface selected. </p>
+<p>Although you will generally work with the SketchUp Plug-in to define the building envelope, having a surface or subsurface selected in the Facility tab will allow you inspect and edit most attributes. Only the vertices are locked down.</p>
+<p>Spaces and surfaces cannot be deleted or created. You need to use the SketchUp Plug-in to do that. </p>
+<p><img src="/img/create_model/facility_subsurface.png" class="img-responsive" alt="Facility Tab Sub-surface"></p>
+<p><em>Above: Selecting and editing a sub-surface.</em></p>
+<h2 id="thermal-zones">Thermal Zones</h2>
+<p>Setting up thermal zones in the SketchUp Plug-in is shown below.
+<iframe width="640" height="360" src="http://www.youtube.com/embed/8LTexVna_vw?rel=0&start=240&end=438&autoplay=0" frameborder="0" allowfullscreen></iframe>
+  <em>Above: This video shows you how to assign space types and download space types from the Building Component Library (BCL). It uses the OpenStudio SketchUp Plug-in.</em>
+<em> HVAC Systems
+</em> Thermostat
+* Humidistat</p>
+<h2 id="air-plant-and-zone-hvac-systems">Air, Plant and Zone HVAC Systems</h2>
+<p>The HVAC Systems tab is used to create, inspect, and edit air and plant loops. The green “+” at the top left is used to add template or empty loops, and the “x” next to it will delete them. The pull-down at the top right of the body is to select which loop to is displayed.</p>
+<p>When adding a template loop, there are four images within the icon. From left to right they represent the type of cooling, heating, fan, and terminal unit, in the template. The example below has cold and hot water, a variable speed fan, and a hot water reheat terminal unit.</p>
+<p><img src="/img/create_model/add_hvac.png" class="img-responsive" alt="Add from Template"></p>
+<p><em>Above: Add an HVAC system to your model.</em></p>
+<p>The top half of the loop is for supply-side objects, the bottom half is for demand. Thermal Zones and other objects can be dragged onto drop zones or nodes. Optionally you can select the splitter or mixer to bring up a list of Thermal Zones, checking the ones you want included in the loop.</p>
+<p><img src="/img/create_model/hvac_about.png" class="img-responsive" alt="HVAC Interface></p>
+<p><em>Above: Annotated view of the HVAC interface.</em></p>
+<iframe width="640" height="360" src="http://www.youtube.com/embed/DKLnZaNoRX0?rel=0&start=0&end=322&autoplay=0" frameborder="0" allowfullscreen></iframe>
+
+<p><em>Above: This video shows you how to add HVAC systems.</em></p>
+<p>The controls view is only available for the air loops. With an air loop selected in “Layout” view you can switched to “Control” view.</p>
+<p>In this view you can edit the time of operation, night cycle, supply air temperature, and mechanical ventilation.</p>
+<p><img alt="HVAC Control" src="/img/create_model/hvac_controls.png" title="Air Loop Control View" /> </p>
+<h3 id="return-and-supply-plenums">Return and Supply Plenums</h3>
+<p>To add supply and return plenum zones:</p>
+<ol>
+<li>To access the plenum editor, select the zone on the layout view. </li>
+<li>Select the Edit tab on the right panel and click on the  plenum icon on the blue bar.</li>
+<li>Choose a plenum from the drop down list or create a new plenum zone but selecting the green add button. The zones available to be plenums will be selectable in a dialog. Create new zones for plenums in the Thermal Zones tab on the left.</li>
+</ol>
+<p>Shared plenums will be colored the same and will match the color selected for the plenum zone on the Thermal Zones tab.</p>
+<p><iframe width="640" height="360" src="http://www.youtube.com/embed/n_u3WT2tX1Y?rel=0&start=&end=&autoplay=0" frameborder="0" allowfullscreen></iframe></p>
+<p><em>Above: This video demonstrates how to create the geometry for and then hook up supply and return air plenums.</em></p>
+<h2 id="radiant-systems">Radiant Systems</h2>
+<h2 id="service-water-heating">Service Water Heating</h2>
+<p><iframe width="640" height="360" src="http://www.youtube.com/embed/jUJhi6YH51E?rel=0&start=0&end=486&autoplay=0" frameborder="0" allowfullscreen></iframe></p>
+<p><em>Above: This video shows you how create models using service hot water. This includes water heaters, water use connections, water use equipment, and other associated objects.</em></p>
+<h2 id="refrigeration">Refrigeration</h2>
+<iframe width="640" height="360" src="http://www.youtube.com/embed/iHTDiHif2_U?rel=0&start=&end=&autoplay=0" frameborder="0" allowfullscreen></iframe>
+
+<p><em>Above: This video demonstrates the new refrigeration features added to OpenStudio 1.2.0. These feature will be expanded in future releases.</em></p>
+<iframe width="640" height="360" src="http://www.youtube.com/embed/NRo9k0Rjfw8?rel=0&start=57&end=166&autoplay=0" frameborder="0" allowfullscreen></iframe>
+
+<p><em>Above: The video above provides an introduction to the grid view provide for refrigeration.</em></p>
+<h2 id="vrf-systems">VRF Systems</h2>
+<p>Variable refrigerant flow (VRF) systems can be added by dragging them onto the large drop zone from the library.</p>
+<p>The layout view provides a view of all the VRF systems in the model. The zoom icon by the name of the system will open a detailed view of that system. </p>
+<iframe width="640" height="360" src="http://www.youtube.com/embed/NRo9k0Rjfw8?rel=0&start=170&end=242&autoplay=0" frameborder="0" allowfullscreen></iframe>
+
+<p><em>Above: This video provides a brief overview of the VRF interface.</em></p>
+<h2 id="apply-measures-now">Apply Measures Now</h2>
+<p>This video gives an overview of one of the main features of OpenStudio 1.4.0. Now in addition to manually creating and editing your model, you can apply measures to your model live in the application. This allows you to customize your experience to your desired workflow. Measures can manipulate any part of the model and can also be used as a diagnostic tool.</p>
+<iframe width="640" height="360" src="http://www.youtube.com/embed/9-saA4x07eQ?rel=0&start=0&end=579&autoplay=0" frameborder="0" allowfullscreen></iframe>
+
+<p><em>Above: Use the Apply Measures Now function.</em></p>
+<h2 id="using-the-measures-tab">Using the Measures Tab</h2>
+<h2 id="lifecycle-costs">Lifecycle Costs</h2>
+<p>The most basic parameters needed for a life cycle cost analysis are the analysis period length and the discount rate. A longer analysis period accumulates more energy cost savings than a shorter period; giving energy conservation measures a better pay back relative to their initial costs. A higher discount rate devalues future energy cost savings relative to money spent on capital improvements in the present; giving energy conservation measures a lower pay back relative to their initial costs. This tab allows users to set these parameters on their baseline model.</p>
+<p>In the ParametricAnalysisTool measures, downloaded from BCL, can be used to calculate life cycle costs for different design alternatives.</p>
+<h2 id="calibration-with-utility-bills">Calibration with Utility Bills</h2>
+<p>Add utility bills for calibration on the Utility Bills Tab under Site.</p>
+<p>First, you must <strong>select a weather file</strong> and <strong>go to the schedules tab under year and select the year</strong> before you can enter the bills. </p>
+<ol>
+<li>
+<p>Select the type of utility on the left.</p>
+</li>
+<li>
+<p>Hit the plus button to add bills.</p>
+</li>
+<li>
+<p>Name the Bill and complete the units fields.</p>
+</li>
+<li>
+<p>Select the billing period inputs and hit the plus sign to add a bill.</p>
+</li>
+</ol>
+<p>To calibrate to the ASHRAE 14-2002 or FEMP standard the file must contain all utility data for one year and real weather data. Check the guidelines for additional 
+requirements. </p>
+<p><img alt="Utility Bills" src="/img/create_model/utility_bills.png" title="Utility Bills" /></p>
+<p><em>Above: An annotated screenshot of the schedules editing interface.</em></p>
+<h2 id="using-radiance">Using Radiance</h2>
+</div>
+        </div>
+
+        
+
+        <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script src="../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../js/prettify-1.0.min.js"></script>
+        <script src="../../js/base.js"></script>
+    </body>
+</html>
