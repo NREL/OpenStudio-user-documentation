@@ -8,7 +8,7 @@ The [OpenStudio Quick Start Guide](../../img/pdfs/openstudio_interface_quickstar
 ## Overview
 
 The tabs on the left that move vertically are ordered in a suggested workflow.
-![Drag-Drop](../../img/overview.png "Drag-and-drop constructions")
+![Drag-Drop](../../img/os_interface/overview.png "Drag-and-drop constructions")
 
 *Above: Overview of the OpenStudio Application Interface.*
 
