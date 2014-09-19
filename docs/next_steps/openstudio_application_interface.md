@@ -16,6 +16,11 @@ The tabs on the left that move vertically are ordered in a suggested workflow.
 ------ 
  
 ## Grid View: Thermal Zones, Space Types, and Refrigeration
+Earlier releases have included a grid view for the refrigeration section in the HVAC tab. Now you can edit thermal zones and space types in a grid view. This makes it easier to view all your zones and space types at once and compare settings. By selecting the buttons across the top you can select the fields you would like to see and edit. Most items on the grid can be inspected in the right panel "Edit" tab, except schedules. To edit or view schedules go to the schedules tab.
+
+![Grid 1](../../img/os_interface/thermal_zone_grid.png "Thermal Zone Grid View")
+
+*Above: Overview of the OpenStudio Application Interface.*
 
 ------
 
