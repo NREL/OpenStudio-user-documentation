@@ -101,9 +101,7 @@ __Year Settings__
 The Year Settings subtab lets you set the day of the week the 
 simulation should start. Define using Calendar Year or First Day Of Year buttons and pull-downs.
 
-The tab can also be used to 
-configure and turn Daylight 
-Savings Time on and off.
+The tab can also be used to configure and turn Daylight Savings Time on and off.
 
 __Inspecting and Adjusting Schedule Sets__
 A Schedule Set is a collection of schedules for building activities or elements.
@@ -125,7 +123,7 @@ Compact and other schedule types in your model, you can visualize and edit only 
 
 The lower profile view is a navigation for when you are zoomed to 15-minute or 1-minute time steps.
 
- <img src="../..//create_model/schedules.png" class="img-responsive" alt="Schedule Edit">
+ <img src="../../img/create_model/schedules.png" class="img-responsive" alt="Schedule Edit">
  
  *Above: An annotated screenshot of the schedules editing interface.*
  
@@ -149,6 +147,10 @@ A construction set can be applied to an entire building, a story, a space type, 
 
 Construction sets do not have to be complete sets. For example, you can have a construction set assigned to a story that has only an exterior wall. For the rest of the surface types, constructions will be inherited from the building object.
 
+   <iframe width="640" height="360" src="http://www.youtube.com/embed/8KdVvBds_30" frameborder="0" allowfullscreen></iframe>
+   
+  *Above: This video shows you how to obtain construction and material objects from the Building Component Library and load them into your current model.*
+
 __Constructions__
 
 The Constructions subtab lists construction objects that are in your model. You can drag additional constructions here from the library. Constructions download using the Online BCL window will appear in the library with a “BCL” flag.
@@ -163,24 +165,17 @@ Materials subtab lets you inspect and edit those materials.
 There are various classes of material objects. When you add a new material, first select the heading for the type of material you want to add and then click the “+” icon at the bottom of the left pane.
 
 Different types of material will have different data fields available.
-
-#### Tutorials
-
+  
+<!--Tutorials
 * Inspecting and Adjusting Construction Sets
 * Adding and Removing Materials from a Construction
-   <iframe width="640" height="360" src="http://www.youtube.com/embed/8KdVvBds_30" frameborder="0" allowfullscreen></iframe>
-   
-  *Above: This video shows you how to obtain construction and material objects from the Building Component Library and load them into your current model.*
-  
-#### Resources
-
+Resources
 * Types of Constructions
 * Types of Materials
-* Proper Use of Constructions
+* Proper Use of Constructions-->
 
 ## Internal Loads
-The Loads tab contains 
-internal load objects. The fields in the body will change appropriately when you pick a different type of load.
+The Loads tab contains internal load objects. The fields in the body will change appropriately when you pick a different type of load.
 
 You can assign loads to a space type or directly to a space, except for Water Use Equipment.
 
@@ -316,13 +311,13 @@ When adding a template loop, there are four images within the icon. From left to
 
 The top half of the loop is for supply-side objects, the bottom half is for demand. Thermal Zones and other objects can be dragged onto drop zones or nodes. Optionally you can select the splitter or mixer to bring up a list of Thermal Zones, checking the ones you want included in the loop.
 
-<img src="../../img/create_model/hvac_about.png" class="../../img-responsive" alt="HVAC Interface>
+<img src="../../img/create_model/hvac_about.png" class="img-responsive" alt="HVAC Interface>
  
  *Above: Annotated view of the HVAC interface.*
 
 <iframe width="640" height="360" src="http://www.youtube.com/embed/DKLnZaNoRX0?rel=0&start=0&end=322&autoplay=0" frameborder="0" allowfullscreen></iframe>
   
-  *Above: This video shows you how to add HVAC systems.*
+  *Above: The layout view of HVAC systems is shown above.*
   
 The controls view is only available for the air loops. With an air loop selected in “Layout” view you can switched to “Control” view.
 
@@ -330,7 +325,7 @@ In this view you can edit the time of operation, night cycle, supply air tempera
 
   ![HVAC Control](img/create_model/hvac_controls.png "Air Loop Control View") 
   
-### Return and Supply Plenums
+## Return and Supply Plenums
 To add supply and return plenum zones:
 
 1. To access the plenum editor, select the zone on the layout view. 
@@ -345,10 +340,33 @@ Shared plenums will be colored the same and will match the color selected for th
   
 ## Radiant Systems
 ## Service Water Heating
+The first view into the HVAC tab will be the water mains editor, which shows as “Service Water” on loops pulldown list.Water enters the system at the right and leave at the Sewer on the left. One or more water use connections can be added in the middle. 
+
+![Water1](../../img/create_model/water1.png "Water Connections")
+
+*Above: Service hot water interface.*
+
+Clicking a water use connection will take you to a model window where you can add water use equipment.
+
+![Water2](../../img/create_model/water2.png "Water Connections Second Level")
+
+*Above: Service hot water interface.*
+
+Dragging a water use equipment object into the water use connection will create an instance of that definition. Much like lights, people and other loads, there is a fractional schedule to define usage patterns. Optionally you can associate the equipment with a space. There is no direct energy use to the space, but heat from the equipment will be added to the space.The equipment can be anything that uses water, hot or cold. The definition contains a peak flow rate and a target temperature schedule. Hot and cold water will mix to reach the target temperature at the fixture.Click the water main, sewer, or makeup water to go back to the water mains editor. If you have a plant loop associated with the water use connection the “Loop” button will take you to the loop.
+
+ 
 <iframe width="640" height="360" src="http://www.youtube.com/embed/jUJhi6YH51E?rel=0&start=0&end=486&autoplay=0" frameborder="0" allowfullscreen></iframe>
   
   *Above: This video shows you how create models using service hot water. This includes water heaters, water use connections, water use equipment, and other associated objects.*
+  
+  
 ## Refrigeration
+The refrigeration system interface can be accessed by selecting refrigeration from the drop down menu.To add a refrigeration system select one from the library and add drag it to the drop zone.Click on the zoom button by the name of the refrigeration system to go to a view of that system, add components from the library.
+ <img src="../../img/create_model/refrig_1.png" class="img-responsive" alt="Add Refrigeration">*Above: Adding refigeration systems to your model under the HVAC tab.*
+
+This zoomed in view provides the layout view of one refrigeration rack. You may add cases by dragging them on to the “Drag and Drop Cases” drop zone.Drop zones are provided to accommodate systems with a mechanical subcooler and an Suction Line Heat Exchanger (SLHX).The small arrow at the bottom of the refrigeration case summary will open and expanded view of cases. Each case can be selected and edited in the Edit panel on the right.Cascade systems can be added by dragging the from “My Model” or the “Library.”
+ <img src="../../img/create_model/refrig_2.png" class="img-responsive" alt="Zoom in Refrigeraion">*Above: Adding refigeration systems to your model under the HVAC tab.*An alternate view of the refrigeration systems is provided by the grid view. The refrigeration grid view provides a method for entering case settings in a spreadsheet style. Cases can be added, assigned to racks, and edited in this view.There are two major divisions, one for Display Cases and another for Walk-ins. Under each division a drop box is available to add new cases. There are also buttons to move through the case settings and enter the data on each case. Create your own custom view of this information by checking the box on the right of the column header. Checked columns will show up under the Custom button.
+ <img src="../../img/create_model/refrig_3.png" class="img-responsive" alt="Refrigeraion Grid">*Above: Grid view available for refrigeration.*  
 
 <iframe width="640" height="360" src="http://www.youtube.com/embed/iHTDiHif2_U?rel=0&start=&end=&autoplay=0" frameborder="0" allowfullscreen></iframe>
 
@@ -356,7 +374,7 @@ Shared plenums will be colored the same and will match the color selected for th
 
 <iframe width="640" height="360" src="http://www.youtube.com/embed/NRo9k0Rjfw8?rel=0&start=57&end=166&autoplay=0" frameborder="0" allowfullscreen></iframe>
 
-*Above: The video above provides an introduction to the grid view provide for refrigeration.*
+*Above: The video above provides an introduction to the grid view provide for refrigeration.*In the initial release of the grid view, no provision was made to delete a case or walk in; they must be must be assigned to a rack, and deleted from the layout view.  This functionality omission will be corrected in the next OpenStudio release.
 
 
 ## VRF Systems
@@ -364,23 +382,52 @@ Variable refrigerant flow (VRF) systems can be added by dragging them onto the l
 
 The layout view provides a view of all the VRF systems in the model. The zoom icon by the name of the system will open a detailed view of that system. 
 
+ <img src="../../img/create_model/vrf_1.png" class="img-responsive" alt="ZVRF Layout View">*Above: VRF system layout view.*
+
+To create your VRF system, start by dropping a terminal from the “Library” onto the drop zone. Then add thermal zones from “My Model.” When a thermal zone is added a new VRF terminal will automatically be created.
+
+ <img src="../../img/create_model/vrf_2.png" class="img-responsive" alt="Layout View Zoom">*Above: VRF system layout view.*Set the terminal settings by selecting the terminal and editing in the “Edit” tab on the right.More than one terminal can connect with the same zone. Just drag the zone to the drop area again to add another connection.
+
 <iframe width="640" height="360" src="http://www.youtube.com/embed/NRo9k0Rjfw8?rel=0&start=170&end=242&autoplay=0" frameborder="0" allowfullscreen></iframe>
+
 *Above: This video provides a brief overview of the VRF interface.*
 
 ## Apply Measures Now
-This video gives an overview of one of the main features of OpenStudio 1.4.0. Now in addition to manually creating and editing your model, you can apply measures to your model live in the application. This allows you to customize your experience to your desired workflow. Measures can manipulate any part of the model and can also be used as a diagnostic tool.
+Now in addition to manually creating and editing your model, you can apply measures to your model live in the application. This allows you to customize your experience to your desired workflow. Measures can manipulate any part of the model and can also be used as a diagnostic tool.
+
+ <img src="../../img/create_model/apply_now.png" class="img-responsive" alt="Select from Menu">*Above: Select the apply measures now from the the menu.*
+
+ <img src="../../img/create_model/apply_now_1.png" class="img-responsive" alt="Select the measure to apply.">*Above: Select measure.*
+
+ <img src="../../img/create_model/apply_now_2.png" class="img-responsive" alt="Accept changes or cancel.">*Above: Select measure.*
+The video below demonstrates the use of this feature.
 
 <iframe width="640" height="360" src="http://www.youtube.com/embed/9-saA4x07eQ?rel=0&start=0&end=579&autoplay=0" frameborder="0" allowfullscreen></iframe>
   
   *Above: Use the Apply Measures Now function.*
   
 ##  Using the Measures Tab
+The measures selected on this tab will not run until you run your model, unlike the "Apply Measures Now" option. 
+
+Download additional measures from [The Building Component Library (BCL)](http://bcl.nrel.gov/). Drag measures from the library to the central panel.There are three types of measures: 
+1. __OpenStudio Measures__ are run on the OSM model before it is converted to an IDF. 2. __EnergyPlus Measures__ can be run on the IDF file before it is handed to EnergyPlus.3. __Reporting Measures__ produce reports to chart results, provide quality assurance, and quality control on models.
+
+![Measures Tab](../../img/create_model/measures.png "Measures Tab")
+
+*Above: Select measures from the library and drag them into the correct drop zone.*
+By selecting the measure and selecting the right “Edit” tab, inputs for the measure can be entered and adjusted.![Measures Tab2](../../img/create_model/measures1.png "Measure Fields")
+
+*Above: Select a measure and edit the fields in the right panel.*
   
 ## Lifecycle Costs
 The most basic parameters needed for a life cycle cost analysis are the analysis period length and the discount rate. A longer analysis period accumulates more energy cost savings than a shorter period; giving energy conservation measures a better pay back relative to their initial costs. A higher discount rate devalues future energy cost savings relative to money spent on capital improvements in the present; giving energy conservation measures a lower pay back relative to their initial costs. This tab allows users to set these parameters on their baseline model.
 
 
-In the ParametricAnalysisTool measures, downloaded from BCL, can be used to calculate life cycle costs for different design alternatives.
+With measures, downloaded from BCL,  life cycle costs for different design alternatives can be calculated
+
+![Measures Tab3](../../img/create_model/lifecycle_costs.png "Measure Costs")
+
+*Above: Add costs to measures to calculate and compare different options. This can also be done in the ParametricAnalysisTool.*
 
 
 ## Calibration with Utility Bills
@@ -403,5 +450,5 @@ requirements.
  
  *Above: An annotated screenshot of the schedules editing interface.*
 
-## Using Radiance   
+<!--May move this to a page Using Radiance-->   
 
