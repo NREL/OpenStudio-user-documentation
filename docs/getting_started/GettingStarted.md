@@ -31,6 +31,8 @@ BCL content can now be accessed from within the OpenStudio SketchUp Plug-in and 
 3. Click on the "My Dashboard" near the top right of the website.
 4. Copy the text after __"APIv1.1 key:"__ then paste the key into the SketchUp Plug-in, the OpenStudio application, or the Parametric Analysis Tool (PAT). __You only need to configure the key in one place and it will be used globally throughout the OpenStudio tools.__ Additionally this key will be maintained when you install updates to OpenStudio. Specific application instructions are below.
 
+![Key Request](../../img/bcl_key_request.png "Key Dialog")
+
 __Enter the Key Through the OpenStudio SketchUp Plug-in__ under the menu "Plugins/OpenStudio User Scripts/Building Component Library/Setup BCL Key" enter your key, and click "OK."
 
 __Or__
@@ -41,7 +43,7 @@ __Register the Key Through the OpenStudio Application__ open the menu "Component
 --> 
 
 ## Quick Start Guide to OpenStudio Modeling Tools
-* This [OpenStudio Quick Start Guide (PDF)](../../img/pdfs/openstudio_interface_quickstart_1.4.0.pdf) provides an introduction to the interface for the Plug-in and the OpenStudio application. It also provides guidance on the basic workflow. Checkout the [Introductory Tutorial](#introductory-tutorial) Below to get started.
+* This [OpenStudio Quick Start Guide (PDF)](../../img/pdfs/openstudio_interface_quickstart.pdf) provides an introduction to the interface for the Plug-in and the OpenStudio application. It also provides guidance on the basic workflow. Checkout the [Introductory Tutorial](#introductory-tutorial) Below to get started.
 
 ## Quick Start Guide to the ParametricAnalysisTool (PAT)
 * This [ParametricAnalysisTool Quick Start Guide (PDF)](../../img/pdfs/PAT-Quick_Start_Guide_1.4.0.pdf) and the [ParametricAnalysisTool section](../comparative_analysis/ParametricStudies.md) provide an introduction to the interface and workflow for creating multiple design alternative from a seed model. 

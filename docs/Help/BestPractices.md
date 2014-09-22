@@ -13,6 +13,15 @@ To rename objects, go to the OpenStudio Inspector. Do not alter the names in Ske
 
 * The OpenStudio Inspector works on one object at a time. If you select multiple objects or surfaces and make a change, it will affect only one object.
 
+## Guidelines for Spaces
+
+* Spaces should be top-level objects. Do not combine multiple spaces into a group or component, or put a space under another group.
+* Name your spaces to make large models easier to manage and search. You may want to name your surfaces and subsurfaces.
+* Geometry within a space should be convex.
+* Ideally, spaces, not just space surfaces, are also convex.
+* After creating a new space or shading group, double-click the group to edit it. The Outliner or a keyboard shortcut can also be used to edit a zone, shading group, or interior partition group.
+
+
 ## Guidelines for Building Surfaces
 
 * Do not group a selection of EnergyPlus surfaces or subsurfaces together. All surfaces under a zone should be ungrouped.

@@ -1,11 +1,7 @@
 ## The SketchUp Plug-in Interface 
-This section provide the legend for toolbars and menus available tin the Plug-in. You may also find helpful information in the [OpenStudio Quick Start Guide (PDF)](../img/pdfs/openstudio_interface_quickstart_1.4.0.pdf).
+This section provide the legend for toolbars and menus available tin the Plug-in. You may also find helpful information in the [OpenStudio Quick Start Guide (PDF)](../img/pdfs/openstudio_interface_quickstart.pdf).
 
-__Notes for New OpenStudio Users__
-
-If you are a new Google SketchUp user, you may want to read some SketchUp-specific documentation. We have provided a page with some relevant SketchUp links. Learning how to use SketchUp’s basic tools should give you what you need to start in OpenStudio. You mostly need the pencil tool, rectangle, push/pull tool, and orbit tool. You will also want to understand how SketchUp organizes geometry into groups, which form the basis for zones, shading surface groups, and interior partition surface groups in OpenStudio.
-
-Once you are familiar with SketchUp, the tutorials can help you become familiar with OpenStudio. The interfacce reference below is also informative, but may make more sense once you are more familiar with the Plug-in.
+![Toolbar OS Plugin](../../img/plugin_reference_guide/toolbars_os.png "Plug-in Toolbars")
 
 ### File Management
 Tools in this set create, open, save, import, or export data to or from your model. Some have toolbar icons; some do not. These functions are are also located the OpenStudio Plug-in menu.

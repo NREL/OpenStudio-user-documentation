@@ -13,15 +13,6 @@ The tabs on the left that move vertically are ordered in a suggested workflow.
 *Above: Overview of the OpenStudio Application Interface.*
 
 
------- 
- 
-## Grid View: Thermal Zones, Space Types, and Refrigeration
-Earlier releases have included a grid view for the refrigeration section in the HVAC tab. Now you can edit thermal zones and space types in a grid view. This makes it easier to view all your zones and space types at once and compare settings. By selecting the buttons across the top you can select the fields you would like to see and edit. Most items on the grid can be inspected in the right panel "Edit" tab, except schedules. To edit or view schedules go to the schedules tab.
-
-![Grid 1](../../img/os_interface/thermal_zone_grid.png "Thermal Zone Grid View")
-
-*Above: Overview of the OpenStudio Application Interface.*
-
 ------
 
 ## Sub-tabs
@@ -68,6 +59,29 @@ To add items from the library, select the "Library" tab on the right panel and f
 *Above: Drag-and-drop example on the HVAC service hot water.*
 
 ------
+ 
+## Grid View: Thermal Zones, Space Types, and Refrigeration
+Earlier releases have included a grid view for the refrigeration section in the HVAC tab. Now you can edit thermal zones and space types in a grid view. This makes it easier to view all your zones and space types at once and compare settings. By selecting the buttons across the top you can select the fields you would like to see and edit.
+
+Select the check box in the top of the column if you want to view that column in the "Custom" category. 
+
+Drag components and schedules into the grid view. Most items on the grid can be inspected in the right panel "Edit" tab, except schedules. To edit or view schedules go to the schedules tab. Use the delect in the "Edit" panel to remove a component from the grid.
+
+Click on the color box on the "General" button to change the rendering color of the space type. This will change the rendering color in the SketchUp Plug-in as well.
+
+![Grid 1](../../img/os_interface/space_type_grid1.png "Space Type Grid View")
+
+*Above: The grid view provides a spreadsheet style layout.*
+
+![Grid 1](../../img/os_interface/space_type_grid_loads.png "Space Type Loads")
+
+*Above: Hit the "Loads" button to edit and view loads by space type. Click on the name of a component and select the  "Edit" panel on the right to inspect and edit that item. You can edit the load definition in the example shown above.*
+
+![Grid 2](../../img/os_interface/thermal_zone_grid.png "Thermal Zone Grid View")
+
+*Above: The grid view of thermal zones.*
+
+------ 
 
 ## File Menu
 
@@ -77,6 +91,8 @@ If you launch the OpenStudio application from the SketchUp Plug-in, your open fi
 
 *Above: The file menu contains the open, save, revert, export, and import functions.*
 
+------ 
+
 ## Preferences Menu
 
 The Units menu lets you switch between SI and IP units. This affects both input fields and output data on the results tab. It does not currently affect standard EnergyPlus output files.The SketchUp Plug-in has access to this as well under “Plugins/OpenStudio/Preferences”.Scan for Tools will look for Radiance, Ruby, and EnergyPlus installations. If you install those 
@@ -85,6 +101,8 @@ applications Prior to installing OpenStudio this shouldn’t be necessary.
 ![Preferences Menu](../../img/os_interface/prefer_menu.png "Preferences Menu")
 
 *Above: The file menu contains the open, save, revert, export, and import functions.*
+
+------ 
 
 ## Components & Measures Menu
 

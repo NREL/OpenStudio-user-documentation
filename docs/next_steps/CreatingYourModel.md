@@ -11,6 +11,14 @@ The New OpenStudio Model From Template (![New OpenStudio Model](../../img/plugin
 
 *Above: This video shows you how to choose a template before setting up you model.*
 
+![Choose Template](../../img/create_model/from_template.png "Start a New Model with a from Template")
+
+*Above: Dialog to choose template.*
+
+Vintages:* DOE Ref Pre-1980* DOE Ref 1980-2004* DOE Ref 2004* 189.1-2009* 90.1-2007Climate Zones:1 - 8
+
+![Choose Climate](../../img/create_model/climate_zones.png "Climate Zone Map")
+
 ------
 __Creating and Customizing the Envelope__  
 
@@ -21,6 +29,8 @@ Creating geometry from photographs is another option. To learn more about it wat
   <iframe width="640" height="360" src="http://www.youtube.com/embed/wzzY_W2WELo?rel=0&start=44&end=129&autoplay=0" frameborder="0" allowfullscreen></iframe>
     
 *Above: This video shows you how to create your building envelope. It uses the OpenStudio SketchUp Plug-in.*
+
+After defining the building envelope, you use the Surface Matching tool to set the boundary conditions. These will allow thermal connections between spaces and will inform OpenStudio about what construction to apply.
 
 ------ 
  
@@ -215,26 +225,28 @@ Space types are the work horses of the resources in OpenStudio. Space types can 
 
 Space types define specific spaces or groups of specific spaces in your model. The spaces inherit all objects of the space type. If you redefine a space type, or an underlying object, it will affect all spaces using that space type.
 
-If you scroll down to the bottom of the body in the Space Type tab, you will see a drop zone to create new loads. You can have multiple loads of the same type. 
+The space types tab in the OpenStudio application is organized into a grid view. You can look through all your space types and edit the settings.
+
+![Grid 1](../../img/os_interface/space_type_grid1.png "Space Type Grid View")
+
+*Above: The grid view provides a spreadsheet style layout.*
+
+If you select the "Loads" button in the Space Type tab, you will see a drop zone to create new loads. You can have multiple loads of the same type. 
+
+
+![Grid 1](../../img/os_interface/space_type_grid_loads.png "Space Type Loads")
+
+*Above: Hit the "Loads" button to edit and view loads by space type. Click on the name of a component and select the  "Edit" panel on the right to inspect and edit that item. You can edit the load definition in the example shown above.*
 
 The space types define loads such as lighting or electric equipment as simple area weighted power densities (e.g., W/ft2).  However, you can add loads in several possible ways.  For example, a space type could contain multiple types of lighting. You might define one lighting load for general lighting using a W/ft2 and then add another lighting load for decorative lighting using another watts per square foot. 
-
-__Guidelines for Spaces__
-
-* Spaces should be top-level objects. Do not combine multiple spaces into a group or component, or put a space under another group.
-* Name your spaces to make large models easier to manage and search. You may want to name your surfaces and subsurfaces.
-* Geometry within a space should be convex.
-* Ideally, spaces, not just space surfaces, are also convex.
-* After creating a new space or shading group, double-click the group to edit it. The Outliner or a keyboard shortcut can also be used to edit a zone, shading group, or interior partition group.
-
  
 #### Tutorials
-
-* Inspecting and Adjusting Space Types
-* Assigning Space Types and Default Space Types 
+The video below shows how to work with space types in the Plug-in. 
   <iframe width="640" height="360" src="http://www.youtube.com/embed/8LTexVna_vw?rel=0&start=0&end=234&autoplay=0" frameborder="0" allowfullscreen></iframe>
   
-  *Above: This video shows you how to assign space types and download space types from the Building Component Library (BCL). It uses the OpenStudio SketchUp Plug-in.*
+  *Above: This video shows you how to assign space types and download space types from the Building Component Library (BCL). It uses the OpenStudio SketchUp Plug-in.*  
+<!--* Inspecting and Adjusting Space Types
+* Assigning Space Types and Default Space Types-->   
 
 #### Resources
 
@@ -243,16 +255,16 @@ __Guidelines for Spaces__
     <iframe width="640" height="360" src="http://www.youtube.com/embed/uxpIcEbxPbw?rel=0&start=&end=&autoplay=0" frameborder="0" allowfullscreen></iframe>
     
       *Above: This video shows how to use measure tags.*
-    
-  * Default Construction and Schedule Sets
-  * Rendering Color
+  
+* Rendering Color
     This feature can be adjusted in the SketchUp Plug-in as well and the color selected will be used in the other application as well.
   
-    ![New OpenStudio Model](../../img/create_model/render_color.png "Render Color")
+ ![New OpenStudio Model](../../img/create_model/render_color.png "Render Color")
+   <!-- * Default Construction and Schedule Sets
   * Design Specification Outdoor Air
   * Space Infiltration Design Flow Rates
   * Space Infiltration Effective Leakage Areas
-  * Internal Load Instances
+  * Internal Load Instances-->
 
 
 ## Using the Facility Tab to Inspect and Edit Your Model
