@@ -338,7 +338,7 @@ The top half of the loop is for supply-side objects, the bottom half is for dema
  *Above: Annotated view of the HVAC interface.*
  
   
-The controls view is only available for the air loops. With an air loop selected in “Layout” view you can switched to “Control” view.
+The __controls view__ is only available for the air loops. With an air loop selected in “Layout” view you can switched to “Control” view.
 
 In this view you can edit the time of operation, night cycle, supply air temperature, and mechanical ventilation.
 
@@ -346,21 +346,24 @@ In this view you can edit the time of operation, night cycle, supply air tempera
   
   *Above: Control view only available for air loops.* 
   
-In the __cold water loop__ the cooling coil that had been a supply side object on the air loop is now a demand object.The supply side has a pump and a water cooled chiller. The adiabatic pipes are a necessary part of the loop. There are no attributes to set for the pipes.You can click on the chiller to drill down further to the condenser loop. Or you can click on the cooling coil to go back to the air loop.
+### Cold Water Loop  
+In the cold water loop the cooling coil that had been a supply side object on the air loop is now a demand object.The supply side has a pump and a water cooled chiller. The adiabatic pipes are a necessary part of the loop. There are no attributes to set for the pipes.You can click on the chiller to drill down further to the condenser loop. Or you can click on the cooling coil to go back to the air loop.
   
   <a href="../../img/create_model/chilled_water.png" target="_blank">
 <img src="../../img/create_model/thumb_chilled_water.png" alt="Resized JPEG graphic" title="Click to view" border="2" width="750" height="542" hspace="10" /></a>
 
 *Above: Click image to view a larger version.*
 
-In the __condenser loop__ the chiller that had been a supply side object on the cold water loop is now a demand object.The supply side has a pump and a cooling tower. As with the cold water loop the adiabatic pipes are a necessary part of the loop. You can click on the chiller to drill to go back to the cold water loop.
+### Condenser Loop
+In the condenser loop the chiller that had been a supply side object on the cold water loop is now a demand object.The supply side has a pump and a cooling tower. As with the cold water loop the adiabatic pipes are a necessary part of the loop. You can click on the chiller to drill to go back to the cold water loop.
 
   <a href="../../img/create_model/condensor_water.png" target="_blank">
 <img src="../../img/create_model/thumb_condensor_water.png" alt="Resized JPEG graphic" title="Click to view" border="2" width="750" height="554" hspace="10" /></a>
 
 *Above: Click image to view a larger version.*
 
-In the __hot water loop__ the heating coil that had been a supply side object on the air loop is now a demand object.The supply side has a pump and a boiler. The boiler can use a variety of fuels. The adiabatic pipes are a necessary part of the loop. There are no attributes to set for the pipes.You can click on the heating coil to go back to the air loop.The heating coils without links represent the reheat terminals for each connected thermal zone.
+### Hot Water Loop
+In the hot water loop the heating coil that had been a supply side object on the air loop is now a demand object.The supply side has a pump and a boiler. The boiler can use a variety of fuels. The adiabatic pipes are a necessary part of the loop. There are no attributes to set for the pipes.You can click on the heating coil to go back to the air loop.The heating coils without links represent the reheat terminals for each connected thermal zone.
   <a href="../../img/create_model/hot_water.png" target="_blank">
 <img src="../../img/create_model/thumb_hot_water.png" alt="Resized JPEG graphic" title="Click to view" border="2" width="750" height="555" hspace="10" /></a>
 
