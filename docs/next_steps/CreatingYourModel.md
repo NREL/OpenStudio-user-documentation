@@ -137,9 +137,6 @@ The lower profile view is a navigation for when you are zoomed to 15-minute or 1
  <img src="../../img/create_model/schedules.png" class="img-responsive" alt="Schedule Edit">
  
  *Above: An annotated screenshot of the schedules editing interface.*
- 
- <img src="../../img/create_model/schedules.png" class="img-responsive" alt="Responsive image">
-
   
    <iframe width="640" height="360" src="http://www.youtube.com/embed/PCcxruCaZO0?start=210&end=788&autoplay=0" frameborder="0" allowfullscreen></iframe>
   
@@ -312,11 +309,14 @@ Spaces and surfaces cannot be deleted or created. You need to use the SketchUp P
 
 ## Thermal Zones
 Setting up thermal zones in the SketchUp Plug-in is shown below.
+
 <iframe width="640" height="360" src="http://www.youtube.com/embed/8LTexVna_vw?rel=0&start=240&end=438&autoplay=0" frameborder="0" allowfullscreen></iframe>
+  
   *Above: This video shows you how to assign space types and download space types from the Building Component Library (BCL). It uses the OpenStudio SketchUp Plug-in.*
-* HVAC Systems
-* Thermostat
-* Humidistat
+
+HVAC systems, thermostat, and humidistat settings can be viewed and edited on this tab. Select the "Cooling Sizing Parameters" or "Heating Sizing Parameters" to edit those by thermal zone.
+
+<img src="../../img/create_model/heat_sizing.png" class="img-responsive" alt="Thermal Zone Sizing Parameters">
 
 ## Air, Plant and Zone HVAC Systems
 The HVAC Systems tab is used to create, inspect, and edit air and plant loops. The green “+” at the top left is used to add template or empty loops, and the “x” next to it will delete them. The pull-down at the top right of the body is to select which loop to is displayed.
