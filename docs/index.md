@@ -14,7 +14,7 @@ This is OpenStudio's user documentation. A brief summary of the content and inte
         </a></p>
         <p>Review the list of features and building elements that can be modeled.</p>
         <p><a href="getting_started/Features.md" class="btn btn-primary" role="Review Features">Features</a></p>  
-        <p><a href="getting_started/Roadmap.md" class="btn btn-primary" role="Features Roadmap">Features Roadmap</a></p>  
+        <p><a href="getting_started/roadmap.md" class="btn btn-primary" role="Features Roadmap">Features Roadmap</a></p>  
       </div>
     </div>
   </div>

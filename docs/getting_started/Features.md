@@ -8,7 +8,7 @@ View and edit your thermal zones and space types in a grid view. See all your th
 
 [__Release Notes on GitHub__](http://github.com/NREL/OpenStudio/releases)
 
-View the [OpenStudio Roadmap]() to see the release plan for features.
+View the [OpenStudio Roadmap](roadmap.md) to see the release plan for future features.
 ____________________________
 
 ## Features
@@ -104,6 +104,6 @@ __Large-Scale Analysis on the Cloud__
 ____________________________
  
 ## What is Coming Next?   
-* [__Check out our OpenStudio Roadmap__](Roadmap.md) to learn about future feature development.
+* [__Check out our OpenStudio Roadmap__](roadmap.md) to learn about future feature development.
 
 ____________________________

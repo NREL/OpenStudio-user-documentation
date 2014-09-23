@@ -15,8 +15,18 @@ The New OpenStudio Model From Template (![New OpenStudio Model](../../img/plugin
 
 *Above: Dialog to choose template.*
 
-Vintages:* DOE Ref Pre-1980* DOE Ref 1980-2004* DOE Ref 2004* 189.1-2009* 90.1-2007Climate Zones:1 - 8
-
+Vintages:
+
+* DOE Ref Pre-1980
+* DOE Ref 1980-2004
+* DOE Ref 2004
+* 189.1-2009
+* 90.1-2007
+
+Climate Zones:1 - 8
+
+
+
 ![Choose Climate](../../img/create_model/climate_zones.png "Climate Zone Map")
 
 ------
@@ -31,6 +41,7 @@ Creating geometry from photographs is another option. To learn more about it wat
 *Above: This video shows you how to create your building envelope. It uses the OpenStudio SketchUp Plug-in.*
 
 After defining the building envelope, you use the Surface Matching tool to set the boundary conditions. These will allow thermal connections between spaces and will inform OpenStudio about what construction to apply.
+
 
 ------ 
  
@@ -196,14 +207,13 @@ assigned to a construction object.
 
 Water Use Equipment is also unique in that it takes schedules, and is not part of a space type. Water Use Equipment is applied in the HVAC Systems Tab.
 
-
-#### Tutorials
-  * Adjusting Internal Loads
-  * Increasing Fidelity of Internal Loads
   <iframe width="640" height="360" src="http://www.youtube.com/embed/PCcxruCaZO0?start=106&end=209&autoplay=0" frameborder="0" allowfullscreen></iframe>
   
   *Above: This video demonstrates how you can inspect, alter, and apply resource objects in the OpenStudio Application.*
-#### Resources
+<!--#### Tutorials
+  * Adjusting Internal Loads
+  * Increasing Fidelity of Internal Loads-->
+<!--#### Resources
   * People
   * Lights
   * Luminaires
@@ -212,7 +222,7 @@ Water Use Equipment is also unique in that it takes schedules, and is not part o
   * Steam Equipment
   * Other Equipment
   * Internal Mass
-  * Water Use Equipment
+  * Water Use Equipment-->
 
 
 ## Space Types
@@ -260,7 +270,15 @@ The video below shows how to work with space types in the Plug-in.
   * Space Infiltration Design Flow Rates
   * Space Infiltration Effective Leakage Areas
   * Internal Load Instances-->
+  
+## Downloading Components and Measures from the Building Component Library (BCL)
+In the OpenStudio Application you can download items directly from the BCL by going to the "Components & Measures" menu and choosing "Find Measures" or "Find Components." The your API key is available by registering on the [BCL site](https://bcl.nrel.gov/) and copying it from your account page.
 
+<img src="../../img/create_model/bcl_window.png" class="img-responsive" alt="BCL Window">
+
+The components are designed to provide data to the energy modeler and simplify the process of gathering inputs. 
+
+Measures are scripts that can quickly alter your model or create different reports for viewing and checking your results. Learn more about measures in the ["About Measures"](../measures/AboutMeasures.md) section. Learn how to [write your own custom measures.](../measures/Measure-Writing-Guide.md)
 
 ## Using the Facility Tab to Inspect and Edit Your Model
 The Facility tab serves a number of functions. First, it allows you to see a hierarchical tree of your model. This tree can be 
@@ -278,7 +296,7 @@ You can also drill down to inspect individual surfaces or subsurfaces.
  
 You can view the Building object. This contains top level construction, schedule, or space type assignments, and sets the rotation for the building. 
 
-<img src="../..//create_model/facility.png" class="img-responsive" alt="Facility Tab">
+<img src="../../img/create_model/facility.png" class="img-responsive" alt="Facility Tab">
  
  *Above: An annotated screenshot of the facilities tab with space sort on.*
 
@@ -323,7 +341,7 @@ The controls view is only available for the air loops. With an air loop selected
 
 In this view you can edit the time of operation, night cycle, supply air temperature, and mechanical ventilation.
 
-  ![HVAC Control](img/create_model/hvac_controls.png "Air Loop Control View") 
+  ![HVAC Control](../../img/create_model/hvac_control.png "Air Loop Control View") 
   
 ## Return and Supply Plenums
 To add supply and return plenum zones:
@@ -340,8 +358,12 @@ Shared plenums will be colored the same and will match the color selected for th
   
 ## Radiant Systems
 ## Service Water Heating
-The first view into the HVAC tab will be the water mains editor, which shows as “Service Water” on loops pulldown list.Water enters the system at the right and leave at the Sewer on the left. One or more water use connections can be added in the middle. 
-
+The first view into the HVAC tab will be the water mains editor, which shows as “Service Water” on loops pulldown list.
+
+Water enters the system at the right and leave at the Sewer on the left. One or more water use connections can be added in the middle. 
+
+
+
 ![Water1](../../img/create_model/water1.png "Water Connections")
 
 *Above: Service hot water interface.*
@@ -352,7 +374,13 @@ Clicking a water use connection will take you to a model window where you can ad
 
 *Above: Service hot water interface.*
 
-Dragging a water use equipment object into the water use connection will create an instance of that definition. Much like lights, people and other loads, there is a fractional schedule to define usage patterns. Optionally you can associate the equipment with a space. There is no direct energy use to the space, but heat from the equipment will be added to the space.The equipment can be anything that uses water, hot or cold. The definition contains a peak flow rate and a target temperature schedule. Hot and cold water will mix to reach the target temperature at the fixture.Click the water main, sewer, or makeup water to go back to the water mains editor. If you have a plant loop associated with the water use connection the “Loop” button will take you to the loop.
+Dragging a water use equipment object into the water use connection will create an instance of that definition. Much like lights, people and other loads, there is a fractional schedule to define usage patterns. 
+
+Optionally you can associate the equipment with a space. There is no direct energy use to the space, but heat from the equipment will be added to the space.
+
+The equipment can be anything that uses water, hot or cold. The definition contains a peak flow rate and a target temperature schedule. Hot and cold water will mix to reach the target temperature at the fixture.
+
+Click the water main, sewer, or makeup water to go back to the water mains editor. If you have a plant loop associated with the water use connection the “Loop” button will take you to the loop.
 
  
 <iframe width="640" height="360" src="http://www.youtube.com/embed/jUJhi6YH51E?rel=0&start=0&end=486&autoplay=0" frameborder="0" allowfullscreen></iframe>
@@ -361,12 +389,37 @@ Dragging a water use equipment object into the water use connection will create 
   
   
 ## Refrigeration
-The refrigeration system interface can be accessed by selecting refrigeration from the drop down menu.To add a refrigeration system select one from the library and add drag it to the drop zone.Click on the zoom button by the name of the refrigeration system to go to a view of that system, add components from the library.
- <img src="../../img/create_model/refrig_1.png" class="img-responsive" alt="Add Refrigeration">*Above: Adding refigeration systems to your model under the HVAC tab.*
+The refrigeration system interface can be accessed by selecting refrigeration from the drop down menu.
 
-This zoomed in view provides the layout view of one refrigeration rack. You may add cases by dragging them on to the “Drag and Drop Cases” drop zone.Drop zones are provided to accommodate systems with a mechanical subcooler and an Suction Line Heat Exchanger (SLHX).The small arrow at the bottom of the refrigeration case summary will open and expanded view of cases. Each case can be selected and edited in the Edit panel on the right.Cascade systems can be added by dragging the from “My Model” or the “Library.”
- <img src="../../img/create_model/refrig_2.png" class="img-responsive" alt="Zoom in Refrigeraion">*Above: Adding refigeration systems to your model under the HVAC tab.*An alternate view of the refrigeration systems is provided by the grid view. The refrigeration grid view provides a method for entering case settings in a spreadsheet style. Cases can be added, assigned to racks, and edited in this view.There are two major divisions, one for Display Cases and another for Walk-ins. Under each division a drop box is available to add new cases. There are also buttons to move through the case settings and enter the data on each case. Create your own custom view of this information by checking the box on the right of the column header. Checked columns will show up under the Custom button.
- <img src="../../img/create_model/refrig_3.png" class="img-responsive" alt="Refrigeraion Grid">*Above: Grid view available for refrigeration.*  
+To add a refrigeration system select one from the library and add drag it to the drop zone.
+
+Click on the zoom button by the name of the refrigeration system to go to a view of that system, add components from the library.
+
+ <img src="../../img/create_model/refrig_1.png" class="img-responsive" alt="Add Refrigeration">
+
+*Above: Adding refigeration systems to your model under the HVAC tab.*
+
+This zoomed in view provides the layout view of one refrigeration rack. You may add cases by dragging them on to the “Drag and Drop Cases” drop zone.
+
+Drop zones are provided to accommodate systems with a mechanical subcooler and an Suction Line Heat Exchanger (SLHX).
+
+The small arrow at the bottom of the refrigeration case summary will open and expanded view of cases. Each case can be selected and edited in the Edit panel on the right.
+
+Cascade systems can be added by dragging the from “My Model” or the “Library.”
+
+ <img src="../../img/create_model/refrig_2.png" class="img-responsive" alt="Zoom in Refrigeraion">
+
+*Above: Adding refigeration systems to your model under the HVAC tab.*
+
+An alternate view of the refrigeration systems is provided by the grid view. The refrigeration grid view provides a method for entering case settings in a spreadsheet style. Cases can be added, assigned to racks, and edited in this view.
+
+There are two major divisions, one for Display Cases and another for Walk-ins. Under each division a drop box is available to add new cases. There are also buttons to move through the case settings and enter the data on each case. 
+
+Create your own custom view of this information by checking the box on the right of the column header. Checked columns will show up under the Custom button.
+
+ <img src="../../img/create_model/refrig_3.png" class="img-responsive" alt="Refrigeraion Grid">
+
+*Above: Grid view available for refrigeration.*  
 
 <iframe width="640" height="360" src="http://www.youtube.com/embed/iHTDiHif2_U?rel=0&start=&end=&autoplay=0" frameborder="0" allowfullscreen></iframe>
 
@@ -374,7 +427,9 @@ This zoomed in view provides the layout view of one refrigeration rack. You may 
 
 <iframe width="640" height="360" src="http://www.youtube.com/embed/NRo9k0Rjfw8?rel=0&start=57&end=166&autoplay=0" frameborder="0" allowfullscreen></iframe>
 
-*Above: The video above provides an introduction to the grid view provide for refrigeration.*In the initial release of the grid view, no provision was made to delete a case or walk in; they must be must be assigned to a rack, and deleted from the layout view.  This functionality omission will be corrected in the next OpenStudio release.
+*Above: The video above provides an introduction to the grid view provide for refrigeration.*
+
+In the initial release of the grid view, no provision was made to delete a case or walk in; they must be must be assigned to a rack, and deleted from the layout view.  This functionality omission will be corrected in the next OpenStudio release.
 
 
 ## VRF Systems
@@ -382,11 +437,20 @@ Variable refrigerant flow (VRF) systems can be added by dragging them onto the l
 
 The layout view provides a view of all the VRF systems in the model. The zoom icon by the name of the system will open a detailed view of that system. 
 
- <img src="../../img/create_model/vrf_1.png" class="img-responsive" alt="ZVRF Layout View">*Above: VRF system layout view.*
+
+ <img src="../../img/create_model/vrf_1.png" class="img-responsive" alt="ZVRF Layout View">
+
+*Above: VRF system layout view.*
 
 To create your VRF system, start by dropping a terminal from the “Library” onto the drop zone. Then add thermal zones from “My Model.” When a thermal zone is added a new VRF terminal will automatically be created.
 
- <img src="../../img/create_model/vrf_2.png" class="img-responsive" alt="Layout View Zoom">*Above: VRF system layout view.*Set the terminal settings by selecting the terminal and editing in the “Edit” tab on the right.More than one terminal can connect with the same zone. Just drag the zone to the drop area again to add another connection.
+ <img src="../../img/create_model/vrf_2.png" class="img-responsive" alt="Layout View Zoom">
+
+*Above: VRF system layout view.*
+
+Set the terminal settings by selecting the terminal and editing in the “Edit” tab on the right.
+
+More than one terminal can connect with the same zone. Just drag the zone to the drop area again to add another connection.
 
 <iframe width="640" height="360" src="http://www.youtube.com/embed/NRo9k0Rjfw8?rel=0&start=170&end=242&autoplay=0" frameborder="0" allowfullscreen></iframe>
 
@@ -395,12 +459,24 @@ To create your VRF system, start by dropping a terminal from the “Library” o
 ## Apply Measures Now
 Now in addition to manually creating and editing your model, you can apply measures to your model live in the application. This allows you to customize your experience to your desired workflow. Measures can manipulate any part of the model and can also be used as a diagnostic tool.
 
- <img src="../../img/create_model/apply_now.png" class="img-responsive" alt="Select from Menu">*Above: Select the apply measures now from the the menu.*
-
- <img src="../../img/create_model/apply_now_1.png" class="img-responsive" alt="Select the measure to apply.">*Above: Select measure.*
-
- <img src="../../img/create_model/apply_now_2.png" class="img-responsive" alt="Accept changes or cancel.">*Above: Select measure.*
-The video below demonstrates the use of this feature.
+ <img src="../../img/create_model/apply_now.png" class="img-responsive" alt="Select from Menu">
+
+*Above: Select the apply measures now from the the menu.*
+
+
+
+ <img src="../../img/create_model/apply_now_1.png" class="img-responsive" alt="Select the measure to apply.">
+
+*Above: Select measure.*
+
+
+
+ <img src="../../img/create_model/apply_now_2.png" class="img-responsive" alt="Accept changes or cancel.">
+
+*Above: Select measure.*
+
+
+The video below demonstrates the use of this feature.
 
 <iframe width="640" height="360" src="http://www.youtube.com/embed/9-saA4x07eQ?rel=0&start=0&end=579&autoplay=0" frameborder="0" allowfullscreen></iframe>
   
@@ -409,13 +485,22 @@ Now in addition to manually creating and editing your model, you can apply measu
 ##  Using the Measures Tab
 The measures selected on this tab will not run until you run your model, unlike the "Apply Measures Now" option. 
 
-Download additional measures from [The Building Component Library (BCL)](http://bcl.nrel.gov/). Drag measures from the library to the central panel.There are three types of measures: 
-1. __OpenStudio Measures__ are run on the OSM model before it is converted to an IDF. 2. __EnergyPlus Measures__ can be run on the IDF file before it is handed to EnergyPlus.3. __Reporting Measures__ produce reports to chart results, provide quality assurance, and quality control on models.
+Download additional measures from [The Building Component Library (BCL)](http://bcl.nrel.gov/). Drag measures from the library to the central panel.
+
+There are three types of measures: 
+
+1. __OpenStudio Measures__ are run on the OSM model before it is converted to an IDF. 
+2. __EnergyPlus Measures__ can be run on the IDF file before it is handed to EnergyPlus.
+3. __Reporting Measures__ produce reports to chart results, provide quality assurance, and quality control on models.
+
 
 ![Measures Tab](../../img/create_model/measures.png "Measures Tab")
 
 *Above: Select measures from the library and drag them into the correct drop zone.*
-By selecting the measure and selecting the right “Edit” tab, inputs for the measure can be entered and adjusted.![Measures Tab2](../../img/create_model/measures1.png "Measure Fields")
+
+By selecting the measure and selecting the right “Edit” tab, inputs for the measure can be entered and adjusted.
+
+![Measures Tab2](../../img/create_model/measures1.png "Measure Fields")
 
 *Above: Select a measure and edit the fields in the right panel.*
   

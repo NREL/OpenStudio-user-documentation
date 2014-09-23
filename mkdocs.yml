@@ -3,7 +3,7 @@ site_name: OpenStudio User Docs
 pages:
 - [index.md]
 - [getting_started/Features.md, Getting Started, Current Features]
-- [getting_started/Roadmap.md, Getting Started, Features Roadmap]
+- [getting_started/roadmap.md, Getting Started, Features Roadmap]
 - [getting_started/GettingStarted.md, Getting Started, Installation and Introductory Tutorial]
 - [next_steps/sketchup_plugin_interface.md, References & Tutorials, SketchUp Plug-in Interface]
 - [next_steps/openstudio_application_interface.md, References & Tutorials, OpenStudio Application Interface]
