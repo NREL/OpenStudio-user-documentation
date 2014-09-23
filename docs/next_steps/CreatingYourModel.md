@@ -321,27 +321,50 @@ HVAC systems, thermostat, and humidistat settings can be viewed and edited on th
 ## Air, Plant and Zone HVAC Systems
 The HVAC Systems tab is used to create, inspect, and edit air and plant loops. The green “+” at the top left is used to add template or empty loops, and the “x” next to it will delete them. The pull-down at the top right of the body is to select which loop to is displayed.
 
-When adding a template loop, there are four images within the icon. From left to right they represent the type of cooling, heating, fan, and terminal unit, in the template. The example below has cold and hot water, a variable speed fan, and a hot water reheat terminal unit.
+Hit the green plus button to add a loop. 
 
 <img src="../../img/create_model/add_hvac.png" class="img-responsive" alt="Add from Template">
  
  *Above: Add an HVAC system to your model.*
+ 
+When adding a template loop, there are four images within the icon. From left to right they represent the type of cooling, heating, fan, and terminal unit, in the template. The example below has cold and hot water, a variable speed fan, and a hot water reheat terminal unit.
+
+![HVAC Add](../../img/create_model/system_templates.png "System Icons")
 
 The top half of the loop is for supply-side objects, the bottom half is for demand. Thermal Zones and other objects can be dragged onto drop zones or nodes. Optionally you can select the splitter or mixer to bring up a list of Thermal Zones, checking the ones you want included in the loop.
 
 <img src="../../img/create_model/hvac_about.png" class="img-responsive" alt="HVAC Interface>
  
  *Above: Annotated view of the HVAC interface.*
-
-<iframe width="640" height="360" src="http://www.youtube.com/embed/DKLnZaNoRX0?rel=0&start=0&end=322&autoplay=0" frameborder="0" allowfullscreen></iframe>
-  
-  *Above: The layout view of HVAC systems is shown above.*
+ 
   
 The controls view is only available for the air loops. With an air loop selected in “Layout” view you can switched to “Control” view.
 
 In this view you can edit the time of operation, night cycle, supply air temperature, and mechanical ventilation.
 
-  ![HVAC Control](../../img/create_model/hvac_control.png "Air Loop Control View") 
+  ![HVAC Control](../../img/create_model/hvac_control.png "Air Loop Control View")
+  
+  *Above: Control view only available for air loops.* 
+  
+In the __cold water loop__ the cooling coil that had been a supply side object on the air loop is now a demand object.The supply side has a pump and a water cooled chiller. The adiabatic pipes are a necessary part of the loop. There are no attributes to set for the pipes.You can click on the chiller to drill down further to the condenser loop. Or you can click on the cooling coil to go back to the air loop.
+  
+  <a href="../../img/create_model/chilled_water.png" target="_blank">
+<img src="../../img/create_model/thumb_chilled_water.png" alt="Resized JPEG graphic" title="Click to view" border="2" width="750" height="542" hspace="10" /></a>
+
+*Above: Click image to view a larger version.*
+
+In the __condenser loop__ the chiller that had been a supply side object on the cold water loop is now a demand object.The supply side has a pump and a cooling tower. As with the cold water loop the adiabatic pipes are a necessary part of the loop. You can click on the chiller to drill to go back to the cold water loop.
+
+  <a href="../../img/create_model/condensor_water.png" target="_blank">
+<img src="../../img/create_model/thumb_condensor_water.png" alt="Resized JPEG graphic" title="Click to view" border="2" width="750" height="554" hspace="10" /></a>
+
+*Above: Click image to view a larger version.*
+
+In the __hot water loop__ the heating coil that had been a supply side object on the air loop is now a demand object.The supply side has a pump and a boiler. The boiler can use a variety of fuels. The adiabatic pipes are a necessary part of the loop. There are no attributes to set for the pipes.You can click on the heating coil to go back to the air loop.The heating coils without links represent the reheat terminals for each connected thermal zone.
+  <a href="../../img/create_model/hot_water.png" target="_blank">
+<img src="../../img/create_model/thumb_hot_water.png" alt="Resized JPEG graphic" title="Click to view" border="2" width="750" height="555" hspace="10" /></a>
+
+*Above: Click image to view a larger version.*
   
 ## Return and Supply Plenums
 To add supply and return plenum zones:
@@ -351,6 +374,11 @@ To add supply and return plenum zones:
 3. Choose a plenum from the drop down list or create a new plenum zone but selecting the green add button. The zones available to be plenums will be selectable in a dialog. Create new zones for plenums in the Thermal Zones tab on the left.
 
 Shared plenums will be colored the same and will match the color selected for the plenum zone on the Thermal Zones tab.
+
+  <a href="../../img/create_model/plenum_noted.png" target="_blank">
+<img src="../../img/create_model/thumb_plenum_noted.png" alt="Resized JPEG graphic" title="Click to view" border="2" width="750" height="531" hspace="10" /></a>
+
+*Above: Click image to view a larger version.*
   
   <iframe width="640" height="360" src="http://www.youtube.com/embed/n_u3WT2tX1Y?rel=0&start=&end=&autoplay=0" frameborder="0" allowfullscreen></iframe>
   
@@ -362,17 +390,17 @@ The first view into the HVAC tab will be the water mains editor, which shows as 
 
 Water enters the system at the right and leave at the Sewer on the left. One or more water use connections can be added in the middle. 
 
+  <a href="../../img/create_model/water1_large.png" target="_blank">
+<img src="../../img/create_model/water1.png" alt="Resized JPEG graphic" title="Click to view" border="2" width="750" height="531" hspace="10" /></a>
 
-
-![Water1](../../img/create_model/water1.png "Water Connections")
-
-*Above: Service hot water interface.*
+*Above: Service hot water interface. Click the image to view larger version.*
 
 Clicking a water use connection will take you to a model window where you can add water use equipment.
 
-![Water2](../../img/create_model/water2.png "Water Connections Second Level")
+  <a href="../../img/create_model/water2_large.png" target="_blank">
+<img src="../../img/create_model/water2.png" alt="Resized JPEG graphic" title="Click to view" border="2" width="750" height="531" hspace="10" /></a>
 
-*Above: Service hot water interface.*
+*Above: Service hot water interface.Click the image to view larger version.*
 
 Dragging a water use equipment object into the water use connection will create an instance of that definition. Much like lights, people and other loads, there is a fractional schedule to define usage patterns. 
 
@@ -395,9 +423,10 @@ To add a refrigeration system select one from the library and add drag it to the
 
 Click on the zoom button by the name of the refrigeration system to go to a view of that system, add components from the library.
 
- <img src="../../img/create_model/refrig_1.png" class="img-responsive" alt="Add Refrigeration">
+ <a href="../../img/create_model/refrig_1_large.png" target="_blank">
+<img src="../../img/create_model/refrig_1.png" alt="Resized JPEG graphic" title="Click to view" border="2" width="775" height="" hspace="10" /></a>
 
-*Above: Adding refigeration systems to your model under the HVAC tab.*
+*Above: Adding refigeration systems to your model under the HVAC tab. Click image to view a larger version.*
 
 This zoomed in view provides the layout view of one refrigeration rack. You may add cases by dragging them on to the “Drag and Drop Cases” drop zone.
 
@@ -407,9 +436,10 @@ The small arrow at the bottom of the refrigeration case summary will open and ex
 
 Cascade systems can be added by dragging the from “My Model” or the “Library.”
 
- <img src="../../img/create_model/refrig_2.png" class="img-responsive" alt="Zoom in Refrigeraion">
+ <a href="../../img/create_model/refrig_2_large.png" target="_blank">
+<img src="../../img/create_model/refrig_2.png" alt="Resized JPEG graphic" title="Click to view" border="2" width="775" height="" hspace="10" /></a>
 
-*Above: Adding refigeration systems to your model under the HVAC tab.*
+*Above: Single refrigeration system view. Click image to view a larger version.*
 
 An alternate view of the refrigeration systems is provided by the grid view. The refrigeration grid view provides a method for entering case settings in a spreadsheet style. Cases can be added, assigned to racks, and edited in this view.
 
@@ -417,9 +447,10 @@ There are two major divisions, one for Display Cases and another for Walk-ins. U
 
 Create your own custom view of this information by checking the box on the right of the column header. Checked columns will show up under the Custom button.
 
- <img src="../../img/create_model/refrig_3.png" class="img-responsive" alt="Refrigeraion Grid">
+  <a href="../../img/create_model/refrig_grid_large.png" target="_blank">
+<img src="../../img/create_model/refrig_grid_small.png" alt="Resized JPEG graphic" title="Click to view" border="2" width="750" height="687" hspace="10" /></a>
 
-*Above: Grid view available for refrigeration.*  
+*Above: Click image to view a larger version.*
 
 <iframe width="640" height="360" src="http://www.youtube.com/embed/iHTDiHif2_U?rel=0&start=&end=&autoplay=0" frameborder="0" allowfullscreen></iframe>
 
@@ -437,16 +468,17 @@ Variable refrigerant flow (VRF) systems can be added by dragging them onto the l
 
 The layout view provides a view of all the VRF systems in the model. The zoom icon by the name of the system will open a detailed view of that system. 
 
+  <a href="../../img/create_model/vrf_layout_large.png" target="_blank">
+<img src="../../img/create_model/vrf_1.png" alt="Resized JPEG graphic" title="Click to view" border="2" width="750" height="" hspace="10" /></a>
 
- <img src="../../img/create_model/vrf_1.png" class="img-responsive" alt="ZVRF Layout View">
-
-*Above: VRF system layout view.*
+*Above: VRF system layout view. Click image to view a larger version.*
 
 To create your VRF system, start by dropping a terminal from the “Library” onto the drop zone. Then add thermal zones from “My Model.” When a thermal zone is added a new VRF terminal will automatically be created.
 
- <img src="../../img/create_model/vrf_2.png" class="img-responsive" alt="Layout View Zoom">
+   <a href="../../img/create_model/vrf_zoom_large.png" target="_blank">
+<img src="../../img/create_model/vrf_2.png" alt="Resized JPEG graphic" title="Click to view" border="2" width="750" height="" hspace="10" /></a>
 
-*Above: VRF system layout view.*
+*Above: VRF system single system layout view. Click image to view a larger version.*
 
 Set the terminal settings by selecting the terminal and editing in the “Edit” tab on the right.
 
