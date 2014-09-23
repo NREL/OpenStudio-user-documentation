@@ -4,7 +4,7 @@
 
 <p>The building envelope is created using the SketchUp OpenStudio Plug-in. Refer to the section on [the SketchUp Plug-in Interface Section](sketchup_plugin_interface.md) to learn more about the interface and toolbars for the plug-in.</p>
 ------ 
-__Choosing a template__  
+### Choosing a template  
 The New OpenStudio Model From Template (![New OpenStudio Model](../../img/plugin_reference_guide/os_new.png "New OpenStudio Model")) tool is represented by this icon in the toolbar. Templates contain data for constructions, loads, and schedules for four vintages across all U.S. climate zones. Templates do not contain any geometry.
  
  <iframe width="640" height="360" src="http://www.youtube.com/embed/wzzY_W2WELo?rel=0&start=0&end=43&autoplay=0" frameborder="0" allowfullscreen></iframe>
@@ -30,7 +30,8 @@ Climate Zones:1 - 8
 ![Choose Climate](../../img/create_model/climate_zones.png "Climate Zone Map")
 
 ------
-__Creating and Customizing the Envelope__  
+
+### Creating and Customizing the Envelope  
 
 Drawing a floor plan in SketchUp and extruding up from floor plan using the "The Space Diagram" tool(![New OpenStudio Model](../../img/plugin_reference_guide/extrude.png "New OpenStudio Model")) is one way to create your envelope. The video below demonstrates this workflow. 
 
@@ -45,7 +46,7 @@ After defining the building envelope, you use the Surface Matching tool to set t
 
 ------ 
  
-__Fenestration__
+### Fenestration
 There are many ways to add windows to your building envelope.
 
 * Use the "Project Loose Geometry" tool for adding window.
@@ -64,7 +65,7 @@ There are many ways to add windows to your building envelope.
 
 ------
 
-__Defining Conditions for Heat Transfer Through Surfaces__
+### Defining Conditions for Heat Transfer Through Surfaces
 
 * Choose the "Render by Boundary Condition" (![Render by Boundary](../../img/plugin_reference_guide/render_boundry.png "Render Boundary Condition")) setting.
 * Check your model to make sure the boundary settings are correct. Blue indicates exterior surfaces, green indicate interior walls, and brown indicates floors. You can use the SketchUp "Section Plane" tool to view a cross section of the model and see interior surfaces.
@@ -76,15 +77,15 @@ __Defining Conditions for Heat Transfer Through Surfaces__
   *Above: Surface Matching dialog shown.*
   
 ------
-__Air Walls__
+### Air Walls
 
 ------
 
-__Interior Partition Groups__
+### Interior Partition Groups
 
 ------
 
-__Site Shading__
+### Site Shading
 
 * To create a shading group use the "New Shading Group" (![New Shading Surface Group](../../img/plugin_reference_guide/NewShading-24.png "New Shading Shading")). The new group looks like a transparent purple box. Double click on box to enter the group and draw the shading surface.
  ![Surface Shading Group](../../img/create_model/shading_group.png "Surface Shading Group")
@@ -108,21 +109,24 @@ __Building Rotation__
 
 ------
 ## Schedules
-__Year Settings__
+### Year Settings
 The Year Settings subtab lets you set the day of the week the 
 simulation should start. Define using Calendar Year or First Day Of Year buttons and pull-downs.
 
 The tab can also be used to configure and turn Daylight Savings Time on and off.
 
-__Inspecting and Adjusting Schedule Sets__
+------
+
+### Inspecting and Adjusting Schedule Sets
 A Schedule Set is a collection of schedules for building activities or elements.
 
 A schedule set can be applied to an entire building, a story, a space type, or an individual space.
 
 This subtab has two kinds of drop zones. You can drop schedule sets from My Model or Library into the bottom of the left pane, or you can drop individual schedules into the drop zones in the main body.
 
+------
 
-__Inspecting and Editing Ruleset Schedules__
+### Inspecting and Editing Ruleset Schedules
 This tab is a visual editor for Ruleset Schedules. As the name implies, a schedule consists of a series of rules. Each rule or profile can be applied for a specific date range and for specific days of the week.
 
 If two rules appear on the same day, the one with a higher priority is used. You can use the rule colors to visually scan the entire year in the calendar on the right of the body to see what rule is applied for a specific day.
@@ -148,7 +152,9 @@ The lower profile view is a navigation for when you are zoomed to 15-minute or 1
   * Compact
   
 ## Constructions
-__Construction Sets__
+------
+
+### Construction Sets
 A Construction Set object is structured very much like the Schedule Set. It can contain constructions for different surface types and boundary conditions.
 
 A construction set can be applied to an entire building, a story, a space type, or an individual space.
@@ -159,13 +165,17 @@ Construction sets do not have to be complete sets. For example, you can have a c
    
   *Above: This video shows you how to obtain construction and material objects from the Building Component Library and load them into your current model.*
 
-__Constructions__
+------
+
+### Constructions
 
 The Constructions subtab lists construction objects that are in your model. You can drag additional constructions here from the library. Constructions download using the Online BCL window will appear in the library with a “BCL” flag.
 
 A construction consists of one or more material layers. You can add materials by dragging them from My Model or the Library to the drop zone. You can only add new materials to the bottom which represents the inside of the wall. You can delete any material by clicking the “x” next to the name.
 
-__Materials__
+------
+
+### Materials
 
 Constructions are made of one or more layers of materials. The 
 Materials subtab lets you inspect and edit those materials. 
@@ -268,6 +278,8 @@ The video below shows how to work with space types in the Plug-in.
   * Space Infiltration Effective Leakage Areas
   * Internal Load Instances-->
   
+------ 
+  
 ## Downloading Components and Measures from the Building Component Library (BCL)
 In the OpenStudio Application you can download items directly from the BCL by going to the "Components & Measures" menu and choosing "Find Measures" or "Find Components." The your API key is available by registering on the [BCL site](https://bcl.nrel.gov/) and copying it from your account page.
 
@@ -276,6 +288,8 @@ In the OpenStudio Application you can download items directly from the BCL by go
 The components are designed to provide data to the energy modeler and simplify the process of gathering inputs. 
 
 Measures are scripts that can quickly alter your model or create different reports for viewing and checking your results. Learn more about measures in the ["About Measures"](../measures/AboutMeasures.md) section. Learn how to [write your own custom measures.](../measures/Measure-Writing-Guide.md)
+
+------ 
 
 ## Using the Facility Tab to Inspect and Edit Your Model
 The Facility tab serves a number of functions. First, it allows you to see a hierarchical tree of your model. This tree can be 
@@ -306,6 +320,8 @@ Spaces and surfaces cannot be deleted or created. You need to use the SketchUp P
 <img src="../../img/create_model/facility_subsurface.png" class="img-responsive" alt="Facility Tab Sub-surface">
  
  *Above: Selecting and editing a sub-surface.*
+ 
+ ------ 
 
 ## Thermal Zones
 Setting up thermal zones in the SketchUp Plug-in is shown below.
@@ -317,6 +333,8 @@ Setting up thermal zones in the SketchUp Plug-in is shown below.
 HVAC systems, thermostat, and humidistat settings can be viewed and edited on this tab. Select the "Cooling Sizing Parameters" or "Heating Sizing Parameters" to edit those by thermal zone.
 
 <img src="../../img/create_model/heat_sizing.png" class="img-responsive" alt="Thermal Zone Sizing Parameters">
+
+------ 
 
 ## Air, Plant and Zone HVAC Systems
 The HVAC Systems tab is used to create, inspect, and edit air and plant loops. The green “+” at the top left is used to add template or empty loops, and the “x” next to it will delete them. The pull-down at the top right of the body is to select which loop to is displayed.
@@ -346,6 +364,8 @@ In this view you can edit the time of operation, night cycle, supply air tempera
   
   *Above: Control view only available for air loops.* 
   
+  ------ 
+  
 ### Cold Water Loop  
 In the cold water loop the cooling coil that had been a supply side object on the air loop is now a demand object.The supply side has a pump and a water cooled chiller. The adiabatic pipes are a necessary part of the loop. There are no attributes to set for the pipes.You can click on the chiller to drill down further to the condenser loop. Or you can click on the cooling coil to go back to the air loop.
   
@@ -353,6 +373,8 @@ In the cold water loop the cooling coil that had been a supply side object on th
 <img src="../../img/create_model/thumb_chilled_water.png" alt="Resized JPEG graphic" title="Click to view" border="2" width="750" height="542" hspace="10" /></a>
 
 *Above: Click image to view a larger version.*
+
+------ 
 
 ### Condenser Loop
 In the condenser loop the chiller that had been a supply side object on the cold water loop is now a demand object.The supply side has a pump and a cooling tower. As with the cold water loop the adiabatic pipes are a necessary part of the loop. You can click on the chiller to drill to go back to the cold water loop.
@@ -368,6 +390,8 @@ In the hot water loop the heating coil that had been a supply side object on the
 <img src="../../img/create_model/thumb_hot_water.png" alt="Resized JPEG graphic" title="Click to view" border="2" width="750" height="555" hspace="10" /></a>
 
 *Above: Click image to view a larger version.*
+
+------ 
   
 ## Return and Supply Plenums
 To add supply and return plenum zones:
@@ -387,7 +411,12 @@ Shared plenums will be colored the same and will match the color selected for th
   
   *Above: This video demonstrates how to create the geometry for and then hook up supply and return air plenums.*
   
+  ------ 
+  
 ## Radiant Systems
+
+------ 
+
 ## Service Water Heating
 The first view into the HVAC tab will be the water mains editor, which shows as “Service Water” on loops pulldown list.
 
@@ -417,6 +446,8 @@ Click the water main, sewer, or makeup water to go back to the water mains edito
 <iframe width="640" height="360" src="http://www.youtube.com/embed/jUJhi6YH51E?rel=0&start=0&end=486&autoplay=0" frameborder="0" allowfullscreen></iframe>
   
   *Above: This video shows you how create models using service hot water. This includes water heaters, water use connections, water use equipment, and other associated objects.*
+  
+------ 
   
   
 ## Refrigeration
@@ -465,6 +496,7 @@ Create your own custom view of this information by checking the box on the right
 
 In the initial release of the grid view, no provision was made to delete a case or walk in; they must be must be assigned to a rack, and deleted from the layout view.  This functionality omission will be corrected in the next OpenStudio release.
 
+------ 
 
 ## VRF Systems
 Variable refrigerant flow (VRF) systems can be added by dragging them onto the large drop zone from the library.
@@ -490,6 +522,8 @@ More than one terminal can connect with the same zone. Just drag the zone to the
 <iframe width="640" height="360" src="http://www.youtube.com/embed/NRo9k0Rjfw8?rel=0&start=170&end=242&autoplay=0" frameborder="0" allowfullscreen></iframe>
 
 *Above: This video provides a brief overview of the VRF interface.*
+
+------ 
 
 ## Apply Measures Now
 Now in addition to manually creating and editing your model, you can apply measures to your model live in the application. This allows you to customize your experience to your desired workflow. Measures can manipulate any part of the model and can also be used as a diagnostic tool.
@@ -517,6 +551,8 @@ The video below demonstrates the use of this feature.
   
   *Above: Use the Apply Measures Now function.*
   
+------ 
+  
 ##  Using the Measures Tab
 The measures selected on this tab will not run until you run your model, unlike the "Apply Measures Now" option. 
 
@@ -538,6 +574,8 @@ By selecting the measure and selecting the right “Edit” tab, inputs for the 
 ![Measures Tab2](../../img/create_model/measures1.png "Measure Fields")
 
 *Above: Select a measure and edit the fields in the right panel.*
+
+------ 
   
 ## Lifecycle Costs
 The most basic parameters needed for a life cycle cost analysis are the analysis period length and the discount rate. A longer analysis period accumulates more energy cost savings than a shorter period; giving energy conservation measures a better pay back relative to their initial costs. A higher discount rate devalues future energy cost savings relative to money spent on capital improvements in the present; giving energy conservation measures a lower pay back relative to their initial costs. This tab allows users to set these parameters on their baseline model.
@@ -548,6 +586,8 @@ With measures, downloaded from BCL,  life cycle costs for different design alter
 ![Measures Tab3](../../img/create_model/lifecycle_costs.png "Measure Costs")
 
 *Above: Add costs to measures to calculate and compare different options. This can also be done in the ParametricAnalysisTool.*
+
+------ 
 
 
 ## Calibration with Utility Bills
