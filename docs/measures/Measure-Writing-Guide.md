@@ -43,7 +43,7 @@
 6. `NEW` [Output Attributes](#6-output-attributes)
 
 ## 1. What is a Measure?
-In building design and retrofits, the terms *energy efficiency measure* (EEM) and *energy conservation measure* (ECM) refer to a specific change that can be made to a building to reduce its energy use.  As an example, imagine that you are retrofitting an existing building and one of the ECMs suggested by the design team is "Add insulation to the roof."
+In building design and retrofits, the terms *energy efficiency measure* (EEM) and *energy conservation measure* (ECM) refer to a specific change that can be made to a building to reduce its energy use.  As an example, if you are retrofitting an existing building and one of the ECMs suggested by the design team is "Add insulation to the roof," then you can run that measure to quickly alter your model.
 
 In OpenStudio, a measure is a set of programmatic instructions (such as an Excel macro) that makes changes to an energy model to reflect its application.  In our example, the measure might find the default construction used by roof surfaces in the model, copy this construction and add insulation material to the outside, then set the new construction with added insulation as the default construction to be used by roof surfaces.  Measures can be written specifically for an individual model, or they may be more generic to work on a wide range of possible models.
 
@@ -93,7 +93,7 @@ end
 ```
 
 ### 3.3. Arguments
-Inside this method, you describe which, if any, input parameters the user should be able to change before running the measure.  In the example "Add insulation to the roof", you might want the user to specify the thickness of the insulation along with the R-value per inch of thickness.  When a measure has input parameters that the user can edit, the user can change the input values to perform a parametric analysis to answer "what-if" questions and find the best option.
+Inside this method, you describe which, if any, input parameters the user should be able to change before running the measure.  In the example "Add insulation to the roof," you might want the user to specify the thickness of the insulation along with the R-value per inch of thickness.  When a measure has input parameters that the user can edit, the user can change the input values to perform a parametric analysis to answer "what-if" questions and find the best option.
 
 The arguments section opens and closes as follows:
 
@@ -189,7 +189,7 @@ def run(model, runner, user_arguments)
 end
 ```
 
-The super line is boilerplate; it is necessary, but you do not need to worry about how it works. Just before the end to the run method there should be a "return true" line.  If a measure does not return "true", OpenStudio will think that the measure failed and the simulation workflow will stop.
+The super line is boilerplate; it is necessary, but you do not need to worry about how it works. Just before the end to the run method there should be a "return true" line.  If a measure does not return "true," OpenStudio will think that the measure failed and the simulation workflow will stop.
 
 #### 3.4.1. Input Validation
 When the user applies a measure to a model, he or she first fills in the inputs the author exposed in the arguments method.  Because the user may have entered bad values, you first need to validate the input in the run method.  For example, the user may have indicated that the building is 1 ft long instead of 100 ft long, or the input asked for an integer and the user input 2.5.  Regardless, you must check the inputs before moving forward.
@@ -295,7 +295,7 @@ In the online [documentation](http://openstudio.nrel.gov/sites/openstudio.nrel.g
 
 boost::optional<[ThermalZone](http://openstudio.nrel.gov/sites/openstudio.nrel.gov/files/nv_data/cpp_documentation_it/model/html/classopenstudio_1_1model_1_1_thermal_zone.html)> openstudio::model::Space::thermalZone( ) const
 
-This indicates that calling "space.thermalZone" returns a "boost::optional< [ThermalZone](http://openstudio.nrel.gov/sites/openstudio.nrel.gov/files/nv_data/cpp_documentation_it/model/html/classopenstudio_1_1model_1_1_thermal_zone.html) >" result.  Ignoring the syntax for now, the main point is that the method returns an "OptionalThermalZone" and not a "ThermalZone".  To learn whether this "OptionalThermalZone" points to an actual "ThermalZone", you use the ".empty?" method.  If the result is empty, it does not point to an actual "ThermalZone" and cannot be used.  In the example if "space.thermalZone.empty?" is true, the space has no thermal zone. Calling "get" on an empty "OptionalSomething" will crash the measure.
+This indicates that calling "space.thermalZone" returns a "boost::optional< [ThermalZone](http://openstudio.nrel.gov/sites/openstudio.nrel.gov/files/nv_data/cpp_documentation_it/model/html/classopenstudio_1_1model_1_1_thermal_zone.html) >" result.  Ignoring the syntax for now, the main point is that the method returns an "OptionalThermalZone" and not a "ThermalZone".  To learn whether this "OptionalThermalZone" points to an actual "ThermalZone," you use the ".empty?" method.  If the result is empty, it does not point to an actual "ThermalZone" and cannot be used.  In the example if "space.thermalZone.empty?" is true, the space has no thermal zone. Calling "get" on an empty "OptionalSomething" will crash the measure.
 
 If an "OptionalSomething" is not empty, it points to an actual "Something" and can be used.  To get the actual "Something" that the variable points to, you can use the ".get" method.  In the example if "space.thermalZone.empty?" is not true, you can use ".get" to get a reference to the space's thermal zone.
 

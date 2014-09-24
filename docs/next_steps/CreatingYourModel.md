@@ -69,7 +69,7 @@ There are many ways to add windows to your building envelope.
 
 * Choose the "Render by Boundary Condition" (![Render by Boundary](../../img/plugin_reference_guide/render_boundry.png "Render Boundary Condition")) setting.
 * Check your model to make sure the boundary settings are correct. Blue indicates exterior surfaces, green indicate interior walls, and brown indicates floors. You can use the SketchUp "Section Plane" tool to view a cross section of the model and see interior surfaces.
-* If you have green surfaces on the outside of the mode, use the Surface Matching (![Surface Matching](../../img/plugin_reference_guide/SurfaceMatchingSelected-24.png "Surface Matching Tool")) tool to open up the dialog and hit "Interset the Entire Model." This will not work if you are inside a single space when you run it. 
+* If you have green surfaces on the outside of the mode, use the Surface Matching (![Surface Matching](../../img/plugin_reference_guide/SurfaceMatchingSelected-24.png "Surface Matching Tool")) tool to open up the dialog and hit "Intersect the Entire Model." This will not work if you are inside a single space when you run it. 
 * Then select "Match the Entire Model" to correct the model. 
 
   ![Surface Matching](../../img/create_model/surface_matching.png "Match Surface")  
@@ -110,8 +110,7 @@ __Building Rotation__
 ------
 ## Schedules
 ### Year Settings
-The Year Settings subtab lets you set the day of the week the 
-simulation should start. Define using Calendar Year or First Day Of Year buttons and pull-downs.
+The Year Settings subtab lets you set the day of the week the simulation should start. Define using Calendar Year or First Day Of Year buttons and pull-downs.
 
 The tab can also be used to configure and turn Daylight Savings Time on and off.
 
@@ -122,7 +121,7 @@ A Schedule Set is a collection of schedules for building activities or elements.
 
 A schedule set can be applied to an entire building, a story, a space type, or an individual space.
 
-This subtab has two kinds of drop zones. You can drop schedule sets from My Model or Library into the bottom of the left pane, or you can drop individual schedules into the drop zones in the main body.
+This sub-tab has two kinds of drop zones. You can drop schedule sets from My Model or Library into the bottom of the left pane, or you can drop individual schedules into the drop zones in the main body.
 
 ------
 
@@ -169,7 +168,7 @@ Construction sets do not have to be complete sets. For example, you can have a c
 
 ### Constructions
 
-The Constructions subtab lists construction objects that are in your model. You can drag additional constructions here from the library. Constructions download using the Online BCL window will appear in the library with a “BCL” flag.
+The Constructions sub-tab lists construction objects that are in your model. You can drag additional constructions here from the library. Constructions download using the Online BCL window will appear in the library with a “BCL” flag.
 
 A construction consists of one or more material layers. You can add materials by dragging them from My Model or the Library to the drop zone. You can only add new materials to the bottom which represents the inside of the wall. You can delete any material by clicking the “x” next to the name.
 
@@ -209,7 +208,7 @@ The types of loads that can be added in this tab follow:
 * Internal Mass
 * Water Use Equipment
 
-Internal mass is different than the other loads in that it does not use fuel; rather, it stores heat and then dissipates the heat over time. The inputs require a surface area 
+Internal mass is different from the other loads in that it does not use fuel; rather, it stores heat and then dissipates the heat over time. The inputs require a surface area 
 assigned to a construction object.
 
 Water Use Equipment is also unique in that it takes schedules, and is not part of a space type. Water Use Equipment is applied in the HVAC Systems Tab.
@@ -292,8 +291,7 @@ Measures are scripts that can quickly alter your model or create different repor
 ------ 
 
 ## Using the Facility Tab to Inspect and Edit Your Model
-The Facility tab serves a number of functions. First, it allows you to see a hierarchical tree of your model. This tree can be 
-organized by building story, thermal zone, or as shown here, space type.
+The Facility tab serves a number of functions. First, it allows you to see a hierarchical tree of your model. This tree can be organized by building story, thermal zone, or as shown here, space type.
 
 If you are viewing the tree by space type, and a space does not have a space type assigned, it would appear under Unassigned Space Type. A similar pattern is followed for Thermal Zone and Story.
 
@@ -337,7 +335,7 @@ HVAC systems, thermostat, and humidistat settings can be viewed and edited on th
 ------ 
 
 ## Air, Plant and Zone HVAC Systems
-The HVAC Systems tab is used to create, inspect, and edit air and plant loops. The green “+” at the top left is used to add template or empty loops, and the “x” next to it will delete them. The pull-down at the top right of the body is to select which loop to is displayed.
+The HVAC Systems tab is used to create, inspect, and edit air and plant loops. The green “+” at the top left is used to add template or empty loops, and the “x” next to it will delete them. The pull-down at the top right of the body is to select which loop to displayed.
 
 Hit the green plus button to add a loop. 
 
@@ -460,11 +458,11 @@ Click on the zoom button by the name of the refrigeration system to go to a view
  <a href="../../img/create_model/refrig_1_large.png" target="_blank">
 <img src="../../img/create_model/refrig_1.png" alt="Resized JPEG graphic" title="Click to view" border="2" width="775" height="" hspace="10" /></a>
 
-*Above: Adding refigeration systems to your model under the HVAC tab. Click image to view a larger version.*
+*Above: Adding refrigeration systems to your model under the HVAC tab. Click image to view a larger version.*
 
 This zoomed in view provides the layout view of one refrigeration rack. You may add cases by dragging them on to the “Drag and Drop Cases” drop zone.
 
-Drop zones are provided to accommodate systems with a mechanical subcooler and an Suction Line Heat Exchanger (SLHX).
+Drop zones are provided to accommodate systems with a mechanical sub-cooler and a Suction Line Heat Exchanger (SLHX).
 
 The small arrow at the bottom of the refrigeration case summary will open and expanded view of cases. Each case can be selected and edited in the Edit panel on the right.
 
@@ -530,7 +528,7 @@ Now in addition to manually creating and editing your model, you can apply measu
 
  <img src="../../img/create_model/apply_now.png" class="img-responsive" alt="Select from Menu">
 
-*Above: Select the apply measures now from the the menu.*
+*Above: Select the apply measures now from the menu.*
 
 
 

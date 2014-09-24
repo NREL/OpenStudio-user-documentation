@@ -1,7 +1,7 @@
 # Running Simulation & Viewing Results
 
 ## Weather File and Design Days
-Add weather files in the OpenStudio application under the Site tab (first vertical tab) on the left and the "Weather File & Design Days" subl-tab accross the top. You can [download weather files](http://apps1.eere.energy.gov/buildings/energyplus/) on the EnergyPlus site.
+Add weather files in the OpenStudio application under the Site tab (first vertical tab) on the left and the "Weather File & Design Days" sub-tab across the top. You can [download weather files](http://apps1.eere.energy.gov/buildings/energyplus/) on the EnergyPlus site.
 
 ![Weather File](../../img/run/weather_ddy.png "Add Weather File and Design Day")
 <p>*Above: Screenshot of browsing for design day file.*</p>
@@ -77,7 +77,7 @@ To generate a line plot from the table view, simply double-click on a row. In th
 
 For example, double-clicking the first row in the table view generates the Electricity:Facility line plot.
 
-The tree view is used to view the EnergyPlus results in a hierarchical format. The hierarchy is based on the the environmental period, the timestep, the variable name and the key name (when available). The tree view supports multiple selections using the "Ctrl" or "Command" and "Shift" keys with the mouse. The context menu provides the same functionality as the table view.
+The tree view is used to view the EnergyPlus results in a hierarchical format. The hierarchy is based on the environmental period, the timestep, the variable name and the key name (when available). The tree view supports multiple selections using the "Ctrl" or "Command" and "Shift" keys with the mouse. The context menu provides the same functionality as the table view.
 
 ![RV Line Plot](../../img/run/line_graph1.png "ResultsViewer Line Plot")
 
@@ -108,7 +108,7 @@ For example, to display simulation days 3 through 5 in the example line plot:
 2. Set the "Span" to one simulation day using either the slider or spin box arrows or entering 1 into the spin box.
 3. 
 The data is displayed from simulation day 3 through simulation day 5:
-![Center and Span](../../img/run/center_span.png "Center and Span Contols")
+![Center and Span](../../img/run/center_span.png "Center and Span Controls")
 
 The data can now be viewed two simulation days at a time by sliding the "Center" slider with the mouse:
 ![Center and Span on 2 Days](../../img/run/center_span2.png "Center and Span for 2 Days")

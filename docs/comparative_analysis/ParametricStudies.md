@@ -3,7 +3,7 @@
 ___________________
 
 ## Creating a Project
-The [ParametricAnalysisTool Quick Start Guide (PDF)](../../img/pdfs/PAT-Quick_Start_Guide_1.4.0.pdf) provides an introduction to the interface and workflow for creating multiple design alternative from a seed model. 
+The [ParametricAnalysisTool Quick Start Guide (PDF)](../../img/pdfs/PAT-Quick_Start_Guide.pdf) provides an introduction to the interface and workflow for creating multiple design alternative from a seed model. 
 
 When you first open PAT you will see the screen below. It shows the workflow:
 
@@ -16,7 +16,7 @@ When you first open PAT you will see the screen below. It shows the workflow:
 
 *Above: This is the opening screen for PAT. It gives you an overview of the workflow.*
 
-You can move through the four verticle tabs on the leftworkflow by working in order from top to bottom.
+You can move through the four vertical tabs on the left navigation by working in order from top to bottom.
 
 To Create a project use the menu item File/New Project
 

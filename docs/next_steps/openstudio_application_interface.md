@@ -65,7 +65,7 @@ Earlier releases have included a grid view for the refrigeration section in the 
 
 Select the check box in the top of the column if you want to view that column in the "Custom" category. 
 
-Drag components and schedules into the grid view. Most items on the grid can be inspected in the right panel "Edit" tab, except schedules. To edit or view schedules go to the schedules tab. Use the delect in the "Edit" panel to remove a component from the grid.
+Drag components and schedules into the grid view. Most items on the grid can be inspected in the right panel "Edit" tab, except schedules. To edit or view schedules go to the schedules tab. Use the delete in the "Edit" panel to remove a component from the grid.
 
 Click on the color box on the "General" button to change the rendering color of the space type. This will change the rendering color in the SketchUp Plug-in as well.
 
@@ -95,8 +95,7 @@ If you launch the OpenStudio application from the SketchUp Plug-in, your open fi
 
 ## Preferences Menu
 
-The Units menu lets you switch between SI and IP units. This affects both input fields and output data on the results tab. It does not currently affect standard EnergyPlus output files.The SketchUp Plug-in has access to this as well under “Plugins/OpenStudio/Preferences”.Scan for Tools will look for Radiance, Ruby, and EnergyPlus installations. If you install those 
-applications Prior to installing OpenStudio this shouldn’t be necessary.
+The Units menu lets you switch between SI and IP units. This affects both input fields and output data on the results tab. It does not currently affect standard EnergyPlus output files.The SketchUp Plug-in has access to this as well under “Plugins/OpenStudio/Preferences”.Scan for Tools will look for Radiance, Ruby, and EnergyPlus installations. If you install those applications Prior to installing OpenStudio this shouldn’t be necessary.
 
 ![Preferences Menu](../../img/os_interface/prefer_menu.png "Preferences Menu")
 

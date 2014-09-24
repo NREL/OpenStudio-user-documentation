@@ -27,7 +27,7 @@
 * PAT extensions for Optimization - Some functionality already available in OS Server as of 1.2
 * OpenStudio support for EMS objects and graphical controls specification
 * More EEM, QA/QC, and Reporting Measures in BCL
-* Potential Multilanguage support for Measures
+* Potential Multi language support for Measures
 * Support for additional (simpler) geometry editing alternatives
 * Automated calibration of models to hourly data
 * Improved/expanded documentation for applications and SDK

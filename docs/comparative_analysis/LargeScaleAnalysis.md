@@ -1,5 +1,8 @@
 ## Large-Scale Analysis
 ###About
+The ParametricAnalysisTool (PAT) now exports a spreadsheet format compatible with the OpenStudio-analysis-spreadsheet project for running large parametric analyses using cloud resources.
+
+Go to the Github repository for information and code for the analysis spreadsheet.](https://github.com/NREL/OpenStudio-analysis-spreadsheet) There are instructions and examples on the GitHub site.
 
 ![Analysis Workflow](../../img/large_scale/cloud_run_process_diagram.png "Analysis Workflow")
 
@@ -13,6 +16,6 @@ Read the paper on the development of this process, [SCALING BUILDING ENERGY MODE
 
 ### Spreadsheet
 
-[Go to the Github repository for the analysis spreadsheet.](https://github.com/NREL/OpenStudio-analysis-spreadsheet)
+
   
 

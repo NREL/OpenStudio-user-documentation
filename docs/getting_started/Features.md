@@ -1,6 +1,7 @@
 
 
 ## What is New in OpenStudio 1.5.0?
+
 ### Grid View for Thermal Zones and Space Types
 View and edit your thermal zones and space types in a grid view. See all your thermal zones at once and compare settings. 
 

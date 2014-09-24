@@ -9,7 +9,7 @@ OpenStudio is supported on Windows 7 – 8.1, OS X 10.8 – 10.9, and Ubuntu 12.
 <li> After you log in you can click the link to access the page to "Download Older Versions of Energy Plus". Choose the appropriate version of EnergyPlus 8.1 for your computer.</li>
 <li> Download and follow the instructions. OpenStudio will work with 32 or 64bit EnergyPlus installers.</li>
 </ul>
-<li>The OpenStudio SketchUp Plug-in requires [Sketchup 8.0 or SketchUp 2013][SketchUp Download] (not available for Linux).</li>
+<li>The OpenStudio SketchUp Plug-in requires [SketchUp 8.0 or SketchUp 2013][SketchUp Download] (not available for Linux).</li>
 The OpenStudio SketchUp Plug-in is not yet compatible with SketchUp 2014. Create an OpenStudio account, then download and install OpenStudio.
 [SketchUp Download]: http://www.sketchup.com/download/all
 </li>
@@ -46,7 +46,7 @@ __Register the Key Through the OpenStudio Application__ open the menu "Component
 * This [OpenStudio Quick Start Guide (PDF)](../../img/pdfs/openstudio_interface_quickstart.pdf) provides an introduction to the interface for the Plug-in and the OpenStudio application. It also provides guidance on the basic workflow. Checkout the [Introductory Tutorial](#introductory-tutorial) Below to get started.
 
 ## Quick Start Guide to the ParametricAnalysisTool (PAT)
-* This [ParametricAnalysisTool Quick Start Guide (PDF)](../../img/pdfs/PAT-Quick_Start_Guide_1.4.0.pdf) and the [ParametricAnalysisTool section](../comparative_analysis/ParametricStudies.md) provide an introduction to the interface and workflow for creating multiple design alternative from a seed model. 
+* This [ParametricAnalysisTool Quick Start Guide (PDF)](../../img/pdfs/PAT-Quick_Start_Guide.pdf) and the [ParametricAnalysisTool section](../comparative_analysis/ParametricStudies.md) provide an introduction to the interface and workflow for creating multiple design alternative from a seed model. 
 
 ## Introductory Tutorial
 
@@ -106,7 +106,7 @@ Service Hot Water
 * Running a Simulation
 * Viewing Simulation Results
 -->  
-## Software Licence Description and Terms
+## Software License Description and Terms
 * OpenStudio is licensed under the Lesser General Public License (LGPL), and is free for use and development. Visit the LGPL license web page for details on the software development kit terms of use.
 
  
