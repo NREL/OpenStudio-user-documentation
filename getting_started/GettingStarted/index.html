@@ -59,7 +59,7 @@
                         </li>
                     
                         <li >
-                            <a href="../Roadmap/">Features Roadmap</a>
+                            <a href="../roadmap/">Features Roadmap</a>
                         </li>
                     
                         <li class="active">
@@ -172,7 +172,7 @@
             <ul class="nav navbar-nav navbar-right">
                 
                 <li >
-                    <a rel="next" href="../Roadmap/">
+                    <a rel="next" href="../roadmap/">
                         <i class="fa fa-arrow-left"></i> Previous
                     </a>
                 </li>
@@ -203,7 +203,7 @@
         
             <li><a href="#introductory-tutorial">Introductory Tutorial</a></li>
         
-            <li><a href="#software-licence-description-and-terms">Software Licence Description and Terms</a></li>
+            <li><a href="#software-license-description-and-terms">Software License Description and Terms</a></li>
         
     
     </ul>
@@ -216,11 +216,11 @@
 <ol>
 <li><a href="http://apps1.eere.energy.gov/buildings/energyplus/">Download and install EnergyPlus 8.1.</a>
 <ul>
-<li> <a href="http://apps1.eere.energy.gov/buildings/energyplus/register.cfm&lt;/li">Create an EnergyPlus account</a> if you don't have one and then login.
+<li> Create an EnergyPlus account, if you don't have one and then login.</li>
 <li> After you log in you can click the link to access the page to "Download Older Versions of Energy Plus". Choose the appropriate version of EnergyPlus 8.1 for your computer.</li>
 <li> Download and follow the instructions. OpenStudio will work with 32 or 64bit EnergyPlus installers.</li>
 </ul>
-<li>The OpenStudio SketchUp Plug-in requires <a href="http://www.sketchup.com/download/all">Sketchup 8.0 or SketchUp 2013</a> (not available for Linux).</li>
+<li>The OpenStudio SketchUp Plug-in requires <a href="http://www.sketchup.com/download/all">SketchUp 8.0 or SketchUp 2013</a> (not available for Linux).</li>
 The OpenStudio SketchUp Plug-in is not yet compatible with SketchUp 2014. Create an OpenStudio account, then download and install OpenStudio.
 </li>
 <li>Setup a <a href="http://bcl.nrel.gov">Building Component Library (BCL)</a> account to access online building components and measures.
@@ -231,29 +231,27 @@ View instructions on how to setup your account and configure the key in the "Con
 <p>For Radiance integration, <a href="https://github.com/NREL/Radiance">download and install Radiance</a>.Learn more about using Radiance in the "Creating Your Model" section.</p>
 <p>If you plan to use the OpenStudio SDK Ruby bindings via command prompt on Windows, download and extract ruby.zip to C:\Ruby (or other desired location), and add C:\Ruby\bin to the PATH environment variable.</p></p>
 <h2 id="connecting-with-the-building-component-library">Connecting with the Building Component Library</h2>
-<p>OpenStudio 0.8.0 expands on previous integration with the the Building Component Library (BCL). BCL content can now be accessed from within the OpenStudio SketchUp Plug-in and from the standalone OpenStudio application. To take advantage of this integration, you will need to follow the steps outlined here to request a BCL key. You will then need to register the key with OpenStudio through the SketchUp Plug-in or the OpenStudio application. You can select one of two places to enter the key, which will be shared across OpenStudio applications. The key will be maintained when you upgrade to a new version of OpenStudio.</p>
+<p>BCL content can now be accessed from within the OpenStudio SketchUp Plug-in and from the standalone OpenStudio application. To take advantage of this integration, you will need to follow the steps outlined here to request a BCL key.</p>
 <ol>
-<li>If you already have a BCL account, log in and go to step 3. If you do not already have a BCL account, go to <a href="https://bcl.nrel.gov/user/register">register at BCL</a> to create a new account. This account is not associated with your OpenStudio account. It can have a different user name, email address, and password. </li>
-<li>After you click "Create new account," you are taken back to the BCL home page, but are not yet logged in. A message should tell you that instructions were sent to our e-mail address.Follow the instructions from the email to complete your registration, and then lo gin.</li>
+<li>If you already have a BCL account, log in and go to step 3. If you do not already have a BCL account, go to <a href="https://bcl.nrel.gov/user/register">register at BCL</a> to create a new account.  </li>
+<li>After you click "Create new account," you are taken back to the BCL home page. Follow the instructions from the email sent to you upon registration and then lo gin.</li>
 <li>Click on the "My Dashboard" near the top right of the website.</li>
-<li>Copy the text after <strong>"APIv1.1 key:"</strong> then paste the key into the SketchUp Plug-in, the OpenStudio application, or the Parametric Analysis Tool (PAT). See numbers 6 and 7 below for application specific instructions.</li>
-<li>You only need to configure the key in one place and it will be used globally throughout the OpenStudio tools. Additionally this key will be maintained when you install updates to OpenStudio.</li>
-<li>Registering the Key Through the OpenStudio SketchUp Plug-in
-Go to the "Plugins" menu and then "OpenStudio User Scripts/Building Component Library/Setup BCL Key," enter your key, and click "OK."
-You may also use a script that requires a BCL key. If a key is not saved, it will prompt you to enter one.</li>
-<li>Registering the Key Through the OpenStudio Application.
-Under the "Online BCL" menu choose "Find Components" or "Find Measures", If a key is not already registered, it will prompt you for one. Paste or type in the key from the the BCL website. You have to do this only once.</li>
+<li>Copy the text after <strong>"APIv1.1 key:"</strong> then paste the key into the SketchUp Plug-in, the OpenStudio application, or the Parametric Analysis Tool (PAT). <strong>You only need to configure the key in one place and it will be used globally throughout the OpenStudio tools.</strong> Additionally this key will be maintained when you install updates to OpenStudio. Specific application instructions are below.</li>
 </ol>
+<p><img alt="Key Request" src="../../img/bcl_key_request.png" title="Key Dialog" /></p>
+<p><strong>Enter the Key Through the OpenStudio SketchUp Plug-in</strong> under the menu "Plugins/OpenStudio User Scripts/Building Component Library/Setup BCL Key" enter your key, and click "OK."</p>
+<p><strong>Or</strong></p>
+<p><strong>Register the Key Through the OpenStudio Application</strong> open the menu "Components &amp; Measures/Find Components" and if a key is not already registered, it will prompt you for one. </p>
 <!--## Video Overview (1-2 minutes)
 -->
 
 <h2 id="quick-start-guide-to-openstudio-modeling-tools">Quick Start Guide to OpenStudio Modeling Tools</h2>
 <ul>
-<li>This <a href="../../img/pdfs/openstudio_interface_quickstart_1.4.0.pdf">OpenStudio Quick Start Guide (PDF)</a> provides an introduction to the interface for the Plug-in and the OpenStudio application. It also provides guidance on the basic workflow.</li>
+<li>This <a href="../../img/pdfs/openstudio_interface_quickstart.pdf">OpenStudio Quick Start Guide (PDF)</a> provides an introduction to the interface for the Plug-in and the OpenStudio application. It also provides guidance on the basic workflow. Checkout the <a href="#introductory-tutorial">Introductory Tutorial</a> Below to get started.</li>
 </ul>
 <h2 id="quick-start-guide-to-the-parametricanalysistool-pat">Quick Start Guide to the ParametricAnalysisTool (PAT)</h2>
 <ul>
-<li>This <a href="../../img/pdfs/PAT-Quick_Start_Guide_1.4.0.pdf">ParametricAnalysisTool Quick Start Guide (PDF)</a> provides an introduction to the interface and workflow for creating multiple design alternative from a seed model. </li>
+<li>This <a href="../../img/pdfs/PAT-Quick_Start_Guide.pdf">ParametricAnalysisTool Quick Start Guide (PDF)</a> and the <a href="../../comparative_analysis/ParametricStudies/">ParametricAnalysisTool section</a> provide an introduction to the interface and workflow for creating multiple design alternative from a seed model. </li>
 </ul>
 <h2 id="introductory-tutorial">Introductory Tutorial</h2>
 <p>SketchUp Plug-in—Building Envelope</p>
@@ -299,7 +297,7 @@ Under the "Online BCL" menu choose "Find Components" or "Find Measures", If a ke
 * Viewing Simulation Results
 -->
 
-<h2 id="software-licence-description-and-terms">Software Licence Description and Terms</h2>
+<h2 id="software-license-description-and-terms">Software License Description and Terms</h2>
 <ul>
 <li>OpenStudio is licensed under the Lesser General Public License (LGPL), and is free for use and development. Visit the LGPL license web page for details on the software development kit terms of use.</li>
 </ul>

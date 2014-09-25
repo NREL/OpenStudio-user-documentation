@@ -59,7 +59,7 @@
                         </li>
                     
                         <li >
-                            <a href="../../getting_started/Roadmap/">Features Roadmap</a>
+                            <a href="../../getting_started/roadmap/">Features Roadmap</a>
                         </li>
                     
                         <li >
@@ -213,12 +213,10 @@
             <div class="col-md-9" role="main">
 
 <h2 id="the-sketchup-plug-in-interface">The SketchUp Plug-in Interface</h2>
-<p>This section provide the legend for toolbars and menus available tin the Plug-in. You may also find helpful information in the <a href="../img/pdfs/openstudio_interface_quickstart_1.4.0.pdf">OpenStudio Quick Start Guide (PDF)</a>.</p>
-<p><strong>Notes for New OpenStudio Users</strong></p>
-<p>If you are a new Google SketchUp user, you may want to read some SketchUp-specific documentation. We have provided a page with some relevant SketchUp links. Learning how to use SketchUp’s basic tools should give you what you need to start in OpenStudio. You mostly need the pencil tool, rectangle, push/pull tool, and orbit tool. You will also want to understand how SketchUp organizes geometry into groups, which form the basis for zones, shading surface groups, and interior partition surface groups in OpenStudio.</p>
-<p>Once you are familiar with SketchUp, the tutorials can help you become familiar with OpenStudio. The interfacce reference below is also informative, but may make more sense once you are more familiar with the Plug-in.</p>
+<p>This section provide the legend for toolbars and menus available tin the Plug-in. You may also find helpful information in the <a href="../img/pdfs/openstudio_interface_quickstart.pdf">OpenStudio Quick Start Guide (PDF)</a>.</p>
+<p><img alt="Toolbar OS Plugin" src="../../img/plugin_reference_guide/toolbars_os.png" title="Plug-in Toolbars" /></p>
 <h3 id="file-management">File Management</h3>
-<p>Tools in this set create, open, save, import, or export data to or from your model. Some have toolbar icons; some do not. These functions are are also located the OpenStudio Plug-in menu.
+<p>Tools in this set create, open, save, import, or export data to or from your model. Some have toolbar icons; some do not. These functions are also located the OpenStudio Plug-in menu.
 <table class="tablesorter table table-striped">
 <thead>
 <tr>
@@ -252,7 +250,7 @@ The benefit of having a link to a SketchUp file is to maintain a relationship wi
 <td align="left"></p>
 <h4 id="save-as-openstudio-model">Save As OpenStudio Model</h4>
 <p>Using this feature saves your OpenStudio Model as a new OSM file and updates the SketchUp file to link to the newly saved OSM file.</p>
-<p>When saving your OpenStudio model, make sure your file name ends with the ".osm" extension. If it does not have this exension, OpenStudio will not open the file. If you have files without this extension, you can manually rename them; they should open.</p>
+<p>When saving your OpenStudio model, make sure your file name ends with the ".osm" extension. If it does not have this extension, OpenStudio will not open the file. If you have files without this extension, you can manually rename them; they should open.</p>
 
 <p></td>
 </tr> 
@@ -286,7 +284,7 @@ You can access these features under the Plugins/OpenStudio menu or the File/Impo
 <h4 id="import-openstudio-model">Import OpenStudio Model</h4>
 <p>This tool can function similarly to the Open OpenStudio Model tool. If you import an entire model, your current model is closed and a new one loaded. When you import an OSM model and then save the OSM model, you will be prompted for a new file name. This prevents you from accidentally overwriting your original file.
 <br></br>
-The Import OpenStudio Model tool can also be used to import additional content into your model. In this import workflow your OSM model stays open and the import tool adds content from a previously saved OSM file (see the Import dialoag image above.) Content types that can be imported from an OSM file follow:
+The Import OpenStudio Model tool can also be used to import additional content into your model. In this import workflow your OSM model stays open and the import tool adds content from a previously saved OSM file (see the Import dialog image above.) Content types that can be imported from an OSM file follow:
 <p> - Constructions (including construction sets, constructions, and materials)</p>
 <p> - Schedules</p>
 <p> - Space loads</p>
@@ -323,7 +321,7 @@ The Import OpenStudio Model tool can also be used to import additional content i
 <td></td>
 <td align="left"> </p>
 <h4 id="export-untranslated-energyplus-idf">Export Untranslated EnergyPlus IDF</h4>
-<p>When an Idf file is imported into the SketchUp Plug-in, a translation between EnergyPlus Idf and OpenStudio Osm occurs.  OpenStudio does not yet support translation of all objects from EnergyPlus Idf to OpenStudio Osm. To support users with workflows that switch between Idf and Osm, the SketchUp Plug-in allows users to export Idf objects that were not translated during the import. These objects are written to a plain text Idf file so the user may then reintegrate these untranslated objects with the Idf produced by the OpenStudio Osm to EnergyPlus Idf translation.  After importing an EnergyPlus Idf, a prompt will alert the user if there are objects that could not be translated to OpenStudio Osm.</p>
+<p>When an IDF file is imported into the SketchUp Plug-in, a translation between EnergyPlus IDF and OpenStudio OSM occurs.  OpenStudio does not yet support translation of all objects from EnergyPlus IDFIDF to OpenStudio OSM. To support users with workflows that switch between IDF and Osm, the SketchUp Plug-in allows users to export IDF objects that were not translated during the import. These objects are written to a plain text Idf file so the user may then reintegrate these untranslated objects with the IDF produced by the OpenStudio OSM to EnergyPlus IDF translation.  After importing an EnergyPlus IDF, a prompt will alert the user if there are objects that could not be translated to OpenStudio Osm.</p>
 <p><img alt="Export Untranslated" src="../../img/plugin_reference_guide/width_untranslatedidf-importdialog.png" title="Export Untranslated IDF" />
 <p><em>Above: User Prompt on EnergyPlus Idf Import</em></p>
 <p>To save untranslated EnergyPlus Idf objects, select the menu item "Plugins-&gt;OpenStudio-&gt;Export-&gt;Export Untranslated EnergyPlus Idf".</p>
@@ -347,7 +345,7 @@ The Import OpenStudio Model tool can also be used to import additional content i
 </td>
 <td align="left"></p>
 <h4 id="new-space">New Space</h4>
-<p>You can use the New Space tool to create a new OpenStudio space. Activate the tool and then click where you want your zone origin to be. An Openstudio space is a top-level object in your SketchUp workspace. If you want to draw in the space, you first need to enter into the space through one of the following methods:
+<p>You can use the New Space tool to create a new OpenStudio space. Activate the tool and then click where you want your zone origin to be. An OpenStudio space is a top-level object in your SketchUp workspace. If you want to draw in the space, you first need to enter into the space through one of the following methods:
 <ul>
 <li>Double-click on the space while it is selected (this may be difficult if other model objects get in the way).</l1i>
 <li>While the space is selected, right-click and choose "edit group" from the contextual menu. (You can also go to the edit menu under "group" or "solid group.")
@@ -427,7 +425,7 @@ To associate a daylighting control object with a thermal zone, select the desire
 <p><img alt="Ill Map 2" src="../../img/plugin_reference_guide/width_Inspector_Illuminance_map.png" title="New Illuminance Map Inspector" />
 <p><em>Above: Screenshot of OpenStudio Inspector With an Illuminance Map Object Selected</em></p></p>
 <p>To associate an illuminance map with a thermal zone, select the desired thermal zone object and then choose an illuminance map object.</p>
-<p><img alt="Ill Map 3" src="../../img/plugin_reference_guide/width_Inspector_thermal_zone.png" title="New Illuminance Map and Thermal Zon" />
+<p><img alt="Ill Map 3" src="../../img/plugin_reference_guide/width_Inspector_thermal_zone.png" title="New Illuminance Map and Thermal Zone" />
 <p><em>Above: Screenshot of OpenStudio Inspector With a Thermal Zone Selected</em></p>
 </td>
 </tr>
@@ -513,7 +511,7 @@ Surfaces that are not horizontal will be ignored; surfaces with improper surface
 <p><em>Above: Screenshot of Project Loose Geometry Dialog Box</em></p></p>
 <p>The image below shows the resulting model after you have projected selected loose geometry. The loose geometry used for the projection operation will be moved to a layer in SketchUp named "OpenStudio - Loose Geometry". While the surfaces made in the spaces by the projection are saved in your OpenStudio Model (OSM file), the loose geometry is not saved in the OpenStudio Model. If you want to save this for future use, you can save the SketchUp file as well.</p>
 <p><img alt="Ill Map" src="../../img/plugin_reference_guide/width_SU_ProjectGeo_b.png" title="Projected Geometry" />
-<p><em>Above: Screenshot of model after Projecting Loose Geometry</em></p>
+<p><em>Above: Screenshot after Projecting Loose Geometry</em></p>
 </td>
 </tr>
 </tbody>
@@ -536,7 +534,7 @@ Surfaces that are not horizontal will be ignored; surfaces with improper surface
 <p>The Inspector Window is divided into three main areas:
 <ol>
   <li>The top left is the "Select Type" pane. This has a partial list of OpenStudio object types and identifies how many objects of a specific type are in your model.</li>
-<li>The bottom left pane is the "Select Object" pane. If you select a "Type" in the type pane, a list of objects of that type will be displayed in the "Select Object" pane. The objects listed in the "Select Object" pane have a number to indicate how many objects in the model refer to this object. Below the list are a plus button to create a new object of this type, a copy button to copy the selected object, a minus button to delete the selected object, and a purge button to purge unused objects of this type. For some object types one or more of these buttons may be disabled.</li>
+<li>The bottom left pane is the "Select Object" pane. If you select a "Type" in the type pane, a list of objects of that type will be displayed in the "Select Object" pane. The objects listed in the "Select Object" pane have a number to indicate how many objects in the model refer to this object. Below the list are several buttons. The plus button to create a new object of this type, a copy button to copy the selected object,a minus button to delete the selected object, and a purge button to purge unused objects of this type. For some object types one or more of these buttons may be disabled.</li> 
 <li>The third and last pane of the Inspector is the "Edit Object" pane at the right. This displays the fields for the currently selected object in the "Select Object" pane. Some fields accept a string; others are edited via a pull-down list. For some object types, some fields may be hidden from the Inspector or locked from editing. This is by design.</li>
 </ol></p>
 <p>OpenStudio 0.9.0 adds a render mode aware inspector. If you are in a render by class or render by boundary condition and use the SketchUp select tool to select a space, the OpenStudio space will be selected in the Inspector. If, however, you are in render by space type, thermal zone, or story mode, a space type, thermal zone, or story will be selected in the Inspector. This is assuming that the space is an assigned space type, thermal zone, or story. The construction render mode is similar, but you need to select a surface versus a space to select a construction object in the Inspector. Currently if you select a thermal zone, space type, or construction object in the Inspector, it will not make a selection in the SketchUp model that correlates to this object.</p>
@@ -552,7 +550,7 @@ Surfaces that are not horizontal will be ignored; surfaces with improper surface
 <td align="left"></p>
 <h4 id="surface-search">Surface Search</h4>
 <p>The OpenStudio Surface Search Tool enables you to search your model for surfaces with specific attributes. You can select the search results and visually isolate them by hiding all other surfaces. When you are finished, click "Unhide All" on the Surface Search Dialog to unhide the rest of the surfaces. Before searching on a large IDF, close SketchUp's Outliner Window to expedite the surface searching. While surfaces are hidden you can also use SketchUp's built-in "View Hidden Geometry" to quickly view all hidden surfaces.</p>
-<p>New to the Surface Search Tool with OpenStudio 0.5 and later is the ability to search based on Surface Orientation. You can set both "from" and "to" to a single value if you want to find surfaces that face a specific direction, or you can set unique values to show surfaces within a range of angles. The "Exclude Horizontal Surfaces" is generally intended to be used along with Surface Orientation search to hide surfaces with no azimuth. There are also check boxes to limit search results to nonconvex surfaces or to surfaces with more than a set number of vertices. Once your search is complete, the resulting surfaces are selected in SketchUp. You can use this selection for other operations or scripts.</p>
+<p>New to the Surface Search Tool with OpenStudio 0.5 and later is the ability to search based on Surface Orientation. You can set both "from" and "to" to a single value if you want to find surfaces that face a specific direction, or you can set unique values to show surfaces within a range of angles. The "Exclude Horizontal Surfaces" is generally intended to be used along with Surface Orientation search to hide surfaces with no azimuth. There are also check boxes to limit search results to non-convex surfaces or to surfaces with more than a set number of vertices. Once your search is complete, the resulting surfaces are selected in SketchUp. You can use this selection for other operations or scripts.</p>
 <p><img alt="Ill Map" src="../../img/plugin_reference_guide/SU_SurfaceSearch.png" title="Surface Search Screenshot" />
 <p><em>Above: Screenshot of Surface Search Dialog - OpenStudio 0.6.0</em></p>
 </td>
@@ -601,7 +599,7 @@ The same data are displayed while in Render by Boundary Condition mode</em></p><
 </td>
 <td align="left"></p>
 <h4 id="openstudio-errors-and-warnings">OpenStudio Errors and Warnings</h4>
-<p>The Input File Errors and Warnings dialog automatically opens when there is an error or warning when opening or importing a file. Many common geometry errors (upside-down floor or roof, inside-out window, noncoplanar surfaces, etc.) are fixed automatically when you open the input file. This dialog will also report unsupported IDF objects on import.</p>
+<p>The Input File Errors and Warnings dialog automatically opens when there is an error or warning when opening or importing a file. Many common geometry errors (upside-down floor or roof, inside-out window, non-coplanar surfaces, etc.) are fixed automatically when you open the input file. This dialog will also report unsupported IDF objects on import.</p>
 <p><img alt="Ill Map" src="../../img/plugin_reference_guide/error_02.png" title="Errors and Warnings" />
 <p><em>Above: Screenshot of Errors and Warnings Dialog Box</em></p>
 </td>
@@ -629,15 +627,15 @@ The same data are displayed while in Render by Boundary Condition mode</em></p><
 </td>
 </tr>
 <tr>
-<td><img alt="Render by Boundry Condition" src="../../img/plugin_reference_guide/render_boundry.png" title="Render by Boundry Condition" /></td>
+<td><img alt="Render by Boundary Condition" src="../../img/plugin_reference_guide/render_boundry.png" title="Render by Boundary Condition" /></td>
 <td align="left"></p>
 <h5 id="render-by-outside-boundary-condition">Render by Outside Boundary Condition</h5>
 <p>The OpenStudio Render by Outside Boundary Condition mode will render surfaces by their outside boundary conditions. Only space surfaces have boundary conditions, so only they will be rendered with a color. Shading and interior partition surfaces will be white. This is a good rendering mode to diagnose problems with your model. It provides a quick way to globally look at boundary conditions throughout your model. You never need to use the paint bucket tool in this render mode. In the screenshot below, a section cut has been drawn to reveal the inside of the model, making the boundary condition of surfaces easy to see.</p>
 <p>If you set a surface construction to "Air Boundary", it will be rendered as a translucent checkerboard pattern. This construction is intended to represent thermal zone boundaries that do not represent physical walls in the building.</p>
-<p><img alt="Ill Map" src="../../img/plugin_reference_guide/SU_Render_Boundary.png" title="Render by Boundry Condition Screenshot" />
+<p><img alt="Ill Map" src="../../img/plugin_reference_guide/SU_Render_Boundary.png" title="Render by Boundary Condition Screenshot" />
 <p><em>Above: Screenshot of Model in Render by Boundary Condition Mode</em></p></p>
 <p>The most common boundary conditions you will see are "Outdoors, Surface, and Ground", but there are actually 9 basic boundary modes, with a number of subsets within some conditions. For "Outdoors" there are also unique color variations to indicate if there is sun and or wind exposure. The following image shows the SketchUp materials for the various boundary conditions.</p>
-<p><img alt="Ill Map" src="../../img/plugin_reference_guide/tut_BoundaryColorWorksheet.png" title="Render by Boundry Condition Colors" />
+<p><img alt="Ill Map" src="../../img/plugin_reference_guide/tut_BoundaryColorWorksheet.png" title="Render by Boundary Condition Colors" />
 <p><em>Above: Render by Outside Boundary Condition Color Palette</em></p>
 </td>
 </tr>
@@ -761,14 +759,14 @@ The same data are displayed while in Render by Boundary Condition mode</em></p><
 <h5 id="preferences">Preferences</h5>
 <p>For information on the SketchUp Plug-in version go to "Plugins/OpenStudio/Preferences."
 <img alt="Ill Map" src="../../img/plugin_reference_guide/preferences.png" title="Preferences" />
-<p><em>Above: The Preferences dialog enables you to set options related to updates, new thermal zone creation, user scripts, text editor, template osm files, and the EnergyPlus engine.</em></p></p>
+<p><em>Above: The Preferences dialog enables you to set options related to updates, new thermal zone creation, user scripts, text editor, template OSM files, and the EnergyPlus engine.</em></p></p>
 <h5 id="check-for-update">Check for Update</h5>
 <p>Check to see if you are using the most current release of the OpenStudio Google SketchUp Plugin by going to "Plugins/OpenStudio/Check for Update."
 <img alt="Ill Map" src="../../img/plugin_reference_guide/updates.png" title="Update" />
 <p><em>Above: Screenshot of Update Dialog Box</em></p></p>
 <h3 id="helpful-sketchup-tools">Helpful SketchUp Tools</h3>
 <h4 id="hide-rest-of-model">Hide Rest of Model</h4>
-<p><img alt="Hide Rest" src="../../img/plugin_reference_guide/HideRest-24.png" title="Hide Rest of Model" /> This activates SketchUp's native view function to hide everything but your currently open group or component. Isolating your current zone make is much easier to work on interzone geometry.</p>
+<p><img alt="Hide Rest" src="../../img/plugin_reference_guide/HideRest-24.png" title="Hide Rest of Model" /> This activates SketchUp's native view function to hide everything but your currently open group or component. Isolating your current zone make is much easier to work on inter-zone geometry.</p>
 <p><img alt="Ill Map" src="../../img/plugin_reference_guide/ss_hiderest_01.png" title="Hide Rest 1" />
 <p><em>Above: Screenshot of model with rest of model visible</em></p></p>
 <p><img alt="Ill Map" src="../../img/plugin_reference_guide/ss_hiderest_02.png" title="Hide Rest 2" />
@@ -778,7 +776,7 @@ The same data are displayed while in Render by Boundary Condition mode</em></p><
 <p><img alt="Ill Map" src="../../img/plugin_reference_guide/width_ss_show_hidden.png" title="Hidden Geometry Screenshot" />
 <p><em>Above: Screenshot of model in with View Hidden Geometry active</em></p></p>
 <h4 id="view-model-in-x-ray-mode">View Model in X-Ray Mode</h4>
-<p><img alt="Hide Rest" src="../../img/plugin_reference_guide/tbRenderTransparentLarge.png" title="View Model in X-Ray Mode" />This activates SketchUp's native face style setting to to render all surfaces translucently. This allows you to quickly see internal model elements without having to create section cuts or hide parts of the model.</p>
+<p><img alt="Hide Rest" src="../../img/plugin_reference_guide/tbRenderTransparentLarge.png" title="View Model in X-Ray Mode" />This activates SketchUp's native face style setting to render all surfaces translucently. This allows you to quickly see internal model elements without having to create section cuts or hide parts of the model.</p>
 <p><img alt="Ill Map" src="../../img/plugin_reference_guide/width_ss_xray.png" title="X-Ray Mode Screenshot" />
 <p><em>Above: Screenshot of model with X-ray Rendering active</em></p></p>
 <h4 id="shadow-settings">Shadow Settings</h4>

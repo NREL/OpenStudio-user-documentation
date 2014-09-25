@@ -59,7 +59,7 @@
                         </li>
                     
                         <li >
-                            <a href="../../getting_started/Roadmap/">Features Roadmap</a>
+                            <a href="../../getting_started/roadmap/">Features Roadmap</a>
                         </li>
                     
                         <li >
@@ -195,8 +195,6 @@
         
             <li><a href="#overview">Overview</a></li>
         
-            <li><a href="#grid-view-thermal-zones-space-types-and-refrigeration">Grid View: Thermal Zones, Space Types, and Refrigeration</a></li>
-        
             <li><a href="#sub-tabs">Sub-tabs</a></li>
         
             <li><a href="#right-panel">Right Panel</a></li>
@@ -204,6 +202,8 @@
             <li><a href="#left-panel-bottom">Left Panel Bottom</a></li>
         
             <li><a href="#adding-objects-from-the-library">Adding Objects from the Library</a></li>
+        
+            <li><a href="#grid-view-thermal-zones-space-types-and-refrigeration">Grid View: Thermal Zones, Space Types, and Refrigeration</a></li>
         
             <li><a href="#file-menu">File Menu</a></li>
         
@@ -222,10 +222,8 @@
 <hr />
 <h2 id="overview">Overview</h2>
 <p>The tabs on the left that move vertically are ordered in a suggested workflow.
-<img alt="Drag-Drop" src="../../img/overview.png" title="Drag-and-drop constructions" /></p>
+<img alt="Drag-Drop" src="../../img/os_interface/overview.png" title="Drag-and-drop constructions" /></p>
 <p><em>Above: Overview of the OpenStudio Application Interface.</em></p>
-<hr />
-<h2 id="grid-view-thermal-zones-space-types-and-refrigeration">Grid View: Thermal Zones, Space Types, and Refrigeration</h2>
 <hr />
 <h2 id="sub-tabs">Sub-tabs</h2>
 <p>Sub-tabs are designed to move from more general on the left to more specific on the right. On the constructions tab the sub-tabs are "Construction Sets", "Constructions", and "Materials." If you are not building your own materials and constructions you may not need to go to the "Materials" sub-tab.</p>
@@ -261,19 +259,32 @@
 <p><img alt="Drag-and-drop service water" src="../../img/os_interface/drag_drop_water.png" title="Drag-and-drop service hot water" /></p>
 <p><em>Above: Drag-and-drop example on the HVAC service hot water.</em></p>
 <hr />
+<h2 id="grid-view-thermal-zones-space-types-and-refrigeration">Grid View: Thermal Zones, Space Types, and Refrigeration</h2>
+<p>Earlier releases have included a grid view for the refrigeration section in the HVAC tab. Now you can edit thermal zones and space types in a grid view. This makes it easier to view all your zones and space types at once and compare settings. By selecting the buttons across the top you can select the fields you would like to see and edit.</p>
+<p>Select the check box in the top of the column if you want to view that column in the "Custom" category. </p>
+<p>Drag components and schedules into the grid view. Most items on the grid can be inspected in the right panel "Edit" tab, except schedules. To edit or view schedules go to the schedules tab. Use the delete in the "Edit" panel to remove a component from the grid.</p>
+<p>Click on the color box on the "General" button to change the rendering color of the space type. This will change the rendering color in the SketchUp Plug-in as well.</p>
+<p><img alt="Grid 1" src="../../img/os_interface/space_type_grid1.png" title="Space Type Grid View" /></p>
+<p><em>Above: The grid view provides a spreadsheet style layout.</em></p>
+<p><img alt="Grid 1" src="../../img/os_interface/space_type_grid_loads.png" title="Space Type Loads" /></p>
+<p><em>Above: Hit the "Loads" button to edit and view loads by space type. Click on the name of a component and select the  "Edit" panel on the right to inspect and edit that item. You can edit the load definition in the example shown above.</em></p>
+<p><img alt="Grid 2" src="../../img/os_interface/thermal_zone_grid.png" title="Thermal Zone Grid View" /></p>
+<p><em>Above: The grid view of thermal zones.</em></p>
+<hr />
 <h2 id="file-menu">File Menu</h2>
 <p>If you launch the OpenStudio application from the SketchUp Plug-in, your open file will automatically open in the application. But to save the file or open a new file, select file open from the menu.</p>
 <p>When you save an OSM model in the OpenStudio Application or the SketchUp Plug-in a folder is saved next to the OSM file. This folder contains external resources such as the weather file, scripts, and simulation results.</p>
 <p>Load Library is also a very important feature. This allows you to load building component libraries for specific building types. These libraries are the same as those used in the SketchUp Plug-in templates.</p>
 <p><img alt="File Menu" src="../../img/os_interface/file_menu.png" title="File Menu" /></p>
 <p><em>Above: The file menu contains the open, save, revert, export, and import functions.</em></p>
+<hr />
 <h2 id="preferences-menu">Preferences Menu</h2>
 <p>The Units menu lets you switch between SI and IP units. This affects both input fields and output data on the results tab. It does not currently affect standard EnergyPlus output files.</p>
 <p>The SketchUp Plug-in has access to this as well under “Plugins/OpenStudio/Preferences”.</p>
-<p>Scan for Tools will look for Radiance, Ruby, and EnergyPlus installations. If you install those 
-applications Prior to installing OpenStudio this shouldn’t be necessary.</p>
+<p>Scan for Tools will look for Radiance, Ruby, and EnergyPlus installations. If you install those applications Prior to installing OpenStudio this shouldn’t be necessary.</p>
 <p><img alt="Preferences Menu" src="../../img/os_interface/prefer_menu.png" title="Preferences Menu" /></p>
 <p><em>Above: The file menu contains the open, save, revert, export, and import functions.</em></p>
+<hr />
 <h2 id="components-measures-menu">Components &amp; Measures Menu</h2>
 <p><img alt="Components &amp; Measures Menu" src="../../img/os_interface/measures_components_menu.png" title="Components and Measures Menu" /></p>
 <p><em>Above: This menu item allows you to run one measure on you model.</em></p>

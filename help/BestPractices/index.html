@@ -59,7 +59,7 @@
                         </li>
                     
                         <li >
-                            <a href="../../getting_started/Roadmap/">Features Roadmap</a>
+                            <a href="../../getting_started/roadmap/">Features Roadmap</a>
                         </li>
                     
                         <li >
@@ -191,25 +191,26 @@
             <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#general">General</a></li>
+        <li class="main active"><a href="#best-practices">Best Practices</a></li>
         
-    
-        <li class="main "><a href="#guidelines-for-building-surfaces">Guidelines for Building Surfaces</a></li>
+            <li><a href="#general">General</a></li>
         
-    
-        <li class="main "><a href="#guidelines-for-subsurfaces">Guidelines for Subsurfaces</a></li>
+            <li><a href="#guidelines-for-spaces">Guidelines for Spaces</a></li>
         
-    
-        <li class="main "><a href="#guidelines-for-interior-partition-surfaces">Guidelines for Interior Partition Surfaces</a></li>
+            <li><a href="#guidelines-for-building-surfaces">Guidelines for Building Surfaces</a></li>
         
-    
-        <li class="main "><a href="#guidelines-for-shading-surfaces">Guidelines for Shading Surfaces</a></li>
+            <li><a href="#guidelines-for-subsurfaces">Guidelines for Subsurfaces</a></li>
+        
+            <li><a href="#guidelines-for-interior-partition-surfaces">Guidelines for Interior Partition Surfaces</a></li>
+        
+            <li><a href="#guidelines-for-shading-surfaces">Guidelines for Shading Surfaces</a></li>
         
     
     </ul>
 </div></div>
             <div class="col-md-9" role="main">
 
+<h1 id="best-practices">Best Practices</h1>
 <h2 id="general">General</h2>
 <ul>
 <li>
@@ -228,6 +229,14 @@ To rename objects, go to the OpenStudio Inspector. Do not alter the names in Ske
 <li>
 <p>The OpenStudio Inspector works on one object at a time. If you select multiple objects or surfaces and make a change, it will affect only one object.</p>
 </li>
+</ul>
+<h2 id="guidelines-for-spaces">Guidelines for Spaces</h2>
+<ul>
+<li>Spaces should be top-level objects. Do not combine multiple spaces into a group or component, or put a space under another group.</li>
+<li>Name your spaces to make large models easier to manage and search. You may want to name your surfaces and subsurfaces.</li>
+<li>Geometry within a space should be convex.</li>
+<li>Ideally, spaces, not just space surfaces, are also convex.</li>
+<li>After creating a new space or shading group, double-click the group to edit it. The Outliner or a keyboard shortcut can also be used to edit a zone, shading group, or interior partition group.</li>
 </ul>
 <h2 id="guidelines-for-building-surfaces">Guidelines for Building Surfaces</h2>
 <ul>
