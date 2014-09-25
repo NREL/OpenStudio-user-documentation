@@ -564,34 +564,34 @@ end
 <p>Write a measure that will remove all lights currently in the "Enclosed Office" space type and replace them with new lights that have a lighting power density (LPD) of 10 W/m2.</p>
 <h5 id="figuring-out-the-modeling-approach">Figuring Out the Modeling Approach</h5>
 <p>The first thing to do is understand how the measure would be modeled in OpenStudio, and make a list of the objects involved.  The easiest way to do this is to open the OpenStudio Application and look through the GUI.  In this case, we'll start on the "Space Types" tab.</p>
-<p><img alt="guide image2" src="../../img/Measure-Writing-Guide/2.png" /></p>
+<p><img alt="guide image2" src="../../img/measure-writing-guide/2.png" /></p>
 <p>On this tab, first click on the first object (in the left column) is "Space Type."  Inside the Space Type, next to the lights icon, the term "Definition" appears.  The name of this particular definition is "ASHRAE_90.1-2004_Office_LPD."  To learn more about this definition, go to the "Loads" tab.</p>
-<p><img alt="Guide image3" src="../../img/Measure-Writing-Guide/3.png" /></p>
+<p><img alt="Guide image3" src="../../img/measure-writing-guide/3.png" /></p>
 <p>On the left side under the "Loads" tab is a category called "Lights Definitions."  Under this category is the definition "ASHRAE_90.1-2004_Office_LPD" that was referenced on the "Space Types" tab.  One field is titled "Energy Per Space Floor Area" with units of "W/ft2."  Although the GUIs may show IP units, the methods of the OpenStudio model are all written in SI units.</p>
 <h5 id="restating-the-measure-using-openstudio-terms">Restating the Measure Using OpenStudio Terms</h5>
 <p>Restate the measure using the names of the OpenStudio model objects found during the GUI exploration:</p>
 <p>Find the SpaceType called "Enclosed Office".  Replace any LightsDefinitions referenced by Lights in this SpaceType with a new LightsDefinition having "Energy Per Space Floor Area" = 10 W/m2.</p>
 <h5 id="finding-the-openstudio-methods-using-the-documentation">Finding the OpenStudio Methods: Using the Documentation</h5>
 <p>All the OpenStudio code documentation lives online at http://openstudio.nrel.gov/latest-c-sdk-documentation.  Open this website.</p>
-<p><img alt="Guide Methods" src="../../img/Measure-Writing-Guide/4.png" /></p>
+<p><img alt="Guide Methods" src="../../img/measure-writing-guide/4.png" /></p>
 <p>Click "<strong>C++ SDK Documentation</strong>" then on "<strong>Model</strong>".  You will see a Web page similar to the image shown below.</p>
-<p><img alt="Methods 2" src="../../img/Measure-Writing-Guide/5.png" /></p>
+<p><img alt="Methods 2" src="../../img/measure-writing-guide/5.png" /></p>
 <p>The left column is the navigator; the right pane shows the details of whatever is selected in the left column.</p>
 <p><img alt="Core" src="../../img/Measure-Writing-Guide/6.png" /></p>
 <p>In the left column, expand "<strong>Classes-&gt;Class List-&gt;openstudio-&gt;model</strong>."  This list of objects under "<strong>model</strong>" includes most of the information necessary to write measures.</p>
 <p>Click "<strong>SpaceType</strong>" under "<strong>model</strong>."</p>
-<p><img alt="click space" src="../../img/Measure-Writing-Guide/7.png" /></p>
+<p><img alt="click space" src="../../img/measure-writing-guide/7.png" /></p>
 <p>The right pane contains the documentation for the SpaceType class.  The methods are generally split into four categories: Constructors and Destructors, Getters, Setters, and Other. SpaceType is a base class of ResourceObject. You can look into the ResourceObject for additional methods beyond what is in the SpaceType documentation.</p>
 <h6 id="understanding-the-methods">Understanding the Methods</h6>
 <p>At first glance, the methods look cryptic, not at all like those shown in the examples, because this is the C++ documentation and the methods used are the Ruby translation of these same methods.  These methods can be decoded as follows:</p>
 <p>The name of the method:</p>
-<p><img alt="name of method" src="../../img/Measure-Writing-Guide/8.png" /></p>
+<p><img alt="name of method" src="../../img/measure-writing-guide/8.png" /></p>
 <p>The method names are generally descriptive enough that it is possible to understand what they do without any other information.  Here is how the method would be used in Ruby:</p>
 <pre class="prettyprint well"><code class="ruby">design_spec_oa = space_type.designSpecificationOutdoorAir
 </code></pre>
 
 <p>The type of object returned by the method:</p>
-<p><img alt="type of object" src="../../img/Measure-Writing-Guide/9.pn" />g</p>
+<p><img alt="type of object" src="../../img/measure-writing-guide/9.pn" />g</p>
 <p>Methods Return Types:</p>
 <p>bool = true/false</p>
 <p>double = a number</p>
@@ -616,7 +616,7 @@ end
 </code></pre>
 
 <p>Once you have found a SpaceType matching the name you are looking for, you need to get all the Lights in Spaces of this SpaceType.  The documentation for SpaceType includes a method to get a vector of all Lights in Spaces of this SpaceType:</p>
-<p><img alt="Space Matching" src="../../img/Measure-Writing-Guide/12.png" /></p>
+<p><img alt="Space Matching" src="../../img/measure-writing-guide/12.png" /></p>
 <p>You can extend the code to then loop over all these Lights:</p>
 <pre class="prettyprint well"><code class="ruby">space_types = model.getSpaceTypes
 space_types.each do |space_type|
@@ -629,7 +629,7 @@ end
 </code></pre>
 
 <p>Now you need to make a new LightsDefinition to replace the ones these Lights currently use.  The documentation for LightsDefinition shows a constructor that expects a Model as the input.</p>
-<p><img alt="Lights def" src="../../img/Measure-Writing-Guide/13.png" /></p>
+<p><img alt="Lights def" src="../../img/measure-writing-guide/13.png" /></p>
 <p>Constructors translated from C++ to Ruby take the following form.  The only difference may be which arguments the constructor requires; usually it is simply a Model.</p>
 <pre class="prettyprint well"><code class="ruby">new_thing = OpenStudio::Model::NewThingClassName.new(model)
 </code></pre>
@@ -643,7 +643,7 @@ new_lights_def.setName(&quot;10 W/m^2 Lights Definition&quot;)
 </code></pre>
 
 <p>Now that you have a new LightsDefinition object, you need to figure out how to replace the existing LightsDefinition with the new one.  The Lights documentation contains a method to set the lights definition.</p>
-<p><img alt="Replace Existing" src="../../img/Measure-Writing-Guide/15.png" /></p>
+<p><img alt="Replace Existing" src="../../img/measure-writing-guide/15.png" /></p>
 <p>Putting this all together, we get:</p>
 <pre class="prettyprint well"><code class="ruby">new_lights_def = OpenStudio::Model::LightsDefinition.new(model)
 new_lights_def.setWattsperSpaceFloorArea(10.0)
@@ -777,7 +777,7 @@ ReplaceLightsInSpaceTypeWithLPD.new.registerWithApplication
 
 <h2 id="4-the-name-and-descriptionmeasurexml">4. The Name and Description—measure.xml</h2>
 <p>The measure.xml file contains metadata that allow the measure to be filed into an organizational structure, provide an explanation about what the measure does and how it works, and tell the GUI where in the workflow the measure can go.  The GUI creates a new measure.xml file when you click on the "Create a New Measure" button.  The wizard that appears guides you through filling in the measure.xml file.  After this wizard, you will need to make any changes to the measure.xml file manually.  The following sections describe the purpose and available options for each section of measure.xml.</p>
-<p><img alt="Name of Measure" src="../../img/Measure-Writing-Guide/16.png" /></p>
+<p><img alt="Name of Measure" src="../../img/measure-writing-guide/16.png" /></p>
 <h3 id="41-starting-and-ending-measurexml">4.1. Starting and Ending measure.xml</h3>
 <p>The following boilerplate text is used to open and close the measure.xml file.</p>
 <pre class="prettyprint well"><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
