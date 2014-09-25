@@ -12,7 +12,6 @@ pages:
 - [next_steps/RunningYourSimulation.md, References & Tutorials, Running Your Simulation & Viewing Results]
 - [measures/AboutMeasures.md, Measures, About Measures]
 - [measures/Measure-Writing-Guide.md, Measures, Measure Writing Guide]
-- [measures/CreatingMeasures.md, Measures, Creating Measures]
 - [comparative_analysis/ParametricStudies.md, Comparative Analysis, ParametricAnalysisTool]
 - [comparative_analysis/LargeScaleAnalysis.md, Comparative Analysis, Large Scale Analysis]
 - [help/Training.md, Help, Training]

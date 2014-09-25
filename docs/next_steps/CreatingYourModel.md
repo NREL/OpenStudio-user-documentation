@@ -26,7 +26,6 @@ Vintages:
 Climate Zones:1 - 8
 
 
-
 ![Choose Climate](../../img/create_model/climate_zones.png "Climate Zone Map")
 
 ------
@@ -76,12 +75,12 @@ There are many ways to add windows to your building envelope.
   
   *Above: Surface Matching dialog shown.*
   
-------
+<!--------
 ### Air Walls
 
 ------
 
-### Interior Partition Groups
+### Interior Partition Groups--> 
 
 ------
 
@@ -105,7 +104,7 @@ There are many ways to add windows to your building envelope.
  
  ------
 
-__Building Rotation__
+<!### Building Rotation--> 
 
 ------
 ## Schedules
@@ -365,7 +364,11 @@ In this view you can edit the time of operation, night cycle, supply air tempera
   ------ 
   
 ### Cold Water Loop  
-In the cold water loop the cooling coil that had been a supply side object on the air loop is now a demand object.The supply side has a pump and a water cooled chiller. The adiabatic pipes are a necessary part of the loop. There are no attributes to set for the pipes.You can click on the chiller to drill down further to the condenser loop. Or you can click on the cooling coil to go back to the air loop.
+In the cold water loop the cooling coil that had been a supply side object on the air loop is now a demand object.
+
+The supply side has a pump and a water cooled chiller. The adiabatic pipes are a necessary part of the loop. There are no attributes to set for the pipes.
+
+You can click on the chiller to drill down further to the condenser loop. Or you can click on the cooling coil to go back to the air loop.
   
   <a href="../../img/create_model/chilled_water.png" target="_blank">
 <img src="../../img/create_model/thumb_chilled_water.png" alt="Resized JPEG graphic" title="Click to view" border="2" width="750" height="542" hspace="10" /></a>
@@ -375,7 +378,11 @@ In the cold water loop the cooling coil that had been a supply side object on th
 ------ 
 
 ### Condenser Loop
-In the condenser loop the chiller that had been a supply side object on the cold water loop is now a demand object.The supply side has a pump and a cooling tower. As with the cold water loop the adiabatic pipes are a necessary part of the loop. You can click on the chiller to drill to go back to the cold water loop.
+In the condenser loop the chiller that had been a supply side object on the cold water loop is now a demand object.
+
+The supply side has a pump and a cooling tower. As with the cold water loop the adiabatic pipes are a necessary part of the loop. 
+
+You can click on the chiller to drill to go back to the cold water loop.
 
   <a href="../../img/create_model/condensor_water.png" target="_blank">
 <img src="../../img/create_model/thumb_condensor_water.png" alt="Resized JPEG graphic" title="Click to view" border="2" width="750" height="554" hspace="10" /></a>
@@ -383,8 +390,15 @@ In the condenser loop the chiller that had been a supply side object on the cold
 *Above: Click image to view a larger version.*
 
 ### Hot Water Loop
-In the hot water loop the heating coil that had been a supply side object on the air loop is now a demand object.The supply side has a pump and a boiler. The boiler can use a variety of fuels. The adiabatic pipes are a necessary part of the loop. There are no attributes to set for the pipes.You can click on the heating coil to go back to the air loop.The heating coils without links represent the reheat terminals for each connected thermal zone.
-  <a href="../../img/create_model/hot_water.png" target="_blank">
+In the hot water loop the heating coil that had been a supply side object on the air loop is now a demand object.
+
+The supply side has a pump and a boiler. The boiler can use a variety of fuels. The adiabatic pipes are a necessary part of the loop. There are no attributes to set for the pipes.
+
+You can click on the heating coil to go back to the air loop.
+
+The heating coils without links represent the reheat terminals for each connected thermal zone.
+
+  <a href="../../img/create_model/hot_water.png" target="_blank">
 <img src="../../img/create_model/thumb_hot_water.png" alt="Resized JPEG graphic" title="Click to view" border="2" width="750" height="555" hspace="10" /></a>
 
 *Above: Click image to view a larger version.*
@@ -411,9 +425,10 @@ Shared plenums will be colored the same and will match the color selected for th
   
   ------ 
   
-## Radiant Systems
+<!-- ## Radiant Systems
 
 ------ 
+-->
 
 ## Service Water Heating
 The first view into the HVAC tab will be the water mains editor, which shows as “Service Water” on loops pulldown list.
