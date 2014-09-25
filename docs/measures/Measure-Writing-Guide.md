@@ -396,11 +396,11 @@ Write a measure that will remove all lights currently in the "Enclosed Office" s
 ##### Figuring Out the Modeling Approach
 The first thing to do is understand how the measure would be modeled in OpenStudio, and make a list of the objects involved.  The easiest way to do this is to open the OpenStudio Application and look through the GUI.  In this case, we'll start on the "Space Types" tab.
 
-![guide image2](../../img/Measure-Writing-Guide/2.png)
+![guide image2](../../img/measure-writing-guide/2.png)
 
 On this tab, first click on the first object (in the left column) is "Space Type."  Inside the Space Type, next to the lights icon, the term "Definition" appears.  The name of this particular definition is "ASHRAE_90.1-2004_Office_LPD."  To learn more about this definition, go to the "Loads" tab.
 
-![Guide image3](../../img/Measure-Writing-Guide/3.png)
+![Guide image3](../../img/measure-writing-guide/3.png)
 
 On the left side under the "Loads" tab is a category called "Lights Definitions."  Under this category is the definition "ASHRAE_90.1-2004_Office_LPD" that was referenced on the "Space Types" tab.  One field is titled "Energy Per Space Floor Area" with units of "W/ft2."  Although the GUIs may show IP units, the methods of the OpenStudio model are all written in SI units.
 
@@ -412,11 +412,11 @@ Find the SpaceType called "Enclosed Office".  Replace any LightsDefinitions refe
 ##### Finding the OpenStudio Methods: Using the Documentation
 All the OpenStudio code documentation lives online at http://openstudio.nrel.gov/latest-c-sdk-documentation.  Open this website.
 
-![Guide Methods](../../img/Measure-Writing-Guide/4.png)
+![Guide Methods](../../img/measure-writing-guide/4.png)
 
 Click "__C++ SDK Documentation__" then on "__Model__".  You will see a Web page similar to the image shown below.
 
-![Methods 2](../../img/Measure-Writing-Guide/5.png)
+![Methods 2](../../img/measure-writing-guide/5.png)
 
 The left column is the navigator; the right pane shows the details of whatever is selected in the left column.
 
@@ -426,7 +426,7 @@ In the left column, expand "__Classes->Class List->openstudio->model__."  This l
 
 Click "__SpaceType__" under "__model__."
 
-![click space](../../img/Measure-Writing-Guide/7.png)
+![click space](../../img/measure-writing-guide/7.png)
 
 The right pane contains the documentation for the SpaceType class.  The methods are generally split into four categories: Constructors and Destructors, Getters, Setters, and Other. SpaceType is a base class of ResourceObject. You can look into the ResourceObject for additional methods beyond what is in the SpaceType documentation.
 
@@ -435,7 +435,7 @@ At first glance, the methods look cryptic, not at all like those shown in the ex
 
 The name of the method:
 
-![name of method](../../img/Measure-Writing-Guide/8.png)
+![name of method](../../img/measure-writing-guide/8.png)
 
 The method names are generally descriptive enough that it is possible to understand what they do without any other information.  Here is how the method would be used in Ruby:
 
@@ -445,7 +445,7 @@ design_spec_oa = space_type.designSpecificationOutdoorAir
 
 The type of object returned by the method:
 
-![type of object](../../img/Measure-Writing-Guide/9.pn)g
+![type of object](../../img/measure-writing-guide/9.pn)g
 
 Methods Return Types:
 
@@ -487,7 +487,7 @@ end
 
 Once you have found a SpaceType matching the name you are looking for, you need to get all the Lights in Spaces of this SpaceType.  The documentation for SpaceType includes a method to get a vector of all Lights in Spaces of this SpaceType:
 
-![Space Matching](../../img/Measure-Writing-Guide/12.png)
+![Space Matching](../../img/measure-writing-guide/12.png)
 
 You can extend the code to then loop over all these Lights:
 
@@ -504,7 +504,7 @@ end
 
 Now you need to make a new LightsDefinition to replace the ones these Lights currently use.  The documentation for LightsDefinition shows a constructor that expects a Model as the input.
 
-![Lights def](../../img/Measure-Writing-Guide/13.png)
+![Lights def](../../img/measure-writing-guide/13.png)
 
 Constructors translated from C++ to Ruby take the following form.  The only difference may be which arguments the constructor requires; usually it is simply a Model.
 
@@ -526,7 +526,7 @@ new_lights_def.setName("10 W/m^2 Lights Definition")
 
 Now that you have a new LightsDefinition object, you need to figure out how to replace the existing LightsDefinition with the new one.  The Lights documentation contains a method to set the lights definition.
 
-![Replace Existing](../../img/Measure-Writing-Guide/15.png)
+![Replace Existing](../../img/measure-writing-guide/15.png)
 
 Putting this all together, we get:
 
@@ -667,7 +667,7 @@ ReplaceLightsInSpaceTypeWithLPD.new.registerWithApplication
 ## 4. The Name and Description—measure.xml
 The measure.xml file contains metadata that allow the measure to be filed into an organizational structure, provide an explanation about what the measure does and how it works, and tell the GUI where in the workflow the measure can go.  The GUI creates a new measure.xml file when you click on the "Create a New Measure" button.  The wizard that appears guides you through filling in the measure.xml file.  After this wizard, you will need to make any changes to the measure.xml file manually.  The following sections describe the purpose and available options for each section of measure.xml.
 
-![Name of Measure](../../img/Measure-Writing-Guide/16.png)
+![Name of Measure](../../img/measure-writing-guide/16.png)
 
 ### 4.1. Starting and Ending measure.xml
 The following boilerplate text is used to open and close the measure.xml file.
