@@ -50,43 +50,46 @@ __Register the Key Through the OpenStudio Application__ open the menu "Component
 
 ## Introductory Tutorial
 
-SketchUp Plug-in—Building Envelope
+The tutorial below was created before the grid view was added to the Space Types and Thermal Zones tabs. Grid view allows you to view and edit more than one space type or thermal zone at a time. [Learn more about the OpenStudio Application interface and grid view.](../next_steps/openstudio_application_interface.md)  
+
+### SketchUp Plug-in—Building Envelope
+For additional information on the SketchUp Plug-in interface go to the [SketchUp Plug-in Interface](../next_steps/sketchup_plugin_interface.md) section.
  
 <iframe width="640" height="360" src="http://www.youtube.com/embed/wzzY_W2WELo?rel=0&start=&end=&autoplay=0" frameborder="0" allowfullscreen></iframe>
     
 *Above: This video shows you how to choose a template and create your building envelope. It uses the OpenStudio SketchUp Plug-in.*
 
-SketchUp Plug-in—Space Types and Thermal Zones
+### SketchUp Plug-in—Space Types and Thermal Zones
 
 <iframe width="640" height="360" src="http://www.youtube.com/embed/8LTexVna_vw?rel=0&start=&end=&autoplay=0" frameborder="0" allowfullscreen></iframe>
 
 *Above: This video shows you how to assign space types, thermal zones, and thermostats to the spaces in your model. It uses the OpenStudio SketchUp Plug-in.*
 
-Site, Facility, and Basic Run
+### Site, Facility, and Basic Run
 
 <iframe width="640" height="360" src="http://www.youtube.com/embed/tgeepiBltJI?rel=0&start=&end=&autoplay=0" frameborder="0" allowfullscreen></iframe>
 
 *Above: This video goes into the OpenStudio application, adds weather data, shows the outline view in the facility tab, and runs a simulation with ideal air loads.*
 
-Space Types, Internal Loads, and Schedules
+### Space Types, Internal Loads, and Schedules
 
 <iframe width="640" height="360" src="http://www.youtube.com/embed/PCcxruCaZO0?rel=0&start=&end=&autoplay=0" frameborder="0" allowfullscreen></iframe>
 
 *Above: This video demonstrates how you can inspect, alter, and apply resource objects in OpenStudio.*
 
-Constructions, Materials, and the Building Component Library (BCL)
+### Constructions, Materials, and the Building Component Library (BCL)
 
 <iframe width="640" height="360" src="http://www.youtube.com/embed/8KdVvBds_30?rel=0&start=&end=&autoplay=0" frameborder="0" allowfullscreen></iframe>
 
 *Above: This video shows you how to obtain construction and material objects from the Building Component Library and load them into your current model.*
 
-HVAC—Zone Equipment, Air Loops, and Plant Loops
+### HVAC—Zone Equipment, Air Loops, and Plant Loops
 
 <iframe width="640" height="360" src="http://www.youtube.com/embed/DKLnZaNoRX0?rel=0&start=&end=&autoplay=0" frameborder="0" allowfullscreen></iframe>
 
 *Above: This video shows you how to add HVAC systems. It introduces the variable and scripts tabs and runs a simulation with the resulting model.*
 
-Service Hot Water
+### Service Hot Water
 
 <iframe width="640" height="360" src="http://www.youtube.com/embed/jUJhi6YH51E?rel=0&start=&end=&autoplay=0" frameborder="0" allowfullscreen></iframe>
 
