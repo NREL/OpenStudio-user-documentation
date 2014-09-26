@@ -191,7 +191,17 @@
         
             <li><a href="#about">About</a></li>
         
-            <li><a href="#spreadsheet">Spreadsheet</a></li>
+            <li><a href="#starting-openstudios-cloud">Starting OpenStudio's Cloud</a></li>
+        
+            <li><a href="#export-spreadsheet">Export Spreadsheet</a></li>
+        
+            <li><a href="#edit-the-template-spreadsheet">Edit the Template Spreadsheet</a></li>
+        
+            <li><a href="#running-openstudios-cloud">Running OpenStudio's Cloud</a></li>
+        
+            <li><a href="#buildings-specific-chef-cookbooks">Buildings Specific Chef Cookbooks</a></li>
+        
+            <li><a href="#server-architecture">Server Architecture</a></li>
         
     
     </ul>
@@ -202,12 +212,57 @@
 <h3 id="about">About</h3>
 <p>The ParametricAnalysisTool (PAT) now exports a spreadsheet format compatible with the OpenStudio-analysis-spreadsheet project for running large parametric analyses using cloud resources.</p>
 <p>Go to the Github repository for information and code for the analysis spreadsheet.](https://github.com/NREL/OpenStudio-analysis-spreadsheet) There are instructions and examples on the GitHub site.</p>
+<p>The Workflow:</p>
+<ol>
+<li>Build your baseline model with the OpenStudio Application</li>
+<li>Manipulate the Model with measures</li>
+<li>Run basic parametrics via PAT</li>
+<li>Export a spreadsheet view from PAT</li>
+<li>Fill in ranges, distributions, defaults, algorithms, objective functions</li>
+<li>Large Analyses via OpenStudio-Server</li>
+<li>Start Cluster</li>
+<li>Upload Data:<ul>
+<li>Measures</li>
+<li>Variables</li>
+<li>Seed Model</li>
+<li>Weather Data</li>
+</ul>
+</li>
+<li>Simulation Executive Runs Analysis</li>
+<li>Browse Results and Download Files</li>
+<li>Everything has an JSON-based API to access data programmatically</li>
+<li>Download results in CSV or R dataframe</li>
+</ol>
+<hr />
 <p><img alt="Analysis Workflow" src="../../img/large_scale/cloud_run_process_diagram.png" title="Analysis Workflow" /></p>
-<p><img alt="Architecture Diagram" src="../../img/large_scale/cloud_run_process_diagram.png" title="Architecture Diagram" /></p>
-<p><a href="https://github.com/NREL-cookbooks">The cookbooks used for the OpenStudio server and worker nodes are hosted on Github.</a></p>
-<p><a href="http://rubygems.org/gems/openstudio-aws">Custom Ruby Gem</a></p>
+<hr />
+<h3 id="starting-openstudios-cloud">Starting OpenStudio's Cloud</h3>
+<pre class="prettyprint well"><code>$ gem install bundler
+$ git clone https://github.com/NREL/OpenStudio-analysis-spreadsheet.git
+$ bundle install
+</code></pre>
+<h3 id="export-spreadsheet">Export Spreadsheet</h3>
+<p>Select the measures you want to use in the analysis and export a spreadsheet by selecting that option under the File menu.
+<img alt="Export Spreadsheet" src="../../img/large_scale/export_spreadsheet.png" title="Export Spreadsheet" /></p>
+<h3 id="edit-the-template-spreadsheet">Edit the Template Spreadsheet</h3>
+<p>After exporting the spreadsheet from PAT, open the spreadsheet in Excel to edit fields.
+<img alt="Analysis spreadsheet" src="../../img/large_scale/spreadsheet.png" title="Spreadsheet" /></p>
+<h3 id="running-openstudios-cloud">Running OpenStudio's Cloud</h3>
+<pre class="prettyprint well"><code>$ rake run
+</code></pre>
+<hr />
+<h3 id="buildings-specific-chef-cookbooks">Buildings Specific Chef Cookbooks</h3>
+<p>Provisioning provides assures that the appropriate tools are ready on the server, there are consistent images across platforms, and to make it easier to test and deploy.</p>
+<p>The OpenStudio Server uses Chef to help automate the workflow. 
+<a href="https://docs.getchef.com/chef_overview.html">Chef Documentation</a></p>
+<p>OpenStudio - <a href="https://github.com/NREL-cookbooks/openstudio">https://github.com/NREL-cookbooks/openstudio</a></p>
+<p>EnergyPlus - <a href="https://github.com/NREL-cookbooks/energyplus">https://github.com/NREL-cookbooks/energyplus</a></p>
+<p>Radiance - <a href="https://github.com/NREL-cookbooks/radiance">https://github.com/NREL-cookbooks/radiance</a></p>
+<p>R - <a href="https://github.com/NREL-cookbooks/cookbook-r">https://github.com/NREL-cookbooks/cookbook-r</a></p>
+<hr />
+<h3 id="server-architecture">Server Architecture</h3>
+<p><img alt="Analysis Architecture" src="../../img/large_scale/architecture.png" title="Architecture" /></p>
 <p>Read the paper on the development of this process, <a href="https://www.ashrae.org/File%20Library/docLib/Events/ASHRAE-IPBSA-USA/Presentations/11_Long.pdf">SCALING BUILDING ENERGY MODELING HORIZONTALLY IN THE CLOUD WITH OPENSTUDIO (PDF).</a></p>
-<h3 id="spreadsheet">Spreadsheet</h3>
 </div>
         </div>
 
