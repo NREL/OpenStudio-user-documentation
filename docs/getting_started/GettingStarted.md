@@ -50,7 +50,7 @@ __Register the Key Through the OpenStudio Application__ open the menu "Component
 
 ## Introductory Tutorial
 
-The tutorial below was created before the grid view was added to the Space Types and Thermal Zones tabs. Grid view allows you to view and edit more than one space type or thermal zone at a time. [Learn more about the OpenStudio Application interface and grid view.](../next_steps/openstudio_application_interface.md)  
+The tutorial below was created before the grid view was added to the Space Types and Thermal Zones tabs. Grid view allows you to view and edit more than one space type or thermal zone at a time. Go to the [OpenStudio Application Interface](../next_steps/openstudio_application_interface.md) to learn more about grid view.   
 
 ### SketchUp Plug-in—Building Envelope
 For additional information on the SketchUp Plug-in interface go to the [SketchUp Plug-in Interface](../next_steps/sketchup_plugin_interface.md) section.
