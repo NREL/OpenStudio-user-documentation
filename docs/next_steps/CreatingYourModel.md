@@ -1,5 +1,7 @@
 # Creating Your Model
 
+After doing the [Introductory Tutorial](../getting_started/GettingStarted.md#introductory-tutorial), you can find additional information on using OpenStudio by topic below.
+
 ## Envelope
 
 <p>The building envelope is created using the SketchUp OpenStudio Plug-in. Refer to the section on [the SketchUp Plug-in Interface Section](sketchup_plugin_interface.md) to learn more about the interface and toolbars for the plug-in.</p>
