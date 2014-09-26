@@ -78,12 +78,12 @@ This is OpenStudio's user documentation. A brief summary of the content and inte
     <div class="thumbnail">         
       <div class="caption">
         <h3>Additional Resources</h3>
-        <p>Check out Unmet Hours a Question-and-Answer Resource for the Building Energy Modeling Community
+        <p>Check out Unmet Hours a Question-and-Answer Resource for the Building Energy Modeling Community/p>
         <p><a href="http://unmethours.com/questions/" class="btn btn-primary" role="Unmet Hours"> Unmet Hours</a></p>
+        <p>More training videos are available on our YouTube page.</p>
+         <p><a href="http://www.youtube.com/channel/UC5NGj39XfJkhYUfCtKr-r_w/questions/" class="btn btn-primary" role="YouTube Videos"> YouTube Videos</a></p>
         <p>Additional Resources</p>
-        <p><a href="" class="btn btn-primary" role="Developer Documentation">Developer Documentation</a></p>
-        <p><a href="" class="btn btn-primary" role="OpenStudio News">OpenStudio News</a></p>
-        <p><a href="https://github.com/NREL/OpenStudio" class="btn btn-primary" role="OpenStudio Code">Code on GitHub</a></p>
+        <p><a href="http://github.com/NREL/OpenStudio" class="btn btn-primary" role="OpenStudio Code">Code on GitHub</a></p>
       </div>
     </div>
   </div>        
