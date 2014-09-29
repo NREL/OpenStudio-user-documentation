@@ -138,9 +138,10 @@ Compact and other schedule types in your model, you can visualize and edit only 
 
 The lower profile view is a navigation for when you are zoomed to 15-minute or 1-minute time steps.
 
- <img src="../../img/create_model/schedules.png" class="img-responsive" alt="Schedule Edit">
+<a href="../../img/create_model/schedules_large.png" target="_blank">
+<img src="../../img/create_model/../../img/create_model/schedules.png" alt="Resized JPEG graphic" title="Click to view" border="2" width="750" height="542" hspace="10" /></a>
  
- *Above: An annotated screenshot of the schedules editing interface.*
+ *Above: An annotated screenshot of the schedules editing interface. Click image for a large view of the image.*
   
    <iframe width="640" height="360" src="http://www.youtube.com/embed/PCcxruCaZO0?start=210&end=788&autoplay=0" frameborder="0" allowfullscreen></iframe>
   
@@ -151,8 +152,11 @@ The lower profile view is a navigation for when you are zoomed to 15-minute or 1
   * Constant
   * Compact
   
-## Constructions
 ------
+
+  
+## Constructions
+
 
 ### Construction Sets
 A Construction Set object is structured very much like the Schedule Set. It can contain constructions for different surface types and boundary conditions.
@@ -191,6 +195,9 @@ Resources
 * Types of Constructions
 * Types of Materials
 * Proper Use of Constructions-->
+
+------
+
 
 ## Internal Loads
 The Loads tab contains internal load objects. The fields in the body will change appropriately when you pick a different type of load.
@@ -231,6 +238,7 @@ Water Use Equipment is also unique in that it takes schedules, and is not part o
   * Internal Mass
   * Water Use Equipment-->
 
+------
 
 ## Space Types
 Space types are the work horses of the resources in OpenStudio. Space types can define internal loads, schedule sets, and construction sets.

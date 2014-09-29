@@ -1,5 +1,4 @@
 
-
 ## What is New in OpenStudio 1.5.0?
 
 ### Grid View for Thermal Zones and Space Types
@@ -108,3 +107,4 @@ ____________________________
 * [__Check out our OpenStudio Roadmap__](roadmap.md) to learn about future feature development.
 
 ____________________________
+
