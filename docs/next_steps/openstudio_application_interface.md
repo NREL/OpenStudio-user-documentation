@@ -23,9 +23,9 @@ Sub-tabs are designed to move from more general on the left to more specific on 
 
 ## Right Panel
 
-The __right panel__ provides access to items in the library, your model, and the ability to edit some of the items.
+The right panel provides access to items in the library, your model, and the ability to edit some of the items.
 
-* “My Model” displays items that are part of your model already.* “Library” includes components and measures that come with the application or are downloaded from the Building Component Library (BCL)* “Edit" allows you to select certain components and edit the settings for that component. It is used in the HVAC tab to edit component settings, assign thermal zones to loops, and to add plenums.
+* __“My Model”__ displays items that are part of your model already.* __“Library”__ includes components and measures that come with the application or are downloaded from the Building Component Library (BCL)* __“Edit"__ allows you to select certain components and edit the settings for that component. It is used in the HVAC tab to edit component settings, assign thermal zones to loops, and to add plenums.
 
 ![Edit Tab](../../img/os_interface/edit_tab.png "Edit Tab Example")
 

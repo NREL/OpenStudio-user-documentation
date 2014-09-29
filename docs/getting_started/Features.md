@@ -15,7 +15,7 @@ ____________________________
 
 __Energy Modeling at All Stages of Design__
 
-__SketchUp Plug-in__
+## SketchUp Plug-in
 
 * Create the building envelope using the Plug-in.
 * Use measures to quickly build models. 

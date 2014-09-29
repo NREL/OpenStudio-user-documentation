@@ -36,7 +36,7 @@ ___________________
 
 ## Loading a Baseline Model
 
-Select your baseline model by hitting the browse button or typing in a path to your baseline OSM (Open Studio Model) file.
+Select your baseline model by hitting the browse button or typing in a path to your baseline OSM (Open Studio Model) file. The weather file for the file must be set on the baseline model before assigning it as the baseline in PAT.
 
 ![Baseline Model](../../img/pat/baseline.png "Selecting a Baseline Model")
 
