@@ -39,8 +39,13 @@ __Or__
 
 __Register the Key Through the OpenStudio Application__ open the menu "Components & Measures/Find Components" and if a key is not already registered, it will prompt you for one. 
 
-<!--## Video Overview (1-2 minutes)
---> 
+## Workflow Overview
+The typical OpenStudio workflow is shown in the diagram below. 
+
+ <a href="../../img/workflow_diagram.png" target="_blank">
+<img src="../../img/workflow_diagram.png" alt="Resized JPEG graphic" title="Click to view larger image" border="2" width="750" height="" hspace="10" /></a>
+
+*About: Click on the diagram above to view a larger version.*
 
 ## Quick Start Guide to OpenStudio Modeling Tools
 * This [OpenStudio Quick Start Guide (PDF)](../../img/pdfs/openstudio_interface_quickstart.pdf) provides an introduction to the interface for the Plug-in and the OpenStudio application. It also provides guidance on the basic workflow. Checkout the [Introductory Tutorial](#introductory-tutorial) Below to get started.
