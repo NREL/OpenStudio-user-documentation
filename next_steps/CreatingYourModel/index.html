@@ -422,36 +422,43 @@ assigned to a construction object.</p>
 <p>Space types are the work horses of the resources in OpenStudio. Space types can define internal loads, schedule sets, and construction sets.</p>
 <p>Space types define specific spaces or groups of specific spaces in your model. The spaces inherit all objects of the space type. If you redefine a space type, or an underlying object, it will affect all spaces using that space type.</p>
 <p>The space types tab in the OpenStudio application is organized into a grid view. You can look through all your space types and edit the settings.</p>
+<!--* Inspecting and Adjusting Space Types
+* Assigning Space Types and Default Space Types-->
+
 <p><img alt="Grid 1" src="../../img/os_interface/space_type_grid1.png" title="Space Type Grid View" /></p>
 <p><em>Above: The grid view provides a spreadsheet style layout.</em></p>
+<h3 id="general">General</h3>
+<h4 id="rendering-color">Rendering Color</h4>
+<pre class="prettyprint well"><code>This feature can be adjusted in the SketchUp Plug-in as well and the color selected will be used in the other application as well.
+</code></pre>
+<p><img alt="New OpenStudio Model" src="../../img/create_model/render_color.png" title="Render Color" /></p>
+<h4 id="default-construction-and-schedule">Default Construction and Schedule</h4>
+<p>You can assign constructions and schedules to each space type that will be used whenever that space type is used in the model.</p>
+<h4 id="design-specification-outdoor-air">Design Specification Outdoor Air</h4>
+<p>This drop zone is located under the "General" button. </p>
+<p><img src="../../img/create_model/outdoor_air.png" class="img-responsive" alt="Outdoor Air"></p>
+<h4 id="space-infiltration-design-flow-rates-and-space-infiltration-effective-leakage-areas">Space Infiltration Design Flow Rates and Space Infiltration Effective Leakage Areas</h4>
+<p>These can be added and edited under the "General" button by scrolling to the right. Drag-and-drop from library. </p>
+<p><em>Above: Click on the image above to view a larger version.</em></p>
+<p><a href="../../img/create_model/infiltration_leakage.png" target="_blank">
+<img src="../../img/create_model/infiltration_leakage.png" alt="Resized JPEG graphic" title="Click to view larger version" border="2" width="760" height="" hspace="10" /></a></p>
+<h3 id="loads">Loads</h3>
 <p>If you select the "Loads" button in the Space Type tab, you will see a drop zone to create new loads. You can have multiple loads of the same type. </p>
 <p><img alt="Grid 1" src="../../img/os_interface/space_type_grid_loads.png" title="Space Type Loads" /></p>
-<p><em>Above: Hit the "Loads" button to edit and view loads by space type. Click on the name of a component and select the  "Edit" panel on the right to inspect and edit that item. You can edit the load definition in the example shown above.</em></p>
+<p><em>Above: Hit the "Loads" button to edit and view loads by space type. Click on the name of a component and select the  "Edit" panel on the right to inspect, edit, or delete that item. You can edit the load definition in the example shown above.</em></p>
 <p>The space types define loads such as lighting or electric equipment as simple area weighted power densities (e.g., W/ft2).  However, you can add loads in several possible ways.  For example, a space type could contain multiple types of lighting. You might define one lighting load for general lighting using a W/ft2 and then add another lighting load for decorative lighting using another watts per square foot. </p>
-<h4 id="tutorials">Tutorials</h4>
+<h3 id="measure-tags">Measure Tags</h3>
+<p>Measure tags are used by scripts we call measures. Measure tags identify intended use of space types and constructions for School and office AEDG measures. If you are not using measures you will not need to complete these. </p>
+<pre class="prettyprint well"><code>&lt;iframe width="640" height="360" src="http://www.youtube.com/embed/uxpIcEbxPbw?rel=0&amp;start=&amp;end=&amp;autoplay=0" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+
+  *Above: This video shows how to use measure tags.*
+</code></pre>
+<h3 id="custom">Custom</h3>
+<p>Use the check box at the top of each column to select items that you want to have be part of the custom view in the grid. This allows you to compare important settings side-by-side.</p>
+<h3 id="working-with-space-types-in-the-sketchup-plug-in">Working with Space Types in the SketchUp Plug-in</h3>
 <p>The video below shows how to work with space types in the Plug-in. 
   <iframe width="640" height="360" src="http://www.youtube.com/embed/8LTexVna_vw?rel=0&start=0&end=234&autoplay=0" frameborder="0" allowfullscreen></iframe></p>
-<p><em>Above: This video shows you how to assign space types and download space types from the Building Component Library (BCL). It uses the OpenStudio SketchUp Plug-in.</em><br />
-<!--* Inspecting and Adjusting Space Types
-* Assigning Space Types and Default Space Types-->   </p>
-<h4 id="resources">Resources</h4>
-<ul>
-<li>
-<p>Measure Tags</p>
-<p><iframe width="640" height="360" src="http://www.youtube.com/embed/uxpIcEbxPbw?rel=0&start=&end=&autoplay=0" frameborder="0" allowfullscreen></iframe></p>
-<p><em>Above: This video shows how to use measure tags.</em></p>
-</li>
-<li>
-<p>Rendering Color
-    This feature can be adjusted in the SketchUp Plug-in as well and the color selected will be used in the other application as well.</p>
-</li>
-</ul>
-<p><img alt="New OpenStudio Model" src="../../img/create_model/render_color.png" title="Render Color" />
-   <!-- * Default Construction and Schedule Sets
-  * Design Specification Outdoor Air
-  * Space Infiltration Design Flow Rates
-  * Space Infiltration Effective Leakage Areas
-  * Internal Load Instances--></p>
+<p><em>Above: This video shows you how to assign space types and download space types from the Building Component Library (BCL). It uses the OpenStudio SketchUp Plug-in.</em>  </p>
 <hr />
 <h2 id="downloading-components-and-measures-from-the-building-component-library-bcl">Downloading Components and Measures from the Building Component Library (BCL)</h2>
 <p>In the OpenStudio Application you can download items directly from the BCL by going to the "Components &amp; Measures" menu and choosing "Find Measures" or "Find Components." The your API key is available by registering on the <a href="https://bcl.nrel.gov/">BCL site</a> and copying it from your account page.</p>
@@ -460,7 +467,7 @@ assigned to a construction object.</p>
 <p>Measures are scripts that can quickly alter your model or create different reports for viewing and checking your results. Learn more about measures in the <a href="../../measures/AboutMeasures/">"About Measures"</a> section. Learn how to <a href="../../measures/Measure-Writing-Guide/">write your own custom measures.</a></p>
 <hr />
 <h2 id="using-the-facility-tab-to-inspect-and-edit-your-model">Using the Facility Tab to Inspect and Edit Your Model</h2>
-<p>The Facility tab serves a number of functions. First, it allows you to see a hierarchical tree of your model. This tree can be organized by building story, thermal zone, or as shown here, space type.</p>
+<p>The Facility tab serves a number of functions. First, it allows you to see a hierarchical tree of your model. This tree can be organized by building story, thermal zone, or space type.</p>
 <p>If you are viewing the tree by space type, and a space does not have a space type assigned, it would appear under Unassigned Space Type. A similar pattern is followed for Thermal Zone and Story.</p>
 <p>The Facility tab is also where you can select spaces and assign a building story, thermal zone, and space type. This is also where you can add loads to a space. These loads would be on top of loads inherited from the space type.</p>
 <p>You can also drill down to inspect individual surfaces or subsurfaces.</p>
@@ -471,7 +478,7 @@ assigned to a construction object.</p>
 <p><em>Above: An annotated screenshot of the facilities tab with space sort on.</em></p>
 <p>This screenshot of the Facility tab below shows a surface selected. </p>
 <p>Although you will generally work with the SketchUp Plug-in to define the building envelope, having a surface or subsurface selected in the Facility tab will allow you inspect and edit most attributes. Only the vertices are locked down.</p>
-<p>Spaces and surfaces cannot be deleted or created. You need to use the SketchUp Plug-in to do that. </p>
+<p>Spaces and surfaces cannot be deleted or created in the OpenStudio application. You need to use the SketchUp Plug-in to do that. </p>
 <p><img src="../../img/create_model/facility_subsurface.png" class="img-responsive" alt="Facility Tab Sub-surface"></p>
 <p><em>Above: Selecting and editing a sub-surface.</em></p>
 <hr />
@@ -481,8 +488,12 @@ Setting up thermal zones in the SketchUp Plug-in is shown below.</p>
 <iframe width="640" height="360" src="http://www.youtube.com/embed/8LTexVna_vw?rel=0&start=240&end=438&autoplay=0" frameborder="0" allowfullscreen></iframe>
 
 <p><em>Above: This video shows you how to assign space types and download space types from the Building Component Library (BCL). It uses the OpenStudio SketchUp Plug-in.</em></p>
-<p>A thermostat must be defined before running an EnergyPlus simulations with connected HVAC systems. Zone equipment, thermostat, and humidistat settings can be viewed and edited on this tab. Select the "Cooling Sizing Parameters" or "Heating Sizing Parameters" to edit those by thermal zone.</p>
+<p>A thermostat must be defined before running an EnergyPlus simulations with connected HVAC systems. Zone equipment, thermostat, and humidistat settings can be viewed and edited on this tab. Click on the name of of and item and you can inspect it in the "Edit" panel on the right.</p>
+<p><img src="../../img/create_model/thermal_grid.png" class="img-responsive" alt="Thermal Grid General"></p>
+<p><em>Above: Screenshot of the OpenStudio application thermal view with "HVAC" selected.</em></p>
+<p>Select the "Cooling Sizing Parameters" or "Heating Sizing Parameters" to edit those by thermal zone.</p>
 <p><img src="../../img/create_model/heat_sizing.png" class="img-responsive" alt="Thermal Zone Sizing Parameters"></p>
+<p><em>Above: Screenshot of the OpenStudio application thermal view with "Heating Sizing Parameters" selected.</em></p>
 <hr />
 <h2 id="air-plant-and-zone-hvac-systems">Air, Plant and Zone HVAC Systems</h2>
 <p>The HVAC Systems tab is used to create, inspect, and edit air and plant loops. The green “+” at the top left is used to add template or empty loops, and the “x” next to it will delete them. The pull-down at the top right of the body is to select which loop to displayed.</p>
