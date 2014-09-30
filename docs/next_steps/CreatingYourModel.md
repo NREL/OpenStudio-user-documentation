@@ -106,16 +106,22 @@ There are many ways to add windows to your building envelope.
  
   *Above: This video shows you how search for specific surfaces and use a script to add overhangs to those surfaces.*
  
- ------
+
 
 <!### Building Rotation--> 
 
 ------
 ## Schedules
+To create and edit schedules in the OpenStudio application go to the schedules tab. Check out the [OpenStudio Application Interface](openstudio_application_interface.md) section for an overview of the interface.
+
 ### Year Settings
 The Year Settings subtab lets you set the day of the week the simulation should start. Define using Calendar Year or First Day Of Year buttons and pull-downs.
 
 The tab can also be used to configure and turn Daylight Savings Time on and off.
+
+ ![Year Settings](../../img/create_model/year.png "Year Settings") 
+ 
+ *Above: Select the year for you simulation.*
 
 ------
 
@@ -125,6 +131,10 @@ A Schedule Set is a collection of schedules for building activities or elements.
 A schedule set can be applied to an entire building, a story, a space type, or an individual space.
 
 This sub-tab has two kinds of drop zones. You can drop schedule sets from My Model or Library into the bottom of the left pane, or you can drop individual schedules into the drop zones in the main body.
+
+ ![Schedule Sets](../../img/create_model/schedule_sets.png "Schedule Sets") 
+ 
+ *Above: Create and edit schedule sets.*
 
 ------
 
@@ -149,10 +159,10 @@ The lower profile view is a navigation for when you are zoomed to 15-minute or 1
   
   *Above: This video demonstrates how you can inspect, alter, and apply resource objects in the OpenStudio Application.*
   
-* Assigning Schedules and Schedule Sets
+<!* Assigning Schedules and Schedule Sets
 * Other Types of Schedules
   * Constant
-  * Compact
+  * Compact--> 
   
 ------
 
