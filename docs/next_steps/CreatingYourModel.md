@@ -1,11 +1,13 @@
 # Creating Your Model
 
-After doing the [Introductory Tutorial](../getting_started/GettingStarted.md#introductory-tutorial), you can find additional information on using OpenStudio by topic below.
+After completing the [Introductory Tutorial](../getting_started/GettingStarted.md#introductory-tutorial), you can find additional information on using OpenStudio by topic below.
 
 ## Envelope
 
-<p>The building envelope is created using the SketchUp OpenStudio Plug-in. Refer to the section on [the SketchUp Plug-in Interface Section](sketchup_plugin_interface.md) to learn more about the interface and toolbars for the plug-in.</p>
+The building envelope is created using the SketchUp OpenStudio Plug-in. Refer to [the SketchUp Plug-in Interface Section](sketchup_plugin_interface.md) to learn more about the interface and toolbars for the plug-in.
+
 ------ 
+
 ### Choosing a template  
 The New OpenStudio Model From Template (![New OpenStudio Model](../../img/plugin_reference_guide/os_new.png "New OpenStudio Model")) tool is represented by this icon in the toolbar. Templates contain data for constructions, loads, and schedules for four vintages across all U.S. climate zones. Templates do not contain any geometry.
  
@@ -156,14 +158,16 @@ The lower profile view is a navigation for when you are zoomed to 15-minute or 1
 
   
 ## Constructions
-
+In an energy model, each surface must have a construction assigned. The construction determines the heat transfer through that surface. A construction set can be applied to an entire building, a story, a space type, or an individual space. Usually a majority of the exterior walls in a building will share the same construction. You can assign the exterior wall construction on the building level and that construction will be applied to all exterior walls. This will be the default construction, but you can still edit surfaces and subsurfaces that differ from the defaults. 
 
 ### Construction Sets
 A Construction Set object is structured very much like the Schedule Set. It can contain constructions for different surface types and boundary conditions.
 
-A construction set can be applied to an entire building, a story, a space type, or an individual space.
-
 Construction sets do not have to be complete sets. For example, you can have a construction set assigned to a story that has only an exterior wall. For the rest of the surface types, constructions will be inherited from the building object.
+
+ ![Construction Set](../../img/create_model/construct_set.png "Construction Set") 
+ 
+ *Above: This screenshot shows an example of a construction set added from the library.*
 
    <iframe width="640" height="360" src="http://www.youtube.com/embed/8KdVvBds_30" frameborder="0" allowfullscreen></iframe>
    
@@ -177,6 +181,10 @@ The Constructions sub-tab lists construction objects that are in your model. You
 
 A construction consists of one or more material layers. You can add materials by dragging them from My Model or the Library to the drop zone. You can only add new materials to the bottom which represents the inside of the wall. You can delete any material by clicking the “x” next to the name.
 
+ ![Constructions](../../img/create_model/constructions.png "Constructions") 
+ 
+ *Above: Edit and create constructions on this tab.*
+ 
 ------
 
 ### Materials
@@ -187,6 +195,10 @@ Materials subtab lets you inspect and edit those materials.
 There are various classes of material objects. When you add a new material, first select the heading for the type of material you want to add and then click the “+” icon at the bottom of the left pane.
 
 Different types of material will have different data fields available.
+
+ ![Materials](../../img/create_model/materials.png "Materials") 
+ 
+ *Above: Edit and create materials on this tab.*
   
 <!--Tutorials
 * Inspecting and Adjusting Construction Sets
@@ -200,9 +212,11 @@ Resources
 
 
 ## Internal Loads
-The Loads tab contains internal load objects. The fields in the body will change appropriately when you pick a different type of load.
+The Loads tab allows you to create and edit load definitions for the internal load objects you will use in your model. Types of loads are listed in the right panels. Select the type of load you want to create and hit the plus button or drag a load definition from the library onto the drop zone in the lower right.
 
-You can assign loads to a space type or directly to a space, except for Water Use Equipment.
+Once you add a loads definition, it will be available to use from the "My Model" tab on the right panel. On the Space Type tab you can assign loads to a space type or directly to a space in the Facility tab, except for Water Use Equipment.
+
+ ![Load Definitions](../../img/create_model/load_def.png "Load Definitions")  
 
 The types of loads that can be added in this tab follow:
 
@@ -331,19 +345,22 @@ Spaces and surfaces cannot be deleted or created. You need to use the SketchUp P
  ------ 
 
 ## Thermal Zones
+OpenStudio's thermal zones parallels the EnergyPlus zone. A thermal zone represents an isothermal volume of air that may have only one thermostat. The OpenStudio thermal zone forms the connection point between the air conditioned space and the  HVAC equipment. Thermal zones can contain one or more spaces. An OpenStudio space contains 3 dimensional geometry and thermal loads. When OpenStudio performs an EnergyPlus simulation, the space objects associated with each thermal zone are geometrically combined, the space loads are averaged, and the ventilation rates from each space are added together.
 Setting up thermal zones in the SketchUp Plug-in is shown below.
 
 <iframe width="640" height="360" src="http://www.youtube.com/embed/8LTexVna_vw?rel=0&start=240&end=438&autoplay=0" frameborder="0" allowfullscreen></iframe>
   
   *Above: This video shows you how to assign space types and download space types from the Building Component Library (BCL). It uses the OpenStudio SketchUp Plug-in.*
 
-HVAC systems, thermostat, and humidistat settings can be viewed and edited on this tab. Select the "Cooling Sizing Parameters" or "Heating Sizing Parameters" to edit those by thermal zone.
+A thermostat must be defined before running an EnergyPlus simulations with connected HVAC systems. Zone equipment, thermostat, and humidistat settings can be viewed and edited on this tab. Select the "Cooling Sizing Parameters" or "Heating Sizing Parameters" to edit those by thermal zone.
 
 <img src="../../img/create_model/heat_sizing.png" class="img-responsive" alt="Thermal Zone Sizing Parameters">
 
 ------ 
 
 ## Air, Plant and Zone HVAC Systems
+OpenStudio names HVAC systems and components to match EnergyPlus. So if you are familiar with EnergyPlus you will be able to recognize components names, like FanConstantVolumeModel.
+
 The HVAC Systems tab is used to create, inspect, and edit air and plant loops. The green “+” at the top left is used to add template or empty loops, and the “x” next to it will delete them. The pull-down at the top right of the body is to select which loop to displayed.
 
 Hit the green plus button to add a loop. 
