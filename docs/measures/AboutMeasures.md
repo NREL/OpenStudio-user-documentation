@@ -10,18 +10,23 @@ In OpenStudio, a measure is a set of programmatic instructions (such as an Excel
 
 __EE Measures__
 
+
 * Add something 
+
 * Remove something
+
 * Change something
 
 __QA/QC Measures__
 
 * Compute something
+
 * Report something
 
 ![New OpenStudio Model](../../img/measures/examples.png "Examples of Measures")
 
 *Above: Examples of EE alterations to the model using measures.*
+
 
 _________________
 
@@ -29,9 +34,12 @@ _________________
 __Measures can help energy modelers by:__
 
 * Reducing modeling time and cost
+
 * Finding deeper savings
+
 * Lowering administrative and training costs
 * Maintain quality and consistency
+
 
 ![New OpenStudio Model](../../img/measures/expert.png "Expert Energy Modeler")
 
@@ -40,6 +48,7 @@ __Measures can help energy modelers by:__
 ![New OpenStudio Model](../../img/measures/knowledge.png "Passing on Knowledge with Measures")
 
 ![New OpenStudio Model](../../img/measures/share_bcl.png "Passing on Knowledge with Measures and BCL")
+
 
 _________________
 
@@ -85,4 +94,14 @@ Measures can be downloaded directly from BCL through the [OpenStudio Application
 
 ### Create Your Own
 Want to write your own custom measure? Start with the [Measure Writing Guide](Measure-Writing-Guide.md).
+
+__________
+
+
+<p class="text-center"><small>OpenStudio is developed in collaboration by NREL, ANL, LBNL, ORNL, and PNNL.</small></p> 
+
+<p class="text-center"><small>NREL is a National Laboratory of the U.S. Department of Energy, Office of Energy Efficiency and Renewable Energy, operated by the Alliance for Sustainable Energy, LLC.</small></p>
+  
+  
+<p class="text-center"><small> <a href="http://openstudiodev.prod.acquia-sites.com/">Return to OpenStudio Home</a></p>
 

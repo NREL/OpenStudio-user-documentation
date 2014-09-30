@@ -7,21 +7,34 @@ Go to the Github repository for information and code for the analysis spreadshee
 The Workflow:
 
 1. Build your baseline model with the OpenStudio Application
+
 2. Manipulate the Model with measures
+
 3. Run basic parametrics via PAT
 4. Export a spreadsheet view from PAT
 5. Fill in ranges, distributions, defaults, algorithms, objective functions
+
 6. Large Analyses via OpenStudio-Server
 7. Start Cluster
+
 8. Upload Data:
+
       * Measures
+
       * Variables
+
       * Seed Model
+
       * Weather Data
+
 9. Simulation Executive Runs Analysis
+
 10. Browse Results and Download Files
+
 11. Everything has an JSON-based API to access data programmatically
+
 12. Download results in CSV or R dataframe
+
 
 __________
 
@@ -32,7 +45,9 @@ __________
 ### Starting OpenStudio's Cloud
 
     $ gem install bundler
+
     $ git clone https://github.com/NREL/OpenStudio-analysis-spreadsheet.git
+
     $ bundle install
     
 ### Export Spreadsheet
@@ -48,6 +63,8 @@ After exporting the spreadsheet from PAT, open the spreadsheet in Excel to edit 
     $ rake run
 
 
+
+
 __________
 
 ### Buildings Specific Chef Cookbooks
@@ -58,11 +75,15 @@ The OpenStudio Server uses Chef to help automate the workflow.
 
 OpenStudio - [https://github.com/NREL-cookbooks/openstudio](https://github.com/NREL-cookbooks/openstudio)
 
+
 EnergyPlus - [https://github.com/NREL-cookbooks/energyplus](https://github.com/NREL-cookbooks/energyplus)
+
 
 Radiance - [https://github.com/NREL-cookbooks/radiance](https://github.com/NREL-cookbooks/radiance)
 
+
 R - [https://github.com/NREL-cookbooks/cookbook-r](https://github.com/NREL-cookbooks/cookbook-r)
+
 
 
 
@@ -82,3 +103,4 @@ _______________________
 <p class="text-center"><small>NREL is a National Laboratory of the U.S. Department of Energy, Office of Energy Efficiency and Renewable Energy, operated by the Alliance for Sustainable Energy, LLC.</small></p>
   
 
+<p class="text-center"><small> <a href="http://openstudiodev.prod.acquia-sites.com/">Return to OpenStudio Home</a></p>
