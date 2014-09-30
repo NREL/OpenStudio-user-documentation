@@ -229,10 +229,9 @@
             <div class="col-md-9" role="main">
 
 <h1 id="creating-your-model">Creating Your Model</h1>
-<p>After doing the <a href="../../getting_started/GettingStarted/#introductory-tutorial">Introductory Tutorial</a>, you can find additional information on using OpenStudio by topic below.</p>
+<p>After completing the <a href="../../getting_started/GettingStarted/#introductory-tutorial">Introductory Tutorial</a>, you can find additional information on using OpenStudio by topic below.</p>
 <h2 id="envelope">Envelope</h2>
-<p>The building envelope is created using the SketchUp OpenStudio Plug-in. Refer to the section on [the SketchUp Plug-in Interface Section](sketchup_plugin_interface.md) to learn more about the interface and toolbars for the plug-in.</p>
-
+<p>The building envelope is created using the SketchUp OpenStudio Plug-in. Refer to <a href="../sketchup_plugin_interface/">the SketchUp Plug-in Interface Section</a> to learn more about the interface and toolbars for the plug-in.</p>
 <hr />
 <h3 id="choosing-a-template">Choosing a template</h3>
 <p>The New OpenStudio Model From Template (<img alt="New OpenStudio Model" src="../../img/plugin_reference_guide/os_new.png" title="New OpenStudio Model" />) tool is represented by this icon in the toolbar. Templates contain data for constructions, loads, and schedules for four vintages across all U.S. climate zones. Templates do not contain any geometry.</p>
@@ -345,22 +344,28 @@ Compact and other schedule types in your model, you can visualize and edit only 
 </ul>
 <hr />
 <h2 id="constructions">Constructions</h2>
+<p>In an energy model, each surface must have a construction assigned. The construction determines the heat transfer through that surface. A construction set can be applied to an entire building, a story, a space type, or an individual space. Usually a majority of the exterior walls in a building will share the same construction. You can assign the exterior wall construction on the building level and that construction will be applied to all exterior walls. This will be the default construction, but you can still edit surfaces and subsurfaces that differ from the defaults. </p>
 <h3 id="construction-sets">Construction Sets</h3>
 <p>A Construction Set object is structured very much like the Schedule Set. It can contain constructions for different surface types and boundary conditions.</p>
-<p>A construction set can be applied to an entire building, a story, a space type, or an individual space.</p>
 <p>Construction sets do not have to be complete sets. For example, you can have a construction set assigned to a story that has only an exterior wall. For the rest of the surface types, constructions will be inherited from the building object.</p>
+<p><img alt="Construction Set" src="../../img/create_model/construct_set.png" title="Construction Set" /> </p>
+<p><em>Above: This screenshot shows an example of a construction set added from the library.</em></p>
 <p><iframe width="640" height="360" src="http://www.youtube.com/embed/8KdVvBds_30" frameborder="0" allowfullscreen></iframe></p>
 <p><em>Above: This video shows you how to obtain construction and material objects from the Building Component Library and load them into your current model.</em></p>
 <hr />
 <h3 id="constructions_1">Constructions</h3>
 <p>The Constructions sub-tab lists construction objects that are in your model. You can drag additional constructions here from the library. Constructions download using the Online BCL window will appear in the library with a “BCL” flag.</p>
 <p>A construction consists of one or more material layers. You can add materials by dragging them from My Model or the Library to the drop zone. You can only add new materials to the bottom which represents the inside of the wall. You can delete any material by clicking the “x” next to the name.</p>
+<p><img alt="Constructions" src="../../img/create_model/constructions.png" title="Constructions" /> </p>
+<p><em>Above: Edit and create constructions on this tab.</em></p>
 <hr />
 <h3 id="materials">Materials</h3>
 <p>Constructions are made of one or more layers of materials. The 
 Materials subtab lets you inspect and edit those materials. </p>
 <p>There are various classes of material objects. When you add a new material, first select the heading for the type of material you want to add and then click the “+” icon at the bottom of the left pane.</p>
 <p>Different types of material will have different data fields available.</p>
+<p><img alt="Materials" src="../../img/create_model/materials.png" title="Materials" /> </p>
+<p><em>Above: Edit and create materials on this tab.</em></p>
 <!--Tutorials
 * Inspecting and Adjusting Construction Sets
 * Adding and Removing Materials from a Construction
@@ -371,8 +376,9 @@ Resources
 
 <hr />
 <h2 id="internal-loads">Internal Loads</h2>
-<p>The Loads tab contains internal load objects. The fields in the body will change appropriately when you pick a different type of load.</p>
-<p>You can assign loads to a space type or directly to a space, except for Water Use Equipment.</p>
+<p>The Loads tab allows you to create and edit load definitions for the internal load objects you will use in your model. Types of loads are listed in the right panels. Select the type of load you want to create and hit the plus button or drag a load definition from the library onto the drop zone in the lower right.</p>
+<p>Once you add a loads definition, it will be available to use from the "My Model" tab on the right panel. On the Space Type tab you can assign loads to a space type or directly to a space in the Facility tab, except for Water Use Equipment.</p>
+<p><img alt="Load Definitions" src="../../img/create_model/load_def.png" title="Load Definitions" />  </p>
 <p>The types of loads that can be added in this tab follow:</p>
 <ul>
 <li>People</li>
@@ -462,14 +468,16 @@ assigned to a construction object.</p>
 <p><em>Above: Selecting and editing a sub-surface.</em></p>
 <hr />
 <h2 id="thermal-zones">Thermal Zones</h2>
-<p>Setting up thermal zones in the SketchUp Plug-in is shown below.</p>
+<p>OpenStudio's thermal zones parallels the EnergyPlus zone. A thermal zone represents an isothermal volume of air that may have only one thermostat. The OpenStudio thermal zone forms the connection point between the air conditioned space and the  HVAC equipment. Thermal zones can contain one or more spaces. An OpenStudio space contains 3 dimensional geometry and thermal loads. When OpenStudio performs an EnergyPlus simulation, the space objects associated with each thermal zone are geometrically combined, the space loads are averaged, and the ventilation rates from each space are added together.
+Setting up thermal zones in the SketchUp Plug-in is shown below.</p>
 <iframe width="640" height="360" src="http://www.youtube.com/embed/8LTexVna_vw?rel=0&start=240&end=438&autoplay=0" frameborder="0" allowfullscreen></iframe>
 
 <p><em>Above: This video shows you how to assign space types and download space types from the Building Component Library (BCL). It uses the OpenStudio SketchUp Plug-in.</em></p>
-<p>HVAC systems, thermostat, and humidistat settings can be viewed and edited on this tab. Select the "Cooling Sizing Parameters" or "Heating Sizing Parameters" to edit those by thermal zone.</p>
+<p>A thermostat must be defined before running an EnergyPlus simulations with connected HVAC systems. Zone equipment, thermostat, and humidistat settings can be viewed and edited on this tab. Select the "Cooling Sizing Parameters" or "Heating Sizing Parameters" to edit those by thermal zone.</p>
 <p><img src="../../img/create_model/heat_sizing.png" class="img-responsive" alt="Thermal Zone Sizing Parameters"></p>
 <hr />
 <h2 id="air-plant-and-zone-hvac-systems">Air, Plant and Zone HVAC Systems</h2>
+<p>OpenStudio names HVAC systems and components to match EnergyPlus. So if you are familiar with EnergyPlus you will be able to recognize components names, like FanConstantVolumeModel.</p>
 <p>The HVAC Systems tab is used to create, inspect, and edit air and plant loops. The green “+” at the top left is used to add template or empty loops, and the “x” next to it will delete them. The pull-down at the top right of the body is to select which loop to displayed.</p>
 <p>Hit the green plus button to add a loop. </p>
 <p><img src="../../img/create_model/add_hvac.png" class="img-responsive" alt="Add from Template"></p>
