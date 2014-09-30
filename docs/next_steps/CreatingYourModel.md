@@ -633,5 +633,12 @@ requirements.
  
  *Above: An annotated screenshot of the schedules editing interface.*
 
-<!--May move this to a page Using Radiance-->   
+<!--May move the Radiance to a page about Using Radiance-->   
+
+_______________________
+
+
+<p class="text-center"><small>OpenStudio is developed in collaboration by NREL, ANL, LBNL, ORNL, and PNNL.</small></p> 
+
+<p class="text-center"><small>NREL is a National Laboratory of the U.S. Department of Energy, Office of Energy Efficiency and Renewable Energy, operated by the Alliance for Sustainable Energy, LLC.</small></p>
 

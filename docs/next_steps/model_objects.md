@@ -13,3 +13,10 @@ The diagram below shows the OpenStudio 0.6.0 Model Objects Inheritance Relations
 <a href="../../img/model/openstudio_inheritance.jpg" target="_blank">
 <img src="../../img/model/thumb_openstudio_inheritance.png" alt="Resized JPEG graphic" title="Click to view" border="2" width="750" height="613" hspace="10" /></a>
 <p>*Above: Click to view a larger diagram of model inheritance.*</p>
+
+_______________________
+
+
+<p class="text-center"><small>OpenStudio is developed in collaboration by NREL, ANL, LBNL, ORNL, and PNNL.</small></p> 
+
+<p class="text-center"><small>NREL is a National Laboratory of the U.S. Department of Energy, Office of Energy Efficiency and Renewable Energy, operated by the Alliance for Sustainable Energy, LLC.</small></p>

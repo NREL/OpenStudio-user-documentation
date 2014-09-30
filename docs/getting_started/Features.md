@@ -106,5 +106,10 @@ ____________________________
 ## What is Coming Next?   
 * [__Check out our OpenStudio Roadmap__](roadmap.md) to learn about future feature development.
 
-____________________________
+_______________________
+
+
+<p class="text-center"><small>OpenStudio is developed in collaboration by NREL, ANL, LBNL, ORNL, and PNNL.</small></p> 
+
+<p class="text-center"><small>NREL is a National Laboratory of the U.S. Department of Energy, Office of Energy Efficiency and Renewable Energy, operated by the Alliance for Sustainable Energy, LLC.</small></p>
 

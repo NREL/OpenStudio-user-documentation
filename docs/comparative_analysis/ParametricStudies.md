@@ -201,4 +201,12 @@ While your runs are completing on the cloud and after they are finished you can 
 
 ![Cloud Download](../../img/pat/download_results_during.png "Cloud Results During")
 
-*Above: Right click on design alternative to get these options. If your model includes calibration reports the calibration button at the top of the results will display those in a table format in the application*
+*Above: Right click on design alternative to get these options. If your model includes calibration reports the calibration button at the top of the results will display those in a table format in the application.*
+
+
+_______________________
+
+
+<p class="text-center"><small>OpenStudio is developed in collaboration by NREL, ANL, LBNL, ORNL, and PNNL.</small></p> 
+
+<p class="text-center"><small>NREL is a National Laboratory of the U.S. Department of Energy, Office of Energy Efficiency and Renewable Energy, operated by the Alliance for Sustainable Energy, LLC.</small></p>

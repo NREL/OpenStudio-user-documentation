@@ -10,6 +10,13 @@ This video provides information for using space types in OpenStudio.
 
 Check out our [Features](../getting_started/Features.md) page to learn about the functionality of the latest release.  
 
+
+_______________________
+
+
+<p class="text-center"><small>OpenStudio is developed in collaboration by NREL, ANL, LBNL, ORNL, and PNNL.</small></p> 
+
+<p class="text-center"><small>NREL is a National Laboratory of the U.S. Department of Energy, Office of Energy Efficiency and Renewable Energy, operated by the Alliance for Sustainable Energy, LLC.</small></p>
  
   
   

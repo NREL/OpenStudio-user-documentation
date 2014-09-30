@@ -711,3 +711,11 @@ Check to see if you are using the most current release of the OpenStudio Google 
 
 ![Ill Map](../../img/plugin_reference_guide/Shadow_Settings.png "Shadow Settings Screenshot")
 <p>*Above: Screenshot of SketchUp Shadow Setting Window*</p>
+
+
+_______________________
+
+
+<p class="text-center"><small>OpenStudio is developed in collaboration by NREL, ANL, LBNL, ORNL, and PNNL.</small></p> 
+
+<p class="text-center"><small>NREL is a National Laboratory of the U.S. Department of Energy, Office of Energy Efficiency and Renewable Energy, operated by the Alliance for Sustainable Energy, LLC.</small></p>
