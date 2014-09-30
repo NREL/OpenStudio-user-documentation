@@ -310,19 +310,23 @@
 </li>
 </ul>
 <p><em>Above: This video shows you how search for specific surfaces and use a script to add overhangs to those surfaces.</em></p>
-<hr />
 <!### Building Rotation-->
 
 <hr />
 <h2 id="schedules">Schedules</h2>
+<p>To create and edit schedules in the OpenStudio application go to the schedules tab. Check out the <a href="../openstudio_application_interface/">OpenStudio Application Interface</a> section for an overview of the interface.</p>
 <h3 id="year-settings">Year Settings</h3>
 <p>The Year Settings subtab lets you set the day of the week the simulation should start. Define using Calendar Year or First Day Of Year buttons and pull-downs.</p>
 <p>The tab can also be used to configure and turn Daylight Savings Time on and off.</p>
+<p><img alt="Year Settings" src="../../img/create_model/year.png" title="Year Settings" /> </p>
+<p><em>Above: Select the year for you simulation.</em></p>
 <hr />
 <h3 id="inspecting-and-adjusting-schedule-sets">Inspecting and Adjusting Schedule Sets</h3>
 <p>A Schedule Set is a collection of schedules for building activities or elements.</p>
 <p>A schedule set can be applied to an entire building, a story, a space type, or an individual space.</p>
 <p>This sub-tab has two kinds of drop zones. You can drop schedule sets from My Model or Library into the bottom of the left pane, or you can drop individual schedules into the drop zones in the main body.</p>
+<p><img alt="Schedule Sets" src="../../img/create_model/schedule_sets.png" title="Schedule Sets" /> </p>
+<p><em>Above: Create and edit schedule sets.</em></p>
 <hr />
 <h3 id="inspecting-and-editing-ruleset-schedules">Inspecting and Editing Ruleset Schedules</h3>
 <p>This tab is a visual editor for Ruleset Schedules. As the name implies, a schedule consists of a series of rules. Each rule or profile can be applied for a specific date range and for specific days of the week.</p>
@@ -336,12 +340,11 @@ Compact and other schedule types in your model, you can visualize and edit only 
 <p><em>Above: An annotated screenshot of the schedules editing interface. Click image for a large view of the image.</em></p>
 <p><iframe width="640" height="360" src="http://www.youtube.com/embed/PCcxruCaZO0?start=210&end=788&autoplay=0" frameborder="0" allowfullscreen></iframe></p>
 <p><em>Above: This video demonstrates how you can inspect, alter, and apply resource objects in the OpenStudio Application.</em></p>
-<ul>
-<li>Assigning Schedules and Schedule Sets</li>
-<li>Other Types of Schedules</li>
-<li>Constant</li>
-<li>Compact</li>
-</ul>
+<!* Assigning Schedules and Schedule Sets
+* Other Types of Schedules
+  * Constant
+  * Compact-->
+
 <hr />
 <h2 id="constructions">Constructions</h2>
 <p>In an energy model, each surface must have a construction assigned. The construction determines the heat transfer through that surface. A construction set can be applied to an entire building, a story, a space type, or an individual space. Usually a majority of the exterior walls in a building will share the same construction. You can assign the exterior wall construction on the building level and that construction will be applied to all exterior walls. This will be the default construction, but you can still edit surfaces and subsurfaces that differ from the defaults. </p>
