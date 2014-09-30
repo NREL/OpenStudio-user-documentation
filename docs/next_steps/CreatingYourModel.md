@@ -199,8 +199,7 @@ A construction consists of one or more material layers. You can add materials by
 
 ### Materials
 
-Constructions are made of one or more layers of materials. The 
-Materials subtab lets you inspect and edit those materials. 
+Constructions are made of one or more layers of materials. The Materials subtab lets you inspect and edit those materials. 
 
 There are various classes of material objects. When you add a new material, first select the heading for the type of material you want to add and then click the “+” icon at the bottom of the left pane.
 
@@ -369,7 +368,6 @@ A thermostat must be defined before running an EnergyPlus simulations with conne
 ------ 
 
 ## Air, Plant and Zone HVAC Systems
-OpenStudio names HVAC systems and components to match EnergyPlus. So if you are familiar with EnergyPlus you will be able to recognize components names, like FanConstantVolumeModel.
 
 The HVAC Systems tab is used to create, inspect, and edit air and plant loops. The green “+” at the top left is used to add template or empty loops, and the “x” next to it will delete them. The pull-down at the top right of the body is to select which loop to displayed.
 
@@ -384,6 +382,8 @@ When adding a template loop, there are four images within the icon. From left to
 ![HVAC Add](../../img/create_model/system_templates.png "System Icons")
 
 The top half of the loop is for supply-side objects, the bottom half is for demand. Thermal Zones and other objects can be dragged onto drop zones or nodes. Optionally you can select the splitter or mixer to bring up a list of Thermal Zones, checking the ones you want included in the loop.
+
+OpenStudio names HVAC systems and components to match EnergyPlus. So if you are familiar with EnergyPlus you will be able to recognize components names, like FanConstantVolumeModel.
 
 <img src="../../img/create_model/hvac_about.png" class="img-responsive" alt="HVAC Interface>
  
