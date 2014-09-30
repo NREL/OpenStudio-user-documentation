@@ -1,8 +1,8 @@
-# Creating Your Model
+# Creating Your Model 
 
 After completing the [Introductory Tutorial](../getting_started/GettingStarted.md#introductory-tutorial), you can find additional information on using OpenStudio by topic below.
 
-## Envelope
+## Envelope 
 
 The building envelope is created using the SketchUp OpenStudio Plug-in. Refer to [the SketchUp Plug-in Interface Section](sketchup_plugin_interface.md) to learn more about the interface and toolbars for the plug-in.
 
@@ -10,14 +10,14 @@ The building envelope is created using the SketchUp OpenStudio Plug-in. Refer to
 
 ### Choosing a template  
 The New OpenStudio Model From Template (![New OpenStudio Model](../../img/plugin_reference_guide/os_new.png "New OpenStudio Model")) tool is represented by this icon in the toolbar. Templates contain data for constructions, loads, and schedules for four vintages across all U.S. climate zones. Templates do not contain any geometry.
- 
- <iframe width="640" height="360" src="http://www.youtube.com/embed/wzzY_W2WELo?rel=0&start=0&end=43&autoplay=0" frameborder="0" allowfullscreen></iframe>
-
-*Above: This video shows you how to choose a template before setting up you model.*
 
 ![Choose Template](../../img/create_model/from_template.png "Start a New Model with a from Template")
 
 *Above: Dialog to choose template.*
+ 
+ <iframe width="640" height="360" src="http://www.youtube.com/embed/wzzY_W2WELo?rel=0&start=0&end=43&autoplay=0" frameborder="0" allowfullscreen></iframe>
+
+*Above: This video shows you how to choose a template before setting up you model.*
 
 Vintages:
 
@@ -109,6 +109,13 @@ There are many ways to add windows to your building envelope.
 
 
 <!### Building Rotation--> 
+
+## OpenStudio Application
+To assign schedules, add loads, add HVAC systems, and more, open your model in the OpenStudio application. Open your model directly from the SketchUp Plugin by hitting the OpenStudio icon on the toolbar or by opening a file from the OpenStudio application.
+
+ ![Opening File](../../img/create_model/open_app.png "Open in OpenStudio Application from SketchUp Plug-in") 
+ 
+ *Above: Select the OpenStudio icon to open the file and edit it in the OpenStudio application.*
 
 ------
 ## Schedules
@@ -385,9 +392,25 @@ The top half of the loop is for supply-side objects, the bottom half is for dema
 
 OpenStudio names HVAC systems and components to match EnergyPlus. So if you are familiar with EnergyPlus you will be able to recognize components names, like FanConstantVolumeModel.
 
-<img src="../../img/create_model/hvac_about.png" class="img-responsive" alt="HVAC Interface>
+<img src="../../img/create_model/hvac_about.png" class="img-responsive" alt="HVAC Interface">
  
  *Above: Annotated view of the HVAC interface.*
+ 
+ <img src="../../img/create_model/add_thermal_zones.png" class="img-responsive" alt="Add Thermal Zone">
+ 
+ *Above: Another way to add thermal zones, besides dragging them from the "My Model, is to select the splitter or mixer and check the boxes on the right panel.*
+  
+   <img src="../../img/create_model/component_edit.png" class="img-responsive" alt="Edit Component"> 
+ 
+ *Above: Select a component and edit it on the "Edit" tab on the right panel. Some components like the one above will have icons under the "Edit" panel. The gear icons will let you edit the component's settings.*
+ 
+ <img src="../../img/create_model/connections.png" class="img-responsive" alt="Adjust Connections">
+ 
+ *Above: Select a component and adjust the connections, by hitting the link icon on the "Edit" tab on the right panel.* 
+ 
+   <img src="../../img/create_model/hvac_controller.png" class="img-responsive" alt="Adjust Controller on Component"> 
+ 
+ *Above: Select a component and adjust the controller, by hitting the dial icon on the "Edit" tab on the right panel.*
  
   
 The __controls view__ is only available for the air loops. With an air loop selected in “Layout” view you can switched to “Control” view.
@@ -445,8 +468,8 @@ The heating coils without links represent the reheat terminals for each connecte
 ## Return and Supply Plenums
 To add supply and return plenum zones:
 
-1. To access the plenum editor, select the zone on the layout view. 
-2. Select the Edit tab on the right panel and click on the  plenum icon on the blue bar.
+1. Access the plenum editor by selecting the zone on the layout view. 
+2. Select the "Edit" tab on the right panel and click on the  plenum icon on the blue bar.
 3. Choose a plenum from the drop down list or create a new plenum zone but selecting the green add button. The zones available to be plenums will be selectable in a dialog. Create new zones for plenums in the Thermal Zones tab on the left.
 
 Shared plenums will be colored the same and will match the color selected for the plenum zone on the Thermal Zones tab.
@@ -510,7 +533,7 @@ Click on the zoom button by the name of the refrigeration system to go to a view
  <a href="../../img/create_model/refrig_1_large.png" target="_blank">
 <img src="../../img/create_model/refrig_1.png" alt="Resized JPEG graphic" title="Click to view" border="2" width="775" height="" hspace="10" /></a>
 
-*Above: Adding refrigeration systems to your model under the HVAC tab. Click image to view a larger version.*
+*Above: Add refrigeration systems to your model under the HVAC tab. Click image to view a larger version.*
 
 This zoomed in view provides the layout view of one refrigeration rack. You may add cases by dragging them on to the “Drag and Drop Cases” drop zone.
 
