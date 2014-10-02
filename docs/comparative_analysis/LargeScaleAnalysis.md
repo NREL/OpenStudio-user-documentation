@@ -56,15 +56,15 @@ Select the measures you want to use in the analysis and export a spreadsheet by 
         
 ### Edit the Template Spreadsheet
 After exporting the spreadsheet from PAT, open the spreadsheet in Excel to edit fields.
-![Analysis spreadsheet](../../img/large_scale/spreadsheet.png "Spreadsheet")
+
+ <a href="../../img/large_scale/spreadsheet.png" target="_blank">
+<img src="../../img/large_scale/small_spreadsheet.png" alt="Resized JPEG graphic" title="Click to view larger version" border="2" width="760" height="" hspace="10" /></a>
+
+*Above: Click to see a larger screenshot of the spreadsheet.*
 
 ### Running OpenStudio's Cloud
 
     $ rake run
-
-
-
-
 __________
 
 ### Buildings Specific Chef Cookbooks
