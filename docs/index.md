@@ -1,8 +1,8 @@
 
 # Welcome to OpenStudio User Documentation
- 
 
 This is OpenStudio's user documentation. A brief summary of the content and intent of each section is below. Use the buttons below or the horizontal navigation above to learn more about the OpenStudio suite of applications.
+
 
 <div class="container-fluid"> 
 <div class="row">
@@ -91,7 +91,6 @@ This is OpenStudio's user documentation. A brief summary of the content and inte
   </div>        
 </div>
 </div>
-
 
 
 <p class="text-center"><small>OpenStudio is developed in collaboration by NREL, ANL, LBNL, ORNL, and PNNL.</small></p> 

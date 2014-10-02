@@ -410,25 +410,26 @@ Restate the measure using the names of the OpenStudio model objects found during
 Find the SpaceType called "Enclosed Office".  Replace any LightsDefinitions referenced by Lights in this SpaceType with a new LightsDefinition having "Energy Per Space Floor Area" = 10 W/m2.
 
 ##### Finding the OpenStudio Methods: Using the Documentation
-All the OpenStudio code documentation lives online at http://openstudio.nrel.gov/latest-c-sdk-documentation.  Open this website.
+All the OpenStudio code documentation lives online at https://s3.amazonaws.com/openstudio-sdk-documentation/index.html.  [Open this website.](https://s3.amazonaws.com/openstudio-sdk-documentation/index.html)
 
-![Guide Methods](../../img/measure-writing-guide/4.png)
+![Methods 1](../../img/measure-writing-guide/4.png)
 
-Click "__C++ SDK Documentation__" then on "__Model__".  You will see a Web page similar to the image shown below.
+Click on the model link to explore.
 
 ![Methods 2](../../img/measure-writing-guide/5.png)
 
-The left column is the navigator; the right pane shows the details of whatever is selected in the left column.
+This will take you to the OpenStudio Model Overiew page.
 
 ![Core](../../img/Measure-Writing-Guide/6.png)
 
-In the left column, expand "__Classes->Class List->openstudio->model__."  This list of objects under "__model__" includes most of the information necessary to write measures.
+Select the "Objects/Objects List" to find more information on individual model objects.
+![Core](../../img/Measure-Writing-Guide/6b.png)
 
-Click "__SpaceType__" under "__model__."
+Click "__SpaceType__"."
 
 ![click space](../../img/measure-writing-guide/7.png)
 
-The right pane contains the documentation for the SpaceType class.  The methods are generally split into four categories: Constructors and Destructors, Getters, Setters, and Other. SpaceType is a base class of ResourceObject. You can look into the ResourceObject for additional methods beyond what is in the SpaceType documentation.
+This screen contains the documentation for the SpaceType class.  The methods are generally split into four categories: Constructors and Destructors, Getters, Setters, and Other. SpaceType is a base class of ResourceObject. You can look into the ResourceObject for additional methods beyond what is in the SpaceType documentation.
 
 ###### Understanding the Methods
 At first glance, the methods look cryptic, not at all like those shown in the examples, because this is the C++ documentation and the methods used are the Ruby translation of these same methods.  These methods can be decoded as follows:
@@ -445,7 +446,7 @@ design_spec_oa = space_type.designSpecificationOutdoorAir
 
 The type of object returned by the method:
 
-![type of object](../../img/measure-writing-guide/9.pn)g
+![type of object](../../img/measure-writing-guide/9.png)
 
 Methods Return Types:
 

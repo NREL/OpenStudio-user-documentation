@@ -280,7 +280,7 @@ The space types tab in the OpenStudio application is organized into a grid view.
 <!--* Inspecting and Adjusting Space Types
 * Assigning Space Types and Default Space Types-->  
 
-![Grid 1](../../img/os_interface/space_type_grid1.png "Space Type Grid View")
+<img src="../../img/os_interface/space_type_grid1.png" class="img-responsive" alt="os_interface/space_type_grid1.png">
 
 *Above: The grid view provides a spreadsheet style layout.*
 

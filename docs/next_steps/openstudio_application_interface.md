@@ -69,15 +69,15 @@ Drag components and schedules into the grid view. Most items on the grid can be 
 
 Click on the color box on the "General" button to change the rendering color of the space type. This will change the rendering color in the SketchUp Plug-in as well.
 
-![Grid 1](../../img/os_interface/space_type_grid1.png "Space Type Grid View")
+<img src="../../img/os_interface/space_type_grid1.png" class="img-responsive" alt="Space Type Grid View">
 
 *Above: The grid view provides a spreadsheet style layout.*
 
-![Grid 1](../../img/os_interface/space_type_grid_loads.png "Space Type Loads")
+<img src="../../img/os_interface/space_type_grid_loads.png" class="img-responsive" alt="Space Type Loads">
 
 *Above: Hit the "Loads" button to edit and view loads by space type. Click on the name of a component and select the  "Edit" panel on the right to inspect and edit that item. You can edit the load definition in the example shown above.*
 
-![Grid 2](../../img/os_interface/thermal_zone_grid.png "Thermal Zone Grid View")
+<img src="../../img/os_interface/thermal_zone_grid.png" class="img-responsive" alt="Thermal Zone Grid View">
 
 *Above: The grid view of thermal zones.*
 
