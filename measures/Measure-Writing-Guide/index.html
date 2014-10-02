@@ -568,16 +568,17 @@ end
 <p>Restate the measure using the names of the OpenStudio model objects found during the GUI exploration:</p>
 <p>Find the SpaceType called "Enclosed Office".  Replace any LightsDefinitions referenced by Lights in this SpaceType with a new LightsDefinition having "Energy Per Space Floor Area" = 10 W/m2.</p>
 <h5 id="finding-the-openstudio-methods-using-the-documentation">Finding the OpenStudio Methods: Using the Documentation</h5>
-<p>All the OpenStudio code documentation lives online at http://openstudio.nrel.gov/latest-c-sdk-documentation.  Open this website.</p>
-<p><img alt="Guide Methods" src="../../img/measure-writing-guide/4.png" /></p>
-<p>Click "<strong>C++ SDK Documentation</strong>" then on "<strong>Model</strong>".  You will see a Web page similar to the image shown below.</p>
+<p>All the OpenStudio code documentation lives online at https://s3.amazonaws.com/openstudio-sdk-documentation/index.html.  <a href="https://s3.amazonaws.com/openstudio-sdk-documentation/index.html">Open this website.</a></p>
+<p><img alt="Methods 1" src="../../img/measure-writing-guide/4.png" /></p>
+<p>Click on the model link to explore.</p>
 <p><img alt="Methods 2" src="../../img/measure-writing-guide/5.png" /></p>
-<p>The left column is the navigator; the right pane shows the details of whatever is selected in the left column.</p>
+<p>This will take you to the OpenStudio Model Overiew page.</p>
 <p><img alt="Core" src="../../img/Measure-Writing-Guide/6.png" /></p>
-<p>In the left column, expand "<strong>Classes-&gt;Class List-&gt;openstudio-&gt;model</strong>."  This list of objects under "<strong>model</strong>" includes most of the information necessary to write measures.</p>
-<p>Click "<strong>SpaceType</strong>" under "<strong>model</strong>."</p>
+<p>Select the "Objects/Objects List" to find more information on individual model objects.
+<img alt="Core" src="../../img/Measure-Writing-Guide/6b.png" /></p>
+<p>Click "<strong>SpaceType</strong>"."</p>
 <p><img alt="click space" src="../../img/measure-writing-guide/7.png" /></p>
-<p>The right pane contains the documentation for the SpaceType class.  The methods are generally split into four categories: Constructors and Destructors, Getters, Setters, and Other. SpaceType is a base class of ResourceObject. You can look into the ResourceObject for additional methods beyond what is in the SpaceType documentation.</p>
+<p>This screen contains the documentation for the SpaceType class.  The methods are generally split into four categories: Constructors and Destructors, Getters, Setters, and Other. SpaceType is a base class of ResourceObject. You can look into the ResourceObject for additional methods beyond what is in the SpaceType documentation.</p>
 <h6 id="understanding-the-methods">Understanding the Methods</h6>
 <p>At first glance, the methods look cryptic, not at all like those shown in the examples, because this is the C++ documentation and the methods used are the Ruby translation of these same methods.  These methods can be decoded as follows:</p>
 <p>The name of the method:</p>
@@ -587,7 +588,7 @@ end
 </code></pre>
 
 <p>The type of object returned by the method:</p>
-<p><img alt="type of object" src="../../img/measure-writing-guide/9.pn" />g</p>
+<p><img alt="type of object" src="../../img/measure-writing-guide/9.png" /></p>
 <p>Methods Return Types:</p>
 <p>bool = true/false</p>
 <p>double = a number</p>
