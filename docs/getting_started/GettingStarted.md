@@ -117,7 +117,7 @@ For additional information on the SketchUp Plug-in interface, go to the [SketchU
 * Viewing Simulation Results
 -->  
 ## Software License Description and Terms
-* OpenStudio is licensed under the Lesser General Public License (LGPL), and is free for use and development. Visit the LGPL license web page for details on the software development kit terms of use.
+* OpenStudio is licensed under the Lesser General Public License (LGPL), and is free for use and development. Visit the [LGPL license web page](https://raw.githubusercontent.com/NREL/OpenStudio/develop/license.txt) for details on the software development kit terms of use.
 
 _______________________
 
