@@ -5,7 +5,7 @@ OpenStudio is supported on Windows 7 – 8.1, OS X 10.8 – 10.9, and Ubuntu 12.
 <li>[Download and install EnergyPlus 8.1.] [Download EnergyPlus]
 [Download EnergyPlus]: http://apps1.eere.energy.gov/buildings/energyplus/
 <ul>
-<li> Create an EnergyPlus account, if you don't have one and then login.</li>
+<li> Create an EnergyPlus account, if you don't have one, and then login.</li>
 <li> After you log in you can click the link to access the page to "Download Older Versions of Energy Plus". Choose the appropriate version of EnergyPlus 8.1 for your computer.</li>
 <li> Download and follow the instructions. OpenStudio will work with 32 or 64bit EnergyPlus installers.</li>
 </ul>
@@ -27,9 +27,9 @@ BCL content can now be accessed from within the OpenStudio SketchUp Plug-in and 
 
 
 1. If you already have a BCL account, log in and go to step 3. If you do not already have a BCL account, go to [register at BCL](https://bcl.nrel.gov/user/register) to create a new account.  
-2. After you click "Create new account," you are taken back to the BCL home page. Follow the instructions from the email sent to you upon registration and then lo gin.
+2. After you click "Create new account," you are taken back to the BCL home page. Follow the instructions from the email sent to you upon registration and then login.
 3. Click on the "My Dashboard" near the top right of the website.
-4. Copy the text after __"APIv1.1 key:"__ then paste the key into the SketchUp Plug-in, the OpenStudio application, or the Parametric Analysis Tool (PAT). __You only need to configure the key in one place and it will be used globally throughout the OpenStudio tools.__ Additionally this key will be maintained when you install updates to OpenStudio. Specific application instructions are below.
+4. Copy the text after __"APIv1.1 key:"__ then paste the key into the SketchUp Plug-in, the OpenStudio application, or the Parametric Analysis Tool (PAT). __You only need to configure the key in one place and it will be used globally throughout the OpenStudio tools.__ Additionally, this key will be maintained when you install updates to OpenStudio. Specific application instructions are below.
 
 ![Key Request](../../img/bcl_key_request.png "Key Dialog")
 
@@ -50,17 +50,17 @@ After installing OpenStudio you will have the SketchUp Plug-in, OpenStudio Appli
 Results view is used to view simulation results. The section on Running Simulation & Viewing Results has information on using [ResultsViewer.](../../next_steps/RunningYourSimulation/#using-resultsviewer)
 
 ## Quick Start Guide to OpenStudio Modeling Tools
-* This [OpenStudio Quick Start Guide (PDF)](../../img/pdfs/openstudio_interface_quickstart.pdf) provides an introduction to the interface for the Plug-in and the OpenStudio application. It also provides guidance on the basic workflow. Checkout the [Introductory Tutorial](#introductory-tutorial) Below to get started.
+* This [OpenStudio Quick Start Guide (PDF)](../../img/pdfs/openstudio_interface_quickstart.pdf) provides an introduction to the interface for the Plug-in and the OpenStudio application. It also provides guidance on the basic workflow. Checkout the [Introductory Tutorial](#introductory-tutorial) below to get started.
 
 ## Quick Start Guide to the ParametricAnalysisTool (PAT)
-* This [ParametricAnalysisTool Quick Start Guide (PDF)](../../img/pdfs/PAT-Quick_Start_Guide.pdf) and the [ParametricAnalysisTool section](../comparative_analysis/ParametricStudies.md) provide an introduction to the interface and workflow for creating multiple design alternative from a seed model. 
+* This [ParametricAnalysisTool Quick Start Guide (PDF)](../../img/pdfs/PAT-Quick_Start_Guide.pdf) and the [ParametricAnalysisTool section](../comparative_analysis/ParametricStudies.md) provide an introduction to the interface and workflow for creating multiple design alternatives from a seed model. 
 
 ## Introductory Tutorial
 
 The tutorial below was created before the grid view was added to the Space Types and Thermal Zones tabs. Grid view allows you to view and edit more than one space type or thermal zone at a time. Go to the [OpenStudio Application Interface](../next_steps/openstudio_application_interface.md) to learn more about grid view.   
 
 ### SketchUp Plug-in—Building Envelope
-For additional information on the SketchUp Plug-in interface go to the [SketchUp Plug-in Interface](../next_steps/sketchup_plugin_interface.md) section.
+For additional information on the SketchUp Plug-in interface, go to the [SketchUp Plug-in Interface](../next_steps/sketchup_plugin_interface.md) section.
  
 <iframe width="640" height="360" src="http://www.youtube.com/embed/wzzY_W2WELo?rel=0&start=&end=&autoplay=0" frameborder="0" allowfullscreen></iframe>
     
