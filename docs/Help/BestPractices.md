@@ -1,12 +1,9 @@
 # Best Practices
 ## General
 
-* __Save Your Model Often and With Different Versions.__ Save multiple versions of your OpenStudio Model as you progress; this makes it easier to recover from an error and provides takeoff points for model variations.
+* __Save your model often and with different versions.__ Save multiple versions of your OpenStudio Model as you progress; this makes it easier to recover from an error and provides takeoff points for model variations.
 
 * EnergyPlus is a detailed simulation engine, but you have to tell it how you want your building modeled. A common misunderstanding is that EnergyPlus will interpret "voids" between zones "correctly." EnergyPlus does not compute heat transfer between zones if they do not share a surface, so you must input the shared surfaces and set appropriate boundary conditions. To correctly model air transfer between zones, you have to add input objects that describe the airflow between zones. To model daylight transmission between zones, you need to add interior windows. Just because a building looks right, does not mean it is modeled correctly; digging in to the IDF and looking at detailed results is the only way to determine that you have modeled your building correctly.
-
-* EnergyPlus is a detailed simulation engine, but you have to tell it how you want your building modeled. A common misunderstanding is that EnergyPlus will interpret "voids" between zones "correctly." EnergyPlus does not compute heat transfer between zones if they do not share a surface, so you must input the shared surfaces and set appropriate boundary conditions. To correctly model air transfer between zones, you have to add input objects that describe the airflow between zones. To model daylight transmission between zones, you need to add interior windows. Just because a building looks right, does not mean it is modeled correctly; digging in to the IDF and looking at detailed results is the only way to determine that you have modeled your building correctly.
-
 
 * When you import an IDF into OpenStudio, it may be altered as part of the import process. For example, if your windows are not in the same plane as their base surface, OpenStudio moves them into the base surface plane. There may be other changes as well. If you want to keep your raw IDF untouched, you should "SaveAs", either as soon as you import it, or before you import it.
 To rename objects, go to the OpenStudio Inspector. Do not alter the names in SketchUp's Entity Information dialog.
@@ -62,5 +59,3 @@ By default interior partition surfaces are included and converted to internal ma
 
 <p class="text-center"><small>NREL is a National Laboratory of the U.S. Department of Energy, Office of Energy Efficiency and Renewable Energy, operated by the Alliance for Sustainable Energy, LLC.</small></p>
   
-  
-<p class="text-center"><small> <a href="http://openstudiodev.prod.acquia-sites.com/">Return to OpenStudio Home</a></p>

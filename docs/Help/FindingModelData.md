@@ -1,6 +1,6 @@
 # Finding Model Data
 ## OpenStudio Building Type Templates
-The New OpenStudio Model From Template (![New OpenStudio Model](../../img/plugin_reference_guide/os_new.png "New OpenStudio Model")) tool is represented by this icon in the toolbar. Templates contain data for constructions, loads, and schedules for four vintages across all U.S. climate zones. Templates do not contain any geometry.
+The New OpenStudio Model From Template tool is represented by this icon in the toolbar: ![New OpenStudio Model](../../img/plugin_reference_guide/os_new.png "New OpenStudio Model"). Templates contain data for constructions, loads, and schedules for four vintages across all U.S. climate zones. Templates do not contain any geometry.
  
  <iframe width="640" height="360" src="http://www.youtube.com/embed/wzzY_W2WELo?rel=0&start=0&end=43&autoplay=0" frameborder="0" allowfullscreen></iframe>
 
@@ -29,11 +29,11 @@ An Internet-connected source of building energy modeling data:
 
 * Enables drag-and-drop modeling for quick technology evaluation
 * Provides consistent, detailed inputs to drive decision-making
-* Searchable readily available within applications
+* Searchable and readily available within applications
 
 The BCL window gives you access to an online repository of building energy modeling data and scripts called the [Building Component Library](https://bcl.nrel.gov/). Although you can access the BCL website on its own, OpenStudio has integrated access to the BCL from within the application. You can access this through the “Window” menu.
 
-The first time you /open this window you will be prompted for an API key, unless you have already used BCL functionality in the SketchUp Plug-in. [Instructions for finding your API Key](../getting_started/GettingStarted.md#connecting-with-the-building-component-library) are in the "Getting Started" section.
+You will be prompted for an API key the first time you open this window, unless you have already used BCL functionality in the SketchUp Plug-in. [Instructions for finding your API Key](../getting_started/GettingStarted.md#connecting-with-the-building-component-library) are in the "Getting Started" section.
 
 
 ![BCL Window](../../img/os_interface/bcl_window.png "BCL Window")
@@ -46,5 +46,3 @@ _______________________
 <p class="text-center"><small>OpenStudio is developed in collaboration by NREL, ANL, LBNL, ORNL, and PNNL.</small></p> 
 
 <p class="text-center"><small>NREL is a National Laboratory of the U.S. Department of Energy, Office of Energy Efficiency and Renewable Energy, operated by the Alliance for Sustainable Energy, LLC.</small></p>
-
-<p class="text-center"><small> <a href="http://openstudiodev.prod.acquia-sites.com/">Return to OpenStudio Home</a></p>
