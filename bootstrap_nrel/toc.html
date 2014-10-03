@@ -1,0 +1,19 @@
+{% for toc_item in toc %}
+	{% if loop.first %}
+		<div class="bs-sidebar hidden-print affix well" role="complementary">
+   		 <ul class="nav bs-sidenav">
+  {% endif %}
+
+  <li class="main {% if toc_item.active %}active{% endif %}"><a href="{{ toc_item.url }}">{{ toc_item.title }}</a></li>
+    {% for toc_item in toc_item.children %}
+      <li><a href="{{ toc_item.url }}">{{ toc_item.title }}</a></li>
+    {% endfor %}
+
+  {% if loop.last %}
+    	</ul>
+		</div>
+	{% endif %}
+
+{% endfor %}
+
+

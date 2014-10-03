@@ -1,4 +1,6 @@
 site_name: OpenStudio User Docs
+site_favicon: favicon.ico
+site_logo: 'OS_32x32.png'
 
 pages:
 - [index.md]
@@ -19,6 +21,8 @@ pages:
 - [help/BestPractices.md, Help, Best Practices]
 - [help/Troubleshooting.md, Help, Troubleshooting]
 - [help/FAQ.md, Help, FAQ]
-theme: bootstrap
+
+theme_dir: 'bootstrap_nrel'
+
 
 
