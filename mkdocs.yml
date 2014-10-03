@@ -12,6 +12,7 @@ pages:
 - [next_steps/model_objects.md, References & Tutorials, Overview of OpenStudio Model Objects]
 - [next_steps/CreatingYourModel.md, References & Tutorials, Creating Your Model]
 - [next_steps/RunningYourSimulation.md, References & Tutorials, Running Your Simulation & Viewing Results]
+- [next_steps/detailed_tutorials/tutorial_glhepro.md, References & Tutorials, GLHEPro Tutorial]
 - [measures/AboutMeasures.md, Measures, About Measures]
 - [measures/Measure-Writing-Guide.md, Measures, Measure Writing Guide]
 - [comparative_analysis/ParametricStudies.md, Comparative Analysis, ParametricAnalysisTool]
