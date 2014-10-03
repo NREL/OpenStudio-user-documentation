@@ -40,7 +40,7 @@ This is OpenStudio's user documentation. A brief summary of the content and inte
         <h3>Speed Up Your Workflow With Measures</h3>
         <p>Learn what measures are, how to use them for various use cases, and where to find them.</p>
         <p><a href="measures/AboutMeasures.md" class="btn btn-primary" role="About Measures">About Measures</a></p>
-        <p>Can find the measures you want, or need to customize an existing measure? The Measure Writing Guide will hep get you started.</p>
+        <p>Can't find the measures you want, or need to customize an existing measure? The Measure Writing Guide will help you get started.</p>
         <p><a href="measures/Measure-Writing-Guide.md" class="btn btn-primary" role="Measure Writing Guide">Measure Writing Guide</a></p>  
       </div>
     </div>
@@ -67,7 +67,7 @@ This is OpenStudio's user documentation. A brief summary of the content and inte
         <h3>Help</h3>
         <p>Find professional training for using OpenStudio.</p>
         <p><a href="help/Training.md" class="btn btn-primary" role="Training, Support, and Consulting">Training, Support, & Consulting</a></p>
-        <p>Additional help topics include:</p>
+        <p>Additional help topics</p>
         <p><a href="help/FindingModelData.md" class="btn btn-primary" role="Finding Model Data">Finding Model Data</a></p>  
         <p><a href="help/BestPractices.md" class="btn btn-primary" role="Best Practices">Best
         Practices</a></p>  
