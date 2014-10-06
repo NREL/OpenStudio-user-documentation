@@ -55,7 +55,7 @@ This is OpenStudio's user documentation. A brief summary of the content and inte
       <img src="img/comparative_thumb.png" alt="Analysis Charts">            
       <div class="caption">
         <h3>Comparative Analysis</h3>
-        <p>Learn how to create design alternatives as part of a parametric study using the OpenStudio Parametric Analysis Tool (PAT). Run simulations locally and on the cloud.</p>
+        <p>Learn how to create design alternatives as part of a parametric study using the OpenStudio ParametricAnalysisTool (PAT). Run simulations locally and on the cloud.</p>
         <p><a href="comparative_analysis/ParametricStudies.md" class="btn btn-primary" role="ParametricAnalysisTool (PAT)">ParametricAnalysisTool (PAT)</a></p>
       </div>
     </div>
