@@ -69,9 +69,13 @@ Drag components and schedules into the grid view. Most items on the grid can be 
 
 Click on the color box on the "General" button to change the rendering color of the space type. This will change the rendering color in the SketchUp Plug-in as well.
 
+<img src="../../img/os_interface/pc_grid.png" class="img-responsive" alt="Windows verion of Grid View">
+
+*Above: The grid view provides a spreadsheet style layout. This is a Windows screenshot.*
+
 <img src="../../img/os_interface/space_type_grid1.png" class="img-responsive" alt="Space Type Grid View">
 
-*Above: The grid view provides a spreadsheet style layout.*
+*Above: The Macintosh version of OpenStudio grid view is shown above.*
 
 <img src="../../img/os_interface/space_type_grid_loads.png" class="img-responsive" alt="Space Type Loads">
 
