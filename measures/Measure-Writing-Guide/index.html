@@ -585,7 +585,7 @@ end
 <p><img alt="Methods 1" src="../../img/measure-writing-guide/4.png" /></p>
 <p>Click on the model link to explore.</p>
 <p><img alt="Methods 2" src="../../img/measure-writing-guide/5.png" /></p>
-<p>This will take you to the OpenStudio Model Overiew page.</p>
+<p>This will take you to the OpenStudio Model Overview page.</p>
 <p><img alt="Core" src="../../img/Measure-Writing-Guide/6.png" /></p>
 <p>Select the "Objects/Objects List" to find more information on individual model objects.
 <img alt="Core" src="../../img/Measure-Writing-Guide/6b.png" /></p>
@@ -821,7 +821,7 @@ ReplaceLightsInSpaceTypeWithLPD.new.registerWithApplication
 </code></pre>
 
 <h3 id="44-description">4.4. Description</h3>
-<p>The Description should explain what the measure does in terms that general building professionals (architects, engineers, contractors, etc.) can understand.  This description will likely be used to create energy modeling reports to convince the design team to implement the measure in the actual building design.  Thus, the Description may include details about how the measure would be implemented, along with explanations of associated qualitative benefits.  It is good practice to include citations in the measure if the description is taken from a known source or if specific benefits are listed.</p>
+<p>The Description should explain what the measure does in terms that general building professionals (architects, engineers, contractors, etc.) can understand.  This description will likely be used to create energy modeling reports to persuade the design team to implement the measure in the actual building design.  Thus, the Description may include details about how the measure would be implemented, along with explanations of associated qualitative benefits.  It is good practice to include citations in the measure if the description is taken from a known source or if specific benefits are listed.</p>
 <pre class="prettyprint well"><code class="xml">&lt;description&gt;This measure adds insulation to the roof.  This may be accomplished by adding additional layers of foam insulation under the roof membrane.  This may require longer fasteners.&lt;/description&gt;
 </code></pre>
 
@@ -1221,7 +1221,9 @@ runner.registerValue(&quot;total_life_cycle_cost&quot;, total_life_cycle_cost, &
 <pre class="prettyprint well"><code class="ruby">relative_building_rotation = OpenStudio::Ruleset::OSArgument.makeDoubleArgument(&quot;rotation&quot;, true)
 </code></pre>
 
-<p>An attribute named 'rotation' will automatically be added to the measure's output with the value passed in by the user.  Measure writers can output any attributes that they want to.  If a measure outputs multiple attributes with the same name, the last attribute reported by that name will be preserved.  Measure writers are encouraged to use terms that are present in the BCL taxonomy (and the upcoming DenCity Metadata API) to allow applications to understand attribute names.  Additionally, special modifiers can be added to attribute names which will imply additional relationships between attributes.  These special attribute modifiers are documented below, using the 'rotation' attribute. <em>Nick, do we need to indicate that rotation is coming from the model as opposed to user input?  Something like model_rotation_initial vs rotation? -- (NL) If anything it should be the other way around. Argument inputs should be flagged as such and leave the 'registerValue' echo out whatever the user says.</em></p>
+<p>An attribute named 'rotation' will automatically be added to the measure's output with the value passed in by the user.  Measure writers can output any attributes that they want to.  If a measure outputs multiple attributes with the same name, the last attribute reported by that name will be preserved.  Measure writers are encouraged to use terms that are present in the BCL taxonomy (and the upcoming DenCity Metadata API) to allow applications to understand attribute names.  Additionally, special modifiers can be added to attribute names which will imply additional relationships between attributes.  These special attribute modifiers are documented below, using the 'rotation' attribute. </p>
+<!--*Nick, do we need to indicate that rotation is coming from the model as opposed to user input?  Something like model_rotation_initial vs rotation? -- (NL) If anything it should be the other way around. Argument inputs should be flagged as such and leave the 'registerValue' echo out whatever the user says.*-->
+
 <table>
 <thead>
 <tr>
@@ -1239,10 +1241,12 @@ runner.registerValue(&quot;total_life_cycle_cost&quot;, total_life_cycle_cost, &
 <tr>
 <td>*_final</td>
 <td>rotation_final</td>
-<td>The value of 'rotation' in the final model after the measure was run. <em>Nick, if the measure returns either false or NA without altering the model does it still need to register a "(_final" attribute for every "</em>_initial" attribute?  This might be a pain if multiple paths return from the measure but I can see the desire to have this. (NL) yeah i think it should always output a result. In the rotation example the final rotation is always a desired value, even if a path in the measure results in the rotation no to change.</td>
+<td>The value of 'rotation' in the final model after the measure was run.</td>
 </tr>
 </tbody>
 </table>
+<!--*Nick, if the measure returns either false or NA without altering the model does it still need to register a "(_final" attribute for every "*_initial" attribute?  This might be a pain if multiple paths return from the measure but I can see the desire to have this. (NL) yeah i think it should always output a result. In the rotation example the final rotation is always a desired value, even if a path in the measure results in the rotation no to change.-->
+
 <hr />
 <p class="text-center"><small>OpenStudio is developed in collaboration by NREL, ANL, LBNL, ORNL, and PNNL.</small></p>
 
