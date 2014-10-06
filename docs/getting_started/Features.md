@@ -6,9 +6,10 @@ View and edit your thermal zones and space types in a grid view. See all your th
 
 ![Opening Screen](../../img/features/grid_thumb.png "Grid View example")
 
-[__Release Notes on GitHub__](http://github.com/NREL/OpenStudio/releases)
+For the full list of added features go to the [__Release Notes on GitHub__](http://github.com/NREL/OpenStudio/releases)
 
 View the [OpenStudio Roadmap](roadmap.md) to see the release plan for future features.
+
 ____________________________
 
 ## Features
