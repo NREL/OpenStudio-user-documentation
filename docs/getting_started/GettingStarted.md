@@ -15,13 +15,16 @@ OpenStudio will work with 32 or 64bit EnergyPlus installers. Create an EnergyPlu
 2. __Download and install SketchUp.__
 The OpenStudio SketchUp Plug-in requires [Sketchup 2014](http://www.sketchup.com/) (not available for Linux). Older versions are not supported.
 3. __Download and install OpenStudio.__
-Create an OpenStudio account, then download and install OpenStudio.
-Setup a Building Component Library (BCL) account to access online building components and measures. View instructions on how to setup your account and configure the key in OpenStudio.
+The OpenStudio package contains the following tools:
+    * the SketchUp Plug-in
+    * OpenStudio Application
+    * ParametricAnalysisTool(PAT)
+    * ResultsViewer
+
+Setup a [Building Component Library (BCL)](https://bcl.nrel.gov/) account to access online building components and measures. View instructions on how to setup your account and configure the key in the "Connecting with the Building Component Library" section below.
 
 ### Optional Installation Steps
 For Radiance integration, [download and install Radiance.](https://github.com/NREL/Radiance) OpenStudio is supported on Windows 7 – 8.1, OS X 10.8 – 10.9, and Ubuntu 12.04.
-
-Setup a [Building Component Library (BCL)](https://bcl.nrel.gov/) account to access online building components and measures. View instructions on how to setup your account and configure the key in the "Connecting with the Building Component Library" section below.
 
 If you plan to use the OpenStudio SDK Ruby bindings via command prompt on Windows, download and extract ruby.zip to C:\Ruby (or other desired location), and add C:\Ruby\bin to the PATH environment variable.<
 
