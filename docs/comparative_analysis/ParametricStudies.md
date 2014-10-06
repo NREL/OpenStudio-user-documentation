@@ -277,9 +277,6 @@ You can open individual design alternative reports (.htm files) in your browser.
 
 *Above: Right click on design alternative to get these options. If your model includes calibration reports the calibration button at the top of the results will display those in a table format in the application.*
 
-## Return to OpenStudio Home Page
-<p><a href="http://openstudiodev.prod.acquia-sites.com/" class="btn btn-primary" role="OpenStudio Home Page">OpenStudio Home Page</a></p>  
-
 _______________________
 
 

@@ -57,6 +57,7 @@ This is OpenStudio's user documentation. A brief summary of the content and inte
         <h3>Comparative Analysis</h3>
         <p>Learn how to create design alternatives as part of a parametric study using the OpenStudio ParametricAnalysisTool (PAT). Run simulations locally and on the cloud.</p>
         <p><a href="comparative_analysis/ParametricStudies.md" class="btn btn-primary" role="ParametricAnalysisTool (PAT)">ParametricAnalysisTool (PAT)</a></p>
+        <p><a href="comparative_analysis/LargeScaleAnalysis.md" class="btn btn-primary" role="Large Scale Analysis">Large Scale Analysis</a></p>
       </div>
     </div>
   </div>
@@ -65,7 +66,7 @@ This is OpenStudio's user documentation. A brief summary of the content and inte
       <img src="img/help_thumb.png" alt="Help Image">
       <div class="caption">
         <h3>Help</h3>
-        <p>Find professional training for using OpenStudio.</p>
+        <p>Find professional training for OpenStudio.</p>
         <p><a href="help/Training.md" class="btn btn-primary" role="Training, Support, and Consulting">Training, Support, & Consulting</a></p>
         <p>Additional help topics include:</p>
         <p><a href="help/FindingModelData.md" class="btn btn-primary" role="Finding Model Data">Finding Model Data</a></p>  

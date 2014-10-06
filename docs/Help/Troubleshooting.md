@@ -1,6 +1,6 @@
 # Troubleshooting
 ## Model Won’t Open in SketchUp Plug-in
-If you have an OSM file that wont' open or opens incorrectly in the SketchUp plugin then running the user script linked in this thread can help identify the problem objects and create a new diagnostic copy of your file. This script creates a report identifying problem objects, and save a new copy of your file, leaving the original un-touched. This script is installed with 0.6.2 or later, but you can manually download this file and use it with 0.6.0 or later. Some reasons you may need to run this script.
+If you have an OSM file that will not open or opens incorrectly in the SketchUp plugin then running the user script linked in this thread can help identify the problem objects and create a new diagnostic copy of your file. This script creates a report identifying problem objects, and save a new copy of your file, leaving the original un-touched. This script is installed with 0.6.2 or later, but you can manually download this file and use it with 0.6.0 or later. Some reasons you may need to run this script.
 
 * You are trying to open an OSM file created from an outdated beta version of OpenStudio
 * Through some form of editing conflicting objects exist in the model that prevent it from opening correctly.
@@ -9,7 +9,7 @@ If you have an OSM file that wont' open or opens incorrectly in the SketchUp plu
 
 Whatever the cause, this should help identify and fix the problems. As it may delete some objects (in the diagnostic copy) you may have to do some repair or cleanup work on the resulting file.
 
-To install user scripts. drop them in the following subdirectory of your OpenStudio installation and re-start SketchUp. Currently you can't nest them deeper than the user_scripts folder. They must be loose files in that directory for the OpenStudio SketchUp Plug-in to add them to the me
+To install user scripts, drop them in the following subdirectory of your OpenStudio installation and re-start SketchUp. Currently you can't nest them deeper than the user_scripts folder. They must be loose files in that directory for the OpenStudio SketchUp Plug-in to add them to the me
 
 __OpenStudio 1.5.0\Ruby\openstudio\sketchup_plugin\user_scripts__
 
@@ -47,8 +47,8 @@ Post your questions to the forum below for energy modeling information.
 
 ## Useful SketchUp Links
 
-* [SketchUp's On-Line Help Guides and Video Tutorials]()
-* [Google's user forum for SketchUp](https://productforums.google.com/forum/?hl=en#!categories/sketchup/sketchup)
+* [SketchUp's On-Line Help](http://help.sketchup.com/en)
+* [Forum for SketchUp](https://productforums.google.com/forum/?hl=en#!categories/sketchup/sketchup)
 * [SketchUcation's SketchUp forum](http://sketchucation.com/forums/)
 
 _______________________

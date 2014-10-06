@@ -1,4 +1,8 @@
 # Installation and Introductory Tutorial
+
+## Release Notes
+Check out the current [__Release Notes on GitHub__](http://github.com/NREL/OpenStudio/releases)
+
 ## Installation Instructions
 OpenStudio is supported on Windows 7 – 8.1, OS X 10.8 – 10.9, and Ubuntu 12.04.
 <ol>
