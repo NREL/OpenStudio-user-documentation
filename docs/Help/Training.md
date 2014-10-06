@@ -1,5 +1,5 @@
 # Training, Support, and Consulting
-Below are companies and universities that are licensed OpenStudio training and support organizations. Licensed Commercial organizations have been trained directly by the OpenStudio development team and have access to NREL’s training material.
+Below are companies and universities that are licensed OpenStudio training and support organizations. Licensed commercial organizations have been trained directly by the OpenStudio development team and have access to NREL’s training material.
 
 ##Commercial Organizations
 
@@ -23,7 +23,7 @@ Below are companies and universities that are licensed OpenStudio training and s
 
  
 
-#### For information on becoming a licensed training organization please see the [RFP summary.](https://openstudio.nrel.gov/content/nrel-seeking-proposals-openstudio-training-and-technical-support).
+#### For information on becoming a licensed training organization please see the [RFP summary](https://openstudio.nrel.gov/content/nrel-seeking-proposals-openstudio-training-and-technical-support).
 
 _______________________
 
@@ -31,6 +31,5 @@ _______________________
 <p class="text-center"><small>OpenStudio is developed in collaboration by NREL, ANL, LBNL, ORNL, and PNNL.</small></p> 
 
 <p class="text-center"><small>NREL is a National Laboratory of the U.S. Department of Energy, Office of Energy Efficiency and Renewable Energy, operated by the Alliance for Sustainable Energy, LLC.</small></p> 
-  
-<p class="text-center"><small> <a href="http://openstudiodev.prod.acquia-sites.com/">Return to OpenStudio Home</a></p>  
+
 

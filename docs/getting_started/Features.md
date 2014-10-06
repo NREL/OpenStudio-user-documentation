@@ -64,11 +64,11 @@ __Service Water Heating__
 
 __Refrigeration__
 
-  * Add refrigeration systems, under the HVAC tab, using a layout visual view and a grid view.
+  * Add refrigeration systems (under the HVAC tab) using a layout visual view and a grid view.
   
 __VRF Systems__
 
-* Add variable refrigerant flow systems, under the HVAC tab, using a layout visual view and a grid view.
+* Add variable refrigerant flow systems (under the HVAC tab) using a layout visual view and a grid view.
 
 __Reporting Measures__
 
@@ -77,11 +77,11 @@ __Reporting Measures__
 
 ____________________________
 
-## Change Your Model in the OpenStudio application with OpenStudio Measures
-Use energy efficiecy measures to quickly change your model. QA and QC measures can be used to check your model and create reports.
+## Change Your Model in the OpenStudio Application with OpenStudio Measures
+Use energy efficiency measures to quickly change your model. QA and QC measures can be used to check your model and create reports.
 
-* Quickly test a measure in the OpenStudio Application using the Apply Measure Now feature.
-* Apply multiple measures using the Measures/Scipts tab in the Application
+* Quickly test a measure in the OpenStudio Application using the _Apply Measure Now_ feature.
+* Apply multiple measures using the Measures/Scripts tab in the Application
 
 ____________________________
 
@@ -94,9 +94,9 @@ ____________________________
 ## Comparative Analysis
  __ParametricAnalysisTool (PAT)__
 
-* Create multiple design alternatives from you initial baseline model.
+* Create multiple design alternatives from your initial baseline model.
 
-* Perform loud Runs with PAT and Amazon EC2
+* Perform cloud runs with PAT and Amazon EC2
 
 __Large-Scale Analysis on the Cloud__
 
