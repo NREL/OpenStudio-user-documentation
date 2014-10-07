@@ -1158,12 +1158,4 @@ An attribute named 'rotation' will automatically be added to the measure's outpu
 <!--*Nick, if the measure returns either false or NA without altering the model does it still need to register a "(_final" attribute for every "*_initial" attribute?  This might be a pain if multiple paths return from the measure but I can see the desire to have this. (NL) yeah i think it should always output a result. In the rotation example the final rotation is always a desired value, even if a path in the measure results in the rotation no to change.-->
 
 
-_________
 
-
-<p class="text-center"><small>OpenStudio is developed in collaboration by NREL, ANL, LBNL, ORNL, and PNNL.</small></p> 
-
-<p class="text-center"><small>NREL is a National Laboratory of the U.S. Department of Energy, Office of Energy Efficiency and Renewable Energy, operated by the Alliance for Sustainable Energy, LLC.</small></p>
-  
-  
-<p class="text-center"><small> <a href="http://openstudiodev.prod.acquia-sites.com/">Return to OpenStudio Home</a></p>

@@ -95,13 +95,5 @@ Measures can be downloaded directly from BCL through the [OpenStudio Application
 ### Create Your Own
 Want to write your own custom measure? Start with the [Measure Writing Guide](Measure-Writing-Guide.md).
 
-__________
 
-
-<p class="text-center"><small>OpenStudio is developed in collaboration by NREL, ANL, LBNL, ORNL, and PNNL.</small></p> 
-
-<p class="text-center"><small>NREL is a National Laboratory of the U.S. Department of Energy, Office of Energy Efficiency and Renewable Energy, operated by the Alliance for Sustainable Energy, LLC.</small></p>
-  
-  
-<p class="text-center"><small> <a href="http://openstudiodev.prod.acquia-sites.com/">Return to OpenStudio Home</a></p>
 

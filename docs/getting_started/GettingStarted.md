@@ -125,11 +125,5 @@ For additional information on the SketchUp Plug-in interface, go to the [SketchU
 ## Software License Description and Terms
 * OpenStudio is licensed under the Lesser General Public License (LGPL), and is free for use and development. Visit the [LGPL license web page](https://raw.githubusercontent.com/NREL/OpenStudio/develop/license.txt) for details on the software development kit terms of use.
 
-_______________________
 
-
-<p class="text-center"><small>OpenStudio is developed in collaboration by NREL, ANL, LBNL, ORNL, and PNNL.</small></p> 
-
-<p class="text-center"><small>NREL is a National Laboratory of the U.S. Department of Energy, Office of Energy Efficiency and Renewable Energy, operated by the Alliance for Sustainable Energy, LLC.</small></p>
- 
   

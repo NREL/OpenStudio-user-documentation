@@ -42,9 +42,3 @@ View the public Google Document spreedsheet for the [HVAC roadmap](https://docs.
 
 View the public Google Document spreedsheet for the [measure roadmap.](https://docs.google.com/spreadsheet/ccc?key=0AhCALIzwiaGPdE1BUjZDQ01iLVBnUFJpcHlEWU10ZEE&usp=drive_web#gid=0)
 
-_______________________
-
-
-<p class="text-center"><small>OpenStudio is developed in collaboration by NREL, ANL, LBNL, ORNL, and PNNL.</small></p> 
-
-<p class="text-center"><small>NREL is a National Laboratory of the U.S. Department of Energy, Office of Energy Efficiency and Renewable Energy, operated by the Alliance for Sustainable Energy, LLC.</small></p>

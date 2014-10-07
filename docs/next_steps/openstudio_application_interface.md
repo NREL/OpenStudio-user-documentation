@@ -25,13 +25,19 @@ Sub-tabs are designed to move from more general on the left to more specific on 
 
 The right panel provides access to items in the library, your model, and the ability to edit some of the items.
 
-* __“My Model”__ displays items that are part of your model already.* __“Library”__ includes components and measures that come with the application or are downloaded from the Building Component Library (BCL)* __“Edit"__ allows you to select certain components and edit the settings for that component. It is used in the HVAC tab to edit component settings, assign thermal zones to loops, and to add plenums.
+* __“My Model”__ displays items that are part of your model already.
+
+* __“Library”__ includes components and measures that come with the application or are downloaded from the Building Component Library (BCL)
+
+* __“Edit"__ allows you to select certain components and edit the settings for that component. It is used in the HVAC tab to edit component settings, assign thermal zones to loops, and to add plenums.
 
 ![Edit Tab](../../img/os_interface/edit_tab.png "Edit Tab Example")
 
 *Above: Edit settings on some objects in the edit panel.*
 
-------  ## Left Panel Bottom
+------  
+
+## Left Panel Bottom
 
 ![Drag-Drop](../../img/os_interface/add.png "Drag-and-drop constructions") Add New Item allows the user to add a new component to the interface. Sometimes the type of item added depends on the selection in the left panel.
 
@@ -89,7 +95,11 @@ Click on the color box on the "General" button to change the rendering color of 
 
 ## File Menu
 
-If you launch the OpenStudio application from the SketchUp Plug-in, your open file will automatically open in the application. But to save the file or open a new file, select file open from the menu.When you save an OSM model in the OpenStudio Application or the SketchUp Plug-in a folder is saved next to the OSM file. This folder contains external resources such as the weather file, scripts, and simulation results.Load Library is also a very important feature. This allows you to load building component libraries for specific building types. These libraries are the same as those used in the SketchUp Plug-in templates.
+If you launch the OpenStudio application from the SketchUp Plug-in, your open file will automatically open in the application. But to save the file or open a new file, select file open from the menu.
+
+When you save an OSM model in the OpenStudio Application or the SketchUp Plug-in a folder is saved next to the OSM file. This folder contains external resources such as the weather file, scripts, and simulation results.
+
+Load Library is also a very important feature. This allows you to load building component libraries for specific building types. These libraries are the same as those used in the SketchUp Plug-in templates.
 
 ![File Menu](../../img/os_interface/file_menu.png "File Menu")
 
@@ -99,7 +109,11 @@ If you launch the OpenStudio application from the SketchUp Plug-in, your open fi
 
 ## Preferences Menu
 
-The Units menu lets you switch between SI and IP units. This affects both input fields and output data on the results tab. It does not currently affect standard EnergyPlus output files.The SketchUp Plug-in has access to this as well under “Plugins/OpenStudio/Preferences”.Scan for Tools will look for Radiance, Ruby, and EnergyPlus installations. If you install those applications Prior to installing OpenStudio this shouldn’t be necessary.
+The Units menu lets you switch between SI and IP units. This affects both input fields and output data on the results tab. It does not currently affect standard EnergyPlus output files.
+
+The SketchUp Plug-in has access to this as well under “Plugins/OpenStudio/Preferences”.
+
+Scan for Tools will look for Radiance, Ruby, and EnergyPlus installations. If you install those applications Prior to installing OpenStudio this shouldn’t be necessary.
 
 ![Preferences Menu](../../img/os_interface/prefer_menu.png "Preferences Menu")
 
@@ -114,7 +128,11 @@ The Units menu lets you switch between SI and IP units. This affects both input 
 *Above: This menu item allows you to run one measure on you model.*
 
 ### Apply Measures Now
-You can apply measures to your model at any time by going to the “Components and Measures” menu and selecting the “Apply Measures Now” option.This will open a dialog that allows you to choose a measure from the library to apply, go to BCL to find a measure to apply, or even write your own measure and test it. Once you select a measure you may edit the measure inputs on the right side of the dialog. Hit apply measure to start.
+You can apply measures to your model at any time by going to the “Components and Measures” menu and selecting the “Apply Measures Now” option.
+
+This will open a dialog that allows you to choose a measure from the library to apply, go to BCL to find a measure to apply, or even write your own measure and test it.
+ 
+Once you select a measure you may edit the measure inputs on the right side of the dialog. Hit apply measure to start.
 
 ![Apply Measure Now](../../img/os_interface/apply_measure_now.png "Apply Measure Now")
 
@@ -122,14 +140,11 @@ You can apply measures to your model at any time by going to the “Components a
 
 ### Find Measures and Find Components
 
-The BCL window gives you access to an online repository of building energy modeling data called the Building Component Library. Although you can access the BCL website on its own, OpenStudio has integrated access to the BCL from within the application. You can access this through the “Window” menu.The first time you /open this window you will be prompted for an API key, unless you have already used BCL functionality in the SketchUp Plug-in. [Instructions for finding your API Key](../getting_started/GettingStarted.md#connecting-with-the-building-component-library) are in the "Getting Started" section.
+The BCL window gives you access to an online repository of building energy modeling data called the Building Component Library. Although you can access the BCL website on its own, OpenStudio has integrated access to the BCL from within the application. You can access this through the “Window” menu.
+
+The first time you /open this window you will be prompted for an API key, unless you have already used BCL functionality in the SketchUp Plug-in. [Instructions for finding your API Key](../getting_started/GettingStarted.md#connecting-with-the-building-component-library) are in the "Getting Started" section.
+
 ![BCL Window](../../img/os_interface/bcl_window.png "BCL Window")
 
 *Above: This window gives you access to the online BCL to download measures or components.*
 
-_______________________
-
-
-<p class="text-center"><small>OpenStudio is developed in collaboration by NREL, ANL, LBNL, ORNL, and PNNL.</small></p> 
-
-<p class="text-center"><small>NREL is a National Laboratory of the U.S. Department of Energy, Office of Energy Efficiency and Renewable Energy, operated by the Alliance for Sustainable Energy, LLC.</small></p>
