@@ -228,6 +228,8 @@
             <div class="col-md-9" role="main">
 
 <h1 id="comparative-analysis-using-the-parametricanalysistool-pat">Comparative Analysis Using the ParametricAnalysisTool (PAT)</h1>
+<p>PAT removes the need to hand edit each model to try out different architecture, energy efficiency measures, and mechanical systems. PAT will apply scripts to your baseline model and let you quickly compare many alternatives. OpenStudio has developed a workflow that allows energy modelers 
+to create and run a customized parametric analysis using commercially available cloud computing services. This workflow will enable anyone to perform powerful parametric studies in a reasonable time for a relatively low cost.  </p>
 <hr />
 <h2 id="creating-a-project">Creating a Project</h2>
 <p>The <a href="../../img/pdfs/PAT-Quick_Start_Guide.pdf">ParametricAnalysisTool Quick Start Guide (PDF)</a> provides an introduction to the interface and workflow for creating multiple design alternative from a seed model. </p>
@@ -350,10 +352,10 @@
 <p><em>Above: The states of the cloud download button are shown.</em></p>
 <p>While your project is running on the cloud you can choose the design alternative and select “Download Detailed Results for Selected File” button if you want more detailed data on some of the options.</p>
 <p><strong>Quitting PAT while the cloud is on will not close the EC2 instances. If you Launch PAT again but open a different project it may look like the cloud is off, but that is only relevant for that current project.</strong></p>
-<p>To properly end the cloud session in PAT re-open the PAT project (if you have closed it) and then click the button to stop the cloud. For a few minutes you will see “Stopping Cloud.</p>
+<p>To properly end the cloud session in PAT re-open the PAT project (if you have closed it) and then click the button to stop the cloud. For a few minutes you will see “Stopping Cloud."</p>
 <p><strong>Once you stop the cloud you will no longer be able to download detailed simulation results.</strong> If this happens and you want to get one, you can always run that job locally. It is generally not recommended to download detailed results for all design alternatives, as that will use a lot of hard drive space and network bandwidth.</p>
 <p><strong>It is always a good idea to go to the EC2 website to confirm that the instances have shut down. To view your EC2 web console, click the “Manage all Projects with AWS Console” in the “Monitor Use” dialog or “AWS Management Console” in the “Cloud Settings” dialog. It will take you to this address <a href="http://aws.amazon.com/console/">http://aws.amazon.com/console/</a>. 
-Once there click “Sign in to the AWS Console”</strong></p>
+Click “Sign in to the AWS Console”</strong></p>
 <p><img alt="Cloud AWS" src="../../img/pat/aws.png" title="AWS Console" /></p>
 <p><em>Above: Check your status on AWS and terminate sessions if you have problems in PAT.</em></p>
 <h3 id="openstudio-cloud-management-console">OpenStudio Cloud Management Console</h3>
