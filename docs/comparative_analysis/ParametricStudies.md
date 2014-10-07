@@ -277,6 +277,10 @@ You can open individual design alternative reports (.htm files) in your browser.
 
 *Above: Right click on design alternative to get these options. If your model includes calibration reports the calibration button at the top of the results will display those in a table format in the application.*
 
+## Publications
+
+[A Parametric Analysis Tool for Building Energy Design Workflows: Application to a Utility Design Assistance Incentive Program (PDF)](https://www.aceee.org/files/proceedings/2014/data/papers/4-588.pdf)
+
 _______________________
 
 
