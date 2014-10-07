@@ -2,9 +2,14 @@
 ## What is New in OpenStudio 1.5.0?
 
 ### Grid View for Thermal Zones and Space Types
-View and edit your thermal zones and space types in a grid view. See all your thermal zones at once and compare settings. 
+Previously available for Refrigeration Walk Ins and Refrigeration Cases, grid-view (a grid-style interface providing detailed component views) has now been applied to the Space Types tab, as well as the Thermal Zones tab.
+
+Viewing and editing your thermal zones and space types in a grid view allows you to see all your thermal zones at once and compare settings. 
 
 ![Opening Screen](../../img/features/grid_thumb.png "Grid View example")
+
+### SketchUp Plug-in Works in SketchUp 2014
+This update allows OpenStudio to leverage upon the improvements available in Ruby 2.0, and provides compatibility with SketchUp 2014. OpenStudio will no longer be compatible with SketchUp 2013 or SketchUp 8. 
 
 For the full list of added features go to the [__Release Notes on GitHub__](http://github.com/NREL/OpenStudio/releases)
 

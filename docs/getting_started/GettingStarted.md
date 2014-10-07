@@ -1,13 +1,13 @@
 # Installation and Introductory Tutorial
 
 ## Release Notes
-Check out the current [__Release Notes on GitHub__](http://github.com/NREL/OpenStudio/releases)
+Check out the current [__Release Notes on GitHub__](http://github.com/NREL/OpenStudio/releases) for an overview of the latest release and a list of new features.
 
 ## Installation Instructions
 OpenStudio is supported on Windows 7 – 8.1, OS X 10.9, and 64-bit Ubuntu 14.04.
 OpenStudio 1.5.0 supports EnergyPlus Release 8.1.
 
-Installation Steps
+#### Installation Steps
 
 1. __Download and install EnergyPlus 8.1.__
 Download EnergyPlus 8.1. Create an account and login if you don't already have one.
