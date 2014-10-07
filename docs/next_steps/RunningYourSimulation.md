@@ -49,7 +49,7 @@ ResultsViewer displays time series results, which are produced from EnergyPlus r
 
 #### Quick Start
 
-1. Request SQLite database output from EnergyPlus (EnergyPlus version 5.0.0 or newer must be used). Include one of the following lines in the idf file:
+1. Request SQLite database output from EnergyPlus (EnergyPlus version 5.0.0 or newer must be used). Include one of the following lines in the IDF file:
 
         Output:SQLite, Simple;  or  Output:SQLite, SimpleAndTabular;
  

@@ -1,5 +1,9 @@
 # Comparative Analysis Using the ParametricAnalysisTool (PAT)
 
+
+PAT removes the need to hand edit each model to try out different architecture, energy efficiency measures, and mechanical systems. PAT will apply scripts to your baseline model and let you quickly compare many alternatives. OpenStudio has developed a workflow that allows energy modelers 
+to create and run a customized parametric analysis using commercially available cloud computing services. This workflow will enable anyone to perform powerful parametric studies in a reasonable time for a relatively low cost.  
+
 ___________________
 
 ## Creating a Project
@@ -231,13 +235,13 @@ While your project is running on the cloud you can choose the design alternative
 
 __Quitting PAT while the cloud is on will not close the EC2 instances. If you Launch PAT again but open a different project it may look like the cloud is off, but that is only relevant for that current project.__
 
-To properly end the cloud session in PAT re-open the PAT project (if you have closed it) and then click the button to stop the cloud. For a few minutes you will see “Stopping Cloud.
+To properly end the cloud session in PAT re-open the PAT project (if you have closed it) and then click the button to stop the cloud. For a few minutes you will see “Stopping Cloud."
 
 __Once you stop the cloud you will no longer be able to download detailed simulation results.__ If this happens and you want to get one, you can always run that job locally. It is generally not recommended to download detailed results for all design alternatives, as that will use a lot of hard drive space and network bandwidth.
 
 
 __It is always a good idea to go to the EC2 website to confirm that the instances have shut down. To view your EC2 web console, click the “Manage all Projects with AWS Console” in the “Monitor Use” dialog or “AWS Management Console” in the “Cloud Settings” dialog. It will take you to this address [http://aws.amazon.com/console/](http://aws.amazon.com/console/). 
-Once there click “Sign in to the AWS Console”__
+Click “Sign in to the AWS Console”__
 
 ![Cloud AWS](../../img/pat/aws.png "AWS Console")
 
@@ -277,3 +281,6 @@ You can open individual design alternative reports (.htm files) in your browser.
 
 *Above: Right click on design alternative to get these options. If your model includes calibration reports the calibration button at the top of the results will display those in a table format in the application.*
 
+## Publications
+
+[A Parametric Analysis Tool for Building Energy Design Workflows: Application to a Utility Design Assistance Incentive Program (PDF)](https://www.aceee.org/files/proceedings/2014/data/papers/4-588.pdf)

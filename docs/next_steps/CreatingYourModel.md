@@ -9,7 +9,7 @@ The building envelope is created using the SketchUp OpenStudio Plug-in. Refer to
 ------ 
 
 ### Choosing a template  
-The New OpenStudio Model From Template (![New OpenStudio Model](../../img/plugin_reference_guide/os_new.png "New OpenStudio Model")) tool is represented by this icon in the toolbar. Templates contain data for constructions, loads, and schedules for four vintages across all U.S. climate zones. Templates do not contain any geometry.
+The New OpenStudio Model From Template (![New OpenStudio Model](../../img/plugin_reference_guide/os_new.png "New OpenStudio Model") tool is represented by this icon in the toolbar. Templates contain data for constructions, loads, and schedules for four vintages across all U.S. climate zones. Templates do not contain any geometry.
 
 ![Choose Template](../../img/create_model/from_template.png "Start a New Model with a from Template")
 
@@ -50,7 +50,7 @@ After defining the building envelope, you use the Surface Matching tool to set t
 ------ 
  
 ### Fenestration
-There are many ways to add windows to your building envelope.
+There are many ways to add windows to the building envelope.
 
 * Use the "Project Loose Geometry" tool for adding window.
 <iframe width="640" height="360" src="http://www.youtube.com/embed/wzzY_W2WELo?rel=0&start=129&end=171&autoplay=0" frameborder="0" allowfullscreen></iframe>
@@ -122,7 +122,7 @@ To assign schedules, add loads, add HVAC systems, and more, open your model in t
 To create and edit schedules in the OpenStudio application go to the schedules tab. Check out the [OpenStudio Application Interface](openstudio_application_interface.md) section for an overview of the interface.
 
 ### Year Settings
-The Year Settings subtab lets you set the day of the week the simulation should start. Define using Calendar Year or First Day Of Year buttons and pull-downs.
+The Year Settings sub-tab lets you set the day of the week the simulation should start. Define using Calendar Year or First Day Of Year buttons and pull-downs.
 
 The tab can also be used to configure and turn Daylight Savings Time on and off.
 
@@ -206,7 +206,7 @@ A construction consists of one or more material layers. You can add materials by
 
 ### Materials
 
-Constructions are made of one or more layers of materials. The Materials subtab lets you inspect and edit those materials. 
+Constructions are made of one or more layers of materials. The Materials sub-tab lets you inspect and edit those materials. 
 
 There are various classes of material objects. When you add a new material, first select the heading for the type of material you want to add and then click the “+” icon at the bottom of the left pane.
 
@@ -389,7 +389,7 @@ Setting up thermal zones in the SketchUp Plug-in is shown below.
   
   *Above: This video shows you how to assign space types and download space types from the Building Component Library (BCL). It uses the OpenStudio SketchUp Plug-in.*
 
-A thermostat must be defined before running an EnergyPlus simulations with connected HVAC systems. Zone equipment, thermostat, and humidistat settings can be viewed and edited on this tab. Click on the name of of and item and you can inspect it in the "Edit" panel on the right.
+A thermostat must be defined before running an EnergyPlus simulations with connected HVAC systems. Zone equipment, thermostat, and humidistat settings can be viewed and edited on this tab. Click on the name of and item and you can inspect it in the "Edit" panel on the right.
 
 <img src="../../img/create_model/thermal_grid.png" class="img-responsive" alt="Thermal Grid General">
 
@@ -632,7 +632,7 @@ Now in addition to manually creating and editing your model, you can apply measu
 
  <img src="../../img/create_model/apply_now.png" class="img-responsive" alt="Select from Menu">
 
-*Above: Select the apply measures now from the menu.*
+*Above: Select the "Apply Measures Now" from the menu.*
 
 
 
