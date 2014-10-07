@@ -1,5 +1,8 @@
-## Large-Scale Analysis
-###About
+# Large-scale Analysis
+
+Although building energy modeling has been common for many years, large-scale analyses have more recently become achievable for more users with access to affordable and vast computing power in the cloud. Recently, the OpenStudio Parametric Analysis Tool was enhanced, allowing users to launch their own cloud resources to run a large number of simulations. 
+
+## About
 The ParametricAnalysisTool (PAT) now exports a spreadsheet format compatible with the OpenStudio-analysis-spreadsheet project for running large parametric analyses using cloud resources.
 
 Go to the Github repository for information and code for the analysis spreadsheet.](https://github.com/NREL/OpenStudio-analysis-spreadsheet) There are instructions and examples on the GitHub site.
@@ -42,7 +45,7 @@ __________
 
 __________
 
-### Starting OpenStudio's Cloud
+## Starting OpenStudio's Cloud
 
     $ gem install bundler
 
@@ -50,11 +53,11 @@ __________
 
     $ bundle install
     
-### Export Spreadsheet
+## Export Spreadsheet
 Select the measures you want to use in the analysis and export a spreadsheet by selecting that option under the File menu.
 ![Export Spreadsheet](../../img/large_scale/export_spreadsheet.png "Export Spreadsheet")
         
-### Edit the Template Spreadsheet
+## Edit the Template Spreadsheet
 After exporting the spreadsheet from PAT, open the spreadsheet in Excel to edit fields.
 
  <a href="../../img/large_scale/spreadsheet.png" target="_blank">
@@ -62,7 +65,7 @@ After exporting the spreadsheet from PAT, open the spreadsheet in Excel to edit 
 
 *Above: Click to see a larger screenshot of the spreadsheet.*
 
-### Running OpenStudio's Cloud
+## Running OpenStudio's Cloud
 
     $ rake run
 __________
@@ -89,13 +92,13 @@ R - [https://github.com/NREL-cookbooks/cookbook-r](https://github.com/NREL-cookb
 
 __________
 
-### Server Architecture
+## Server Architecture
 ![Analysis Architecture](../../img/large_scale/architecture.png "Architecture")
 
 __________
 
 
-### Publications
+## Publications
 
 [A GRAPHICAL TOOL FOR CLOUD-BASED BUILDING ENERGY SIMULATION (PDF)](https://www.ashrae.org/File%20Library/docLib/Events/ASHRAE-IPBSA-USA/Presentations/12_Macumber.pdf)
 
