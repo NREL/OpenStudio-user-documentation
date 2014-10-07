@@ -92,7 +92,14 @@ __________
 ### Server Architecture
 ![Analysis Architecture](../../img/large_scale/architecture.png "Architecture")
 
-Read the paper on the development of this process, [SCALING BUILDING ENERGY MODELING HORIZONTALLY IN THE CLOUD WITH OPENSTUDIO (PDF).](https://www.ashrae.org/File%20Library/docLib/Events/ASHRAE-IPBSA-USA/Presentations/11_Long.pdf)
+__________
+
+
+### Publications
+
+[A GRAPHICAL TOOL FOR CLOUD-BASED BUILDING ENERGY SIMULATION (PDF)](https://www.ashrae.org/File%20Library/docLib/Events/ASHRAE-IPBSA-USA/Presentations/12_Macumber.pdf)
+
+[SCALING BUILDING ENERGY MODELING HORIZONTALLY IN THE CLOUD WITH OPENSTUDIO (PDF).](https://www.ashrae.org/File%20Library/docLib/Events/ASHRAE-IPBSA-USA/Presentations/11_Long.pdf)
 
 
 _______________________
