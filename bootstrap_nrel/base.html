@@ -27,7 +27,7 @@
         <![endif]-->
     </head>
       
-    <body>
+    <body id="top">
 
         {% include "newnav.html" %}
 
@@ -38,8 +38,13 @@
                 </div>
                 {% include "toc.html" %}
             </div>
-            <div class="col-md-9" role="main">{% include "content.html" %}</div>
+            <div class="col-md-9" role="main">
+                {% include "content.html" %}
+                {% include "footer.html" %}
+            </div>
+
         </div>
+       
 
         {% if include_search %}{% include "search.html" %}{% endif %}
 

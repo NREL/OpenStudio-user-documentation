@@ -3,7 +3,7 @@
 ___________________
 
 ## Creating a Project
-The [ParametricAnalysisTool Quick Start Guide (PDF)](../../img/pdfs/PAT-Quick_Start_Guide.pdf) provides an introduction to the interface and workflow for creating multiple design alternative from a seed model. 
+The [ParametricAnalysisTool Quick Start Guide (PDF)](../../img/pdfs/PAT-Quick_Start_Guide.pdf) provides an introduction to the interface and workflow for creating multiple design alternatives from a seed model. 
 
 When you first open PAT you will see the screen below. It shows the workflow:
 
@@ -36,7 +36,7 @@ ___________________
 
 ## Loading a Baseline Model
 
-Select your baseline model by hitting the browse button or typing in a path to your baseline OSM (Open Studio Model) file. The weather file for the file must be set on the baseline model before assigning it as the baseline in PAT.
+Select your baseline model by hitting the browse button or typing in a path to your baseline OSM (OpenStudio Model) file. The weather file must be set on the baseline model before assigning it as the baseline in PAT.
 
 ![Baseline Model](../../img/pat/baseline.png "Selecting a Baseline Model")
 
@@ -48,7 +48,7 @@ ___________________
 ## Organize and Edit Measures for Project
 To add measures to your project, drag measures from the library to the central panel.
 
-If you want to learn more about measures check out the [About Measures](../measures/AboutMeasures.md) section.  
+If you want to learn more about measures, check out the [About Measures](../measures/AboutMeasures.md) section.  
 
 There are three types of measures:
  
@@ -56,15 +56,15 @@ There are three types of measures:
 2. __EnergyPlus measures__ can be run on the IDF file before it is handed to EnergyPlus.
 3. __Reporting measures__ produce reports to chart results, provide quality assurance, and quality control on models.
 
-Drag measures from the library onto a drop zone in the middle panel. You must choose the right type of measure and the way you want it applied. Choose the __Always Run Measures__ if you want the measure to run on every design alternative. Or, choose a __Measure Group__ for measures you do not want to run on every model. Usually measure groups contain one type of measure with different parameters, because only one measure from a measure group can be applied to each design alternative. 
+Drag measures from the library onto a drop zone in the middle panel. You must choose the right type of measure and the way you want it applied. Choose the __Always Run Measures__ if you want the measure to run on every design alternative. Or, choose a __Measure Group__ for measures you do not want to run on every model. Usually, measure groups contain one type of measure with different parameters, because only one measure from a measure group can be applied to each design alternative. 
 
-The measures are applied to the model in order from top to bottom. So you can reorder measure groups and always apply measures by using the gray arrows on the right. 
+The measures are applied to the model in order from top to bottom. You can reorder measure groups and always apply measures by using the gray arrows on the right. 
 
 ![Measures Example](../../img/pat/measure_groups.png "Measure Examples")
 
 *Above: The "Set Window to Wall Ratio by Facade Group 1" contains 3 versions of the same measure with different parameter settings. The next section will show how to set measure parameters.*
 
-Check out the [Measure Writing Guide](../measures/Measure-Writing-Guide.md) on the OpenStudio Website and start writing your own custom measures.
+Check out the [Measure Writing Guide](../measures/Measure-Writing-Guide.md) and start writing your own custom measures.
 
 
 <iframe width="640" height="360" src="http://www.youtube.com/embed/3rmElK_OB28?rel=0&start=112&end=273&autoplay=0" frameborder="0" allowfullscreen></iframe>
@@ -87,7 +87,7 @@ You can edit the measure parameters and names by selecting the measure in the ce
 
 ### Downloading Measures from the Building Component Library
 
-Before you can download measures from BCL, you will need an [API Key follow the instructions in the Getting Started section](../../GettingStarted/#connecting-with-the-building-component-library) to get your key.
+Before you can download measures from BCL, you will need an API key. Follow the instructions in the [Getting Started section](../../GettingStarted/#connecting-with-the-building-component-library) to get your key.
 
 From the “Measures” menu and “Find Measures” along the top or the “Find Measures on BCL” button at the bottom of the “Library” you can access the BCL.
 
@@ -108,7 +108,7 @@ The “Check All” button can be used to select all the measures on a page view
 You can also search and browse measures on the [Building Component Library site.](https://bcl.nrel.gov/)
 
 ### Duplicating and Creating New Measures
-If you can't find the measure you need you can duplicate a measure and adjust it or you can write a custom measure. Learn more about writing measures in the [Measure Writing Guide](../measures/Measure-Writing-Guide.md)
+If you cannot find the measure you need, you can duplicate a measure and adjust it or you can write a custom measure. Learn more about writing measures in the [Measure Writing Guide](../measures/Measure-Writing-Guide.md)
 
 ![Measures Buttons](../../img/pat/measure_buttons.png "Measure Buttons")
 
@@ -124,7 +124,7 @@ The [Measure Writing Guide](../measures/Measure-Writing-Guide.md) will guide you
 
 *Above: The dialog for creating your new measure is shown above.*
 
-The Modeler Description is meant to assist the energy modeler. It should explain in some detail how the measure manipulates the model and where appropriate what model objects are being added or altered. It should offer any special guidance that the measure writer wants to communicate to people using the measure.
+The Modeler Description is meant to assist the energy modeler. It should explain in some detail how the measure manipulates the model and, where appropriate, what model objects are being added or altered. It should offer any special guidance that the measure writer wants to communicate to people using the measure.
 
 
 ___________________
@@ -140,7 +140,7 @@ ___________________
 ## Run Simulations
 Select the design alternative you want to run. Selected alternatives turn the yellow-orange. Hit the run button to start the simulations.
 
-If you want to run a daylighting analysis with Radiance select that option here. 
+If you want to run a daylighting analysis with Radiance, select that option here. 
 
 
 You must select the design alternatives you want to run before hitting the run buttons. Selected items have an orange highlight.
@@ -171,9 +171,9 @@ ___________________
 
 
 ## Running on the Cloud
-There are a few things to do before you click the “Turn on Cloud” button, fill out the Cloud Settings dialogs from the Cloud menu,run your baseline model locally, and then make sure you have selected all of the design alternatives that you want to run. Choosing “Select All” will select all jobs that have not already been run locally, or on a previous cloud session. 
+There are a few things to do before you click the “Turn on Cloud” button. First, fill out the Cloud Settings dialogs from the Cloud menu, run your baseline model locally, and then make sure you have selected all of the design alternatives that you want to run. Choosing “Select All” will select all jobs that have not already been run locally, or on a previous cloud session. 
 
-Select your baseline model, then run locally before you start the cloud to confirm that it is valid and will run properly. To do this you can deselect all other design alternatives, and then select just the baseline.
+Select your baseline model, then run locally before you start the cloud to confirm that it is valid and will run properly. To do this you can deselect all other design alternatives, and then select the baseline only.
 
 ![Cloud Settings 1](../../img/pat/cloud_settings_menu.png "Cloud Settings Screen One")
 
@@ -277,14 +277,3 @@ You can open individual design alternative reports (.htm files) in your browser.
 
 *Above: Right click on design alternative to get these options. If your model includes calibration reports the calibration button at the top of the results will display those in a table format in the application.*
 
-## Return to OpenStudio Home Page
-<p><a href="http://openstudiodev.prod.acquia-sites.com/" class="btn btn-primary" role="OpenStudio Home Page">OpenStudio Home Page</a></p>  
-
-_______________________
-
-
-<p class="text-center"><small>OpenStudio is developed in collaboration by NREL, ANL, LBNL, ORNL, and PNNL.</small></p> 
-
-<p class="text-center"><small>NREL is a National Laboratory of the U.S. Department of Energy, Office of Energy Efficiency and Renewable Energy, operated by the Alliance for Sustainable Energy, LLC.</small></p>
-
-<p class="text-center"><small> <a href="http://openstudiodev.prod.acquia-sites.com/">Return to OpenStudio Home</a></p>

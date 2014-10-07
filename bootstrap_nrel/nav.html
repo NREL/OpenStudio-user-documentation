@@ -1,8 +1,9 @@
-<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+<div class="container">
+<nav class="navbar navbar-default" role="navigation">
   <div class="container">
     <div class="navbar-header">
         <a class="logo navbar-btn pull-left" href="/" title="Home">
-        <img src="img/OS_32x32.png" alt="Home">
+        <img src="{{ base_url }}/img/OS_32x32.png" alt="Home">
         </a>
       
        
@@ -41,7 +42,7 @@
             </ul>
 
             <!-- Search, Navigation and Repo links -->
-            <ul class="nav navbar-nav navbar-left">
+            <ul class="nav navbar-nav navbar-right">
                 {% if include_search %}
                 <li>
                     <a href="#searchModal" data-toggle="modal"><i class="fa fa-search"></i> Search</a>
@@ -49,14 +50,11 @@
                 {% endif %}
             
             </ul>
-            <!-- back to openstudio -->
-             <div class="nav navbar-nav navbar-right">
-                <a class="btn btn-primary btn-sm navbar-btn" role="button" href="http://openstudiodev.prod.acquia-sites.com">Back to OpenStudio</a></li>
-             </div>
-            </ul>
+            
+          
     </div>
 
 
   </div>
+</nav>
 </div>
-
