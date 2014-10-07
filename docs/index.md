@@ -30,6 +30,8 @@ This is OpenStudio's user documentation. A brief summary of the content and inte
         <p><a href="next_steps/openstudio_application_interface.md" class="btn btn-primary" role="OpenStudio Application Interface">OpenStudio Application Interface</a></p>  
         <p><a href="next_steps/CreatingYourModel.md" class="btn btn-primary" role="Creating Your Model">Creating Your Model</a></p>
         <p><a href="next_steps/RunningYourSimulation.md" class="btn btn-primary" role="Running Your Simulation">Running Your Simulation</a></p>
+        Sizing a Vertical Ground Heat Exchanger: 
+        <p><a href="next_steps/detailed_tutorials/tutorial_glhepro.md" class="btn btn-primary" role="Running Your Simulation">GLHEPro and OpenStudio</a></p>
       </div>
     </div>    
   </div>
