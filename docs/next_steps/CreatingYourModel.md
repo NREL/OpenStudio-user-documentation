@@ -11,7 +11,7 @@ The building envelope is created using the SketchUp OpenStudio Plug-in. Refer to
 ### Choosing a template  
 The New OpenStudio Model From Template (![New OpenStudio Model](../../img/plugin_reference_guide/os_new.png "New OpenStudio Model") tool is represented by this icon in the toolbar. Templates contain data for constructions, loads, and schedules for four vintages across all U.S. climate zones. Templates do not contain any geometry.
 
-![Choose Template](../../img/create_model/from_template.png "Start a New Model with a from Template")
+![Choose Template](../../img/create_model/from_template.png "Start a New Model from Template")
 
 *Above: Dialog to choose template.*
  
