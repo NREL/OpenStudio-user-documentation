@@ -27,7 +27,6 @@ div.source-links {
 /* By default it's not affixed in mobile views, so undo that */
 .bs-sidebar.affix {
     position: static;
-    margin-top:30px;
 }
 
 .bs-sidebar.well {
