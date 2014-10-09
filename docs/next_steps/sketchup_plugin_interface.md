@@ -662,7 +662,7 @@ This takes you to the online help for the OpenStudio SketchUp Plug-in, where you
 </table>
 
 ###  Additional OpenStudio Plug-in Tools
-##### About OpenStudio__
+##### About OpenStudio
 
 For information on the SketchUp Plug-in version go to "Plugins/OpenStudio/About OpenStudio."
 ![Ill Map](../../img/plugin_reference_guide/about_plugin.png "About the OpenStudio Plug-in")
