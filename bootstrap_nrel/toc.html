@@ -1,7 +1,8 @@
+<div class="bs-sidebar hidden-print affix well" role="complementary">
+  <ul class="nav bs-sidenav">
+
 {% for toc_item in toc %}
 	{% if loop.first %}
-		<div class="bs-sidebar hidden-print affix well" role="complementary">
-   		 <ul class="nav bs-sidenav">
   {% endif %}
 
   <li class="main {% if toc_item.active %}active{% endif %}"><a href="{{ toc_item.url }}">{{ toc_item.title }}</a></li>
@@ -9,11 +10,13 @@
       <li><a href="{{ toc_item.url }}">{{ toc_item.title }}</a></li>
     {% endfor %}
 
-  {% if loop.last %}
-    	</ul>
-		</div>
+  {% if loop.last %} 
 	{% endif %}
 
 {% endfor %}
 
-
+  </ul>
+  <div class='home-btn'>
+    <a class="btn btn-default" role="button" href="http://openstudiodev.prod.acquia-sites.com">Back to OpenStudio</a>
+  </div>
+</div>
