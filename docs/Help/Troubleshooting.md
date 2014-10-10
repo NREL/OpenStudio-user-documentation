@@ -52,6 +52,21 @@ If you are in PAT, you should be able to expand the view in the run tab to see e
 
 _________________
 
+## Unable to Communicate with Amazon Cloud from Command Prompt Using the "bundle" Command
+
+This issue is typically a communication error between you and RubyGems.org. Few things to check:
+
+1. Are you behind a proxy? If so, then check if the proxy is system wide or just your web browsers. Typically easies to open up your favorite browser and look in the settings.
+2. Is there any web site restrictions at your location? If so, then it is possible that your IT department is blocking access. Note that RubyGems is only the first hurdle, you will also need access to AWS (meaning Amazon).
+
+
+If you think that the above is happening. Then it is best to talk to your IT department and explain the situation. The general explanation for the "situation" is that you are trying to run a large number of simulations using Amazon Web Services. Some good questions may be:
+
+1. How can I access the internet through a command line (or terminal) using our companies proxy?
+2. When I ping aws.amazon.com, it times out, is there something that may be restricting access to the site?
+3. Can we set the proxy to be machine wide, instead of just on the web browsers?
+
+_________________
 
 <!--## OpenStudio Crashes--> 
 
