@@ -1,7 +1,7 @@
 # Comparative Analysis Using the ParametricAnalysisTool (PAT)
 
 
-PAT removes the need to hand edit each model to try out different architecture, energy efficiency measures, and mechanical systems. PAT will apply scripts to your baseline model and let you quickly compare many alternatives. OpenStudio has developed a workflow that allows energy modelers 
+PAT removes the need to hand edit each model to try out different architectures, energy efficiency measures, and mechanical systems. PAT applies scripts to your baseline model and lets you quickly compare many alternatives. OpenStudio has developed a workflow that allows energy modelers 
 to create and run a customized parametric analysis using commercially available cloud computing services. This workflow will enable anyone to perform powerful parametric studies in a reasonable time for a relatively low cost.  
 
 ___________________
@@ -192,7 +192,7 @@ Currently only Amazon EC2 is available through PAT.
 
 *Above: Fill out the first screen and agree to terms before continuing to the second screen.*
 
-On the second screen of the “Cloud Settings” dialog, confirm that you have chosen the desired sever, worker, and number of workers. 
+On the second screen of the “Cloud Settings” dialog, confirm that you have chosen the desired server, worker, and number of workers. 
 
 As soon as you hit the “Turn on Cloud” button you will start incurring charges, and the smallest increment is one hour. If you have to cancel and re-start it you will be charged again.
 
@@ -225,17 +225,17 @@ The "Turn on the Cloud" button has several states to let you know the status of 
 *Above: The states of the cloud button are shown.*
 
 
-You can download standard or detailed results from your runs. If you want detailed results click on the download button in the table. You can choose to download all of the results in detail but it may be a large download. 
+You can download standard or detailed results from your runs. If you want detailed results, click on the download button in the table. You can choose to download all of the results in detail but it may be a large download. 
 
 ![Cloud Download](../../img/pat/download_results.png "Cloud Results Downloads")
 
 *Above: The states of the cloud download button are shown.*
 
-While your project is running on the cloud you can choose the design alternative and select “Download Detailed Results for Selected File” button if you want more detailed data on some of the options.
+While your project is running on the cloud, you can choose the design alternative and select “Download Detailed Results for Selected File” button if you want more detailed data on some of the options.
 
 __Quitting PAT while the cloud is on will not close the EC2 instances. If you Launch PAT again but open a different project it may look like the cloud is off, but that is only relevant for that current project.__
 
-To properly end the cloud session in PAT re-open the PAT project (if you have closed it) and then click the button to stop the cloud. For a few minutes you will see “Stopping Cloud."
+To properly end the cloud session in PAT, re-open the PAT project (if you have closed it) and then click the button to stop the cloud. For a few minutes you will see “Stopping Cloud."
 
 __Once you stop the cloud you will no longer be able to download detailed simulation results.__ If this happens and you want to get one, you can always run that job locally. It is generally not recommended to download detailed results for all design alternatives, as that will use a lot of hard drive space and network bandwidth.
 
@@ -249,7 +249,7 @@ Click “Sign in to the AWS Console”__
 
 
 ### OpenStudio Cloud Management Console
-While your runs are completing on the cloud and after they are finished you can explore your results with the OpenStudio Cloud Management Console. 
+While your runs are completing on the cloud and after they are finished, you can explore your results with the OpenStudio Cloud Management Console. 
 
 
 ![Cloud OS Console](../../img/pat/os_console1.png "OS Console")
@@ -279,7 +279,7 @@ You can open individual design alternative reports (.htm files) in your browser.
 
 ![Cloud Download](../../img/pat/download_results_during.png "Cloud Results During")
 
-*Above: Right click on design alternative to get these options. If your model includes calibration reports the calibration button at the top of the results will display those in a table format in the application.*
+*Above: Right click on design alternative to get these options. If your model includes calibration reports, the calibration button at the top of the results will display those in a table format in the application.*
 
 ## Publications
 
