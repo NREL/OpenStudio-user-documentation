@@ -25,16 +25,16 @@ This tool closes your current OpenStudio model and creates a new one. It does no
 <td align="left">
 #### The Open OpenStudio Model
 
-Use this feature to close your current OpenStudio model and open an OpenStudio File (.OSM). It does not close your current SketchUp file, but loads a different OpenStudio model into it. OpenStudio 0.6.0 introduced an udpated OSM format. It will not open OSM files created with OpenStudio 0.4.4 or earlier, and may not open some files made created with OpenStudio 0.5.0.</td>
+Use this feature to close your current OpenStudio model and open an OpenStudio File (.OSM). It does not close your current SketchUp file, but loads a different OpenStudio model into it. OpenStudio 0.6.0 introduced an udpated OSM format. It will not open OSM files created with OpenStudio 0.4.4 or earlier, and may not open some files created with OpenStudio 0.5.0.</td>
 </tr>
 <tr>
 <td>![Save OpenStudio Model](../../img/plugin_reference_guide/OSSave-24_0.png "Save OpenStudio Model")</td>
 <td align="left">
 #### Save OpenStudio Model
 
-Saves your OpenStudio Model as an OpenStudio File (OSM). If you save your OSM file and then save your SketchUp model, the SketchUp model will maintain a link to the OSM model. If you close and reopen your linked SketchUp file (SKP) it will reload the content from the OSM file. All the energy model content is saved in the OSM file, not in the SketchUp file. 
+Saves your OpenStudio Model as an OpenStudio File (OSM). If you save your OSM file and then save your SketchUp model, the SketchUp model will maintain a link to the OSM model. If you close and reopen your linked SketchUp file (SKP), it will reload the content from the OSM file. All the energy model content is saved in the OSM file, not in the SketchUp file. 
 <br></br>
-The benefit of having a link to a SketchUp file is to maintain a relationship with non-OpenStudio content that you may have in your model, such as a base plan or base model. A linked SketchUp file also has save scenes, drawing styles, and section cut location. When saving your OpenStudio model, make sure your file name ends with the ".osm" extension. If it does not have that extension, OpenStudio will not open the file. If you have files without this extension, you can manually rename them; they should open.</td>
+The benefit of having a link to a SketchUp file is to maintain a relationship with non-OpenStudio content that you may have in your model, such as a base plan or base model. A linked SketchUp file also has saved scenes, drawing styles, and section cut location. When saving your OpenStudio model, make sure your file name ends with the ".osm" extension. If it does not have that extension, OpenStudio will not open the file. If you have files without this extension, you can manually rename them; they should open.</td>
 </tr> 
 <tr>
 <td>![Save As OpenStudio Model](../../img/plugin_reference_guide/OSSaveAs-24_0.png "Save As")</td>
@@ -51,16 +51,16 @@ Using this feature saves your OpenStudio Model as a new OSM file and updates the
 <td align="left">
 #### Import EnergyPlus Input Data File (IDF) 
 
-This feature function similarly to the Import OpenStudio Model tool. If you import an entire IDF model, your current OSM model is closed and a new one created from your IDF. When you import and then save an IDF model, you will be prompted to save it as an OSM file. If you want to keep it as an IDF model, you can choose the Export EnergyPlus Input Data File tool instead of the Save OSM tool. If you have added geometry or other objects, such as interior partitions that are unique to an OpenStudio Model, you will lose or alter those objects when you export back to an IDF file.
+This feature functions similarly to the Import OpenStudio Model tool. If you import an entire IDF model, your current OSM model is closed and a new one created from your IDF. When you import and then save an IDF model, you will be prompted to save it as an OSM file. If you want to keep it as an IDF model, you can choose the Export EnergyPlus Input Data File tool instead of the Save OSM tool. If you have added geometry or other objects, such as interior partitions that are unique to an OpenStudio model, you will lose or alter those objects when you export back to an IDF file.
 
-Like the Import OpenStudio Model tool, the Import EnergyPlus Input Data File tool can be used to import additional content into your model. In this import workflow your OSM model stays open and the import tool adds additional content from a previously saved IDF file. 
-<p>Content types that can be imported from an IDF file follow.</p>
+Like the Import OpenStudio Model tool, the Import EnergyPlus Input Data File tool can be used to import additional content into your model. In this import workflow, your OSM model stays open and the import tool adds additional content from a previously saved IDF file. 
+<p>Content types that can be imported from an IDF file:</p>
 <p> - Constructions (including materials)</p>
-<p> - Schedules.</p>
+<p> - Schedules</p>
 You can access these features under the Plugins/OpenStudio menu or the File/Import menu. "Space Loads" are unique to an OSM, so they cannot be imported from an IDF file.
 
 ![Import Dialog](../../img/plugin_reference_guide/OpenStudioImportMenu_0.png "Import IDF")
-*Above: Import dialog allows you to import OpenStudio models, constructions, schedules, and space loads. You can also import IDF file through this menu.*
+*Above: Import dialog allows you to import OpenStudio models, constructions, schedules, and space loads. You can also import IDF files through this menu.*
 </td>
 </tr> 
 <tr>
@@ -69,9 +69,9 @@ You can access these features under the Plugins/OpenStudio menu or the File/Impo
 <td align="left">
 #### Export EnergyPlus Input Data File 
 
-Use this to when exporting an IDF file from an OSM model.  This can be useful if you need an IDF file to use in an application that does not support the new OSM format. Some model data may be lost when exporting to an IDF because the OSM file format supports many objects, such as interior partition groups and surfaces, that are not in EnergyPlus. If you export an OSM model with unsupported elements to an IDF file, and then reimport it into OpenStudio, the unsupported elements will be gone.
+Use this tool when exporting an IDF file from an OSM model.  This can be useful if you need an IDF file to use in an application that does not support the new OSM format. Some model data may be lost when exporting to an IDF because the OSM file format supports many objects, such as interior partition groups and surfaces, that are not in EnergyPlus. If you export an OSM model with unsupported elements to an IDF file, and then reimport it into OpenStudio, the unsupported elements will be gone.
 
-Good practice for a typical workflow is to always use your OSM file as the working file. You can simulations in EnergyPlus directly from an OSM file by using the OpenStudio RunManager application as a stand-alone application or through the OpenStudio SketchUp Plug-in interface.
+Good practice for a typical workflow is to always use your OSM file as the working file. You can run simulations in EnergyPlus directly from an OSM file by using the OpenStudio RunManager application as a stand-alone application or through the OpenStudio SketchUp Plug-in interface.
 
 When exporing an IDF file, make sure your file name ends with the ".idf" extension. If it does not have this extension, EnergyPlus and other applications may not open the file. If you have files without this extension, you can manually rename them; they should open.</p>
 </td>

@@ -5,7 +5,7 @@ Although building energy modeling has been common for many years, large-scale an
 ## About
 The ParametricAnalysisTool (PAT) now exports a spreadsheet format compatible with the OpenStudio-analysis-spreadsheet project for running large parametric analyses using cloud resources.
 
-Go to the Github repository for information and code for the analysis spreadsheet.](https://github.com/NREL/OpenStudio-analysis-spreadsheet) There are instructions and examples on the GitHub site.
+Go to the [Github repository](https://github.com/NREL/OpenStudio-analysis-spreadsheet) for information and code for the analysis spreadsheet. There are instructions and examples on the GitHub site.
 
 The Workflow:
 
@@ -71,7 +71,7 @@ After exporting the spreadsheet from PAT, open the spreadsheet in Excel to edit 
 __________
 
 ### Buildings Specific Chef Cookbooks
-Provisioning provides assures that the appropriate tools are ready on the server, there are consistent images across platforms, and to make it easier to test and deploy.
+Provisioning ensures that the appropriate tools are ready on the server, that there are consistent images across platforms, and makes it easier to test and deploy.
 
 The OpenStudio Server uses Chef to help automate the workflow. 
 [Chef Documentation](https://docs.getchef.com/chef_overview.html)
