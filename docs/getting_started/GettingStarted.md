@@ -13,7 +13,7 @@ OpenStudio 1.5.0 supports EnergyPlus Release 8.1.
 Download EnergyPlus 8.1. Create an account and login if you don't already have one.
 OpenStudio will work with 32 or 64bit EnergyPlus installers. Create an EnergyPlus account, if you don't have one, and then login. After you log in you can click the link to access the page to "Download Older Versions of Energy Plus". Choose the appropriate version of EnergyPlus 8.1. OpenStudio will work with 32 or 64bit EnergyPlus installers.
 2. __Download and install SketchUp.__
-The OpenStudio SketchUp Plug-in requires [Sketchup 2014](http://www.sketchup.com/) (not available for Linux). Older versions are not supported.
+The OpenStudio SketchUp Plug-in requires [SketchUp 2014](http://www.sketchup.com/) (not available for Linux). Older versions are not supported.
 3. __Download and install OpenStudio.__
 The OpenStudio package contains the following tools:
     * the SketchUp Plug-in
