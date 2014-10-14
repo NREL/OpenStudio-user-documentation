@@ -5,7 +5,7 @@ This section provide the legend for toolbars and menus available in the Plug-in.
 
 ### File Management
 Tools in this set create, open, save, import, or export data to or from your model. Some have toolbar icons; some do not. These functions are also located the OpenStudio Plug-in menu.
-<table class="tablesorter table table-striped">
+<table class="table table-striped">
 <thead>
 <tr>
 <th>Icons</th>
@@ -47,7 +47,7 @@ Using this feature saves your OpenStudio Model as a new OSM file and updates the
 </td>
 </tr> 
 <tr>
-<td>![Save OpenStudio Model](../../img/plugin_reference_guide/import_idf.png "Import Energy Plus Input Data File")</td>
+<td>![Import EnergyPlus Input Data File](../../img/plugin_reference_guide/import_idf.png "Import Energy Plus Input Data File")</td>
 <td align="left">
 #### Import EnergyPlus Input Data File (IDF) 
 
@@ -138,7 +138,7 @@ When an IDF file is imported into the SketchUp Plug-in, a translation between En
 </table>
 ### Modeling Tools
 Tools in this set create new zones, groups, and geometry.
-<table class="tablesorter table table-striped">
+<table class="table table-striped">
 <thead>
 <tr>
 <th>Icons</th>
@@ -243,15 +243,15 @@ The New Illuminance Map tool creates a new EnergyPlus Illuminance Map object. Th
 
 You can create an illuminance map from  within a space, or you can copy and paste the map into a different space. You can have multiple illuminance maps in a space.
 
-![Ill Map](../../img/plugin_reference_guide/illuminance_map.png "New Illuminance Map")
+![Illuminance Map Object Inside a Space](../../img/plugin_reference_guide/illuminance_map.png "New Illuminance Map")
 <p>*Above: Screenshot of Illuminance Map Object Inside a Space.*</p>
 
-![Ill Map 2](../../img/plugin_reference_guide/width_Inspector_Illuminance_map.png "New Illuminance Map Inspector")
+![OpenStudio Inspector With an Illuminance Map Object Selected](../../img/plugin_reference_guide/width_Inspector_Illuminance_map.png "New Illuminance Map Inspector")
 <p>*Above: Screenshot of OpenStudio Inspector With an Illuminance Map Object Selected*</p>
 
 To associate an illuminance map with a thermal zone, select the desired thermal zone object and then choose an illuminance map object.
 
-![Ill Map 3](../../img/plugin_reference_guide/width_Inspector_thermal_zone.png "New Illuminance Map and Thermal Zone")
+![OpenStudio Inspector With a Thermal Zone Selected](../../img/plugin_reference_guide/width_Inspector_thermal_zone.png "New Illuminance Map and Thermal Zone")
 <p>*Above: Screenshot of OpenStudio Inspector With a Thermal Zone Selected*</p>
 </td>
 </tr>
@@ -263,15 +263,15 @@ To associate an illuminance map with a thermal zone, select the desired thermal 
 
 The New Luminaire tool creates a new OpenStudio Luminaire object. This object is used to represent a single lighting fixture; power used by this object is represented in EnergyPlus and this object will eventually be used in electric lighting simulations using Radiance. The object is represented by a rectangle with a red triangle on top. The shorter edge of the red triangle goes from the center of the rectangle to the edge in the positive x direction; the longer edge goes out in the positive y direction. 
 
-![Ill Map](../../img/plugin_reference_guide/width_luminaire-component.png "New Luminaire Tool")
+!["New Luminaire Tool](../../img/plugin_reference_guide/width_luminaire-component.png "New Luminaire Tool")
 <p>*Above: Detail of Luminaire Object*</p>
 
-![Ill Map 2](../../img/plugin_reference_guide/width_luminaire-placed.png "New Luminaire")
+![New Luminaire](../../img/plugin_reference_guide/width_luminaire-placed.png "New Luminaire")
 <p>*Above: Luminaire placed within Space in model*</p>
 
 When a luminaire is placed it must refer to an OS:Luminaire:Definition object to define its power usage and photometric description. If no luminaire definition objects exist when the luminaire is placed, a new one will be created. If one or more luminaire definition objects exist, a dialog will prompt you to select a definition to use or to make a new one.
 <br></br>
-![Ill Map 3](../../img/plugin_reference_guide/luminaire-dialog.png "Luminaire Dialog ")
+![Luminaire Dialog](../../img/plugin_reference_guide/luminaire-dialog.png "Luminaire Dialog")
 <p>*Above: Luminaire Definition Prompt*</p>
 </td>
 </tr>
@@ -285,7 +285,7 @@ The New Glare  Sensor Object tool is a new addition to OpenStudio 0.9.0. It crea
 <br></br>
 You can create a Glare Sensor object from within a space, or you can copy and paste one into a different space.
 <br></br>
-![Ill Map](../../img/plugin_reference_guide/width_SU_glaresensor.png "Glare Sensor")
+![Glare Sensor](../../img/plugin_reference_guide/width_SU_glaresensor.png "Glare Sensor")
 <p>*Above: Screenshot of OpenStudio Inspector Glare Sensor selected*</p>
 </td>
 </tr>
@@ -297,7 +297,7 @@ You can create a Glare Sensor object from within a space, or you can copy and pa
 
 The Surface Matching tool is used to automatically set outside boundary conditions for space surfaces and assign the appropriate outside boundary object in adjacent spaces when "surface" is the outside boundary condition. The Surface Matching tool can match or unmatch surfaces in your selection or for the entire model.
 <br></br>
-![Ill Map](../../img/plugin_reference_guide/SU_SurfaceMatchingDialog.png "Surface Matching Dialog")
+![Surface Matching Tool](../../img/plugin_reference_guide/SU_SurfaceMatchingDialog.png "Surface Matching Dialog")
 <p>*Above: Screenshot of Surface Matching Dialog Box*</p>
 </td>
 </tr>
@@ -309,12 +309,12 @@ The Surface Matching tool is used to automatically set outside boundary conditio
 
 The Space Attributes Tool can be used to set attributes for one or more selected spaces in your OpenStudio model. The first four pull-down menus (Space Type, Building Story, Construction Set, and Thermal Zone) set attributes of the selected space objects. The last two pull-down menus set attributes in the thermal zone associated with the selected spaces. Most of the menus allow you to choose from a list populated by the appropriate model objects or one of the following options: No Change, Clear Field, or Make a new Object. The exception is the ideal air loads, which has a "no change" option, or yes/no. The Thermostat menu is similar to the others, but does not offer the option to create a new thermostat. You can create a new thermostat from the inspector.
 <br></br>
-![Ill Map](../../img/plugin_reference_guide/SU_SpaceAttributes_a.png "Space Attributes Dialog")
+![Space Attributes Dialog](../../img/plugin_reference_guide/SU_SpaceAttributes_a.png "Space Attributes Dialog")
 <p>*Above: Screenshot of Space Attributes Dialog Box*</p>
 
 The following image shows the model after a new space type is applied to two selected spaces. The render mode is set to render by space type.
 <br></br>
-![Ill Map](../../img/plugin_reference_guide/width_SU_SpaceAttributes_b.png "Space Attributes 2")
+![Space Attributes Dialog example](../../img/plugin_reference_guide/width_SU_SpaceAttributes_b.png "Space Attributes 2")
 <p>*Above: Screenshot of Space Attributes Dialog Box*</p>
 </td>
 </tr>
@@ -328,12 +328,12 @@ The Space Diagram Tool allows you to use native SketchUp tools to draw a space d
 <br></br>
 Surfaces that are not horizontal will be ignored; surfaces with improper surface normals will be flipped over. Once made, the spaces are like any other OpenStudio space. You can enter the space and alter or extend your geometry to refine it beyond the basic geometry created by the space diagram tool.
 <br></br>
-![Ill Map](../../img/plugin_reference_guide/width_SU_SpaceDigram_a.png "Floor Plan Drawing")
+![Floor Plan Drawing](../../img/plugin_reference_guide/width_SU_SpaceDigram_a.png "Floor Plan Drawing")
 <p>*Above: Screenshot of Space Diagram Dialog Box*</p>
 
 The following image shows the resulting model after using the Space Diagram Tool. The loose geometry of the diagram will be saved onto a layer in SketchUp named "OpenStudio - Space Diagrams". Although the resulting spaces are saved in your OpenStudio model (OSM file), the diagram is not. If you want to keep the diagram, you can save the SketchUp file as well. Even if you do not save the SketchUp file you will still have access to the diagram until you quit. If you want to make a change to the diagram, you can delete the spaces, alter the diagram, and re-project them.
 
-![Ill Map](../../img/plugin_reference_guide/width_SU_SpaceDiagram_b.png "Extruded Model")
+![Extruded Model](../../img/plugin_reference_guide/width_SU_SpaceDiagram_b.png "Extruded Model")
 <p>*Above: Screenshot of Model After Using Space Diagram Tool*</p>
 </td>
 </tr>
@@ -347,17 +347,18 @@ The Project Loose Geometry Tool allows you to use the native SketchUp tools to d
 
 If some of the surfaces you have selected are not in the same plane as a building surface, they will be ignored.
 
-![Ill Map](../../img/plugin_reference_guide/width_SU_ProjectGeo_a.png "Window Drawing")
+![Window Drawing](../../img/plugin_reference_guide/width_SU_ProjectGeo_a.png "Window Drawing")
 <p>*Above: Screenshot of Project Loose Geometry Dialog Box*</p>
 
 The image below shows the resulting model after you have projected selected loose geometry. The loose geometry used for the projection operation will be moved to a layer in SketchUp named "OpenStudio - Loose Geometry". While the surfaces made in the spaces by the projection are saved in your OpenStudio Model (OSM file), the loose geometry is not saved in the OpenStudio Model. If you want to save this for future use, you can save the SketchUp file as well.
 
-![Ill Map](../../img/plugin_reference_guide/width_SU_ProjectGeo_b.png "Projected Geometry")
+![Projected Geometry](../../img/plugin_reference_guide/width_SU_ProjectGeo_b.png "Projected Geometry")
 <p>*Above: Screenshot after Projecting Loose Geometry*</p>
 </td>
 </tr>
 </tbody>
 </table>
+
 ###  Information Tools
 Tools in this set are generally for viewing model attributes, however some editing may be done as well.
 <table class="tablesorter table table-striped">
@@ -378,17 +379,17 @@ The OpenStudio Inspector displays information about your currently open OpenStud
 The Inspector Window is divided into three main areas:
 <ol>
   <li>The top left is the "Select Type" pane. This has a partial list of OpenStudio object types and identifies how many objects of a specific type are in your model.</li>
-<li>The bottom left pane is the "Select Object" pane. If you select a "Type" in the type pane, a list of objects of that type will be displayed in the "Select Object" pane. The objects listed in the "Select Object" pane have a number to indicate how many objects in the model refer to this object. Below the list are several buttons. The plus button to create a new object of this type, a copy button to copy the selected object,a minus button to delete the selected object, and a purge button to purge unused objects of this type. For some object types one or more of these buttons may be disabled.</li> 
+<li>The bottom left pane is the "Select Object" pane. If you select a "Type" in the type pane, a list of objects of that type will be displayed in the "Select Object" pane. The objects listed in the "Select Object" pane have a number to indicate how many objects in the model refer to this object. Below the list are several buttons. The plus button to create a new object of this type, a copy button to copy the selected object, a minus button to delete the selected object, and a purge button to purge unused objects of this type. For some object types, one or more of these buttons may be disabled.</li> 
 <li>The third and last pane of the Inspector is the "Edit Object" pane at the right. This displays the fields for the currently selected object in the "Select Object" pane. Some fields accept a string; others are edited via a pull-down list. For some object types, some fields may be hidden from the Inspector or locked from editing. This is by design.</li>
 </ol>
 
-OpenStudio 0.9.0 adds a render mode aware inspector. If you are in a render by class or render by boundary condition and use the SketchUp select tool to select a space, the OpenStudio space will be selected in the Inspector. If, however, you are in render by space type, thermal zone, or story mode, a space type, thermal zone, or story will be selected in the Inspector. This is assuming that the space is an assigned space type, thermal zone, or story. The construction render mode is similar, but you need to select a surface versus a space to select a construction object in the Inspector. Currently if you select a thermal zone, space type, or construction object in the Inspector, it will not make a selection in the SketchUp model that correlates to this object.
+OpenStudio 0.9.0 adds a render mode aware inspector. If you are in a render by class or render by boundary condition and use the SketchUp select tool to select a space, the OpenStudio space will be selected in the Inspector. If, however, you are in render by space type, thermal zone, or story mode, a space type, thermal zone, or story will be selected in the Inspector. This is assuming that the space is an assigned space type, thermal zone, or story. The construction render mode is similar, but you need to select a surface versus a space to select a construction object in the Inspector. Currently, if you select a thermal zone, space type, or construction object in the Inspector, it will not make a selection in the SketchUp model that correlates to this object.
 
 The Inspector cannot select multiple objects at once. So if you select multiple spaces or surfaces in SketchUp, only one will be active in the Inspector. Similarly, you cannot use the Inspector to batch change the attributes for multiple objects at once.
 
 The ["Set Space Attributes for Selected Spaces"](#set-space-attributes) tool on the OpenStudio toolbar does allow batch changes for space objects, and to a limited extent for zones that parent the spaces.
 
-![Ill Map](../../img/plugin_reference_guide/width_SU_Inspector.png "Inspector Window")
+![Inspected Window](../../img/plugin_reference_guide/width_SU_Inspector.png "Inspector Window")
 <p>*Above: Screenshot of OpenStudio Inspector With a Space Object Selected*</p>
 
 Screenshots of the OpenStudio Inspector with other object types selected are shown under the individual pages for those object types.
@@ -403,12 +404,12 @@ The OpenStudio Surface Search Tool enables you to search your model for surfaces
 
 New to the Surface Search Tool with OpenStudio 0.5 and later is the ability to search based on Surface Orientation. You can set both "from" and "to" to a single value if you want to find surfaces that face a specific direction, or you can set unique values to show surfaces within a range of angles. The "Exclude Horizontal Surfaces" is generally intended to be used along with Surface Orientation search to hide surfaces with no azimuth. There are also check boxes to limit search results to non-convex surfaces or to surfaces with more than a set number of vertices. Once your search is complete, the resulting surfaces are selected in SketchUp. You can use this selection for other operations or scripts.
 
-![Ill Map](../../img/plugin_reference_guide/SU_SurfaceSearch.png "Surface Search Screenshot")
+![Surface Search Dialog](../../img/plugin_reference_guide/SU_SurfaceSearch.png "Surface Search Screenshot")
 <p>*Above: Screenshot of Surface Search Dialog - OpenStudio 0.6.0*</p>
 </td>
 </tr>
 <tr>
-<td>![Surface Search](../../img/plugin_reference_guide/InfoTool-24.png "Information Tool")</td>
+<td>![Information Tool](../../img/plugin_reference_guide/InfoTool-24.png "Information Tool")</td>
 <td align="left">
 #### Information Tool 
 
@@ -418,51 +419,51 @@ Render by Surface Type and Render by Boundary condition offer a variety of data.
 
 (No Modifier Key)
 
-![Ill Map](../../img/plugin_reference_guide/width_SU_Info_Type_basi.pngc "Information Tool Screenshot1")
+![Information Tool in Render by Surface Type Mode Showing Surface Data](../../img/plugin_reference_guide/width_SU_Info_Type_basic.png "Information Tool Screenshot1")
 <p>*Above: Screenshot of Information Tool in Render by Surface Type Mode Showing Surface Data
 The same data are displayed while in Render by Boundary Condition mode.*</p>
 
 ("Shift" Modifier Key)
 
-![Ill Map](../../img/plugin_reference_guide/width_SU_Info_Type_shift-const.png "Information Tool Screenshot2")
+![Information Tool in Render by Surface Type Mode Showing Construction Data](../../img/plugin_reference_guide/width_SU_Info_Type_shift-const.png "Information Tool Screenshot2")
 <p>*Above: Screenshot of Information Tool in Render by Surface Type Mode Showing Construction Data
 The same data are displayed while in Render by Boundary Condition mode*</p>
 
 ("Ctrl" Modifier Key)
 
-![Ill Map](../../img/plugin_reference_guide/width_SU_Info_Type_shift-const.png "Information Tool Screenshot3")
+![Information Tool in Render by Surface Type Mode Showing Material Data](../../img/plugin_reference_guide/width_SU_Info_Type_shift-const.png "Information Tool Screenshot3")
 <p>*Above: Screenshot of Information Tool in Render by Surface Type Mode Showing Material Data
 The same data are displayed while in Render by Boundary Condition mode*</p>
 
 ("Shift + Ctrl" Modifier Key)
 
-![Ill Map](../../img/plugin_reference_guide/width_SU_Info_Type_shiftctrl-space.png "Information Tool Screenshot4")
+![Information Tool in Render by Surface Type Mode Showing Space Data](../../img/plugin_reference_guide/width_SU_Info_Type_shiftctrl-space.png "Information Tool Screenshot4")
 <p>*Above: Screenshot of Information Tool in Render by Surface Type Mode Showing Space Data
 The same data are displayed while in Render by Boundary Condition mode*</p>
 
 (No Modifier Key)
 
-![Ill Map](../../img/plugin_reference_guide/width_SU_info_construction.png "Information Tool Screenshot5")
+![Information Tool in Render by Construction Mode Showing Construction Data](../../img/plugin_reference_guide/width_SU_info_construction.png "Information Tool Screenshot5")
 <p>*Above: Screenshot of Information Tool in Render by Construction Mode Showing Construction Data*</p>
 
 (No Modifier Key)
 
-![Ill Map](../../img/plugin_reference_guide/width_SU_Info_spacetype.png "Information Tool Screenshot6")
+![Information Tool in Render by Space Type Mode Showing Space Type Data](../../img/plugin_reference_guide/width_SU_Info_spacetype.png "Information Tool Screenshot6")
 <p>*Above: Screenshot of Information Tool in Render by Space Type Mode Showing Space Type Data*</p>
 
 (No Modifier Key)
 
-![Ill Map](../../img/plugin_reference_guide/width_SU_Info_ThermalZone.png "Information Tool Screenshot7")
+![Information Tool in Render by Thermal Zone Mode Showing Thermal Zone Data](../../img/plugin_reference_guide/width_SU_Info_ThermalZone.png "Information Tool Screenshot7")
 <p>*Above: Screenshot of Information Tool in Render by Thermal Zone Mode Showing Thermal Zone Data*</p>
 
 (No Modifier Key)
 
-![Ill Map](../../img/plugin_reference_guide/width_SU_Info_story.png "Information Tool Screenshot8")
+![Information Tool in Render by Story Mode Showing Building Story Data](../../img/plugin_reference_guide/width_SU_Info_story.png "Information Tool Screenshot8")
 <p>*Above: Screenshot of Information Tool in Render by Story Mode Showing Building Story Data*</p>
 
 (No Modifier Key)
 
-![Ill Map](../../img/plugin_reference_guide/width_SU_Info_data.png "Information Tool Screenshot9")
+![Information Tool in Render by Data Mode Showing Time Series Simulation Results Data](../../img/plugin_reference_guide/width_SU_Info_data.png "Information Tool Screenshot9")
 <p>*Above: Screenshot of Information Tool in Render by Data Mode Showing Time Series Simulation Results Data. These data will change as you adjust the time of day or time of year. This example shows exterior surface temperature, but it can be any zone or surface variable that has been requested as part of your simulation.*</p>
 </td>
 </tr>
@@ -474,15 +475,16 @@ The same data are displayed while in Render by Boundary Condition mode*</p>
 
 The Input File Errors and Warnings dialog automatically opens when there is an error or warning when opening or importing a file. Many common geometry errors (upside-down floor or roof, inside-out window, non-coplanar surfaces, etc.) are fixed automatically when you open the input file. This dialog will also report unsupported IDF objects on import.
 
-![Ill Map](../../img/plugin_reference_guide/error_02.png "Errors and Warnings")
+![Errors and Warnings Dialog Box](../../img/plugin_reference_guide/error_02.png "Errors and Warnings")
 <p>*Above: Screenshot of Errors and Warnings Dialog Box*</p>
 </td>
 </tr>
 </tbody>
 </table>
-###  Rendering Modes
+
+### Rendering Modes
 This set contains render modes that are used to change how heat transfer, shading, and interior partition surfaces are rendered.
-<table class="tablesorter table table-striped">
+<table class="table table-striped">
 <thead>
 <tr>
 <th>Icons</th>
@@ -493,130 +495,129 @@ This set contains render modes that are used to change how heat transfer, shadin
 <tr>
 <td>![Render by Surface Type](../../img/plugin_reference_guide/render_surface_class.png "Render by Surface Type")</td>
 <td align="left">
-##### Render by Surface Type 
+#### Render by Surface Type 
 
 The OpenStudio Render by Surface Type mode will render walls, roofs, windows, doors, floors, shading surfaces, and interior partition surfaces with unique colors. When you create new geometry, it will be automatically classified and rendered. If you try to assign a color yourself, the application will override you. You never need to use the paint bucket tool in this render mode.
 
 If you set a surface construction to "Air Boundary," it will be rendered as a translucent checkerboard pattern. This construction is intended to represent thermal zone boundaries that do not represent physical walls in the building.
 
-![Ill Map](../../img/plugin_reference_guide/width_SU_Info_Type_basic.png "Render by Surface Type")
+![Model in Render by Surface Type Mode](../../img/plugin_reference_guide/width_SU_Info_Type_basic.png "Render by Surface Type")
 <p>*Above: Screenshot of Model in Render by Surface Type Mode*</p>
 </td>
 </tr>
 <tr>
 <td>![Render by Boundary Condition](../../img/plugin_reference_guide/render_boundry.png "Render by Boundary Condition")</td>
 <td align="left">
-##### Render by Outside Boundary Condition 
+#### Render by Outside Boundary Condition 
 
 The OpenStudio Render by Outside Boundary Condition mode will render surfaces by their outside boundary conditions. Only space surfaces have boundary conditions, so only they will be rendered with a color. Shading and interior partition surfaces will be white. This is a good rendering mode to diagnose problems with your model. It provides a quick way to globally look at boundary conditions throughout your model. You never need to use the paint bucket tool in this render mode. In the screenshot below, a section cut has been drawn to reveal the inside of the model, making the boundary condition of surfaces easy to see.
 
 If you set a surface construction to "Air Boundary", it will be rendered as a translucent checkerboard pattern. This construction is intended to represent thermal zone boundaries that do not represent physical walls in the building.
 
-![Ill Map](../../img/plugin_reference_guide/SU_Render_Boundary.png "Render by Boundary Condition Screenshot")
+![Model in Render by Boundary Condition Mode](../../img/plugin_reference_guide/SU_Render_Boundary.png "Render by Boundary Condition Screenshot")
 <p>*Above: Screenshot of Model in Render by Boundary Condition Mode*</p>
 
 The most common boundary conditions you will see are "Outdoors, Surface, and Ground", but there are actually 9 basic boundary modes, with a number of subsets within some conditions. For "Outdoors" there are also unique color variations to indicate if there is sun and or wind exposure. The following image shows the SketchUp materials for the various boundary conditions.
 
-![Ill Map](../../img/plugin_reference_guide/tut_BoundaryColorWorksheet.png "Render by Boundary Condition Colors")
+![Render by Boundary Condition Colors](../../img/plugin_reference_guide/tut_BoundaryColorWorksheet.png "Render by Boundary Condition Colors")
 <p>*Above: Render by Outside Boundary Condition Color Palette*</p>
 </td>
 </tr>
 <tr>
 <td>![Render by Construction](../../img/plugin_reference_guide/render_construction.png "Render by Construction")</td>
 <td align="left">
-##### Render by Construction
+#### Render by Construction
 
 The OpenStudio Render by Construction mode renders surfaces by their construction. Although this seems similar to Render by Surface Type, there are a number of differences:
 
 The Inspector Window is divided into three main areas:
 <ul>
-  <li>In Render by Construction mode, surfaces are rendered by their construction, so if two windows do not have the same construction they will not have the same render color. The same logic is applied to other surface types</li>
+  <li>In Render by Construction mode, surfaces are rendered by their construction, so if two windows do not have the same construction they will not have the same render color. The same logic is applied to other surface types.</li>
 <li>Shading surfaces and interior partitions can have constructions assigned. If they do have constructions, they will be rendered just as space surfaces are.</li>
 <li>Construction properties of a surface can be applied directly to a surface, or they can be inherited from other objects (space, space type, story, or building). The first time you click the render by construction button, it shows hard assigned and inherited constructions. If you click it again, it shows only hard assigned constructions. Other surfaces do not have a render color. Clicking the render button again returns you to the default mode where hard assigned and inherited constructions are shown.</li>
 </ul>
 
 As a note, this is not a render by material mode, so two constructions that have the same outside material, will have unique render colors. However, in this render mode you can set render color using either the SketchUp paint bucket or the Inspector. To use the Inspector, select the construction object and set the RGB values. These color settings are part of the OpenStudio model and will be maintained the next time you open the model.
 
-![Ill Map](../../img/plugin_reference_guide/width_SU_info_construction.png "Information Tool Screenshot5")
+![Model in Render by Construction Mode](../../img/plugin_reference_guide/width_SU_info_construction.png "Information Tool Screenshot5")
 <p>*Above: Screenshot of Model in Render by Construction Mode*</p>
 </td>
 </tr>
 <tr>
 <td>![Render by Space Type](../../img/plugin_reference_guide/render_space_type.png "Render by Space Type")</td>
 <td align="left">
-##### Render by Space Type 
+#### Render by Space Type 
 
 The OpenStudio Render by Space Type mode renders each space based on the Space Type assigned to it. This is a two state button. The first time you click it, hard assigned and inherited space types are rendered. If you click it again, only hard assigned space types are given a render color. Space types can be assigned to a space or inherited from the building object. You can assign space types to a space by using the "Set Attributes for Selected Spaces" tool or the OpenStudio Inspector. The installed templates have preassigned colors for each space type, but you can use SketchUp's paint bucket tool or the OpenStudio Inspector to change the colors. These changes are saved as part of your OpenStudio model.
 
-![Ill Map](../../img/plugin_reference_guide/width_SU_Info_spacetype.png "Render by Space Type Screenshot")
+![Render by Space Type Mode](../../img/plugin_reference_guide/width_SU_Info_spacetype.png "Render by Space Type Screenshot")
 <p>*Above: Screenshot of Model in Render by Space Type Mode*</p>
 </td>
 </tr>
 <tr>
 <td>![Render by Thermal Zone](../../img/plugin_reference_guide/render_therm_zone.png "Render by Thermal Zone")</td>
 <td align="left">
-##### Render by Thermal Zone
+#### Render by Thermal Zone
 
 The OpenStudio Render by Thermal Zone mode renders each space based on the thermal zone assigned to it. You can assign a thermal zone to a space using the "Set Attributes for Selected Spaces" tool or the OpenStudio Inspector. When a new thermal zone is made, a color will be assigned to it. You can change that color using SketchUp's paint bucket tool or the OpenStudio Inspector. These changes are saved as part of your OpenStudio model.
 
-![Ill Map](../../img/plugin_reference_guide/width_SU_Info_ThermalZone.png "Render by Thermal Zone Screenshot")
+![Model in Render by Space Type Mode](../../img/plugin_reference_guide/width_SU_Info_ThermalZone.png "Render by Thermal Zone Screenshot")
 <p>*Above: Screenshot of Model in Render by Space Type Mode*</p>
 </td>
 </tr>
 <tr>
 <td>![Render by Building Story](../../img/plugin_reference_guide/render_therm_zone.png "Render by Building Story")</td>
 <td align="left">
-##### Render by Building Story
+#### Render by Building Story
 
 The OpenStudio Render by Building Story mode renders each space based on the building story assigned to it. You can assign a building story to a space using the "Set Attributes for Selected Spaces" tool or the OpenStudio Inspector. When a new story is made, a color will be assigned to it. You can change that color by using SketchUp's paint bucket tool or the OpenStudio Inspector. These changes are saved as part of your OpenStudio model.
 
 When you use the "Create Spaces from Diagram" tool to generate a multistory building the storys are assigned as part of that process. There is also a user script that can infer building stories from a model that has none assigned.
 
-![Ill Map](../../img/plugin_reference_guide/width_SU_Info_story.png "Render by Building Story Screenshot")
+![Model in Render by Building Story Mode](../../img/plugin_reference_guide/width_SU_Info_story.png "Render by Building Story Screenshot")
 <p>*Above: Screenshot of Model in Render by Building Story Mode*</p>
 </td>
 </tr>
 <tr>
 <td>![Render by Simulation Data](../../img/plugin_reference_guide/render_data.png "Render by Simulation Data")</td>
 <td align="left">
-##### Render by Simulation Data
+#### Render by Simulation Data
 
 The OpenStudio Render by Simulation Data mode renders individual surfaces or entire thermal zones based on simulation results data. If you have not yet run a simulation and you switch to this mode, everything will render as white because there are no data. After running a simulation, go to the View Simulation Results dialog to set an SQL data path and load the simulation data. Then switch back to Render by Simulation Data mode to view the results. Use SketchUp's shadow setting dialog to change the time of day or year for the simulation data.
 
 The Color Scale (![Color Scale Tool](../../img/plugin_reference_guide/render_color_scale.png "Color Scale Tool")) tool will open up a color scale for the Render by Simulation Data colors.
 
-![Ill Map](../../img/plugin_reference_guide/width_SU_Info_data.png "Render by Simulation Data Screenshot")
+![Render by Simulation Data Mode](../../img/plugin_reference_guide/width_SU_Info_data.png "Render by Simulation Data Screenshot")
 <p>*Screenshot of Model in Render by Simulation Data Mode*</p>
 </td>
 </tr>
 <tr>
 <td></td>
 <td align="left">
-##### Render by Layer
+#### Render by Layer
 
-The Render by Layer is a standard SketchUp feature.  It will render content by layer. You can create layers to represent anything you want to track. For example , to organize your project by space types you can create or move zones to specific layers. Keep in mind, that the layer structure isn't saved with the OSM file, so any layer's you setup are just for your current session.
+The Render by Layer is a standard SketchUp feature.  It will render content by layer. You can create layers to represent anything you want to track. For example, to organize your project by space types you can create or move zones to specific layers. Keep in mind that the layer structure isn't saved with the OSM file, so any layer you setup are just for your current session.
 
-![Ill Map](../../img/plugin_reference_guide/width_ss_by_layer.png "Render by Layer Screenshot")
-<p>*Above: Screenshot of model in Render By Layer mode*</p>
+![Render By Layer mode](../../img/plugin_reference_guide/width_ss_by_layer.png "Render by Layer Screenshot")
+<p>*Above: Screenshot of Model in Render By Layer mode*</p>
 </td>
 </tr>
 <tr>
 <td></td>
 <td align="left">
-##### Render by Surface Normal
+#### Render by Surface Normal
 
-The Render by Surface Normal  mode is built on the SketchUp face setting where faces are rendered with the default front and back colors as opposed to their assigned materials.  The outside face of a heat transfer surface will render white and the inside face will render red. This works as a quick diagnostic tool to look for reversed faces. In a clean model you shouldn't see red from the outside. Shading surfaces are an exception to this where you will see red on one of the two sides of each shading surface.
+The Render by Surface Normal mode is built on the SketchUp face setting where faces are rendered with the default front and back colors as opposed to their assigned materials.  The outside face of a heat transfer surface will render white and the inside face will render red. This works as a quick diagnostic tool to look for reversed faces. In a clean model you shouldn't see red from the outside. Shading surfaces are an exception to this where you will see red on one of the two sides of each shading surface.
 
-![Ill Map](../../img/plugin_reference_guide/width_ss_surface_normal.png "Render by Surface Normal Screenshot")
-<p>*Above: Screenshot of model in Render By Surface Normal mode*</p>
+![Render By Surface Normal mode](../../img/plugin_reference_guide/width_ss_surface_normal.png "Render by Surface Normal Screenshot")
+<p>*Above: Screenshot of Model in Render By Surface Normal mode*</p>
 </td>
 </tr>
 </tbody>
 </table>
-
 ###  Integration with Other OpenStudio Resources
 This set contains tools integration for other OpenStudio applications and resources.
-<table class="tablesorter table table-striped">
+<table class="table table-striped">
 <thead>
 <tr>
 <th>Icons</th>
@@ -625,9 +626,9 @@ This set contains tools integration for other OpenStudio applications and resour
 </thead>
 <tbody>
 <tr>
-<td>![Render by Building Story](../../img/plugin_reference_guide/ResultsViewer-24.png "Render by Building Story")</td>
+<td>![Results Viewer](../../img/plugin_reference_guide/ResultsViewer-24.png "Results Viewer")</td>
 <td align="left">
-##### View Results in ResultsViewer
+#### View Results in ResultsViewer
 
 The OpenStudio View Simulation Results tool loads simulation results into the currently opened model. After you run a simulation, you can click the "load" button to find and load the SQL file. If you are opening a model from a previous simulation, you will have to browse to the path to the relevant SQL file. If you ran the simulation through the OpenStudio Plug-in, the required path will look similar to the path below.
 
@@ -635,14 +636,14 @@ C:/path_to_osm_file/your_file_name.osm/ModelToIdf/ExpandObjects/EnergyPlus/eplus
 
 Once you load an SQL file, you can select the run period and variables. Surface and zone are the supported variable types to display in the OpenStudio Plug-in. The outside and inside variable pull-down content will change based on whether surface or zone is selected as the variable type. The variables shown depend on what was requested when the simulation was run. This tool also provides a button that will load your results into the OpenStudio ResultsViewer application. If you load results into the ResultsViewer Application, make sure to close the data in ResultsViewer before you rerun a simulation of the same model; otherwise, you will have an EnergyPlus error.
 
-![Ill Map](../../img/plugin_reference_guide/width_SU_RenderSettings.png "View Results")
+![Rendering Settings Dialog](../../img/plugin_reference_guide/width_SU_RenderSettings.png "View Results")
 <p>*Above: Screenshot of Rendering Settings Dialog*</p>
 </td>
 </tr>
 <tr>
 <td>![Launch Current Model in OpenStudio Application](../../img/plugin_reference_guide/os_24.png "Launch Current Model in OpenStudio Application")</td>
 <td align="left">
-##### Launch Current Model in OpenStudio Application
+#### Launch Current Model in OpenStudio Application
 
 The Launch Current Model in OpenStudio Application button will launch your model in OpenStudio. The model will also stay open in the SketchUp Plug-in. If you make changes and save them in the OpenStudio application, be sure to reload the model in the SketchUp Plug-in before you make any changes in SketchUp.
 
@@ -650,9 +651,9 @@ You should also reload the model in the OpenStudio application if you have made 
 </td>
 </tr>
 <tr>
-<td>![Helpl in OpenStudio Application](../../img/plugin_reference_guide/Help-24_0.png "OpenStudio Plug-n Help")</td>
+<td>![Help in OpenStudio Application](../../img/plugin_reference_guide/Help-24_0.png "OpenStudio Plug-n Help")</td>
 <td align="left">
-##### Help
+#### Help
 
 This takes you to the online help for the OpenStudio SketchUp Plug-in, where you are now.
 
@@ -660,24 +661,23 @@ This takes you to the online help for the OpenStudio SketchUp Plug-in, where you
 </tr>
 </tbody>
 </table>
-
 ###  Additional OpenStudio Plug-in Tools
-##### About OpenStudio
+#### About OpenStudio
 
 For information on the SketchUp Plug-in version go to "Plugins/OpenStudio/About OpenStudio."
-![Ill Map](../../img/plugin_reference_guide/about_plugin.png "About the OpenStudio Plug-in")
+![About OpenStudio Plug-in](../../img/plugin_reference_guide/about_plugin.png "About the OpenStudio Plug-in")
 <p>*Above: Screenshot of SketchUp showing the about dialog path and window*</p>
 
-##### Preferences
+#### Preferences
 
 For information on the SketchUp Plug-in version go to "Plugins/OpenStudio/Preferences."
-![Ill Map](../../img/plugin_reference_guide/preferences.png "Preferences")
+![Preferences](../../img/plugin_reference_guide/preferences.png "Preferences")
 <p>*Above: The Preferences dialog enables you to set options related to updates, new thermal zone creation, user scripts, text editor, template OSM files, and the EnergyPlus engine.*</p>
 
-##### Check for Update
+#### Check for Update
 
 Check to see if you are using the most current release of the OpenStudio Google SketchUp Plugin by going to "Plugins/OpenStudio/Check for Update."
-![Ill Map](../../img/plugin_reference_guide/updates.png "Update")
+![Update](../../img/plugin_reference_guide/updates.png "Update")
 <p>*Above: Screenshot of Update Dialog Box*</p>
 
 ###  Helpful SketchUp Tools
@@ -685,31 +685,31 @@ Check to see if you are using the most current release of the OpenStudio Google 
 #### Hide Rest of Model 
 ![Hide Rest](../../img/plugin_reference_guide/HideRest-24.png "Hide Rest of Model") This activates SketchUp's native view function to hide everything but your currently open group or component. Isolating your current zone make is much easier to work on inter-zone geometry.
 
-![Ill Map](../../img/plugin_reference_guide/ss_hiderest_01.png "Hide Rest 1")
-<p>*Above: Screenshot of model with rest of model visible*</p>
+![Model with rest of model visible](../../img/plugin_reference_guide/ss_hiderest_01.png "Hide Rest 1")
+<p>*Above: Screenshot of Model with rest of model visible*</p>
 
-![Ill Map](../../img/plugin_reference_guide/ss_hiderest_02.png "Hide Rest 2")
+![model with rest of model hidde](../../img/plugin_reference_guide/ss_hiderest_02.png "Hide Rest 2")
 <p>*Above: Screenshot of model with rest of model hidden*</p>
 
 
 #### View Hidden Geometry
-![Hide Rest](../../img/plugin_reference_guide/SU_ViewHidden-24.png "View Hidden Geometry")This activates SketchUp's native view function to view hidden geometry. This is particularly useful if you have used OpenStudio's Surface Search tool and you need to see the rest of the model to get your bearings.
+![Hidden Geometry](../../img/plugin_reference_guide/SU_ViewHidden-24.png "View Hidden Geometry")This activates SketchUp's native view function to view hidden geometry. This is particularly useful if you have used OpenStudio's Surface Search tool and you need to see the rest of the model to get your bearings.
 
-![Ill Map](../../img/plugin_reference_guide/width_ss_show_hidden.png "Hidden Geometry Screenshot")
+![Show Hidden Geometry](../../img/plugin_reference_guide/width_ss_show_hidden.png "Hidden Geometry Screenshot")
 <p>*Above: Screenshot of model in with View Hidden Geometry active*</p>
 
 
 #### View Model in X-Ray Mode
-![Hide Rest](../../img/plugin_reference_guide/tbRenderTransparentLarge.png "View Model in X-Ray Mode")This activates SketchUp's native face style setting to render all surfaces translucently. This allows you to quickly see internal model elements without having to create section cuts or hide parts of the model.
+![X-Ray Mode](../../img/plugin_reference_guide/tbRenderTransparentLarge.png "View Model in X-Ray Mode")This activates SketchUp's native face style setting to render all surfaces translucently. This allows you to quickly see internal model elements without having to create section cuts or hide parts of the model.
 
-![Ill Map](../../img/plugin_reference_guide/width_ss_xray.png "X-Ray Mode Screenshot")
+![Active X-Ray Rendering](../../img/plugin_reference_guide/width_ss_xray.png "X-Ray Mode Screenshot")
 <p>*Above: Screenshot of model with X-ray Rendering active*</p>
 
 
 #### Shadow Settings
-![Hide Rest](../../img/plugin_reference_guide/SUShadows-24x24.png "Shadow Settings")This opens SketchUp's native Shadow Settings window. The Shadow Settings window does a few things. First, it can turn SketchUp's shadow display on and off. It can also alter how shadows rendered appearance. Most important to OpenStudio users is that it can set the time of day and time of year for the current display. SketchUp uses this along with the models geo-location to set the shadow orientation and length. OpenStudio leverages this data to inform time-series render modes. Currently that includes the Render by Data render mode which displays post simulation results from an external SQL file. Moving the date or time slider will alter the surface or zone variable values rendered to the model.
+![Shadow Settings Select](../../img/plugin_reference_guide/SUShadows-24x24.png "Shadow Settings")This opens SketchUp's native Shadow Settings window. The Shadow Settings window does a few things. First, it can turn SketchUp's shadow display on and off. It can also alter how shadows are rendered. Most important to OpenStudio users is that it can set the time of day and time of year for the current display. SketchUp uses this along with the model's geo-location to set the shadow orientation and length. OpenStudio leverages this data to inform time-series render modes. Currently, this includes the Render by Data render mode which displays post simulation results from an external SQL file. Moving the date or time slider will alter the surface or zone variable values rendered to the model.
 
-![Ill Map](../../img/plugin_reference_guide/Shadow_Settings.png "Shadow Settings Screenshot")
+![Shadow Settings](../../img/plugin_reference_guide/Shadow_Settings.png "Shadow Settings Screenshot")
 <p>*Above: Screenshot of SketchUp Shadow Setting Window*</p>
 
 
