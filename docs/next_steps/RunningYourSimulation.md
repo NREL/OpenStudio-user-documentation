@@ -114,7 +114,7 @@ The data can now be viewed two simulation days at a time by sliding the "Center"
 ![Center and Span on 2 Days](../../img/run/center_span2.png "Center and Span for 2 Days")
 
 #### Generate Multiple Lines on a Single Plot
-To generate a line plot with multiple curves, use the mouse with the "Shift" and "Ctrl" keys to select the desired rows in the table view. Holding the "Ctrl" key down on Windows and "Command" on the Mac and clicking a selected row with unselect the item. Select the "Line Plot" from the context menu. In the tree view, find the names of the items you want to plot on the tree and select then holding down the "Command" or "Ctrl" key.
+To generate a line plot with multiple curves, use the mouse with the "Shift" and "Ctrl" keys to select the desired rows in the table view. Holding the "Ctrl" key down on Windows and "Command" on the Mac and clicking a selected row will deselect the item. Select the "Line Plot" from the context menu. In the tree view, find the names of the items you want to plot on the tree and select then holding down the "Command" or "Ctrl" key.
 ![Multiple Line Chart](../../img/run/multi_line_plot.png "Multiple Line Plot from Table view")
 
 *Above: Screenshot showing selected multiple lines in table view.*

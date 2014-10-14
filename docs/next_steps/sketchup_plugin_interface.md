@@ -25,7 +25,7 @@ This tool closes your current OpenStudio model and creates a new one. It does no
 <td align="left">
 #### The Open OpenStudio Model
 
-Use this feature to close your current OpenStudio model and open an OpenStudio File (.OSM). It does not close your current SketchUp file, but loads a different OpenStudio model into it. OpenStudio 0.6.0 introduced an udpated OSM format. It will not open OSM files created with OpenStudio 0.4.4 or earlier, and may not open some files created with OpenStudio 0.5.0.</td>
+Use this feature to close your current OpenStudio model and open an OpenStudio File (.OSM). It does not close your current SketchUp file, but loads a different OpenStudio model into it. OpenStudio 0.6.0 introduced an updated OSM format. It will not open OSM files created with OpenStudio 0.4.4 or earlier, and may not open some files created with OpenStudio 0.5.0.</td>
 </tr>
 <tr>
 <td>![Save OpenStudio Model](../../img/plugin_reference_guide/OSSave-24_0.png "Save OpenStudio Model")</td>
@@ -73,7 +73,7 @@ Use this tool when exporting an IDF file from an OSM model.  This can be useful 
 
 Good practice for a typical workflow is to always use your OSM file as the working file. You can run simulations in EnergyPlus directly from an OSM file by using the OpenStudio RunManager application as a stand-alone application or through the OpenStudio SketchUp Plug-in interface.
 
-When exporing an IDF file, make sure your file name ends with the ".idf" extension. If it does not have this extension, EnergyPlus and other applications may not open the file. If you have files without this extension, you can manually rename them; they should open.</p>
+When exploring an IDF file, make sure your file name ends with the ".idf" extension. If it does not have this extension, EnergyPlus and other applications may not open the file. If you have files without this extension, you can manually rename them; they should open.</p>
 </td>
 </tr> 
 <tr>
@@ -596,7 +596,11 @@ The Color Scale (![Color Scale Tool](../../img/plugin_reference_guide/render_col
 <td align="left">
 #### Render by Layer
 
+<<<<<<< HEAD
 The Render by Layer is a standard SketchUp feature.  It will render content by layer. You can create layers to represent anything you want to track. For example, to organize your project by space types you can create or move zones to specific layers. Keep in mind that the layer structure isn't saved with the OSM file, so any layer you setup are just for your current session.
+=======
+The Render by Layer is a standard SketchUp feature.  It will render content by layer. You can create layers to represent anything you want to track. For example, to organize your project by space types you can create or move zones to specific layers. Keep in mind, that the layer structure isn't saved with the OSM file, so any layer's you setup are just for your current session.
+>>>>>>> dd94fd267d609783f23d0c09762e31d3cc539ff5
 
 ![Render By Layer mode](../../img/plugin_reference_guide/width_ss_by_layer.png "Render by Layer Screenshot")
 <p>*Above: Screenshot of Model in Render By Layer mode*</p>

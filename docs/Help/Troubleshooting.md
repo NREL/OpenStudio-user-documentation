@@ -56,7 +56,7 @@ _________________
 
 This issue is typically a communication error between you and RubyGems.org. Few things to check:
 
-1. Are you behind a proxy? If so, then check if the proxy is system wide or just your web browsers. Typically easies to open up your favorite browser and look in the settings.
+1. Are you behind a proxy? If so, then check if the proxy is system wide or just your web browsers. Typically easiest to open up your favorite browser and look in the settings.
 2. Is there any web site restrictions at your location? If so, then it is possible that your IT department is blocking access. Note that RubyGems is only the first hurdle, you will also need access to AWS (meaning Amazon).
 
 
@@ -70,7 +70,7 @@ _________________
 
 <!--## OpenStudio Crashes--> 
 
-<!--#Resutls Look Wrong## Under Heated and Cooled Hours--> 
+<!--#Results Look Wrong## Under Heated and Cooled Hours--> 
 
 ## Energy Modeling Forum
 Post your questions to the forum below for energy modeling information.

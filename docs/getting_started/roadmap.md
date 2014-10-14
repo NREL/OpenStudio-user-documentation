@@ -36,9 +36,9 @@
 
 ## Table 1: HVAC System Support Prioritization
 
-View the public Google Document spreedsheet for the [HVAC roadmap](https://docs.google.com/spreadsheet/ccc?key=0AhCALIzwiaGPdHhhalNfQktXUWtacjJwcHVoZ3Fsanc&usp=drive_web#gid=1).
+View the public Google Document spreadsheet for the [HVAC roadmap](https://docs.google.com/spreadsheet/ccc?key=0AhCALIzwiaGPdHhhalNfQktXUWtacjJwcHVoZ3Fsanc&usp=drive_web#gid=1).
 
 ## Table 2: Measure Prioritization
 
-View the public Google Document spreedsheet for the [measure roadmap.](https://docs.google.com/spreadsheet/ccc?key=0AhCALIzwiaGPdE1BUjZDQ01iLVBnUFJpcHlEWU10ZEE&usp=drive_web#gid=0)
+View the public Google Document spreadsheet for the [measure roadmap.](https://docs.google.com/spreadsheet/ccc?key=0AhCALIzwiaGPdE1BUjZDQ01iLVBnUFJpcHlEWU10ZEE&usp=drive_web#gid=0)
 
