@@ -52,7 +52,7 @@ ___________________
 ## Organize and Edit Measures for Project
 To add measures to your project, drag measures from the library to the central panel.
 
-If you want to learn more about measures, check out the [About Measures](../measures/AboutMeasures.md) section.  
+If you want to learn more about measures, check out the [About Measures](../measures/about_measures.md) section.  
 
 There are three types of measures:
  
@@ -68,7 +68,7 @@ The measures are applied to the model in order from top to bottom. You can reord
 
 *Above: The "Set Window to Wall Ratio by Facade Group 1" contains 3 versions of the same measure with different parameter settings. The next section will show how to set measure parameters.*
 
-Check out the [Measure Writing Guide](../measures/Measure-Writing-Guide.md) and start writing your own custom measures.
+Check out the [Measure Writing Guide](../measures/measure_writing_guide.md) and start writing your own custom measures.
 
 
 <iframe width="640" height="360" src="http://www.youtube.com/embed/3rmElK_OB28?rel=0&start=112&end=273&autoplay=0" frameborder="0" allowfullscreen></iframe>
@@ -91,7 +91,7 @@ You can edit the measure parameters and names by selecting the measure in the ce
 
 ### Downloading Measures from the Building Component Library
 
-Before you can download measures from BCL, you will need an API key. Follow the instructions in the [Getting Started section](../../GettingStarted/#connecting-with-the-building-component-library) to get your key.
+Before you can download measures from BCL, you will need an API key. Follow the instructions in the [Getting Started section](../../getting_started/#connecting-with-the-building-component-library) to get your key.
 
 From the “Measures” menu and “Find Measures” along the top or the “Find Measures on BCL” button at the bottom of the “Library” you can access the BCL.
 
@@ -112,7 +112,7 @@ The “Check All” button can be used to select all the measures on a page view
 You can also search and browse measures on the [Building Component Library site.](https://bcl.nrel.gov/)
 
 ### Duplicating and Creating New Measures
-If you cannot find the measure you need, you can duplicate a measure and adjust it or you can write a custom measure. Learn more about writing measures in the [Measure Writing Guide](../measures/Measure-Writing-Guide.md)
+If you cannot find the measure you need, you can duplicate a measure and adjust it or you can write a custom measure. Learn more about writing measures in the [Measure Writing Guide](../measures/measure_writing_guide.md)
 
 ![Measures Buttons](../../img/pat/measure_buttons.png "Measure Buttons")
 
@@ -122,7 +122,7 @@ Hit the “New Measure” icon to open a dialog to create your own measure. Writ
 
 Duplicating a measure opens up a similar dialog, but the name of the measure will have “copy” added at the end.
 
-The [Measure Writing Guide](../measures/Measure-Writing-Guide.md) will guide you through this process and provide best practices. 
+The [Measure Writing Guide](../measures/measure_writing_guide.md) will guide you through this process and provide best practices. 
 
 ![New Measure](../../img/pat/pat_new_measure.png "New Measure in PAT")
 

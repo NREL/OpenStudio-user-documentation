@@ -1,6 +1,6 @@
 # Creating Your Model 
 
-After completing the [Introductory Tutorial](../getting_started/GettingStarted.md#introductory-tutorial), you can find additional information on using OpenStudio by topic below.
+After completing the [Introductory Tutorial](../getting_started/getting_started.md#introductory-tutorial), you can find additional information on using OpenStudio by topic below.
 
 ## Envelope 
 
@@ -346,7 +346,7 @@ In the OpenStudio Application you can download items directly from the BCL by go
 
 The components are designed to provide data to the energy modeler and simplify the process of gathering inputs. 
 
-Measures are scripts that can quickly alter your model or create different reports for viewing and checking your results. Learn more about measures in the ["About Measures"](../measures/AboutMeasures.md) section. Learn how to [write your own custom measures.](../measures/Measure-Writing-Guide.md)
+Measures are scripts that can quickly alter your model or create different reports for viewing and checking your results. Learn more about measures in the ["About Measures"](../measures/about_measures.md) section. Learn how to [write your own custom measures.](../measures/measure_writing_guide.md)
 
 ------ 
 

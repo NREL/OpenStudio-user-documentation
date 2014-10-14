@@ -93,7 +93,7 @@ Measures can be downloaded directly from BCL through the [OpenStudio Application
 ### Locally Shared Measures
 
 ### Create Your Own
-Want to write your own custom measure? Start with the [Measure Writing Guide](Measure-Writing-Guide.md).
+Want to write your own custom measure? Start with the [Measure Writing Guide](measure_writing_guide.md).
 
 
 

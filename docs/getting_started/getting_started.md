@@ -53,13 +53,13 @@ After installing OpenStudio you will have the SketchUp Plug-in, OpenStudio Appli
 
 *About: Click on the diagram above to view a larger version.*
 
-Results view is used to view simulation results. The section on Running Simulation & Viewing Results has information on using [ResultsViewer.](../../next_steps/RunningYourSimulation/#using-resultsviewer)
+Results view is used to view simulation results. The section on Running Simulation & Viewing Results has information on using [ResultsViewer.](../../next_steps/running_your_simulation/#using-resultsviewer)
 
 ## Quick Start Guide to OpenStudio Modeling Tools
 * This [OpenStudio Quick Start Guide (PDF)](../../img/pdfs/openstudio_interface_quickstart.pdf) provides an introduction to the interface for the Plug-in and the OpenStudio application. It also provides guidance on the basic workflow. Checkout the [Introductory Tutorial](#introductory-tutorial) below to get started.
 
 ## Quick Start Guide to the ParametricAnalysisTool (PAT)
-* This [ParametricAnalysisTool Quick Start Guide (PDF)](../../img/pdfs/PAT-Quick_Start_Guide.pdf) and the [ParametricAnalysisTool section](../comparative_analysis/ParametricStudies.md) provide an introduction to the interface and workflow for creating multiple design alternatives from a seed model. 
+* This [ParametricAnalysisTool Quick Start Guide (PDF)](../../img/pdfs/PAT-Quick_Start_Guide.pdf) and the [ParametricAnalysisTool section](../comparative_analysis/parametric_studies.md) provide an introduction to the interface and workflow for creating multiple design alternatives from a seed model. 
 
 ## Introductory Tutorial
 

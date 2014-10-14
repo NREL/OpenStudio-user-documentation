@@ -8,7 +8,7 @@ This video provides information on using space types in OpenStudio.
  
 ## What is the difference between the current version of OpenStudio and the Legacy Version of OpenStudio?
 
-Check out our [Features](../getting_started/Features.md) page to learn about the functionality of the latest release.  
+Check out our [Features](../getting_started/features.md) page to learn about the functionality of the latest release.  
 
 
 
