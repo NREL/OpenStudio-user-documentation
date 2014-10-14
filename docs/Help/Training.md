@@ -23,7 +23,7 @@ Below are companies and universities that are licensed OpenStudio training and s
 
  
 
-#### For information on becoming a licensed training organization please see the [RFP summary](https://openstudio.nrel.gov/content/nrel-seeking-proposals-openstudio-training-and-technical-support).
+#### For information on becoming a licensed training organization please see the [RFP summary](https://openstudio.net/content/nrel-seeking-proposals-openstudio-training-and-technical-support).
 
 
 
