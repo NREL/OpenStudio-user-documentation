@@ -9,7 +9,7 @@
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
 
-        <title>FAQ - OpenStudio User Docs</title>
+        <title>Finding Model Data - OpenStudio User Docs</title>
 
         <link href="../../css/bootstrap-3.0.3.min.css" rel="stylesheet">
         <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
@@ -146,8 +146,8 @@
                             <a href="../training/">Training</a>
                         </li>
                     
-                        <li >
-                            <a href="../finding_model_data/">Finding Model Data</a>
+                        <li class="active">
+                            <a href="./">Finding Model Data</a>
                         </li>
                     
                         <li >
@@ -158,8 +158,8 @@
                             <a href="../troubleshooting/">Troubleshooting</a>
                         </li>
                     
-                        <li class="active">
-                            <a href="./">FAQ</a>
+                        <li >
+                            <a href="../faq/">FAQ</a>
                         </li>
                     
                     </ul>
@@ -192,11 +192,11 @@
 	
   
 
-  <li class="main active"><a href="#faq">FAQ</a></li>
+  <li class="main active"><a href="#finding-model-data">Finding Model Data</a></li>
     
-      <li><a href="#what-is-the-difference-between-a-space-and-a-zone">What is the difference between a Space and a Zone?</a></li>
+      <li><a href="#openstudio-building-type-templates">OpenStudio Building Type Templates</a></li>
     
-      <li><a href="#what-is-the-difference-between-the-current-version-of-openstudio-and-the-legacy-version-of-openstudio">What is the difference between the current version of OpenStudio and the Legacy Version of OpenStudio?</a></li>
+      <li><a href="#building-component-library-bcl">Building Component Library (BCL)</a></li>
     
 
    
@@ -214,14 +214,35 @@
             <div class="col-md-9" role="main">
                 
 
-<h1 id="faq">FAQ</h1>
-<h2 id="what-is-the-difference-between-a-space-and-a-zone">What is the difference between a Space and a Zone?</h2>
-<p>This video provides information on using space types in OpenStudio.</p>
-<iframe width="640" height="360" src="http://www.youtube.com/embed/kTO3CIBQuoE?rel=0&start=&end=&autoplay=0" frameborder="0" allowfullscreen></iframe>
-
-<p><em>Above: This video introduces some new concepts in OpenStudio 0.5. Geometry is now contained by a space rather than a thermal zone. One or more spaces combine to create a thermal zone. Spaces can also be associated with a space type and a building story.</em></p>
-<h2 id="what-is-the-difference-between-the-current-version-of-openstudio-and-the-legacy-version-of-openstudio">What is the difference between the current version of OpenStudio and the Legacy Version of OpenStudio?</h2>
-<p>Check out our <a href="../../getting_started/features/">Features</a> page to learn about the functionality of the latest release.  </p>
+<h1 id="finding-model-data">Finding Model Data</h1>
+<h2 id="openstudio-building-type-templates">OpenStudio Building Type Templates</h2>
+<p>The New OpenStudio Model From Template tool is represented by this icon in the toolbar: <img alt="New OpenStudio Model" src="../../img/plugin_reference_guide/os_new.png" title="New OpenStudio Model" />. Templates contain data for constructions, loads, and schedules for four vintages across all U.S. climate zones. Templates do not contain any geometry.</p>
+<p><iframe width="640" height="360" src="http://www.youtube.com/embed/wzzY_W2WELo?rel=0&start=0&end=43&autoplay=0" frameborder="0" allowfullscreen></iframe></p>
+<p><em>Above: This video shows you how to choose a template before setting up you model.</em></p>
+<p><img alt="Choose Template" src="../../img/create_model/from_template.png" title="Start a New Model with a from Template" /></p>
+<p><em>Above: Dialog to choose template.</em></p>
+<p>Vintages:</p>
+<ul>
+<li>DOE Ref Pre-1980</li>
+<li>DOE Ref 1980-2004</li>
+<li>DOE Ref 2004</li>
+<li>189.1-2009</li>
+<li>90.1-2007</li>
+</ul>
+<p>Climate Zones:1 - 8</p>
+<p><img alt="Choose Climate" src="../../img/create_model/climate_zones.png" title="Climate Zone Map" /></p>
+<h2 id="building-component-library-bcl">Building Component Library (BCL)</h2>
+<h3 id="find-measures-and-find-components">Find Measures and Find Components</h3>
+<p>An Internet-connected source of building energy modeling data:</p>
+<ul>
+<li>Enables drag-and-drop modeling for quick technology evaluation</li>
+<li>Provides consistent, detailed inputs to drive decision-making</li>
+<li>Searchable and readily available within applications</li>
+</ul>
+<p>The BCL window gives you access to an online repository of building energy modeling data and scripts called the <a href="https://bcl.nrel.gov/">Building Component Library</a>. Although you can access the BCL website on its own, OpenStudio has integrated access to the BCL from within the application. You can access this through the “Window” menu.</p>
+<p>You will be prompted for an API key the first time you open this window, unless you have already used BCL functionality in the SketchUp Plug-in. <a href="../../getting_started/getting_started/#connecting-with-the-building-component-library">Instructions for finding your API Key</a> are in the "Getting Started" section.</p>
+<p><img alt="BCL Window" src="../../img/os_interface/bcl_window.png" title="BCL Window" /></p>
+<p><em>Above: This window gives you access to the online BCL to download measures or components.</em></p>
 
                  <div class="footer">
 

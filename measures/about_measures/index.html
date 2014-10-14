@@ -9,7 +9,7 @@
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
 
-        <title>FAQ - OpenStudio User Docs</title>
+        <title>About Measures - OpenStudio User Docs</title>
 
         <link href="../../css/bootstrap-3.0.3.min.css" rel="stylesheet">
         <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
@@ -104,16 +104,16 @@
             
             
             
-                <li class="dropdown">
+                <li class="dropdown active">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Measures <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                     
-                        <li >
-                            <a href="../../measures/about_measures/">About Measures</a>
+                        <li class="active">
+                            <a href="./">About Measures</a>
                         </li>
                     
                         <li >
-                            <a href="../../measures/measure_writing_guide/">Measure Writing Guide</a>
+                            <a href="../measure_writing_guide/">Measure Writing Guide</a>
                         </li>
                     
                     </ul>
@@ -138,28 +138,28 @@
             
             
             
-                <li class="dropdown active">
+                <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Help <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                     
                         <li >
-                            <a href="../training/">Training</a>
+                            <a href="../../help/training/">Training</a>
                         </li>
                     
                         <li >
-                            <a href="../finding_model_data/">Finding Model Data</a>
+                            <a href="../../help/finding_model_data/">Finding Model Data</a>
                         </li>
                     
                         <li >
-                            <a href="../best_practices/">Best Practices</a>
+                            <a href="../../help/best_practices/">Best Practices</a>
                         </li>
                     
                         <li >
-                            <a href="../troubleshooting/">Troubleshooting</a>
+                            <a href="../../help/troubleshooting/">Troubleshooting</a>
                         </li>
                     
-                        <li class="active">
-                            <a href="./">FAQ</a>
+                        <li >
+                            <a href="../../help/faq/">FAQ</a>
                         </li>
                     
                     </ul>
@@ -192,11 +192,17 @@
 	
   
 
-  <li class="main active"><a href="#faq">FAQ</a></li>
+  <li class="main active"><a href="#about-measures">About Measures</a></li>
     
-      <li><a href="#what-is-the-difference-between-a-space-and-a-zone">What is the difference between a Space and a Zone?</a></li>
+      <li><a href="#what-are-measures">What Are Measures?</a></li>
     
-      <li><a href="#what-is-the-difference-between-the-current-version-of-openstudio-and-the-legacy-version-of-openstudio">What is the difference between the current version of OpenStudio and the Legacy Version of OpenStudio?</a></li>
+      <li><a href="#benefits-of-measures">Benefits of Measures</a></li>
+    
+      <li><a href="#types-of-measures">Types of Measures</a></li>
+    
+      <li><a href="#how-do-you-use-measures">How Do You Use Measures?</a></li>
+    
+      <li><a href="#where-do-you-find-measures">Where Do You Find Measures?</a></li>
     
 
    
@@ -214,14 +220,87 @@
             <div class="col-md-9" role="main">
                 
 
-<h1 id="faq">FAQ</h1>
-<h2 id="what-is-the-difference-between-a-space-and-a-zone">What is the difference between a Space and a Zone?</h2>
-<p>This video provides information on using space types in OpenStudio.</p>
-<iframe width="640" height="360" src="http://www.youtube.com/embed/kTO3CIBQuoE?rel=0&start=&end=&autoplay=0" frameborder="0" allowfullscreen></iframe>
-
-<p><em>Above: This video introduces some new concepts in OpenStudio 0.5. Geometry is now contained by a space rather than a thermal zone. One or more spaces combine to create a thermal zone. Spaces can also be associated with a space type and a building story.</em></p>
-<h2 id="what-is-the-difference-between-the-current-version-of-openstudio-and-the-legacy-version-of-openstudio">What is the difference between the current version of OpenStudio and the Legacy Version of OpenStudio?</h2>
-<p>Check out our <a href="../../getting_started/features/">Features</a> page to learn about the functionality of the latest release.  </p>
+<h1 id="about-measures">About Measures</h1>
+<hr />
+<h2 id="what-are-measures">What Are Measures?</h2>
+<p>In building design and retrofits, the terms energy efficiency measure (EEM) and energy conservation measure (ECM) refer to a specific change that can be made to a building to reduce its energy use. As an example, if you are retrofitting an existing building and one of the ECMs suggested by the design team is "Add insulation to the roof", then you can run that measure to quickly alter your model.</p>
+<p>In OpenStudio, a measure is a set of programmatic instructions (such as an Excel macro) that makes changes to an energy model to reflect its application. In our example, the measure might find the default construction used by roof surfaces in the model, copy this construction and add insulation material to the outside, then set the new construction with added insulation as the default construction to be used by roof surfaces. Measures can be written specifically for an individual model, or they may be more generic to work on a wide range of possible models.</p>
+<p><img alt="New OpenStudio Model" src="../../img/measures/what_measures.png" title="=750x331 &quot;What are Measures&quot;" /></p>
+<p><strong>EE Measures</strong></p>
+<ul>
+<li>
+<p>Add something </p>
+</li>
+<li>
+<p>Remove something</p>
+</li>
+<li>
+<p>Change something</p>
+</li>
+</ul>
+<p><strong>QA/QC Measures</strong></p>
+<ul>
+<li>
+<p>Compute something</p>
+</li>
+<li>
+<p>Report something</p>
+</li>
+</ul>
+<p><img alt="New OpenStudio Model" src="../../img/measures/examples.png" title="=750x451 &quot;Examples of Measures&quot;" /></p>
+<p><em>Above: Examples of EE alterations to the model using measures.</em></p>
+<hr />
+<h2 id="benefits-of-measures">Benefits of Measures</h2>
+<p><strong>Measures can help energy modelers by:</strong></p>
+<ul>
+<li>
+<p>Reducing modeling time and cost</p>
+</li>
+<li>
+<p>Finding deeper savings</p>
+</li>
+<li>
+<p>Lowering administrative and training costs</p>
+</li>
+<li>Maintain quality and consistency</li>
+</ul>
+<p><img alt="New OpenStudio Model" src="../../img/measures/expert.png" title="=750x501 &quot;Expert Energy Modeler&quot;" /></p>
+<p><img alt="New OpenStudio Model" src="../../img/measures/training_now.png" title="=750x501 &quot;Training One-on-one&quot;" /></p>
+<p><img alt="New OpenStudio Model" src="../../img/measures/knowledge.png" title="=750x501 &quot;Passing on Knowledge with Measures&quot;" /></p>
+<p><img alt="New OpenStudio Model" src="../../img/measures/share_bcl.png" title="=750x501 &quot;Passing on Knowledge with Measures and BCL&quot;" /></p>
+<hr />
+<h2 id="types-of-measures">Types of Measures</h2>
+<ul>
+<li>Model Measures</li>
+<li>Bar Aspect Ratio Study</li>
+<li>Reduce Lighting Loads by Percentage</li>
+<li>Shift Schedule Profile Time</li>
+<li>Energy Plus Measures</li>
+<li>Add Simple PV to Sharing Surfaces By Type</li>
+<li>Reporting Measures</li>
+<li>Annual End Use Breakdown</li>
+</ul>
+<hr />
+<h2 id="how-do-you-use-measures">How Do You Use Measures?</h2>
+<h3 id="apply-measures-now">Apply Measures Now</h3>
+<h3 id="openstudio-application-measures-tab">OpenStudio Application Measures Tab</h3>
+<h3 id="parametric-analysis-tool">Parametric Analysis Tool</h3>
+<p>In the ParametricAnalysisTool (PAT), you first drag all the measures you will use into your project and edit them to have the desired inputs. On the second tab, you create the design alternatives using the measures you set up on the first tab.</p>
+<p><img alt="New OpenStudio Model" src="../../img/measures/draganddrop.png" title="=750x524 &quot;Easy to Use Drag-and-Drop&quot;" /></p>
+<p><em>Above: Measures can be added by dragging and dropping them into your project in both the OpenStudio Application and in PAT.</em></p>
+<p><img alt="New OpenStudio Model" src="../../img/measures/set_inputs.png" title="=750x496 &quot;Edit Measure Inputs&quot;" /></p>
+<p><em>Above: Edit the measure inputs by selecting the measure and going to the right panel "Edit" tab.</em></p>
+<ul>
+<li>Command Line</li>
+</ul>
+<hr />
+<h2 id="where-do-you-find-measures">Where Do You Find Measures?</h2>
+<h3 id="building-component-library-bcl">Building Component Library (BCL)</h3>
+<p>You can find measures by going directly to the <a href="https://bcl.nrel.gov/">BCL site</a> and searching or browsing for measures.</p>
+<p>Measures can be downloaded directly from BCL through the <a href="/../next_steps/openstudio_application_interface/#components-measures-menu">OpenStudio Application</a> and <a href="/../comparative_analysis/ParametricStudies/#downloading-measures-from-the-building-component-library">PAT</a> as well.</p>
+<h3 id="locally-shared-measures">Locally Shared Measures</h3>
+<h3 id="create-your-own">Create Your Own</h3>
+<p>Want to write your own custom measure? Start with the <a href="../measure_writing_guide/">Measure Writing Guide</a>.</p>
 
                  <div class="footer">
 
