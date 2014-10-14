@@ -83,7 +83,7 @@ When exporing an IDF file, make sure your file name ends with the ".idf" extensi
 
 This tool can function similarly to the Open OpenStudio Model tool. If you import an entire model, your current model is closed and a new one loaded. When you import an OSM model and then save the OSM model, you will be prompted for a new file name. This prevents you from accidentally overwriting your original file.
 <br></br>
-The Import OpenStudio Model tool can also be used to import additional content into your model. In this import workflow your OSM model stays open and the import tool adds content from a previously saved OSM file (see the Import dialog image above.) Content types that can be imported from an OSM file follow:
+The Import OpenStudio Model tool can also be used to import additional content into your model. In this import workflow, your OSM model stays open and the import tool adds content from a previously saved OSM file (see the Import dialog image above.) Content types that can be imported from an OSM file follow:
 <p> - Constructions (including construction sets, constructions, and materials)</p>
 <p> - Schedules</p>
 <p> - Space loads</p>
@@ -101,7 +101,7 @@ This tool prompts you for a new file name for your saved file. As you continue t
 <td align="left"> 
 #### Importing gbXML Files
 
-There is no toolbar icon to use for importing gbXML (Green Building XML) files; this functionality is available through the "Plugins->OpenStudio->Import->Import gbXML Model" menu item only. If you import a gbXML model, your current OSM model is closed and a new one was created from your gbXML. When you import a gbXML model and then save the model, you will be prompted to save it as an OSM file. Currently, there is no export of gbXML from OpenStudio.
+There is no toolbar icon to use for importing gbXML (Green Building XML) files; this functionality is available through the "Plugins->OpenStudio->Import->Import gbXML Model" menu item only. If you import a gbXML model, your current OSM model is closed and a new one is created from your gbXML. When you import a gbXML model and then save the model, you will be prompted to save it as an OSM file. Currently, there is no export of gbXML from OpenStudio.
 
 ![Import gbXML](../../img/plugin_reference_guide/width_gbxml-menu.png "Import gbXML")
 <p>*Above: Import dialog allows you to import gbXML files.*</p>
@@ -126,11 +126,11 @@ The following gbXML element types are imported from gbXML to the OpenStudio Mode
 <td align="left"> 
 #### Export Untranslated EnergyPlus IDF 
 
-When an IDF file is imported into the SketchUp Plug-in, a translation between EnergyPlus IDF and OpenStudio OSM occurs.  OpenStudio does not yet support translation of all objects from EnergyPlus IDFIDF to OpenStudio OSM. To support users with workflows that switch between IDF and Osm, the SketchUp Plug-in allows users to export IDF objects that were not translated during the import. These objects are written to a plain text Idf file so the user may then reintegrate these untranslated objects with the IDF produced by the OpenStudio OSM to EnergyPlus IDF translation.  After importing an EnergyPlus IDF, a prompt will alert the user if there are objects that could not be translated to OpenStudio Osm.
+When an IDF file is imported into the SketchUp Plug-in, a translation between EnergyPlus IDF and OpenStudio OSM occurs.  OpenStudio does not yet support translation of all objects from EnergyPlus IDF to OpenStudio OSM. To support users with workflows that switch between IDF and OSM, the SketchUp Plug-in allows users to export IDF objects that were not translated during the import. These objects are written to a plain text Idf file so the user may then reintegrate these untranslated objects with the IDF produced by the OpenStudio OSM to EnergyPlus IDF translation.  After importing an EnergyPlus IDF, a prompt will alert the user about the objects that could not be translated to OpenStudio OSM.
 
 ![Export Untranslated](../../img/plugin_reference_guide/width_untranslatedidf-importdialog.png "Export Untranslated IDF")
-<p>*Above: User Prompt on EnergyPlus Idf Import*</p>
-<p>To save untranslated EnergyPlus Idf objects, select the menu item "Plugins->OpenStudio->Export->Export Untranslated EnergyPlus Idf".</p>
+<p>*Above: User Prompt on EnergyPlus IDF Import*</p>
+<p>To save untranslated EnergyPlus IDF objects, select the menu item "Plugins->OpenStudio->Export->Export Untranslated EnergyPlus Idf".</p>
 ![Export Untranslated Example](../../img/plugin_reference_guide/width_untranslatedidf-export.png "Export Untranslated IDF")
 <p>*Above: Export menu available through Plugins menu*</p>
 </td>
@@ -181,8 +181,8 @@ Once you are inside a space, you can draw surfaces. You can also add shading gro
 The New Shading Surface Group tool is used to create a new EnergyPlus shading group. Activate the tool and then click where you want your shading group origin to be. An EnergyPlus shading group can be a top-level object in your SketchUp workspace, or it can be placed within a space. If you want to draw in the group, you first need to enter into the group through one of the following methods:
 <ul>
 <li>Double-click on the group while it is selected (this may be difficult if other model objects are in the way).</l1i>
-<li>While the group is selected, right-click and choose "edit group" from the contextual menu. (You can also go to the edit menu under "group" or "solid group").</li>
-<li>Select the object by name from SketchUp's outliner window and then double-click or right-click and choose "edit group".</li>
+<li>While the group is selected, right-click and choose "edit group" from the contextual menu. (You can also go to the edit menu under "group" or "solid group.")</li>
+<li>Select the object by name from SketchUp's outliner window and then double-click or right-click and choose "edit group."</li>
 <li>You can set up a keyboard shortcut that will take you into the selected group. A tutorial will be added to the documentation that shows you how to add your own shortcuts or load some preconfigured OpenStudio shortcuts.</li>
 </ul>
 You can create shading surface groups within or outside a space. Once you enter into a shading surface group, you can draw shading surfaces. An alternate method to make new shading groups is to copy and paste a group.
@@ -201,8 +201,8 @@ You can create shading surface groups within or outside a space. Once you enter 
 The New Interior Partition Surface Group tool is used to create a new OpenStudio Interior Partition Group. Activate the tool and then click where you want your interior partition group origin to be. If you want to draw in the group, you first need to enter into the group through one of the following methods:
 <ul>
 <li>Double-click on the group while it is selected (this may be difficult if other model objects are in the way).</l1i>
-<li>While the group is selected, right-click and choose "edit group" from the contextual menu. (You can also go to the edit menu under "group" or "solid group").</li>
-<li>Select the object by name from SketchUp's outliner window and then double-click or right-click and choose "edit group".</li>
+<li>While the group is selected, right-click and choose "edit group" from the contextual menu. (You can also go to the edit menu under "group" or "solid group.")</li>
+<li>Select the object by name from SketchUp's outliner window and then double-click or right-click and choose "edit group."</li>
 <li>You can set up a keyboard shortcut that will take you into the selected group. A tutorial will be added to the documentation that shows you how to add your own shortcuts or load some preconfigured OpenStudio shortcuts.</li>
 </ul>
 You can create interior partition groups within a space only. Once you enter into an interior partition group, you can draw interior partition surfaces. An alternate method to make new interior partition groups is to copy and paste a group. Interior partition surfaces are not used as heat transfer surfaces, but they still have an associated construction. This construction, along with the surface area, is used to create internal mass that is used to run simulations and create objects for IDF export. In the future, interior partition surfaces and their constructions will be used by other processes.
@@ -239,7 +239,7 @@ To associate a daylighting control object with a thermal zone, select the desire
 <td align="left">
 #### New Illuminance Map
 
-The New Illuminance Map tool creates a new EnergyPlus Illuminance Map object. This consists of rectangle with a grid representing map data points. By default it will be placed 30 inches above the surface you click on. You can move and resize the Illuminance Map with the SketchUp Move and Scale Tool and through the Object Inspector. To obtain data reported for the map in EnergyPlus, you also need to include a Daylighting Controls Object and lights. Most space types in the template files already include a light object.
+The New Illuminance Map tool creates a new EnergyPlus Illuminance Map object. This consists of a rectangle with a grid representing map data points. By default it will be placed 30 inches above the surface you click on. You can move and resize the Illuminance Map with the SketchUp Move and Scale Tool and through the Object Inspector. To obtain data reported for the map in EnergyPlus, you also need to include a Daylighting Controls Object and lights. Most space types in the template files already include a light object.
 
 You can create an illuminance map from  within a space, or you can copy and paste the map into a different space. You can have multiple illuminance maps in a space.
 
@@ -261,7 +261,7 @@ To associate an illuminance map with a thermal zone, select the desired thermal 
 <td align="left">
 #### New Luminaire Tool
 
-The New Luminaire tool creates a new OpenStudio Luminaire object. This object is used to represent a single lighting fixture; power used by this object is represented in EnergyPlus and this object will eventually be used in electric lighting simulation using Radiance. The object is represented by a rectangle with a red triangle on top. The shorter edge of the red triangle goes from the center of the rectangle to the edge in the positive x direction; the longer edge goes out in the positive y direction. 
+The New Luminaire tool creates a new OpenStudio Luminaire object. This object is used to represent a single lighting fixture; power used by this object is represented in EnergyPlus and this object will eventually be used in electric lighting simulations using Radiance. The object is represented by a rectangle with a red triangle on top. The shorter edge of the red triangle goes from the center of the rectangle to the edge in the positive x direction; the longer edge goes out in the positive y direction. 
 
 ![Ill Map](../../img/plugin_reference_guide/width_luminaire-component.png "New Luminaire Tool")
 <p>*Above: Detail of Luminaire Object*</p>
@@ -307,7 +307,7 @@ The Surface Matching tool is used to automatically set outside boundary conditio
 <td align="left">
 #### Set Space Attributes
 
-The Space Attributes Tool can be used to set attributes for one or more selected spaces in your OpenStudio model. The first four pull-down menus (Space Type, Building Story, Construction Set, and Thermal Zone) set attributes of the selected space objects. The last two pull-down menus work a little differently. They set attributes in the thermal zone associated with the selected spaces. Most of the menus allow you to choose from a list populated by the appropriate model objects or one of the following options: No Change, Clear Field, or Make a new Object. The exception is the ideal air loads, which has a <no change> option, or yes/no. The Thermostat menu is similar to the others, but does not offer the option to create a new thermostat. You can create a new thermostat from the inspector.
+The Space Attributes Tool can be used to set attributes for one or more selected spaces in your OpenStudio model. The first four pull-down menus (Space Type, Building Story, Construction Set, and Thermal Zone) set attributes of the selected space objects. The last two pull-down menus set attributes in the thermal zone associated with the selected spaces. Most of the menus allow you to choose from a list populated by the appropriate model objects or one of the following options: No Change, Clear Field, or Make a new Object. The exception is the ideal air loads, which has a "no change" option, or yes/no. The Thermostat menu is similar to the others, but does not offer the option to create a new thermostat. You can create a new thermostat from the inspector.
 <br></br>
 ![Ill Map](../../img/plugin_reference_guide/SU_SpaceAttributes_a.png "Space Attributes Dialog")
 <p>*Above: Screenshot of Space Attributes Dialog Box*</p>
@@ -324,14 +324,14 @@ The following image shows the model after a new space type is applied to two sel
 <td align="left">
 #### Create Spaces from Diagrams
 
-The Space Diagram Tool allows you to use native SketchUp tools to draw a space diagram representing your building's floor plan. After drawing the diagram, you can select the surfaces and create a single-story or multistory building based on the diagram. Your model will have one space for each surface in your diagram for each floor. You can use this tool multiple times. If you want to create a new diagram with a unique floor  for higher floors, just repeat the steps you used for the original diagram.
+The Space Diagram Tool allows you to use native SketchUp tools to draw a space diagram representing your building's floor plan. After drawing the diagram, you can select the surfaces and create a single-story or multistory building based on the diagram. Your model will have one space for each surface in your diagram for each floor. You can use this tool multiple times. If you want to create a new diagram with a unique floor for higher floors, just repeat the steps you used for the original diagram.
 <br></br>
 Surfaces that are not horizontal will be ignored; surfaces with improper surface normals will be flipped over. Once made, the spaces are like any other OpenStudio space. You can enter the space and alter or extend your geometry to refine it beyond the basic geometry created by the space diagram tool.
 <br></br>
 ![Ill Map](../../img/plugin_reference_guide/width_SU_SpaceDigram_a.png "Floor Plan Drawing")
 <p>*Above: Screenshot of Space Diagram Dialog Box*</p>
 
-The following image shows the resulting model after using the Space Diagram Tool. The loose geometry of the diagram will be saved onto a layer in SketchUp named "OpenStudio - Space Diagrams". Although the resulting spaces are saved in your OpenStudio model (OSM file) the diagram is not. If you want to keep the diagram, you can save the SketchUp file as well. Even if you do not save the SketchUp file you will still have access to the diagram until you quit. If you want to make a change to the diagram, you can delete the spaces, alter the diagram, and re-project them.
+The following image shows the resulting model after using the Space Diagram Tool. The loose geometry of the diagram will be saved onto a layer in SketchUp named "OpenStudio - Space Diagrams". Although the resulting spaces are saved in your OpenStudio model (OSM file), the diagram is not. If you want to keep the diagram, you can save the SketchUp file as well. Even if you do not save the SketchUp file you will still have access to the diagram until you quit. If you want to make a change to the diagram, you can delete the spaces, alter the diagram, and re-project them.
 
 ![Ill Map](../../img/plugin_reference_guide/width_SU_SpaceDiagram_b.png "Extruded Model")
 <p>*Above: Screenshot of Model After Using Space Diagram Tool*</p>
@@ -343,7 +343,7 @@ The following image shows the resulting model after using the Space Diagram Tool
 <td align="left">
 #### Project Loose Geometry
 
-The Project Loose Geometry Tool allows you use the native SketchUp tools  to draw loose geometry onto surfaces of your building envelope. When you are ready to project these surfaces into the spaces of your model, you can open this tool and run it across all loose geometry or the selected loose geometry. Although this is often used to create fenestration, it can also be used to split a base surface into two base surfaces. For example, you can create a line 3 feet above the ground representing a change in construction from concrete block to brick. The advantage over this tool--versus the traditional method of entering and drawing within a space--is that you can quickly create surfaces across many spaces without having to ever enter those spaces.
+The Project Loose Geometry Tool allows you to use the native SketchUp tools to draw loose geometry onto surfaces of your building envelope. When you are ready to project these surfaces into the spaces of your model, you can open this tool and run it across all loose geometry or the selected loose geometry. Although this is often used to create fenestration, it can also be used to split a base surface into two base surfaces. For example, you can create a line 3 feet above the ground representing a change in construction from concrete block to brick. The advantage of this tool--versus the traditional method of entering and drawing within a space--is that you can quickly create surfaces across many spaces without having to ever enter those spaces.
 
 If some of the surfaces you have selected are not in the same plane as a building surface, they will be ignored.
 
