@@ -742,7 +742,7 @@ class ReplaceLightsInSpaceTypeWithLPD &lt; OpenStudio::Ruleset::ModelUserScript
                             #{stn}.&quot;)
         #loop through all lights in the space type
         space_type.lights.each do |light|
-          #get the old lpd from the existing lights defintion, if exists
+          #get the old lpd from the existing lights definition, if exists
           old_lpd = &quot;not per-area&quot;
           if not light.lightsDefinition.wattsperSpaceFloorArea.empty?
             old_lpd = light.lightsDefinition.wattsperSpaceFloorArea.get

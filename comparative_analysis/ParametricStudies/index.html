@@ -231,7 +231,7 @@
                 
 
 <h1 id="comparative-analysis-using-the-parametricanalysistool-pat">Comparative Analysis Using the ParametricAnalysisTool (PAT)</h1>
-<p>PAT removes the need to hand edit each model to try out different architecture, energy efficiency measures, and mechanical systems. PAT will apply scripts to your baseline model and let you quickly compare many alternatives. OpenStudio has developed a workflow that allows energy modelers 
+<p>PAT removes the need to hand edit each model to try out different architectures, energy efficiency measures, and mechanical systems. PAT applies scripts to your baseline model and lets you quickly compare many alternatives. OpenStudio has developed a workflow that allows energy modelers 
 to create and run a customized parametric analysis using commercially available cloud computing services. This workflow will enable anyone to perform powerful parametric studies in a reasonable time for a relatively low cost.  </p>
 <hr />
 <h2 id="creating-a-project">Creating a Project</h2>
@@ -336,7 +336,7 @@ to create and run a customized parametric analysis using commercially available 
 <p>Currently only Amazon EC2 is available through PAT.</p>
 <p><img alt="Cloud Settings 1" src="../../img/pat/cloud_settings1.png" title="&quot;Cloud Settings Screen One" /></p>
 <p><em>Above: Fill out the first screen and agree to terms before continuing to the second screen.</em></p>
-<p>On the second screen of the “Cloud Settings” dialog, confirm that you have chosen the desired sever, worker, and number of workers. </p>
+<p>On the second screen of the “Cloud Settings” dialog, confirm that you have chosen the desired server, worker, and number of workers. </p>
 <p>As soon as you hit the “Turn on Cloud” button you will start incurring charges, and the smallest increment is one hour. If you have to cancel and re-start it you will be charged again.</p>
 <p><strong>Review Amazon pricing at <a href="http://aws.amazon.com/ec2/pricing/">http://aws.amazon.com/ec2/pricing/</a>.</strong></p>
 <p><img alt="Cloud Settings 2" src="../../img/pat/cloud_settings2.png" title="Cloud Settings Screen Two" /></p>
@@ -350,19 +350,19 @@ to create and run a customized parametric analysis using commercially available 
 <p>The "Turn on the Cloud" button has several states to let you know the status of the cloud.</p>
 <p><img alt="Cloud Buttons" src="../../img/pat/cloud_buttons.png" title="Cloud Button States" /></p>
 <p><em>Above: The states of the cloud button are shown.</em></p>
-<p>You can download standard or detailed results from your runs. If you want detailed results click on the download button in the table. You can choose to download all of the results in detail but it may be a large download. </p>
+<p>You can download standard or detailed results from your runs. If you want detailed results, click on the download button in the table. You can choose to download all of the results in detail but it may be a large download. </p>
 <p><img alt="Cloud Download" src="../../img/pat/download_results.png" title="Cloud Results Downloads" /></p>
 <p><em>Above: The states of the cloud download button are shown.</em></p>
-<p>While your project is running on the cloud you can choose the design alternative and select “Download Detailed Results for Selected File” button if you want more detailed data on some of the options.</p>
+<p>While your project is running on the cloud, you can choose the design alternative and select “Download Detailed Results for Selected File” button if you want more detailed data on some of the options.</p>
 <p><strong>Quitting PAT while the cloud is on will not close the EC2 instances. If you Launch PAT again but open a different project it may look like the cloud is off, but that is only relevant for that current project.</strong></p>
-<p>To properly end the cloud session in PAT re-open the PAT project (if you have closed it) and then click the button to stop the cloud. For a few minutes you will see “Stopping Cloud."</p>
+<p>To properly end the cloud session in PAT, re-open the PAT project (if you have closed it) and then click the button to stop the cloud. For a few minutes you will see “Stopping Cloud."</p>
 <p><strong>Once you stop the cloud you will no longer be able to download detailed simulation results.</strong> If this happens and you want to get one, you can always run that job locally. It is generally not recommended to download detailed results for all design alternatives, as that will use a lot of hard drive space and network bandwidth.</p>
 <p><strong>It is always a good idea to go to the EC2 website to confirm that the instances have shut down. To view your EC2 web console, click the “Manage all Projects with AWS Console” in the “Monitor Use” dialog or “AWS Management Console” in the “Cloud Settings” dialog. It will take you to this address <a href="http://aws.amazon.com/console/">http://aws.amazon.com/console/</a>. 
 Click “Sign in to the AWS Console”</strong></p>
 <p><img alt="Cloud AWS" src="../../img/pat/aws.png" title="AWS Console" /></p>
 <p><em>Above: Check your status on AWS and terminate sessions if you have problems in PAT.</em></p>
 <h3 id="openstudio-cloud-management-console">OpenStudio Cloud Management Console</h3>
-<p>While your runs are completing on the cloud and after they are finished you can explore your results with the OpenStudio Cloud Management Console. </p>
+<p>While your runs are completing on the cloud and after they are finished, you can explore your results with the OpenStudio Cloud Management Console. </p>
 <p><img alt="Cloud OS Console" src="../../img/pat/os_console1.png" title="OS Console" /></p>
 <p><em>Above: This pie chart shows the progress of the runs. Select "View Analysis" to explore results.</em></p>
 <p><img alt="OS Console Analysis" src="../../img/pat/os_console2.png" title="OS Console Analysis" /></p>
@@ -381,7 +381,7 @@ Click “Sign in to the AWS Console”</strong></p>
 <h2 id="viewing-results">Viewing Results</h2>
 <p>You can open individual design alternative reports (.htm files) in your browser. EnergyPlus and standard and calibration OpenStudio reports can be found by right clicking on a design alternative, on the Results tab, and selecting the results you want to view.</p>
 <p><img alt="Cloud Download" src="../../img/pat/download_results_during.png" title="Cloud Results During" /></p>
-<p><em>Above: Right click on design alternative to get these options. If your model includes calibration reports the calibration button at the top of the results will display those in a table format in the application.</em></p>
+<p><em>Above: Right click on design alternative to get these options. If your model includes calibration reports, the calibration button at the top of the results will display those in a table format in the application.</em></p>
 <h2 id="publications">Publications</h2>
 <p><a href="https://www.aceee.org/files/proceedings/2014/data/papers/4-588.pdf">A Parametric Analysis Tool for Building Energy Design Workflows: Application to a Utility Design Assistance Incentive Program (PDF)</a></p>
 
