@@ -34,7 +34,7 @@ The Workflow:
 
 10. Browse Results and Download Files
 
-11. Everything has an JSON-based API to access data programmatically
+11. Everything has a JSON-based API to access data programmatically
 
 12. Download results in CSV or R dataframe
 
