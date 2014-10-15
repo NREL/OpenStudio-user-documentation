@@ -1,4 +1,4 @@
-## The SketchUp Plug-in Interface 
+## The SketchUp Plug-in Interface
 This section provide the legend for toolbars and menus available in the Plug-in. You may also find helpful information in the [OpenStudio Quick Start Guide (PDF)](../../img/pdfs/openstudio_interface_quickstart.pdf).
 
 ![Toolbar OS Plugin](../../img/plugin_reference_guide/toolbars_os.png "Plug-in Toolbars")
@@ -16,7 +16,7 @@ Tools in this set create, open, save, import, or export data to or from your mod
 <tr>
 <td> <img src="../../img/plugin_reference_guide/os_new.png" alt="New"></td>
 <td align="left">
-#### The New OpenStudio Model From Template 
+#### The New OpenStudio Model From Template
 
 This tool closes your current OpenStudio model and creates a new one. It does not close your current SketchUp file, but loads a new OpenStudio model into it.</td>
 </tr>
@@ -32,28 +32,28 @@ Use this feature to close your current OpenStudio model and open an OpenStudio F
 <td align="left">
 #### Save OpenStudio Model
 
-Saves your OpenStudio Model as an OpenStudio File (OSM). If you save your OSM file and then save your SketchUp model, the SketchUp model will maintain a link to the OSM model. If you close and reopen your linked SketchUp file (SKP), it will reload the content from the OSM file. All the energy model content is saved in the OSM file, not in the SketchUp file. 
+Saves your OpenStudio Model as an OpenStudio File (OSM). If you save your OSM file and then save your SketchUp model, the SketchUp model will maintain a link to the OSM model. If you close and reopen your linked SketchUp file (SKP), it will reload the content from the OSM file. All the energy model content is saved in the OSM file, not in the SketchUp file.
 <br></br>
 The benefit of having a link to a SketchUp file is to maintain a relationship with non-OpenStudio content that you may have in your model, such as a base plan or base model. A linked SketchUp file also has saved scenes, drawing styles, and section cut location. When saving your OpenStudio model, make sure your file name ends with the ".osm" extension. If it does not have that extension, OpenStudio will not open the file. If you have files without this extension, you can manually rename them; they should open.</td>
-</tr> 
+</tr>
 <tr>
 <td>![Save As OpenStudio Model](../../img/plugin_reference_guide/OSSaveAs-24_0.png "Save As")</td>
 <td align="left">
-#### Save As OpenStudio Model 
+#### Save As OpenStudio Model
 
 Using this feature saves your OpenStudio Model as a new OSM file and updates the SketchUp file to link to the newly saved OSM file.
 
 <p>When saving your OpenStudio model, make sure your file name ends with the ".osm" extension. If it does not have this extension, OpenStudio will not open the file. If you have files without this extension, you can manually rename them; they should open.</p>
 </td>
-</tr> 
+</tr>
 <tr>
 <td>![Import EnergyPlus Input Data File](../../img/plugin_reference_guide/import_idf.png "Import Energy Plus Input Data File")</td>
 <td align="left">
-#### Import EnergyPlus Input Data File (IDF) 
+#### Import EnergyPlus Input Data File (IDF)
 
 This feature functions similarly to the Import OpenStudio Model tool. If you import an entire IDF model, your current OSM model is closed and a new one created from your IDF. When you import and then save an IDF model, you will be prompted to save it as an OSM file. If you want to keep it as an IDF model, you can choose the Export EnergyPlus Input Data File tool instead of the Save OSM tool. If you have added geometry or other objects, such as interior partitions that are unique to an OpenStudio model, you will lose or alter those objects when you export back to an IDF file.
 
-Like the Import OpenStudio Model tool, the Import EnergyPlus Input Data File tool can be used to import additional content into your model. In this import workflow, your OSM model stays open and the import tool adds additional content from a previously saved IDF file. 
+Like the Import OpenStudio Model tool, the Import EnergyPlus Input Data File tool can be used to import additional content into your model. In this import workflow, your OSM model stays open and the import tool adds additional content from a previously saved IDF file.
 <p>Content types that can be imported from an IDF file:</p>
 <p> - Constructions (including materials)</p>
 <p> - Schedules</p>
@@ -62,12 +62,12 @@ You can access these features under the Plugins/OpenStudio menu or the File/Impo
 ![Import Dialog](../../img/plugin_reference_guide/OpenStudioImportMenu_0.png "Import IDF")
 *Above: Import dialog allows you to import OpenStudio models, constructions, schedules, and space loads. You can also import IDF files through this menu.*
 </td>
-</tr> 
+</tr>
 <tr>
 <td>![Export IDF](../../img/plugin_reference_guide/IDFExport-24.png "Export IDF")
 </td>
 <td align="left">
-#### Export EnergyPlus Input Data File 
+#### Export EnergyPlus Input Data File
 
 Use this tool when exporting an IDF file from an OSM model.  This can be useful if you need an IDF file to use in an application that does not support the new OSM format. Some model data may be lost when exporting to an IDF because the OSM file format supports many objects, such as interior partition groups and surfaces, that are not in EnergyPlus. If you export an OSM model with unsupported elements to an IDF file, and then reimport it into OpenStudio, the unsupported elements will be gone.
 
@@ -75,11 +75,11 @@ Good practice for a typical workflow is to always use your OSM file as the worki
 
 When exploring an IDF file, make sure your file name ends with the ".idf" extension. If it does not have this extension, EnergyPlus and other applications may not open the file. If you have files without this extension, you can manually rename them; they should open.</p>
 </td>
-</tr> 
+</tr>
 <tr>
 <td></td>
 <td align="left">
-#### Import OpenStudio Model 
+#### Import OpenStudio Model
 
 This tool can function similarly to the Open OpenStudio Model tool. If you import an entire model, your current model is closed and a new one loaded. When you import an OSM model and then save the OSM model, you will be prompted for a new file name. This prevents you from accidentally overwriting your original file.
 <br></br>
@@ -91,14 +91,14 @@ The Import OpenStudio Model tool can also be used to import additional content i
 </tr>
 <tr>
 <td></td>
-<td align="left"> 
-#### Export OpenStudio Model 
+<td align="left">
+#### Export OpenStudio Model
 
 This tool prompts you for a new file name for your saved file. As you continue to work, you alter your original file instead of the exported file.
 </td>
 <tr>
 <td></td>
-<td align="left"> 
+<td align="left">
 #### Importing gbXML Files
 
 There is no toolbar icon to use for importing gbXML (Green Building XML) files; this functionality is available through the "Plugins->OpenStudio->Import->Import gbXML Model" menu item only. If you import a gbXML model, your current OSM model is closed and a new one is created from your gbXML. When you import a gbXML model and then save the model, you will be prompted to save it as an OSM file. Currently, there is no export of gbXML from OpenStudio.
@@ -123,8 +123,8 @@ The following gbXML element types are imported from gbXML to the OpenStudio Mode
 </td>
 <tr>
 <td></td>
-<td align="left"> 
-#### Export Untranslated EnergyPlus IDF 
+<td align="left">
+#### Export Untranslated EnergyPlus IDF
 
 When an IDF file is imported into the SketchUp Plug-in, a translation between EnergyPlus IDF and OpenStudio OSM occurs.  OpenStudio does not yet support translation of all objects from EnergyPlus IDF to OpenStudio OSM. To support users with workflows that switch between IDF and OSM, the SketchUp Plug-in allows users to export IDF objects that were not translated during the import. These objects are written to a plain text Idf file so the user may then reintegrate these untranslated objects with the IDF produced by the OpenStudio OSM to EnergyPlus IDF translation.  After importing an EnergyPlus IDF, a prompt will alert the user about the objects that could not be translated to OpenStudio OSM.
 
@@ -146,7 +146,7 @@ Tools in this set create new zones, groups, and geometry.
 </tr>
 </thead>
 <tbody>
-<tr> 
+<tr>
 <td>![New Space](../../img/plugin_reference_guide/new_space.png "New Space")
 </td>
 <td align="left">
@@ -172,7 +172,7 @@ Once you are inside a space, you can draw surfaces. You can also add shading gro
 
 </td>
 </tr>
-<tr> 
+<tr>
 <td>![New Shading Surface Group](../../img/plugin_reference_guide/NewShading-24.png "New Shading Shading")
 </td>
 <td align="left">
@@ -192,7 +192,7 @@ You can create shading surface groups within or outside a space. Once you enter 
 
 </td>
 </tr>
-<tr> 
+<tr>
 <td>![New Interior Partition](../../img/plugin_reference_guide/NewPartition-24.png "New Interior Partition Surface Group")
 </td>
 <td align="left">
@@ -213,7 +213,7 @@ You can create interior partition groups within a space only. Once you enter int
 <p>*Screenshot of OpenStudio Inspector With an Interior Partition Surface Selected*</p>
 </td>
 </tr>
-<tr> 
+<tr>
 <td>![New Daylighting Controls Object](../../img/plugin_reference_guide/NewDaylighting-24.png "New Daylighting Controls Object")
 </td>
 <td align="left">
@@ -233,7 +233,7 @@ To associate a daylighting control object with a thermal zone, select the desire
 <p>*Above: Screenshot of OpenStudio Inspector with a Thermal Zone selected*</p>
 </td>
 </tr>
-<tr> 
+<tr>
 <td>![New Illuminance Map](../../img/plugin_reference_guide/NewIlluminance-24.png "New Illuminance Map")
 </td>
 <td align="left">
@@ -255,13 +255,13 @@ To associate an illuminance map with a thermal zone, select the desired thermal 
 <p>*Above: Screenshot of OpenStudio Inspector With a Thermal Zone Selected*</p>
 </td>
 </tr>
-<tr> 
+<tr>
 <td>![New Illuminance](../../img/plugin_reference_guide/NewIlluminance-24.png "New Illuminance Map")
 </td>
 <td align="left">
 #### New Luminaire Tool
 
-The New Luminaire tool creates a new OpenStudio Luminaire object. This object is used to represent a single lighting fixture; power used by this object is represented in EnergyPlus and this object will eventually be used in electric lighting simulations using Radiance. The object is represented by a rectangle with a red triangle on top. The shorter edge of the red triangle goes from the center of the rectangle to the edge in the positive x direction; the longer edge goes out in the positive y direction. 
+The New Luminaire tool creates a new OpenStudio Luminaire object. This object is used to represent a single lighting fixture; power used by this object is represented in EnergyPlus and this object will eventually be used in electric lighting simulations using Radiance. The object is represented by a rectangle with a red triangle on top. The shorter edge of the red triangle goes from the center of the rectangle to the edge in the positive x direction; the longer edge goes out in the positive y direction.
 
 !["New Luminaire Tool](../../img/plugin_reference_guide/width_luminaire-component.png "New Luminaire Tool")
 <p>*Above: Detail of Luminaire Object*</p>
@@ -275,13 +275,13 @@ When a luminaire is placed it must refer to an OS:Luminaire:Definition object to
 <p>*Above: Luminaire Definition Prompt*</p>
 </td>
 </tr>
-<tr> 
+<tr>
 <td>![New Glare Sensor](../../img/plugin_reference_guide/NewGlare-24.png "New Glare Sensor")
 </td>
 <td align="left">
 #### New Glare Sensor
 
-The New Glare  Sensor Object tool is a new addition to OpenStudio 0.9.0. It creates a new OpenStudio Glare Sensor that supports Radiance simulations. Unlike the Illuminance Map and Daylighting Control Point, the Glare Sensor has no connection to a Thermal Zone. The default placement of the sensor is 30 inches above the surface you click on. You can move the object with the SketchUp move tool or through the Object Inspector, and you can set many attributes that feed information to Radiance. 
+The New Glare  Sensor Object tool is a new addition to OpenStudio 0.9.0. It creates a new OpenStudio Glare Sensor that supports Radiance simulations. Unlike the Illuminance Map and Daylighting Control Point, the Glare Sensor has no connection to a Thermal Zone. The default placement of the sensor is 30 inches above the surface you click on. You can move the object with the SketchUp move tool or through the Object Inspector, and you can set many attributes that feed information to Radiance.
 <br></br>
 You can create a Glare Sensor object from within a space, or you can copy and paste one into a different space.
 <br></br>
@@ -289,7 +289,7 @@ You can create a Glare Sensor object from within a space, or you can copy and pa
 <p>*Above: Screenshot of OpenStudio Inspector Glare Sensor selected*</p>
 </td>
 </tr>
-<tr> 
+<tr>
 <td>![Surface Matching](../../img/plugin_reference_guide/SurfaceMatchingSelected-24.png "Surface Matching")
 </td>
 <td align="left">
@@ -301,7 +301,7 @@ The Surface Matching tool is used to automatically set outside boundary conditio
 <p>*Above: Screenshot of Surface Matching Dialog Box*</p>
 </td>
 </tr>
-<tr> 
+<tr>
 <td>![Set Space Attributes](../../img/plugin_reference_guide/edit_spaces.png "Set Space Attributes")
 </td>
 <td align="left">
@@ -318,7 +318,7 @@ The following image shows the model after a new space type is applied to two sel
 <p>*Above: Screenshot of Space Attributes Dialog Box*</p>
 </td>
 </tr>
-<tr> 
+<tr>
 <td>![Create Spaces from Diagrams](../../img/plugin_reference_guide/extrude.png "Create Spaces from Diagrams")
 </td>
 <td align="left">
@@ -337,7 +337,7 @@ The following image shows the resulting model after using the Space Diagram Tool
 <p>*Above: Screenshot of Model After Using Space Diagram Tool*</p>
 </td>
 </tr>
-<tr> 
+<tr>
 <td>![Project Loose Geometry](../../img/plugin_reference_guide/project_geo.png "Project Loose Geometry")
 </td>
 <td align="left">
@@ -372,14 +372,14 @@ Tools in this set are generally for viewing model attributes, however some editi
 <tr>
 <td>![New OpenStudio Model](../../img/plugin_reference_guide/os_new.png "New OpenStudio Model")</td>
 <td align="left">
-#### OpenStudio Inspector 
+#### OpenStudio Inspector
 
 The OpenStudio Inspector displays information about your currently open OpenStudio model. This replaces the Object Information Window found in older versions.
 
 The Inspector Window is divided into three main areas:
 <ol>
   <li>The top left is the "Select Type" pane. This has a partial list of OpenStudio object types and identifies how many objects of a specific type are in your model.</li>
-<li>The bottom left pane is the "Select Object" pane. If you select a "Type" in the type pane, a list of objects of that type will be displayed in the "Select Object" pane. The objects listed in the "Select Object" pane have a number to indicate how many objects in the model refer to this object. Below the list are several buttons. The plus button to create a new object of this type, a copy button to copy the selected object, a minus button to delete the selected object, and a purge button to purge unused objects of this type. For some object types, one or more of these buttons may be disabled.</li> 
+<li>The bottom left pane is the "Select Object" pane. If you select a "Type" in the type pane, a list of objects of that type will be displayed in the "Select Object" pane. The objects listed in the "Select Object" pane have a number to indicate how many objects in the model refer to this object. Below the list are several buttons. The plus button to create a new object of this type, a copy button to copy the selected object, a minus button to delete the selected object, and a purge button to purge unused objects of this type. For some object types, one or more of these buttons may be disabled.</li>
 <li>The third and last pane of the Inspector is the "Edit Object" pane at the right. This displays the fields for the currently selected object in the "Select Object" pane. Some fields accept a string; others are edited via a pull-down list. For some object types, some fields may be hidden from the Inspector or locked from editing. This is by design.</li>
 </ol>
 
@@ -398,7 +398,7 @@ Screenshots of the OpenStudio Inspector with other object types selected are sho
 <tr>
 <td>![Surface Search](../../img/plugin_reference_guide/SurfaceSearch-24.png "Surface Search")</td>
 <td align="left">
-#### Surface Search 
+#### Surface Search
 
 The OpenStudio Surface Search Tool enables you to search your model for surfaces with specific attributes. You can select the search results and visually isolate them by hiding all other surfaces. When you are finished, click "Unhide All" on the Surface Search Dialog to unhide the rest of the surfaces. Before searching on a large IDF, close SketchUp's Outliner Window to expedite the surface searching. While surfaces are hidden you can also use SketchUp's built-in "View Hidden Geometry" to quickly view all hidden surfaces.
 
@@ -411,7 +411,7 @@ New to the Surface Search Tool with OpenStudio 0.5 and later is the ability to s
 <tr>
 <td>![Information Tool](../../img/plugin_reference_guide/InfoTool-24.png "Information Tool")</td>
 <td align="left">
-#### Information Tool 
+#### Information Tool
 
 The OpenStudio Information Tool activates a cursor that, when placed over a model surface, shows the EnergyPlus or OpenStudio object attributes for that surface. The status bar shows the position of the cursor in world coordinates. The Information Tool is render mode aware and offers different data depending on your current render mode. The following screenshots and captions show the available data for the different render modes.
 
@@ -467,7 +467,7 @@ The same data are displayed while in Render by Boundary Condition mode*</p>
 <p>*Above: Screenshot of Information Tool in Render by Data Mode Showing Time Series Simulation Results Data. These data will change as you adjust the time of day or time of year. This example shows exterior surface temperature, but it can be any zone or surface variable that has been requested as part of your simulation.*</p>
 </td>
 </tr>
-<tr> 
+<tr>
 <td>![Create Spaces from Diagrams](../../img/plugin_reference_guide/Warning-24.png "Error and Warning Icon")
 </td>
 <td align="left">
@@ -495,7 +495,7 @@ This set contains render modes that are used to change how heat transfer, shadin
 <tr>
 <td>![Render by Surface Type](../../img/plugin_reference_guide/render_surface_class.png "Render by Surface Type")</td>
 <td align="left">
-#### Render by Surface Type 
+#### Render by Surface Type
 
 The OpenStudio Render by Surface Type mode will render walls, roofs, windows, doors, floors, shading surfaces, and interior partition surfaces with unique colors. When you create new geometry, it will be automatically classified and rendered. If you try to assign a color yourself, the application will override you. You never need to use the paint bucket tool in this render mode.
 
@@ -508,7 +508,7 @@ If you set a surface construction to "Air Boundary," it will be rendered as a tr
 <tr>
 <td>![Render by Boundary Condition](../../img/plugin_reference_guide/render_boundry.png "Render by Boundary Condition")</td>
 <td align="left">
-#### Render by Outside Boundary Condition 
+#### Render by Outside Boundary Condition
 
 The OpenStudio Render by Outside Boundary Condition mode will render surfaces by their outside boundary conditions. Only space surfaces have boundary conditions, so only they will be rendered with a color. Shading and interior partition surfaces will be white. This is a good rendering mode to diagnose problems with your model. It provides a quick way to globally look at boundary conditions throughout your model. You never need to use the paint bucket tool in this render mode. In the screenshot below, a section cut has been drawn to reveal the inside of the model, making the boundary condition of surfaces easy to see.
 
@@ -546,7 +546,7 @@ As a note, this is not a render by material mode, so two constructions that have
 <tr>
 <td>![Render by Space Type](../../img/plugin_reference_guide/render_space_type.png "Render by Space Type")</td>
 <td align="left">
-#### Render by Space Type 
+#### Render by Space Type
 
 The OpenStudio Render by Space Type mode renders each space based on the Space Type assigned to it. This is a two state button. The first time you click it, hard assigned and inherited space types are rendered. If you click it again, only hard assigned space types are given a render color. Space types can be assigned to a space or inherited from the building object. You can assign space types to a space by using the "Set Attributes for Selected Spaces" tool or the OpenStudio Inspector. The installed templates have preassigned colors for each space type, but you can use SketchUp's paint bucket tool or the OpenStudio Inspector to change the colors. These changes are saved as part of your OpenStudio model.
 
@@ -596,11 +596,8 @@ The Color Scale (![Color Scale Tool](../../img/plugin_reference_guide/render_col
 <td align="left">
 #### Render by Layer
 
-<<<<<<< HEAD
+
 The Render by Layer is a standard SketchUp feature.  It will render content by layer. You can create layers to represent anything you want to track. For example, to organize your project by space types you can create or move zones to specific layers. Keep in mind that the layer structure isn't saved with the OSM file, so any layer you setup are just for your current session.
-=======
-The Render by Layer is a standard SketchUp feature.  It will render content by layer. You can create layers to represent anything you want to track. For example, to organize your project by space types you can create or move zones to specific layers. Keep in mind, that the layer structure isn't saved with the OSM file, so any layer's you setup are just for your current session.
->>>>>>> dd94fd267d609783f23d0c09762e31d3cc539ff5
 
 ![Render By Layer mode](../../img/plugin_reference_guide/width_ss_by_layer.png "Render by Layer Screenshot")
 <p>*Above: Screenshot of Model in Render By Layer mode*</p>
@@ -686,7 +683,7 @@ Check to see if you are using the most current release of the OpenStudio Google 
 
 ###  Helpful SketchUp Tools
 
-#### Hide Rest of Model 
+#### Hide Rest of Model
 ![Hide Rest](../../img/plugin_reference_guide/HideRest-24.png "Hide Rest of Model") This activates SketchUp's native view function to hide everything but your currently open group or component. Isolating your current zone make is much easier to work on inter-zone geometry.
 
 ![Model with rest of model visible](../../img/plugin_reference_guide/ss_hiderest_01.png "Hide Rest 1")
@@ -715,5 +712,3 @@ Check to see if you are using the most current release of the OpenStudio Google 
 
 ![Shadow Settings](../../img/plugin_reference_guide/Shadow_Settings.png "Shadow Settings Screenshot")
 <p>*Above: Screenshot of SketchUp Shadow Setting Window*</p>
-
-
