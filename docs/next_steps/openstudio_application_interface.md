@@ -1,7 +1,7 @@
 # OpenStudio Application Interface
 This section contains an overview of the OpenStudio Application interface.
 
-The [OpenStudio Quick Start Guide](../../img/pdfs/openstudio_interface_quickstart_1.4.0.pdf)  also provides an introduction to the interface for the Plug-in and the OpenStudio application. It also provides guidance on the basic workflow. 
+The [OpenStudio Quick Start Guide](../../img/pdfs/openstudio_interface_quickstart_1.4.0.pdf) provides an introduction to the interface for the Plug-in and the OpenStudio application. It also provides guidance on the basic workflow. 
 
 ------ 
 
@@ -17,13 +17,13 @@ The tabs on the left that move vertically are ordered in a suggested workflow.
 
 ## Sub-tabs
 
-Sub-tabs are designed to move from more general on the left to more specific on the right. On the constructions tab the sub-tabs are "Construction Sets", "Constructions", and "Materials." If you are not building your own materials and constructions you may not need to go to the "Materials" sub-tab.
+Sub-tabs are designed to move from more general on the left to more specific on the right. On the constructions tab, the sub-tabs are "Construction Sets", "Constructions", and "Materials." If you are not building your own materials and constructions you may not need to go to the "Materials" sub-tab.
 
 ------ 
 
 ## Right Panel
 
-The right panel provides access to items in the library, your model, and the ability to edit some of the items.
+The right panel provides access to items in the library or in your model, as well as the ability to edit some of these items.
 
 * __“My Model”__ displays items that are part of your model already.
 
@@ -43,7 +43,7 @@ The right panel provides access to items in the library, your model, and the abi
 
 ![New Item](../../img/os_interface/add_example.png "New Item Example")
 
-*Above: On the "Utility Bill" sub tab select the type of bill you want to add before hitting the add button.*
+*Above: On the "Utility Bill" sub-tab, select the type of bill you want to add before hitting the add button.*
 
 ![Duplicate](../../img/os_interface/duplicate.png "Drag-and-drop constructions") Duplicate a selected object with this button.
 
@@ -54,7 +54,7 @@ The right panel provides access to items in the library, your model, and the abi
 ------ 
  
 ## Adding Objects from the Library
-To add items from the library, select the "Library" tab on the right panel and find the item you want to add to the model. Select that item and drag and drop in into the correct drop zone. Drop zones are surrounded by a dotted line and are programmed to only accept items that will work for that field.
+To add items from the library, select the "Library" tab on the right panel and find the item you want to add to the model. Select that item and drag and drop it in into the correct drop zone. Drop zones are surrounded by a dotted line and are programmed to only accept items that will work for that field.
 
 ![Drag-Drop](../../img/os_interface/drag_drop.png "Drag-and-drop constructions")
 
