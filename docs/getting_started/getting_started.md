@@ -1,5 +1,5 @@
 ## Installation Instructions
-OpenStudio is supported on Windows 7 – 8.1, OS X 10.9, and 64-bit Ubuntu 14.04.
+OpenStudio is supported on Windows 7 - 8.1, OS X 10.9, and 64-bit Ubuntu 14.04.
 OpenStudio 1.5.0 works with EnergyPlus 8.1.
 
 

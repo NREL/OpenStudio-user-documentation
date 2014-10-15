@@ -78,14 +78,14 @@ The first line is a command to create a new argument of the type double (more on
 You can create a few types of arguments
 
 ##### Double
-A double argument is any real number such as 1.0, –1.5, or 50.5.
+A double argument is any real number such as 1.0, -1.5, or 50.5.
 
 ```ruby
 v1 = OpenStudio::Ruleset::OSArgument::makeDoubleArgument('v1', false)
 ```
 
 ##### Integer
-An integer argument is any real whole number such as 1, –2, or 51.
+An integer argument is any real whole number such as 1, -2, or 51.
 
 ```ruby
 v2 = OpenStudio::Ruleset::OSArgument::makeIntegerArgument('v2', false)
@@ -158,7 +158,7 @@ if not runner.validateUserArguments(arguments(model), user_arguments)
 end
 ```
 
-Assuming that all the required inputs are present and have the right kinds of values, you next need to ensure that values make sense in the context of the script.  For example, –2 is a valid integer, but it is not a valid number of chillers in a building.
+Assuming that all the required inputs are present and have the right kinds of values, you next need to ensure that values make sense in the context of the script.  For example, -2 is a valid integer, but it is not a valid number of chillers in a building.
 
 The first step in this type of error checking is to pull the values from the "user_arguments" variable and assign them to variables in the run method.  Best practice is to use the same variable names in the arguments method and the run method.
 
@@ -192,7 +192,7 @@ runner.registerWarning("#{insul_thckns} inches of insulation seems high.")
 
 ##### Error Messages
 Error messages are used when the measure simply cannot continue.  Perhaps the user entered
-–1.5 for a fractional schedule value.  Error messages stop the measure from running.  Error messages should point the user to the specific error and suggest a way to fix or avoid it.  The measure should return "false" and issue an error message:
+-1.5 for a fractional schedule value.  Error messages stop the measure from running.  Error messages should point the user to the specific error and suggest a way to fix or avoid it.  The measure should return "false" and issue an error message:
 
 ```ruby
 runner.registerError("v1 must be greater than or equal to 0 and less than or equal to 1.  You entered #{v1}.")
@@ -236,7 +236,7 @@ def run(model, runner, user_arguments)
 end
 ```
 
-The first command is to get all the spaces in the model.  Whenever you want a vector of a certain class of objects from a model, the command is "get#{ClassName}s" (e.g., getThermalZones, getSpaces).  Next you start a loop that iterates through all spaces in the model. Within this loop the next command checks to see if the space has a thermal zone assigned.  Now you begin to get into the programming weeds… be patient, this is one of the hardest parts to understand.
+The first command is to get all the spaces in the model.  Whenever you want a vector of a certain class of objects from a model, the command is "get#{ClassName}s" (e.g., getThermalZones, getSpaces).  Next you start a loop that iterates through all spaces in the model. Within this loop the next command checks to see if the space has a thermal zone assigned.  Now you begin to get into the programming weeds... be patient, this is one of the hardest parts to understand.
 
 #### Optionals and .get
 OpenStudio is written in C++, and translated to be available in Ruby by software called SWIG.  This auto-translation leaves one artifact that Ruby users generally do not deal with:  the "optional" return type.
@@ -873,7 +873,7 @@ A complete measure.xml file looks like this:
 </measure>
 ```
 
-## EnergyPlus Measures – Edit .idf files directly
+## EnergyPlus Measures - Edit .idf files directly
 Measures are usually written to work on an OpenStudio model.  This is preferred because it allows you to use the OpenStudio Model API, which includes specialized methods for each type of object in the OpenStudio Model.  However, when a particular EnergyPlus feature is not yet exposed in the OpenStudio Model, you may choose to write a measure that operates on the EnergyPlus data model directly.  Measures of this type are run only after the model is translated from OpenStudio to EnergyPlus.
 
 Below are some specific code differences for EnergyPlus versus. Model (OpenStudio) measures.
@@ -978,7 +978,7 @@ The "[InputOutputReference.pdf][11]" document that ships with EnergyPlus describ
 
 ![Finding Doc](../../img/Measure-Writing-Guide/17.png)
 
-### Putting It All Together – A Complete WorkspaceUserScript
+### Putting It All Together - A Complete WorkspaceUserScript
 The script creates a ComponentCost:LineItem object for each construction used in the model.
 
 ```ruby

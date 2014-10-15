@@ -194,9 +194,9 @@ Construction sets do not have to be complete sets. For example, you can have a c
 
 ### Constructions
 
-The Constructions sub-tab lists construction objects that are in your model. You can drag additional constructions here from the library. Constructions download using the Online BCL window will appear in the library with a “BCL” flag.
+The Constructions sub-tab lists construction objects that are in your model. You can drag additional constructions here from the library. Constructions download using the Online BCL window will appear in the library with a "BCL" flag.
 
-A construction consists of one or more material layers. You can add materials by dragging them from My Model or the Library to the drop zone. You can only add new materials to the bottom which represents the inside of the wall. You can delete any material by clicking the “x” next to the name.
+A construction consists of one or more material layers. You can add materials by dragging them from My Model or the Library to the drop zone. You can only add new materials to the bottom which represents the inside of the wall. You can delete any material by clicking the "x" next to the name.
 
  ![Constructions](../../img/create_model/constructions.png "Constructions") 
  
@@ -208,7 +208,7 @@ A construction consists of one or more material layers. You can add materials by
 
 Constructions are made of one or more layers of materials. The Materials sub-tab lets you inspect and edit those materials. 
 
-There are various classes of material objects. When you add a new material, first select the heading for the type of material you want to add and then click the “+” icon at the bottom of the left pane.
+There are various classes of material objects. When you add a new material, first select the heading for the type of material you want to add and then click the "+" icon at the bottom of the left pane.
 
 Different types of material will have different data fields available.
 
@@ -405,7 +405,7 @@ A thermostat must be defined before running an EnergyPlus simulations with conne
 
 ## Air, Plant and Zone HVAC Systems
 
-The HVAC Systems tab is used to create, inspect, and edit air and plant loops. The green “+” at the top left is used to add template or empty loops, and the “x” next to it will delete them. The pull-down at the top right of the body is to select which loop to displayed.
+The HVAC Systems tab is used to create, inspect, and edit air and plant loops. The green "+" at the top left is used to add template or empty loops, and the "x" next to it will delete them. The pull-down at the top right of the body is to select which loop to displayed.
 
 Hit the green plus button to add a loop. 
 
@@ -442,7 +442,7 @@ OpenStudio names HVAC systems and components to match EnergyPlus. So if you are 
  *Above: Select a component and adjust the controller, by hitting the dial icon on the "Edit" tab on the right panel.*
  
   
-The __controls view__ is only available for the air loops. With an air loop selected in “Layout” view you can switched to “Control” view.
+The __controls view__ is only available for the air loops. With an air loop selected in "Layout" view you can switched to "Control" view.
 
 In this view you can edit the time of operation, night cycle, supply air temperature, and mechanical ventilation.
 
@@ -520,7 +520,7 @@ Shared plenums will be colored the same and will match the color selected for th
 -->
 
 ## Service Water Heating
-The first view into the HVAC tab will be the water mains editor, which shows as “Service Water” on loops pulldown list.
+The first view into the HVAC tab will be the water mains editor, which shows as "Service Water" on loops pulldown list.
 
 Water enters the system at the right and leave at the Sewer on the left. One or more water use connections can be added in the middle. 
 
@@ -542,7 +542,7 @@ Optionally you can associate the equipment with a space. There is no direct ener
 
 The equipment can be anything that uses water, hot or cold. The definition contains a peak flow rate and a target temperature schedule. Hot and cold water will mix to reach the target temperature at the fixture.
 
-Click the water main, sewer, or makeup water to go back to the water mains editor. If you have a plant loop associated with the water use connection the “Loop” button will take you to the loop.
+Click the water main, sewer, or makeup water to go back to the water mains editor. If you have a plant loop associated with the water use connection the "Loop" button will take you to the loop.
 
  
 <iframe width="640" height="360" src="http://www.youtube.com/embed/jUJhi6YH51E?rel=0&start=0&end=486&autoplay=0" frameborder="0" allowfullscreen></iframe>
@@ -564,13 +564,13 @@ Click on the zoom button by the name of the refrigeration system to go to a view
 
 *Above: Add refrigeration systems to your model under the HVAC tab. Click image to view a larger version.*
 
-This zoomed in view provides the layout view of one refrigeration rack. You may add cases by dragging them on to the “Drag and Drop Cases” drop zone.
+This zoomed in view provides the layout view of one refrigeration rack. You may add cases by dragging them on to the "Drag and Drop Cases" drop zone.
 
 Drop zones are provided to accommodate systems with a mechanical sub-cooler and a Suction Line Heat Exchanger (SLHX).
 
 The small arrow at the bottom of the refrigeration case summary will open and expanded view of cases. Each case can be selected and edited in the Edit panel on the right.
 
-Cascade systems can be added by dragging the from “My Model” or the “Library.”
+Cascade systems can be added by dragging the from "My Model" or the "Library."
 
  <a href="../../img/create_model/refrig_2_large.png" target="_blank">
 <img src="../../img/create_model/refrig_2.png" alt="Resized JPEG graphic" title="Click to view" border="2" width="775" height="" hspace="10" /></a>
@@ -610,14 +610,14 @@ The layout view provides a view of all the VRF systems in the model. The zoom ic
 
 *Above: VRF system layout view. Click image to view a larger version.*
 
-To create your VRF system, start by dropping a terminal from the “Library” onto the drop zone. Then add thermal zones from “My Model.” When a thermal zone is added a new VRF terminal will automatically be created.
+To create your VRF system, start by dropping a terminal from the "Library" onto the drop zone. Then add thermal zones from "My Model." When a thermal zone is added a new VRF terminal will automatically be created.
 
    <a href="../../img/create_model/vrf_zoom_large.png" target="_blank">
 <img src="../../img/create_model/vrf_2.png" alt="Resized JPEG graphic" title="Click to view" border="2" width="750" height="" hspace="10" /></a>
 
 *Above: VRF system single system layout view. Click image to view a larger version.*
 
-Set the terminal settings by selecting the terminal and editing in the “Edit” tab on the right.
+Set the terminal settings by selecting the terminal and editing in the "Edit" tab on the right.
 
 More than one terminal can connect with the same zone. Just drag the zone to the drop area again to add another connection.
 
@@ -671,7 +671,7 @@ There are three types of measures:
 
 *Above: Select measures from the library and drag them into the correct drop zone.*
 
-By selecting the measure and selecting the right “Edit” tab, inputs for the measure can be entered and adjusted.
+By selecting the measure and selecting the right "Edit" tab, inputs for the measure can be entered and adjusted.
 
 ![Measures Tab2](../../img/create_model/measures1.png "Measure Fields")
 
