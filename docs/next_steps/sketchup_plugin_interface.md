@@ -579,25 +579,11 @@ When you use the "Create Spaces from Diagram" tool to generate a multistory buil
 </td>
 </tr>
 <tr>
-<td>![Render by Simulation Data](../../img/plugin_reference_guide/render_data.png "Render by Simulation Data")</td>
-<td align="left">
-#### Render by Simulation Data
-
-The OpenStudio Render by Simulation Data mode renders individual surfaces or entire thermal zones based on simulation results data. If you have not yet run a simulation and you switch to this mode, everything will render as white because there are no data. After running a simulation, go to the View Simulation Results dialog to set an SQL data path and load the simulation data. Then switch back to Render by Simulation Data mode to view the results. Use SketchUp's shadow setting dialog to change the time of day or year for the simulation data.
-
-The Color Scale (![Color Scale Tool](../../img/plugin_reference_guide/render_color_scale.png "Color Scale Tool")) tool will open up a color scale for the Render by Simulation Data colors.
-
-![Render by Simulation Data Mode](../../img/plugin_reference_guide/width_SU_Info_data.png "Render by Simulation Data Screenshot")
-<p>*Screenshot of Model in Render by Simulation Data Mode*</p>
-</td>
-</tr>
-<tr>
 <td></td>
 <td align="left">
 #### Render by Layer
 
-
-The Render by Layer is a standard SketchUp feature.  It will render content by layer. You can create layers to represent anything you want to track. For example, to organize your project by space types you can create or move zones to specific layers. Keep in mind that the layer structure isn't saved with the OSM file, so any layer you setup are just for your current session.
+The Render by Layer is a standard SketchUp feature.  It will render content by layer. You can create layers to represent anything you want to track. For example, to organize your project by space types you can create or move zones to specific layers. Keep in mind that the layer structure isn't saved with the OSM file, so any layers you setup are just for your current session.
 
 ![Render By Layer mode](../../img/plugin_reference_guide/width_ss_by_layer.png "Render by Layer Screenshot")
 <p>*Above: Screenshot of Model in Render By Layer mode*</p>
