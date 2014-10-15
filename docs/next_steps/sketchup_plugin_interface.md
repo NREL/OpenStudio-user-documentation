@@ -613,21 +613,6 @@ This set contains tools integration for other OpenStudio applications and resour
 </thead>
 <tbody>
 <tr>
-<td>![Results Viewer](../../img/plugin_reference_guide/ResultsViewer-24.png "Results Viewer")</td>
-<td align="left">
-#### View Results in ResultsViewer
-
-The OpenStudio View Simulation Results tool loads simulation results into the currently opened model. After you run a simulation, you can click the "load" button to find and load the SQL file. If you are opening a model from a previous simulation, you will have to browse to the path to the relevant SQL file. If you ran the simulation through the OpenStudio Plug-in, the required path will look similar to the path below.
-
-C:/path_to_osm_file/your_file_name.osm/ModelToIdf/ExpandObjects/EnergyPlus/eplusout.sql
-
-Once you load an SQL file, you can select the run period and variables. Surface and zone are the supported variable types to display in the OpenStudio Plug-in. The outside and inside variable pull-down content will change based on whether surface or zone is selected as the variable type. The variables shown depend on what was requested when the simulation was run. This tool also provides a button that will load your results into the OpenStudio ResultsViewer application. If you load results into the ResultsViewer Application, make sure to close the data in ResultsViewer before you rerun a simulation of the same model; otherwise, you will have an EnergyPlus error.
-
-![Rendering Settings Dialog](../../img/plugin_reference_guide/width_SU_RenderSettings.png "View Results")
-<p>*Above: Screenshot of Rendering Settings Dialog*</p>
-</td>
-</tr>
-<tr>
 <td>![Launch Current Model in OpenStudio Application](../../img/plugin_reference_guide/os_24.png "Launch Current Model in OpenStudio Application")</td>
 <td align="left">
 #### Launch Current Model in OpenStudio Application
