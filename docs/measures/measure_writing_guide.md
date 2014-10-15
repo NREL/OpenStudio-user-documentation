@@ -11,7 +11,7 @@ Each OpenStudio measure is contained in its own folder (usually named after the 
 
 The measure may also contain tests to ensure that it works correctly and resources which are other files that the measure uses during its operation.  This file structure allows OpenStudio to easily share and use measures.
 
-![guide image](../../img/Measure-Writing-Guide/1.png)
+![guide image](../../img/measure-writing-guide/1.png)
 
 This guide is directed primarily toward measure authors; some instructions also apply to users.
 
@@ -376,10 +376,10 @@ Click on the model link to explore.
 
 This will take you to the OpenStudio Model Overview page.
 
-![Core](../../img/Measure-Writing-Guide/6.png)
+![Core](../../img/measure-writing-guide/6.png)
 
 Select the "Objects/Objects List" to find more information on individual model objects.
-![Core](../../img/Measure-Writing-Guide/6b.png)
+![Core](../../img/measure-writing-guide/6b.png)
 
 Click "__SpaceType__"."
 
@@ -420,11 +420,11 @@ boost::optional<DesignSpecificationOutdoorAir> = an optional that may either be 
 
 The written description of the method:
 
-![description](../../img/Measure-Writing-Guide/10.png)
+![description](../../img/measure-writing-guide/10.png)
 
 The inputs needed by the method:
 
-![inputs](../../img/Measure-Writing-Guide/11.png)
+![inputs](../../img/measure-writing-guide/11.png)
 
 Methods that do not need inputs have empty parentheses ().  Ruby allows you to skip adding the empty parentheses when you call methods with no arguments.  You can ignore the const and & C++ keywords in the declarations for now.
 
@@ -471,7 +471,7 @@ new_thing = OpenStudio::Model::NewThingClassName.new(model)
 
 Now, figure out how to set the LPD of the LightsDefinition to 10 W/m2.  The LightsDefinition documentation presents a method.
 
-![lights def2](../../img/Measure-Writing-Guide/14.png)
+![lights def2](../../img/measure-writing-guide/14.png)
 
 You will also want to name the new LightsDefinition object for better user comprehension.  Most OpenStudio objects have a ".setName(new_name)" method.  You can put this together to make the LightsDefinition object.
 
@@ -976,7 +976,7 @@ The following example shows how to access and edit EnergyPlus objects in the Wor
 ### Finding Documentation on EnergyPlus Objects
 The "[InputOutputReference.pdf][11]" document that ships with EnergyPlus describes every EnergyPlus object.  Below is a screenshot of part of the documentation for the "ComponentCost:LineItem" object.  It describes which fields are required versus optional, and what kinds of data are expected for each field.  EnergyPlus also ships with example models that show each object being used in a model.  In the "Examples" folder is a spreadsheet that documents the examples.
 
-![Finding Doc](../../img/Measure-Writing-Guide/17.png)
+![Finding Doc](../../img/measure-writing-guide/17.png)
 
 ### Putting It All Together - A Complete WorkspaceUserScript
 The script creates a ComponentCost:LineItem object for each construction used in the model.
@@ -1112,6 +1112,5 @@ An attribute named 'rotation' will automatically be added to the measure's outpu
 |*_final| rotation_final|  The value of 'rotation' in the final model after the measure was run. 
 
 <!--*Nick, if the measure returns either false or NA without altering the model does it still need to register a "(_final" attribute for every "*_initial" attribute?  This might be a pain if multiple paths return from the measure but I can see the desire to have this. (NL) yeah i think it should always output a result. In the rotation example the final rotation is always a desired value, even if a path in the measure results in the rotation no to change.-->
-
 
 
