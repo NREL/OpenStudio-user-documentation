@@ -48,7 +48,7 @@ By default interior partition surfaces are included and converted to internal ma
 
 <!--## Deciding on the Level of Detail for Your Model
 ## Run Simulations on Local Hard Drive.
-## Don’t use Undo in the SketchUp Plugin
+## Don't use Undo in the SketchUp Plugin
 ## When Working in the SketchUp Plugin and OpenStudio Application at the Same Time Make sure to Manage Files Properly.
 --> 
 

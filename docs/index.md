@@ -15,8 +15,8 @@ This is OpenStudio's user documentation. A brief summary of the content and inte
         <p><a href="getting_started/getting_started.md" class="btn btn-primary" role="Installation, Introductory Tutorials & Licensing">Installation & Tutorial
         </a></p>
         <p>Review the list of features and building elements that can be modeled.</p>
-        <p><a href="getting_started/features.md" class="btn btn-primary" role="Review Features">Features</a></p>  
-        <p><a href="getting_started/roadmap.md" class="btn btn-primary" role="Features Roadmap">Features Roadmap</a></p>  
+        <p><a href="getting_started/features.md" class="btn btn-primary" role="Review Features">Current Features</a></p>  
+        <p><a href="getting_started/roadmap.md" class="btn btn-primary" role="Features Roadmap">Planned Features</a></p>  
       </div>
     </div>
   </div>

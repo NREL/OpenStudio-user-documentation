@@ -1,5 +1,5 @@
-# OpenStudio Application Interface
-This section contains an overview of the OpenStudio Application interface.
+# OpenStudio Application
+This section contains an overview of the OpenStudio Application.
 
 The [OpenStudio Quick Start Guide](../../img/pdfs/openstudio_interface_quickstart_1.4.0.pdf) provides an introduction to the interface for the Plug-in and the OpenStudio application. It also provides guidance on the basic workflow. 
 
@@ -25,11 +25,11 @@ Sub-tabs are designed to move from more general on the left to more specific on 
 
 The right panel provides access to items in the library or in your model, as well as the ability to edit some of these items.
 
-* __“My Model”__ displays items that are part of your model already.
+* __"My Model"__ displays items that are part of your model already.
 
-* __“Library”__ includes components and measures that come with the application or are downloaded from the Building Component Library (BCL)
+* __"Library"__ includes components and measures that come with the application or are downloaded from the Building Component Library (BCL)
 
-* __“Edit"__ allows you to select certain components and edit the settings for that component. It is used in the HVAC tab to edit component settings, assign thermal zones to loops, and to add plenums.
+* __"Edit"__ allows you to select certain components and edit the settings for that component. It is used in the HVAC tab to edit component settings, assign thermal zones to loops, and to add plenums.
 
 ![Edit Tab](../../img/os_interface/edit_tab.png "Edit Tab Example")
 
@@ -111,9 +111,9 @@ Load Library is also a very important feature. This allows you to load building 
 
 The Units menu lets you switch between SI and IP units. This affects both input fields and output data on the results tab. It does not currently affect standard EnergyPlus output files.
 
-The SketchUp Plug-in has access to this as well under “Plugins/OpenStudio/Preferences”.
+The SketchUp Plug-in has access to this as well under "Plugins/OpenStudio/Preferences".
 
-Scan for Tools will look for Radiance, Ruby, and EnergyPlus installations. If you install those applications Prior to installing OpenStudio this shouldn’t be necessary.
+Scan for Tools will look for Radiance, Ruby, and EnergyPlus installations. If you install those applications Prior to installing OpenStudio this shouldn't be necessary.
 
 ![Preferences Menu](../../img/os_interface/prefer_menu.png "Preferences Menu")
 
@@ -128,7 +128,7 @@ Scan for Tools will look for Radiance, Ruby, and EnergyPlus installations. If yo
 *Above: This menu item allows you to run one measure on you model.*
 
 ### Apply Measures Now
-You can apply measures to your model at any time by going to the “Components and Measures” menu and selecting the “Apply Measures Now” option.
+You can apply measures to your model at any time by going to the "Components and Measures" menu and selecting the "Apply Measures Now" option.
 
 This will open a dialog that allows you to choose a measure from the library to apply, go to BCL to find a measure to apply, or even write your own measure and test it.
  
@@ -140,7 +140,7 @@ Once you select a measure you may edit the measure inputs on the right side of t
 
 ### Find Measures and Find Components
 
-The BCL window gives you access to an online repository of building energy modeling data called the Building Component Library. Although you can access the BCL website on its own, OpenStudio has integrated access to the BCL from within the application. You can access this through the “Window” menu.
+The BCL window gives you access to an online repository of building energy modeling data called the Building Component Library. Although you can access the BCL website on its own, OpenStudio has integrated access to the BCL from within the application. You can access this through the "Window" menu.
 
 The first time you /open this window you will be prompted for an API key, unless you have already used BCL functionality in the SketchUp Plug-in. [Instructions for finding your API Key](../getting_started/getting_started.md#connecting-with-the-building-component-library) are in the "Getting Started" section.
 

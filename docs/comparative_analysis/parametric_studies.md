@@ -93,7 +93,7 @@ You can edit the measure parameters and names by selecting the measure in the ce
 
 Before you can download measures from BCL, you will need an API key. Follow the instructions in the [Getting Started section](../../getting_started/#connecting-with-the-building-component-library) to get your key.
 
-From the “Measures” menu and “Find Measures” along the top or the “Find Measures on BCL” button at the bottom of the “Library” you can access the BCL.
+From the "Measures" menu and "Find Measures" along the top or the "Find Measures on BCL" button at the bottom of the "Library" you can access the BCL.
 
 The "Sync Project Measures with Library" will updated any older measures in your project to the latest versions.
 
@@ -103,7 +103,7 @@ The "Sync Project Measures with Library" will updated any older measures in your
 
 Search for specific measures or browse through the categories.
 
-The “Check All” button can be used to select all the measures on a page view.  If you already have a measure in your library the check box will be grayed out and checked.
+The "Check All" button can be used to select all the measures on a page view.  If you already have a measure in your library the check box will be grayed out and checked.
 
 ![BCL](../../img/pat/bcl_window.png "BCL Window")
 
@@ -118,9 +118,9 @@ If you cannot find the measure you need, you can duplicate a measure and adjust 
 
 *Above: Create your own measures with the features provided on the bottom of the right panel.*
 
-Hit the “New Measure” icon to open a dialog to create your own measure. Write a descriptive title, more detailed descriptions, and select the measure type and taxonomy.
+Hit the "New Measure" icon to open a dialog to create your own measure. Write a descriptive title, more detailed descriptions, and select the measure type and taxonomy.
 
-Duplicating a measure opens up a similar dialog, but the name of the measure will have “copy” added at the end.
+Duplicating a measure opens up a similar dialog, but the name of the measure will have "copy" added at the end.
 
 The [Measure Writing Guide](../measures/measure_writing_guide.md) will guide you through this process and provide best practices. 
 
@@ -175,7 +175,7 @@ ___________________
 
 
 ## Running on the Cloud
-There are a few things to do before you click the “Turn on Cloud” button. First, fill out the Cloud Settings dialogs from the Cloud menu, run your baseline model locally, and then make sure you have selected all of the design alternatives that you want to run. Choosing “Select All” will select all jobs that have not already been run locally, or on a previous cloud session. 
+There are a few things to do before you click the "Turn on Cloud" button. First, fill out the Cloud Settings dialogs from the Cloud menu, run your baseline model locally, and then make sure you have selected all of the design alternatives that you want to run. Choosing "Select All" will select all jobs that have not already been run locally, or on a previous cloud session. 
 
 Select your baseline model, then run locally before you start the cloud to confirm that it is valid and will run properly. To do this you can deselect all other design alternatives, and then select the baseline only.
 
@@ -192,9 +192,9 @@ Currently only Amazon EC2 is available through PAT.
 
 *Above: Fill out the first screen and agree to terms before continuing to the second screen.*
 
-On the second screen of the “Cloud Settings” dialog, confirm that you have chosen the desired server, worker, and number of workers. 
+On the second screen of the "Cloud Settings" dialog, confirm that you have chosen the desired server, worker, and number of workers. 
 
-As soon as you hit the “Turn on Cloud” button you will start incurring charges, and the smallest increment is one hour. If you have to cancel and re-start it you will be charged again.
+As soon as you hit the "Turn on Cloud" button you will start incurring charges, and the smallest increment is one hour. If you have to cancel and re-start it you will be charged again.
 
 __Review Amazon pricing at [http://aws.amazon.com/ec2/pricing/](http://aws.amazon.com/ec2/pricing/).__
 
@@ -209,7 +209,7 @@ __Review Amazon pricing at [http://aws.amazon.com/ec2/pricing/](http://aws.amazo
 *Above: The video above demonstrates running simulations on the cloud.*
 
 
-The “Monitor Use” dialog under the Cloud menu will show you how many instances you have in your current project as well as other projects. If your “Total Instances Running” is more than 0, and you don’t know why, you can go to the EC2 Console website to terminate them. The “Estimated EC2 Charges” value is directly from Amazon, but may be up to 24 hours delayed. As a result you won’t see this change on the fly as you are working on a project, you will typically see it the next day.
+The "Monitor Use" dialog under the Cloud menu will show you how many instances you have in your current project as well as other projects. If your "Total Instances Running" is more than 0, and you don't know why, you can go to the EC2 Console website to terminate them. The "Estimated EC2 Charges" value is directly from Amazon, but may be up to 24 hours delayed. As a result you won't see this change on the fly as you are working on a project, you will typically see it the next day.
 
 
 ![Cloud Monitor](../../img/pat/monitor_use.png "Cloud Monitor")
@@ -231,17 +231,17 @@ You can download standard or detailed results from your runs. If you want detail
 
 *Above: The states of the cloud download button are shown.*
 
-While your project is running on the cloud, you can choose the design alternative and select “Download Detailed Results for Selected File” button if you want more detailed data on some of the options.
+While your project is running on the cloud, you can choose the design alternative and select "Download Detailed Results for Selected File" button if you want more detailed data on some of the options.
 
 __Quitting PAT while the cloud is on will not close the EC2 instances. If you Launch PAT again but open a different project it may look like the cloud is off, but that is only relevant for that current project.__
 
-To properly end the cloud session in PAT, re-open the PAT project (if you have closed it) and then click the button to stop the cloud. For a few minutes you will see “Stopping Cloud."
+To properly end the cloud session in PAT, re-open the PAT project (if you have closed it) and then click the button to stop the cloud. For a few minutes you will see "Stopping Cloud."
 
 __Once you stop the cloud you will no longer be able to download detailed simulation results.__ If this happens and you want to get one, you can always run that job locally. It is generally not recommended to download detailed results for all design alternatives, as that will use a lot of hard drive space and network bandwidth.
 
 
-__It is always a good idea to go to the EC2 website to confirm that the instances have shut down. To view your EC2 web console, click the “Manage all Projects with AWS Console” in the “Monitor Use” dialog or “AWS Management Console” in the “Cloud Settings” dialog. It will take you to this address [http://aws.amazon.com/console/](http://aws.amazon.com/console/). 
-Click “Sign in to the AWS Console”__
+__It is always a good idea to go to the EC2 website to confirm that the instances have shut down. To view your EC2 web console, click the "Manage all Projects with AWS Console" in the "Monitor Use" dialog or "AWS Management Console" in the "Cloud Settings" dialog. It will take you to this address [http://aws.amazon.com/console/](http://aws.amazon.com/console/). 
+Click "Sign in to the AWS Console"__
 
 ![Cloud AWS](../../img/pat/aws.png "AWS Console")
 

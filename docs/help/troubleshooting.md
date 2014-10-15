@@ -1,7 +1,7 @@
 # Troubleshooting
 
 
-## Model Won’t Open in SketchUp Plug-in
+## Model Won't Open in SketchUp Plug-in
 
 If you have an OSM file that will not open or opens incorrectly in the SketchUp plugin then running the user script linked in this thread can help identify the problem objects and create a new diagnostic copy of your file. This script creates a report identifying problem objects, and save a new copy of your file, leaving the original un-touched. This script is installed with 0.6.2 or later, but you can manually download this file and use it with 0.6.0 or later. Some reasons you may need to run this script.
 
