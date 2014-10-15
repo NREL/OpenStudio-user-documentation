@@ -80,14 +80,14 @@ Results view is used to view simulation results. The section on Running Simulati
 
 The tutorial below was created before the grid view was added to the Space Types and Thermal Zones tabs. Grid view allows you to view and edit more than one space type or thermal zone at a time. Go to the [OpenStudio Application Interface](../next_steps/openstudio_application_interface.md) to learn more about grid view.   
 
-### SketchUp Plug-in—Building Envelope
+### SketchUp Plug-in - Building Envelope
 For additional information on the SketchUp Plug-in interface, go to the [SketchUp Plug-in Interface](../next_steps/sketchup_plugin_interface.md) section.
  
 <iframe width="640" height="360" src="http://www.youtube.com/embed/wzzY_W2WELo?rel=0&start=&end=&autoplay=0" frameborder="0" allowfullscreen></iframe>
     
 *Above: This video shows you how to choose a template and create your building envelope. It uses the OpenStudio SketchUp Plug-in.*
 
-### SketchUp Plug-in—Space Types and Thermal Zones
+### SketchUp Plug-in - Space Types and Thermal Zones
 
 <iframe width="640" height="360" src="http://www.youtube.com/embed/8LTexVna_vw?rel=0&start=&end=&autoplay=0" frameborder="0" allowfullscreen></iframe>
 
@@ -111,7 +111,7 @@ For additional information on the SketchUp Plug-in interface, go to the [SketchU
 
 *Above: This video shows you how to obtain construction and material objects from the Building Component Library and load them into your current model.*
 
-### HVAC—Zone Equipment, Air Loops, and Plant Loops
+### HVAC - Zone Equipment, Air Loops, and Plant Loops
 
 <iframe width="640" height="360" src="http://www.youtube.com/embed/DKLnZaNoRX0?rel=0&start=&end=&autoplay=0" frameborder="0" allowfullscreen></iframe>
 

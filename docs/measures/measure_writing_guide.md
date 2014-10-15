@@ -25,7 +25,7 @@ a = 5
 
 ```
 
-## The Programmatic Instructions — measure.rb
+## The Programmatic Instructions - measure.rb
 The measure.rb file contains the Ruby program that allows the measure to make changes to the input model.  The bulk of the work done when writing a measure lies in editing this file.  The measure.rb file includes the beginning and end of the measure; the content of the measure is then divided into three general sections:  name, arguments, and run.  The following sections explain each section.
 
 ### Starting and Ending the Measure
@@ -621,7 +621,7 @@ end #end the measure
 ReplaceLightsInSpaceTypeWithLPD.new.registerWithApplication
 ```
 
-## The Name and Description — measure.xml
+## The Name and Description - measure.xml
 The measure.xml file contains metadata that allow the measure to be filed into an organizational structure, provide an explanation about what the measure does and how it works, and tell the GUI where in the workflow the measure can go.  The GUI creates a new measure.xml file when you click on the "Create a New Measure" button.  The wizard that appears guides you through filling in the measure.xml file.  After this wizard, you will need to make any changes to the measure.xml file manually.  The following sections describe the purpose and available options for each section of measure.xml.
 
 ![Name of Measure](../../img/measure-writing-guide/16.png)
