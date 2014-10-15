@@ -76,11 +76,15 @@
                     <ul class="dropdown-menu">
                     
                         <li >
-                            <a href="../../sketchup_plugin_interface/">SketchUp Plug-in Interface</a>
+                            <a href="../../quick_start_guides/">Quick Start Guides</a>
                         </li>
                     
                         <li >
-                            <a href="../../openstudio_application_interface/">OpenStudio Application Interface</a>
+                            <a href="../../sketchup_plugin_interface/">SketchUp Plug-in</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../openstudio_application_interface/">OpenStudio Application</a>
                         </li>
                     
                         <li >
@@ -162,6 +166,10 @@
                             <a href="../../../help/faq/">FAQ</a>
                         </li>
                     
+                        <li >
+                            <a href="../../../help/software_license/">Software License</a>
+                        </li>
+                    
                     </ul>
                 </li>
             
@@ -235,13 +243,13 @@
 <ul>
 <li>Put a SetpointManager:Scheduled onto the outlet of the district cooling object.  Edit the temperature schedule of that setpoint manager to be the desired max temperature of the GSHX water (95F, for example).  Make sure to edit both the default days and the design day schedules.</li>
 <li>Put a SetpointManager:Scheduled onto the outlet of the district heating object.  Edit the temperature schedule of that setpoint manager to be the desired min temperature of the GSHX water (55F, for example).  Make sure to edit both the default days and the design day schedules.</li>
-<li>Put a SetpointManager:Scheduled onto the supply outlet node of the loop.  Edit the temperature schedule of that setpoint manager to be the desired max temperature of the GSHX water (95F, for example).  You can pick the same schedule used for the district cooling object’s setpoint manager.<img alt="Plant SetPoints" src="../../../img/tutorials/glhepro3.png" /> </li>
+<li>Put a SetpointManager:Scheduled onto the supply outlet node of the loop.  Edit the temperature schedule of that setpoint manager to be the desired max temperature of the GSHX water (95F, for example).  You can pick the same schedule used for the district cooling object's setpoint manager.<img alt="Plant SetPoints" src="../../../img/tutorials/glhepro3.png" /> </li>
 </ul>
 </li>
 <li>
 <p>Set the sizing parameters of the Heat Pump Loop</p>
 <ul>
-<li>The loop type should be “Condenser.”</li>
+<li>The loop type should be "Condenser."</li>
 <li>The loop design outlet temp should be the desired max of the GSHX water (95F here).</li>
 <li>The loop design temperature difference should be reasonable for a GSHX (9 delta-F here).<img alt="Plant SetPoints" src="../../../img/tutorials/glhepro4.png" /> </li>
 </ul>
@@ -258,20 +266,20 @@ d.  Check the box to select the Heat Pump Loop.</p>
 <h2 id="adding-measure-to-export-loads-for-glhepro">Adding Measure to export loads for GLHEPro</h2>
 <ol>
 <li>
-<p>On the Measures tab, click “Find Measures on BCL” <img alt="BCL Button" src="../../../img/tutorials/glhepro6.png" /> </p>
+<p>On the Measures tab, click "Find Measures on BCL" <img alt="BCL Button" src="../../../img/tutorials/glhepro6.png" /> </p>
 </li>
 <li>
-<p>Search for “GLHEPro”</p>
+<p>Search for "GLHEPro"</p>
 </li>
 <li>Download the following 3 Measures:<ul>
-<li>“GLHEPro Setup Export Loads for Ground Heat Exchanger Sizing”</li>
-<li>“GLHEPro Export Loads for Ground Heat Exchanger Sizing”</li>
-<li>“GLHEProGFunctionImport”</li>
+<li>"GLHEPro Setup Export Loads for Ground Heat Exchanger Sizing"</li>
+<li>"GLHEPro Export Loads for Ground Heat Exchanger Sizing"</li>
+<li>"GLHEProGFunctionImport"</li>
 </ul>
 </li>
 <li>On the Measures tab, drag 2 of the 3 Measures into the model:<ul>
-<li>“GLHEPro Setup Export Loads for Ground Heat Exchanger Sizing” as OS Measure</li>
-<li>“GLHEPro Export Loads for Ground Heat Exchanger Sizing” as Reporting Measure <img alt="BCL Button" src="../../../img/tutorials/glhepro7.png" /></li>
+<li>"GLHEPro Setup Export Loads for Ground Heat Exchanger Sizing" as OS Measure</li>
+<li>"GLHEPro Export Loads for Ground Heat Exchanger Sizing" as Reporting Measure <img alt="BCL Button" src="../../../img/tutorials/glhepro7.png" /></li>
 </ul>
 </li>
 </ol>
@@ -279,10 +287,10 @@ d.  Check the box to select the Heat Pump Loop.</p>
 <ol>
 <li>Go to the Run tab &gt; Run &gt; wait for simulation to finish</li>
 <li>Go to the Results tab
-a.  Select the report called “Export Loads to GLHEPro” in the dropdown <img alt="Export Goals" src="../../../img/tutorials/glhepro8.png" /> This report explains the next steps for importing the loads into GLHEPro.  It also shows the hourly load for the district heating and district cooling objects.  Important Note: the hourly graph only shows up if you are using OpenStudio 1.4.1 or higher (or if you are using OpenStudio 1.4.0 built with Ruby 2.0).  Even if the hourly graph doesn’t show up, the loads have still been exported for GLHEPro, you just don’t get to visualize them.</li>
+a.  Select the report called "Export Loads to GLHEPro" in the dropdown <img alt="Export Goals" src="../../../img/tutorials/glhepro8.png" /> This report explains the next steps for importing the loads into GLHEPro.  It also shows the hourly load for the district heating and district cooling objects.  Important Note: the hourly graph only shows up if you are using OpenStudio 1.4.1 or higher (or if you are using OpenStudio 1.4.0 built with Ruby 2.0).  Even if the hourly graph doesn't show up, the loads have still been exported for GLHEPro, you just don't get to visualize them.</li>
 <li>Find the GLHEPro .gt1 file<ul>
 <li>In a file browser, navigate to the run directory for your model, for example;
-“C:\GLHEPro\gshp_model\run\6-UserScript-0\mergedjob-0”</li>
+"C:\GLHEPro\gshp_model\run\6-UserScript-0\mergedjob-0"</li>
 <li>You should see the files below. 
 The <em>.gt1 files are the monthly loads for GLHEPro import.
 The </em>.csv files are the hourly loads (same as seen in graph).
@@ -290,7 +298,7 @@ The report.html is the same report seen in the OS Application. </li>
 </ul>
 </li>
 <li>Open GLHEPro, which can be downloaded (not free) from here: <a href="http://www.hvac.okstate.edu/glhepro/">http://www.hvac.okstate.edu/glhepro/</a></li>
-<li>In the top menu, click Loads &gt; Read Heat Pump Loads and select the “Monthly Loads.gt1” file.</li>
+<li>In the top menu, click Loads &gt; Read Heat Pump Loads and select the "Monthly Loads.gt1" file.</li>
 <li>Double-check that these numbers make sense, then click OK.<img alt="Check Numbers" src="../../../img/tutorials/glhepro10.png" /></li>
 </ol>
 <h2 id="run-glhepro-to-size-bore-field">Run GLHEPro to size bore field</h2>
@@ -298,7 +306,7 @@ The report.html is the same report seen in the OS Application. </li>
 <li>Fill in the GLHEPro inputs.  See GLHEPro manual for more information.</li>
 <li>In the top menu, click Action &gt; Perform Sizing to size the loop.</li>
 <li>In the top menu, click Action &gt; G Function Creator.</li>
-<li>Fill out the inputs as desired, then click “Select G-func Print Format” and check “Print EnergyPlus IDF File.<img alt="Bore Field" src="../../../img/tutorials/glhepro11.png" /></li>
+<li>Fill out the inputs as desired, then click "Select G-func Print Format" and check "Print EnergyPlus IDF File.<img alt="Bore Field" src="../../../img/tutorials/glhepro11.png" /></li>
 <li>Select a place on your computer and save the IDF file.</li>
 </ol>
 <h2 id="import-bore-field-sizing-information-and-g-function-into-openstudio">Import bore field sizing information and G Function into OpenStudio</h2>
@@ -306,14 +314,14 @@ The report.html is the same report seen in the OS Application. </li>
 <li>Return to your OpenStudio model. </li>
 <li>Save a copy in case you want to change loads and re-size GSHX later.</li>
 <li>In the top menu, click Components &amp; Measures &gt; Apply Measure Now</li>
-<li>Under HVAC &gt; Whole System, find “GLHEPro GFunction Import”</li>
+<li>Under HVAC &gt; Whole System, find "GLHEPro GFunction Import"</li>
 <li>Click this Measure and fill in the inputs: path to GFunction.IDF, heat pump loop.<img alt="Measures" src="../../../img/tutorials/glhepro12.png" /> </li>
 <li>Click Apply Measure.  You should see information about district heating and district cooling objects being removed from the heat pump loop, and information about a GLHX being added.  If so, click Accept Changes. <img alt="Apply Measure" src="../../../img/tutorials/glhepro13.png" />  </li>
 <li>
 <p>On the HVAC tab, inspect the changes.  You should see a GSHX in place of the district heating and district cooling objects.<img alt="HVAC View" src="../../../img/tutorials/glhepro14.png" /></p>
 </li>
 <li>
-<p>Re-run your simulation.  If you get lots of warnings/errors about the plant loop temperatures being too cold or too hot, your bore field wasn’t sized correctly.  Go back into GLHEPro, correct any mistakes, then try again.  Also, if you changed your loads significantly, you’ll need to re-run the model with district heating and district cooling and repeat the GLHEPro process.</p>
+<p>Re-run your simulation.  If you get lots of warnings/errors about the plant loop temperatures being too cold or too hot, your bore field wasn't sized correctly.  Go back into GLHEPro, correct any mistakes, then try again.  Also, if you changed your loads significantly, you'll need to re-run the model with district heating and district cooling and repeat the GLHEPro process.</p>
 </li>
 </ol>
 

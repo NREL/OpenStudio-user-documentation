@@ -76,11 +76,15 @@
                     <ul class="dropdown-menu">
                     
                         <li >
-                            <a href="../../next_steps/sketchup_plugin_interface/">SketchUp Plug-in Interface</a>
+                            <a href="../../next_steps/quick_start_guides/">Quick Start Guides</a>
                         </li>
                     
                         <li >
-                            <a href="../../next_steps/openstudio_application_interface/">OpenStudio Application Interface</a>
+                            <a href="../../next_steps/sketchup_plugin_interface/">SketchUp Plug-in</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../next_steps/openstudio_application_interface/">OpenStudio Application</a>
                         </li>
                     
                         <li >
@@ -160,6 +164,10 @@
                     
                         <li >
                             <a href="../../help/faq/">FAQ</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../help/software_license/">Software License</a>
                         </li>
                     
                     </ul>
@@ -285,12 +293,12 @@ to create and run a customized parametric analysis using commercially available 
 <p><em>Above: A warning icon will be next to the measure if a required field is empty. Go to the "Edit" tab on the right panel and look for the red text.</em></p>
 <h3 id="downloading-measures-from-the-building-component-library">Downloading Measures from the Building Component Library</h3>
 <p>Before you can download measures from BCL, you will need an API key. Follow the instructions in the <a href="../../getting_started/#connecting-with-the-building-component-library">Getting Started section</a> to get your key.</p>
-<p>From the “Measures” menu and “Find Measures” along the top or the “Find Measures on BCL” button at the bottom of the “Library” you can access the BCL.</p>
+<p>From the "Measures" menu and "Find Measures" along the top or the "Find Measures on BCL" button at the bottom of the "Library" you can access the BCL.</p>
 <p>The "Sync Project Measures with Library" will updated any older measures in your project to the latest versions.</p>
 <p><img alt="Measures Menu" src="../../img/pat/measures_menu.png" title="Measures Menu" /></p>
 <p><em>Above: One of the ways to access the BCL measures is through the menu.</em></p>
 <p>Search for specific measures or browse through the categories.</p>
-<p>The “Check All” button can be used to select all the measures on a page view.  If you already have a measure in your library the check box will be grayed out and checked.</p>
+<p>The "Check All" button can be used to select all the measures on a page view.  If you already have a measure in your library the check box will be grayed out and checked.</p>
 <p><img alt="BCL" src="../../img/pat/bcl_window.png" title="BCL Window" /></p>
 <p><em>Above: Browse categories or search for measures to download.</em></p>
 <p>You can also search and browse measures on the <a href="https://bcl.nrel.gov/">Building Component Library site.</a></p>
@@ -298,8 +306,8 @@ to create and run a customized parametric analysis using commercially available 
 <p>If you cannot find the measure you need, you can duplicate a measure and adjust it or you can write a custom measure. Learn more about writing measures in the <a href="../../measures/measure_writing_guide/">Measure Writing Guide</a></p>
 <p><img alt="Measures Buttons" src="../../img/pat/measure_buttons.png" title="Measure Buttons" /></p>
 <p><em>Above: Create your own measures with the features provided on the bottom of the right panel.</em></p>
-<p>Hit the “New Measure” icon to open a dialog to create your own measure. Write a descriptive title, more detailed descriptions, and select the measure type and taxonomy.</p>
-<p>Duplicating a measure opens up a similar dialog, but the name of the measure will have “copy” added at the end.</p>
+<p>Hit the "New Measure" icon to open a dialog to create your own measure. Write a descriptive title, more detailed descriptions, and select the measure type and taxonomy.</p>
+<p>Duplicating a measure opens up a similar dialog, but the name of the measure will have "copy" added at the end.</p>
 <p>The <a href="../../measures/measure_writing_guide/">Measure Writing Guide</a> will guide you through this process and provide best practices. </p>
 <p><img alt="New Measure" src="../../img/pat/pat_new_measure.png" title="New Measure in PAT" /></p>
 <p><em>Above: The dialog for creating your new measure is shown above.</em></p>
@@ -328,7 +336,7 @@ to create and run a customized parametric analysis using commercially available 
 <h2 id="making-changes-after-an-analysis">Making Changes After an Analysis</h2>
 <hr />
 <h2 id="running-on-the-cloud">Running on the Cloud</h2>
-<p>There are a few things to do before you click the “Turn on Cloud” button. First, fill out the Cloud Settings dialogs from the Cloud menu, run your baseline model locally, and then make sure you have selected all of the design alternatives that you want to run. Choosing “Select All” will select all jobs that have not already been run locally, or on a previous cloud session. </p>
+<p>There are a few things to do before you click the "Turn on Cloud" button. First, fill out the Cloud Settings dialogs from the Cloud menu, run your baseline model locally, and then make sure you have selected all of the design alternatives that you want to run. Choosing "Select All" will select all jobs that have not already been run locally, or on a previous cloud session. </p>
 <p>Select your baseline model, then run locally before you start the cloud to confirm that it is valid and will run properly. To do this you can deselect all other design alternatives, and then select the baseline only.</p>
 <p><img alt="Cloud Settings 1" src="../../img/pat/cloud_settings_menu.png" title="Cloud Settings Screen One" /></p>
 <p><em>Above: Get to the Cloud Settings at any time from the "Cloud" menu.</em></p>
@@ -336,15 +344,15 @@ to create and run a customized parametric analysis using commercially available 
 <p>Currently only Amazon EC2 is available through PAT.</p>
 <p><img alt="Cloud Settings 1" src="../../img/pat/cloud_settings1.png" title="&quot;Cloud Settings Screen One" /></p>
 <p><em>Above: Fill out the first screen and agree to terms before continuing to the second screen.</em></p>
-<p>On the second screen of the “Cloud Settings” dialog, confirm that you have chosen the desired server, worker, and number of workers. </p>
-<p>As soon as you hit the “Turn on Cloud” button you will start incurring charges, and the smallest increment is one hour. If you have to cancel and re-start it you will be charged again.</p>
+<p>On the second screen of the "Cloud Settings" dialog, confirm that you have chosen the desired server, worker, and number of workers. </p>
+<p>As soon as you hit the "Turn on Cloud" button you will start incurring charges, and the smallest increment is one hour. If you have to cancel and re-start it you will be charged again.</p>
 <p><strong>Review Amazon pricing at <a href="http://aws.amazon.com/ec2/pricing/">http://aws.amazon.com/ec2/pricing/</a>.</strong></p>
 <p><img alt="Cloud Settings 2" src="../../img/pat/cloud_settings2.png" title="Cloud Settings Screen Two" /></p>
 <p><em>Above: Fill out the first screen and agree to terms before continuing to the second screen.</em></p>
 <iframe width="640" height="360" src="http://www.youtube.com/embed/0llNfGNe5x0?rel=0&start=&end=&autoplay=0" frameborder="0" allowfullscreen></iframe>
 
 <p><em>Above: The video above demonstrates running simulations on the cloud.</em></p>
-<p>The “Monitor Use” dialog under the Cloud menu will show you how many instances you have in your current project as well as other projects. If your “Total Instances Running” is more than 0, and you don’t know why, you can go to the EC2 Console website to terminate them. The “Estimated EC2 Charges” value is directly from Amazon, but may be up to 24 hours delayed. As a result you won’t see this change on the fly as you are working on a project, you will typically see it the next day.</p>
+<p>The "Monitor Use" dialog under the Cloud menu will show you how many instances you have in your current project as well as other projects. If your "Total Instances Running" is more than 0, and you don't know why, you can go to the EC2 Console website to terminate them. The "Estimated EC2 Charges" value is directly from Amazon, but may be up to 24 hours delayed. As a result you won't see this change on the fly as you are working on a project, you will typically see it the next day.</p>
 <p><img alt="Cloud Monitor" src="../../img/pat/monitor_use.png" title="Cloud Monitor" /></p>
 <p><em>Above: Open this dialog from the "Cloud" menu.</em></p>
 <p>The "Turn on the Cloud" button has several states to let you know the status of the cloud.</p>
@@ -353,12 +361,12 @@ to create and run a customized parametric analysis using commercially available 
 <p>You can download standard or detailed results from your runs. If you want detailed results, click on the download button in the table. You can choose to download all of the results in detail but it may be a large download. </p>
 <p><img alt="Cloud Download" src="../../img/pat/download_results.png" title="Cloud Results Downloads" /></p>
 <p><em>Above: The states of the cloud download button are shown.</em></p>
-<p>While your project is running on the cloud, you can choose the design alternative and select “Download Detailed Results for Selected File” button if you want more detailed data on some of the options.</p>
+<p>While your project is running on the cloud, you can choose the design alternative and select "Download Detailed Results for Selected File" button if you want more detailed data on some of the options.</p>
 <p><strong>Quitting PAT while the cloud is on will not close the EC2 instances. If you Launch PAT again but open a different project it may look like the cloud is off, but that is only relevant for that current project.</strong></p>
-<p>To properly end the cloud session in PAT, re-open the PAT project (if you have closed it) and then click the button to stop the cloud. For a few minutes you will see “Stopping Cloud."</p>
+<p>To properly end the cloud session in PAT, re-open the PAT project (if you have closed it) and then click the button to stop the cloud. For a few minutes you will see "Stopping Cloud."</p>
 <p><strong>Once you stop the cloud you will no longer be able to download detailed simulation results.</strong> If this happens and you want to get one, you can always run that job locally. It is generally not recommended to download detailed results for all design alternatives, as that will use a lot of hard drive space and network bandwidth.</p>
-<p><strong>It is always a good idea to go to the EC2 website to confirm that the instances have shut down. To view your EC2 web console, click the “Manage all Projects with AWS Console” in the “Monitor Use” dialog or “AWS Management Console” in the “Cloud Settings” dialog. It will take you to this address <a href="http://aws.amazon.com/console/">http://aws.amazon.com/console/</a>. 
-Click “Sign in to the AWS Console”</strong></p>
+<p><strong>It is always a good idea to go to the EC2 website to confirm that the instances have shut down. To view your EC2 web console, click the "Manage all Projects with AWS Console" in the "Monitor Use" dialog or "AWS Management Console" in the "Cloud Settings" dialog. It will take you to this address <a href="http://aws.amazon.com/console/">http://aws.amazon.com/console/</a>. 
+Click "Sign in to the AWS Console"</strong></p>
 <p><img alt="Cloud AWS" src="../../img/pat/aws.png" title="AWS Console" /></p>
 <p><em>Above: Check your status on AWS and terminate sessions if you have problems in PAT.</em></p>
 <h3 id="openstudio-cloud-management-console">OpenStudio Cloud Management Console</h3>

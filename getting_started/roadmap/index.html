@@ -76,11 +76,15 @@
                     <ul class="dropdown-menu">
                     
                         <li >
-                            <a href="../../next_steps/sketchup_plugin_interface/">SketchUp Plug-in Interface</a>
+                            <a href="../../next_steps/quick_start_guides/">Quick Start Guides</a>
                         </li>
                     
                         <li >
-                            <a href="../../next_steps/openstudio_application_interface/">OpenStudio Application Interface</a>
+                            <a href="../../next_steps/sketchup_plugin_interface/">SketchUp Plug-in</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../next_steps/openstudio_application_interface/">OpenStudio Application</a>
                         </li>
                     
                         <li >
@@ -162,6 +166,10 @@
                             <a href="../../help/faq/">FAQ</a>
                         </li>
                     
+                        <li >
+                            <a href="../../help/software_license/">Software License</a>
+                        </li>
+                    
                     </ul>
                 </li>
             
@@ -192,19 +200,19 @@
 	
   
 
-  <li class="main active"><a href="#openstudio-roadmap">OpenStudio Roadmap</a></li>
+  <li class="main active"><a href="#planned-features">Planned Features</a></li>
     
-      <li><a href="#15-major-features-planned-for-sep-2014">1.5 - Major Features Planned for Sep 2014</a></li>
+      <li><a href="#openstudio-160-dec-2014">OpenStudio 1.6.0 (Dec. 2014)</a></li>
     
-      <li><a href="#16-19-plans-for-fy15">1.6-1.9 - Plans for FY15</a></li>
+      <li><a href="#openstudio-170-mar-2015">OpenStudio 1.7.0 (Mar. 2015)</a></li>
     
-      <li><a href="#in-progress-3rd-party-work-that-may-be-integrated-in-fy14">In Progress 3rd Party work that may be integrated in FY14</a></li>
+      <li><a href="#openstudio-180-and-beyond">OpenStudio 1.8.0 and Beyond</a></li>
     
-      <li><a href="#major-features-considered-for-fy15-and-beyond">Major Features Considered for FY15 and Beyond</a></li>
+      <li><a href="#in-progress-3rd-party-work">In-Progress 3rd Party Work</a></li>
     
-      <li><a href="#table-1-hvac-system-support-prioritization">Table 1: HVAC System Support Prioritization</a></li>
+      <li><a href="#hvac-system-priorities">HVAC System Priorities</a></li>
     
-      <li><a href="#table-2-measure-prioritization">Table 2: Measure Prioritization</a></li>
+      <li><a href="#measure-priorities">Measure Priorities</a></li>
     
 
    
@@ -222,41 +230,38 @@
             <div class="col-md-9" role="main">
                 
 
-<h1 id="openstudio-roadmap">OpenStudio Roadmap</h1>
-<h3 id="15-major-features-planned-for-sep-2014">1.5 - Major Features Planned for Sep 2014</h3>
+<h1 id="planned-features">Planned Features</h1>
+<p>The high level plans for the next few versions are outlined below.  These are not set in stone, and change based on feedback from users and from DOE.  If there is a feature that you'd like to see added to this list or moved higher up on the priority list, please contact us.  We try hard to act quickly on user feedback.</p>
+<h3 id="openstudio-160-dec-2014">OpenStudio 1.6.0 (Dec. 2014)</h3>
 <ul>
-<li>Public release of the PAT spreadsheet workflow for cloud-based uncertainty and optimization analysis</li>
-<li>Additional QA/QC and reporting measures in BCL</li>
-<li>Additional HVAC system support – see Google Doc link below for details</li>
-<li>Additional Measures in BCL – see Google Doc link below for details</li>
-<li>Data definitions and measures for residential modeling</li>
-</ul>
-<h3 id="16-19-plans-for-fy15">1.6-1.9 - Plans for FY15</h3>
-<ul>
-<li>Expanded HVAC system coverage</li>
+<li>Expanded HVAC system coverage.  See <a href="https://docs.google.com/spreadsheet/ccc?key=0AhCALIzwiaGPdHhhalNfQktXUWtacjJwcHVoZ3Fsanc&amp;usp=drive_web#gid=1">HVAC Roadmap</a> for priorities.</li>
 <li>Improved Radiance/DAYSIM integration</li>
-<li>Measure content for code-compliant model generation</li>
 <li>Support for the new EnergyPlus 9.x XML input format</li>
 </ul>
-<h3 id="in-progress-3rd-party-work-that-may-be-integrated-in-fy14">In Progress 3rd Party work that may be integrated in FY14</h3>
+<h3 id="openstudio-170-mar-2015">OpenStudio 1.7.0 (Mar. 2015)</h3>
 <ul>
-<li>esp-R translation (NRCan Led)</li>
-<li>eQuest/CANQuest translation (NRCan Led)</li>
-<li>ISO 13790 model integration (ANL Led) - Initial version available in 1.2</li>
+<li>Make <a href="http://www.energycodes.gov/commercial-prototype-building-models">DOE Prototype Buildings</a> available in OpenStudio .osm format</li>
 </ul>
-<h3 id="major-features-considered-for-fy15-and-beyond">Major Features Considered for FY15 and Beyond</h3>
+<h3 id="openstudio-180-and-beyond">OpenStudio 1.8.0 and Beyond</h3>
 <ul>
 <li>PAT extensions for Optimization - Some functionality already available in OS Server as of 1.2</li>
 <li>OpenStudio support for EMS objects and graphical controls specification</li>
 <li>More EEM, QA/QC, and Reporting Measures in BCL</li>
-<li>Potential Multi language support for Measures</li>
+<li>Potential Multi-language support for Measures (python?)</li>
 <li>Support for additional (simpler) geometry editing alternatives</li>
 <li>Automated calibration of models to hourly data</li>
 <li>Improved/expanded documentation for applications and SDK</li>
 </ul>
-<h2 id="table-1-hvac-system-support-prioritization">Table 1: HVAC System Support Prioritization</h2>
+<h3 id="in-progress-3rd-party-work">In-Progress 3rd Party Work</h3>
+<p>The following features are being developed by third-party developers and may be integrated into the main releases once they are complete and stable.</p>
+<ul>
+<li>esp-R translation (NRCan)</li>
+<li>eQuest/CANQuest translation (NRCan)</li>
+<li>ISO 13790 model integration (Argonne National Laboratory)</li>
+</ul>
+<h3 id="hvac-system-priorities">HVAC System Priorities</h3>
 <p>View the public Google Document spreadsheet for the <a href="https://docs.google.com/spreadsheet/ccc?key=0AhCALIzwiaGPdHhhalNfQktXUWtacjJwcHVoZ3Fsanc&amp;usp=drive_web#gid=1">HVAC roadmap</a>.</p>
-<h2 id="table-2-measure-prioritization">Table 2: Measure Prioritization</h2>
+<h3 id="measure-priorities">Measure Priorities</h3>
 <p>View the public Google Document spreadsheet for the <a href="https://docs.google.com/spreadsheet/ccc?key=0AhCALIzwiaGPdE1BUjZDQ01iLVBnUFJpcHlEWU10ZEE&amp;usp=drive_web#gid=0">measure roadmap.</a></p>
 
                  <div class="footer">
