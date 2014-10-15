@@ -1,44 +1,37 @@
 
-# OpenStudio Roadmap
+# Planned Features
+The high level plans for the next few versions are outlined below.  These are not set in stone, and change based on feedback from users and from DOE.  If there is a feature that you'd like to see added to this list or moved higher up on the priority list, please contact us.  We try hard to act quickly on user feedback.
 
-### 1.5 - Major Features Planned for Sep 2014
-
-* Public release of the PAT spreadsheet workflow for cloud-based uncertainty and optimization analysis
-* Additional QA/QC and reporting measures in BCL
-* Additional HVAC system support – see Google Doc link below for details
-* Additional Measures in BCL – see Google Doc link below for details
-* Data definitions and measures for residential modeling
-
-### 1.6-1.9 - Plans for FY15
-
-* Expanded HVAC system coverage
+### OpenStudio 1.6.0 (Dec. 2014)
+* Expanded HVAC system coverage.  See [HVAC Roadmap](https://docs.google.com/spreadsheet/ccc?key=0AhCALIzwiaGPdHhhalNfQktXUWtacjJwcHVoZ3Fsanc&usp=drive_web#gid=1) for priorities.
 * Improved Radiance/DAYSIM integration
-* Measure content for code-compliant model generation
 * Support for the new EnergyPlus 9.x XML input format
 
-### In Progress 3rd Party work that may be integrated in FY14
+### OpenStudio 1.7.0 (Mar. 2015)
+* Make [DOE Prototype Buildings](http://www.energycodes.gov/commercial-prototype-building-models) available in OpenStudio .osm format
 
-* esp-R translation (NRCan Led)
-* eQuest/CANQuest translation (NRCan Led)
-* ISO 13790 model integration (ANL Led) - Initial version available in 1.2
-
-### Major Features Considered for FY15 and Beyond
-
+### OpenStudio 1.8.0 and Beyond
 * PAT extensions for Optimization - Some functionality already available in OS Server as of 1.2
 * OpenStudio support for EMS objects and graphical controls specification
 * More EEM, QA/QC, and Reporting Measures in BCL
-* Potential Multi language support for Measures
+* Potential Multi-language support for Measures (python?)
 * Support for additional (simpler) geometry editing alternatives
 * Automated calibration of models to hourly data
 * Improved/expanded documentation for applications and SDK
 
+### In-Progress 3rd Party Work
+The following features are being developed by third-party developers and may be integrated into the main releases once they are complete and stable.
+
+* esp-R translation (NRCan)
+* eQuest/CANQuest translation (NRCan)
+* ISO 13790 model integration (Argonne National Laboratory)
 
 
-## Table 1: HVAC System Support Prioritization
+### HVAC System Priorities
 
 View the public Google Document spreadsheet for the [HVAC roadmap](https://docs.google.com/spreadsheet/ccc?key=0AhCALIzwiaGPdHhhalNfQktXUWtacjJwcHVoZ3Fsanc&usp=drive_web#gid=1).
 
-## Table 2: Measure Prioritization
+### Measure Priorities
 
 View the public Google Document spreadsheet for the [measure roadmap.](https://docs.google.com/spreadsheet/ccc?key=0AhCALIzwiaGPdE1BUjZDQ01iLVBnUFJpcHlEWU10ZEE&usp=drive_web#gid=0)
 

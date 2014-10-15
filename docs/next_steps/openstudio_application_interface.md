@@ -1,5 +1,5 @@
-# OpenStudio Application Interface
-This section contains an overview of the OpenStudio Application interface.
+# OpenStudio Application
+This section contains an overview of the OpenStudio Application.
 
 The [OpenStudio Quick Start Guide](../../img/pdfs/openstudio_interface_quickstart_1.4.0.pdf)  also provides an introduction to the interface for the Plug-in and the OpenStudio application. It also provides guidance on the basic workflow. 
 

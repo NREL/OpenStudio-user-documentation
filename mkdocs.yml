@@ -7,8 +7,9 @@ pages:
 - [getting_started/features.md, Getting Started, Current Features]
 - [getting_started/roadmap.md, Getting Started, Features Roadmap]
 - [getting_started/getting_started.md, Getting Started, Installation and Introductory Tutorial]
-- [next_steps/sketchup_plugin_interface.md, References & Tutorials, SketchUp Plug-in Interface]
-- [next_steps/openstudio_application_interface.md, References & Tutorials, OpenStudio Application Interface]
+- [next_steps/quick_start_guides.md, References & Tutorials, Quick Start Guides]
+- [next_steps/sketchup_plugin_interface.md, References & Tutorials, SketchUp Plug-in]
+- [next_steps/openstudio_application_interface.md, References & Tutorials, OpenStudio Application]
 - [next_steps/model_objects.md, References & Tutorials, Overview of OpenStudio Model Objects]
 - [next_steps/creating_your_model.md, References & Tutorials, Creating Your Model]
 - [next_steps/running_your_simulation.md, References & Tutorials, Running Your Simulation & Viewing Results]
@@ -22,6 +23,7 @@ pages:
 - [help/best_practices.md, Help, Best Practices]
 - [help/troubleshooting.md, Help, Troubleshooting]
 - [help/faq.md, Help, FAQ]
+- [help/software_license.md, Help, Software License]
 
 theme_dir: 'bootstrap_nrel'
 
