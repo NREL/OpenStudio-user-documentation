@@ -5,7 +5,7 @@ site_logo: 'OS_32x32.png'
 pages:
 - [index.md]
 - [getting_started/features.md, Getting Started, Current Features]
-- [getting_started/roadmap.md, Getting Started, Features Roadmap]
+- [getting_started/roadmap.md, Getting Started, Planned Features]
 - [getting_started/getting_started.md, Getting Started, Installation and Introductory Tutorial]
 - [next_steps/quick_start_guides.md, References & Tutorials, Quick Start Guides]
 - [next_steps/sketchup_plugin_interface.md, References & Tutorials, SketchUp Plug-in]

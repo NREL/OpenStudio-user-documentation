@@ -15,8 +15,8 @@ This is OpenStudio's user documentation. A brief summary of the content and inte
         <p><a href="getting_started/getting_started.md" class="btn btn-primary" role="Installation, Introductory Tutorials & Licensing">Installation & Tutorial
         </a></p>
         <p>Review the list of features and building elements that can be modeled.</p>
-        <p><a href="getting_started/features.md" class="btn btn-primary" role="Review Features">Current Features</a></p>  
-        <p><a href="getting_started/roadmap.md" class="btn btn-primary" role="Features Roadmap">Planned Features</a></p>  
+        <p><a href="getting_started/features.md" class="btn btn-primary" role="Current Features">Current Features</a></p>  
+        <p><a href="getting_started/roadmap.md" class="btn btn-primary" role="Planned Features">Planned Features</a></p>  
       </div>
     </div>
   </div>
@@ -26,8 +26,8 @@ This is OpenStudio's user documentation. A brief summary of the content and inte
       <div class="caption">
         <h3>References & Tutorials</h3>
         <p>This section provides more detailed information on OpenStudio features and contains tutorials and other references.</p>
-        <p><a href="next_steps/sketchup_plugin_interface.md" class="btn btn-primary" role="SketchUp Plug-in Tools">SketchUp Plug-in Interface</a></p>
-        <p><a href="next_steps/openstudio_application_interface.md" class="btn btn-primary" role="OpenStudio Application Interface">OpenStudio Application Interface</a></p>  
+        <p><a href="next_steps/sketchup_plugin_interface.md" class="btn btn-primary" role="SketchUp Plug-in">SketchUp Plug-in</a></p>
+        <p><a href="next_steps/openstudio_application_interface.md" class="btn btn-primary" role="OpenStudio Application ">OpenStudio Application</a></p>  
         <p><a href="next_steps/creating_your_model.md" class="btn btn-primary" role="Creating Your Model">Creating Your Model</a></p>
         <p><a href="next_steps/running_your_simulation.md" class="btn btn-primary" role="Running Your Simulation">Running Your Simulation</a></p>
         Sizing a Vertical Ground Heat Exchanger: 
