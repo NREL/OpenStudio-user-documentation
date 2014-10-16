@@ -704,20 +704,10 @@ The same data are displayed while in Render by Boundary Condition mode</em></p><
 </td>
 </tr>
 <tr>
-<td><img alt="Render by Simulation Data" src="../../img/plugin_reference_guide/render_data.png" title="Render by Simulation Data" /></td>
-<td align="left"></p>
-<h4 id="render-by-simulation-data">Render by Simulation Data</h4>
-<p>The OpenStudio Render by Simulation Data mode renders individual surfaces or entire thermal zones based on simulation results data. If you have not yet run a simulation and you switch to this mode, everything will render as white because there are no data. After running a simulation, go to the View Simulation Results dialog to set an SQL data path and load the simulation data. Then switch back to Render by Simulation Data mode to view the results. Use SketchUp's shadow setting dialog to change the time of day or year for the simulation data.</p>
-<p>The Color Scale (<img alt="Color Scale Tool" src="../../img/plugin_reference_guide/render_color_scale.png" title="Color Scale Tool" />) tool will open up a color scale for the Render by Simulation Data colors.</p>
-<p><img alt="Render by Simulation Data Mode" src="../../img/plugin_reference_guide/width_SU_Info_data.png" title="Render by Simulation Data Screenshot" />
-<p><em>Screenshot of Model in Render by Simulation Data Mode</em></p>
-</td>
-</tr>
-<tr>
 <td></td>
 <td align="left"></p>
 <h4 id="render-by-layer">Render by Layer</h4>
-<p>The Render by Layer is a standard SketchUp feature.  It will render content by layer. You can create layers to represent anything you want to track. For example, to organize your project by space types you can create or move zones to specific layers. Keep in mind that the layer structure isn't saved with the OSM file, so any layer you setup are just for your current session.</p>
+<p>The Render by Layer is a standard SketchUp feature.  It will render content by layer. You can create layers to represent anything you want to track. For example, to organize your project by space types you can create or move zones to specific layers. Keep in mind that the layer structure isn't saved with the OSM file, so any layers you setup are just for your current session.</p>
 <p><img alt="Render By Layer mode" src="../../img/plugin_reference_guide/width_ss_by_layer.png" title="Render by Layer Screenshot" />
 <p><em>Above: Screenshot of Model in Render By Layer mode</em></p>
 </td>
@@ -743,17 +733,6 @@ The same data are displayed while in Render by Boundary Condition mode</em></p><
 </tr>
 </thead>
 <tbody>
-<tr>
-<td><img alt="Results Viewer" src="../../img/plugin_reference_guide/ResultsViewer-24.png" title="Results Viewer" /></td>
-<td align="left"></p>
-<h4 id="view-results-in-resultsviewer">View Results in ResultsViewer</h4>
-<p>The OpenStudio View Simulation Results tool loads simulation results into the currently opened model. After you run a simulation, you can click the "load" button to find and load the SQL file. If you are opening a model from a previous simulation, you will have to browse to the path to the relevant SQL file. If you ran the simulation through the OpenStudio Plug-in, the required path will look similar to the path below.</p>
-<p>C:/path_to_osm_file/your_file_name.osm/ModelToIdf/ExpandObjects/EnergyPlus/eplusout.sql</p>
-<p>Once you load an SQL file, you can select the run period and variables. Surface and zone are the supported variable types to display in the OpenStudio Plug-in. The outside and inside variable pull-down content will change based on whether surface or zone is selected as the variable type. The variables shown depend on what was requested when the simulation was run. This tool also provides a button that will load your results into the OpenStudio ResultsViewer application. If you load results into the ResultsViewer Application, make sure to close the data in ResultsViewer before you rerun a simulation of the same model; otherwise, you will have an EnergyPlus error.</p>
-<p><img alt="Rendering Settings Dialog" src="../../img/plugin_reference_guide/width_SU_RenderSettings.png" title="View Results" />
-<p><em>Above: Screenshot of Rendering Settings Dialog</em></p>
-</td>
-</tr>
 <tr>
 <td><img alt="Launch Current Model in OpenStudio Application" src="../../img/plugin_reference_guide/os_24.png" title="Launch Current Model in OpenStudio Application" /></td>
 <td align="left"></p>
