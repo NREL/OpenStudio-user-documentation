@@ -26,20 +26,13 @@ __Download and install OpenStudio__
 __Optional - Setup a Building Component Library (BCL) Account__
 BCL content can now be accessed from within the OpenStudio SketchUp Plug-in and from the standalone OpenStudio application. To take advantage of this integration, you will need to follow the steps outlined here to request a BCL key.
 
-Login to [Building Component Library (BCL)](https://bcl.nrel.gov/).  Create an account if you don't have one
-
-1. If you already have a BCL account, log in and go to step 3. If you do not already have a BCL account, go to [register at BCL](https://bcl.nrel.gov/user/register) to create a new account.  
-2. After you click "Create new account," you are taken back to the BCL home page. Follow the instructions from the email sent to you upon registration and then login.
+1. Login to [Building Component Library (BCL)](https://bcl.nrel.gov/).  Create an account if you don't have one. Follow the instructions from the email sent to you upon registration and then login.
 3. Click on the "My Dashboard" near the top right of the website.
-4. Copy the text after __"APIv1.1 key:"__ then paste the key into the SketchUp Plug-in, the OpenStudio application, or the Parametric Analysis Tool (PAT). __You only need to configure the key in one place and it will be used globally throughout the OpenStudio tools.__ Additionally, this key will be maintained when you install updates to OpenStudio. Specific application instructions are below.
+4. Copy the text after "APIv1.1 key:" then paste the key into the SketchUp Plug-in, the OpenStudio application, or the Parametric Analysis Tool (PAT). __You only need to configure the key in one place and it will be used globally throughout the OpenStudio tools.__ Additionally, this key will be maintained when you install updates to OpenStudio.
+
+Enter the Key Through the OpenStudio SketchUp Plug-in under the menu "Plugins/OpenStudio User Scripts/Building Component Library/Setup BCL Key" enter your key, and click "OK."  __Or__ Register the Key Through the OpenStudio Application open the menu "Components & Measures/Find Components" and if a key is not already registered, it will prompt you for one. 
 
 ![Key Request](../../img/bcl_key_request.png "Key Dialog")
-
-__Enter the Key Through the OpenStudio SketchUp Plug-in__ under the menu "Plugins/OpenStudio User Scripts/Building Component Library/Setup BCL Key" enter your key, and click "OK."
-
-__Or__
-
-__Register the Key Through the OpenStudio Application__ open the menu "Components & Measures/Find Components" and if a key is not already registered, it will prompt you for one. 
 
 __Optional - Install Radiance__
 If you want to be able to use Radiace for daylighting simulations, you must install Radiance.
