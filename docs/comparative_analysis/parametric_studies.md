@@ -1,5 +1,4 @@
-# Comparative Analysis Using the ParametricAnalysisTool (PAT)
-
+<h1>Comparative Analysis Using the ParametricAnalysisTool (PAT)</h1>
 
 PAT removes the need to hand edit each model to try out different architectures, energy efficiency measures, and mechanical systems. PAT applies scripts to your baseline model and lets you quickly compare many alternatives. OpenStudio has developed a workflow that allows energy modelers 
 to create and run a customized parametric analysis using commercially available cloud computing services. This workflow will enable anyone to perform powerful parametric studies in a reasonable time for a relatively low cost.  

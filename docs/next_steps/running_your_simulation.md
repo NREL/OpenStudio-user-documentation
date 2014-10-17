@@ -1,4 +1,5 @@
-# Running Simulation & Viewing Results
+<h1>Running Simulation & Viewing Results</h1>
+These guides provide a handy reference to the features of the applications that are installed with OpenStudio.
 
 ## Weather File and Design Days
 Add weather files in the OpenStudio application under the Site tab (first vertical tab) on the left and the "Weather File & Design Days" sub-tab across the top. You can [download weather files](http://apps1.eere.energy.gov/buildings/energyplus/) on the EnergyPlus site.

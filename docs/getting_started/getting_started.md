@@ -1,7 +1,9 @@
+<h1>Installation and Introductory Tutorial</h1>
+This page walks you through installing OpenStudio, the basics of the applications, and the basic workflow.  
+
 ## Installation Instructions
 OpenStudio is supported on Windows 7 - 8.1, OS X 10.9, and 64-bit Ubuntu 14.04.
 OpenStudio 1.5.0 works with EnergyPlus 8.1.
-
 
 __Download and install EnergyPlus 8.1__
 
@@ -15,7 +17,7 @@ __Download and install SketchUp__
 
 __Download and install OpenStudio__
 
-1. Login to the [OpenStudio website](openstudio.nrel.gov).  Create an account if you don't have one.  
+1. Login to the [OpenStudio website](www.openstudio.net).  Create an account if you don't have one.  
 2. Click "Downloads" at the top of the page.
 3. Choose the installer that matches your operating system.  The OpenStudio package contains the following tools:
      * SketchUp Plug-in
@@ -50,8 +52,6 @@ If you plan to use the OpenStudio SDK Ruby bindings via command prompt on Window
     require 'C:\Program Files (x86)\OpenStudio 1.5.0\Ruby\openstudio.rb'
  ```
 4. Save the file as `openstudio.rb` here: `C:\Ruby200\lib\ruby\site_ruby\openstudio.rb` (next to the `2.0.0` folder).
-
-
 
 ## Workflow Overview
 After installing OpenStudio you will have the SketchUp Plug-in, OpenStudio Application, ParametricAnalysisTool (PAT) and ResultsViewer. The typical OpenStudio workflow is shown in the diagram below. 

@@ -1,5 +1,6 @@
-## Quick Start Guide to OpenStudio Modeling Tools
-* This [OpenStudio Quick Start Guide (PDF)](../../img/pdfs/openstudio_interface_quickstart.pdf) provides an introduction to the interface for the Plug-in and the OpenStudio application. It also provides guidance on the basic workflow.
+<h1>Quick Start Guides</h1>
+These guides provide a handy reference to the features of the applications that are installed with OpenStudio.
 
-## Quick Start Guide to the ParametricAnalysisTool (PAT)
-* This [ParametricAnalysisTool Quick Start Guide (PDF)](../../img/pdfs/PAT-Quick_Start_Guide.pdf) and the [ParametricAnalysisTool section](../comparative_analysis/parametric_studies.md) provide an introduction to the interface and workflow for creating multiple design alternatives from a seed model. 
+## [Quick Start Guide to OpenStudio Modeling Tools (PDF)](../../img/pdfs/openstudio_interface_quickstart.pdf)
+
+## [Quick Start Guide to the ParametricAnalysisTool (PAT) (PDF)](../../img/pdfs/PAT-Quick_Start_Guide.pdf)

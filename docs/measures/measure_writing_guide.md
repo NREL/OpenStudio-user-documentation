@@ -1,9 +1,12 @@
+<h1>Measure Writing Guide</h1>
+This guide goes through the details of an OpenStudio Measure, focusing mainly on writing new Measures and understanding existing Measures.
+
 ## What is a Measure?
 In building design and retrofits, the terms *energy efficiency measure* (EEM) and *energy conservation measure* (ECM) refer to a specific change that can be made to a building to reduce its energy use.  As an example, if you are retrofitting an existing building and one of the ECMs suggested by the design team is "Add insulation to the roof", then you can run that measure to quickly alter your model.
 
 In OpenStudio, a measure is a set of programmatic instructions (such as an Excel macro) that makes changes to an energy model to reflect its application.  In our example, the measure might find the default construction used by roof surfaces in the model, copy this construction and add insulation material to the outside, then set the new construction with added insulation as the default construction to be used by roof surfaces.  Measures can be written specifically for an individual model, or they may be more generic to work on a wide range of possible models.
 
-## Understanding this Guide
+## Using this Guide
 Each OpenStudio measure is contained in its own folder (usually named after the measure) and contains two key files:
 
 - measure.rb (contains the programmatic code to change the building mode)
@@ -25,7 +28,7 @@ a = 5
 
 ```
 
-## The Programmatic Instructions - measure.rb
+## measure.rb
 The measure.rb file contains the Ruby program that allows the measure to make changes to the input model.  The bulk of the work done when writing a measure lies in editing this file.  The measure.rb file includes the beginning and end of the measure; the content of the measure is then divided into three general sections:  name, arguments, and run.  The following sections explain each section.
 
 ### Starting and Ending the Measure
@@ -503,7 +506,7 @@ space_types.each do |space_type|
 end
 ```
 
-### Putting It All Together
+#### Putting It All Together
 The following example is a complete measure.rb file, including all the pieces described previously.  Notice that there are comments in this script.  It is good practice to include comments directly inside the measure.rb file, so anyone who opens the file can understand what is happening.  These comments were omitted from the previous examples because the main text described what was happening.
 
 ```ruby
@@ -621,7 +624,7 @@ end #end the measure
 ReplaceLightsInSpaceTypeWithLPD.new.registerWithApplication
 ```
 
-## The Name and Description - measure.xml
+## measure.xml
 The measure.xml file contains metadata that allow the measure to be filed into an organizational structure, provide an explanation about what the measure does and how it works, and tell the GUI where in the workflow the measure can go.  The GUI creates a new measure.xml file when you click on the "Create a New Measure" button.  The wizard that appears guides you through filling in the measure.xml file.  After this wizard, you will need to make any changes to the measure.xml file manually.  The following sections describe the purpose and available options for each section of measure.xml.
 
 ![Name of Measure](../../img/measure-writing-guide/16.png)
@@ -636,7 +639,7 @@ The following boilerplate text is used to open and close the measure.xml file.
 </measure>
 ```
 
-### Naming the Measure
+### Name
 The name section defines the name of the measure.  Best practice is to ensure that this name matches the name method in the measure.rb file.  The name listed in measure.xml will be shown in the Local Library window.
 
 ```xml
@@ -815,7 +818,7 @@ This section describes which files the measure uses and which version of OpenStu
 </files>
 ```
 
-### Putting it all Together
+#### Putting it all Together
 A complete measure.xml file looks like this:
 
 ```xml
@@ -873,7 +876,7 @@ A complete measure.xml file looks like this:
 </measure>
 ```
 
-## EnergyPlus Measures - Edit .idf files directly
+### EnergyPlus Measures - Edit .idf files directly
 Measures are usually written to work on an OpenStudio model.  This is preferred because it allows you to use the OpenStudio Model API, which includes specialized methods for each type of object in the OpenStudio Model.  However, when a particular EnergyPlus feature is not yet exposed in the OpenStudio Model, you may choose to write a measure that operates on the EnergyPlus data model directly.  Measures of this type are run only after the model is translated from OpenStudio to EnergyPlus.
 
 Below are some specific code differences for EnergyPlus versus. Model (OpenStudio) measures.
@@ -899,7 +902,7 @@ def run(workspace, runner, user_arguments)
 
 The API available to work with EnergyPlus objects directly is simpler than the OpenStudio Model API; it allows for changing .idf fields directly, getting all objects of a certain type, etc.  This functionality is [documented][10] under the utilities project in the classes "Workspace" and "WorkspaceObject".
 
-### Finding and Inspecting EnergyPlus Objects
+#### Finding and Inspecting EnergyPlus Objects
 The following example shows how to find and loop through EnergyPlus objects. You can find objects in an EnergyPlus Workspace based on their IDD type (e.g., "BuildingSurface:Detailed"). These types can be found in the EnergyPlus documentation shown in Section 5.4.  The IDF model is not an object model. As a result, instead of requesting a name we access specific fields by index in the IDD, starting at 0 and going up, such as ".getString(2)".
 
 ```ruby
@@ -921,7 +924,7 @@ The following example shows how to find and loop through EnergyPlus objects. You
   end
 ```
 
-### Adding EnergyPlus Workspace Objects
+#### Adding EnergyPlus Workspace Objects
 The following example shows how to add a new EnergyPlus object into the Workspace. A string is created, using Ruby's string substitution mechanisms to set variable values, and then the string is turned into IdfObject and finally added to the Workspace.
 
 ```ruby
@@ -953,7 +956,7 @@ The following example shows how to add a new EnergyPlus object into the Workspac
   end
 ```
 
-### Editing EnergyPlus Workspace Objects
+#### Editing EnergyPlus Workspace Objects
 The following example shows how to access and edit EnergyPlus objects in the Workspace.
 
 ```ruby
@@ -973,12 +976,12 @@ The following example shows how to access and edit EnergyPlus objects in the Wor
   end
 ```
 
-### Finding Documentation on EnergyPlus Objects
+#### Finding Documentation on EnergyPlus Objects
 The "[InputOutputReference.pdf][11]" document that ships with EnergyPlus describes every EnergyPlus object.  Below is a screenshot of part of the documentation for the "ComponentCost:LineItem" object.  It describes which fields are required versus optional, and what kinds of data are expected for each field.  EnergyPlus also ships with example models that show each object being used in a model.  In the "Examples" folder is a spreadsheet that documents the examples.
 
 ![Finding Doc](../../img/measure-writing-guide/17.png)
 
-### Putting It All Together - A Complete WorkspaceUserScript
+#### Putting It All Together - A Complete WorkspaceUserScript
 The script creates a ComponentCost:LineItem object for each construction used in the model.
 
 ```ruby

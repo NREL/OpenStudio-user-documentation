@@ -1,5 +1,5 @@
-# Troubleshooting
-
+<h1>Troubleshooting</h1>
+This page is a collection of troubleshooting advice that helps users deal with common issues.
 
 ## Model Won't Open in SketchUp Plug-in
 

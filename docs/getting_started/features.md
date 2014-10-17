@@ -1,3 +1,6 @@
+<h1>Current Features</h1>
+OpenStudio is constantly being improved, with a less developer release available every 2 weeks and a stable major release quarterly (4 per year).  The features that are available in the current major release are described below.  To learn what is coming in the future, see the [Planned Features](../getting_started/roadmap.md) page.
+
 ## New in OpenStudio 1.5.0
 
 #### Grid View for Thermal Zones and Space Types

@@ -1,7 +1,5 @@
-# Training, Support, and Consulting
+<h1>Training, Support, and Consulting</h1>
 Below are companies and universities that are licensed OpenStudio training and support organizations. Licensed commercial organizations have been trained directly by the OpenStudio development team and have access to NREL's training material.  For information on becoming a licensed training organization please see the [RFP summary](https://openstudio.nrel.gov/content/nrel-seeking-proposals-openstudio-training-and-technical-support).
-
-
 
 ##Commercial Organizations
 

@@ -1,4 +1,4 @@
-# Creating Your Model 
+<h1>Creating Your Model</h1> 
 
 After completing the [Introductory Tutorial](../getting_started/getting_started.md#introductory-tutorial), you can find additional information on using OpenStudio by topic below.
 

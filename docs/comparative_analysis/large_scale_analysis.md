@@ -1,13 +1,12 @@
-# Large-scale Analysis
+<h1>Large-scale Analysis</h1>
 
 Although building energy modeling has been common for many years, large-scale analyses have more recently become achievable for more users with access to affordable and vast computing power in the cloud. Recently, the OpenStudio Parametric Analysis Tool was enhanced, allowing users to launch their own cloud resources to run a large number of simulations. 
 
-## About
 The ParametricAnalysisTool (PAT) now exports a spreadsheet format compatible with the OpenStudio-analysis-spreadsheet project for running large parametric analyses using cloud resources.
 
 Go to the [Github repository](https://github.com/NREL/OpenStudio-analysis-spreadsheet) for information and code for the analysis spreadsheet. There are instructions and examples on the GitHub site.
 
-The Workflow:
+## The Workflow
 
 1. Build your baseline model with the OpenStudio Application
 

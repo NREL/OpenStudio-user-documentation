@@ -1,4 +1,6 @@
-# Finding Model Data
+<h1>Finding Model Data</h1>
+Good inputs are critical to getting good results from energy modeling.  This page provides a list of resources that might be helpful in determining inputs.
+
 ## OpenStudio Building Type Templates
 The New OpenStudio Model From Template tool is represented by this icon in the toolbar: ![New OpenStudio Model](../../img/plugin_reference_guide/os_new.png "New OpenStudio Model"). Templates contain data for constructions, loads, and schedules for four vintages across all U.S. climate zones. Templates do not contain any geometry.
  

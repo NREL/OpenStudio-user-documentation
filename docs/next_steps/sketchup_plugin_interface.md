@@ -1,9 +1,9 @@
-## The SketchUp Plug-in Interface
+<h1>The SketchUp Plug-in</h1>
 This section provide the legend for toolbars and menus available in the Plug-in. You may also find helpful information in the [OpenStudio Quick Start Guide (PDF)](../../img/pdfs/openstudio_interface_quickstart.pdf).
 
 ![Toolbar OS Plugin](../../img/plugin_reference_guide/toolbars_os.png "Plug-in Toolbars")
 
-### File Management
+## File Management
 Tools in this set create, open, save, import, or export data to or from your model. Some have toolbar icons; some do not. These functions are also located the OpenStudio Plug-in menu.
 <table class="table table-striped">
 <thead>

@@ -1,27 +1,11 @@
-# About Measures
-_________________
-
-## What Are Measures?
+<h1>About Measures</h1>
 In building design and retrofits, the terms energy efficiency measure (EEM) and energy conservation measure (ECM) refer to a specific change that can be made to a building to reduce its energy use. As an example, if you are retrofitting an existing building and one of the ECMs suggested by the design team is "Add insulation to the roof", then you can run that measure to quickly alter your model.
 
 In OpenStudio, a measure is a set of programmatic instructions (such as an Excel macro) that makes changes to an energy model to reflect its application. In our example, the measure might find the default construction used by roof surfaces in the model, copy this construction and add insulation material to the outside, then set the new construction with added insulation as the default construction to be used by roof surfaces. Measures can be written specifically for an individual model, or they may be more generic to work on a wide range of possible models.
 
 ![New OpenStudio Model](../../img/measures/what_measures.png =750x331 "What are Measures")
 
-__EE Measures__
-
-
-* Add something 
-
-* Remove something
-
-* Change something
-
-__QA/QC Measures__
-
-* Compute something
-
-* Report something
+__Examples__
 
 ![New OpenStudio Model](../../img/measures/examples.png =750x451 "Examples of Measures")
 
@@ -48,20 +32,6 @@ __Measures can help energy modelers by:__
 ![New OpenStudio Model](../../img/measures/knowledge.png =750x501 "Passing on Knowledge with Measures")
 
 ![New OpenStudio Model](../../img/measures/share_bcl.png =750x501 "Passing on Knowledge with Measures and BCL")
-
-
-_________________
-
-## Types of Measures
-
-* Model Measures
-  * Bar Aspect Ratio Study
-  * Reduce Lighting Loads by Percentage
-  * Shift Schedule Profile Time
-* Energy Plus Measures
-  * Add Simple PV to Sharing Surfaces By Type
-* Reporting Measures
-  * Annual End Use Breakdown
   
 _________________
 
