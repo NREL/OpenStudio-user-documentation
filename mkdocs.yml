@@ -16,6 +16,7 @@ pages:
 - [next_steps/detailed_tutorials/tutorial_glhepro.md, References & Tutorials, GLHEPro Tutorial]
 - [measures/about_measures.md, Measures, About Measures]
 - [measures/measure_writing_guide.md, Measures, Measure Writing Guide]
+- [measures/measure_code_examples.md, Measures, Measure Code Examples]
 - [comparative_analysis/parametric_studies.md, Comparative Analysis, ParametricAnalysisTool]
 - [comparative_analysis/large_scale_analysis.md, Comparative Analysis, Large Scale Analysis]
 - [help/training.md, Help, Training]
