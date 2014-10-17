@@ -7,7 +7,8 @@
         
         
         
-        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <link rel="shortcut icon" href="../../favicon.ico">
+        
 
         <title>Measure Writing Guide - OpenStudio User Docs</title>
 
@@ -59,7 +60,7 @@
                         </li>
                     
                         <li >
-                            <a href="../../getting_started/roadmap/">Features Roadmap</a>
+                            <a href="../../getting_started/roadmap/">Planned Features</a>
                         </li>
                     
                         <li >
@@ -208,7 +209,7 @@
 
 	
 
-  <li class="main "><a href="#understanding-this-guide">Understanding this Guide</a></li>
+  <li class="main "><a href="#using-this-guide">Using this Guide</a></li>
     
 
   
@@ -216,7 +217,7 @@
 
 	
 
-  <li class="main "><a href="#the-programmatic-instructions-measurerb">The Programmatic Instructions - measure.rb</a></li>
+  <li class="main "><a href="#measurerb">measure.rb</a></li>
     
       <li><a href="#starting-and-ending-the-measure">Starting and Ending the Measure</a></li>
     
@@ -226,19 +227,17 @@
     
       <li><a href="#run">Run</a></li>
     
-      <li><a href="#putting-it-all-together">Putting It All Together</a></li>
-    
 
   
 
 
 	
 
-  <li class="main "><a href="#the-name-and-description-measurexml">The Name and Description - measure.xml</a></li>
+  <li class="main "><a href="#measurexml">measure.xml</a></li>
     
       <li><a href="#starting-and-ending-measurexml">Starting and Ending measure.xml</a></li>
     
-      <li><a href="#naming-the-measure">Naming the Measure</a></li>
+      <li><a href="#name_1">Name</a></li>
     
       <li><a href="#unique-identifier-and-version-identifier">Unique Identifier and Version Identifier</a></li>
     
@@ -254,25 +253,7 @@
     
       <li><a href="#files">Files</a></li>
     
-      <li><a href="#putting-it-all-together_1">Putting it all Together</a></li>
-    
-
-  
-
-
-	
-
-  <li class="main "><a href="#energyplus-measures-edit-idf-files-directly">EnergyPlus Measures - Edit .idf files directly</a></li>
-    
-      <li><a href="#finding-and-inspecting-energyplus-objects">Finding and Inspecting EnergyPlus Objects</a></li>
-    
-      <li><a href="#adding-energyplus-workspace-objects">Adding EnergyPlus Workspace Objects</a></li>
-    
-      <li><a href="#editing-energyplus-workspace-objects">Editing EnergyPlus Workspace Objects</a></li>
-    
-      <li><a href="#finding-documentation-on-energyplus-objects">Finding Documentation on EnergyPlus Objects</a></li>
-    
-      <li><a href="#putting-it-all-together-a-complete-workspaceuserscript">Putting It All Together - A Complete WorkspaceUserScript</a></li>
+      <li><a href="#energyplus-measures-edit-idf-files-directly">EnergyPlus Measures - Edit .idf files directly</a></li>
     
 
   
@@ -298,10 +279,13 @@
             <div class="col-md-9" role="main">
                 
 
+<h1>Measure Writing Guide</h1>
+
+<p>This guide goes through the details of an OpenStudio Measure, focusing mainly on writing new Measures and understanding existing Measures.</p>
 <h2 id="what-is-a-measure">What is a Measure?</h2>
 <p>In building design and retrofits, the terms <em>energy efficiency measure</em> (EEM) and <em>energy conservation measure</em> (ECM) refer to a specific change that can be made to a building to reduce its energy use.  As an example, if you are retrofitting an existing building and one of the ECMs suggested by the design team is "Add insulation to the roof", then you can run that measure to quickly alter your model.</p>
 <p>In OpenStudio, a measure is a set of programmatic instructions (such as an Excel macro) that makes changes to an energy model to reflect its application.  In our example, the measure might find the default construction used by roof surfaces in the model, copy this construction and add insulation material to the outside, then set the new construction with added insulation as the default construction to be used by roof surfaces.  Measures can be written specifically for an individual model, or they may be more generic to work on a wide range of possible models.</p>
-<h2 id="understanding-this-guide">Understanding this Guide</h2>
+<h2 id="using-this-guide">Using this Guide</h2>
 <p>Each OpenStudio measure is contained in its own folder (usually named after the measure) and contains two key files:</p>
 <ul>
 <li>measure.rb (contains the programmatic code to change the building mode)</li>
@@ -317,7 +301,7 @@
 
 </code></pre>
 
-<h2 id="the-programmatic-instructions-measurerb">The Programmatic Instructions - measure.rb</h2>
+<h2 id="measurerb">measure.rb</h2>
 <p>The measure.rb file contains the Ruby program that allows the measure to make changes to the input model.  The bulk of the work done when writing a measure lies in editing this file.  The measure.rb file includes the beginning and end of the measure; the content of the measure is then divided into three general sections:  name, arguments, and run.  The following sections explain each section.</p>
 <h3 id="starting-and-ending-the-measure">Starting and Ending the Measure</h3>
 <p>Generally, each measure is a variation of an OpenStudio ModelUserScript.  You do not need to worry about what this means right now; we will explain the details later.  The important point is that the text below starts and ends a measure.  The class name for the measure (in light blue) is user defined. The same class name appears again on the last line where a new instance of the class is instantiated and registered with OpenStudio.  It is good practice to use UpperCamelCase (CapitalizeTheFirstLetterOfEveryWord) for your class name.  This must be a valid class name in Ruby; it must start with an uppercase letter and cannot contain spaces or other special characters.  Everything else about the measure (name, arguments, and run) will be inserted where the ellipsis is.</p>
@@ -689,7 +673,7 @@ space_types.each do |space_type|
 end
 </code></pre>
 
-<h3 id="putting-it-all-together">Putting It All Together</h3>
+<h4 id="putting-it-all-together">Putting It All Together</h4>
 <p>The following example is a complete measure.rb file, including all the pieces described previously.  Notice that there are comments in this script.  It is good practice to include comments directly inside the measure.rb file, so anyone who opens the file can understand what is happening.  These comments were omitted from the previous examples because the main text described what was happening.</p>
 <pre class="prettyprint well"><code class="ruby"># a pound sign denotes a comment
 </code></pre>
@@ -804,7 +788,7 @@ end #end the measure
 ReplaceLightsInSpaceTypeWithLPD.new.registerWithApplication
 </code></pre>
 
-<h2 id="the-name-and-description-measurexml">The Name and Description - measure.xml</h2>
+<h2 id="measurexml">measure.xml</h2>
 <p>The measure.xml file contains metadata that allow the measure to be filed into an organizational structure, provide an explanation about what the measure does and how it works, and tell the GUI where in the workflow the measure can go.  The GUI creates a new measure.xml file when you click on the "Create a New Measure" button.  The wizard that appears guides you through filling in the measure.xml file.  After this wizard, you will need to make any changes to the measure.xml file manually.  The following sections describe the purpose and available options for each section of measure.xml.</p>
 <p><img alt="Name of Measure" src="../../img/measure-writing-guide/16.png" /></p>
 <h3 id="starting-and-ending-measurexml">Starting and Ending measure.xml</h3>
@@ -815,7 +799,7 @@ ReplaceLightsInSpaceTypeWithLPD.new.registerWithApplication
 &lt;/measure&gt;
 </code></pre>
 
-<h3 id="naming-the-measure">Naming the Measure</h3>
+<h3 id="name_1">Name</h3>
 <p>The name section defines the name of the measure.  Best practice is to ensure that this name matches the name method in the measure.rb file.  The name listed in measure.xml will be shown in the Local Library window.</p>
 <pre class="prettyprint well"><code class="xml">&lt;name&gt;Replace HVAC System with DX and Natural Gas AHUs&lt;/name&gt;
 </code></pre>
@@ -979,7 +963,7 @@ ReplaceLightsInSpaceTypeWithLPD.new.registerWithApplication
 &lt;/files&gt;
 </code></pre>
 
-<h3 id="putting-it-all-together_1">Putting it all Together</h3>
+<h4 id="putting-it-all-together_1">Putting it all Together</h4>
 <p>A complete measure.xml file looks like this:</p>
 <pre class="prettyprint well"><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;measure xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&gt;
@@ -1035,7 +1019,7 @@ ReplaceLightsInSpaceTypeWithLPD.new.registerWithApplication
 &lt;/measure&gt;
 </code></pre>
 
-<h2 id="energyplus-measures-edit-idf-files-directly">EnergyPlus Measures - Edit .idf files directly</h2>
+<h3 id="energyplus-measures-edit-idf-files-directly">EnergyPlus Measures - Edit .idf files directly</h3>
 <p>Measures are usually written to work on an OpenStudio model.  This is preferred because it allows you to use the OpenStudio Model API, which includes specialized methods for each type of object in the OpenStudio Model.  However, when a particular EnergyPlus feature is not yet exposed in the OpenStudio Model, you may choose to write a measure that operates on the EnergyPlus data model directly.  Measures of this type are run only after the model is translated from OpenStudio to EnergyPlus.</p>
 <p>Below are some specific code differences for EnergyPlus versus. Model (OpenStudio) measures.</p>
 <p>The class line should refer to "WorkspaceScript" versus "ModelScript", as shown in the following example:</p>
@@ -1052,7 +1036,7 @@ ReplaceLightsInSpaceTypeWithLPD.new.registerWithApplication
 </code></pre>
 
 <p>The API available to work with EnergyPlus objects directly is simpler than the OpenStudio Model API; it allows for changing .idf fields directly, getting all objects of a certain type, etc.  This functionality is [documented][10] under the utilities project in the classes "Workspace" and "WorkspaceObject".</p>
-<h3 id="finding-and-inspecting-energyplus-objects">Finding and Inspecting EnergyPlus Objects</h3>
+<h4 id="finding-and-inspecting-energyplus-objects">Finding and Inspecting EnergyPlus Objects</h4>
 <p>The following example shows how to find and loop through EnergyPlus objects. You can find objects in an EnergyPlus Workspace based on their IDD type (e.g., "BuildingSurface:Detailed"). These types can be found in the EnergyPlus documentation shown in Section 5.4.  The IDF model is not an object model. As a result, instead of requesting a name we access specific fields by index in the IDD, starting at 0 and going up, such as ".getString(2)".</p>
 <pre class="prettyprint well"><code class="ruby">  #get all surfaces and constructions in model
   heat_transfer_surfaces = workspace.getObjectsByType(&quot;BuildingSurface:Detailed&quot;.to_IddObjectType)
@@ -1072,7 +1056,7 @@ ReplaceLightsInSpaceTypeWithLPD.new.registerWithApplication
   end
 </code></pre>
 
-<h3 id="adding-energyplus-workspace-objects">Adding EnergyPlus Workspace Objects</h3>
+<h4 id="adding-energyplus-workspace-objects">Adding EnergyPlus Workspace Objects</h4>
 <p>The following example shows how to add a new EnergyPlus object into the Workspace. A string is created, using Ruby's string substitution mechanisms to set variable values, and then the string is turned into IdfObject and finally added to the Workspace.</p>
 <pre class="prettyprint well"><code class="ruby">  #array to hold new IDF objects
   string_objects = []
@@ -1102,7 +1086,7 @@ ReplaceLightsInSpaceTypeWithLPD.new.registerWithApplication
   end
 </code></pre>
 
-<h3 id="editing-energyplus-workspace-objects">Editing EnergyPlus Workspace Objects</h3>
+<h4 id="editing-energyplus-workspace-objects">Editing EnergyPlus Workspace Objects</h4>
 <p>The following example shows how to access and edit EnergyPlus objects in the Workspace.</p>
 <pre class="prettyprint well"><code class="ruby">  #get OutputControl:Table:Style object that was generated in forward translation from OSM to IDF
   table_style = workspace.getObjectsByType(&quot;OutputControl:Table:Style&quot;.to_IddObjectType)
@@ -1120,10 +1104,10 @@ ReplaceLightsInSpaceTypeWithLPD.new.registerWithApplication
   end
 </code></pre>
 
-<h3 id="finding-documentation-on-energyplus-objects">Finding Documentation on EnergyPlus Objects</h3>
+<h4 id="finding-documentation-on-energyplus-objects">Finding Documentation on EnergyPlus Objects</h4>
 <p>The "[InputOutputReference.pdf][11]" document that ships with EnergyPlus describes every EnergyPlus object.  Below is a screenshot of part of the documentation for the "ComponentCost:LineItem" object.  It describes which fields are required versus optional, and what kinds of data are expected for each field.  EnergyPlus also ships with example models that show each object being used in a model.  In the "Examples" folder is a spreadsheet that documents the examples.</p>
 <p><img alt="Finding Doc" src="../../img/measure-writing-guide/17.png" /></p>
-<h3 id="putting-it-all-together-a-complete-workspaceuserscript">Putting It All Together - A Complete WorkspaceUserScript</h3>
+<h4 id="putting-it-all-together-a-complete-workspaceuserscript">Putting It All Together - A Complete WorkspaceUserScript</h4>
 <p>The script creates a ComponentCost:LineItem object for each construction used in the model.</p>
 <pre class="prettyprint well"><code class="ruby">#start the measure
 class ConstructionTakeOff &lt; OpenStudio::Ruleset::WorkspaceUserScript
