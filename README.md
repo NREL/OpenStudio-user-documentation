@@ -17,7 +17,7 @@ Install MkDocs by following the direction at [MkDocs](http://www.mkdocs.org).  Y
 5. Download [mkdocs source code](https://github.com/tomchristie/mkdocs/archive/master.zip)
 6. Extract mkdocs source code
 7. Open a command prompt where you extracted mkdocs and run: `python setup.py install`
-8. Open `C:\Python27\Scripts\ghp-import` and modify line 13 to contain the following:
+8. Open `C:\Python27\Lib\site-packages\mkdocs-0.9-py2.7.egg\mkdocs\gh_deploy.py` and modify line 13 to contain the following:
 
     ```python
     subprocess.check_call(['python', 'C:/Python27/Scripts/ghp-import', '-p', config['site_dir']])
