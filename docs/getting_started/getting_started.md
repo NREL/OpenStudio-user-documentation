@@ -39,7 +39,7 @@ Enter the Key Through the OpenStudio SketchUp Plug-in under the menu "Plugins/Op
 __Optional - Install Radiance__
 If you want to be able to use Radiace for daylighting simulations, you must install Radiance.
 
-1. Download and install [Radiance](https://github.com/NREL/Radiance).
+1. Download and install [Radiance 4.2.1](https://github.com/NREL/Radiance/releases/tag/4.2.1).
 
 
 __Optional - Install Ruby__
