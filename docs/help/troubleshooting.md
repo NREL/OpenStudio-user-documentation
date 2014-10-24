@@ -78,6 +78,13 @@ Post your questions to the forum below for energy modeling information.
 
 _________________
 
+## Submit a Bug
+Please let us know if you find a bug in the OpenStudio software.
+<div>
+ <a class="btn btn-primary" role="button" href="https://www.openstudio.net/contact">Submit a Bug</a>
+</div>
+_________________
+
 
 ## Useful SketchUp Links
 * [SketchUp's On-Line Help](http://help.sketchup.com/en)
