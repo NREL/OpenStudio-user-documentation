@@ -648,7 +648,7 @@ For information on the SketchUp Plug-in version go to "Plugins/OpenStudio/Prefer
 
 #### Check for Update
 
-Check to see if you are using the most current release of the OpenStudio Google SketchUp Plugin by going to "Plugins/OpenStudio/Check for Update."
+Check to see if you are using the most current release of the OpenStudio SketchUp Plugin by going to "Plugins/OpenStudio/Check for Update."
 ![Update](../../img/plugin_reference_guide/updates.png "Update")
 <p>*Above: Screenshot of Update Dialog Box*</p>
 
