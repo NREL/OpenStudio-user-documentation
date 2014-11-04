@@ -236,7 +236,7 @@ The following applications are included in the OpenStudio installation:
 * Create HVAC systems using a visual drag-and-drop interface
 * Add refrigeration systems using a layout visual view and a grid view
 * Add variable refrigerant flow systems using a layout visual view and a grid view
-* Change the model programaticall using the _Apply Measure Now_ feature
+* Change the model programmatically using the _Apply Measure Now_ feature
 * Run a simulation
 * View high level simulation results and detailed simulation output
 * Use reporting measures to create new/custom summary reports
