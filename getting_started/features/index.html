@@ -7,7 +7,8 @@
         
         
         
-        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <link rel="shortcut icon" href="../../favicon.ico">
+        
 
         <title>Current Features - OpenStudio User Docs</title>
 
@@ -55,15 +56,15 @@
                     <ul class="dropdown-menu">
                     
                         <li class="active">
-                            <a href="./">Current Features</a>
+                            <a href=".">Current Features</a>
                         </li>
                     
                         <li >
-                            <a href="../roadmap/">Planned Features</a>
+                            <a href="../roadmap">Planned Features</a>
                         </li>
                     
                         <li >
-                            <a href="../getting_started/">Installation and Introductory Tutorial</a>
+                            <a href="../getting_started">Installation and Introductory Tutorial</a>
                         </li>
                     
                     </ul>
@@ -76,31 +77,35 @@
                     <ul class="dropdown-menu">
                     
                         <li >
-                            <a href="../../next_steps/quick_start_guides/">Quick Start Guides</a>
+                            <a href="../../next_steps/quick_start_guides">Quick Start Guides</a>
                         </li>
                     
                         <li >
-                            <a href="../../next_steps/sketchup_plugin_interface/">SketchUp Plug-in</a>
+                            <a href="../../next_steps/sketchup_plugin_interface">SketchUp Plug-in</a>
                         </li>
                     
                         <li >
-                            <a href="../../next_steps/openstudio_application_interface/">OpenStudio Application</a>
+                            <a href="../../next_steps/openstudio_application_interface">OpenStudio Application</a>
                         </li>
                     
                         <li >
-                            <a href="../../next_steps/model_objects/">Overview of OpenStudio Model Objects</a>
+                            <a href="../../next_steps/model_objects">Overview of OpenStudio Model Objects</a>
                         </li>
                     
                         <li >
-                            <a href="../../next_steps/creating_your_model/">Creating Your Model</a>
+                            <a href="../../next_steps/creating_your_model">Creating Your Model</a>
                         </li>
                     
                         <li >
-                            <a href="../../next_steps/running_your_simulation/">Running Your Simulation & Viewing Results</a>
+                            <a href="../../next_steps/running_your_simulation">Running Your Simulation & Viewing Results</a>
                         </li>
                     
                         <li >
-                            <a href="../../next_steps/detailed_tutorials/tutorial_glhepro/">GLHEPro Tutorial</a>
+                            <a href="../../next_steps/detailed_tutorials/tutorial_glhepro">GLHEPro Tutorial</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../next_steps/detailed_tutorials/tutorial_shadingcontrols">Shading Controls Tutorial</a>
                         </li>
                     
                     </ul>
@@ -113,15 +118,15 @@
                     <ul class="dropdown-menu">
                     
                         <li >
-                            <a href="../../measures/about_measures/">About Measures</a>
+                            <a href="../../measures/about_measures">About Measures</a>
                         </li>
                     
                         <li >
-                            <a href="../../measures/measure_writing_guide/">Measure Writing Guide</a>
+                            <a href="../../measures/measure_writing_guide">Measure Writing Guide</a>
                         </li>
                     
                         <li >
-                            <a href="../../measures/measure_code_examples/">Measure Code Examples</a>
+                            <a href="../../measures/measure_code_examples">Measure Code Examples</a>
                         </li>
                     
                     </ul>
@@ -134,11 +139,11 @@
                     <ul class="dropdown-menu">
                     
                         <li >
-                            <a href="../../comparative_analysis/parametric_studies/">ParametricAnalysisTool</a>
+                            <a href="../../comparative_analysis/parametric_studies">ParametricAnalysisTool</a>
                         </li>
                     
                         <li >
-                            <a href="../../comparative_analysis/large_scale_analysis/">Large Scale Analysis</a>
+                            <a href="../../comparative_analysis/large_scale_analysis">Large Scale Analysis</a>
                         </li>
                     
                     </ul>
@@ -151,27 +156,27 @@
                     <ul class="dropdown-menu">
                     
                         <li >
-                            <a href="../../help/training/">Training</a>
+                            <a href="../../help/training">Training</a>
                         </li>
                     
                         <li >
-                            <a href="../../help/finding_model_data/">Finding Model Data</a>
+                            <a href="../../help/finding_model_data">Finding Model Data</a>
                         </li>
                     
                         <li >
-                            <a href="../../help/best_practices/">Best Practices</a>
+                            <a href="../../help/best_practices">Best Practices</a>
                         </li>
                     
                         <li >
-                            <a href="../../help/troubleshooting/">Troubleshooting</a>
+                            <a href="../../help/troubleshooting">Troubleshooting</a>
                         </li>
                     
                         <li >
-                            <a href="../../help/faq/">FAQ</a>
+                            <a href="../../help/faq">FAQ</a>
                         </li>
                     
                         <li >
-                            <a href="../../help/software_license/">Software License</a>
+                            <a href="../../help/software_license">Software License</a>
                         </li>
                     
                     </ul>
@@ -218,11 +223,9 @@
 
   <li class="main "><a href="#current-features">Current Features</a></li>
     
-      <li><a href="#import-and-export-options">Import and Export Options</a></li>
-    
       <li><a href="#building-geometry3d-cad">Building Geometry/3D CAD</a></li>
     
-      <li><a href="#building-materials">Building Materials</a></li>
+      <li><a href="#building-constructions-and-materials">Building Constructions and Materials</a></li>
     
       <li><a href="#building-loads">Building Loads</a></li>
     
@@ -233,6 +236,8 @@
       <li><a href="#location-specific-information">Location-Specific Information</a></li>
     
       <li><a href="#economics">Economics</a></li>
+    
+      <li><a href="#import-and-export-options">Import and Export Options</a></li>
     
       <li><a href="#analysis-of-existing-buildings">Analysis of Existing Buildings</a></li>
     
@@ -284,28 +289,19 @@
 
 <h1>Current Features</h1>
 
-<p>OpenStudio is constantly being improved, with a less developer release available every 2 weeks and a stable major release quarterly (4 per year).  The features that are available in the current major release are described below.  To learn what is coming in the future, see the <a href="../roadmap/">Planned Features</a> page.</p>
+<p>OpenStudio is constantly being improved, with a less stable developer release available every 2 weeks and a stable major release quarterly (4 per year).  The features that are available in the current major release are described below.  To learn what is coming in the future, see the <a href="../roadmap">Planned Features</a> page.</p>
 <h2 id="new-in-openstudio-150">New in OpenStudio 1.5.0</h2>
 <h4 id="grid-view-for-thermal-zones-and-space-types">Grid View for Thermal Zones and Space Types</h4>
 <p>Previously available for Refrigeration Walk Ins and Refrigeration Cases, grid-view (a grid-style interface providing detailed component views) has now been applied to the Space Types tab, as well as the Thermal Zones tab.</p>
 <p>Viewing and editing your thermal zones and space types in a grid view allows you to see all your thermal zones at once and compare settings. </p>
-<p><img alt="Opening Screen" src="../../img/features/grid_thumb.png" title="Grid View example" /></p>
+<p><img alt="Opening Screen" src="../../../../img/features/grid_thumb.png" title="Grid View example" /></p>
 <h4 id="plug-in-works-in-sketchup-2014">Plug-in Works in SketchUp 2014</h4>
-<p>This update allows OpenStudio to leverage upon the improvements available in Ruby 2.0, and provides compatibility with SketchUp 2014. OpenStudio will no longer be compatible with SketchUp 2013 or SketchUp 8. </p>
+<p>This update allows OpenStudio to leverage upon the improvements available in Ruby 2.0, and provides compatibility with SketchUp 2014. OpenStudio is no longer be compatible with SketchUp 2013 or SketchUp 8. </p>
 <p>For the full list of added features go to the <a href="http://github.com/NREL/OpenStudio/releases"><strong>Release Notes on GitHub</strong></a></p>
-<p>View the <a href="../roadmap/">OpenStudio Roadmap</a> to see the release plan for future features.</p>
+<p>View the <a href="../roadmap">OpenStudio Roadmap</a> to see the release plan for future features.</p>
 <hr />
 <h2 id="current-features">Current Features</h2>
 <p>As of OpenStudio Version 1.5.0</p>
-<h3 id="import-and-export-options">Import and Export Options</h3>
-<ul>
-<li>IDF import (geometry, loads, thermal zones, and schedules only) </li>
-<li>IDF export (full model including HVAC)</li>
-<li>gbXML import (geometry only)</li>
-<li>gbXML export (geometry only)</li>
-<li>SDD import (geometry only)</li>
-<li>SDD export (geometry only)</li>
-</ul>
 <h3 id="building-geometry3d-cad">Building Geometry/3D CAD</h3>
 <ul>
 <li>Quickly draw 3D building geometry using free plugin for SketchUp</li>
@@ -320,7 +316,7 @@
 <li>Assign and see building envelope constructions</li>
 <li>Add daylighting sensors</li>
 </ul>
-<h3 id="building-materials">Building Materials</h3>
+<h3 id="building-constructions-and-materials">Building Constructions and Materials</h3>
 <ul>
 <li>Specify default materials for each type of surface and subsurface (ext walls, windows, floors, etc.) in building</li>
 <li>Specify detailed or simple window properties</li>
@@ -442,6 +438,15 @@
 <li>Utility rates can include time-of-use, demand charges, ratchets, seasonal values, etc.</li>
 <li>Utility rates for Xcel Energy CO pre-made; users pick from list</li>
 </ul>
+<h3 id="import-and-export-options">Import and Export Options</h3>
+<ul>
+<li>IDF import (geometry, constructions, loads, thermal zones, and schedules only) </li>
+<li>IDF export (full model including HVAC)</li>
+<li>gbXML import (geometry, constructions, thermal zones, and schedules only)</li>
+<li>gbXML export (geometry, constructions, and thermal zones only)</li>
+<li>SDD import (simulation format - full model including HVAC)</li>
+<li>SDD export (input format - geometry, constructions, and thermal zones only)</li>
+</ul>
 <h3 id="analysis-of-existing-buildings">Analysis of Existing Buildings</h3>
 <ul>
 <li>Enter utility bills for all fuel types in building</li>
@@ -521,7 +526,7 @@
 <li>Create HVAC systems using a visual drag-and-drop interface</li>
 <li>Add refrigeration systems using a layout visual view and a grid view</li>
 <li>Add variable refrigerant flow systems using a layout visual view and a grid view</li>
-<li>Change the model programaticall using the <em>Apply Measure Now</em> feature</li>
+<li>Change the model programmatically using the <em>Apply Measure Now</em> feature</li>
 <li>Run a simulation</li>
 <li>View high level simulation results and detailed simulation output</li>
 <li>Use reporting measures to create new/custom summary reports</li>

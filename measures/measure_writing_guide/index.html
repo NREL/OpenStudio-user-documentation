@@ -7,7 +7,8 @@
         
         
         
-        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <link rel="shortcut icon" href="../../favicon.ico">
+        
 
         <title>Measure Writing Guide - OpenStudio User Docs</title>
 
@@ -55,15 +56,15 @@
                     <ul class="dropdown-menu">
                     
                         <li >
-                            <a href="../../getting_started/features/">Current Features</a>
+                            <a href="../../getting_started/features">Current Features</a>
                         </li>
                     
                         <li >
-                            <a href="../../getting_started/roadmap/">Planned Features</a>
+                            <a href="../../getting_started/roadmap">Planned Features</a>
                         </li>
                     
                         <li >
-                            <a href="../../getting_started/getting_started/">Installation and Introductory Tutorial</a>
+                            <a href="../../getting_started/getting_started">Installation and Introductory Tutorial</a>
                         </li>
                     
                     </ul>
@@ -76,31 +77,35 @@
                     <ul class="dropdown-menu">
                     
                         <li >
-                            <a href="../../next_steps/quick_start_guides/">Quick Start Guides</a>
+                            <a href="../../next_steps/quick_start_guides">Quick Start Guides</a>
                         </li>
                     
                         <li >
-                            <a href="../../next_steps/sketchup_plugin_interface/">SketchUp Plug-in</a>
+                            <a href="../../next_steps/sketchup_plugin_interface">SketchUp Plug-in</a>
                         </li>
                     
                         <li >
-                            <a href="../../next_steps/openstudio_application_interface/">OpenStudio Application</a>
+                            <a href="../../next_steps/openstudio_application_interface">OpenStudio Application</a>
                         </li>
                     
                         <li >
-                            <a href="../../next_steps/model_objects/">Overview of OpenStudio Model Objects</a>
+                            <a href="../../next_steps/model_objects">Overview of OpenStudio Model Objects</a>
                         </li>
                     
                         <li >
-                            <a href="../../next_steps/creating_your_model/">Creating Your Model</a>
+                            <a href="../../next_steps/creating_your_model">Creating Your Model</a>
                         </li>
                     
                         <li >
-                            <a href="../../next_steps/running_your_simulation/">Running Your Simulation & Viewing Results</a>
+                            <a href="../../next_steps/running_your_simulation">Running Your Simulation & Viewing Results</a>
                         </li>
                     
                         <li >
-                            <a href="../../next_steps/detailed_tutorials/tutorial_glhepro/">GLHEPro Tutorial</a>
+                            <a href="../../next_steps/detailed_tutorials/tutorial_glhepro">GLHEPro Tutorial</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../next_steps/detailed_tutorials/tutorial_shadingcontrols">Shading Controls Tutorial</a>
                         </li>
                     
                     </ul>
@@ -113,15 +118,15 @@
                     <ul class="dropdown-menu">
                     
                         <li >
-                            <a href="../about_measures/">About Measures</a>
+                            <a href="../about_measures">About Measures</a>
                         </li>
                     
                         <li class="active">
-                            <a href="./">Measure Writing Guide</a>
+                            <a href=".">Measure Writing Guide</a>
                         </li>
                     
                         <li >
-                            <a href="../measure_code_examples/">Measure Code Examples</a>
+                            <a href="../measure_code_examples">Measure Code Examples</a>
                         </li>
                     
                     </ul>
@@ -134,11 +139,11 @@
                     <ul class="dropdown-menu">
                     
                         <li >
-                            <a href="../../comparative_analysis/parametric_studies/">ParametricAnalysisTool</a>
+                            <a href="../../comparative_analysis/parametric_studies">ParametricAnalysisTool</a>
                         </li>
                     
                         <li >
-                            <a href="../../comparative_analysis/large_scale_analysis/">Large Scale Analysis</a>
+                            <a href="../../comparative_analysis/large_scale_analysis">Large Scale Analysis</a>
                         </li>
                     
                     </ul>
@@ -151,27 +156,27 @@
                     <ul class="dropdown-menu">
                     
                         <li >
-                            <a href="../../help/training/">Training</a>
+                            <a href="../../help/training">Training</a>
                         </li>
                     
                         <li >
-                            <a href="../../help/finding_model_data/">Finding Model Data</a>
+                            <a href="../../help/finding_model_data">Finding Model Data</a>
                         </li>
                     
                         <li >
-                            <a href="../../help/best_practices/">Best Practices</a>
+                            <a href="../../help/best_practices">Best Practices</a>
                         </li>
                     
                         <li >
-                            <a href="../../help/troubleshooting/">Troubleshooting</a>
+                            <a href="../../help/troubleshooting">Troubleshooting</a>
                         </li>
                     
                         <li >
-                            <a href="../../help/faq/">FAQ</a>
+                            <a href="../../help/faq">FAQ</a>
                         </li>
                     
                         <li >
-                            <a href="../../help/software_license/">Software License</a>
+                            <a href="../../help/software_license">Software License</a>
                         </li>
                     
                     </ul>
@@ -220,11 +225,15 @@
 
 	
 
-  <li class="main "><a href="#measurerb">measure.rb</a></li>
+  <li class="main "><a href="#measure-file-measurerb">Measure File - measure.rb</a></li>
     
       <li><a href="#starting-and-ending-the-measure">Starting and Ending the Measure</a></li>
     
       <li><a href="#name">Name</a></li>
+    
+      <li><a href="#description">Description</a></li>
+    
+      <li><a href="#modeler-description">Modeler Description</a></li>
     
       <li><a href="#arguments">Arguments</a></li>
     
@@ -236,17 +245,7 @@
 
 	
 
-  <li class="main "><a href="#measurexml">measure.xml</a></li>
-    
-      <li><a href="#starting-and-ending-measurexml">Starting and Ending measure.xml</a></li>
-    
-      <li><a href="#name_1">Name</a></li>
-    
-      <li><a href="#unique-identifier-and-version-identifier">Unique Identifier and Version Identifier</a></li>
-    
-      <li><a href="#description">Description</a></li>
-    
-      <li><a href="#modeler-description">Modeler Description</a></li>
+  <li class="main "><a href="#measure-file-measurexml">Measure File - measure.xml</a></li>
     
       <li><a href="#provenance">Provenance</a></li>
     
@@ -254,17 +253,19 @@
     
       <li><a href="#attributes">Attributes</a></li>
     
-      <li><a href="#files">Files</a></li>
-    
-      <li><a href="#energyplus-measures-edit-idf-files-directly">EnergyPlus Measures - Edit .idf files directly</a></li>
-    
 
   
 
 
 	
 
-  <li class="main "><a href="#output-attributes">Output Attributes</a></li>
+  <li class="main "><a href="#advanced-topics">Advanced Topics</a></li>
+    
+      <li><a href="#energyplus-measures">EnergyPlus Measures</a></li>
+    
+      <li><a href="#reporting-measures">Reporting Measures</a></li>
+    
+      <li><a href="#output-attributes">Output Attributes</a></li>
     
 
    
@@ -286,8 +287,11 @@
 
 <p>This guide goes through the details of an OpenStudio Measure, focusing mainly on writing new Measures and understanding existing Measures.</p>
 <h2 id="what-is-a-measure">What is a Measure?</h2>
-<p>In building design and retrofits, the terms <em>energy efficiency measure</em> (EEM) and <em>energy conservation measure</em> (ECM) refer to a specific change that can be made to a building to reduce its energy use.  As an example, if you are retrofitting an existing building and one of the ECMs suggested by the design team is "Add insulation to the roof", then you can run that measure to quickly alter your model.</p>
-<p>In OpenStudio, a measure is a set of programmatic instructions (such as an Excel macro) that makes changes to an energy model to reflect its application.  In our example, the measure might find the default construction used by roof surfaces in the model, copy this construction and add insulation material to the outside, then set the new construction with added insulation as the default construction to be used by roof surfaces.  Measures can be written specifically for an individual model, or they may be more generic to work on a wide range of possible models.</p>
+<p>In building design and retrofits, the terms <em>energy efficiency measure</em> (EEM) and <em>energy conservation measure</em> (ECM) refer to a specific change that can be made to a building to reduce its energy use.  As an example, if you are retrofitting an existing building and one of the ECMs suggested by the design team is "Add continuous insulation to the walls", then you can run that measure to quickly alter your model.</p>
+<p>In OpenStudio, a measure is a set of programmatic instructions (such as an Excel macro) that makes changes to an energy model to reflect its application.  In our example, the measure might find the construction used by exterior wall surfaces in the model and add a layer of continuous insulation.  Measures can be written specifically for an individual model, or they may be more generic to work on a wide range of possible models.</p>
+<!--- DLM: we need a link to how to create, copy, and update measures in the app and PAT-->
+
+<p>OpenStudio measures may be created using either the OpenStudio Application or the Parametric Analysis Tool.  Measures can be created from scratch or may be copied from another measure as a starting point.  Users should use either the OpenStudio Application or PAT to create measures, copying files directly in the file system is not supported.</p>
 <h2 id="using-this-guide">Using this Guide</h2>
 <p>Each OpenStudio measure is contained in its own folder (usually named after the measure) and contains two key files:</p>
 <ul>
@@ -295,35 +299,71 @@
 <li>measure.xml (contains information about the measure that allows other people to search for and find it).</li>
 </ul>
 <p>The measure may also contain tests to ensure that it works correctly and resources which are other files that the measure uses during its operation.  This file structure allows OpenStudio to easily share and use measures.</p>
-<p><img alt="guide image" src="../../img/measure-writing-guide/1.png" /></p>
+<p><img alt="guide image" src="../../../../img/measure-writing-guide/1.png" /></p>
 <p>This guide is directed primarily toward measure authors; some instructions also apply to users.</p>
 <p>This guide explains the purpose of each of these files and walks through their contents step-by-step to help you create your own measures.  The programming instructions for each measure are written in a programming language called Ruby (http://www.ruby-lang.org/en/).  If you are unfamiliar with the basic concepts of computer programming, it would be wise to acquire some background (preferably in the Ruby language, http://tryruby.org) before proceeding.  That said, the Ruby code in these examples is simple, so anyone familiar with basic programming concepts (variables, loops, etc.) should be able to read this guide with little difficulty.</p>
 <p>The types of files we discuss can be opened in a text editor (notepad++ is a free editor that works well for these examples, http://notepad-plus-plus.org/).  File content appears in boxes to differentiate it from the rest of the text.  Ellipses (...) represent code that was removed because it is not relevant to the current discussion.</p>
 <pre class="prettyprint well"><code>a = 5
 ...
-
 </code></pre>
 
-<h2 id="measurerb">measure.rb</h2>
+<h2 id="measure-file-measurerb">Measure File - measure.rb</h2>
 <p>The measure.rb file contains the Ruby program that allows the measure to make changes to the input model.  The bulk of the work done when writing a measure lies in editing this file.  The measure.rb file includes the beginning and end of the measure; the content of the measure is then divided into three general sections:  name, arguments, and run.  The following sections explain each section.</p>
 <h3 id="starting-and-ending-the-measure">Starting and Ending the Measure</h3>
 <p>Generally, each measure is a variation of an OpenStudio ModelUserScript.  You do not need to worry about what this means right now; we will explain the details later.  The important point is that the text below starts and ends a measure.  The class name for the measure (in light blue) is user defined. The same class name appears again on the last line where a new instance of the class is instantiated and registered with OpenStudio.  It is good practice to use UpperCamelCase (CapitalizeTheFirstLetterOfEveryWord) for your class name.  This must be a valid class name in Ruby; it must start with an uppercase letter and cannot contain spaces or other special characters.  Everything else about the measure (name, arguments, and run) will be inserted where the ellipsis is.</p>
-<pre class="prettyprint well"><code class="ruby">class AddInsulationToRoof &lt; OpenStudio::Ruleset::ModelUserScript
+<!--- DLM: should we explain model, e+, and reporting measures here or later?-->
+
+<pre class="prettyprint well"><code class="ruby">class AddContinuousInsulationToWalls &lt; OpenStudio::Ruleset::ModelUserScript
   ...
 end
 
-AddInsulationToRoof.new.registerWithApplication
+AddContinuousInsulationToWalls.new.registerWithApplication
 </code></pre>
 
 <h3 id="name">Name</h3>
-<p>Inside this method, you describe the measure name, which should be written such that another building professional (architect, engineer, etc.) can understand what the measure will do. The name in the XML file (described later) is used for the display in the Parametric Analysis Tool; it is a good practice to use the same name here.</p>
+<p>The measure's Name should be written such that another building professional (architect, engineer, etc.) can quickly understand what the measure will do when searching through a list of measures. This name is intended to be used in automatically generated reports. For example, in a table of energy savings by measure this name would identify each measure.</p>
 <pre class="prettyprint well"><code class="ruby">def name
-  return &quot;Add Insulation to the Roof&quot;
+  return &quot;Add Continuous Insulation to Walls&quot;
+end
+</code></pre>
+
+<p>Best practice measure names will be explicit about what they do, particularly with respect to whether they add, change, replace, or remove things from the model.  Compare specific names such as:</p>
+<ul>
+<li>Replace HVAC System with DX and Natural Gas AHUs</li>
+<li>Add Continuous Insulation to Walls</li>
+<li>Remove all Electric Equipment in Specified Space Types</li>
+</ul>
+<p>With vague names like:</p>
+<ul>
+<li>DX and Natural Gas AHUs</li>
+<li>Insulate Walls</li>
+<li>Modify Electric Equipment</li>
+</ul>
+<p>Remember that the measure name is the first contact a user has with the measure.  If the name is vague or misleading, it is detrimental to sharing and likely will not be used often.</p>
+<h3 id="description">Description</h3>
+<p>The Description should explain what the measure does in terms that general building professionals (architects, engineers, contractors, etc.) can understand.  This description is intended to be used in energy modeling reports that persuade the design team to implement the measure in the actual building design.  The  Description is written for a general audience and should not assume that the reader is familiar with the construction and design practices suggested by the measure. Thus, the Description may include details about how the measure would be implemented, along with explanations of associated qualitative benefits.  It is good practice to include citations in the measure if the description is taken from a known source or if specific benefits are listed.</p>
+<!---DLM: what voice should be used here?  is there a standard?-->
+
+<!---DLM: should description take the user args and allow substitution of values the user passed?-->
+
+<pre class="prettyprint well"><code class="ruby">def description
+  return &quot;Add a layer of continuous insulation between the framing members and exterior cladding. This insulation layer is in addition to any bat insulation installed between framing members.  Continuous insulation must be installed without thermal bridges other than fasteners and service openings, adding continuous insulation to a design may require longer fasteners.  For more information please see &lt;a href='http://fsc.americanchemistry.com/Exterior-Walls/Continuous-Insulation-Educational-Presentation.pdf'&gt;here&lt;/a&gt;.&quot;
+end
+</code></pre>
+
+<h3 id="modeler-description">Modeler Description</h3>
+<p>The Modeler Description is intended for the energy modeler using the measure.  It should explain how the measure is modeled, including any requirements about how the baseline model must be set up, major assumptions made by the measure, citations of references to applicable modeling resources, etc.  The energy modeler should be able to read this description and understand the changes the measure is making to the model and why.  The Modeler Description is written for an expert audience and can assume that the reader is familiar with common modeling practices.  This description is intended to be used in automatically generated reports.  For example, in an appendix describing each the modeling approach of each measure considered for an energy savings study this description would be printed for each measure.</p>
+<!---DLM: what voice should be used here?  is there a standard?-->
+
+<!---DLM: should modeler_description take the user args and allow substitution of values the user passed?-->
+
+<pre class="prettyprint well"><code class="ruby">def modeler_description
+  return &quot;This measure will search through all constructions used on exterior walls. For each construction, if the second material layer is of type OS:Material:NoMass, then that layer will be assumed to be existing continuous insulation and will be replaced by the material layer specified in this measure. If the second layer is not of type OS:Material:NoMass, then a new material layer will be inserted at the second material layer position. If any non-exterior wall surfaces use this construction, it will be cloned before being altered and the altered construction will be hard assigned to the appropriate exterior wall surfaces.&quot;
 end
 </code></pre>
 
 <h3 id="arguments">Arguments</h3>
-<p>Inside this method, you describe which, if any, input parameters the user should be able to change before running the measure.  In the example "Add insulation to the roof," you might want the user to specify the thickness of the insulation along with the R-value per inch of thickness.  When a measure has input parameters that the user can edit, the user can change the input values to perform a parametric analysis to answer "what-if" questions and find the best option.</p>
+<p>Inside this method, you describe which, if any, input parameters the user should be able to change before running the measure.  In the example "Add Continuous Insulation to Walls", you might want the user to specify the thickness of the insulation along with the R-value per inch of thickness.  When a measure has input parameters that the user can edit, the user can change the input values to perform a parametric analysis to answer "what-if" questions and find the best option.</p>
 <p>The arguments section opens and closes as follows:</p>
 <pre class="prettyprint well"><code class="ruby">def arguments(model)
   args = OpenStudio::Ruleset::OSArgumentVector.new
@@ -442,12 +482,12 @@ v6 = runner.getOptionalWorkspaceObjectChoiceValue('v6',user_arguments, model)
 <h4 id="info-warning-and-error-messages">Info, Warning, and Error Messages</h4>
 <p>You can send three types of messages to the user from the measure.  These messages will be shown in the GUI when the measure is run.  You can thus let the user know something, but does not need to force the user to go into obscure error and output files.  Each message has a specific purpose.  The messages below are short for clarity; however, there is no limit to the length of the messages passed.  Best practice messages will be concise, yet specific enough that the user knows exactly where to go to address any issue.</p>
 <h5 id="info-messages">Info Messages</h5>
-<p>Info messages simply let the user know what happened as the measure was running.  Info messages do not cause the measure to fail or stop running.  In our example of "Add insulation to roof," you might decide to tell the user the number of surfaces to which insulation was added.  In Ruby, inserting "#{num_surfaces}" in the message tells Ruby to convert the value of the variable "num_surfaces" to a string and substitute the result into the message.</p>
+<p>Info messages simply let the user know what happened as the measure was running.  Info messages do not cause the measure to fail or stop running.  In our example of "Add Continuous Insulation to Walls", you might decide to tell the user the number of surfaces to which insulation was added.  In Ruby, inserting "#{num_surfaces}" in the message tells Ruby to convert the value of the variable "num_surfaces" to a string and substitute the result into the message.</p>
 <pre class="prettyprint well"><code class="ruby">runner.registerInfo(&quot;Added insulation to #{num_surfaces} surfaces.&quot;)
 </code></pre>
 
 <h5 id="warning-messages">Warning Messages</h5>
-<p>Warning messages enable you to warn the user about something that may be critical to the assumptions or that significantly affects how the measure runs.  Warning messages do not cause the measure to stop running.  In our example of "Add insulation to roof," you might want to warn the user if the insulation thickness entered exceeds 12 inches, because adding more than 12 inches of insulation is unusual but not unheard of.</p>
+<p>Warning messages enable you to warn the user about something that may be critical to the assumptions or that significantly affects how the measure runs.  Warning messages do not cause the measure to stop running.  In our example of "Add Continuous Insulation to Walls", you might want to warn the user if the insulation thickness entered exceeds 12 inches, because adding more than 12 inches of insulation is unusual but not unheard of.</p>
 <pre class="prettyprint well"><code class="ruby">runner.registerWarning(&quot;#{insul_thckns} inches of insulation seems high.&quot;)
 </code></pre>
 
@@ -579,46 +619,46 @@ end
 <p>Write a measure that will remove all lights currently in the "Enclosed Office" space type and replace them with new lights that have a lighting power density (LPD) of 10 W/m2.</p>
 <h5 id="figuring-out-the-modeling-approach">Figuring Out the Modeling Approach</h5>
 <p>The first thing to do is understand how the measure would be modeled in OpenStudio, and make a list of the objects involved.  The easiest way to do this is to open the OpenStudio Application and look through the GUI.  In this case, we'll start on the "Space Types" tab.</p>
-<p><img alt="guide image2" src="../../img/measure-writing-guide/2.png" /></p>
+<p><img alt="guide image2" src="../../../../img/measure-writing-guide/2.png" /></p>
 <p>On this tab, first click on the first object (in the left column) is "Space Type."  Inside the Space Type, next to the lights icon, the term "Definition" appears.  The name of this particular definition is "ASHRAE_90.1-2004_Office_LPD."  To learn more about this definition, go to the "Loads" tab.</p>
-<p><img alt="Guide image3" src="../../img/measure-writing-guide/3.png" /></p>
+<p><img alt="Guide image3" src="../../../../img/measure-writing-guide/3.png" /></p>
 <p>On the left side under the "Loads" tab is a category called "Lights Definitions."  Under this category is the definition "ASHRAE_90.1-2004_Office_LPD" that was referenced on the "Space Types" tab.  One field is titled "Energy Per Space Floor Area" with units of "W/ft2."  Although the GUIs may show IP units, the methods of the OpenStudio model are all written in SI units.</p>
 <h5 id="restating-the-measure-using-openstudio-terms">Restating the Measure Using OpenStudio Terms</h5>
 <p>Restate the measure using the names of the OpenStudio model objects found during the GUI exploration:</p>
 <p>Find the SpaceType called "Enclosed Office".  Replace any LightsDefinitions referenced by Lights in this SpaceType with a new LightsDefinition having "Energy Per Space Floor Area" = 10 W/m2.</p>
 <h5 id="finding-the-openstudio-methods-using-the-documentation">Finding the OpenStudio Methods: Using the Documentation</h5>
 <p>All the OpenStudio code documentation lives online at https://s3.amazonaws.com/openstudio-sdk-documentation/index.html.  <a href="https://s3.amazonaws.com/openstudio-sdk-documentation/index.html">Open this website.</a></p>
-<p><img alt="Methods 1" src="../../img/measure-writing-guide/4.png" /></p>
+<p><img alt="Methods 1" src="../../../../img/measure-writing-guide/4.png" /></p>
 <p>Click on the model link to explore.</p>
-<p><img alt="Methods 2" src="../../img/measure-writing-guide/5.png" /></p>
+<p><img alt="Methods 2" src="../../../../img/measure-writing-guide/5.png" /></p>
 <p>This will take you to the OpenStudio Model Overview page.</p>
-<p><img alt="Core" src="../../img/measure-writing-guide/6.png" /></p>
+<p><img alt="Core" src="../../../../img/measure-writing-guide/6.png" /></p>
 <p>Select the "Objects/Objects List" to find more information on individual model objects.
-<img alt="Core" src="../../img/measure-writing-guide/6b.png" /></p>
+<img alt="Core" src="../../../../img/measure-writing-guide/6b.png" /></p>
 <p>Click "<strong>SpaceType</strong>"."</p>
-<p><img alt="click space" src="../../img/measure-writing-guide/7.png" /></p>
+<p><img alt="click space" src="../../../../img/measure-writing-guide/7.png" /></p>
 <p>This screen contains the documentation for the SpaceType class.  The methods are generally split into four categories: Constructors and Destructors, Getters, Setters, and Other. SpaceType is a base class of ResourceObject. You can look into the ResourceObject for additional methods beyond what is in the SpaceType documentation.</p>
 <h6 id="understanding-the-methods">Understanding the Methods</h6>
 <p>At first glance, the methods look cryptic, not at all like those shown in the examples, because this is the C++ documentation and the methods used are the Ruby translation of these same methods.  These methods can be decoded as follows:</p>
 <p>The name of the method:</p>
-<p><img alt="name of method" src="../../img/measure-writing-guide/8.png" /></p>
+<p><img alt="name of method" src="../../../../img/measure-writing-guide/8.png" /></p>
 <p>The method names are generally descriptive enough that it is possible to understand what they do without any other information.  Here is how the method would be used in Ruby:</p>
 <pre class="prettyprint well"><code class="ruby">design_spec_oa = space_type.designSpecificationOutdoorAir
 </code></pre>
 
 <p>The type of object returned by the method:</p>
-<p><img alt="type of object" src="../../img/measure-writing-guide/9.png" /></p>
+<p><img alt="type of object" src="../../../../img/measure-writing-guide/9.png" /></p>
 <p>Methods Return Types:</p>
 <p>bool = true/false</p>
 <p>double = a number</p>
 <p>std::string = text</p>
 <p>void = does not return anything</p>
 <p>std::vector<InternalMass> = A vector of the type of objects inside the &lt;&gt;; in this case the Ruby class returned will be a InternalMassVector.</p>
-<p>boost::optional<DesignSpecificationOutdoorAir> = an optional that may either be empty or point to an actual object of the type inside the &lt;&gt;; in this case the Ruby class returned will be an Optional DesignSpecificationOutdoorAir.  See the section <a href="#345-optionals-and-get">Optionals and .get</a> for more information about optional types.</p>
+<p>boost::optional<DesignSpecificationOutdoorAir> = an optional that may either be empty or point to an actual object of the type inside the &lt;&gt;; in this case the Ruby class returned will be an Optional DesignSpecificationOutdoorAir.  See the section <a href="../../#345-optionals-and-get">Optionals and .get</a> for more information about optional types.</p>
 <p>The written description of the method:</p>
-<p><img alt="description" src="../../img/measure-writing-guide/10.png" /></p>
+<p><img alt="description" src="../../../../img/measure-writing-guide/10.png" /></p>
 <p>The inputs needed by the method:</p>
-<p><img alt="inputs" src="../../img/measure-writing-guide/11.png" /></p>
+<p><img alt="inputs" src="../../../../img/measure-writing-guide/11.png" /></p>
 <p>Methods that do not need inputs have empty parentheses ().  Ruby allows you to skip adding the empty parentheses when you call methods with no arguments.  You can ignore the const and &amp; C++ keywords in the declarations for now.</p>
 <h5 id="using-the-documentation-for-the-example-measure">Using the Documentation for the Example Measure</h5>
 <p>With an understanding of how to read the documentation, the example measure continues.</p>
@@ -632,7 +672,7 @@ end
 </code></pre>
 
 <p>Once you have found a SpaceType matching the name you are looking for, you need to get all the Lights in Spaces of this SpaceType.  The documentation for SpaceType includes a method to get a vector of all Lights in Spaces of this SpaceType:</p>
-<p><img alt="Space Matching" src="../../img/measure-writing-guide/12.png" /></p>
+<p><img alt="Space Matching" src="../../../../img/measure-writing-guide/12.png" /></p>
 <p>You can extend the code to then loop over all these Lights:</p>
 <pre class="prettyprint well"><code class="ruby">space_types = model.getSpaceTypes
 space_types.each do |space_type|
@@ -645,13 +685,13 @@ end
 </code></pre>
 
 <p>Now you need to make a new LightsDefinition to replace the ones these Lights currently use.  The documentation for LightsDefinition shows a constructor that expects a Model as the input.</p>
-<p><img alt="Lights def" src="../../img/measure-writing-guide/13.png" /></p>
+<p><img alt="Lights def" src="../../../../img/measure-writing-guide/13.png" /></p>
 <p>Constructors translated from C++ to Ruby take the following form.  The only difference may be which arguments the constructor requires; usually it is simply a Model.</p>
 <pre class="prettyprint well"><code class="ruby">new_thing = OpenStudio::Model::NewThingClassName.new(model)
 </code></pre>
 
 <p>Now, figure out how to set the LPD of the LightsDefinition to 10 W/m2.  The LightsDefinition documentation presents a method.</p>
-<p><img alt="lights def2" src="../../img/measure-writing-guide/14.png" /></p>
+<p><img alt="lights def2" src="../../../../img/measure-writing-guide/14.png" /></p>
 <p>You will also want to name the new LightsDefinition object for better user comprehension.  Most OpenStudio objects have a ".setName(new_name)" method.  You can put this together to make the LightsDefinition object.</p>
 <pre class="prettyprint well"><code class="ruby">new_lights_def = OpenStudio::Model::LightsDefinition.new(model)
 new_lights_def.setWattsperSpaceFloorArea(10.0)
@@ -659,7 +699,7 @@ new_lights_def.setName(&quot;10 W/m^2 Lights Definition&quot;)
 </code></pre>
 
 <p>Now that you have a new LightsDefinition object, you need to figure out how to replace the existing LightsDefinition with the new one.  The Lights documentation contains a method to set the lights definition.</p>
-<p><img alt="Replace Existing" src="../../img/measure-writing-guide/15.png" /></p>
+<p><img alt="Replace Existing" src="../../../../img/measure-writing-guide/15.png" /></p>
 <p>Putting this all together, we get:</p>
 <pre class="prettyprint well"><code class="ruby">new_lights_def = OpenStudio::Model::LightsDefinition.new(model)
 new_lights_def.setWattsperSpaceFloorArea(10.0)
@@ -791,51 +831,8 @@ end #end the measure
 ReplaceLightsInSpaceTypeWithLPD.new.registerWithApplication
 </code></pre>
 
-<h2 id="measurexml">measure.xml</h2>
-<p>The measure.xml file contains metadata that allow the measure to be filed into an organizational structure, provide an explanation about what the measure does and how it works, and tell the GUI where in the workflow the measure can go.  The GUI creates a new measure.xml file when you click on the "Create a New Measure" button.  The wizard that appears guides you through filling in the measure.xml file.  After this wizard, you will need to make any changes to the measure.xml file manually.  The following sections describe the purpose and available options for each section of measure.xml.</p>
-<p><img alt="Name of Measure" src="../../img/measure-writing-guide/16.png" /></p>
-<h3 id="starting-and-ending-measurexml">Starting and Ending measure.xml</h3>
-<p>The following boilerplate text is used to open and close the measure.xml file.</p>
-<pre class="prettyprint well"><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
-&lt;measure xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&gt;
-  ...
-&lt;/measure&gt;
-</code></pre>
-
-<h3 id="name_1">Name</h3>
-<p>The name section defines the name of the measure.  Best practice is to ensure that this name matches the name method in the measure.rb file.  The name listed in measure.xml will be shown in the Local Library window.</p>
-<pre class="prettyprint well"><code class="xml">&lt;name&gt;Replace HVAC System with DX and Natural Gas AHUs&lt;/name&gt;
-</code></pre>
-
-<p>Best practice measure names will be explicit about what they do, particularly with respect to whether they add, replace, or remove things from the model.  Compare specific names such as:</p>
-<ul>
-<li>Replace HVAC System with DX and Natural Gas AHUs</li>
-<li>Add Insulation to all Roof Surfaces</li>
-<li>Remove all Electric Equipment in Specified Space Types</li>
-</ul>
-<p>With vague names like:</p>
-<ul>
-<li>DX and Natural Gas AHUs</li>
-<li>Insulate Roofs</li>
-<li>Modify Electric Equipment</li>
-</ul>
-<p>Remember that the measure name is the first contact a user has with the measure.  If the name is vague or misleading, it is detrimental to sharing and likely will not be used often.</p>
-<h3 id="unique-identifier-and-version-identifier">Unique Identifier and Version Identifier</h3>
-<p>The UID and Version ID are globally unique identifiers called GUIDs.  They are used to differentiate between measures and between different versions of the same measure.  When you create a measure.xml, the UID and Version ID will already be filled in.  The UID stays the same for the entire life of the measure.  The Version ID changes whenever the measure is edited.  You should not edit these numbers manually.</p>
-<pre class="prettyprint well"><code class="xml">&lt;uid&gt;{845e2a81-6e27-44ac-9ad9-225960fc1e79}&lt;/uid&gt;
-&lt;version_id&gt;{08d32420-7476-4382-8c36-c6a857843e1f}&lt;/version_id&gt;
-</code></pre>
-
-<h3 id="description">Description</h3>
-<p>The Description should explain what the measure does in terms that general building professionals (architects, engineers, contractors, etc.) can understand.  This description will likely be used to create energy modeling reports to persuade the design team to implement the measure in the actual building design.  Thus, the Description may include details about how the measure would be implemented, along with explanations of associated qualitative benefits.  It is good practice to include citations in the measure if the description is taken from a known source or if specific benefits are listed.</p>
-<pre class="prettyprint well"><code class="xml">&lt;description&gt;This measure adds insulation to the roof.  This may be accomplished by adding additional layers of foam insulation under the roof membrane.  This may require longer fasteners.&lt;/description&gt;
-</code></pre>
-
-<h3 id="modeler-description">Modeler Description</h3>
-<p>The Modeler Description is intended for the energy modeler using the measure.  It should explain how the measure is modeled, including any requirements about how the baseline model must be set up, major assumptions made by the model, citations of references to applicable modeling resources, etc.  The energy modeler should be able to read this description and understand the changes the measure is making to the model and why.  Because the Modeler Description is written for an expert audience, using common abbreviations for brevity is good practice.</p>
-<pre class="prettyprint well"><code class="xml">&lt;modeler_description&gt;Find constructions used for roofs, make copies of these and assign them to the appropriate construction sets or surfaces. Identify which layer of the construction is the insulation layer. Layer to change could be Material, No Mass Material, or Air Gap Material...&lt;/modeler_description&gt;
-</code></pre>
-
+<h2 id="measure-file-measurexml">Measure File - measure.xml</h2>
+<p>The measure.xml file contains metadata that allow the measure to be filed into an organizational structure, provide an explanation about what the measure does and how it works, and tell the GUI where in the workflow the measure can go.  The GUI creates a new measure.xml file when you click on the "Create a New Measure" button.  In general, you should not need to make any changes to the measure.xml file manually.  The OpenStudio Application and PAT detect any changes that are made to measures in your "My Measures" directory when you press the "Sync Project Measures with Library" button.  Changes to the name, description, modeler description or any other measure properties will be updated in the measure and the measure will be given a new version identifier.  However, there are a few limited cases when you will need to modify the measure.xml file by hand.  These cases are 1) changing the measure's author information (i.e. provenance), 2) changing the tags which determine where the measure is listed in the BCL measure taxonomy, 3) changing attributes which are used when searching for the measure on the BCL.  To make changes to any of these items you will have to edit the appropriate section (described below) in the measure.xml file by hand, then press the "Sync Project Measures with Library" button in either the OpenStudio Application or PAT to assign a new version identifier.</p>
 <h3 id="provenance">Provenance</h3>
 <p>The Provenance section describes who wrote the measure and when.  As author, you may identify yourself however you desire; current convention is to use first initial of first name, followed by full last name (Andrew Parker -&gt; aparker).  You may name multiple authors.  The time format follows ISO 8601 (http://en.wikipedia.org/wiki/ISO_8601).</p>
 <pre class="prettyprint well"><code class="xml">&lt;provenances&gt;
@@ -898,131 +895,72 @@ ReplaceLightsInSpaceTypeWithLPD.new.registerWithApplication
 </ul>
 </li>
 </ul>
-<p>The place inside the measure taxonomy is indicated Level1.level1.  An example is Envelope.Fenestration.</p>
+<p>The place inside the measure taxonomy is indicated Level1.level2.  An example is Envelope.Fenestration.</p>
 <pre class="prettyprint well"><code class="xml">&lt;tags&gt;
   &lt;tag&gt;Envelope.Fenestration&lt;/tag&gt;
 &lt;/tags&gt;
 </code></pre>
 
 <h3 id="attributes">Attributes</h3>
-<p>The Attributes section gives some additional metadata that allow the GUI to display the measure in the correct place in the workflow and show only measures that can be used in a particular place (for example, measures that use the SketchUp API in the SketchUp plugin).</p>
-<h4 id="measure-type">Measure Type</h4>
-<p>The Measure Type describes the type of input file that the measure expects in order to function.</p>
-<h5 id="measure-type-modelmeasure">Measure Type = ModelMeasure</h5>
-<p>ModelMeasures require access to the OpenStudio model (.osm).  This is the most common type of measure, and appears under the "Model Measures" heading in the GUI.</p>
-<h5 id="measure-type-energyplusmeasure">Measure Type = EnergyPlusMeasure</h5>
-<p>EnergyPlusMeasures require access to the EnergyPlus file (.idf) directly.  This feature allows users to access EnergyPlus functionality that is not yet accessible in OpenStudio.  EnergyPlusMeasures can happen only after the .osm to .idf translation in the workflow.</p>
-<h5 id="measure-type-utilitymeasure">Measure Type = UtilityMeasure</h5>
-<p>UtilityMeasures do not require access to the .osm or the .idf.  They might create a report or perform some other function.  This option is not commonly used outside of script-based (non-GUI) analyses.</p>
-<h4 id="measure-function">Measure Function</h4>
-<p>Measure Function describes whether the measure is intended to modify the energy model, create a report, or perform another miscellaneous function.</p>
-<h5 id="measure-function-measure">Measure Function = Measure</h5>
-<p>Measures modify the energy model (either the .osm or .idf, as defined by ScriptType).</p>
-<h5 id="measure-function-report">Measure Function = Report</h5>
-<p>Reports do not modify the energy model.  Reports create some report file (.xml, .html, .csv, etc.) for user consumption.</p>
-<h5 id="measure-function-other">Measure Function = Other</h5>
-<p>Others do not modify the energy model or create reports.  This option is not commonly used outside of script-based (non-GUI) analyses.</p>
-<h4 id="requires-energyplus-results">Requires EnergyPlus Results</h4>
-<p>This attribute determines whether the measure requires simulation results to operate.  For example, a report measure that writes a monthly energy consumption summary report needs the simulation results to work correctly.  Options are true (require results) or false (do not require results).</p>
-<h4 id="uses-sketchup-api">Uses SketchUp API</h4>
-<p>This attribute specifies whether the measure uses methods that are available only to the SketchUp plug-in.  For example, a measure may want to move cameras around or specify how the model is rendered.  Measures that use the SketchUp API can be used only in the SketchUp plugin, and will not show in the PAT GUI. Options are true (use SketchUp API) or false (do not use SketchUp API).</p>
+<p>The Attributes section gives additional metadata that allow the GUI to display the measure in the correct place in the workflow and show only measures that can be used by a particular tool.  There are currently two standardized attributes used for measures "Intended Software Tool" and "Intended Use Case", these are populated when a new measure is created.  If you wish to change these after the measure has been created you must edit the measure.xml file manually.  Other attributes may be added but are not used by OpenStudio applications.  </p>
+<!--- DLM: at some point we might want to create a list of measure attributes similar to the component ones https://bcl.nrel.gov/list-of-attributes -->
+
+<h4 id="intended-software-tool">Intended Software Tool</h4>
+<p>The Intended Software Tool attribute lists the tools that this measure is intended to be used by.  Software tools may choose to only display measures which list them as an intended software tool.  A measure can list more than one tool as intended software tool.  The list of software tools used by OpenStudio is:</p>
+<ul>
+<li>Apply Measure Now - measures intended to be run directly on the current model in the OpenStudio Application.  Only Model measures may be used in the Apply Measure Now feature.</li>
+<li>OpenStudio Application - measures intended to be run as part of the simulation workflow in the OpenStudio Application.</li>
+<li>Parametric Analysis Tool - measures intended to be run as part of the simulation workflow in PAT.</li>
+<li>Analysis Spreadsheet - measures intended to be run on the cloud using the OpenStudio Analysis Spreadsheet.</li>
+</ul>
+<!--- DLM: I forgot all the details about which things are which, need to review with David and Nick -->
+
+<p>Example xml:</p>
 <pre class="prettyprint well"><code class="xml">&lt;attributes&gt;
   &lt;attribute&gt;
-    &lt;name&gt;Script Type&lt;/name&gt;
-    &lt;value&gt;ModelScript&lt;/value&gt;
+    &lt;name&gt;Intended Software Tool&lt;/name&gt;
+    &lt;value&gt;Apply Measure Now&lt;/value&gt;
     &lt;datatype&gt;string&lt;/datatype&gt;
   &lt;/attribute&gt;
   &lt;attribute&gt;
-    &lt;name&gt;Script Function&lt;/name&gt;
-    &lt;value&gt;Measure&lt;/value&gt;
+    &lt;name&gt;Intended Software Tool&lt;/name&gt;
+    &lt;value&gt;OpenStudio Application&lt;/value&gt;
     &lt;datatype&gt;string&lt;/datatype&gt;
-  &lt;/attribute&gt;
-  &lt;attribute&gt;
-    &lt;name&gt;Requires EnergyPlus Results&lt;/name&gt;
-    &lt;value&gt;false&lt;/value&gt;
-    &lt;datatype&gt;Boolean&lt;/datatype&gt;
-  &lt;/attribute&gt;
-  &lt;attribute&gt;
-    &lt;name&gt;Uses SketchUp API&lt;/name&gt;
-    &lt;value&gt;false&lt;/value&gt;
-    &lt;datatype&gt;Boolean&lt;/datatype&gt;
   &lt;/attribute&gt;
 &lt;/attributes&gt;
 </code></pre>
 
-<h3 id="files">Files</h3>
-<p>This section describes which files the measure uses and which version of OpenStudio the measure was written for.  The version section contains the software program and version that the measure was first written for.  You should strive to maintain compatibility of your measures with the software from the initial version to the current version. This may mean that you need to add version-dependent code to handle future changes in the software's API.  The filename element gives the name of the file.  The filetype tag is the file's extension.  The usage_type element determines which folder the file is contained in; options are "script" for the top level files, "test" for the files in the tests folder, and "resource" for files in the resources folder.  The checksum element is computed from the file contents and can be used to tell whether the file has been changed.</p>
-<pre class="prettyprint well"><code class="xml">&lt;files&gt;
-  &lt;file&gt;
-    &lt;version&gt;
-      &lt;software_program&gt;OpenStudio&lt;/software_program&gt;
-      &lt;identifier&gt;0.10.2&lt;/identifier&gt;
-    &lt;/version&gt;
-    &lt;filename&gt;measure.rb&lt;/filename&gt;
-    &lt;filetype&gt;rb&lt;/filetype&gt;
-    &lt;usage_type&gt;script&lt;/usage_type&gt;
-    &lt;checksum&gt;5A270A31&lt;/checksum&gt;
-  &lt;/file&gt;
-&lt;/files&gt;
+<h4 id="intended-use-case">Intended Use Case</h4>
+<p>The Intended Use Case attribute describes the typical scenarios that this measure will be used in. Software tools may choose to only display measures which apply to their intended use case.  A measure can list more than one intended use case.  The list of use cases used by OpenStudio is:</p>
+<!--- DLM: I forgot all the details about which things are which, need to review with David and Nick -->
+
+<!--- DLM: Do we need a standards use case? For things that require standards markup?-->
+
+<ul>
+<li>Model Articulation - measures which create building modeling content. Examples include a building geometry footprint generator or a measure that adds an HVAC system to a model which does not have one.  </li>
+<li>Calibration - measures which alter an existing model for the purposes of calibration. Examples include measures which fine tune infiltration levels or adjust existing lighting power to account for uncertainty in operational schedules.</li>
+<li>Sensitivity Analysis - measures which alter an existing model to determine what parameters are most sensitive. Examples include a measure which makes all walls adiabatic or a measure which removes all lights from the building.</li>
+<li>New Construction EE - measures which are appropriate energy conservation measures for new construction applications. Examples include increased framing depth or reduced window to wall ratio.</li>
+<li>Retrofit EE - measures which are appropriate energy conservation measures for retrofit applications. Examples include replacing incandescent light fixtures with high efficiency T-8s or adding occupancy sensors to uncommonly used spaces.</li>
+<li>Automatic Report Generation - measures which report human or machine readable content. Examples include a report showing total floor area per space type or a report which plots energy use as a function of outdoor temperature.</li>
+</ul>
+<p>Example xml:</p>
+<pre class="prettyprint well"><code class="xml">&lt;attributes&gt;
+  &lt;attribute&gt;
+    &lt;name&gt;Intended Use Case&lt;/name&gt;
+    &lt;value&gt;Model Articulation&quot;&lt;/value&gt;
+    &lt;datatype&gt;string&lt;/datatype&gt;
+  &lt;/attribute&gt;
+  &lt;attribute&gt;
+    &lt;name&gt;Intended Use Case&lt;/name&gt;
+    &lt;value&gt;New Construction EE&lt;/value&gt;
+    &lt;datatype&gt;string&lt;/datatype&gt;
+  &lt;/attribute&gt;
+&lt;/attributes&gt;
 </code></pre>
 
-<h4 id="putting-it-all-together_1">Putting it all Together</h4>
-<p>A complete measure.xml file looks like this:</p>
-<pre class="prettyprint well"><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
-&lt;measure xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&gt;
-  &lt;name&gt;Set Window to Wall Ratio by Facade&lt;/name&gt;
-  &lt;uid&gt;{845e2a81-6e27-44ac-9ad9-225960fc1e79}&lt;/uid&gt;
-  &lt;version_id&gt;{08d32420-7476-4382-8c36-c6a857843e1f}&lt;/version_id&gt;
-  &lt;description&gt;Description goes here.&lt;/description&gt;
-  &lt;modeler_description&gt;Modeler description goes here.&lt;/modeler_description&gt;
-  &lt;provenances&gt;
-    &lt;provenance&gt;
-      &lt;author&gt;aparker&lt;/author&gt;
-      &lt;datetime&gt;2013-01-22T15:00:00Z&lt;/datetime&gt;
-    &lt;/provenance&gt;
-    &lt;provenance_required&gt;true&lt;/provenance_required&gt;
-  &lt;/provenances&gt;
-  &lt;tags&gt;
-    &lt;tag&gt;Envelope&lt;/tag&gt;
-  &lt;/tags&gt;
-  &lt;attributes&gt;
-    &lt;attribute&gt;
-      &lt;name&gt;Measure Type&lt;/name&gt;
-      &lt;value&gt;ModelMeasure&lt;/value&gt;
-      &lt;datatype&gt;string&lt;/datatype&gt;
-    &lt;/attribute&gt;
-    &lt;attribute&gt;
-      &lt;name&gt;Measure Function&lt;/name&gt;
-      &lt;value&gt;Measure&lt;/value&gt;
-      &lt;datatype&gt;string&lt;/datatype&gt;
-    &lt;/attribute&gt;
-    &lt;attribute&gt;
-      &lt;name&gt;Requires EnergyPlus Results&lt;/name&gt;
-      &lt;value&gt;false&lt;/value&gt;
-      &lt;datatype&gt;boolean&lt;/datatype&gt;
-    &lt;/attribute&gt;
-    &lt;attribute&gt;
-      &lt;name&gt;Uses SketchUp API&lt;/name&gt;
-      &lt;value&gt;false&lt;/value&gt;
-      &lt;datatype&gt;boolean&lt;/datatype&gt;
-    &lt;/attribute&gt;
-  &lt;/attributes&gt;
-  &lt;files&gt;
-    &lt;file&gt;
-      &lt;version&gt;
-        &lt;software_program&gt;OpenStudio&lt;/software_program&gt;
-        &lt;identifier&gt;0.10.2&lt;/identifier&gt;
-      &lt;/version&gt;
-      &lt;filename&gt;measure.rb&lt;/filename&gt;
-      &lt;filetype&gt;rb&lt;/filetype&gt;
-      &lt;usage_type&gt;script&lt;/usage_type&gt;
-      &lt;checksum&gt;5A270A31&lt;/checksum&gt;
-    &lt;/file&gt;
-  &lt;/files&gt;
-&lt;/measure&gt;
-</code></pre>
-
-<h3 id="energyplus-measures-edit-idf-files-directly">EnergyPlus Measures - Edit .idf files directly</h3>
+<h2 id="advanced-topics">Advanced Topics</h2>
+<h3 id="energyplus-measures">EnergyPlus Measures</h3>
 <p>Measures are usually written to work on an OpenStudio model.  This is preferred because it allows you to use the OpenStudio Model API, which includes specialized methods for each type of object in the OpenStudio Model.  However, when a particular EnergyPlus feature is not yet exposed in the OpenStudio Model, you may choose to write a measure that operates on the EnergyPlus data model directly.  Measures of this type are run only after the model is translated from OpenStudio to EnergyPlus.</p>
 <p>Below are some specific code differences for EnergyPlus versus. Model (OpenStudio) measures.</p>
 <p>The class line should refer to "WorkspaceScript" versus "ModelScript", as shown in the following example:</p>
@@ -1109,7 +1047,7 @@ ReplaceLightsInSpaceTypeWithLPD.new.registerWithApplication
 
 <h4 id="finding-documentation-on-energyplus-objects">Finding Documentation on EnergyPlus Objects</h4>
 <p>The "[InputOutputReference.pdf][11]" document that ships with EnergyPlus describes every EnergyPlus object.  Below is a screenshot of part of the documentation for the "ComponentCost:LineItem" object.  It describes which fields are required versus optional, and what kinds of data are expected for each field.  EnergyPlus also ships with example models that show each object being used in a model.  In the "Examples" folder is a spreadsheet that documents the examples.</p>
-<p><img alt="Finding Doc" src="../../img/measure-writing-guide/17.png" /></p>
+<p><img alt="Finding Doc" src="../../../../img/measure-writing-guide/17.png" /></p>
 <h4 id="putting-it-all-together-a-complete-workspaceuserscript">Putting It All Together - A Complete WorkspaceUserScript</h4>
 <p>The script creates a ComponentCost:LineItem object for each construction used in the model.</p>
 <pre class="prettyprint well"><code class="ruby">#start the measure
@@ -1216,20 +1154,101 @@ end #end the measure
 ConstructionTakeOff.new.registerWithApplication
 </code></pre>
 
-<h2 id="output-attributes">Output Attributes</h2>
+<h3 id="reporting-measures">Reporting Measures</h3>
+<p>After running a simulation with OpenStudio a large amount of data is available.  However, this data is not in a format that can be easily explored and understood.  This is where Reporting Measures come in.  Reporting Measures run after the EnergyPlus simulation to extract data and reformat it in useful ways.  Reporting Measures can extract machine readable attributes for a large automated analysis.  Reporting Measures can also produce interactive, human readable html reports that include plots and charts.</p>
+<h4 id="energyplus-output-requests">EnergyPlus Output Requests</h4>
+<p>There is a special method, available for reporting measures only, which allows reporting measures to request EnergyPlus output variables which are required by the run method.  This feature is necessary to ensure that output the measure needs for reports will be present in the simulation output.  This method takes in the runner and user arguments, it returns a vector of IdfObjects that request the required outputs, these objects will be added to the Idf before simulation.  However, only certain types of IdfObjects may be requested, these are:</p>
+<ul>
+<li>Output:Surfaces:List</li>
+<li>Output:Surfaces:Drawing</li>
+<li>Output:Schedules</li>
+<li>Output:Constructions</li>
+<li>Output:Table:TimeBins</li>
+<li>Output:Table:Monthly</li>
+<li>Output:Variable</li>
+<li>Output:Meter</li>
+<li>Output:Meter:MeterFileOnly</li>
+<li>Output:Meter:Cumulative</li>
+<li>Output:Meter:Cumulative:MeterFileOnly</li>
+<li>Meter:Custom</li>
+<li>Meter:CustomDecrement</li>
+<li>Output:Table:SummaryReports (unique object)</li>
+</ul>
+<p>Duplicate requests will be ignored and in the case of unique objects, the requests will be merged with requests in the existing model.</p>
+<pre class="prettyprint well"><code class="ruby">  def energyPlusOutputRequests(runner, user_arguments)
+    super(runner, user_arguments)
+
+    result = OpenStudio::IdfObjectVector.new
+
+    # use the built-in error checking 
+    if !runner.validateUserArguments(arguments(), user_arguments)
+      return result
+    end
+
+    result &lt;&lt; OpenStudio::IdfObject.load(&quot;Output:Variable,,Site Outdoor Air Drybulb Temperature,Timestep;&quot;).get
+    result &lt;&lt; OpenStudio::IdfObject.load(&quot;Output:Variable,,Site Outdoor Air Humidity Ratio,Timestep;&quot;).get
+    result &lt;&lt; OpenStudio::IdfObject.load(&quot;Output:Variable,,Site Outdoor Air Relative Humidity,Timestep;&quot;).get
+
+    result &lt;&lt; OpenStudio::IdfObject.load(&quot;Output:Variable,,Zone Air Temperature,Timestep;&quot;).get
+    result &lt;&lt; OpenStudio::IdfObject.load(&quot;Output:Variable,,Zone Air Humidity Ratio,Timestep;&quot;).get
+    result &lt;&lt; OpenStudio::IdfObject.load(&quot;Output:Variable,,Zone Air Relative Humidity,Timestep;&quot;).get    
+
+    return result
+  end
+</code></pre>
+
+<h4 id="reporting-measure-run-method">Reporting Measure Run Method</h4>
+<p>Reporting Measures are different than OpenStudio Measures or EnergyPlus Measures because they run after the simulation is complete.  Therefore, there is not much of a point in changing the current OpenStudio Model or EnergyPlus Workspace.  However, access to the last model or workspace is very useful for extracting information about the simulation.  For these reasons, Reporting Measures allow access to a read only copy of the last OpenStudio Model generated in the simulation workflow as well as the last EnergyPlus Workspace simulated by EnergyPlus.  Additionally, the EnergyPlus SqlFile containing tabular and timeseries simulation results is available along with the EpwFile that was simulated.  All of these objects can be accessed from the runner as shown below:</p>
+<pre class="prettyprint well"><code class="ruby">  # define what happens when the measure is run
+  def run(runner, user_arguments)
+    super(runner, user_arguments)
+
+    # use the built-in error checking 
+    if !runner.validateUserArguments(arguments(), user_arguments)
+      return false
+    end
+
+    model = runner.lastOpenStudioModel
+    if workspace.empty?
+      runner.registerError(&quot;Cannot find last model.&quot;)
+      return false
+    end
+    model = model.get
+
+    workspace = runner.lastEnergyPlusWorkspace
+    if workspace.empty?
+      runner.registerError(&quot;Cannot find last workspace.&quot;)
+      return false
+    end
+    workspace = workspace.get
+
+    sqlFile = runner.lastEnergyPlusSqlFile
+    if sqlFile.empty?
+      runner.registerError(&quot;Cannot find last sql file.&quot;)
+      return false
+    end
+    sqlFile = sqlFile.get
+
+    epwFile = runner.lastEpwFile
+    if epwFile.empty?
+      runner.registerError(&quot;Cannot find last epw file.&quot;)
+      return false
+    end
+    epwFile = epwFile.get    
+</code></pre>
+
+<h3 id="output-attributes">Output Attributes</h3>
 <p>We have seen how to output human readable messages from measures.  These messages are useful when running and debugging measures manually using PAT.  However, there is also a need to output machine readable attributes that can be used to create reports about design alternatives in parametric studies.  Each attribute will be associated with the measure that generated it in the workflow. The registerValue method is used to register key value pairs:</p>
 <pre class="prettyprint well"><code class="ruby"># runner.registerValue(key,value,units)
 runner.registerValue(&quot;total_life_cycle_cost&quot;, total_life_cycle_cost, &quot;$&quot;)
 </code></pre>
 
-<p>The key and units parameters must be strings, the value passed to registerValue can be a double, bool, integer, string, or nil object.  *Nick, we probably need a way to do nil too right? -- yes, I added nil object."</p>
+<p>The key and units parameters must be strings, the value passed to registerValue can be a double, bool, integer, string, or nil object.  </p>
 <p>By default, all measure arguments are automatically output in machine readable format.  For example, if a measure takes an argument named 'rotation':</p>
 <pre class="prettyprint well"><code class="ruby">relative_building_rotation = OpenStudio::Ruleset::OSArgument.makeDoubleArgument(&quot;rotation&quot;, true)
 </code></pre>
 
 <p>An attribute named 'rotation' will automatically be added to the measure's output with the value passed in by the user.  Measure writers can output any attributes that they want to.  If a measure outputs multiple attributes with the same name, the last attribute reported by that name will be preserved.  Measure writers are encouraged to use terms that are present in the BCL taxonomy (and the upcoming DenCity Metadata API) to allow applications to understand attribute names.  Additionally, special modifiers can be added to attribute names which will imply additional relationships between attributes.  These special attribute modifiers are documented below, using the 'rotation' attribute. </p>
-<!--*Nick, do we need to indicate that rotation is coming from the model as opposed to user input?  Something like model_rotation_initial vs rotation? -- (NL) If anything it should be the other way around. Argument inputs should be flagged as such and leave the 'registerValue' echo out whatever the user says.*-->
-
 <table>
 <thead>
 <tr>
@@ -1242,17 +1261,20 @@ runner.registerValue(&quot;total_life_cycle_cost&quot;, total_life_cycle_cost, &
 <tr>
 <td>*_initial</td>
 <td>rotation_initial</td>
-<td>The value of 'rotation' in the initial model before the measure was run</td>
+<td>The value of 'rotation' in the initial model before the measure was run.</td>
 </tr>
 <tr>
 <td>*_final</td>
 <td>rotation_final</td>
 <td>The value of 'rotation' in the final model after the measure was run.</td>
 </tr>
+<tr>
+<td></td>
+<td></td>
+<td>This should be reported even if the measure returns false or NA.</td>
+</tr>
 </tbody>
 </table>
-<!--*Nick, if the measure returns either false or NA without altering the model does it still need to register a "(_final" attribute for every "*_initial" attribute?  This might be a pain if multiple paths return from the measure but I can see the desire to have this. (NL) yeah i think it should always output a result. In the rotation example the final rotation is always a desired value, even if a path in the measure results in the rotation no to change.-->
-
 
                  <div class="footer">
 

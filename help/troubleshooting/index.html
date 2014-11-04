@@ -7,7 +7,8 @@
         
         
         
-        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <link rel="shortcut icon" href="../../favicon.ico">
+        
 
         <title>Troubleshooting - OpenStudio User Docs</title>
 
@@ -55,15 +56,15 @@
                     <ul class="dropdown-menu">
                     
                         <li >
-                            <a href="../../getting_started/features/">Current Features</a>
+                            <a href="../../getting_started/features">Current Features</a>
                         </li>
                     
                         <li >
-                            <a href="../../getting_started/roadmap/">Planned Features</a>
+                            <a href="../../getting_started/roadmap">Planned Features</a>
                         </li>
                     
                         <li >
-                            <a href="../../getting_started/getting_started/">Installation and Introductory Tutorial</a>
+                            <a href="../../getting_started/getting_started">Installation and Introductory Tutorial</a>
                         </li>
                     
                     </ul>
@@ -76,31 +77,35 @@
                     <ul class="dropdown-menu">
                     
                         <li >
-                            <a href="../../next_steps/quick_start_guides/">Quick Start Guides</a>
+                            <a href="../../next_steps/quick_start_guides">Quick Start Guides</a>
                         </li>
                     
                         <li >
-                            <a href="../../next_steps/sketchup_plugin_interface/">SketchUp Plug-in</a>
+                            <a href="../../next_steps/sketchup_plugin_interface">SketchUp Plug-in</a>
                         </li>
                     
                         <li >
-                            <a href="../../next_steps/openstudio_application_interface/">OpenStudio Application</a>
+                            <a href="../../next_steps/openstudio_application_interface">OpenStudio Application</a>
                         </li>
                     
                         <li >
-                            <a href="../../next_steps/model_objects/">Overview of OpenStudio Model Objects</a>
+                            <a href="../../next_steps/model_objects">Overview of OpenStudio Model Objects</a>
                         </li>
                     
                         <li >
-                            <a href="../../next_steps/creating_your_model/">Creating Your Model</a>
+                            <a href="../../next_steps/creating_your_model">Creating Your Model</a>
                         </li>
                     
                         <li >
-                            <a href="../../next_steps/running_your_simulation/">Running Your Simulation & Viewing Results</a>
+                            <a href="../../next_steps/running_your_simulation">Running Your Simulation & Viewing Results</a>
                         </li>
                     
                         <li >
-                            <a href="../../next_steps/detailed_tutorials/tutorial_glhepro/">GLHEPro Tutorial</a>
+                            <a href="../../next_steps/detailed_tutorials/tutorial_glhepro">GLHEPro Tutorial</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../next_steps/detailed_tutorials/tutorial_shadingcontrols">Shading Controls Tutorial</a>
                         </li>
                     
                     </ul>
@@ -113,15 +118,15 @@
                     <ul class="dropdown-menu">
                     
                         <li >
-                            <a href="../../measures/about_measures/">About Measures</a>
+                            <a href="../../measures/about_measures">About Measures</a>
                         </li>
                     
                         <li >
-                            <a href="../../measures/measure_writing_guide/">Measure Writing Guide</a>
+                            <a href="../../measures/measure_writing_guide">Measure Writing Guide</a>
                         </li>
                     
                         <li >
-                            <a href="../../measures/measure_code_examples/">Measure Code Examples</a>
+                            <a href="../../measures/measure_code_examples">Measure Code Examples</a>
                         </li>
                     
                     </ul>
@@ -134,11 +139,11 @@
                     <ul class="dropdown-menu">
                     
                         <li >
-                            <a href="../../comparative_analysis/parametric_studies/">ParametricAnalysisTool</a>
+                            <a href="../../comparative_analysis/parametric_studies">ParametricAnalysisTool</a>
                         </li>
                     
                         <li >
-                            <a href="../../comparative_analysis/large_scale_analysis/">Large Scale Analysis</a>
+                            <a href="../../comparative_analysis/large_scale_analysis">Large Scale Analysis</a>
                         </li>
                     
                     </ul>
@@ -151,27 +156,27 @@
                     <ul class="dropdown-menu">
                     
                         <li >
-                            <a href="../training/">Training</a>
+                            <a href="../training">Training</a>
                         </li>
                     
                         <li >
-                            <a href="../finding_model_data/">Finding Model Data</a>
+                            <a href="../finding_model_data">Finding Model Data</a>
                         </li>
                     
                         <li >
-                            <a href="../best_practices/">Best Practices</a>
+                            <a href="../best_practices">Best Practices</a>
                         </li>
                     
                         <li class="active">
-                            <a href="./">Troubleshooting</a>
+                            <a href=".">Troubleshooting</a>
                         </li>
                     
                         <li >
-                            <a href="../faq/">FAQ</a>
+                            <a href="../faq">FAQ</a>
                         </li>
                     
                         <li >
-                            <a href="../software_license/">Software License</a>
+                            <a href="../software_license">Software License</a>
                         </li>
                     
                     </ul>
@@ -204,15 +209,7 @@
 	
   
 
-  <li class="main active"><a href="#model-wont-open-in-sketchup-plug-in">Model Won't Open in SketchUp Plug-in</a></li>
-    
-
-  
-
-
-	
-
-  <li class="main "><a href="#model-will-not-open-in-sketchup-plug-in">Model Will Not Open in SketchUp Plug-in</a></li>
+  <li class="main active"><a href="#model-will-not-open-in-sketchup-plug-in">Model Will Not Open in SketchUp Plug-in</a></li>
     
 
   
@@ -221,6 +218,14 @@
 	
 
   <li class="main "><a href="#model-will-not-run">Model Will Not Run</a></li>
+    
+
+  
+
+
+	
+
+  <li class="main "><a href="#sketchup-crashes-on-launch">SketchUp crashes on launch</a></li>
     
 
   
@@ -273,8 +278,6 @@
 <h1>Troubleshooting</h1>
 
 <p>This page is a collection of troubleshooting advice that helps users deal with common issues.</p>
-<h2 id="model-wont-open-in-sketchup-plug-in">Model Won't Open in SketchUp Plug-in</h2>
-<p>If you have an OSM file that will not open or opens incorrectly in the SketchUp plugin then running the user script linked in this thread can help identify the problem objects and create a new diagnostic copy of your file. This script creates a report identifying problem objects, and save a new copy of your file, leaving the original un-touched. This script is installed with 0.6.2 or later, but you can manually download this file and use it with 0.6.0 or later. Some reasons you may need to run this script.</p>
 <hr />
 <h2 id="model-will-not-open-in-sketchup-plug-in">Model Will Not Open in SketchUp Plug-in</h2>
 <p>If you have an OSM file that will not open, or opens incorrectly in the SketchUp Plug-in then running the user script linked in this thread can help identify the problem objects and create a new diagnostic copy of your file. This script creates a report identifying problem objects, and saves a new copy of your file leaving the original un-touched. This script is installed with 0.6.2 or later, but you can manually download this file and use it with 0.6.0 or later. Some reasons you may need to run this script include:</p>
@@ -290,7 +293,7 @@
 <p><strong>OpenStudio 1.5.0\Ruby\openstudio\sketchup_plugin\user_scripts</strong></p>
 <p>To run the script, go to the "User Scripts" menu under the SketchUp Plugins menu, "Plugins / OpenStudio" menu and choose "OSM Diagnostic Script".</p>
 <p>Right click on the link below and save to your computer vs. opening in web browser:
-<a href="../../img/scripts/OSM_Diagnostic_Script.rb">OSM_Diagonstic_Script.rb</a></p>
+<a href="../../../../img/scripts/OSM_Diagnostic_Script.rb">OSM_Diagonstic_Script.rb</a></p>
 <hr />
 <h2 id="model-will-not-run">Model Will Not Run</h2>
 <p>Some of the reasons simulation errors occur are:</p>
@@ -301,9 +304,25 @@
 <li>Design days or sizing are required if you are simulating a full HVAC system instead of using idea air loads. </li>
 </ul>
 <p>If you are in the OpenStudio application, the image below shows you how to get access to the "eplusout.err" file that lists the EnergyPlus errors. You can view it with a text editor.</p>
-<p><img alt="OpenStudio Errors" src="../../img/help/os_errors.png" title="OpenStudio Errors" /></p>
+<p><img alt="OpenStudio Errors" src="../../../../img/help/os_errors.png" title="OpenStudio Errors" /></p>
 <p>If you are in PAT, you should be able to expand the view in the run tab to see errors and warnings at any stage. If errors do not show up in the run tab, there may be an issue with the weather or DDY files. See the image below.</p>
-<p><img alt="PAT Errors" src="../../img/help/pat_errors.png" title="PAT Errors" /></p>
+<p><img alt="PAT Errors" src="../../../../img/help/pat_errors.png" title="PAT Errors" /></p>
+<hr />
+<h2 id="sketchup-crashes-on-launch">SketchUp crashes on launch</h2>
+<p>The first thing to do is to remove SketchUp and install it again.  To do this, run the SketchUp uninstall program.  Also check that all OpenStudio plugins are removed from the SketchUp plugin directories.  On Windows these directories are:</p>
+<ul>
+<li>C:\Users\&lt;<strong>your username</strong>&gt;\AppData\Roaming\SketchUp\SketchUp 2014\SketchUp\Plugins</li>
+<li>C:\ProgramData\SketchUp\SketchUp 2014\SketchUp\Plugins</li>
+<li>C:\Program Files (x86)\SketchUp\SketchUp 2014\SketchUp\Plugins</li>
+</ul>
+<p>On Mac these are:</p>
+<ul>
+<li>/Users/&lt;<strong>your username</strong>&gt;/Library/Application Support/SketchUp 2014/SketchUp/Plugins</li>
+<li>/Library/Application Support/SketchUp 2014/SketchUp/Plugins</li>
+</ul>
+<p>If SketchUp crashes without the OpenStudio plugins installed then something else is wrong, contact the SketchUp support team for help.  If SketchUp launches, try installing OpenStudio again.  If SketchUp crashes on launch again, remove the OpenStudio files from the SketchUp plugin directories again.  Open SketchUp, go to Window-&gt;Preferences-&gt;Extensions and disable the OpenStudio plugin.  Re-install OpenStudio and relaunch SketchUp.  Open the Ruby console by going to Window-&gt;Ruby Console and then go back to Window-&gt;Preferences-&gt;Extensions and enable the OpenStudio plugin, you may see useful output in the Ruby console. If you have other extensions installed, try disabling them and enabling the OpenStudio plugin.  </p>
+<p>If none of the steps above work and you are on Windows, it is likely that there is a dynamic library being loaded from another application that is interfering with OpenStudio.  If you just want to fix your problem, try copying the files libeay32.dll and ssleay32.dll from C:\Program Files (x86)\OpenStudio X.X.X\bin to C:\Program Files (x86)\SketchUp\SketchUp 2014, this will fix the problem 80% of the time.</p>
+<p>If you want to investigate in more depth, download <a href="http://www.dependencywalker.com/">Dependency Walker</a>. Extract the files and launch depends.exe.  Navigate to File-&gt;Open and then browse to choose the SketchUp.exe under C:\Program Files (x86)\SketchUp\SketchUp 2014.  This will examine all of the libraries loaded by SketchUp but not the libraries loaded by OpenStudio.  Navigate to Profile-&gt;Start Profiling then press Ok in the dialog that pops up.  This will launch SketchUp and attempt to load OpenStudio. Scroll down in the list of loaded libraries and look for the OpenStudio dlls.  Expand the paths under the OpenStudio dlls and look for libraries that are being loaded from other locations.  Often, some other program will install a different version of one of the libraries (usually libeay32.dll or ssleay32.dll) that OpenStudio uses.  This other library will be in the path ahead of OpenStudio and will be loaded instead, this results in a hard crash of SketchUp.  Correcting your path or copying the dlls from the OpenStudio bin directory into the SketchUp install directory will cause the correct dlls to be loaded when SketchUp starts.</p>
 <hr />
 <h2 id="unable-to-communicate-with-amazon-cloud-from-command-prompt-using-the-bundle-command">Unable to Communicate with Amazon Cloud from Command Prompt Using the "bundle" Command</h2>
 <p>This issue is typically a communication error between you and RubyGems.org. Few things to check:</p>
