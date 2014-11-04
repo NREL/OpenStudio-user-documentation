@@ -2,9 +2,12 @@
 This guide goes through the details of an OpenStudio Measure, focusing mainly on writing new Measures and understanding existing Measures.
 
 ## What is a Measure?
-In building design and retrofits, the terms *energy efficiency measure* (EEM) and *energy conservation measure* (ECM) refer to a specific change that can be made to a building to reduce its energy use.  As an example, if you are retrofitting an existing building and one of the ECMs suggested by the design team is "Add insulation to the roof", then you can run that measure to quickly alter your model.
+In building design and retrofits, the terms *energy efficiency measure* (EEM) and *energy conservation measure* (ECM) refer to a specific change that can be made to a building to reduce its energy use.  As an example, if you are retrofitting an existing building and one of the ECMs suggested by the design team is "Add continuous insulation to the walls", then you can run that measure to quickly alter your model.
 
-In OpenStudio, a measure is a set of programmatic instructions (such as an Excel macro) that makes changes to an energy model to reflect its application.  In our example, the measure might find the default construction used by roof surfaces in the model, copy this construction and add insulation material to the outside, then set the new construction with added insulation as the default construction to be used by roof surfaces.  Measures can be written specifically for an individual model, or they may be more generic to work on a wide range of possible models.
+In OpenStudio, a measure is a set of programmatic instructions (such as an Excel macro) that makes changes to an energy model to reflect its application.  In our example, the measure might find the construction used by exterior wall surfaces in the model and add a layer of continuous insulation.  Measures can be written specifically for an individual model, or they may be more generic to work on a wide range of possible models.
+
+<!--- DLM: we need a link to how to create, copy, and update measures in the app and PAT-->
+OpenStudio measures may be created using either the OpenStudio Application or the Parametric Analysis Tool.  Measures can be created from scratch or may be copied from another measure as a starting point.  Users should use either the OpenStudio Application or PAT to create measures, copying files directly in the file system is not supported.
 
 ## Using this Guide
 Each OpenStudio measure is contained in its own folder (usually named after the measure) and contains two key files:
@@ -25,34 +28,73 @@ The types of files we discuss can be opened in a text editor (notepad++ is a fre
 ```
 a = 5
 ...
-
 ```
 
-## measure.rb
+## Measure File - measure.rb
 The measure.rb file contains the Ruby program that allows the measure to make changes to the input model.  The bulk of the work done when writing a measure lies in editing this file.  The measure.rb file includes the beginning and end of the measure; the content of the measure is then divided into three general sections:  name, arguments, and run.  The following sections explain each section.
 
 ### Starting and Ending the Measure
 Generally, each measure is a variation of an OpenStudio ModelUserScript.  You do not need to worry about what this means right now; we will explain the details later.  The important point is that the text below starts and ends a measure.  The class name for the measure (in light blue) is user defined. The same class name appears again on the last line where a new instance of the class is instantiated and registered with OpenStudio.  It is good practice to use UpperCamelCase (CapitalizeTheFirstLetterOfEveryWord) for your class name.  This must be a valid class name in Ruby; it must start with an uppercase letter and cannot contain spaces or other special characters.  Everything else about the measure (name, arguments, and run) will be inserted where the ellipsis is.
 
+<!--- DLM: should we explain model, e+, and reporting measures here or later?-->
+
 ```ruby
-class AddInsulationToRoof < OpenStudio::Ruleset::ModelUserScript
+class AddContinuousInsulationToWalls < OpenStudio::Ruleset::ModelUserScript
   ...
 end
 
-AddInsulationToRoof.new.registerWithApplication
+AddContinuousInsulationToWalls.new.registerWithApplication
 ```
 
 ### Name
-Inside this method, you describe the measure name, which should be written such that another building professional (architect, engineer, etc.) can understand what the measure will do. The name in the XML file (described later) is used for the display in the Parametric Analysis Tool; it is a good practice to use the same name here.
+The measure's Name should be written such that another building professional (architect, engineer, etc.) can quickly understand what the measure will do when searching through a list of measures. This name is intended to be used in automatically generated reports. For example, in a table of energy savings by measure this name would identify each measure.
 
 ```ruby
 def name
-  return "Add Insulation to the Roof"
+  return "Add Continuous Insulation to Walls"
+end
+```
+
+Best practice measure names will be explicit about what they do, particularly with respect to whether they add, change, replace, or remove things from the model.  Compare specific names such as:
+
+- Replace HVAC System with DX and Natural Gas AHUs
+- Add Continuous Insulation to Walls
+- Remove all Electric Equipment in Specified Space Types
+
+With vague names like:
+
+- DX and Natural Gas AHUs
+- Insulate Walls
+- Modify Electric Equipment
+
+Remember that the measure name is the first contact a user has with the measure.  If the name is vague or misleading, it is detrimental to sharing and likely will not be used often.
+
+### Description
+The Description should explain what the measure does in terms that general building professionals (architects, engineers, contractors, etc.) can understand.  This description is intended to be used in energy modeling reports that persuade the design team to implement the measure in the actual building design.  The  Description is written for a general audience and should not assume that the reader is familiar with the construction and design practices suggested by the measure. Thus, the Description may include details about how the measure would be implemented, along with explanations of associated qualitative benefits.  It is good practice to include citations in the measure if the description is taken from a known source or if specific benefits are listed.
+
+<!---DLM: what voice should be used here?  is there a standard?-->
+<!---DLM: should description take the user args and allow substitution of values the user passed?-->
+
+```ruby
+def description
+  return "Add a layer of continuous insulation between the framing members and exterior cladding. This insulation layer is in addition to any bat insulation installed between framing members.  Continuous insulation must be installed without thermal bridges other than fasteners and service openings, adding continuous insulation to a design may require longer fasteners.  For more information please see <a href='http://fsc.americanchemistry.com/Exterior-Walls/Continuous-Insulation-Educational-Presentation.pdf'>here</a>."
+end
+```
+
+### Modeler Description
+The Modeler Description is intended for the energy modeler using the measure.  It should explain how the measure is modeled, including any requirements about how the baseline model must be set up, major assumptions made by the measure, citations of references to applicable modeling resources, etc.  The energy modeler should be able to read this description and understand the changes the measure is making to the model and why.  The Modeler Description is written for an expert audience and can assume that the reader is familiar with common modeling practices.  This description is intended to be used in automatically generated reports.  For example, in an appendix describing each the modeling approach of each measure considered for an energy savings study this description would be printed for each measure.
+
+<!---DLM: what voice should be used here?  is there a standard?-->
+<!---DLM: should modeler_description take the user args and allow substitution of values the user passed?-->
+
+```ruby
+def modeler_description
+  return "This measure will search through all constructions used on exterior walls. For each construction, if the second material layer is of type OS:Material:NoMass, then that layer will be assumed to be existing continuous insulation and will be replaced by the material layer specified in this measure. If the second layer is not of type OS:Material:NoMass, then a new material layer will be inserted at the second material layer position. If any non-exterior wall surfaces use this construction, it will be cloned before being altered and the altered construction will be hard assigned to the appropriate exterior wall surfaces."
 end
 ```
 
 ### Arguments
-Inside this method, you describe which, if any, input parameters the user should be able to change before running the measure.  In the example "Add insulation to the roof," you might want the user to specify the thickness of the insulation along with the R-value per inch of thickness.  When a measure has input parameters that the user can edit, the user can change the input values to perform a parametric analysis to answer "what-if" questions and find the best option.
+Inside this method, you describe which, if any, input parameters the user should be able to change before running the measure.  In the example "Add Continuous Insulation to Walls", you might want the user to specify the thickness of the insulation along with the R-value per inch of thickness.  When a measure has input parameters that the user can edit, the user can change the input values to perform a parametric analysis to answer "what-if" questions and find the best option.
 
 The arguments section opens and closes as follows:
 
@@ -180,14 +222,14 @@ Now that the user inputs have been assigned to variables, you need to check the 
 You can send three types of messages to the user from the measure.  These messages will be shown in the GUI when the measure is run.  You can thus let the user know something, but does not need to force the user to go into obscure error and output files.  Each message has a specific purpose.  The messages below are short for clarity; however, there is no limit to the length of the messages passed.  Best practice messages will be concise, yet specific enough that the user knows exactly where to go to address any issue.
 
 ##### Info Messages
-Info messages simply let the user know what happened as the measure was running.  Info messages do not cause the measure to fail or stop running.  In our example of "Add insulation to roof," you might decide to tell the user the number of surfaces to which insulation was added.  In Ruby, inserting "#{num_surfaces}" in the message tells Ruby to convert the value of the variable "num_surfaces" to a string and substitute the result into the message.
+Info messages simply let the user know what happened as the measure was running.  Info messages do not cause the measure to fail or stop running.  In our example of "Add Continuous Insulation to Walls", you might decide to tell the user the number of surfaces to which insulation was added.  In Ruby, inserting "#{num_surfaces}" in the message tells Ruby to convert the value of the variable "num_surfaces" to a string and substitute the result into the message.
 
 ```ruby
 runner.registerInfo("Added insulation to #{num_surfaces} surfaces.")
 ```
 
 ##### Warning Messages
-Warning messages enable you to warn the user about something that may be critical to the assumptions or that significantly affects how the measure runs.  Warning messages do not cause the measure to stop running.  In our example of "Add insulation to roof," you might want to warn the user if the insulation thickness entered exceeds 12 inches, because adding more than 12 inches of insulation is unusual but not unheard of.
+Warning messages enable you to warn the user about something that may be critical to the assumptions or that significantly affects how the measure runs.  Warning messages do not cause the measure to stop running.  In our example of "Add Continuous Insulation to Walls", you might want to warn the user if the insulation thickness entered exceeds 12 inches, because adding more than 12 inches of insulation is unusual but not unheard of.
 
 ```ruby
 runner.registerWarning("#{insul_thckns} inches of insulation seems high.")
@@ -624,63 +666,8 @@ end #end the measure
 ReplaceLightsInSpaceTypeWithLPD.new.registerWithApplication
 ```
 
-## measure.xml
-The measure.xml file contains metadata that allow the measure to be filed into an organizational structure, provide an explanation about what the measure does and how it works, and tell the GUI where in the workflow the measure can go.  The GUI creates a new measure.xml file when you click on the "Create a New Measure" button.  The wizard that appears guides you through filling in the measure.xml file.  After this wizard, you will need to make any changes to the measure.xml file manually.  The following sections describe the purpose and available options for each section of measure.xml.
-
-![Name of Measure](../../img/measure-writing-guide/16.png)
-
-### Starting and Ending measure.xml
-The following boilerplate text is used to open and close the measure.xml file.
-
-```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<measure xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  ...
-</measure>
-```
-
-### Name
-The name section defines the name of the measure.  Best practice is to ensure that this name matches the name method in the measure.rb file.  The name listed in measure.xml will be shown in the Local Library window.
-
-```xml
-<name>Replace HVAC System with DX and Natural Gas AHUs</name>
-```
-
-Best practice measure names will be explicit about what they do, particularly with respect to whether they add, replace, or remove things from the model.  Compare specific names such as:
-
-- Replace HVAC System with DX and Natural Gas AHUs
-- Add Insulation to all Roof Surfaces
-- Remove all Electric Equipment in Specified Space Types
-
-With vague names like:
-
-- DX and Natural Gas AHUs
-- Insulate Roofs
-- Modify Electric Equipment
-
-Remember that the measure name is the first contact a user has with the measure.  If the name is vague or misleading, it is detrimental to sharing and likely will not be used often.
-
-### Unique Identifier and Version Identifier
-The UID and Version ID are globally unique identifiers called GUIDs.  They are used to differentiate between measures and between different versions of the same measure.  When you create a measure.xml, the UID and Version ID will already be filled in.  The UID stays the same for the entire life of the measure.  The Version ID changes whenever the measure is edited.  You should not edit these numbers manually.
-
-```xml
-<uid>{845e2a81-6e27-44ac-9ad9-225960fc1e79}</uid>
-<version_id>{08d32420-7476-4382-8c36-c6a857843e1f}</version_id>
-```
-
-### Description
-The Description should explain what the measure does in terms that general building professionals (architects, engineers, contractors, etc.) can understand.  This description will likely be used to create energy modeling reports to persuade the design team to implement the measure in the actual building design.  Thus, the Description may include details about how the measure would be implemented, along with explanations of associated qualitative benefits.  It is good practice to include citations in the measure if the description is taken from a known source or if specific benefits are listed.
-
-```xml
-<description>This measure adds insulation to the roof.  This may be accomplished by adding additional layers of foam insulation under the roof membrane.  This may require longer fasteners.</description>
-```
-
-### Modeler Description
-The Modeler Description is intended for the energy modeler using the measure.  It should explain how the measure is modeled, including any requirements about how the baseline model must be set up, major assumptions made by the model, citations of references to applicable modeling resources, etc.  The energy modeler should be able to read this description and understand the changes the measure is making to the model and why.  Because the Modeler Description is written for an expert audience, using common abbreviations for brevity is good practice.
-
-```xml
-<modeler_description>Find constructions used for roofs, make copies of these and assign them to the appropriate construction sets or surfaces. Identify which layer of the construction is the insulation layer. Layer to change could be Material, No Mass Material, or Air Gap Material...</modeler_description>
-```
+## Measure File - measure.xml
+The measure.xml file contains metadata that allow the measure to be filed into an organizational structure, provide an explanation about what the measure does and how it works, and tell the GUI where in the workflow the measure can go.  The GUI creates a new measure.xml file when you click on the "Create a New Measure" button.  In general, you should not need to make any changes to the measure.xml file manually.  The OpenStudio Application and PAT detect any changes that are made to measures in your "My Measures" directory when you press the "Sync Project Measures with Library" button.  Changes to the name, description, modeler description or any other measure properties will be updated in the measure and the measure will be given a new version identifier.  However, there are a few limited cases when you will need to modify the measure.xml file by hand.  These cases are 1) changing the measure's author information (i.e. provenance), 2) changing the tags which determine where the measure is listed in the BCL measure taxonomy, 3) changing attributes which are used when searching for the measure on the BCL.  To make changes to any of these items you will have to edit the appropriate section (described below) in the measure.xml file by hand, then press the "Sync Project Measures with Library" button in either the OpenStudio Application or PAT to assign a new version identifier.
 
 ### Provenance
 The Provenance section describes who wrote the measure and when.  As author, you may identify yourself however you desire; current convention is to use first initial of first name, followed by full last name (Andrew Parker -> aparker).  You may name multiple authors.  The time format follows ISO 8601 (http://en.wikipedia.org/wiki/ISO_8601).
@@ -694,7 +681,6 @@ The Provenance section describes who wrote the measure and when.  As author, you
   <provenance_required>true</provenance_required>
 </provenances>
 ```
-
 
 ### Tags
 The Tags section describes where the measure lives in the BCL Measure taxonomy.  This taxonomy is used to indicate where in the GUI the measure should be displayed.  If the Tags section is blank, the measure will not show up in the GUI.
@@ -734,7 +720,7 @@ The BCL Measures Taxonomy is available at http://bcl.nrel.gov/api/taxonomy/measu
     - QAQC
     - Troubleshooting
 
-The place inside the measure taxonomy is indicated Level1.level1.  An example is Envelope.Fenestration.
+The place inside the measure taxonomy is indicated Level1.level2.  An example is Envelope.Fenestration.
 
 ```xml
 <tags>
@@ -743,140 +729,70 @@ The place inside the measure taxonomy is indicated Level1.level1.  An example is
 ```
 
 ### Attributes
-The Attributes section gives some additional metadata that allow the GUI to display the measure in the correct place in the workflow and show only measures that can be used in a particular place (for example, measures that use the SketchUp API in the SketchUp plugin).
+The Attributes section gives additional metadata that allow the GUI to display the measure in the correct place in the workflow and show only measures that can be used by a particular tool.  There are currently two standardized attributes used for measures "Intended Software Tool" and "Intended Use Case", these are populated when a new measure is created.  If you wish to change these after the measure has been created you must edit the measure.xml file manually.  Other attributes may be added but are not used by OpenStudio applications.  
 
-#### Measure Type
-The Measure Type describes the type of input file that the measure expects in order to function.
+<!--- DLM: at some point we might want to create a list of measure attributes similar to the component ones https://bcl.nrel.gov/list-of-attributes -->
 
-##### Measure Type = ModelMeasure
-ModelMeasures require access to the OpenStudio model (.osm).  This is the most common type of measure, and appears under the "Model Measures" heading in the GUI.
+#### Intended Software Tool
+The Intended Software Tool attribute lists the tools that this measure is intended to be used by.  Software tools may choose to only display measures which list them as an intended software tool.  A measure can list more than one tool as intended software tool.  The list of software tools used by OpenStudio is:
 
-##### Measure Type = EnergyPlusMeasure
-EnergyPlusMeasures require access to the EnergyPlus file (.idf) directly.  This feature allows users to access EnergyPlus functionality that is not yet accessible in OpenStudio.  EnergyPlusMeasures can happen only after the .osm to .idf translation in the workflow.
+*   Apply Measure Now - measures intended to be run directly on the current model in the OpenStudio Application.  Only Model measures may be used in the Apply Measure Now feature.
+*   OpenStudio Application - measures intended to be run as part of the simulation workflow in the OpenStudio Application.
+*   Parametric Analysis Tool - measures intended to be run as part of the simulation workflow in PAT.
+*   Analysis Spreadsheet - measures intended to be run on the cloud using the OpenStudio Analysis Spreadsheet.
 
-##### Measure Type = UtilityMeasure
-UtilityMeasures do not require access to the .osm or the .idf.  They might create a report or perform some other function.  This option is not commonly used outside of script-based (non-GUI) analyses.
+<!--- DLM: I forgot all the details about which things are which, need to review with David and Nick -->
 
-#### Measure Function
-Measure Function describes whether the measure is intended to modify the energy model, create a report, or perform another miscellaneous function.
-
-##### Measure Function = Measure
-Measures modify the energy model (either the .osm or .idf, as defined by ScriptType).
-
-##### Measure Function = Report
-Reports do not modify the energy model.  Reports create some report file (.xml, .html, .csv, etc.) for user consumption.
-
-##### Measure Function = Other
-Others do not modify the energy model or create reports.  This option is not commonly used outside of script-based (non-GUI) analyses.
-
-#### Requires EnergyPlus Results
-This attribute determines whether the measure requires simulation results to operate.  For example, a report measure that writes a monthly energy consumption summary report needs the simulation results to work correctly.  Options are true (require results) or false (do not require results).
-
-#### Uses SketchUp API
-This attribute specifies whether the measure uses methods that are available only to the SketchUp plug-in.  For example, a measure may want to move cameras around or specify how the model is rendered.  Measures that use the SketchUp API can be used only in the SketchUp plugin, and will not show in the PAT GUI. Options are true (use SketchUp API) or false (do not use SketchUp API).
+Example xml:
 
 ```xml
 <attributes>
   <attribute>
-    <name>Script Type</name>
-    <value>ModelScript</value>
+    <name>Intended Software Tool</name>
+    <value>Apply Measure Now</value>
     <datatype>string</datatype>
   </attribute>
   <attribute>
-    <name>Script Function</name>
-    <value>Measure</value>
+    <name>Intended Software Tool</name>
+    <value>OpenStudio Application</value>
     <datatype>string</datatype>
-  </attribute>
-  <attribute>
-    <name>Requires EnergyPlus Results</name>
-    <value>false</value>
-    <datatype>Boolean</datatype>
-  </attribute>
-  <attribute>
-    <name>Uses SketchUp API</name>
-    <value>false</value>
-    <datatype>Boolean</datatype>
   </attribute>
 </attributes>
 ```
 
-### Files
-This section describes which files the measure uses and which version of OpenStudio the measure was written for.  The version section contains the software program and version that the measure was first written for.  You should strive to maintain compatibility of your measures with the software from the initial version to the current version. This may mean that you need to add version-dependent code to handle future changes in the software's API.  The filename element gives the name of the file.  The filetype tag is the file's extension.  The usage_type element determines which folder the file is contained in; options are "script" for the top level files, "test" for the files in the tests folder, and "resource" for files in the resources folder.  The checksum element is computed from the file contents and can be used to tell whether the file has been changed.
+#### Intended Use Case
+The Intended Use Case attribute describes the typical scenarios that this measure will be used in. Software tools may choose to only display measures which apply to their intended use case.  A measure can list more than one intended use case.  The list of use cases used by OpenStudio is:
+
+<!--- DLM: I forgot all the details about which things are which, need to review with David and Nick -->
+<!--- DLM: Do we need a standards use case? For things that require standards markup?-->
+
+*   Model Articulation - measures which create building modeling content. Examples include a building geometry footprint generator or a measure that adds an HVAC system to a model which does not have one.  
+*   Calibration - measures which alter an existing model for the purposes of calibration. Examples include measures which fine tune infiltration levels or adjust existing lighting power to account for uncertainty in operational schedules.
+*   Sensitivity Analysis - measures which alter an existing model to determine what parameters are most sensitive. Examples include a measure which makes all walls adiabatic or a measure which removes all lights from the building.
+*   New Construction EE - measures which are appropriate energy conservation measures for new construction applications. Examples include increased framing depth or reduced window to wall ratio.
+*   Retrofit EE - measures which are appropriate energy conservation measures for retrofit applications. Examples include replacing incandescent light fixtures with high efficiency T-8s or adding occupancy sensors to uncommonly used spaces.
+*   Automatic Report Generation - measures which report human or machine readable content. Examples include a report showing total floor area per space type or a report which plots energy use as a function of outdoor temperature.
+
+Example xml:
 
 ```xml
-<files>
-  <file>
-    <version>
-      <software_program>OpenStudio</software_program>
-      <identifier>0.10.2</identifier>
-    </version>
-    <filename>measure.rb</filename>
-    <filetype>rb</filetype>
-    <usage_type>script</usage_type>
-    <checksum>5A270A31</checksum>
-  </file>
-</files>
+<attributes>
+  <attribute>
+    <name>Intended Use Case</name>
+    <value>Model Articulation"</value>
+    <datatype>string</datatype>
+  </attribute>
+  <attribute>
+    <name>Intended Use Case</name>
+    <value>New Construction EE</value>
+    <datatype>string</datatype>
+  </attribute>
+</attributes>
 ```
 
-#### Putting it all Together
-A complete measure.xml file looks like this:
+## Advanced Topics 
 
-```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<measure xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <name>Set Window to Wall Ratio by Facade</name>
-  <uid>{845e2a81-6e27-44ac-9ad9-225960fc1e79}</uid>
-  <version_id>{08d32420-7476-4382-8c36-c6a857843e1f}</version_id>
-  <description>Description goes here.</description>
-  <modeler_description>Modeler description goes here.</modeler_description>
-  <provenances>
-    <provenance>
-      <author>aparker</author>
-      <datetime>2013-01-22T15:00:00Z</datetime>
-    </provenance>
-    <provenance_required>true</provenance_required>
-  </provenances>
-  <tags>
-    <tag>Envelope</tag>
-  </tags>
-  <attributes>
-    <attribute>
-      <name>Measure Type</name>
-      <value>ModelMeasure</value>
-      <datatype>string</datatype>
-    </attribute>
-    <attribute>
-      <name>Measure Function</name>
-      <value>Measure</value>
-      <datatype>string</datatype>
-    </attribute>
-    <attribute>
-      <name>Requires EnergyPlus Results</name>
-      <value>false</value>
-      <datatype>boolean</datatype>
-    </attribute>
-    <attribute>
-      <name>Uses SketchUp API</name>
-      <value>false</value>
-      <datatype>boolean</datatype>
-    </attribute>
-  </attributes>
-  <files>
-    <file>
-      <version>
-        <software_program>OpenStudio</software_program>
-        <identifier>0.10.2</identifier>
-      </version>
-      <filename>measure.rb</filename>
-      <filetype>rb</filetype>
-      <usage_type>script</usage_type>
-      <checksum>5A270A31</checksum>
-    </file>
-  </files>
-</measure>
-```
-
-### EnergyPlus Measures - Edit .idf files directly
+### EnergyPlus Measures
 Measures are usually written to work on an OpenStudio model.  This is preferred because it allows you to use the OpenStudio Model API, which includes specialized methods for each type of object in the OpenStudio Model.  However, when a particular EnergyPlus feature is not yet exposed in the OpenStudio Model, you may choose to write a measure that operates on the EnergyPlus data model directly.  Measures of this type are run only after the model is translated from OpenStudio to EnergyPlus.
 
 Below are some specific code differences for EnergyPlus versus. Model (OpenStudio) measures.
@@ -1089,7 +1005,94 @@ end #end the measure
 ConstructionTakeOff.new.registerWithApplication
 ```
 
-## Output Attributes
+### Reporting Measures 
+After running a simulation with OpenStudio a large amount of data is available.  However, this data is not in a format that can be easily explored and understood.  This is where Reporting Measures come in.  Reporting Measures run after the EnergyPlus simulation to extract data and reformat it in useful ways.  Reporting Measures can extract machine readable attributes for a large automated analysis.  Reporting Measures can also produce interactive, human readable html reports that include plots and charts.
+
+#### EnergyPlus Output Requests
+There is a special method, available for reporting measures only, which allows reporting measures to request EnergyPlus output variables which are required by the run method.  This feature is necessary to ensure that output the measure needs for reports will be present in the simulation output.  This method takes in the runner and user arguments, it returns a vector of IdfObjects that request the required outputs, these objects will be added to the Idf before simulation.  However, only certain types of IdfObjects may be requested, these are:
+
+*  Output:Surfaces:List
+*  Output:Surfaces:Drawing
+*  Output:Schedules
+*  Output:Constructions
+*  Output:Table:TimeBins
+*  Output:Table:Monthly
+*  Output:Variable
+*  Output:Meter
+*  Output:Meter:MeterFileOnly
+*  Output:Meter:Cumulative
+*  Output:Meter:Cumulative:MeterFileOnly
+*  Meter:Custom
+*  Meter:CustomDecrement
+*  Output:Table:SummaryReports (unique object)
+
+Duplicate requests will be ignored and in the case of unique objects, the requests will be merged with requests in the existing model.
+
+```ruby
+  def energyPlusOutputRequests(runner, user_arguments)
+    super(runner, user_arguments)
+    
+    result = OpenStudio::IdfObjectVector.new
+    
+    # use the built-in error checking 
+    if !runner.validateUserArguments(arguments(), user_arguments)
+      return result
+    end
+   
+    result << OpenStudio::IdfObject.load("Output:Variable,,Site Outdoor Air Drybulb Temperature,Timestep;").get
+    result << OpenStudio::IdfObject.load("Output:Variable,,Site Outdoor Air Humidity Ratio,Timestep;").get
+    result << OpenStudio::IdfObject.load("Output:Variable,,Site Outdoor Air Relative Humidity,Timestep;").get
+    
+    result << OpenStudio::IdfObject.load("Output:Variable,,Zone Air Temperature,Timestep;").get
+    result << OpenStudio::IdfObject.load("Output:Variable,,Zone Air Humidity Ratio,Timestep;").get
+    result << OpenStudio::IdfObject.load("Output:Variable,,Zone Air Relative Humidity,Timestep;").get    
+
+    return result
+  end
+```
+#### Reporting Measure Run Method
+Reporting Measures are different than OpenStudio Measures or EnergyPlus Measures because they run after the simulation is complete.  Therefore, there is not much of a point in changing the current OpenStudio Model or EnergyPlus Workspace.  However, access to the last model or workspace is very useful for extracting information about the simulation.  For these reasons, Reporting Measures allow access to a read only copy of the last OpenStudio Model generated in the simulation workflow as well as the last EnergyPlus Workspace simulated by EnergyPlus.  Additionally, the EnergyPlus SqlFile containing tabular and timeseries simulation results is available along with the EpwFile that was simulated.  All of these objects can be accessed from the runner as shown below:
+
+```ruby
+  # define what happens when the measure is run
+  def run(runner, user_arguments)
+    super(runner, user_arguments)
+
+    # use the built-in error checking 
+    if !runner.validateUserArguments(arguments(), user_arguments)
+      return false
+    end
+    
+    model = runner.lastOpenStudioModel
+    if workspace.empty?
+      runner.registerError("Cannot find last model.")
+      return false
+    end
+    model = model.get
+    
+    workspace = runner.lastEnergyPlusWorkspace
+    if workspace.empty?
+      runner.registerError("Cannot find last workspace.")
+      return false
+    end
+    workspace = workspace.get
+    
+    sqlFile = runner.lastEnergyPlusSqlFile
+    if sqlFile.empty?
+      runner.registerError("Cannot find last sql file.")
+      return false
+    end
+    sqlFile = sqlFile.get
+    
+    epwFile = runner.lastEpwFile
+    if epwFile.empty?
+      runner.registerError("Cannot find last epw file.")
+      return false
+    end
+    epwFile = epwFile.get    
+```
+
+### Output Attributes
 We have seen how to output human readable messages from measures.  These messages are useful when running and debugging measures manually using PAT.  However, there is also a need to output machine readable attributes that can be used to create reports about design alternatives in parametric studies.  Each attribute will be associated with the measure that generated it in the workflow. The registerValue method is used to register key value pairs:
 
 ```ruby
@@ -1097,7 +1100,7 @@ We have seen how to output human readable messages from measures.  These message
 runner.registerValue("total_life_cycle_cost", total_life_cycle_cost, "$")
 ```
 
-The key and units parameters must be strings, the value passed to registerValue can be a double, bool, integer, string, or nil object.  *Nick, we probably need a way to do nil too right? -- yes, I added nil object."
+The key and units parameters must be strings, the value passed to registerValue can be a double, bool, integer, string, or nil object.  
 
 By default, all measure arguments are automatically output in machine readable format.  For example, if a measure takes an argument named 'rotation':
 
@@ -1107,13 +1110,9 @@ relative_building_rotation = OpenStudio::Ruleset::OSArgument.makeDoubleArgument(
 
 An attribute named 'rotation' will automatically be added to the measure's output with the value passed in by the user.  Measure writers can output any attributes that they want to.  If a measure outputs multiple attributes with the same name, the last attribute reported by that name will be preserved.  Measure writers are encouraged to use terms that are present in the BCL taxonomy (and the upcoming DenCity Metadata API) to allow applications to understand attribute names.  Additionally, special modifiers can be added to attribute names which will imply additional relationships between attributes.  These special attribute modifiers are documented below, using the 'rotation' attribute. 
 
-<!--*Nick, do we need to indicate that rotation is coming from the model as opposed to user input?  Something like model_rotation_initial vs rotation? -- (NL) If anything it should be the other way around. Argument inputs should be flagged as such and leave the 'registerValue' echo out whatever the user says.*-->
-
-| Modifier | Example | Meaning |
-|---|---|---|
-|*_initial| rotation_initial|  The value of 'rotation' in the initial model before the measure was run|
-|*_final| rotation_final|  The value of 'rotation' in the final model after the measure was run. 
-
-<!--*Nick, if the measure returns either false or NA without altering the model does it still need to register a "(_final" attribute for every "*_initial" attribute?  This might be a pain if multiple paths return from the measure but I can see the desire to have this. (NL) yeah i think it should always output a result. In the rotation example the final rotation is always a desired value, even if a path in the measure results in the rotation no to change.-->
-
+| Modifier           | Example            | Meaning                                                                   |
+| ------------------ | ------------------ | ------------------------------------------------------------------------- |
+| *_initial          | rotation_initial   | The value of 'rotation' in the initial model before the measure was run.  |
+| *_final            | rotation_final     | The value of 'rotation' in the final model after the measure was run.     |
+|                    |                    | This should be reported even if the measure returns false or NA.          |
 
