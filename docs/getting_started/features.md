@@ -1,5 +1,5 @@
 <h1>Current Features</h1>
-OpenStudio is constantly being improved, with a less developer release available every 2 weeks and a stable major release quarterly (4 per year).  The features that are available in the current major release are described below.  To learn what is coming in the future, see the [Planned Features](../getting_started/roadmap.md) page.
+OpenStudio is constantly being improved, with a less stable developer release available every 2 weeks and a stable major release quarterly (4 per year).  The features that are available in the current major release are described below.  To learn what is coming in the future, see the [Planned Features](../getting_started/roadmap.md) page.
 
 ## New in OpenStudio 1.5.0
 
@@ -11,25 +11,16 @@ Viewing and editing your thermal zones and space types in a grid view allows you
 ![Opening Screen](../../img/features/grid_thumb.png "Grid View example")
 
 #### Plug-in Works in SketchUp 2014
-This update allows OpenStudio to leverage upon the improvements available in Ruby 2.0, and provides compatibility with SketchUp 2014. OpenStudio will no longer be compatible with SketchUp 2013 or SketchUp 8. 
+This update allows OpenStudio to leverage upon the improvements available in Ruby 2.0, and provides compatibility with SketchUp 2014. OpenStudio is no longer be compatible with SketchUp 2013 or SketchUp 8. 
 
 For the full list of added features go to the [__Release Notes on GitHub__](http://github.com/NREL/OpenStudio/releases)
 
 View the [OpenStudio Roadmap](roadmap.md) to see the release plan for future features.
-
 ____________________________
 
 ## Current Features
 
 As of OpenStudio Version 1.5.0
-
-### Import and Export Options
-- IDF import (geometry, loads, thermal zones, and schedules only) 
-- IDF export (full model including HVAC)
-- gbXML import (geometry only)
-- gbXML export (geometry only)
-- SDD import (geometry only)
-- SDD export (geometry only)
 
 ### Building Geometry/3D CAD
 
@@ -45,7 +36,7 @@ As of OpenStudio Version 1.5.0
 - Assign and see building envelope constructions
 - Add daylighting sensors
 
-### Building Materials
+### Building Constructions and Materials
 
 - Specify default materials for each type of surface and subsurface (ext walls, windows, floors, etc.) in building
 - Specify detailed or simple window properties
@@ -157,6 +148,14 @@ As of OpenStudio Version 1.5.0
 - Utility rates can include time-of-use, demand charges, ratchets, seasonal values, etc.
 - Utility rates for Xcel Energy CO pre-made; users pick from list
 
+### Import and Export Options
+- IDF import (geometry, constructions, loads, thermal zones, and schedules only) 
+- IDF export (full model including HVAC)
+- gbXML import (geometry, constructions, thermal zones, and schedules only)
+- gbXML export (geometry, constructions, and thermal zones only)
+- SDD import (simulation format - full model including HVAC)
+- SDD export (input format - geometry, constructions, and thermal zones only)
+
 ### Analysis of Existing Buildings
 
 - Enter utility bills for all fuel types in building
@@ -243,10 +242,12 @@ The following applications are included in the OpenStudio installation:
 * Use reporting measures to create new/custom summary reports
 
 ### ResultsViewer
+
 * View the detailed timeseries simulation results
 * Create interactive line graphs and heat maps
 
 ### Parametric Analysis Tool (PAT)
+
 * Select a baseline model to serve as the starting point for a parametric analysis 
 * Drag in Measures and set their input values
 * Select combinations of Measures to run
