@@ -666,49 +666,6 @@ end #end the measure
 ReplaceLightsInSpaceTypeWithLPD.new.registerWithApplication
 ```
 
-### EnergyPlus Output Requests
-There is a special method, available for reporting measures only, which allows reporting measures to request EnergyPlus output variables which are required by the run method.  This feature is necessary to ensure that output the measure needs for reports will be present in the simulation output.  This method takes in the runner and user arguments, it returns a vector of IdfObjects that request the required outputs, these objects will be added to the Idf before simulation.  However, only certain types of IdfObjects may be requested, these are:
-
-*  Output:Surfaces:List
-*  Output:Surfaces:Drawing
-*  Output:Schedules
-*  Output:Constructions
-*  Output:Table:TimeBins
-*  Output:Table:Monthly
-*  Output:Variable
-*  Output:Meter
-*  Output:Meter:MeterFileOnly
-*  Output:Meter:Cumulative
-*  Output:Meter:Cumulative:MeterFileOnly
-*  Meter:Custom
-*  Meter:CustomDecrement
-*  Output:Table:SummaryReports (unique object)
-
-Duplicate requests will be ignored and in the case of unique objects, the requests will be merged with requests in the existing model.
-
-```ruby
-  def energyPlusOutputRequests(runner, user_arguments)
-    super(runner, user_arguments)
-    
-    result = OpenStudio::IdfObjectVector.new
-    
-    # use the built-in error checking 
-    if !runner.validateUserArguments(arguments(), user_arguments)
-      return result
-    end
-   
-    result << OpenStudio::IdfObject.load("Output:Variable,,Site Outdoor Air Drybulb Temperature,Timestep;").get
-    result << OpenStudio::IdfObject.load("Output:Variable,,Site Outdoor Air Humidity Ratio,Timestep;").get
-    result << OpenStudio::IdfObject.load("Output:Variable,,Site Outdoor Air Relative Humidity,Timestep;").get
-    
-    result << OpenStudio::IdfObject.load("Output:Variable,,Zone Air Temperature,Timestep;").get
-    result << OpenStudio::IdfObject.load("Output:Variable,,Zone Air Humidity Ratio,Timestep;").get
-    result << OpenStudio::IdfObject.load("Output:Variable,,Zone Air Relative Humidity,Timestep;").get    
-
-    return result
-  end
-```
-
 ## Measure File - measure.xml
 The measure.xml file contains metadata that allow the measure to be filed into an organizational structure, provide an explanation about what the measure does and how it works, and tell the GUI where in the workflow the measure can go.  The GUI creates a new measure.xml file when you click on the "Create a New Measure" button.  In general, you should not need to make any changes to the measure.xml file manually.  The OpenStudio Application and PAT detect any changes that are made to measures in your "My Measures" directory when you press the "Sync Project Measures with Library" button.  Changes to the name, description, modeler description or any other measure properties will be updated in the measure and the measure will be given a new version identifier.  However, there are a few limited cases when you will need to modify the measure.xml file by hand.  These cases are 1) changing the measure's author information (i.e. provenance), 2) changing the tags which determine where the measure is listed in the BCL measure taxonomy, 3) changing attributes which are used when searching for the measure on the BCL.  To make changes to any of these items you will have to edit the appropriate section (described below) in the measure.xml file by hand, then press the "Sync Project Measures with Library" button in either the OpenStudio Application or PAT to assign a new version identifier.
 
@@ -1049,6 +1006,91 @@ ConstructionTakeOff.new.registerWithApplication
 ```
 
 ### Reporting Measures 
+After running a simulation with OpenStudio a large amount of data is available.  However, this data is not in a format that can be easily explored and understood.  This is where Reporting Measures come in.  Reporting Measures run after the EnergyPlus simulation to extract data and reformat it in useful ways.  Reporting Measures can extract machine readable attributes for a large automated analysis.  Reporting Measures can also produce interactive, human readable html reports that include plots and charts.
+
+#### EnergyPlus Output Requests
+There is a special method, available for reporting measures only, which allows reporting measures to request EnergyPlus output variables which are required by the run method.  This feature is necessary to ensure that output the measure needs for reports will be present in the simulation output.  This method takes in the runner and user arguments, it returns a vector of IdfObjects that request the required outputs, these objects will be added to the Idf before simulation.  However, only certain types of IdfObjects may be requested, these are:
+
+*  Output:Surfaces:List
+*  Output:Surfaces:Drawing
+*  Output:Schedules
+*  Output:Constructions
+*  Output:Table:TimeBins
+*  Output:Table:Monthly
+*  Output:Variable
+*  Output:Meter
+*  Output:Meter:MeterFileOnly
+*  Output:Meter:Cumulative
+*  Output:Meter:Cumulative:MeterFileOnly
+*  Meter:Custom
+*  Meter:CustomDecrement
+*  Output:Table:SummaryReports (unique object)
+
+Duplicate requests will be ignored and in the case of unique objects, the requests will be merged with requests in the existing model.
+
+```ruby
+  def energyPlusOutputRequests(runner, user_arguments)
+    super(runner, user_arguments)
+    
+    result = OpenStudio::IdfObjectVector.new
+    
+    # use the built-in error checking 
+    if !runner.validateUserArguments(arguments(), user_arguments)
+      return result
+    end
+   
+    result << OpenStudio::IdfObject.load("Output:Variable,,Site Outdoor Air Drybulb Temperature,Timestep;").get
+    result << OpenStudio::IdfObject.load("Output:Variable,,Site Outdoor Air Humidity Ratio,Timestep;").get
+    result << OpenStudio::IdfObject.load("Output:Variable,,Site Outdoor Air Relative Humidity,Timestep;").get
+    
+    result << OpenStudio::IdfObject.load("Output:Variable,,Zone Air Temperature,Timestep;").get
+    result << OpenStudio::IdfObject.load("Output:Variable,,Zone Air Humidity Ratio,Timestep;").get
+    result << OpenStudio::IdfObject.load("Output:Variable,,Zone Air Relative Humidity,Timestep;").get    
+
+    return result
+  end
+```
+#### Reporting Measure Run Method
+Reporting Measures are different than OpenStudio Measures or EnergyPlus Measures because they run after the simulation is complete.  Therefore, there is not much of a point in changing the current OpenStudio Model or EnergyPlus Workspace.  However, access to the last model or workspace is very useful for extracting information about the simulation.  For these reasons, Reporting Measures allow access to a read only copy of the last OpenStudio Model generated in the simulation workflow as well as the last EnergyPlus Workspace simulated by EnergyPlus.  Additionally, the EnergyPlus SqlFile containing tabular and timeseries simulation results is available along with the EpwFile that was simulated.  All of these objects can be accessed from the runner as shown below:
+
+```ruby
+  # define what happens when the measure is run
+  def run(runner, user_arguments)
+    super(runner, user_arguments)
+
+    # use the built-in error checking 
+    if !runner.validateUserArguments(arguments(), user_arguments)
+      return false
+    end
+    
+    model = runner.lastOpenStudioModel
+    if workspace.empty?
+      runner.registerError("Cannot find last model.")
+      return false
+    end
+    model = model.get
+    
+    workspace = runner.lastEnergyPlusWorkspace
+    if workspace.empty?
+      runner.registerError("Cannot find last workspace.")
+      return false
+    end
+    workspace = workspace.get
+    
+    sqlFile = runner.lastEnergyPlusSqlFile
+    if sqlFile.empty?
+      runner.registerError("Cannot find last sql file.")
+      return false
+    end
+    sqlFile = sqlFile.get
+    
+    epwFile = runner.lastEpwFile
+    if epwFile.empty?
+      runner.registerError("Cannot find last epw file.")
+      return false
+    end
+    epwFile = epwFile.get    
+```
 
 ### Output Attributes
 We have seen how to output human readable messages from measures.  These messages are useful when running and debugging measures manually using PAT.  However, there is also a need to output machine readable attributes that can be used to create reports about design alternatives in parametric studies.  Each attribute will be associated with the measure that generated it in the workflow. The registerValue method is used to register key value pairs:
