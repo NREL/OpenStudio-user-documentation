@@ -120,3 +120,7 @@ div.source-links {
 .home-btn {
     padding: 0px 20px 10px 20px;
 }
+
+.container p > img {
+    max-width: 100%;
+}
