@@ -14,7 +14,7 @@ Install MkDocs by following the direction at [MkDocs](http://www.mkdocs.org).  Y
 2. Add `C:\Python27` and `C:\Python27\Scripts` to your PATH
 3. Download [Pip](https://bootstrap.pypa.io/get-pip.py)
 4. Open a command prompt where you saved Pip (get-pip.py) and run: `python get-pip.py`
-5. Download [mkdocs source code](https://github.com/tomchristie/mkdocs/archive/master.zip)
+5. Download [mkdocs v0.9 source code](https://github.com/tomchristie/mkdocs/archive/0.9.zip)
 6. Extract mkdocs source code
 7. Open a command prompt where you extracted mkdocs and run: `python setup.py install`
 8. Open `C:\Python27\Lib\site-packages\mkdocs-0.9-py2.7.egg\mkdocs\gh_deploy.py` and modify line 13 to contain the following:
@@ -40,9 +40,15 @@ If you need to add a new page, first decide where it should go in the site struc
 
 ##Deploying
 
-When you are done making changes, commit back to the repo.  
+When you are done making changes, test your deployment first and then commit back to the repo.  
 
-If you want to deploy your changes to the live site, return to the terminal window and type:
+To test, first delete the site directory if it already exists, and then build the site and open index.html
+```shell
+rm -rf site
+mkdocs build
+```
+
+If you are ready to deploy your changes to the live site, return to the terminal window and type:
 
 ```shell
 mkdocs gh-deploy
