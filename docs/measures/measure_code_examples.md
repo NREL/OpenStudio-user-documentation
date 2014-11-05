@@ -1,5 +1,5 @@
 <h1>Measure Code Examples</h1>
-This page provides example Ruby code for doing various common tasks.  It is intended as a supplement to the full [OpenStudio SDK documentation](https://s3.amazonaws.com/openstudio-sdk-documentation/index.html).  The examples are not complete Measures for the sake of clarity.
+This page provides example Ruby code for doing various common tasks. It is intended as a supplement to the full [OpenStudio SDK documentation](https://s3.amazonaws.com/openstudio-sdk-documentation/index.html). The examples are not complete Measures for the sake of clarity.
 
 ## Unit Conversion
 OpenStudio has a built-in unit conversion method:
@@ -8,10 +8,10 @@ OpenStudio has a built-in unit conversion method:
 OpenStudio.convert()
 ```
 
-This method will convert a value from the first unit to the second unit, as specified by two strings.  The conversion can be from IP to SI, SI to IP, IP to another IP unit, or SI to another SI unit.  Any to-from units that are valid conversions will result in an initialized Optional::Double (see [this] for an explanation of optional doubles).
+This method will convert a value from the first unit to the second unit, as specified by two strings. The conversion can be from IP to SI, SI to IP, IP to another IP unit, or SI to another SI unit. Any to-from units that are valid conversions will result in an initialized Optional::Double (see [this] for an explanation of optional doubles).
 
 ```ruby
-# Convert the value 212 from Fahrenheit to Celsius 
+# Convert the value 212 from Fahrenheit to Celsius
 val_in_celsius = OpenStudio.convert(val_in_fahrenheit,"F","C")
 
 # Check that the conversion worked, then get the value
@@ -20,7 +20,7 @@ if val_in_celsius.is_initialized
 end
 ```
 
-```
+```ruby
 # Or, if you know the unit conversion is valid, here's the short version
 val_in_celsius = OpenStudio.convert(val_in_fahrenheit,"F","C").get
 ```
@@ -46,7 +46,7 @@ You can use the `*` (multiply), `/` (divide), and `^` (exponent) operators in th
   </tr>
   <tr>
     <td>Length</td>
-    <td>"in", "ft",  "mi"</td>
+    <td>"in", "ft", "mi"</td>
     <td>"m"</td>
   </tr>
   <tr>

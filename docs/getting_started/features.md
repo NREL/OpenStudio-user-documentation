@@ -1,17 +1,19 @@
 <h1>Current Features</h1>
-OpenStudio is constantly being improved, with a less stable developer release available every 2 weeks and a stable major release quarterly (4 per year).  The features that are available in the current major release are described below.  To learn what is coming in the future, see the [Planned Features](../getting_started/roadmap.md) page.
+OpenStudio is constantly being improved, with a less stable developer release available every 2 weeks and a stable major release quarterly (4 per year). The features that are available in the current major release are described below. To learn what is coming in the future, see the [Planned Features](../getting_started/roadmap.md) page.
 
 ## New in OpenStudio 1.5.0
 
 #### Grid View for Thermal Zones and Space Types
+
 Previously available for Refrigeration Walk Ins and Refrigeration Cases, grid-view (a grid-style interface providing detailed component views) has now been applied to the Space Types tab, as well as the Thermal Zones tab.
 
-Viewing and editing your thermal zones and space types in a grid view allows you to see all your thermal zones at once and compare settings. 
+Viewing and editing your thermal zones and space types in a grid view allows you to see all your thermal zones at once and compare settings.
 
-![Opening Screen](../../img/features/grid_thumb.png "Grid View example")
+![Grid view example](../../img/features/grid_thumb.png)
 
 #### Plug-in Works in SketchUp 2014
-This update allows OpenStudio to leverage upon the improvements available in Ruby 2.0, and provides compatibility with SketchUp 2014. OpenStudio is no longer be compatible with SketchUp 2013 or SketchUp 8. 
+
+This update allows OpenStudio to leverage upon the improvements available in Ruby 2.0, and provides compatibility with SketchUp 2014. OpenStudio is no longer be compatible with SketchUp 2013 or SketchUp 8.
 
 For the full list of added features go to the [__Release Notes on GitHub__](http://github.com/NREL/OpenStudio/releases)
 
@@ -28,7 +30,7 @@ As of OpenStudio Version 1.5.0
 - Building envelope, shading on windows, shading from other buildings, etc.
 - Draw detailed shapes, trace floor plans, or a combination
 - Use wizard to create standard shapes (H, L, E, Courtyard, Rectangle)
-- Import geometry from gbXML files (from Revit, GreenBuildingStudio, Trace700, etc)
+- Import geometry from gbXML files (from Revit, GreenBuildingStudio, Trace700, etc.)
 - Import geometry from EnergyPlus files (IDF)
 - Import model from SDD files (California Energy Commission)
 - Assign and visually inspect space types assignments
@@ -40,12 +42,12 @@ As of OpenStudio Version 1.5.0
 
 - Specify default materials for each type of surface and subsurface (ext walls, windows, floors, etc.) in building
 - Specify detailed or simple window properties
-- Built-in library of building constructions (walls, windows, doors, floors, etc) for all DOE reference building types and vintages (pre-1980, 1980-2004, and 2004) plus ASHRAE 189.1-2009, ASHRAE 90.1-2007, and ASHRAE 90.1-2010 
+- Built-in library of building constructions (walls, windows, doors, floors, etc.) for all DOE reference building types and vintages (pre-1980, 1980-2004, and 2004) plus ASHRAE 189.1-2009, ASHRAE 90.1-2007, and ASHRAE 90.1-2010
 - Online library of building materials and their modeling properties from ASHRAE Handbook
 
 ### Building Loads
 
-- Specify people, lights, plug loads, gas loads (cooking, etc), steam loads, internal mass, water using equipment, ventilation requirements, and infiltration
+- Specify people, lights, plug loads, gas loads (cooking, etc.), steam loads, internal mass, water using equipment, ventilation requirements, and infiltration
 - Can input loads per-area or add actual quantities to accommodate schematic and detailed design
 - Built in library of space types (loads and associated schedules) for DOE reference buildings for all vintages (pre-1980, 1980-2004, and 2004) plus ASHRAE 189.1-2009, ASHRAE 90.1-2007, and ASHRAE 90.1-2010
 - Can apply loads in one place (space type) and apply throughout the building
@@ -57,76 +59,82 @@ As of OpenStudio Version 1.5.0
 - HVAC system templates for ASHRAE Appendix G system types
 
 ##### Hot, Chilled, and Condenser Water Systems
-  - Boilers (all fuels)
-  - District heating and cooling
-  - Evaporative fluid coolers
-  - Single, two-speed, and variable-speed cooling towers
-  - Chillers (electric)
-  - Vertical ground heat exchanger (bore fields for ground-source heat pumps)
-  - Bypass pipes
-  - Constant and variable speed pumps
-  - Fluid-to-fluid heat exchangers (for primary/secondary pumping and waterside economizers, etc)
 
+- Boilers (all fuels)
+- District heating and cooling
+- Evaporative fluid coolers
+- Single, two-speed, and variable-speed cooling towers
+- Chillers (electric)
+- Vertical ground heat exchanger (bore fields for ground-source heat pumps)
+- Bypass pipes
+- Constant and variable speed pumps
+- Fluid-to-fluid heat exchangers (for primary/secondary pumping and waterside economizers, etc.)
 - Hot, Chilled, and Condenser Water System Controls
-  - Scheduled, OA reset, high and low with deadband, and follow OA setpoint controls
+- Scheduled, OA reset, high and low with deadband, and follow OA setpoint controls
 
 ##### Air System Components
-  - Supply and return plenums
-  - Unitary equipment
-  - Changeover bypass (VVT) systems
-  - Multi-stage unitary equipment (used with staged thermostats)
-  - Outdoor air intake with economizers (all types) and damper control
-  - Chilled water, one-speed DX and two-speed DX cooling coils
-  - Gas, electric, hot water, and DX (heat pump) heating and/or preheat coils
-  - Variable and Constant Speed Fans
-  - Steam humidifiers (electrically powered) used with zone humidistats
-  - Direct and indirect evaporative coolers
-  - Sensible and latent heat recovery
-  - VAV-Reheat and CAV-Reheat terminals (gas, electric, and hot water reheat coils)
-  - VAV no reheat terminals
-  - Series and parallel fan powered boxes with reheat (all fuel types)
-  - Diffusers
-  - Chilled beams (active and passive)
-  - Four-pipe induction terminals
+
+- Supply and return plenums
+- Unitary equipment
+- Changeover bypass (VVT) systems
+- Multi-stage unitary equipment (used with staged thermostats)
+- Outdoor air intake with economizers (all types) and damper control
+- Chilled water, one-speed DX and two-speed DX cooling coils
+- Gas, electric, hot water, and DX (heat pump) heating and/or preheat coils
+- Variable and Constant Speed Fans
+- Steam humidifiers (electrically powered) used with zone humidistats
+- Direct and indirect evaporative coolers
+- Sensible and latent heat recovery
+- VAV-Reheat and CAV-Reheat terminals (gas, electric, and hot water reheat coils)
+- VAV no reheat terminals
+- Series and parallel fan powered boxes with reheat (all fuel types)
+- Diffusers
+- Chilled beams (active and passive)
+- Four-pipe induction terminals
 
 ##### Air System Controls
-  - Demand-controlled ventilation
-  - Night-cycle controls (whole system and/or terminal fans)
-  - Scheduled, OA reset, SAT reset, and follow OA setpoint controls
-  - Single-zone VAV system control (one control zone, many slaves)
+
+- Demand-controlled ventilation
+- Night-cycle controls (whole system and/or terminal fans)
+- Scheduled, OA reset, SAT reset, and follow OA setpoint controls
+- Single-zone VAV system control (one control zone, many slaves)
 
 ##### Zone-level Heating and Cooling Systems
-  - Unit heaters (all fuels)
-  - Low temp radiant heating (electric, variable and constant flow water)
-  - Low temp radiant cooling (variable and constant flow water)
-  - PTAC (DX cooling + fan + all heating fuels)
-  - Water-source heat pump
-  - Air-source heat pump
-  - Exhaust fans
-  - Four pipe fan coils (may be supplied via DOAS system)
-  - Electric and hot-water baseboards
-  - High temperature radiant heaters (gas and electric)
+
+- Unit heaters (all fuels)
+- Low temp radiant heating (electric, variable and constant flow water)
+- Low temp radiant cooling (variable and constant flow water)
+- PTAC (DX cooling + fan + all heating fuels)
+- Water-source heat pump
+- Air-source heat pump
+- Exhaust fans
+- Four pipe fan coils (may be supplied via DOAS system)
+- Electric and hot-water baseboards
+- High temperature radiant heaters (gas and electric)
 
 ##### Variable Refrigerant Flow Systems
-  - Condenser plus zone-level terminals
+
+- Condenser plus zone-level terminals
 
 ##### Commercial Refrigeration
-  - DX Refrigeration Systems
-  - Cascading DX Refrigeration Systems
-  - Fluid-filled DX Secondary Refrigeration Systems
-  - Cases
-  - Walk-in freezers
-  - Compressors
-  - Air, water, and evaporatively-cooled condensers
-  - Liquid-suction heat exchangers and mechanical subcoolers
-  - Heat-recovery to domestic hot water systems (desuperheater)
-  - Heat-recovery to unitary air systems (desuperheater)
+
+- DX Refrigeration Systems
+- Cascading DX Refrigeration Systems
+- Fluid-filled DX Secondary Refrigeration Systems
+- Cases
+- Walk-in freezers
+- Compressors
+- Air, water, and evaporatively-cooled condensers
+- Liquid-suction heat exchangers and mechanical subcoolers
+- Heat-recovery to domestic hot water systems (desuperheater)
+- Heat-recovery to unitary air systems (desuperheater)
 
 ##### Domestic Water Systems
-  - Hot Water Heaters (all fuels)
-  - Equipment that uses warm water (showers, faucets, etc), can specify mixed water temp
-  - Equipment that uses cold water only
-  - Recirculation, no pump, or instantaneous water heaters
+
+- Hot Water Heaters (all fuels)
+- Equipment that uses warm water (showers, faucets, etc.), can specify mixed water temp
+- Equipment that uses cold water only
+- Recirculation, no pump, or instantaneous water heaters
 
 ### Daylighting
 
@@ -149,7 +157,8 @@ As of OpenStudio Version 1.5.0
 - Utility rates for Xcel Energy CO pre-made; users pick from list
 
 ### Import and Export Options
-- IDF import (geometry, constructions, loads, thermal zones, and schedules only) 
+
+- IDF import (geometry, constructions, loads, thermal zones, and schedules only)
 - IDF export (full model including HVAC)
 - gbXML import (geometry, constructions, thermal zones, and schedules only)
 - gbXML export (geometry, constructions, and thermal zones only)
@@ -166,7 +175,7 @@ As of OpenStudio Version 1.5.0
 ### Libraries
 
 - Space types (people, lights, equipment, ventilation, infiltration, schedules) for DOE reference buildings for all vintages (pre-1980, 1980-2004, and 2004), ASHRAE 189.1-2009, ASHRAE 90.1-2007, and ASHRAE 90.1-2010
-- Building constructions (walls, windows, doors, floors, etc) for DOE reference buildings for all vintages (pre-1980, 1980-2004, and 2004), ASHRAE 189.1-2009, ASHRAE 90.1-2007, and ASHRAE 90.1-2010
+- Building constructions (walls, windows, doors, floors, etc.) for DOE reference buildings for all vintages (pre-1980, 1980-2004, and 2004), ASHRAE 189.1-2009, ASHRAE 90.1-2007, and ASHRAE 90.1-2010
 - Extensive online library of building materials from ASHRAE Handbook of Fundamentals
 - Extensive online library of weather files and design day conditions
 
@@ -179,7 +188,7 @@ As of OpenStudio Version 1.5.0
 - Perform complex ECMs, like full HVAC replacement, easily
 - Quickly access online and local libraries of measures from drag-and-drop interface
 - Edit user inputs to control how Measure modifies the model
-- Creates meaningful results, ready for inclusion in reports to design team, building owners, etc
+- Creates meaningful results, ready for inclusion in reports to design team, building owners, etc.
 
 ### QAQC
 
@@ -218,38 +227,39 @@ As of OpenStudio Version 1.5.0
 - Documentation of all modeling commands (SDK) online, updated bi-weekly
 
 ## Applications
+
 The following applications are included in the OpenStudio installation:
 
 ### SketchUp Plug-in
 
-* Select a template containing building space types and constructions as a starting point
-* Trace a 2D footprint and extrude into 3D geometry
-* Draw new or edit existing building geometry in 3D
-* Use Measures to quickly build up the model
-* Add site shading
-* Assign building activity and thermal zones
-* Add daylighting objects
+- Select a template containing building space types and constructions as a starting point
+- Trace a 2D footprint and extrude into 3D geometry
+- Draw new or edit existing building geometry in 3D
+- Use Measures to quickly build up the model
+- Add site shading
+- Assign building activity and thermal zones
+- Add daylighting objects
 
 ### OpenStudio Application
 
-* Add loads, schedules, space types, thermal zones, mechanical systems and more
-* Create HVAC systems using a visual drag-and-drop interface
-* Add refrigeration systems using a layout visual view and a grid view
-* Add variable refrigerant flow systems using a layout visual view and a grid view
-* Change the model programmatically using the _Apply Measure Now_ feature
-* Run a simulation
-* View high level simulation results and detailed simulation output
-* Use reporting measures to create new/custom summary reports
+- Add loads, schedules, space types, thermal zones, mechanical systems and more
+- Create HVAC systems using a visual drag-and-drop interface
+- Add refrigeration systems using a layout visual view and a grid view
+- Add variable refrigerant flow systems using a layout visual view and a grid view
+- Change the model programmatically using the _Apply Measure Now_ feature
+- Run a simulation
+- View high level simulation results and detailed simulation output
+- Use reporting measures to create new/custom summary reports
 
 ### ResultsViewer
 
-* View the detailed timeseries simulation results
-* Create interactive line graphs and heat maps
+- View the detailed timeseries simulation results
+- Create interactive line graphs and heat maps
 
 ### Parametric Analysis Tool (PAT)
 
-* Select a baseline model to serve as the starting point for a parametric analysis 
-* Drag in Measures and set their input values
-* Select combinations of Measures to run
-* Run the simulations locally or on the cloud
-* View a high-level comparison of the simulation results or dig into the detailed reports
+- Select a baseline model to serve as the starting point for a parametric analysis
+- Drag in Measures and set their input values
+- Select combinations of Measures to run
+- Run the simulations locally or on the cloud
+- View a high-level comparison of the simulation results or dig into the detailed reports
