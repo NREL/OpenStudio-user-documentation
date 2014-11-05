@@ -1,299 +1,249 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        
-        
-        <link rel="shortcut icon" href="../../favicon.ico">
-        
-
-        <title>Installation and Introductory Tutorial - OpenStudio User Docs</title>
-
-        <link href="../../css/bootstrap-3.2.0.min.css" rel="stylesheet">
-        <link href="../../css/font-awesome-4.2.0.css" rel="stylesheet">
-        <link href="../../css/prettify-1.0.css" rel="stylesheet">
-        <link href="../../css/base.css" rel="stylesheet">
-
-        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!--[if lt IE 9]>
-            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-        <![endif]-->
-    </head>
-      
-    <body>
-
-        <div class="container">
-<nav class="navbar navbar-default" role="navigation">
-  <div class="container">
-    <div class="navbar-header">
-        <a class="logo navbar-btn pull-left" href="/" title="Home">
-        <img src="../../img/OS_32x32.png" alt="Home">
-        </a>
-      
-       
-        <a class="name navbar-brand" href="../..">OpenStudio User Docs</a>
-        <!-- Expander button -->
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
+  <head>
+    <title>Installation and Introductory Tutorial - OpenStudio User Docs</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    
+    <link href="../../css/bootstrap-3.3.0.min.css" rel="stylesheet">
+    <link href="../../css/font-awesome-4.2.0.min.css" rel="stylesheet">
+    <link href="../../css/prettify-1.0.css" rel="stylesheet">
+    <link href="../../css/base.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+  <nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
         </button>
-    </div>
-
-    <!-- Expanded navigation -->
-    <div class="navbar-collapse collapse">
-           <!-- Main navigation -->
-            <ul class="nav navbar-nav">
-            
-            
-                <li class="dropdown active">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Getting Started <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                    
-                        <li >
-                            <a href="../features/">Current Features</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../roadmap/">Planned Features</a>
-                        </li>
-                    
-                        <li class="active">
-                            <a href="./">Installation and Introductory Tutorial</a>
-                        </li>
-                    
-                    </ul>
-                </li>
-            
-            
-            
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">References & Tutorials <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                    
-                        <li >
-                            <a href="../../next_steps/quick_start_guides/">Quick Start Guides</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../next_steps/sketchup_plugin_interface/">SketchUp Plug-in</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../next_steps/openstudio_application_interface/">OpenStudio Application</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../next_steps/model_objects/">Overview of OpenStudio Model Objects</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../next_steps/creating_your_model/">Creating Your Model</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../next_steps/running_your_simulation/">Running Your Simulation & Viewing Results</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../next_steps/detailed_tutorials/tutorial_glhepro/">GLHEPro Tutorial</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../next_steps/detailed_tutorials/tutorial_shadingcontrols/">Shading Controls Tutorial</a>
-                        </li>
-                    
-                    </ul>
-                </li>
-            
-            
-            
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Measures <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                    
-                        <li >
-                            <a href="../../measures/about_measures/">About Measures</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../measures/measure_writing_guide/">Measure Writing Guide</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../measures/measure_code_examples/">Measure Code Examples</a>
-                        </li>
-                    
-                    </ul>
-                </li>
-            
-            
-            
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Comparative Analysis <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                    
-                        <li >
-                            <a href="../../comparative_analysis/parametric_studies/">ParametricAnalysisTool</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../comparative_analysis/large_scale_analysis/">Large Scale Analysis</a>
-                        </li>
-                    
-                    </ul>
-                </li>
-            
-            
-            
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Help <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                    
-                        <li >
-                            <a href="../../help/training/">Training</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../help/finding_model_data/">Finding Model Data</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../help/best_practices/">Best Practices</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../help/troubleshooting/">Troubleshooting</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../help/faq/">FAQ</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../help/software_license/">Software License</a>
-                        </li>
-                    
-                    </ul>
-                </li>
-            
-            
-            </ul>
-
-            <!-- Search, Navigation and Repo links -->
-            <ul class="nav navbar-nav navbar-right">
-                
-            
-            </ul>
-            
+        <a class="navbar-brand" href="../.."><img alt="" src="../../img/OS_32x32.png"> OpenStudio User Docs</a>
+      </div>
+      <div class="navbar-collapse collapse">
+        <!-- Main navigation -->
+        <ul class="nav navbar-nav">
+        
           
+          <li class="dropdown active">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Getting Started <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+            
+              <li>
+                <a href="../features/">Current Features</a>
+              </li>
+            
+              <li>
+                <a href="../roadmap/">Planned Features</a>
+              </li>
+            
+              <li class="active">
+                <a href="./">Installation and Introductory Tutorial</a>
+              </li>
+            
+            </ul>
+          </li>
+          
+        
+          
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">References & Tutorials <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+            
+              <li>
+                <a href="../../next_steps/quick_start_guides/">Quick Start Guides</a>
+              </li>
+            
+              <li>
+                <a href="../../next_steps/sketchup_plugin_interface/">SketchUp Plug-in</a>
+              </li>
+            
+              <li>
+                <a href="../../next_steps/openstudio_application_interface/">OpenStudio Application</a>
+              </li>
+            
+              <li>
+                <a href="../../next_steps/model_objects/">Overview of OpenStudio Model Objects</a>
+              </li>
+            
+              <li>
+                <a href="../../next_steps/creating_your_model/">Creating Your Model</a>
+              </li>
+            
+              <li>
+                <a href="../../next_steps/running_your_simulation/">Running Your Simulation & Viewing Results</a>
+              </li>
+            
+              <li>
+                <a href="../../next_steps/detailed_tutorials/tutorial_glhepro/">GLHEPro Tutorial</a>
+              </li>
+            
+              <li>
+                <a href="../../next_steps/detailed_tutorials/tutorial_shadingcontrols/">Shading Controls Tutorial</a>
+              </li>
+            
+            </ul>
+          </li>
+          
+        
+          
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Measures <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+            
+              <li>
+                <a href="../../measures/about_measures/">About Measures</a>
+              </li>
+            
+              <li>
+                <a href="../../measures/measure_writing_guide/">Measure Writing Guide</a>
+              </li>
+            
+              <li>
+                <a href="../../measures/measure_code_examples/">Measure Code Examples</a>
+              </li>
+            
+            </ul>
+          </li>
+          
+        
+          
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Comparative Analysis <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+            
+              <li>
+                <a href="../../comparative_analysis/parametric_studies/">ParametricAnalysisTool</a>
+              </li>
+            
+              <li>
+                <a href="../../comparative_analysis/large_scale_analysis/">Large Scale Analysis</a>
+              </li>
+            
+            </ul>
+          </li>
+          
+        
+          
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Help <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+            
+              <li>
+                <a href="../../help/training/">Training</a>
+              </li>
+            
+              <li>
+                <a href="../../help/finding_model_data/">Finding Model Data</a>
+              </li>
+            
+              <li>
+                <a href="../../help/best_practices/">Best Practices</a>
+              </li>
+            
+              <li>
+                <a href="../../help/troubleshooting/">Troubleshooting</a>
+              </li>
+            
+              <li>
+                <a href="../../help/faq/">FAQ</a>
+              </li>
+            
+              <li>
+                <a href="../../help/software_license/">Software License</a>
+              </li>
+            
+            </ul>
+          </li>
+          
+        
+        </ul>
+
+        <!-- Search, Navigation and Repo links -->
+        <ul class="nav navbar-nav navbar-right">
+        
+        </ul>
+      </div>
     </div>
-
-
-  </div>
-</nav>
+  </nav>
 </div>
-
-        <div class="container">        
-            <div class="col-md-3">
-               
-                <div class="bs-sidebar hidden-print affix well" role="complementary">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <div class="bs-sidebar hidden-print affix well" role="complementary">
   <ul class="nav bs-sidenav">
-
-
-	
   
-
-  <li class="main active"><a href="#installation-instructions">Installation Instructions</a></li>
+    <li class="main active"><a href="#installation-instructions">Installation Instructions</a></li>
     
-
   
-
-
-	
-
-  <li class="main "><a href="#workflow-overview">Workflow Overview</a></li>
+    <li class="main"><a href="#workflow-overview">Workflow Overview</a></li>
     
-
   
-
-
-	
-
-  <li class="main "><a href="#quick-start-guide-to-openstudio-modeling-tools">Quick Start Guide to OpenStudio Modeling Tools</a></li>
+    <li class="main"><a href="#quick-start-guide-to-openstudio-modeling-tools">Quick Start Guide to OpenStudio Modeling Tools</a></li>
     
-
   
-
-
-	
-
-  <li class="main "><a href="#quick-start-guide-to-the-parametricanalysistool-pat">Quick Start Guide to the ParametricAnalysisTool (PAT)</a></li>
+    <li class="main"><a href="#quick-start-guide-to-the-parametricanalysistool-pat">Quick Start Guide to the ParametricAnalysisTool (PAT)</a></li>
     
-
   
-
-
-	
-
-  <li class="main "><a href="#introductory-tutorial">Introductory Tutorial</a></li>
+    <li class="main"><a href="#introductory-tutorial">Introductory Tutorial</a></li>
     
-      <li><a href="#sketchup-plug-in-building-envelope">SketchUp Plug-in - Building Envelope</a></li>
+    <li><a href="#sketchup-plug-in-building-envelope">SketchUp Plug-in - Building Envelope</a></li>
     
-      <li><a href="#sketchup-plug-in-space-types-and-thermal-zones">SketchUp Plug-in - Space Types and Thermal Zones</a></li>
+    <li><a href="#sketchup-plug-in-space-types-and-thermal-zones">SketchUp Plug-in - Space Types and Thermal Zones</a></li>
     
-      <li><a href="#site-facility-and-basic-run">Site, Facility, and Basic Run</a></li>
+    <li><a href="#site-facility-and-basic-run">Site, Facility, and Basic Run</a></li>
     
-      <li><a href="#space-types-internal-loads-and-schedules">Space Types, Internal Loads, and Schedules</a></li>
+    <li><a href="#space-types-internal-loads-and-schedules">Space Types, Internal Loads, and Schedules</a></li>
     
-      <li><a href="#constructions-materials-and-the-building-component-library-bcl">Constructions, Materials, and the Building Component Library (BCL)</a></li>
+    <li><a href="#constructions-materials-and-the-building-component-library-bcl">Constructions, Materials, and the Building Component Library (BCL)</a></li>
     
-      <li><a href="#hvac-zone-equipment-air-loops-and-plant-loops">HVAC - Zone Equipment, Air Loops, and Plant Loops</a></li>
+    <li><a href="#hvac-zone-equipment-air-loops-and-plant-loops">HVAC - Zone Equipment, Air Loops, and Plant Loops</a></li>
     
-      <li><a href="#service-hot-water">Service Hot Water</a></li>
+    <li><a href="#service-hot-water">Service Hot Water</a></li>
     
-
-   
-	
-
-
-
+  
   </ul>
-  <div class='home-btn'>
+  <div class="home-btn">
     <a class="btn btn-default" role="button" href="https://www.openstudio.net">Back to OpenStudio</a>
   </div>
 </div>
-
-            </div>
-            <div class="col-md-9" role="main">
-                
-
+        </div>
+        <div class="col-md-9" role="main">
+          
 <h1>Installation and Introductory Tutorial</h1>
 
-<p>This page walks you through installing OpenStudio, the basics of the applications, and the basic workflow.  </p>
+<p>This page walks you through installing OpenStudio, the basics of the applications, and the basic workflow.</p>
 <h2 id="installation-instructions">Installation Instructions</h2>
 <p>OpenStudio is supported on Windows 7 - 8.1, OS X 10.9, and 64-bit Ubuntu 14.04.
 OpenStudio 1.5.0 works with EnergyPlus 8.1.</p>
 <p><strong>Download and install EnergyPlus 8.1</strong></p>
 <ol>
-<li>Login to the <a href="http://apps1.eere.energy.gov/buildings/energyplus/index.cfm">EnergyPlus website</a>.  Create an account if you don't have one.</li>
-<li>Click "Download Older Versions of Energy Plus". </li>
-<li>Choose the installer for <strong>EnergyPlus 8.1</strong> that matches your operating system. OpenStudio works with both the 32 and 64bit installers.</li>
+<li>Login to the <a href="http://apps1.eere.energy.gov/buildings/energyplus/index.cfm">EnergyPlus website</a>. Create an account if you don't have one.</li>
+<li>Click "Download Older Versions of Energy Plus".</li>
+<li>Choose the installer for <strong>EnergyPlus 8.1</strong> that matches your operating system. OpenStudio works with both the 32 and 64-bit installers.</li>
 </ol>
 <p><strong>Download and install SketchUp</strong></p>
 <ol>
-<li>The OpenStudio SketchUp Plug-in requires <a href="http://www.sketchup.com/">Sketchup 2014</a> (not available for Linux). Older versions are not supported.</li>
+<li>The OpenStudio SketchUp Plug-in requires <a href="http://www.sketchup.com/">SketchUp 2014</a> (not available for Linux). Older versions are not supported.</li>
 </ol>
 <p><strong>Download and install OpenStudio</strong></p>
 <ol>
-<li>Login to the <a href="www.openstudio.net">OpenStudio website</a>.  Create an account if you don't have one.  </li>
+<li>Login to the <a href="www.openstudio.net">OpenStudio website</a>. Create an account if you don't have one.</li>
 <li>Click "Downloads" at the top of the page.</li>
-<li>Choose the installer that matches your operating system.  The OpenStudio package contains the following tools:<ul>
+<li>Choose the installer that matches your operating system. The OpenStudio package contains the following tools:<ul>
 <li>SketchUp Plug-in</li>
 <li>OpenStudio Application</li>
 <li>ParametricAnalysisTool(PAT)</li>
@@ -304,70 +254,64 @@ OpenStudio 1.5.0 works with EnergyPlus 8.1.</p>
 <p><strong>Optional - Setup a Building Component Library (BCL) Account</strong>
 BCL content can now be accessed from within the OpenStudio SketchUp Plug-in and from the standalone OpenStudio application. To take advantage of this integration, you will need to follow the steps outlined here to request a BCL key.</p>
 <ol>
-<li>Login to <a href="https://bcl.nrel.gov/">Building Component Library (BCL)</a>.  Create an account if you don't have one. Follow the instructions from the email sent to you upon registration and then login.</li>
-<li>Click on the "My Dashboard" near the top right of the website.</li>
-<li>Copy the text after "APIv1.1 key:" then paste the key into the SketchUp Plug-in, the OpenStudio application, or the Parametric Analysis Tool (PAT). <strong>You only need to configure the key in one place and it will be used globally throughout the OpenStudio tools.</strong> Additionally, this key will be maintained when you install updates to OpenStudio.</li>
+<li>Login to <a href="https://bcl.nrel.gov/">Building Component Library (BCL)</a>. Create an account if you don't have one. Follow the instructions from the email sent to you upon registration and then login.</li>
+<li>Click on the <code>My Dashboard</code> near the top right of the website.</li>
+<li>Copy the text after <code>API v1.1 key</code>: then paste the key into the SketchUp Plug-in, the OpenStudio application, or the Parametric Analysis Tool (PAT). <strong>You only need to configure the key in one place and it will be used globally throughout the OpenStudio tools.</strong> Additionally, this key will be maintained when you install updates to OpenStudio.</li>
 </ol>
-<p>Enter the Key Through the OpenStudio SketchUp Plug-in under the menu "Plugins/OpenStudio User Scripts/Building Component Library/Setup BCL Key" enter your key, and click "OK."  <strong>Or</strong> Register the Key Through the OpenStudio Application open the menu "Components &amp; Measures/Find Components" and if a key is not already registered, it will prompt you for one. </p>
-<p><img alt="Key Request" src="../../img/bcl_key_request.png" title="Key Dialog" /></p>
+<p>Enter the key through the OpenStudio SketchUp Plug-in under the menu <code>Plugins-&gt;OpenStudio User Scripts-&gt;Building Component Library-&gt;Setup BCL Key</code> and click <code>OK</code>. <strong>Or</strong> register the key through the OpenStudio Application under the menu <code>Components &amp; Measures-&gt;Find Components</code>. If a key is not already registered, it will prompt you for one.</p>
+<p><img alt="Key request dialog" src="../../img/bcl_key_request.png" /></p>
 <p><strong>Optional - Install Radiance</strong>
-If you want to be able to use Radiace for daylighting simulations, you must install Radiance.</p>
+If you want to be able to use Radiance for daylighting simulations, you must install Radiance.</p>
 <ol>
 <li>Download and install <a href="https://github.com/NREL/Radiance/releases/tag/4.2.1">Radiance 4.2.1</a>.</li>
 </ol>
 <p><strong>Optional - Install Ruby</strong>
-If you plan to use the OpenStudio SDK Ruby bindings via command prompt on Windows, you must install Ruby.  OS X already has Ruby installed.</p>
+If you plan to use the OpenStudio SDK Ruby bindings via command prompt on Windows, you must install Ruby. OS X already has Ruby installed.</p>
 <ol>
 <li>Download the <a href="http://rubyinstaller.org/downloads/">Ruby 2.0.0</a> installer.</li>
 <li>Add <code>C:\Ruby200\bin</code> to the PATH environment variable. <a href="http://geekswithblogs.net/renso/archive/2009/10/21/how-to-set-the-windows-path-in-windows-7.aspx">Detailed instructions</a>.</li>
-<li>Create a text file called with the following text inside:
- <code>require 'C:\Program Files (x86)\OpenStudio 1.5.0\Ruby\openstudio.rb'</code></li>
-<li>Save the file as <code>openstudio.rb</code> here: <code>C:\Ruby200\lib\ruby\site_ruby\openstudio.rb</code> (next to the <code>2.0.0</code> folder).</li>
+<li>
+<p>Create a text file called with the following text inside:</p>
+<p><code>ruby
+require 'C:\Program Files (x86)\OpenStudio 1.5.0\Ruby\openstudio.rb'</code></p>
+</li>
+<li>
+<p>Save the file as <code>openstudio.rb</code> here: <code>C:\Ruby200\lib\ruby\site_ruby\openstudio.rb</code> (next to the <code>2.0.0</code> folder).</p>
+</li>
 </ol>
 <h2 id="workflow-overview">Workflow Overview</h2>
-<p>After installing OpenStudio you will have the SketchUp Plug-in, OpenStudio Application, ParametricAnalysisTool (PAT) and ResultsViewer. The typical OpenStudio workflow is shown in the diagram below. </p>
-<p><a href="../../img/workflow_diagram.png" target="_blank">
-<img src="../../img/workflow_diagram.png" alt="Resized JPEG graphic" title="Click to view larger image" border="2" width="750" height="" hspace="10" /></a></p>
+<p>After installing OpenStudio you will have the SketchUp Plug-in, OpenStudio Application, ParametricAnalysisTool (PAT) and ResultsViewer. The typical OpenStudio workflow is shown in the diagram below.</p>
+<p><a href="../../img/workflow_diagram.png"><img alt="Workflow Diagram" src="../../img/workflow_diagram.png" title="Click to view" /></a></p>
 <p><em>About: Click on the diagram above to view a larger version.</em></p>
-<p>Results view is used to view simulation results. The section on Running Simulation &amp; Viewing Results has information on using <a href="../../next_steps/running_your_simulation/#using-resultsviewer">ResultsViewer.</a></p>
+<p>ResultsViewer is used to view simulation results. The section on Running Simulation &amp; Viewing Results has information on using <a href="../../next_steps/running_your_simulation/#using-resultsviewer">ResultsViewer</a>.</p>
 <h2 id="quick-start-guide-to-openstudio-modeling-tools">Quick Start Guide to OpenStudio Modeling Tools</h2>
-<ul>
-<li>This <a href="../../img/pdfs/openstudio_interface_quickstart.pdf">OpenStudio Quick Start Guide (PDF)</a> provides an introduction to the interface for the Plug-in and the OpenStudio application. It also provides guidance on the basic workflow. Checkout the <a href="#introductory-tutorial">Introductory Tutorial</a> below to get started.</li>
-</ul>
+<p>The <a href="../../img/pdfs/openstudio_interface_quickstart.pdf">OpenStudio Quick Start Guide (PDF)</a> provides an introduction to the interface for the Plug-in and the OpenStudio application. It also provides guidance on the basic workflow. Read the <a href="#introductory-tutorial">Introductory Tutorial</a> below to get started.</p>
 <h2 id="quick-start-guide-to-the-parametricanalysistool-pat">Quick Start Guide to the ParametricAnalysisTool (PAT)</h2>
-<ul>
-<li>This <a href="../../img/pdfs/PAT-Quick_Start_Guide.pdf">ParametricAnalysisTool Quick Start Guide (PDF)</a> and the <a href="../../comparative_analysis/parametric_studies/">ParametricAnalysisTool section</a> provide an introduction to the interface and workflow for creating multiple design alternatives from a seed model. </li>
-</ul>
+<p>The <a href="../../img/pdfs/PAT-Quick_Start_Guide.pdf">ParametricAnalysisTool Quick Start Guide (PDF)</a> and the <a href="../../comparative_analysis/parametric_studies/">ParametricAnalysisTool section</a> provide an introduction to the interface and workflow for creating multiple design alternatives from a seed model.</p>
 <h2 id="introductory-tutorial">Introductory Tutorial</h2>
-<p>The tutorial below was created before the grid view was added to the Space Types and Thermal Zones tabs. Grid view allows you to view and edit more than one space type or thermal zone at a time. Go to the <a href="../../next_steps/openstudio_application_interface/">OpenStudio Application Interface</a> to learn more about grid view.   </p>
+<p>The tutorial below was created before the grid view was added to the Space Types and Thermal Zones tabs. Grid view allows you to view and edit more than one space type or thermal zone at a time. Go to the <a href="../../next_steps/openstudio_application_interface/">OpenStudio Application Interface</a> to learn more about grid view.</p>
 <h3 id="sketchup-plug-in-building-envelope">SketchUp Plug-in - Building Envelope</h3>
 <p>For additional information on the SketchUp Plug-in interface, go to the <a href="../../next_steps/sketchup_plugin_interface/">SketchUp Plug-in Interface</a> section.</p>
-<iframe width="640" height="360" src="http://www.youtube.com/embed/wzzY_W2WELo?rel=0&start=&end=&autoplay=0" frameborder="0" allowfullscreen></iframe>
+<iframe width="640" height="360" src="http://www.youtube.com/embed/wzzY_W2WELo" allowfullscreen></iframe>
 
 <p><em>Above: This video shows you how to choose a template and create your building envelope. It uses the OpenStudio SketchUp Plug-in.</em></p>
 <h3 id="sketchup-plug-in-space-types-and-thermal-zones">SketchUp Plug-in - Space Types and Thermal Zones</h3>
-<iframe width="640" height="360" src="http://www.youtube.com/embed/8LTexVna_vw?rel=0&start=&end=&autoplay=0" frameborder="0" allowfullscreen></iframe>
-
+<p><iframe width="640" height="360" src="http://www.youtube.com/embed/8LTexVna_vw" allowfullscreen></iframe></p>
 <p><em>Above: This video shows you how to assign space types, thermal zones, and thermostats to the spaces in your model. It uses the OpenStudio SketchUp Plug-in.</em></p>
 <h3 id="site-facility-and-basic-run">Site, Facility, and Basic Run</h3>
-<iframe width="640" height="360" src="http://www.youtube.com/embed/tgeepiBltJI?rel=0&start=&end=&autoplay=0" frameborder="0" allowfullscreen></iframe>
-
+<p><iframe width="640" height="360" src="http://www.youtube.com/embed/tgeepiBltJI" allowfullscreen></iframe></p>
 <p><em>Above: This video goes into the OpenStudio application, adds weather data, shows the outline view in the facility tab, and runs a simulation with ideal air loads.</em></p>
 <h3 id="space-types-internal-loads-and-schedules">Space Types, Internal Loads, and Schedules</h3>
-<iframe width="640" height="360" src="http://www.youtube.com/embed/PCcxruCaZO0?rel=0&start=&end=&autoplay=0" frameborder="0" allowfullscreen></iframe>
-
+<p><iframe width="640" height="360" src="http://www.youtube.com/embed/PCcxruCaZO0" allowfullscreen></iframe></p>
 <p><em>Above: This video demonstrates how you can inspect, alter, and apply resource objects in OpenStudio.</em></p>
 <h3 id="constructions-materials-and-the-building-component-library-bcl">Constructions, Materials, and the Building Component Library (BCL)</h3>
-<iframe width="640" height="360" src="http://www.youtube.com/embed/8KdVvBds_30?rel=0&start=&end=&autoplay=0" frameborder="0" allowfullscreen></iframe>
-
+<p><iframe width="640" height="360" src="http://www.youtube.com/embed/8KdVvBds_30" allowfullscreen></iframe></p>
 <p><em>Above: This video shows you how to obtain construction and material objects from the Building Component Library and load them into your current model.</em></p>
 <h3 id="hvac-zone-equipment-air-loops-and-plant-loops">HVAC - Zone Equipment, Air Loops, and Plant Loops</h3>
-<iframe width="640" height="360" src="http://www.youtube.com/embed/DKLnZaNoRX0?rel=0&start=&end=&autoplay=0" frameborder="0" allowfullscreen></iframe>
-
+<p><iframe width="640" height="360" src="http://www.youtube.com/embed/DKLnZaNoRX0" allowfullscreen></iframe></p>
 <p><em>Above: This video shows you how to add HVAC systems. It introduces the variable and scripts tabs and runs a simulation with the resulting model.</em></p>
 <h3 id="service-hot-water">Service Hot Water</h3>
-<iframe width="640" height="360" src="http://www.youtube.com/embed/jUJhi6YH51E?rel=0&start=&end=&autoplay=0" frameborder="0" allowfullscreen></iframe>
-
+<p><iframe width="640" height="360" src="http://www.youtube.com/embed/jUJhi6YH51E" allowfullscreen></iframe></p>
 <p><em>Above: This video shows you how create models using service hot water. This includes water heaters, water use connections, water use equipment, and other associated objects.</em></p>
 <!--
 ## Introductory Tutorial
@@ -385,24 +329,20 @@ If you plan to use the OpenStudio SDK Ruby bindings via command prompt on Window
 -->
 
 
-                 <div class="footer">
-
+          <div class="footer">
   <p class="text-center"><a href="https://www.openstudio.net/contact">Contact Us</a></p>
-  <p class="text-center"><a href="https://www.openstudio.net">OpenStudio</a> is developed in collaboration by NREL, ANL, LBNL, ORNL, and PNNL.</>
-  <p class="text-center"><a href="http://www.nrel.gov">NREL</a> is a National Laboratory of the U.S. Department of Energy, Office of Energy Efficiency and Renewable Energy, operated by the Alliance for Sustainable Energy, LLC.
-  </p>
-  <p class="text-center"><a href='#'>Back to Top</a></p>
+  <p class="text-center"><a href="https://www.openstudio.net">OpenStudio</a> is developed in collaboration by NREL, ANL, LBNL, ORNL, and PNNL.</p>
+  <p class="text-center"><a href="http://www.nrel.gov">NREL</a> is a National Laboratory of the U.S. Department of Energy, Office of Energy Efficiency and Renewable Energy, operated by the Alliance for Sustainable Energy, LLC.</p>
+  <p class="text-center"><a href="#">Back to Top</a></p>
 </div>
-            </div>
-
         </div>
-       
+      </div>
+    </div>
+    
 
-        
-
-        <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-        <script src="../../js/bootstrap-3.2.0.min.js"></script>
-        <script src="../../js/prettify-1.0.min.js"></script>
-        <script src="../../js/base.js"></script>
-    </body>
+    <script src="../../js/jquery-2.1.1.min.js"></script>
+    <script src="../../js/bootstrap-3.3.0.min.js"></script>
+    <script src="../../js/prettify-1.0.min.js"></script>
+    <script src="../../js/base.js"></script>
+  </body>
 </html>

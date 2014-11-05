@@ -1,394 +1,298 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        
-        
-        <link rel="shortcut icon" href="../../favicon.ico">
-        
-
-        <title>Large Scale Analysis - OpenStudio User Docs</title>
-
-        <link href="../../css/bootstrap-3.2.0.min.css" rel="stylesheet">
-        <link href="../../css/font-awesome-4.2.0.css" rel="stylesheet">
-        <link href="../../css/prettify-1.0.css" rel="stylesheet">
-        <link href="../../css/base.css" rel="stylesheet">
-
-        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!--[if lt IE 9]>
-            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-        <![endif]-->
-    </head>
-      
-    <body>
-
-        <div class="container">
-<nav class="navbar navbar-default" role="navigation">
-  <div class="container">
-    <div class="navbar-header">
-        <a class="logo navbar-btn pull-left" href="/" title="Home">
-        <img src="../../img/OS_32x32.png" alt="Home">
-        </a>
-      
-       
-        <a class="name navbar-brand" href="../..">OpenStudio User Docs</a>
-        <!-- Expander button -->
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
+  <head>
+    <title>Large Scale Analysis - OpenStudio User Docs</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    
+    <link href="../../css/bootstrap-3.3.0.min.css" rel="stylesheet">
+    <link href="../../css/font-awesome-4.2.0.min.css" rel="stylesheet">
+    <link href="../../css/prettify-1.0.css" rel="stylesheet">
+    <link href="../../css/base.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+  <nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
         </button>
-    </div>
-
-    <!-- Expanded navigation -->
-    <div class="navbar-collapse collapse">
-           <!-- Main navigation -->
-            <ul class="nav navbar-nav">
-            
-            
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Getting Started <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                    
-                        <li >
-                            <a href="../../getting_started/features/">Current Features</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../getting_started/roadmap/">Planned Features</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../getting_started/getting_started/">Installation and Introductory Tutorial</a>
-                        </li>
-                    
-                    </ul>
-                </li>
-            
-            
-            
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">References & Tutorials <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                    
-                        <li >
-                            <a href="../../next_steps/quick_start_guides/">Quick Start Guides</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../next_steps/sketchup_plugin_interface/">SketchUp Plug-in</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../next_steps/openstudio_application_interface/">OpenStudio Application</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../next_steps/model_objects/">Overview of OpenStudio Model Objects</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../next_steps/creating_your_model/">Creating Your Model</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../next_steps/running_your_simulation/">Running Your Simulation & Viewing Results</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../next_steps/detailed_tutorials/tutorial_glhepro/">GLHEPro Tutorial</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../next_steps/detailed_tutorials/tutorial_shadingcontrols/">Shading Controls Tutorial</a>
-                        </li>
-                    
-                    </ul>
-                </li>
-            
-            
-            
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Measures <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                    
-                        <li >
-                            <a href="../../measures/about_measures/">About Measures</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../measures/measure_writing_guide/">Measure Writing Guide</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../measures/measure_code_examples/">Measure Code Examples</a>
-                        </li>
-                    
-                    </ul>
-                </li>
-            
-            
-            
-                <li class="dropdown active">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Comparative Analysis <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                    
-                        <li >
-                            <a href="../parametric_studies/">ParametricAnalysisTool</a>
-                        </li>
-                    
-                        <li class="active">
-                            <a href="./">Large Scale Analysis</a>
-                        </li>
-                    
-                    </ul>
-                </li>
-            
-            
-            
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Help <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                    
-                        <li >
-                            <a href="../../help/training/">Training</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../help/finding_model_data/">Finding Model Data</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../help/best_practices/">Best Practices</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../help/troubleshooting/">Troubleshooting</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../help/faq/">FAQ</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../help/software_license/">Software License</a>
-                        </li>
-                    
-                    </ul>
-                </li>
-            
-            
-            </ul>
-
-            <!-- Search, Navigation and Repo links -->
-            <ul class="nav navbar-nav navbar-right">
-                
-            
-            </ul>
-            
+        <a class="navbar-brand" href="../.."><img alt="" src="../../img/OS_32x32.png"> OpenStudio User Docs</a>
+      </div>
+      <div class="navbar-collapse collapse">
+        <!-- Main navigation -->
+        <ul class="nav navbar-nav">
+        
           
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Getting Started <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+            
+              <li>
+                <a href="../../getting_started/features/">Current Features</a>
+              </li>
+            
+              <li>
+                <a href="../../getting_started/roadmap/">Planned Features</a>
+              </li>
+            
+              <li>
+                <a href="../../getting_started/getting_started/">Installation and Introductory Tutorial</a>
+              </li>
+            
+            </ul>
+          </li>
+          
+        
+          
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">References & Tutorials <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+            
+              <li>
+                <a href="../../next_steps/quick_start_guides/">Quick Start Guides</a>
+              </li>
+            
+              <li>
+                <a href="../../next_steps/sketchup_plugin_interface/">SketchUp Plug-in</a>
+              </li>
+            
+              <li>
+                <a href="../../next_steps/openstudio_application_interface/">OpenStudio Application</a>
+              </li>
+            
+              <li>
+                <a href="../../next_steps/model_objects/">Overview of OpenStudio Model Objects</a>
+              </li>
+            
+              <li>
+                <a href="../../next_steps/creating_your_model/">Creating Your Model</a>
+              </li>
+            
+              <li>
+                <a href="../../next_steps/running_your_simulation/">Running Your Simulation & Viewing Results</a>
+              </li>
+            
+              <li>
+                <a href="../../next_steps/detailed_tutorials/tutorial_glhepro/">GLHEPro Tutorial</a>
+              </li>
+            
+              <li>
+                <a href="../../next_steps/detailed_tutorials/tutorial_shadingcontrols/">Shading Controls Tutorial</a>
+              </li>
+            
+            </ul>
+          </li>
+          
+        
+          
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Measures <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+            
+              <li>
+                <a href="../../measures/about_measures/">About Measures</a>
+              </li>
+            
+              <li>
+                <a href="../../measures/measure_writing_guide/">Measure Writing Guide</a>
+              </li>
+            
+              <li>
+                <a href="../../measures/measure_code_examples/">Measure Code Examples</a>
+              </li>
+            
+            </ul>
+          </li>
+          
+        
+          
+          <li class="dropdown active">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Comparative Analysis <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+            
+              <li>
+                <a href="../parametric_studies/">ParametricAnalysisTool</a>
+              </li>
+            
+              <li class="active">
+                <a href="./">Large Scale Analysis</a>
+              </li>
+            
+            </ul>
+          </li>
+          
+        
+          
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Help <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+            
+              <li>
+                <a href="../../help/training/">Training</a>
+              </li>
+            
+              <li>
+                <a href="../../help/finding_model_data/">Finding Model Data</a>
+              </li>
+            
+              <li>
+                <a href="../../help/best_practices/">Best Practices</a>
+              </li>
+            
+              <li>
+                <a href="../../help/troubleshooting/">Troubleshooting</a>
+              </li>
+            
+              <li>
+                <a href="../../help/faq/">FAQ</a>
+              </li>
+            
+              <li>
+                <a href="../../help/software_license/">Software License</a>
+              </li>
+            
+            </ul>
+          </li>
+          
+        
+        </ul>
+
+        <!-- Search, Navigation and Repo links -->
+        <ul class="nav navbar-nav navbar-right">
+        
+        </ul>
+      </div>
     </div>
-
-
-  </div>
-</nav>
+  </nav>
 </div>
-
-        <div class="container">        
-            <div class="col-md-3">
-               
-                <div class="bs-sidebar hidden-print affix well" role="complementary">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <div class="bs-sidebar hidden-print affix well" role="complementary">
   <ul class="nav bs-sidenav">
-
-
-	
   
-
-  <li class="main active"><a href="#the-workflow">The Workflow</a></li>
+    <li class="main active"><a href="#the-workflow">The Workflow</a></li>
     
-
   
-
-
-	
-
-  <li class="main "><a href="#starting-openstudios-cloud">Starting OpenStudio's Cloud</a></li>
+    <li class="main"><a href="#starting-openstudios-cloud">Starting OpenStudio's Cloud</a></li>
     
-
   
-
-
-	
-
-  <li class="main "><a href="#export-spreadsheet">Export Spreadsheet</a></li>
+    <li class="main"><a href="#export-spreadsheet">Export Spreadsheet</a></li>
     
-
   
-
-
-	
-
-  <li class="main "><a href="#edit-the-template-spreadsheet">Edit the Template Spreadsheet</a></li>
+    <li class="main"><a href="#edit-the-template-spreadsheet">Edit the Template Spreadsheet</a></li>
     
-
   
-
-
-	
-
-  <li class="main "><a href="#running-openstudios-cloud">Running OpenStudio's Cloud</a></li>
+    <li class="main"><a href="#running-openstudios-cloud">Running OpenStudio's Cloud</a></li>
     
-      <li><a href="#buildings-specific-chef-cookbooks">Buildings Specific Chef Cookbooks</a></li>
+    <li><a href="#buildings-specific-chef-cookbooks">Buildings Specific Chef Cookbooks</a></li>
     
-
   
-
-
-	
-
-  <li class="main "><a href="#server-architecture">Server Architecture</a></li>
+    <li class="main"><a href="#server-architecture">Server Architecture</a></li>
     
-
   
-
-
-	
-
-  <li class="main "><a href="#publications">Publications</a></li>
+    <li class="main"><a href="#publications">Publications</a></li>
     
-
-   
-	
-
-
-
+  
   </ul>
-  <div class='home-btn'>
+  <div class="home-btn">
     <a class="btn btn-default" role="button" href="https://www.openstudio.net">Back to OpenStudio</a>
   </div>
 </div>
-
-            </div>
-            <div class="col-md-9" role="main">
-                
-
+        </div>
+        <div class="col-md-9" role="main">
+          
 <h1>Large-scale Analysis</h1>
 
-<p>Although building energy modeling has been common for many years, large-scale analyses have more recently become achievable for more users with access to affordable and vast computing power in the cloud. Recently, the OpenStudio Parametric Analysis Tool was enhanced, allowing users to launch their own cloud resources to run a large number of simulations. </p>
+<p>Although building energy modeling has been common for many years, large-scale analyses have more recently become achievable for more users with access to affordable and vast computing power in the cloud. Recently, the OpenStudio Parametric Analysis Tool was enhanced, allowing users to launch their own cloud resources to run a large number of simulations.</p>
 <p>The ParametricAnalysisTool (PAT) now exports a spreadsheet format compatible with the OpenStudio-analysis-spreadsheet project for running large parametric analyses using cloud resources.</p>
-<p>Go to the <a href="https://github.com/NREL/OpenStudio-analysis-spreadsheet">Github repository</a> for information and code for the analysis spreadsheet. There are instructions and examples on the GitHub site.</p>
+<p>Go to the <a href="https://github.com/NREL/OpenStudio-analysis-spreadsheet">GitHub repository</a> for information and code for the analysis spreadsheet. There are instructions and examples on the GitHub site.</p>
 <h2 id="the-workflow">The Workflow</h2>
 <ol>
-<li>
-<p>Build your baseline model with the OpenStudio Application</p>
-</li>
-<li>
-<p>Manipulate the Model with measures</p>
-</li>
-<li>
-<p>Run basic parametrics via PAT</p>
-</li>
+<li>Build your baseline model with the OpenStudio Application</li>
+<li>Manipulate the Model with measures</li>
+<li>Run basic parametrics via PAT</li>
 <li>Export a spreadsheet view from PAT</li>
-<li>
-<p>Fill in ranges, distributions, defaults, algorithms, objective functions</p>
-</li>
-<li>
-<p>Large Analyses via OpenStudio-Server</p>
-</li>
-<li>
-<p>Start Cluster</p>
-</li>
-<li>
-<p>Upload Data:</p>
-<ul>
-<li>
-<p>Measures</p>
-</li>
-<li>
-<p>Variables</p>
-</li>
-<li>
-<p>Seed Model</p>
-</li>
-<li>
-<p>Weather Data</p>
-</li>
+<li>Fill in ranges, distributions, defaults, algorithms, objective functions</li>
+<li>Large Analyses via OpenStudio-Server</li>
+<li>Start Cluster</li>
+<li>Upload Data:<ul>
+<li>Measures</li>
+<li>Variables</li>
+<li>Seed Model</li>
+<li>Weather Data</li>
 </ul>
 </li>
-<li>
-<p>Simulation Executive Runs Analysis</p>
-</li>
-<li>
-<p>Browse Results and Download Files</p>
-</li>
-<li>
-<p>Everything has a JSON-based API to access data programmatically</p>
-</li>
-<li>
-<p>Download results in CSV or R dataframe</p>
-</li>
+<li>Simulation Executive Runs Analysis</li>
+<li>Browse Results and Download Files</li>
+<li>Everything has a JSON-based API to access data programmatically</li>
+<li>Download results in CSV or R dataframe</li>
 </ol>
 <hr />
-<p><img alt="Analysis Workflow" src="../../img/large_scale/cloud_run_process_diagram.png" title="Analysis Workflow" /></p>
+<p><img alt="Analysis Workflow" src="../../img/large_scale/cloud_run_process_diagram.png" /></p>
 <hr />
 <h2 id="starting-openstudios-cloud">Starting OpenStudio's Cloud</h2>
-<pre class="prettyprint well"><code>$ gem install bundler
-
-$ git clone https://github.com/NREL/OpenStudio-analysis-spreadsheet.git
-
-$ bundle install
+<pre class="prettyprint well"><code class="bash">gem install bundler
+git clone https://github.com/NREL/OpenStudio-analysis-spreadsheet.git
+bundle install
 </code></pre>
+
 <h2 id="export-spreadsheet">Export Spreadsheet</h2>
 <p>Select the measures you want to use in the analysis and export a spreadsheet by selecting that option under the File menu.
-<img alt="Export Spreadsheet" src="../../img/large_scale/export_spreadsheet.png" title="Export Spreadsheet" /></p>
+<img alt="Export Analysis Spreadsheet Menu" src="../../img/large_scale/export_spreadsheet.png" /></p>
 <h2 id="edit-the-template-spreadsheet">Edit the Template Spreadsheet</h2>
 <p>After exporting the spreadsheet from PAT, open the spreadsheet in Excel to edit fields.</p>
-<p><a href="../../img/large_scale/spreadsheet.png" target="_blank">
-<img src="../../img/large_scale/small_spreadsheet.png" alt="Resized JPEG graphic" title="Click to view larger version" border="2" width="760" height="" hspace="10" /></a></p>
+<p><a href="../../img/large_scale/spreadsheet.png"><img alt="Spreadsheet View" src="../../img/large_scale/spreadsheet.png" title="Click to view" /></a></p>
 <p><em>Above: Click to see a larger screenshot of the spreadsheet.</em></p>
 <h2 id="running-openstudios-cloud">Running OpenStudio's Cloud</h2>
-<pre class="prettyprint well"><code>$ rake run
+<pre class="prettyprint well"><code class="bash">rake run
 </code></pre>
+
 <hr />
 <h3 id="buildings-specific-chef-cookbooks">Buildings Specific Chef Cookbooks</h3>
 <p>Provisioning ensures that the appropriate tools are ready on the server, that there are consistent images across platforms, and makes it easier to test and deploy.</p>
-<p>The OpenStudio Server uses Chef to help automate the workflow. 
-<a href="https://docs.getchef.com/chef_overview.html">Chef Documentation</a></p>
+<p>The OpenStudio Server uses Chef to help automate the workflow. <a href="https://docs.getchef.com/chef_overview.html">Chef Documentation</a></p>
 <p>OpenStudio - <a href="https://github.com/NREL-cookbooks/openstudio">https://github.com/NREL-cookbooks/openstudio</a></p>
 <p>EnergyPlus - <a href="https://github.com/NREL-cookbooks/energyplus">https://github.com/NREL-cookbooks/energyplus</a></p>
 <p>Radiance - <a href="https://github.com/NREL-cookbooks/radiance">https://github.com/NREL-cookbooks/radiance</a></p>
 <p>R - <a href="https://github.com/NREL-cookbooks/cookbook-r">https://github.com/NREL-cookbooks/cookbook-r</a></p>
 <hr />
 <h2 id="server-architecture">Server Architecture</h2>
-<p><img alt="Analysis Architecture" src="../../img/large_scale/architecture.png" title="Architecture" /></p>
+<p><img alt="Analysis Architecture" src="../../img/large_scale/architecture.png" /></p>
 <hr />
 <h2 id="publications">Publications</h2>
 <p><a href="https://www.ashrae.org/File%20Library/docLib/Events/ASHRAE-IPBSA-USA/Presentations/12_Macumber.pdf">A GRAPHICAL TOOL FOR CLOUD-BASED BUILDING ENERGY SIMULATION (PDF)</a></p>
 <p><a href="https://www.ashrae.org/File%20Library/docLib/Events/ASHRAE-IPBSA-USA/Presentations/11_Long.pdf">SCALING BUILDING ENERGY MODELING HORIZONTALLY IN THE CLOUD WITH OPENSTUDIO (PDF).</a></p>
 
-                 <div class="footer">
-
+          <div class="footer">
   <p class="text-center"><a href="https://www.openstudio.net/contact">Contact Us</a></p>
-  <p class="text-center"><a href="https://www.openstudio.net">OpenStudio</a> is developed in collaboration by NREL, ANL, LBNL, ORNL, and PNNL.</>
-  <p class="text-center"><a href="http://www.nrel.gov">NREL</a> is a National Laboratory of the U.S. Department of Energy, Office of Energy Efficiency and Renewable Energy, operated by the Alliance for Sustainable Energy, LLC.
-  </p>
-  <p class="text-center"><a href='#'>Back to Top</a></p>
+  <p class="text-center"><a href="https://www.openstudio.net">OpenStudio</a> is developed in collaboration by NREL, ANL, LBNL, ORNL, and PNNL.</p>
+  <p class="text-center"><a href="http://www.nrel.gov">NREL</a> is a National Laboratory of the U.S. Department of Energy, Office of Energy Efficiency and Renewable Energy, operated by the Alliance for Sustainable Energy, LLC.</p>
+  <p class="text-center"><a href="#">Back to Top</a></p>
 </div>
-            </div>
-
         </div>
-       
+      </div>
+    </div>
+    
 
-        
-
-        <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-        <script src="../../js/bootstrap-3.2.0.min.js"></script>
-        <script src="../../js/prettify-1.0.min.js"></script>
-        <script src="../../js/base.js"></script>
-    </body>
+    <script src="../../js/jquery-2.1.1.min.js"></script>
+    <script src="../../js/bootstrap-3.3.0.min.js"></script>
+    <script src="../../js/prettify-1.0.min.js"></script>
+    <script src="../../js/base.js"></script>
+  </body>
 </html>

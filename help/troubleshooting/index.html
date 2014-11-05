@@ -1,286 +1,226 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        
-        
-        <link rel="shortcut icon" href="../../favicon.ico">
-        
-
-        <title>Troubleshooting - OpenStudio User Docs</title>
-
-        <link href="../../css/bootstrap-3.2.0.min.css" rel="stylesheet">
-        <link href="../../css/font-awesome-4.2.0.css" rel="stylesheet">
-        <link href="../../css/prettify-1.0.css" rel="stylesheet">
-        <link href="../../css/base.css" rel="stylesheet">
-
-        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!--[if lt IE 9]>
-            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-        <![endif]-->
-    </head>
-      
-    <body>
-
-        <div class="container">
-<nav class="navbar navbar-default" role="navigation">
-  <div class="container">
-    <div class="navbar-header">
-        <a class="logo navbar-btn pull-left" href="/" title="Home">
-        <img src="../../img/OS_32x32.png" alt="Home">
-        </a>
-      
-       
-        <a class="name navbar-brand" href="../..">OpenStudio User Docs</a>
-        <!-- Expander button -->
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
+  <head>
+    <title>Troubleshooting - OpenStudio User Docs</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    
+    <link href="../../css/bootstrap-3.3.0.min.css" rel="stylesheet">
+    <link href="../../css/font-awesome-4.2.0.min.css" rel="stylesheet">
+    <link href="../../css/prettify-1.0.css" rel="stylesheet">
+    <link href="../../css/base.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+  <nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
         </button>
-    </div>
-
-    <!-- Expanded navigation -->
-    <div class="navbar-collapse collapse">
-           <!-- Main navigation -->
-            <ul class="nav navbar-nav">
-            
-            
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Getting Started <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                    
-                        <li >
-                            <a href="../../getting_started/features/">Current Features</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../getting_started/roadmap/">Planned Features</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../getting_started/getting_started/">Installation and Introductory Tutorial</a>
-                        </li>
-                    
-                    </ul>
-                </li>
-            
-            
-            
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">References & Tutorials <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                    
-                        <li >
-                            <a href="../../next_steps/quick_start_guides/">Quick Start Guides</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../next_steps/sketchup_plugin_interface/">SketchUp Plug-in</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../next_steps/openstudio_application_interface/">OpenStudio Application</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../next_steps/model_objects/">Overview of OpenStudio Model Objects</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../next_steps/creating_your_model/">Creating Your Model</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../next_steps/running_your_simulation/">Running Your Simulation & Viewing Results</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../next_steps/detailed_tutorials/tutorial_glhepro/">GLHEPro Tutorial</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../next_steps/detailed_tutorials/tutorial_shadingcontrols/">Shading Controls Tutorial</a>
-                        </li>
-                    
-                    </ul>
-                </li>
-            
-            
-            
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Measures <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                    
-                        <li >
-                            <a href="../../measures/about_measures/">About Measures</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../measures/measure_writing_guide/">Measure Writing Guide</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../measures/measure_code_examples/">Measure Code Examples</a>
-                        </li>
-                    
-                    </ul>
-                </li>
-            
-            
-            
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Comparative Analysis <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                    
-                        <li >
-                            <a href="../../comparative_analysis/parametric_studies/">ParametricAnalysisTool</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../comparative_analysis/large_scale_analysis/">Large Scale Analysis</a>
-                        </li>
-                    
-                    </ul>
-                </li>
-            
-            
-            
-                <li class="dropdown active">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Help <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                    
-                        <li >
-                            <a href="../training/">Training</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../finding_model_data/">Finding Model Data</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../best_practices/">Best Practices</a>
-                        </li>
-                    
-                        <li class="active">
-                            <a href="./">Troubleshooting</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../faq/">FAQ</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../software_license/">Software License</a>
-                        </li>
-                    
-                    </ul>
-                </li>
-            
-            
-            </ul>
-
-            <!-- Search, Navigation and Repo links -->
-            <ul class="nav navbar-nav navbar-right">
-                
-            
-            </ul>
-            
+        <a class="navbar-brand" href="../.."><img alt="" src="../../img/OS_32x32.png"> OpenStudio User Docs</a>
+      </div>
+      <div class="navbar-collapse collapse">
+        <!-- Main navigation -->
+        <ul class="nav navbar-nav">
+        
           
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Getting Started <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+            
+              <li>
+                <a href="../../getting_started/features/">Current Features</a>
+              </li>
+            
+              <li>
+                <a href="../../getting_started/roadmap/">Planned Features</a>
+              </li>
+            
+              <li>
+                <a href="../../getting_started/getting_started/">Installation and Introductory Tutorial</a>
+              </li>
+            
+            </ul>
+          </li>
+          
+        
+          
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">References & Tutorials <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+            
+              <li>
+                <a href="../../next_steps/quick_start_guides/">Quick Start Guides</a>
+              </li>
+            
+              <li>
+                <a href="../../next_steps/sketchup_plugin_interface/">SketchUp Plug-in</a>
+              </li>
+            
+              <li>
+                <a href="../../next_steps/openstudio_application_interface/">OpenStudio Application</a>
+              </li>
+            
+              <li>
+                <a href="../../next_steps/model_objects/">Overview of OpenStudio Model Objects</a>
+              </li>
+            
+              <li>
+                <a href="../../next_steps/creating_your_model/">Creating Your Model</a>
+              </li>
+            
+              <li>
+                <a href="../../next_steps/running_your_simulation/">Running Your Simulation & Viewing Results</a>
+              </li>
+            
+              <li>
+                <a href="../../next_steps/detailed_tutorials/tutorial_glhepro/">GLHEPro Tutorial</a>
+              </li>
+            
+              <li>
+                <a href="../../next_steps/detailed_tutorials/tutorial_shadingcontrols/">Shading Controls Tutorial</a>
+              </li>
+            
+            </ul>
+          </li>
+          
+        
+          
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Measures <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+            
+              <li>
+                <a href="../../measures/about_measures/">About Measures</a>
+              </li>
+            
+              <li>
+                <a href="../../measures/measure_writing_guide/">Measure Writing Guide</a>
+              </li>
+            
+              <li>
+                <a href="../../measures/measure_code_examples/">Measure Code Examples</a>
+              </li>
+            
+            </ul>
+          </li>
+          
+        
+          
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Comparative Analysis <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+            
+              <li>
+                <a href="../../comparative_analysis/parametric_studies/">ParametricAnalysisTool</a>
+              </li>
+            
+              <li>
+                <a href="../../comparative_analysis/large_scale_analysis/">Large Scale Analysis</a>
+              </li>
+            
+            </ul>
+          </li>
+          
+        
+          
+          <li class="dropdown active">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Help <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+            
+              <li>
+                <a href="../training/">Training</a>
+              </li>
+            
+              <li>
+                <a href="../finding_model_data/">Finding Model Data</a>
+              </li>
+            
+              <li>
+                <a href="../best_practices/">Best Practices</a>
+              </li>
+            
+              <li class="active">
+                <a href="./">Troubleshooting</a>
+              </li>
+            
+              <li>
+                <a href="../faq/">FAQ</a>
+              </li>
+            
+              <li>
+                <a href="../software_license/">Software License</a>
+              </li>
+            
+            </ul>
+          </li>
+          
+        
+        </ul>
+
+        <!-- Search, Navigation and Repo links -->
+        <ul class="nav navbar-nav navbar-right">
+        
+        </ul>
+      </div>
     </div>
-
-
-  </div>
-</nav>
+  </nav>
 </div>
-
-        <div class="container">        
-            <div class="col-md-3">
-               
-                <div class="bs-sidebar hidden-print affix well" role="complementary">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <div class="bs-sidebar hidden-print affix well" role="complementary">
   <ul class="nav bs-sidenav">
-
-
-	
   
-
-  <li class="main active"><a href="#model-will-not-open-in-sketchup-plug-in">Model Will Not Open in SketchUp Plug-in</a></li>
+    <li class="main active"><a href="#model-will-not-open-in-sketchup-plug-in">Model Will Not Open in SketchUp Plug-in</a></li>
     
-
   
-
-
-	
-
-  <li class="main "><a href="#model-will-not-run">Model Will Not Run</a></li>
+    <li class="main"><a href="#model-will-not-run">Model Will Not Run</a></li>
     
-
   
-
-
-	
-
-  <li class="main "><a href="#sketchup-crashes-on-launch">SketchUp crashes on launch</a></li>
+    <li class="main"><a href="#sketchup-crashes-on-launch">SketchUp crashes on launch</a></li>
     
-
   
-
-
-	
-
-  <li class="main "><a href="#unable-to-communicate-with-amazon-cloud-from-command-prompt-using-the-bundle-command">Unable to Communicate with Amazon Cloud from Command Prompt Using the "bundle" Command</a></li>
+    <li class="main"><a href="#unable-to-communicate-with-amazon-cloud-from-command-prompt-using-the-bundle-command">Unable to Communicate with Amazon Cloud from Command Prompt Using the "bundle" Command</a></li>
     
-
   
-
-
-	
-
-  <li class="main "><a href="#energy-modeling-forum">Energy Modeling Forum</a></li>
+    <li class="main"><a href="#energy-modeling-forum">Energy Modeling Forum</a></li>
     
-
   
-
-
-	
-
-  <li class="main "><a href="#submit-a-bug">Submit a Bug</a></li>
+    <li class="main"><a href="#submit-a-bug">Submit a Bug</a></li>
     
-
   
-
-
-	
-
-  <li class="main "><a href="#useful-sketchup-links">Useful SketchUp Links</a></li>
+    <li class="main"><a href="#useful-sketchup-links">Useful SketchUp Links</a></li>
     
-
-   
-	
-
-
-
+  
   </ul>
-  <div class='home-btn'>
+  <div class="home-btn">
     <a class="btn btn-default" role="button" href="https://www.openstudio.net">Back to OpenStudio</a>
   </div>
 </div>
-
-            </div>
-            <div class="col-md-9" role="main">
-                
-
+        </div>
+        <div class="col-md-9" role="main">
+          
 <h1>Troubleshooting</h1>
 
 <p>This page is a collection of troubleshooting advice that helps users deal with common issues.</p>
 <hr />
 <h2 id="model-will-not-open-in-sketchup-plug-in">Model Will Not Open in SketchUp Plug-in</h2>
-<p>If you have an OSM file that will not open, or opens incorrectly in the SketchUp Plug-in then running the user script linked in this thread can help identify the problem objects and create a new diagnostic copy of your file. This script creates a report identifying problem objects, and saves a new copy of your file leaving the original un-touched. This script is installed with 0.6.2 or later, but you can manually download this file and use it with 0.6.0 or later. Some reasons you may need to run this script include:</p>
+<p>If you have an OSM file that will not open, or opens incorrectly in the SketchUp Plug-in then running the user script linked in this thread can help identify the problem objects and create a new diagnostic copy of your file. This script creates a report identifying problem objects, and saves a new copy of your file leaving the original untouched. This script is installed with 0.6.2 or later, but you can manually download this file and use it with 0.6.0 or later. Some reasons you may need to run this script include:</p>
 <ul>
 <li>Trying to open an OSM file created from an outdated beta version of OpenStudio</li>
 <li>Through some form of editing, conflicting objects exist in the model that prevent it from opening correctly</li>
@@ -300,16 +240,16 @@
 <ul>
 <li>EnergyPlus is not installed. You must have EnergyPlus installed to run a simulation.</li>
 <li>The version of EnergyPlus you are using is not compatible with the version of OpenStudio you are using. Check under the menu Preferences/Scan for tools to see what version of EnergyPlus you are using.</li>
-<li>If the weather file has not been set, the simulation will fail. </li>
-<li>Design days or sizing are required if you are simulating a full HVAC system instead of using idea air loads. </li>
+<li>If the weather file has not been set, the simulation will fail.</li>
+<li>Design days or sizing are required if you are simulating a full HVAC system instead of using idea air loads.</li>
 </ul>
 <p>If you are in the OpenStudio application, the image below shows you how to get access to the "eplusout.err" file that lists the EnergyPlus errors. You can view it with a text editor.</p>
-<p><img alt="OpenStudio Errors" src="../../img/help/os_errors.png" title="OpenStudio Errors" /></p>
+<p><img alt="OpenStudio Errors" src="../../img/help/os_errors.png" /></p>
 <p>If you are in PAT, you should be able to expand the view in the run tab to see errors and warnings at any stage. If errors do not show up in the run tab, there may be an issue with the weather or DDY files. See the image below.</p>
-<p><img alt="PAT Errors" src="../../img/help/pat_errors.png" title="PAT Errors" /></p>
+<p><img alt="PAT Errors" src="../../img/help/pat_errors.png" /></p>
 <hr />
 <h2 id="sketchup-crashes-on-launch">SketchUp crashes on launch</h2>
-<p>The first thing to do is to remove SketchUp and install it again.  To do this, run the SketchUp uninstall program.  Also check that all OpenStudio plugins are removed from the SketchUp plugin directories.  On Windows these directories are:</p>
+<p>The first thing to do is to remove SketchUp and install it again. To do this, run the SketchUp uninstaller. Also check that all OpenStudio plugins are removed from the SketchUp plugin directories. On Windows these directories are:</p>
 <ul>
 <li>C:\Users\&lt;<strong>your username</strong>&gt;\AppData\Roaming\SketchUp\SketchUp 2014\SketchUp\Plugins</li>
 <li>C:\ProgramData\SketchUp\SketchUp 2014\SketchUp\Plugins</li>
@@ -320,20 +260,20 @@
 <li>/Users/&lt;<strong>your username</strong>&gt;/Library/Application Support/SketchUp 2014/SketchUp/Plugins</li>
 <li>/Library/Application Support/SketchUp 2014/SketchUp/Plugins</li>
 </ul>
-<p>If SketchUp crashes without the OpenStudio plugins installed then something else is wrong, contact the SketchUp support team for help.  If SketchUp launches, try installing OpenStudio again.  If SketchUp crashes on launch again, remove the OpenStudio files from the SketchUp plugin directories again.  Open SketchUp, go to Window-&gt;Preferences-&gt;Extensions and disable the OpenStudio plugin.  Re-install OpenStudio and relaunch SketchUp.  Open the Ruby console by going to Window-&gt;Ruby Console and then go back to Window-&gt;Preferences-&gt;Extensions and enable the OpenStudio plugin, you may see useful output in the Ruby console. If you have other extensions installed, try disabling them and enabling the OpenStudio plugin.  </p>
-<p>If none of the steps above work and you are on Windows, it is likely that there is a dynamic library being loaded from another application that is interfering with OpenStudio.  If you just want to fix your problem, try copying the files libeay32.dll and ssleay32.dll from C:\Program Files (x86)\OpenStudio X.X.X\bin to C:\Program Files (x86)\SketchUp\SketchUp 2014, this will fix the problem 80% of the time.</p>
-<p>If you want to investigate in more depth, download <a href="http://www.dependencywalker.com/">Dependency Walker</a>. Extract the files and launch depends.exe.  Navigate to File-&gt;Open and then browse to choose the SketchUp.exe under C:\Program Files (x86)\SketchUp\SketchUp 2014.  This will examine all of the libraries loaded by SketchUp but not the libraries loaded by OpenStudio.  Navigate to Profile-&gt;Start Profiling then press Ok in the dialog that pops up.  This will launch SketchUp and attempt to load OpenStudio. Scroll down in the list of loaded libraries and look for the OpenStudio dlls.  Expand the paths under the OpenStudio dlls and look for libraries that are being loaded from other locations.  Often, some other program will install a different version of one of the libraries (usually libeay32.dll or ssleay32.dll) that OpenStudio uses.  This other library will be in the path ahead of OpenStudio and will be loaded instead, this results in a hard crash of SketchUp.  Correcting your path or copying the dlls from the OpenStudio bin directory into the SketchUp install directory will cause the correct dlls to be loaded when SketchUp starts.</p>
+<p>If SketchUp crashes without the OpenStudio plugins installed then something else is wrong, contact the SketchUp support team for help. If SketchUp launches, try installing OpenStudio again. If SketchUp crashes on launch again, remove the OpenStudio files from the SketchUp plugin directories again. Open SketchUp, go to Window-&gt;Preferences-&gt;Extensions and disable the OpenStudio plugin. Re-install OpenStudio and relaunch SketchUp. Open the Ruby console by going to Window-&gt;Ruby Console and then go back to Window-&gt;Preferences-&gt;Extensions and enable the OpenStudio plugin, you may see useful output in the Ruby console. If you have other extensions installed, try disabling them and enabling the OpenStudio plugin.</p>
+<p>If none of the steps above work and you are on Windows, it is likely that there is a dynamic library being loaded from another application that is interfering with OpenStudio. If you just want to fix your problem, try copying the files libeay32.dll and ssleay32.dll from C:\Program Files (x86)\OpenStudio X.X.X\bin to C:\Program Files (x86)\SketchUp\SketchUp 2014, this will fix the problem 80% of the time.</p>
+<p>If you want to investigate in more depth, download <a href="http://www.dependencywalker.com/">Dependency Walker</a>. Extract the files and launch depends.exe. Navigate to File-&gt;Open and then browse to choose the SketchUp.exe under C:\Program Files (x86)\SketchUp\SketchUp 2014. This will examine all of the libraries loaded by SketchUp but not the libraries loaded by OpenStudio. Navigate to Profile-&gt;Start Profiling then press Ok in the dialog that pops up. This will launch SketchUp and attempt to load OpenStudio. Scroll down in the list of loaded libraries and look for the OpenStudio dlls. Expand the paths under the OpenStudio dlls and look for libraries that are being loaded from other locations. Often, some other program will install a different version of one of the libraries (usually libeay32.dll or ssleay32.dll) that OpenStudio uses. This other library will be in the path ahead of OpenStudio and will be loaded instead, this results in a hard crash of SketchUp. Correcting your path or copying the dlls from the OpenStudio bin directory into the SketchUp install directory will cause the correct dlls to be loaded when SketchUp starts.</p>
 <hr />
 <h2 id="unable-to-communicate-with-amazon-cloud-from-command-prompt-using-the-bundle-command">Unable to Communicate with Amazon Cloud from Command Prompt Using the "bundle" Command</h2>
-<p>This issue is typically a communication error between you and RubyGems.org. Few things to check:</p>
+<p>This issue is typically a communication error between you and RubyGems.org. A few things to check:</p>
 <ol>
-<li>Are you behind a proxy? If so, then check if the proxy is system wide or just your web browsers. Typically easiest to open up your favorite browser and look in the settings.</li>
-<li>Is there any web site restrictions at your location? If so, then it is possible that your IT department is blocking access. Note that RubyGems is only the first hurdle, you will also need access to AWS (meaning Amazon).</li>
+<li>Are you behind a proxy? If so, then check if the proxy is applied system wide or just for your web browsers. It is typically easiest to open up your favorite browser and check the settings.</li>
+<li>Are there any website restrictions at your location? If so, then it is possible that your IT department is blocking access. Note that RubyGems is only the first hurdle, you will also need access to AWS (meaning Amazon).</li>
 </ol>
-<p>If you think that the above is happening. Then it is best to talk to your IT department and explain the situation. The general explanation for the "situation" is that you are trying to run a large number of simulations using Amazon Web Services. Some good questions may be:</p>
+<p>If you think that the above is happening, then it is best to talk to your IT department and explain the situation. The general explanation for the "situation" is that you are trying to run a large number of simulations using Amazon Web Services. Some good questions may be:</p>
 <ol>
-<li>How can I access the internet through a command line (or terminal) using our companies proxy?</li>
-<li>When I ping aws.amazon.com, it times out, is there something that may be restricting access to the site?</li>
+<li>How can I access the internet through a command line (or terminal) using our company's proxy?</li>
+<li>When I ping aws.amazon.com, it times out; is there something that may be restricting access to the site?</li>
 <li>Can we set the proxy to be machine wide, instead of just on the web browsers?</li>
 </ol>
 <hr />
@@ -346,10 +286,8 @@
 <a href="https://unmethours.com/questions/scope:all/sort:activity-desc/tags:openstudio/"><strong>Unmet Hours</strong></a></p>
 <hr />
 <h2 id="submit-a-bug">Submit a Bug</h2>
-<p>Please let us know if you find a bug in the OpenStudio software.
-<div>
- <a class="btn btn-primary" role="button" href="https://www.openstudio.net/contact">Submit a Bug</a>
-</div></p>
+<p>Please let us know if you find a bug in the OpenStudio software.</p>
+<p><a class="btn btn-primary" role="button" href="https://www.openstudio.net/contact">Submit a Bug</a></p>
 <hr />
 <h2 id="useful-sketchup-links">Useful SketchUp Links</h2>
 <ul>
@@ -359,24 +297,20 @@
 <li><a href="http://sketchucation.com/forums/">SketchUcation's SketchUp forum</a></li>
 </ul>
 
-                 <div class="footer">
-
+          <div class="footer">
   <p class="text-center"><a href="https://www.openstudio.net/contact">Contact Us</a></p>
-  <p class="text-center"><a href="https://www.openstudio.net">OpenStudio</a> is developed in collaboration by NREL, ANL, LBNL, ORNL, and PNNL.</>
-  <p class="text-center"><a href="http://www.nrel.gov">NREL</a> is a National Laboratory of the U.S. Department of Energy, Office of Energy Efficiency and Renewable Energy, operated by the Alliance for Sustainable Energy, LLC.
-  </p>
-  <p class="text-center"><a href='#'>Back to Top</a></p>
+  <p class="text-center"><a href="https://www.openstudio.net">OpenStudio</a> is developed in collaboration by NREL, ANL, LBNL, ORNL, and PNNL.</p>
+  <p class="text-center"><a href="http://www.nrel.gov">NREL</a> is a National Laboratory of the U.S. Department of Energy, Office of Energy Efficiency and Renewable Energy, operated by the Alliance for Sustainable Energy, LLC.</p>
+  <p class="text-center"><a href="#">Back to Top</a></p>
 </div>
-            </div>
-
         </div>
-       
+      </div>
+    </div>
+    
 
-        
-
-        <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-        <script src="../../js/bootstrap-3.2.0.min.js"></script>
-        <script src="../../js/prettify-1.0.min.js"></script>
-        <script src="../../js/base.js"></script>
-    </body>
+    <script src="../../js/jquery-2.1.1.min.js"></script>
+    <script src="../../js/bootstrap-3.3.0.min.js"></script>
+    <script src="../../js/prettify-1.0.min.js"></script>
+    <script src="../../js/base.js"></script>
+  </body>
 </html>

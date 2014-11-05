@@ -1,6 +1,5 @@
 body {
-  /*padding-top: 70px;*/
-    padding-top: 20px; 
+    padding-top: 20px;
 }
 
 ul.nav li.main {
@@ -23,9 +22,8 @@ div.source-links {
  */
 
 /* By default it's not affixed in mobile views, so undo that */
-
-/* By default it's not affixed in mobile views, so undo that */
 .bs-sidebar.affix {
+    margin-left: 15px;
     position: static;
 }
 
@@ -121,6 +119,16 @@ div.source-links {
     padding: 0px 20px 10px 20px;
 }
 
-.container p > img {
+.container p img {
     max-width: 100%;
+}
+
+.container iframe {
+    border: 0 none;
+}
+
+a.navbar-brand > img {
+    display: inline;
+    height: 26px;
+    margin-top: -4px;
 }
