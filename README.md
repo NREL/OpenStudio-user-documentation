@@ -17,10 +17,10 @@ Getting mkdocs to work on Windows is very particular.  We recommend uninstalling
 2. Add `C:\Python27` and `C:\Python27\Scripts` to your PATH
 3. Download [Pip](https://bootstrap.pypa.io/get-pip.py)
 4. Open a command prompt where you saved Pip (get-pip.py) and run: `python get-pip.py`
-5. Download [mkdocs v0.9 source code](https://github.com/tomchristie/mkdocs/archive/0.9.zip)
+5. Download [mkdocs v0.11.1 source code](https://github.com/tomchristie/mkdocs/archive/0.11.1.zip)
 6. Extract mkdocs source code
 7. Open a command prompt where you extracted mkdocs and run: `python setup.py install`
-8. Open `C:\Python27\Lib\site-packages\mkdocs-0.9-py2.7.egg\mkdocs\gh_deploy.py` and modify line 13 to contain the following:
+8. Open `C:\Python27\Lib\site-packages\mkdocs-0.11.1-py2.7.egg\mkdocs\gh_deploy.py` and modify line 13 to contain the following:
 
     ```python
     subprocess.check_call(['python', 'C:/Python27/Scripts/ghp-import', '-p', config['site_dir']])

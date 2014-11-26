@@ -1,14 +1,14 @@
 <h1>OpenStudio Application</h1>
 This section contains an overview of the OpenStudio Application.
 
-The [OpenStudio Quick Start Guide](../../img/pdfs/openstudio_interface_quickstart_1.4.0.pdf) provides an introduction to the interface for the Plug-in and the OpenStudio application. It also provides guidance on the basic workflow.
+The [OpenStudio Quick Start Guide](img/pdfs/openstudio_interface_quickstart_1.4.0.pdf) provides an introduction to the interface for the Plug-in and the OpenStudio application. It also provides guidance on the basic workflow.
 
 ------
 
 ## Overview
 The tabs on the left that move vertically are ordered in a suggested workflow.
 
-![Interface Overview](../../img/os_interface/overview.png)
+![Interface Overview](img/os_interface/overview.png)
 
 *Above: Overview of the OpenStudio Application Interface.*
 
@@ -28,35 +28,35 @@ The right panel provides access to items in the library or in your model, as wel
 
 - __"Edit"__ allows you to select certain components and edit the settings for that component. It is used in the HVAC tab to edit component settings, assign thermal zones to loops, and to add plenums.
 
-![Edit Tab](../../img/os_interface/edit_tab.png)
+![Edit Tab](img/os_interface/edit_tab.png)
 
 *Above: Edit settings on some objects in the edit panel.*
 
 ------
 
 ## Left Panel Bottom
-![Add](../../img/os_interface/add.png) Add New Item allows the user to add a new component to the interface. Sometimes the type of item added depends on the selection in the left panel.
+![Add](img/os_interface/add.png) Add New Item allows the user to add a new component to the interface. Sometimes the type of item added depends on the selection in the left panel.
 
-![Add Example](../../img/os_interface/add_example.png)
+![Add Example](img/os_interface/add_example.png)
 
 *Above: On the "Utility Bill" sub-tab, select the type of bill you want to add before hitting the add button.*
 
-![Duplicate](../../img/os_interface/duplicate.png) Duplicate a selected object with this button.
+![Duplicate](img/os_interface/duplicate.png) Duplicate a selected object with this button.
 
-![Delete](../../img/os_interface/delete.png) Delete a selected object with this button.
+![Delete](img/os_interface/delete.png) Delete a selected object with this button.
 
-![Purge](../../img/os_interface/purge.png) Purge unused objects with this button.
+![Purge](img/os_interface/purge.png) Purge unused objects with this button.
 
 ------
 
 ## Adding Objects from the Library
 To add items from the library, select the "Library" tab on the right panel and find the item you want to add to the model. Select that item and drag and drop it in into the correct drop zone. Drop zones are surrounded by a dotted line and are programmed to only accept items that will work for that field.
 
-![Drag-and-drop Constructions](../../img/os_interface/drag_drop.png)
+![Drag-and-drop Constructions](img/os_interface/drag_drop.png)
 
 *Above: Drag-and-drop items from the library to the drop zones in the model.*
 
-![Drag-and-drop Service Hot Water](../../img/os_interface/drag_drop_water.png)
+![Drag-and-drop Service Hot Water](img/os_interface/drag_drop_water.png)
 
 *Above: Drag-and-drop example on the HVAC service hot water.*
 
@@ -71,19 +71,19 @@ Drag components and schedules into the grid view. Most items on the grid can be 
 
 Click on the color box on the "General" button to change the rendering color of the space type. This will change the rendering color in the SketchUp Plug-in as well.
 
-![Grid View on Windows](../../img/os_interface/pc_grid.png)
+![Grid View on Windows](img/os_interface/pc_grid.png)
 
 *Above: The grid view provides a spreadsheet style layout.*
 
-![Space Type Grid View](../../img/os_interface/space_type_grid1.png)
+![Space Type Grid View](img/os_interface/space_type_grid1.png)
 
 *Above: The OS X version of OpenStudio grid view is shown above.*
 
-![Space Type Loads](../../img/os_interface/space_type_grid_loads.png)
+![Space Type Loads](img/os_interface/space_type_grid_loads.png)
 
 *Above: Hit the "Loads" button to edit and view loads by space type. Click on the name of a component and select the  "Edit" panel on the right to inspect and edit that item. You can edit the load definition in the example shown above.*
 
-![Thermal Zone Grid View](../../img/os_interface/thermal_zone_grid.png)
+![Thermal Zone Grid View](img/os_interface/thermal_zone_grid.png)
 
 *Above: The grid view of thermal zones.*
 
@@ -96,7 +96,7 @@ When you save an OSM model in the OpenStudio Application or the SketchUp Plug-in
 
 Load Library is also a very important feature. This allows you to load building component libraries for specific building types. These libraries are the same as those used in the SketchUp Plug-in templates.
 
-![File Menu](../../img/os_interface/file_menu.png "File Menu")
+![File Menu](img/os_interface/file_menu.png "File Menu")
 
 *Above: The file menu contains the new, open, revert, save, import, and export functions.*
 
@@ -109,14 +109,14 @@ The SketchUp Plug-in has access to this as well under `Plugins->OpenStudio->Pref
 
 Scan for Tools will look for Radiance, Ruby, and EnergyPlus installations. If you install those applications prior to installing OpenStudio this shouldn't be necessary.
 
-![Preferences Menu](../../img/os_interface/prefer_menu.png)
+![Preferences Menu](img/os_interface/prefer_menu.png)
 
 *Above: The preferences menu contains the units, measure directory, and tool location options.*
 
 ------
 
 ## Components & Measures Menu
-![Components & Measures Menu](../../img/os_interface/measures_components_menu.png)
+![Components & Measures Menu](img/os_interface/measures_components_menu.png)
 
 *Above: This menu item allows you to run one measure on you model.*
 
@@ -127,7 +127,7 @@ This will open a dialog that allows you to choose a measure from the library to 
 
 Once you select a measure you may edit the measure inputs on the right side of the dialog. Hit apply measure to start.
 
-![Apply Measure Now](../../img/os_interface/apply_measure_now.png)
+![Apply Measure Now](img/os_interface/apply_measure_now.png)
 
 *Above: This menu item allows you to run one measure on your model.*
 
@@ -136,6 +136,6 @@ The BCL window gives you access to an online repository of building energy model
 
 The first time you open this window you will be prompted for an API key, unless you have already used BCL functionality in the SketchUp Plug-in. [Instructions for finding your API Key](../getting_started/getting_started.md#connecting-with-the-building-component-library) are in the "Getting Started" section.
 
-![BCL Window](../../img/os_interface/bcl_window.png)
+![BCL Window](img/os_interface/bcl_window.png)
 
 *Above: This window gives you access to the online BCL to download measures or components.*

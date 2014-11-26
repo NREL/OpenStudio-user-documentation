@@ -9,7 +9,7 @@ Previously available for Refrigeration Walk Ins and Refrigeration Cases, grid-vi
 
 Viewing and editing your thermal zones and space types in a grid view allows you to see all your thermal zones at once and compare settings.
 
-![Grid view example](../../img/features/grid_thumb.png)
+![Grid view example](img/features/grid_thumb.png)
 
 #### Plug-in Works in SketchUp 2014
 

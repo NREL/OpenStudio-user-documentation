@@ -22,7 +22,7 @@ __OpenStudio 1.5.0\Ruby\openstudio\sketchup_plugin\user_scripts__
 To run the script, go to the "User Scripts" menu under the SketchUp Plugins menu, "Plugins / OpenStudio" menu and choose "OSM Diagnostic Script".
 
 Right click on the link below and save to your computer vs. opening in web browser:
-[OSM_Diagonstic_Script.rb](../../img/scripts/OSM_Diagnostic_Script.rb)
+[OSM_Diagonstic_Script.rb](img/scripts/OSM_Diagnostic_Script.rb)
 
 _________________
 
@@ -36,11 +36,11 @@ Some of the reasons simulation errors occur are:
 
 If you are in the OpenStudio application, the image below shows you how to get access to the "eplusout.err" file that lists the EnergyPlus errors. You can view it with a text editor.
 
-![OpenStudio Errors](../../img/help/os_errors.png)
+![OpenStudio Errors](img/help/os_errors.png)
 
 If you are in PAT, you should be able to expand the view in the run tab to see errors and warnings at any stage. If errors do not show up in the run tab, there may be an issue with the weather or DDY files. See the image below.
 
-![PAT Errors](../../img/help/pat_errors.png)
+![PAT Errors](img/help/pat_errors.png)
 
 _________________
 

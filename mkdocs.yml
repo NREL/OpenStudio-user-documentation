@@ -28,6 +28,7 @@ pages:
 - [help/faq.md, Help, FAQ]
 - [help/software_license.md, Help, Software License]
 
+theme: simplex
 theme_dir: 'bootstrap_nrel'
 
 

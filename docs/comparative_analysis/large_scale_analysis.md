@@ -25,7 +25,7 @@ Go to the [GitHub repository](https://github.com/NREL/OpenStudio-analysis-spread
 
 __________
 
-![Analysis Workflow](../../img/large_scale/cloud_run_process_diagram.png)
+![Analysis Workflow](img/large_scale/cloud_run_process_diagram.png)
 
 __________
 
@@ -38,12 +38,12 @@ bundle install
 
 ## Export Spreadsheet
 Select the measures you want to use in the analysis and export a spreadsheet by selecting that option under the File menu.
-![Export Analysis Spreadsheet Menu](../../img/large_scale/export_spreadsheet.png)
+![Export Analysis Spreadsheet Menu](img/large_scale/export_spreadsheet.png)
 
 ## Edit the Template Spreadsheet
 After exporting the spreadsheet from PAT, open the spreadsheet in Excel to edit fields.
 
-[![Spreadsheet View](../../img/large_scale/spreadsheet.png "Click to view")](../../img/large_scale/spreadsheet.png)
+[![Spreadsheet View](img/large_scale/spreadsheet.png "Click to view")](img/large_scale/spreadsheet.png)
 
 *Above: Click to see a larger screenshot of the spreadsheet.*
 
@@ -70,7 +70,7 @@ R - [https://github.com/NREL-cookbooks/cookbook-r](https://github.com/NREL-cookb
 __________
 
 ## Server Architecture
-![Analysis Architecture](../../img/large_scale/architecture.png)
+![Analysis Architecture](img/large_scale/architecture.png)
 
 __________
 

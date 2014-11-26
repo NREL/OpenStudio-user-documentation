@@ -10,7 +10,7 @@ The "OpenStudio Life Cycle Costing Examples" document focuses on how to add cost
 ## Life Cycle Cost Parameters
 The most basic parameters needed for a life cycle cost analysis are the analysis period length and the discount rate. A longer analysis period accumulates more energy cost savings than a shorter period; giving energy conservation measures a better pay back relative to their initial costs. A higher discount rate devalues future energy cost savings relative to money spent on capital improvements in the present; giving energy conservation measures a lower pay back relative to their initial costs. A future interface is planned in the OpenStudio application which will allow users to set these parameters on their baseline model.
 
-![Life Cycle Cost Parameters Mockup](../../img/life_cycle/life_cycle_cost_parameters.png)
+![Life Cycle Cost Parameters Mockup](img/life_cycle/life_cycle_cost_parameters.png)
 
 *Above: Life Cycle Cost Parameters GUI Mockup*
 
@@ -19,7 +19,7 @@ Before this interface is completed, users may set the "Analysis Length" of their
 ## Utility Rate Tariffs
 Typically, life cycle cost analyses compare current capital costs required to implement energy conservation measures with future energy cost savings over the analysis period. In order to compute future energy cost savings the model must include information about the utility rate tariffs which apply to the project. Higher energy costs will give energy conservation measures a better pay back relative to their initial costs. A future interface is planned in the OpenStudio application which will allow users to input utility rate tariffs as part of their baseline model.
 
-![Utility Rate Tariff Mockup](../../img/life_cycle/utility_rate_tariff.png)
+![Utility Rate Tariff Mockup](img/life_cycle/utility_rate_tariff.png)
 
 *Above: Utility Rate Tariff GUI Mockup*
 

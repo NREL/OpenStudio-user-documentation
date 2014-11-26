@@ -34,7 +34,7 @@ BCL content can now be accessed from within the OpenStudio SketchUp Plug-in and 
 
 Enter the key through the OpenStudio SketchUp Plug-in under the menu `Plugins->OpenStudio User Scripts->Building Component Library->Setup BCL Key` and click `OK`. __Or__ register the key through the OpenStudio Application under the menu `Components & Measures->Find Components`. If a key is not already registered, it will prompt you for one.
 
-![Key request dialog](../../img/bcl_key_request.png)
+![Key request dialog](img/bcl_key_request.png)
 
 __Optional - Install Radiance__
 If you want to be able to use Radiance for daylighting simulations, you must install Radiance.
@@ -57,17 +57,17 @@ If you plan to use the OpenStudio SDK Ruby bindings via command prompt on Window
 ## Workflow Overview
 After installing OpenStudio you will have the SketchUp Plug-in, OpenStudio Application, ParametricAnalysisTool (PAT) and ResultsViewer. The typical OpenStudio workflow is shown in the diagram below.
 
-[![Workflow Diagram](../../img/workflow_diagram.png "Click to view")](../../img/workflow_diagram.png)
+[![Workflow Diagram](img/workflow_diagram.png "Click to view")](img/workflow_diagram.png)
 
 *About: Click on the diagram above to view a larger version.*
 
 ResultsViewer is used to view simulation results. The section on Running Simulation & Viewing Results has information on using [ResultsViewer](../../next_steps/running_your_simulation/#using-resultsviewer).
 
 ## Quick Start Guide to OpenStudio Modeling Tools
-The [OpenStudio Quick Start Guide (PDF)](../../img/pdfs/openstudio_interface_quickstart.pdf) provides an introduction to the interface for the Plug-in and the OpenStudio application. It also provides guidance on the basic workflow. Read the [Introductory Tutorial](#introductory-tutorial) below to get started.
+The [OpenStudio Quick Start Guide (PDF)](img/pdfs/openstudio_interface_quickstart.pdf) provides an introduction to the interface for the Plug-in and the OpenStudio application. It also provides guidance on the basic workflow. Read the [Introductory Tutorial](#introductory-tutorial) below to get started.
 
 ## Quick Start Guide to the ParametricAnalysisTool (PAT)
-The [ParametricAnalysisTool Quick Start Guide (PDF)](../../img/pdfs/PAT-Quick_Start_Guide.pdf) and the [ParametricAnalysisTool section](../comparative_analysis/parametric_studies.md) provide an introduction to the interface and workflow for creating multiple design alternatives from a seed model.
+The [ParametricAnalysisTool Quick Start Guide (PDF)](img/pdfs/PAT-Quick_Start_Guide.pdf) and the [ParametricAnalysisTool section](../comparative_analysis/parametric_studies.md) provide an introduction to the interface and workflow for creating multiple design alternatives from a seed model.
 
 ## Introductory Tutorial
 The tutorial below was created before the grid view was added to the Space Types and Thermal Zones tabs. Grid view allows you to view and edit more than one space type or thermal zone at a time. Go to the [OpenStudio Application Interface](../next_steps/openstudio_application_interface.md) to learn more about grid view.

@@ -17,7 +17,7 @@ Each OpenStudio measure is contained in its own folder (usually named after the 
 
 The measure may also contain tests to ensure that it works correctly and resources which are other files that the measure uses during its operation. This file structure allows OpenStudio to easily share and use measures.
 
-![guide image](../../img/measure-writing-guide/1.png)
+![guide image](img/measure-writing-guide/1.png)
 
 This guide is directed primarily toward measure authors; some instructions also apply to users.
 
@@ -397,11 +397,11 @@ Write a measure that will remove all lights currently in the "Enclosed Office" s
 ##### Figuring Out the Modeling Approach
 The first thing to do is understand how the measure would be modeled in OpenStudio, and make a list of the objects involved. The easiest way to do this is to open the OpenStudio Application and look through the GUI. In this case, we'll start on the "Space Types" tab.
 
-![guide image2](../../img/measure-writing-guide/2.png)
+![guide image2](img/measure-writing-guide/2.png)
 
 On this tab, first click on the first object (in the left column) is "Space Type."  Inside the Space Type, next to the lights icon, the term "Definition" appears. The name of this particular definition is "ASHRAE_90.1-2004_Office_LPD."  To learn more about this definition, go to the "Loads" tab.
 
-![Guide image3](../../img/measure-writing-guide/3.png)
+![Guide image3](img/measure-writing-guide/3.png)
 
 On the left side under the "Loads" tab is a category called "Lights Definitions."  Under this category is the definition "ASHRAE_90.1-2004_Office_LPD" that was referenced on the "Space Types" tab. One field is titled "Energy Per Space Floor Area" with units of "W/ft2."  Although the GUIs may show IP units, the methods of the OpenStudio model are all written in SI units.
 
@@ -413,22 +413,22 @@ Find the SpaceType called "Enclosed Office". Replace any LightsDefinitions refer
 ##### Finding the OpenStudio Methods: Using the Documentation
 All the OpenStudio code documentation lives online at https://s3.amazonaws.com/openstudio-sdk-documentation/index.html. [Open this website.](https://s3.amazonaws.com/openstudio-sdk-documentation/index.html)
 
-![Methods 1](../../img/measure-writing-guide/4.png)
+![Methods 1](img/measure-writing-guide/4.png)
 
 Click on the model link to explore.
 
-![Methods 2](../../img/measure-writing-guide/5.png)
+![Methods 2](img/measure-writing-guide/5.png)
 
 This will take you to the OpenStudio Model Overview page.
 
-![Core](../../img/measure-writing-guide/6.png)
+![Core](img/measure-writing-guide/6.png)
 
 Select the "Objects/Objects List" to find more information on individual model objects.
-![Core](../../img/measure-writing-guide/6b.png)
+![Core](img/measure-writing-guide/6b.png)
 
 Click "__SpaceType__"."
 
-![click space](../../img/measure-writing-guide/7.png)
+![click space](img/measure-writing-guide/7.png)
 
 This screen contains the documentation for the SpaceType class. The methods are generally split into four categories: Constructors and Destructors, Getters, Setters, and Other. SpaceType is a base class of ResourceObject. You can look into the ResourceObject for additional methods beyond what is in the SpaceType documentation.
 
@@ -437,7 +437,7 @@ At first glance, the methods look cryptic, not at all like those shown in the ex
 
 The name of the method:
 
-![name of method](../../img/measure-writing-guide/8.png)
+![name of method](img/measure-writing-guide/8.png)
 
 The method names are generally descriptive enough that it is possible to understand what they do without any other information. Here is how the method would be used in Ruby:
 
@@ -447,7 +447,7 @@ design_spec_oa = space_type.designSpecificationOutdoorAir
 
 The type of object returned by the method:
 
-![type of object](../../img/measure-writing-guide/9.png)
+![type of object](img/measure-writing-guide/9.png)
 
 Methods Return Types:
 
@@ -465,11 +465,11 @@ boost::optional<DesignSpecificationOutdoorAir> = an optional that may either be 
 
 The written description of the method:
 
-![description](../../img/measure-writing-guide/10.png)
+![description](img/measure-writing-guide/10.png)
 
 The inputs needed by the method:
 
-![inputs](../../img/measure-writing-guide/11.png)
+![inputs](img/measure-writing-guide/11.png)
 
 Methods that do not need inputs have empty parentheses (). Ruby allows you to skip adding the empty parentheses when you call methods with no arguments. You can ignore the const and & C++ keywords in the declarations for now.
 
@@ -489,7 +489,7 @@ end
 
 Once you have found a SpaceType matching the name you are looking for, you need to get all the Lights in Spaces of this SpaceType. The documentation for SpaceType includes a method to get a vector of all Lights in Spaces of this SpaceType:
 
-![Space Matching](../../img/measure-writing-guide/12.png)
+![Space Matching](img/measure-writing-guide/12.png)
 
 You can extend the code to then loop over all these Lights:
 
@@ -506,7 +506,7 @@ end
 
 Now you need to make a new LightsDefinition to replace the ones these Lights currently use. The documentation for LightsDefinition shows a constructor that expects a Model as the input.
 
-![Lights def](../../img/measure-writing-guide/13.png)
+![Lights def](img/measure-writing-guide/13.png)
 
 Constructors translated from C++ to Ruby take the following form. The only difference may be which arguments the constructor requires; usually it is simply a Model.
 
@@ -516,7 +516,7 @@ new_thing = OpenStudio::Model::NewThingClassName.new(model)
 
 Now, figure out how to set the LPD of the LightsDefinition to 10 W/m2. The LightsDefinition documentation presents a method.
 
-![lights def2](../../img/measure-writing-guide/14.png)
+![lights def2](img/measure-writing-guide/14.png)
 
 You will also want to name the new LightsDefinition object for better user comprehension. Most OpenStudio objects have a ".setName(new_name)" method. You can put this together to make the LightsDefinition object.
 
@@ -528,7 +528,7 @@ new_lights_def.setName("10 W/m^2 Lights Definition")
 
 Now that you have a new LightsDefinition object, you need to figure out how to replace the existing LightsDefinition with the new one. The Lights documentation contains a method to set the lights definition.
 
-![Replace Existing](../../img/measure-writing-guide/15.png)
+![Replace Existing](img/measure-writing-guide/15.png)
 
 Putting this all together, we get:
 
@@ -895,7 +895,7 @@ The following example shows how to access and edit EnergyPlus objects in the Wor
 #### Finding Documentation on EnergyPlus Objects
 The "[InputOutputReference.pdf][11]" document that ships with EnergyPlus describes every EnergyPlus object. Below is a screenshot of part of the documentation for the "ComponentCost:LineItem" object. It describes which fields are required versus optional, and what kinds of data are expected for each field. EnergyPlus also ships with example models that show each object being used in a model. In the "Examples" folder is a spreadsheet that documents the examples.
 
-![Finding Doc](../../img/measure-writing-guide/17.png)
+![Finding Doc](img/measure-writing-guide/17.png)
 
 #### Putting It All Together - A Complete WorkspaceUserScript
 The script creates a ComponentCost:LineItem object for each construction used in the model.
