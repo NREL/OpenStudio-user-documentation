@@ -10,6 +10,7 @@ The documentation is written in Markdown, and uses [MkDocs] (http://www.mkdocs.o
 Install MkDocs by following the direction at [MkDocs](http://www.mkdocs.org).  You will need python.
 
 ###Windows
+Getting mkdocs to work on Windows is very particular.  We recommend uninstalling python and deleting the install directory before following these steps.  If you don't, it probably won't work.  We tried many different ways to do this, and starting from scratch and following these steps is the only thing we could get to work.
 1. Install [Python 2.7.8](https://www.python.org/ftp/python/2.7.8/python-2.7.8.msi)
 2. Add `C:\Python27` and `C:\Python27\Scripts` to your PATH
 3. Download [Pip](https://bootstrap.pypa.io/get-pip.py)
