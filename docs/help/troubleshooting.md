@@ -44,6 +44,19 @@ If you are in PAT, you should be able to expand the view in the run tab to see e
 
 _________________
 
+## Orphan Objects and Unused Resources
+At times some objects in OpenStudio that should have a parent, such as surfaces and internal load instances, may become detached from their parent. Possibly the parent is deleted but for some reason the child is not. These often are not visible in the GUI, and while it is possible to fix remove these orphans with a text editor it isn't ideal. To provide a better workflow for this we created a measure [Remove Orphan Objects and Unused Resources](https://bcl.nrel.gov/node/82267) that can be run either using Apply Measure Now or at run time. If you see an EnergyPlus error about an object you don't think you have in your model, you may try running this to clean up the model. Additionally this measure also provides checkboxes that allow you to remove unused resources. While unused resources can be cleaned up in the GUI, the measure provides a robust and quick way to do this. Over time we will increase the functionality of the orphan cleanup as well as purging of unused resources. 
+
+Below is a screenshot of what the measure looks like in the apply measure now window. By default the remove unused objects boxes are un-checked. You will always get the remove orphan functionality. 
+
+![Remove Orphan Objects and Unused Resources - Arguments](../../img/help/orphan_purge_argview.png)
+
+Below is a screenshot of the log after running the measure. The log will list each section being checked, so as the functionality is expanded you will know what object types are being checked for for orphan.
+
+![Remove Orphan Objects and Unused Resources - Output](../../img/help/orphan_purge_outputview.png)
+
+_________________
+
 ## SketchUp crashes on launch
 The first thing to do is to remove SketchUp and install it again. To do this, run the SketchUp uninstaller. Also check that all OpenStudio plugins are removed from the SketchUp plugin directories. On Windows these directories are:
 
