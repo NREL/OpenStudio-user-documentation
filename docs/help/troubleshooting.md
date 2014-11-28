@@ -60,20 +60,20 @@ _________________
 ## SketchUp crashes on launch
 The first thing to do is to remove SketchUp and install it again. To do this, run the SketchUp uninstaller. Also check that all OpenStudio plugins are removed from the SketchUp plugin directories. On Windows these directories are:
 
-- C:\Users\<__your username__>\AppData\Roaming\SketchUp\SketchUp 2014\SketchUp\Plugins
-- C:\ProgramData\SketchUp\SketchUp 2014\SketchUp\Plugins
-- C:\Program Files (x86)\SketchUp\SketchUp 2014\SketchUp\Plugins
+- C:\Users\<__your username__>\AppData\Roaming\SketchUp\SketchUp 2015\SketchUp\Plugins
+- C:\ProgramData\SketchUp\SketchUp 2015\SketchUp\Plugins
+- C:\Program Files (x86)\SketchUp\SketchUp 2015\SketchUp\Plugins
 
 On Mac these are:
 
-- /Users/<__your username__>/Library/Application Support/SketchUp 2014/SketchUp/Plugins
-- /Library/Application Support/SketchUp 2014/SketchUp/Plugins
+- /Users/<__your username__>/Library/Application Support/SketchUp 2015/SketchUp/Plugins
+- /Library/Application Support/SketchUp 2015/SketchUp/Plugins
 
 If SketchUp crashes without the OpenStudio plugins installed then something else is wrong, contact the SketchUp support team for help. If SketchUp launches, try installing OpenStudio again. If SketchUp crashes on launch again, remove the OpenStudio files from the SketchUp plugin directories again. Open SketchUp, go to Window->Preferences->Extensions and disable the OpenStudio plugin. Re-install OpenStudio and relaunch SketchUp. Open the Ruby console by going to Window->Ruby Console and then go back to Window->Preferences->Extensions and enable the OpenStudio plugin, you may see useful output in the Ruby console. If you have other extensions installed, try disabling them and enabling the OpenStudio plugin.
 
-If none of the steps above work and you are on Windows, it is likely that there is a dynamic library being loaded from another application that is interfering with OpenStudio. If you just want to fix your problem, try copying the files libeay32.dll and ssleay32.dll from C:\Program Files (x86)\OpenStudio X.X.X\bin to C:\Program Files (x86)\SketchUp\SketchUp 2014, this will fix the problem 80% of the time.
+If none of the steps above work and you are on Windows, it is likely that there is a dynamic library being loaded from another application that is interfering with OpenStudio. If you just want to fix your problem, try copying the files libeay32.dll and ssleay32.dll from C:\Program Files (x86)\OpenStudio X.X.X\bin to C:\Program Files (x86)\SketchUp\SketchUp 2015, this will fix the problem 80% of the time.
 
-If you want to investigate in more depth, download [Dependency Walker](http://www.dependencywalker.com/). Extract the files and launch depends.exe. Navigate to File->Open and then browse to choose the SketchUp.exe under C:\Program Files (x86)\SketchUp\SketchUp 2014\. This will examine all of the libraries loaded by SketchUp but not the libraries loaded by OpenStudio. Navigate to Profile->Start Profiling then press Ok in the dialog that pops up. This will launch SketchUp and attempt to load OpenStudio. Scroll down in the list of loaded libraries and look for the OpenStudio dlls. Expand the paths under the OpenStudio dlls and look for libraries that are being loaded from other locations. Often, some other program will install a different version of one of the libraries (usually libeay32.dll or ssleay32.dll) that OpenStudio uses. This other library will be in the path ahead of OpenStudio and will be loaded instead, this results in a hard crash of SketchUp. Correcting your path or copying the dlls from the OpenStudio bin directory into the SketchUp install directory will cause the correct dlls to be loaded when SketchUp starts.
+If you want to investigate in more depth, download [Dependency Walker](http://www.dependencywalker.com/). Extract the files and launch depends.exe. Navigate to File->Open and then browse to choose the SketchUp.exe under C:\Program Files (x86)\SketchUp\SketchUp 2015\. This will examine all of the libraries loaded by SketchUp but not the libraries loaded by OpenStudio. Navigate to Profile->Start Profiling then press Ok in the dialog that pops up. This will launch SketchUp and attempt to load OpenStudio. Scroll down in the list of loaded libraries and look for the OpenStudio dlls. Expand the paths under the OpenStudio dlls and look for libraries that are being loaded from other locations. Often, some other program will install a different version of one of the libraries (usually libeay32.dll or ssleay32.dll) that OpenStudio uses. This other library will be in the path ahead of OpenStudio and will be loaded instead, this results in a hard crash of SketchUp. Correcting your path or copying the dlls from the OpenStudio bin directory into the SketchUp install directory will cause the correct dlls to be loaded when SketchUp starts.
 
 _________________
 

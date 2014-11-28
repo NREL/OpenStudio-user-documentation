@@ -2,7 +2,7 @@
 This page walks you through installing OpenStudio, the basics of the applications, and the basic workflow.
 
 ## Installation Instructions
-OpenStudio is supported on Windows 7 - 8.1, OS X 10.9, and 64-bit Ubuntu 14.04.
+OpenStudio is supported on Windows 7 - 8.1, OS X 10.9 - 10.10, and 64-bit Ubuntu 14.04.
 OpenStudio 1.5.0 works with EnergyPlus 8.1.
 
 __Download and install EnergyPlus 8.1__
@@ -13,7 +13,7 @@ __Download and install EnergyPlus 8.1__
 
 __Download and install SketchUp__
 
-1. The OpenStudio SketchUp Plug-in requires [SketchUp 2014](http://www.sketchup.com/) (not available for Linux). Older versions are not supported.
+1. The OpenStudio SketchUp Plug-in requires [SketchUp 2015](http://www.sketchup.com/) (not available for Linux). Older versions are not supported.
 
 __Download and install OpenStudio__
 
