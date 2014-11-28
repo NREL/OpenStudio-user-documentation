@@ -16,7 +16,7 @@
         {% for nav_item in nav %}
           {% if nav_item.children %}
           <li class="dropdown{% if nav_item.active %} active{% endif %}">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ nav_item.title }} <span class="caret"></span></a>
+            <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">{{ nav_item.title }} <span class="caret"></span></a>
             <ul class="dropdown-menu" role="menu">
             {% for nav_item in nav_item.children %}
               <li{% if nav_item.active %} class="active"{% endif %}>
