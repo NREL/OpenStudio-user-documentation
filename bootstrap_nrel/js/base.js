@@ -9,7 +9,7 @@ $(document).ready(function () {
 var navHeight = $('.navbar').outerHeight(true) + 10;
 
 $('body').scrollspy({
-    target: '.bs-sidebar',
+    target: '.bs-docs-sidebar',
     offset: navHeight
 });
 
