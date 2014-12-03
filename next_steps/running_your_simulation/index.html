@@ -253,29 +253,29 @@
 <p>These guides provide a handy reference to the features of the applications that are installed with OpenStudio.</p>
 <h2 id="weather-file-and-design-days">Weather File and Design Days</h2>
 <p>Add weather files in the OpenStudio application under the Site tab (first vertical tab) on the left and the "Weather File &amp; Design Days" sub-tab across the top. You can <a href="http://apps1.eere.energy.gov/buildings/energyplus/">download weather files</a> on the EnergyPlus site.</p>
-<p><img alt="Open DDY File Dialog" src="img/run/weather_ddy.png" /></p>
+<p><img alt="Open DDY File Dialog" src="/img/run/weather_ddy.png" /></p>
 <p><em>Above: Screenshot of browsing for design day file.</em></p>
 <h2 id="requesting-output-variables">Requesting Output Variables</h2>
 <p>To select an output variable turn the toggle button to show a blue on. Then set the detail level you want from the drop down menu.</p>
-<p><img alt="Output Variables Tab" src="img/run/output_variables.png" /></p>
+<p><img alt="Output Variables Tab" src="/img/run/output_variables.png" /></p>
 <p><em>Above: Screenshot of selecting output variables.</em></p>
 <p>You can also choose variables to collect data on by using the "Add Output Variable" measure under the reporting measure category.</p>
-<p><img alt="Measures Tab" src="img/run/variables_measure.png" /></p>
+<p><img alt="Measures Tab" src="/img/run/variables_measure.png" /></p>
 <p><em>Above: Screenshot of the variable measure being added to a project. Just type in the variable you want to collect in the edit panel.</em></p>
 <h2 id="running-a-simulation">Running a Simulation</h2>
 <p>To run your simulation hit the green run button. Select the daylighting engine you want to use, EnergyPlus or Radiance. To use Radiance your file must be set up correctly. You will get a warning dialog if your file is not able to use Radiance.</p>
-<p><img alt="Run Simulation Tab" src="img/run/run.png" /></p>
+<p><img alt="Run Simulation Tab" src="/img/run/run.png" /></p>
 <p><em>Above: Hit the run button to start running your simulation.</em></p>
-<p><img alt="Radiance Error Dialog" src="img/run/radiance_warning.png" /></p>
+<p><img alt="Radiance Error Dialog" src="/img/run/radiance_warning.png" /></p>
 <p><em>Above: If you select Radiance you must have the required objects in your model.</em></p>
-<p><img alt="Run Simulation Output" src="img/run/output.png" /></p>
+<p><img alt="Run Simulation Output" src="/img/run/output.png" /></p>
 <p><em>Above: The output area displays the status of the run.</em></p>
 <h2 id="looking-at-results">Looking at Results</h2>
 <p>Standard OpenStudio results are provided with your run. If you add in utility bills you can also view a calibration report.</p>
 <p>You can also use measures to add additional reports. You can also write your own measures to create custom reports. Add reporting measures on the OpenStudio Measures or Scripts tab.</p>
-<p><img alt="Results Summary Tab" src="img/run/os_results.png" /></p>
+<p><img alt="Results Summary Tab" src="/img/run/os_results.png" /></p>
 <p><em>Above: This screenshot shows and example of the standard OpenStudio results.</em></p>
-<p><img alt="Calibration Report" src="img/run/calibration_report.png" /></p>
+<p><img alt="Calibration Report" src="/img/run/calibration_report.png" /></p>
 <p><em>Above: The calibration report compares utility bills with the model.</em></p>
 <h2 id="using-resultsviewer">Using ResultsViewer</h2>
 <p>ResultsViewer displays EnergyPlus output in formats that are more useful than those available directly from the EnergyPlus engine. This application was originally developed to support the needs of researchers at the National Renewable Energy Laboratory, who frequently use detailed EnergyPlus outputs to understand the intricacies of building systems.</p>
@@ -298,50 +298,50 @@
 <ol>
 <li>
 <p>Run ResultsViewer on Windows by clicking on <code>Start-&gt;Programs-&gt;OpenStudio-&gt;ResultsViewer</code> and on the Mac by going to <code>Applications/OpenStudio/ResultsViewer</code>.</p>
-<p><img alt="ResultsViewer" src="img/run/rv_start.png" /></p>
+<p><img alt="ResultsViewer" src="/img/run/rv_start.png" /></p>
 </li>
 <li>
 <p>Click <code>File-&gt;Open</code> and browse to your project folder</p>
 </li>
 <li>
 <p>Select the "eplusout.sql" file and click "Open"</p>
-<p><img alt="ResultsViewer Open Dialog" src="img/run/rv_open.png" /></p>
+<p><img alt="ResultsViewer Open Dialog" src="/img/run/rv_open.png" /></p>
 </li>
 </ol>
 <p>ResultsViewer provides two views, "Table View" and "Tree View", on the left hand side for navigating through the output file. A report summary for the output file is provided on the right side "eplustbl.htm"</p>
-<p><img alt="ResultsViewer Initial View" src="img/run/rv_initial.png" /></p>
+<p><img alt="ResultsViewer Initial View" src="/img/run/rv_initial.png" /></p>
 <h4 id="generate-a-line-plot">Generate a Line Plot</h4>
 <p>To generate a line plot from the table view, simply double-click on a row. In the tree view, open the categories and click on the name of the item you want to plot.</p>
 <p>For example, double-clicking the first row in the table view generates the Electricity:Facility line plot.</p>
 <p>The tree view is used to view the EnergyPlus results in a hierarchical format. The hierarchy is based on the environmental period, the timestep, the variable name and the key name (when available). The tree view supports multiple selections using the "Ctrl" or "Command" and "Shift" keys with the mouse. The context menu provides the same functionality as the table view.</p>
-<p><img alt="Line Graph" src="img/run/line_graph1.png" /></p>
+<p><img alt="Line Graph" src="/img/run/line_graph1.png" /></p>
 <h4 id="using-the-plot-toolbar">Using the Plot Toolbar</h4>
-<p><img alt="Plot Toolbar" src="img/run/plot_toolbar.png" /></p>
+<p><img alt="Plot Toolbar" src="/img/run/plot_toolbar.png" /></p>
 <ul>
-<li>The "Select mode" tool (<img alt="Select Mode Icon" src="img/run/plot_select.png" />) is used to select the legend and move it. Sometimes the legend is behind plot lines and with this tool you can place the legend in a better place.</li>
-<li>The "Pan mode" tool (<img alt="Pan Mode Icon" src="img/run/pan.png" />) is used to drag the plot within the plot window. To pan a plot, click the pan mode tool and then click and drag the plot to the desired location. Clicking the "Zoom Out" tool (<img alt="Zoom Out Icon" src="img/run/zoom_out.png" />) repeatedly resets the plot to the original position.</li>
+<li>The "Select mode" tool (<img alt="Select Mode Icon" src="/img/run/plot_select.png" />) is used to select the legend and move it. Sometimes the legend is behind plot lines and with this tool you can place the legend in a better place.</li>
+<li>The "Pan mode" tool (<img alt="Pan Mode Icon" src="/img/run/pan.png" />) is used to drag the plot within the plot window. To pan a plot, click the pan mode tool and then click and drag the plot to the desired location. Clicking the "Zoom Out" tool (<img alt="Zoom Out Icon" src="/img/run/zoom_out.png" />) repeatedly resets the plot to the original position.</li>
 <li>
-<p>The "Value Info mode" tool (<img alt="Value Info Mode Icon" src="img/run/value_info.png" />) is used to show a value on a line in the plot. To display the value of a point on a curve, click on the value info mode tool and then locate the cursor near the point of interest and then click the mouse. The information in the box can be copied to other applications by selecting the desired text and <strong>ctrl+c</strong> or right mouse click in the box.</p>
-<p><img alt="Value Info Mode" src="img/run/info_image.png" /></p>
+<p>The "Value Info mode" tool (<img alt="Value Info Mode Icon" src="/img/run/value_info.png" />) is used to show a value on a line in the plot. To display the value of a point on a curve, click on the value info mode tool and then locate the cursor near the point of interest and then click the mouse. The information in the box can be copied to other applications by selecting the desired text and <strong>ctrl+c</strong> or right mouse click in the box.</p>
+<p><img alt="Value Info Mode" src="/img/run/info_image.png" /></p>
 </li>
 <li>
-<p>The "Rubber-band zoom mode" tool (<img alt="Rubber-band Zoom Mode Icon" src="img/run/rubberband_zoom.png" />) is used to zoom in on the plot. To zoom in on a particular area of interest, click on the zoom mode tool and then click within the plot near the place of interest and hold the mouse button down and drag the green rectangle to enclose the desired area and then release the mouse button.</p>
-<p><img alt="Rubber-band Zoom Draw" src="img/run/rubberband_zoom_image.png" /></p>
-<p><img alt="Rubber-band Zoom Example" src="img/run/rubberband_zoom_image2.png" /></p>
+<p>The "Rubber-band zoom mode" tool (<img alt="Rubber-band Zoom Mode Icon" src="/img/run/rubberband_zoom.png" />) is used to zoom in on the plot. To zoom in on a particular area of interest, click on the zoom mode tool and then click within the plot near the place of interest and hold the mouse button down and drag the green rectangle to enclose the desired area and then release the mouse button.</p>
+<p><img alt="Rubber-band Zoom Draw" src="/img/run/rubberband_zoom_image.png" /></p>
+<p><img alt="Rubber-band Zoom Example" src="/img/run/rubberband_zoom_image2.png" /></p>
 </li>
 <li>
-<p>The "Zoom In" tool (<img alt="Zoom In Tool Icon" src="img/run/zoom_in.png" />) and the "Zoom Out" tool (<img alt="Zoom Out Tool Icon" src="img/run/zoom_out.png" />) are used to zoom in or out of the plot view.</p>
+<p>The "Zoom In" tool (<img alt="Zoom In Tool Icon" src="/img/run/zoom_in.png" />) and the "Zoom Out" tool (<img alt="Zoom Out Tool Icon" src="/img/run/zoom_out.png" />) are used to zoom in or out of the plot view.</p>
 </li>
 <li>
-<p>The "Save Image" tool (<img alt="Save Image Tool Icon" src="img/run/save_plot_image.png" />) is used to save the plot to disk as an image file. Currently supported formats are JPEG, PNG and BMP. Currently supported resolutions are the current image size, 800x600, 400x300. To save a plot to an image file, click the save image tool and then select the desired resolution and then select the desired file locations and format.</p>
-<p><img alt="Save Image Screenshot" src="img/run/save_image_shot.png" /></p>
+<p>The "Save Image" tool (<img alt="Save Image Tool Icon" src="/img/run/save_plot_image.png" />) is used to save the plot to disk as an image file. Currently supported formats are JPEG, PNG and BMP. Currently supported resolutions are the current image size, 800x600, 400x300. To save a plot to an image file, click the save image tool and then select the desired resolution and then select the desired file locations and format.</p>
+<p><img alt="Save Image Screenshot" src="/img/run/save_image_shot.png" /></p>
 </li>
 <li>
-<p>The "Print" tool (<img alt="Print Tool Icon" src="img/run/print_plot.png" />) is used to print the plot. Selecting the print tool brings up a print dialog which is used to select the desired system printer.</p>
+<p>The "Print" tool (<img alt="Print Tool Icon" src="/img/run/print_plot.png" />) is used to print the plot. Selecting the print tool brings up a print dialog which is used to select the desired system printer.</p>
 </li>
 <li>
-<p>The "Properties" tool (<img alt="Plot Properties Icon" src="img/run/plot_preferences.png" />) is used to change characteristics of the plot. Selecting the properties tool brings up a dialog which is used to change plot title, axes titles, legend display, curve styles and to remove curves from the plot.</p>
-<p><img alt="Properties Screenshot" src="img/run/properties_shot.png" /></p>
+<p>The "Properties" tool (<img alt="Plot Properties Icon" src="/img/run/plot_preferences.png" />) is used to change characteristics of the plot. Selecting the properties tool brings up a dialog which is used to change plot title, axes titles, legend display, curve styles and to remove curves from the plot.</p>
+<p><img alt="Properties Screenshot" src="/img/run/properties_shot.png" /></p>
 </li>
 </ul>
 <h4 id="using-the-plot-center-and-span-controls">Using the Plot Center and Span Controls</h4>
@@ -352,30 +352,30 @@
 <li>Set the "Span" to one simulation day using either the slider or spin box arrows or entering 1 into the spin box.</li>
 </ol>
 <p>The data is displayed from simulation day 3 through simulation day 5:</p>
-<p><img alt="Center and Span Controls" src="img/run/center_span.png" /></p>
+<p><img alt="Center and Span Controls" src="/img/run/center_span.png" /></p>
 <p>The data can now be viewed two simulation days at a time by sliding the "Center" slider with the mouse:</p>
-<p><img alt="Center and Span on 2 Days" src="img/run/center_span2.png" /></p>
+<p><img alt="Center and Span on 2 Days" src="/img/run/center_span2.png" /></p>
 <h4 id="generate-multiple-lines-on-a-single-plot">Generate Multiple Lines on a Single Plot</h4>
 <p>To generate a line plot with multiple curves, use the mouse with the "Shift" and "Ctrl" keys to select the desired rows in the table view. Holding the "Ctrl" key down on Windows and "Command" on the Mac and clicking a selected row will deselect the item. Select the "Line Plot" from the context menu. In the tree view, find the names of the items you want to plot on the tree and select then holding down the "Command" or "Ctrl" key.</p>
-<p><img alt="Multiple Line Plots From Table View" src="img/run/multi_line_plot.png" /></p>
+<p><img alt="Multiple Line Plots From Table View" src="/img/run/multi_line_plot.png" /></p>
 <p><em>Above: Screenshot showing selected multiple lines in table view.</em></p>
-<p><img alt="Multiple Line Plots From Tree View" src="img/run/multi_line_plot2.png" /></p>
+<p><img alt="Multiple Line Plots From Tree View" src="/img/run/multi_line_plot2.png" /></p>
 <p><em>Above: Screenshot showing selected multiple lines in tree view.</em></p>
 <h4 id="generate-a-difference-plot">Generate a Difference Plot</h4>
 <p>Difference plots are obtained by selecting two rows in the table view. The context menu is then used to plot the difference of the two selections.</p>
 <p>Select the two items you want to plot and then right click one of the rows to view a context menu. Choose from the list to get the desired difference line plot.</p>
-<p><img alt="Difference Plot Context Menu" src="img/run/difference_plot1.png" /></p>
-<p><img alt="Difference Line Plot" src="img/run/difference_plot2.png" /></p>
+<p><img alt="Difference Plot Context Menu" src="/img/run/difference_plot1.png" /></p>
+<p><img alt="Difference Line Plot" src="/img/run/difference_plot2.png" /></p>
 <h4 id="using-the-table-view-to-generate-a-flood-plot">Using the Table View to Generate a Flood Plot</h4>
 <p>Flood plots are used to present data as a color map or contour map. The bottom axis displays days and the left axis displays hours within the day. Flood plots are most interesting for Hourly, Zone Timestep and HVAC System Timestep data.</p>
 <p>For example, a flood plot of the hourly Electricity:Facility data is generated as follows:</p>
 <p>Right mouse click on the Electricity:Facility row in the table view, and select "Flood Plot" from the context menu.</p>
-<p><img alt="Flood Plot" src="img/run/flood_plot.png" /></p>
+<p><img alt="Flood Plot" src="/img/run/flood_plot.png" /></p>
 <p>To create a flood plot from the tree view, select the item you want to plot and hit the "Flood Plot" button on the toolbar.</p>
-<p><img alt="Flood Plot from Tree View" src="img/run/tree_flood_plot.png" /></p>
+<p><img alt="Flood Plot from Tree View" src="/img/run/tree_flood_plot.png" /></p>
 <h4 id="filtering-the-views">Filtering the Views</h4>
 <p>Filtering is limiting the items that appear in the views by specifying criteria that the displayed fields must match. Filtering applies to both the table view and the tree view. Any data that matches the value entered in the "Filter Criteria" is displayed. If data in any column matches the "Filter Criteria", then the row is displayed in the table view. If data in any node along a branch matches the "Filter Criteria", then the entire branch is displayed in the tree view. The "Filter Criteria" is evaluated as a regular expression. Currently, no phrases and no boolean operators (AND, OR, etc.) are supported.</p>
-<p><img alt="Filter Criteria" src="img/run/filter_criteria.png" /></p>
+<p><img alt="Filter Criteria" src="/img/run/filter_criteria.png" /></p>
 <p>Regular expressions are supported in the "Filter Criteria". For example, to display all data that has a field beginning with "N":</p>
 <ul>
 <li>Enter "^N.*" in the "Filter Criteria" box above the tree view.</li>
@@ -391,7 +391,7 @@
 </ol>
 <p>Note that double clicking on the "PERIMETER_ZN_1" under the "Illuminance Map" node is the same as clicking on the "Illuminance Map" menu item in the context menu.</p>
 <p>If time series and illuminance map items are selected, no plotting occurs and the following warning message is shown:</p>
-<p><img alt="Illuminance Map" src="img/run/illum_map_example.png" /></p>
+<p><img alt="Illuminance Map" src="/img/run/illum_map_example.png" /></p>
 <h4 id="using-the-table-view-to-generate-an-illuminance-map-difference-plot">Using the Table View to Generate an Illuminance Map Difference Plot</h4>
 <p>Illuminance maps differences can be used to look at intensity differences between zones.</p>
 <p>To generate an illuminance map difference using the table view:</p>
@@ -400,7 +400,7 @@
 <li>Hold down the Ctrl and click on the items in table and then right mouse click on one of the selections for the following context menu.</li>
 <li>Then select your desired difference plot.</li>
 </ol>
-<p><img alt="Difference Map" src="img/run/differ_flood_plot.png" /></p>
+<p><img alt="Difference Map" src="/img/run/differ_flood_plot.png" /></p>
 
           <div class="footer">
   <p class="text-center"><a href="https://www.openstudio.net/contact">Contact Us</a></p>
