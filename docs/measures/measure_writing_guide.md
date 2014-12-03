@@ -1122,7 +1122,7 @@ The key and units parameters must be strings, the value passed to registerValue 
   </tr>
   <tr>
     <td>Not Recommended but okay</td>
-    <td>Seperator.With.Periods</td>
+    <td>Separator.With.Periods</td>
   </tr>
 </table>
 
