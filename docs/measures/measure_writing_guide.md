@@ -1100,7 +1100,7 @@ We have seen how to output human readable messages from measures. These messages
 runner.registerValue("total_life_cycle_cost", total_life_cycle_cost, "$")
 ```
 
-The key and units parameters must be strings, the value passed to registerValue can be a double, bool, integer, string, or nil object. The output atribute key need be machine readable. The following characters should not be used in output attribute key names.
+The key and units parameters must be strings, the value passed to registerValue can be a double, bool, integer, string, or nil object. The output atribute key needs be machine readable. The following characters should not be used in output attribute key names.
 
 ```
 | ! @ # $ % ^ & * ( ) { } \ [ ] ; : ' " , < . > \ / ? + =
