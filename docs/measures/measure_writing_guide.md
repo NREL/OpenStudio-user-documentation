@@ -1114,15 +1114,15 @@ The key and units parameters must be strings, the value passed to registerValue 
   </tr>
   <tr>
     <td>pumps_electricity</td>
-    <td>Invalid&#124;Pipe&#124;Attribue</td>
+    <td>invalid&#124;pipe&#124;attribute&#124;not&#124;okay</td>
   </tr>
   <tr>
     <td>wwrRatioWest</td>
-    <td>MyAttribute!</td>
+    <td>ExclamationPoints!NotOkay!</td>
   </tr>
   <tr>
     <td>Not Recommended but okay</td>
-    <td>Separator.With.Periods</td>
+    <td>Separator.With.Periods.Not.Okay</td>
   </tr>
 </table>
 
