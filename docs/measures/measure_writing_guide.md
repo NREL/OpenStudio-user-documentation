@@ -1132,7 +1132,7 @@ By default, all measure arguments are automatically output in machine readable f
 relative_building_rotation = OpenStudio::Ruleset::OSArgument.makeDoubleArgument("rotation", true)
 ```
 
-An attribute named 'rotation' will automatically be added to the measure's output with the value passed in by the user. Measure writers can output any attributes that they want to. If a measure outputs multiple attributes with the same name, the last attribute reported by that name will be preserved. Measure writers are encouraged to use terms that are present in the BCL taxonomy (and the upcoming DenCity Metadata API) to allow applications to understand attribute names. Additionally, special modifiers can be added to attribute names which will imply additional relationships between attributes. These special attribute modifiers are documented below, using the 'rotation' attribute.
+An attribute named 'rotation' will automatically be added to the measure's output with the value passed in by the user. Measure writers can output any attributes that they want to. If a measure outputs multiple attributes with the same name, the last attribute reported by that name will be preserved. Measure writers are encouraged to use terms that are present in the BCL taxonomy (and the upcoming [DEnCity](http://dencity.org) API) to allow applications to understand attribute names. Additionally, special modifiers can be added to attribute names which will imply additional relationships between attributes. These special attribute modifiers are documented below, using the 'rotation' attribute.
 
 <table class="table table-striped">
   <tr>
