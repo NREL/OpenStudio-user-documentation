@@ -262,7 +262,7 @@
 <p><strong>OpenStudio 1.5.0\Ruby\openstudio\sketchup_plugin\user_scripts</strong></p>
 <p>To run the script, go to the "User Scripts" menu under the SketchUp Plugins menu, "Plugins / OpenStudio" menu and choose "OSM Diagnostic Script".</p>
 <p>Right click on the link below and save to your computer vs. opening in web browser:
-<a href="/img/scripts/OSM_Diagnostic_Script.rb">OSM_Diagonstic_Script.rb</a></p>
+<a href="img/scripts/OSM_Diagnostic_Script.rb">OSM_Diagonstic_Script.rb</a></p>
 <hr />
 <h2 id="model-will-not-run">Model Will Not Run</h2>
 <p>Some of the reasons simulation errors occur are:</p>
@@ -273,9 +273,9 @@
 <li>Design days or sizing are required if you are simulating a full HVAC system instead of using idea air loads.</li>
 </ul>
 <p>If you are in the OpenStudio application, the image below shows you how to get access to the "eplusout.err" file that lists the EnergyPlus errors. You can view it with a text editor.</p>
-<p><img alt="OpenStudio Errors" src="/img/help/os_errors.png" /></p>
+<p><img alt="OpenStudio Errors" src="img/help/os_errors.png" /></p>
 <p>If you are in PAT, you should be able to expand the view in the run tab to see errors and warnings at any stage. If errors do not show up in the run tab, there may be an issue with the weather or DDY files. See the image below.</p>
-<p><img alt="PAT Errors" src="/img/help/pat_errors.png" /></p>
+<p><img alt="PAT Errors" src="img/help/pat_errors.png" /></p>
 <hr />
 <h2 id="orphan-objects-and-unused-resources">Orphan Objects and Unused Resources</h2>
 <p>At times some objects in OpenStudio that should have a parent, such as surfaces and internal load instances, may become detached from their parent. Possibly the parent is deleted but for some reason the child is not. These often are not visible in the GUI, and while it is possible to fix remove these orphans with a text editor it isn't ideal. To provide a better workflow for this we created a measure <a href="https://bcl.nrel.gov/node/82267">Remove Orphan Objects and Unused Resources</a> that can be run either using Apply Measure Now or at run time. If you see an EnergyPlus error about an object you don't think you have in your model, you may try running this to clean up the model. Additionally this measure also provides checkboxes that allow you to remove unused resources. While unused resources can be cleaned up in the GUI, the measure provides a robust and quick way to do this. Over time we will increase the functionality of the orphan cleanup as well as purging of unused resources. </p>
