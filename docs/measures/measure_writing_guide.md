@@ -1100,7 +1100,31 @@ We have seen how to output human readable messages from measures. These messages
 runner.registerValue("total_life_cycle_cost", total_life_cycle_cost, "$")
 ```
 
-The key and units parameters must be strings, the value passed to registerValue can be a double, bool, integer, string, or nil object.
+The key and units parameters must be strings, the value passed to registerValue can be a double, bool, integer, string, or nil object. The output atribute key need be machine readable. The following characters should not be used in output attribute key names.
+
+```
+| ! @ # $ % ^ & * ( ) { } \ [ ] ; : ' " , < . > \ / ? + =
+```
+*Note: Spaces are allowed, but not recommended*
+
+<table class="table table-striped">
+  <tr>
+    <th>Valid Keys</th>
+    <th>Invalid Keys</th>
+  </tr>
+  <tr>
+    <td>pumps_electricity</td>
+    <td>Invalid&#124;Pipe&#124;Attribue</td>
+  </tr>
+  <tr>
+    <td>wwrRatioWest</td>
+    <td>MyAttribute!</td>
+  </tr>
+  <tr>
+    <td>Not Recommended but okay</td>
+    <td>Seperator.With.Periods</td>
+  </tr>
+</table>
 
 By default, all measure arguments are automatically output in machine readable format. For example, if a measure takes an argument named 'rotation':
 
@@ -1110,9 +1134,25 @@ relative_building_rotation = OpenStudio::Ruleset::OSArgument.makeDoubleArgument(
 
 An attribute named 'rotation' will automatically be added to the measure's output with the value passed in by the user. Measure writers can output any attributes that they want to. If a measure outputs multiple attributes with the same name, the last attribute reported by that name will be preserved. Measure writers are encouraged to use terms that are present in the BCL taxonomy (and the upcoming DenCity Metadata API) to allow applications to understand attribute names. Additionally, special modifiers can be added to attribute names which will imply additional relationships between attributes. These special attribute modifiers are documented below, using the 'rotation' attribute.
 
-| Modifier           | Example            | Meaning                                                                   |
-| ------------------ | ------------------ | ------------------------------------------------------------------------- |
-| *_initial          | rotation_initial   | The value of 'rotation' in the initial model before the measure was run.  |
-| *_final            | rotation_final     | The value of 'rotation' in the final model after the measure was run.     |
-|                    |                    | This should be reported even if the measure returns false or NA.          |
-
+<table class="table table-striped">
+  <tr>
+    <th>Modifier</th>
+    <th>Example</th>
+    <th>Meaning</th>
+  </tr>
+  <tr>
+    <td>*_initial </td>
+    <td>rotation_initial</td>
+    <td>The value of 'rotation' in the initial model before the measure was run.</td>
+  </tr>
+  <tr>
+    <td>*_final  </td>
+    <td>rotation_final</td>
+    <td>The value of 'rotation' in the final model after the measure was run.</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td>This should be reported even if the measure returns false or NA.</td>
+  </tr>
+</table>
