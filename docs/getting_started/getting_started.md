@@ -39,7 +39,7 @@ Enter the key through the OpenStudio SketchUp Plug-in under the menu `Plugins->O
 __Optional - Install Radiance__
 If you want to be able to use Radiance for daylighting simulations, you must install Radiance.
 
-1. Download and install [Radiance 4.2.1](https://github.com/NREL/Radiance/releases/tag/4.2.1).
+1. Download and install [Radiance 4.2.2](https://github.com/NREL/Radiance/releases/tag/4.2.2).
 
 __Optional - Install Ruby__
 If you plan to use the OpenStudio SDK Ruby bindings via command prompt on Windows, you must install Ruby. OS X already has Ruby installed.
