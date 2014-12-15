@@ -13,7 +13,7 @@ __Download and install EnergyPlus 8.1__
 
 __Download and install SketchUp__
 
-1. The OpenStudio SketchUp Plug-in requires [SketchUp 2015](http://www.sketchup.com/) (not available for Linux). Older versions are not supported.
+1. The OpenStudio SketchUp Plug-in requires [SketchUp 2015](http://www.sketchup.com/) (not available for Linux). Older versions of SketchUp are not supported.  To use OpenStudio 1.5.0 with SketchUp 2015, copy all the files in "C:\Program Files (x86)\OpenStudio 1.5.0\Ruby\Plugins" to "C:\ProgramData\SketchUp\SketchUp 2015\SketchUp\Plugins".
 
 __Download and install OpenStudio__
 
