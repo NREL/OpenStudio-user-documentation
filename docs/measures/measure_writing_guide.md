@@ -795,7 +795,7 @@ Example xml:
 ### EnergyPlus Measures
 Measures are usually written to work on an OpenStudio model. This is preferred because it allows you to use the OpenStudio Model API, which includes specialized methods for each type of object in the OpenStudio Model. However, when a particular EnergyPlus feature is not yet exposed in the OpenStudio Model, you may choose to write a measure that operates on the EnergyPlus data model directly. Measures of this type are run only after the model is translated from OpenStudio to EnergyPlus.
 
-Below are some specific code differences for EnergyPlus -- versus model (OpenStudio) -- measures.
+Below are some specific code differences for EnergyPlus versus model (OpenStudio) measures.
 
 The class line should refer to "WorkspaceScript" versus "ModelScript", as shown in the following example:
 
