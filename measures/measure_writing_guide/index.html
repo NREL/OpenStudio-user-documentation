@@ -930,7 +930,7 @@ ReplaceLightsInSpaceTypeWithLPD.new.registerWithApplication
 <h2 id="advanced-topics">Advanced Topics</h2>
 <h3 id="energyplus-measures">EnergyPlus Measures</h3>
 <p>Measures are usually written to work on an OpenStudio model. This is preferred because it allows you to use the OpenStudio Model API, which includes specialized methods for each type of object in the OpenStudio Model. However, when a particular EnergyPlus feature is not yet exposed in the OpenStudio Model, you may choose to write a measure that operates on the EnergyPlus data model directly. Measures of this type are run only after the model is translated from OpenStudio to EnergyPlus.</p>
-<p>Below are some specific code differences for EnergyPlus versus. Model (OpenStudio) measures.</p>
+<p>Below are some specific code differences for EnergyPlus -- versus model (OpenStudio) -- measures.</p>
 <p>The class line should refer to "WorkspaceScript" versus "ModelScript", as shown in the following example:</p>
 <pre><code class="ruby">class ConstructionTakeOff &lt; OpenStudio::Ruleset::WorkspaceUserScript
 </code></pre>
