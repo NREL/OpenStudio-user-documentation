@@ -190,12 +190,10 @@
           <div class="bs-docs-sidebar hidden-print affix well" role="complementary">
   <ul class="nav">
   
-    <li class="main active"><a href="#new-in-openstudio-150">New in OpenStudio 1.5.0</a>
+    <li class="main active"><a href="#new-in-openstudio-160">New in OpenStudio 1.6.0</a>
       <ul class="nav">
         
-        <li><a href="#grid-view-for-thermal-zones-and-space-types">Grid View for Thermal Zones and Space Types</a></li>
-        
-        <li><a href="#plug-in-works-in-sketchup-2014">Plug-in Works in SketchUp 2014</a></li>
+        <li><a href="#overview">Overview</a></li>
         
       </ul>
     </li>
@@ -262,18 +260,18 @@
           <h1>Current Features</h1>
 
 <p>OpenStudio is constantly being improved, with a less stable developer release available every 2 weeks and a stable major release quarterly (4 per year). The features that are available in the current major release are described below. To learn what is coming in the future, see the <a href="../roadmap">Planned Features</a> page.</p>
-<h2 id="new-in-openstudio-150">New in OpenStudio 1.5.0</h2>
-<h4 id="grid-view-for-thermal-zones-and-space-types">Grid View for Thermal Zones and Space Types</h4>
-<p>Previously available for Refrigeration Walk Ins and Refrigeration Cases, grid-view (a grid-style interface providing detailed component views) has now been applied to the Space Types tab, as well as the Thermal Zones tab.</p>
-<p>Viewing and editing your thermal zones and space types in a grid view allows you to see all your thermal zones at once and compare settings.</p>
-<p><img alt="Grid view example" src="../../img/features/grid_thumb.png" /></p>
-<h4 id="plug-in-works-in-sketchup-2014">Plug-in Works in SketchUp 2014</h4>
-<p>This update allows OpenStudio to leverage upon the improvements available in Ruby 2.0, and provides compatibility with SketchUp 2014. OpenStudio is no longer be compatible with SketchUp 2013 or SketchUp 8.</p>
-<p>For the full list of added features go to the <a href="http://github.com/NREL/OpenStudio/releases"><strong>Release Notes on GitHub</strong></a></p>
+<h2 id="new-in-openstudio-160">New in OpenStudio 1.6.0</h2>
+<h3 id="overview">Overview</h3>
+<p>This version of OpenStudio has been updated to work with EnergyPlus 8.2.0.
+OpenStudio SketchUp plug-in updated to work with SketchUp 2015.  SketchUp 2015 is available in 32 and 64 bit versions, the 32 bit version of OpenStudio on Windows will work with the 32 bit version of SketchUp 2015 and the 64 bit version of OpenStudio will work with the 64 bit version of SketchUp 2015</p>
+<h4 id="new-features">New Features</h4>
+<p>This release includes the addition of standards specific properties to material and construction objects to support Title 24 compliance modeling.  These fields are completely optional but will be translated to Standards Data Dictionary (SDD) format if they are populated in the OpenStudio Application. The SDD format is used by <a href="http://bees.archenergy.com/index.html">CBECC-Com</a> and can be imported into the application and edited to submit for compliance.</p>
+<p>A template file, CECTemplate.osm, contains a set of materials populated with CEC Title 24 2013 information.  This file is installed with OpenStudio and may be loaded as a library in the OpenStudio Application for easy inclusion in your model.</p>
+<p>For the full list of added features and bug fixes go to the <a href="http://github.com/NREL/OpenStudio/releases"><strong>Release Notes on GitHub</strong></a></p>
 <p>View the <a href="../roadmap">OpenStudio Roadmap</a> to see the release plan for future features.</p>
 <hr />
 <h2 id="current-features">Current Features</h2>
-<p>As of OpenStudio Version 1.5.0</p>
+<p>As of OpenStudio Version 1.6.0</p>
 <h3 id="building-geometry3d-cad">Building Geometry/3D CAD</h3>
 <ul>
 <li>Quickly draw 3D building geometry using free plugin for SketchUp</li>
@@ -302,6 +300,10 @@
 <li>Built in library of space types (loads and associated schedules) for DOE reference buildings for all vintages (pre-1980, 1980-2004, and 2004) plus ASHRAE 189.1-2009, ASHRAE 90.1-2007, and ASHRAE 90.1-2010</li>
 <li>Can apply loads in one place (space type) and apply throughout the building</li>
 </ul>
+<h4 id="grid-view-for-thermal-zones-and-space-types">Grid View for Thermal Zones and Space Types</h4>
+<p>Previously available for Refrigeration Walk Ins and Refrigeration Cases, grid-view (a grid-style interface providing detailed component views) has now been applied to the Space Types tab, as well as the Thermal Zones tab.</p>
+<p>Viewing and editing your thermal zones and space types in a grid view allows you to see all your thermal zones at once and compare settings.</p>
+<p><img alt="Grid view example" src="../../img/features/grid_thumb.png" /></p>
 <h3 id="hvac">HVAC</h3>
 <ul>
 <li>Graphical representation of HVAC systems, zones, and their connections</li>
