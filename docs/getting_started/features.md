@@ -1,28 +1,23 @@
 <h1>Current Features</h1>
 OpenStudio is constantly being improved, with a less stable developer release available every 2 weeks and a stable major release quarterly (4 per year). The features that are available in the current major release are described below. To learn what is coming in the future, see the [Planned Features](../getting_started/roadmap.md) page.
 
-## New in OpenStudio 1.5.0
+## New in OpenStudio 1.6.0
+###OverviewThis version of OpenStudio has been updated to work with EnergyPlus 8.2.0.OpenStudio SketchUp plug-in updated to work with SketchUp 2015.  SketchUp 2015 is available in 32 and 64 bit versions, the 32 bit version of OpenStudio on Windows will work with the 32 bit version of SketchUp 2015 and the 64 bit version of OpenStudio will work with the 64 bit version of SketchUp 2015
 
-#### Grid View for Thermal Zones and Space Types
+#### New Features
 
-Previously available for Refrigeration Walk Ins and Refrigeration Cases, grid-view (a grid-style interface providing detailed component views) has now been applied to the Space Types tab, as well as the Thermal Zones tab.
+This release includes the addition of standards specific properties to material and construction objects to support Title 24 compliance modeling.  These fields are completely optional but will be translated to Standards Data Dictionary (SDD) format if they are populated in the OpenStudio Application. The SDD format is used by [CBECC-Com](http://bees.archenergy.com/index.html) and can be imported into the application and edited to submit for compliance.
 
-Viewing and editing your thermal zones and space types in a grid view allows you to see all your thermal zones at once and compare settings.
+A template file, CECTemplate.osm, contains a set of materials populated with CEC Title 24 2013 information.  This file is installed with OpenStudio and may be loaded as a library in the OpenStudio Application for easy inclusion in your model.
 
-![Grid view example](img/features/grid_thumb.png)
-
-#### Plug-in Works in SketchUp 2014
-
-This update allows OpenStudio to leverage upon the improvements available in Ruby 2.0, and provides compatibility with SketchUp 2014. OpenStudio is no longer be compatible with SketchUp 2013 or SketchUp 8.
-
-For the full list of added features go to the [__Release Notes on GitHub__](http://github.com/NREL/OpenStudio/releases)
+For the full list of added features and bug fixes go to the [__Release Notes on GitHub__](http://github.com/NREL/OpenStudio/releases)
 
 View the [OpenStudio Roadmap](roadmap.md) to see the release plan for future features.
 ____________________________
 
 ## Current Features
 
-As of OpenStudio Version 1.5.0
+As of OpenStudio Version 1.6.0
 
 ### Building Geometry/3D CAD
 
@@ -51,6 +46,14 @@ As of OpenStudio Version 1.5.0
 - Can input loads per-area or add actual quantities to accommodate schematic and detailed design
 - Built in library of space types (loads and associated schedules) for DOE reference buildings for all vintages (pre-1980, 1980-2004, and 2004) plus ASHRAE 189.1-2009, ASHRAE 90.1-2007, and ASHRAE 90.1-2010
 - Can apply loads in one place (space type) and apply throughout the building
+
+#### Grid View for Thermal Zones and Space Types
+
+Previously available for Refrigeration Walk Ins and Refrigeration Cases, grid-view (a grid-style interface providing detailed component views) has now been applied to the Space Types tab, as well as the Thermal Zones tab.
+
+Viewing and editing your thermal zones and space types in a grid view allows you to see all your thermal zones at once and compare settings.
+
+![Grid view example](img/features/grid_thumb.png)
 
 ### HVAC
 
