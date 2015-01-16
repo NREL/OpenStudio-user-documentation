@@ -2,15 +2,14 @@
 OpenStudio is constantly being improved, with a less stable developer release available every 2 weeks and a stable major release quarterly (4 per year). The features that are available in the current major release are described below. To learn what is coming in the future, see the [Planned Features](../getting_started/roadmap.md) page.
 
 ## New in OpenStudio 1.6.0
-###OverviewThis version of OpenStudio has been updated to work with EnergyPlus 8.2.0.OpenStudio SketchUp plug-in updated to work with SketchUp 2015.  SketchUp 2015 is available in 32 and 64 bit versions, the 32 bit version of OpenStudio on Windows will work with the 32 bit version of SketchUp 2015 and the 64 bit version of OpenStudio will work with the 64 bit version of SketchUp 2015
+###OverviewThis version of OpenStudio has been updated to work with EnergyPlus 8.2.0 Update 1, which is now bundled with the OpenStudio installer.  It is no longer necessary to download and install EnergyPlus separately.
+OpenStudio SketchUp plug-in is updated to work with SketchUp 2015.  SketchUp 2015 is available in 32 and 64 bit versions, the 32 bit version of OpenStudio on Windows will work with the 32 bit version of SketchUp 2015 and the 64 bit version of OpenStudio will work with the 64 bit version of SketchUp 2015
 
 #### New Features
 
-This release includes the addition of standards specific properties to material and construction objects to support Title 24 compliance modeling.  These fields are completely optional but will be translated to Standards Data Dictionary (SDD) format if they are populated in the OpenStudio Application. The SDD format is used by [CBECC-Com](http://bees.archenergy.com/index.html) and can be imported into the application and edited to submit for compliance.
+This release includes the addition of standards specific properties to material and construction objects to support Title 24 compliance modeling.  These fields are completely optional but will be translated to Standards Data Dictionary (SDD) format if they are populated in the OpenStudio Application. The SDD format is used by [CBECC-Com](http://bees.archenergy.com/index.html) and can be imported into the application and edited to submit for compliance. A template file, CECTemplate.osm, contains a set of materials populated with CEC Title 24 2013 information.  This file is installed with OpenStudio and may be loaded as a library in the OpenStudio Application for easy inclusion in your model. [This tutorial](../next_steps/detailed_tutorials/tutorial_cbecc_materials.md) provides more information on this new feature.
 
-A template file, CECTemplate.osm, contains a set of materials populated with CEC Title 24 2013 information.  This file is installed with OpenStudio and may be loaded as a library in the OpenStudio Application for easy inclusion in your model.
-
-For the full list of added features and bug fixes go to the [__Release Notes on GitHub__](http://github.com/NREL/OpenStudio/releases)
+For the full list of added features and bug fixes see the [__Release Notes on GitHub__](https://github.com/NREL/OpenStudio/releases/tag/v1.6.0)
 
 View the [OpenStudio Roadmap](roadmap.md) to see the release plan for future features.
 ____________________________
@@ -21,7 +20,7 @@ As of OpenStudio Version 1.6.0
 
 ### Building Geometry/3D CAD
 
-- Quickly draw 3D building geometry using free plugin for SketchUp
+- Quickly draw 3D building geometry using free plug-in for SketchUp
 - Building envelope, shading on windows, shading from other buildings, etc.
 - Draw detailed shapes, trace floor plans, or a combination
 - Use wizard to create standard shapes (H, L, E, Courtyard, Rectangle)

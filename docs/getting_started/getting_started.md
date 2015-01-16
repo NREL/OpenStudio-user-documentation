@@ -4,7 +4,7 @@ This page walks you through installing OpenStudio, the basics of the application
 ## Installation Instructions
 OpenStudio is supported on Windows 7 - 8.1, OS X 10.9 - 10.10, and 64-bit Ubuntu 14.04.
 
-OpenStudio 1.6.0 works with EnergyPlus 8.2 Update 1, which is now bundled with the OpenStudio installer.  It is no longer necessary to download and install EnergyPlus separately
+OpenStudio 1.6.0 works with EnergyPlus 8.2.0 Update 1, which is now bundled with the OpenStudio installer.  It is no longer necessary to download and install EnergyPlus separately.
 
 __Download and install SketchUp__
 
