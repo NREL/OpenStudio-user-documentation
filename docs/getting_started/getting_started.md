@@ -3,17 +3,12 @@ This page walks you through installing OpenStudio, the basics of the application
 
 ## Installation Instructions
 OpenStudio is supported on Windows 7 - 8.1, OS X 10.9 - 10.10, and 64-bit Ubuntu 14.04.
-OpenStudio 1.5.0 works with EnergyPlus 8.1.
 
-__Download and install EnergyPlus 8.1__
-
-1. Login to the [EnergyPlus website](http://apps1.eere.energy.gov/buildings/energyplus/index.cfm). Create an account if you don't have one.
-2. Click "Download Older Versions of Energy Plus".
-3. Choose the installer for __EnergyPlus 8.1__ that matches your operating system. OpenStudio works with both the 32 and 64-bit installers.
+OpenStudio 1.6.0 works with EnergyPlus 8.2 Update 1, which is now bundled with the OpenStudio installer.  It is no longer necessary to download and install EnergyPlus separately
 
 __Download and install SketchUp__
 
-1. The OpenStudio SketchUp Plug-in requires [SketchUp 2015](http://www.sketchup.com/) (not available for Linux). Older versions of SketchUp are not supported.  To use OpenStudio 1.5.0 with SketchUp 2015, copy all the files in "C:\Program Files (x86)\OpenStudio 1.5.0\Ruby\Plugins" to "C:\ProgramData\SketchUp\SketchUp 2015\SketchUp\Plugins".
+1. The OpenStudio SketchUp Plug-in requires [SketchUp 2015](http://www.sketchup.com/) (not available for Linux). Older versions of SketchUp are not supported.  SketchUp 2015 is available in 32 and 64 bit versions, the 32 bit version of OpenStudio on Windows will only work with the 32 bit version of SketchUp 2015 and the 64 bit version of OpenStudio will only work with the 64 bit version of SketchUp 2015.
 
 __Download and install OpenStudio__
 
@@ -49,7 +44,7 @@ If you plan to use the OpenStudio SDK Ruby bindings via command prompt on Window
 3. Create a text file called with the following text inside:
 
     ```ruby
-    require 'C:\Program Files (x86)\OpenStudio 1.5.0\Ruby\openstudio.rb'
+    require 'C:\Program Files (x86)\OpenStudio 1.6.0\Ruby\openstudio.rb'
     ```
 
 4. Save the file as `openstudio.rb` here: `C:\Ruby200\lib\ruby\site_ruby\openstudio.rb` (next to the `2.0.0` folder).
