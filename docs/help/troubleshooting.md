@@ -49,11 +49,11 @@ At times some objects in OpenStudio that should have a parent, such as surfaces 
 
 Below is a screenshot of what the measure looks like in the apply measure now window. By default the remove unused objects boxes are un-checked. You will always get the remove orphan functionality. 
 
-![Remove Orphan Objects and Unused Resources - Arguments](../../img/help/orphan_purge_argview.png)
+![Remove Orphan Objects and Unused Resources - Arguments](img/help/orphan_purge_argview.png)
 
 Below is a screenshot of the log after running the measure. The log will list each section being checked, so as the functionality is expanded you will know what object types are being checked for for orphan.
 
-![Remove Orphan Objects and Unused Resources - Output](../../img/help/orphan_purge_outputview.png)
+![Remove Orphan Objects and Unused Resources - Output](img/help/orphan_purge_outputview.png)
 
 _________________
 
