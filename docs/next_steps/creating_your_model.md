@@ -208,6 +208,8 @@ There are various classes of material objects. When you add a new material, firs
 
 Different types of material will have different data fields available.
 
+Materials also have "Measure Tags" as optional inputs. These tags can be used by measures or they can be used for [exporting a file for a Title 24 Compliance tool.](detailed_tutorials/tutorial_cbecc_materials.md) 
+
 ![Materials Tab](img/create_model/materials.png)
 
 *Above: Edit and create materials on this tab.*
