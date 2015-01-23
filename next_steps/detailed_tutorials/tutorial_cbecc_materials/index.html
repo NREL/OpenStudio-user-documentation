@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Shading Controls Tutorial - OpenStudio User Docs</title>
+    <title>CBECC Materials Tutorial - OpenStudio User Docs</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -91,16 +91,16 @@
                 <a href="../../life_cycle_costing_examples">Life Cycle Costing Examples</a>
               </li>
             
-              <li>
-                <a href="../tutorial_cbecc_materials">CBECC Materials Tutorial</a>
+              <li class="active">
+                <a href=".">CBECC Materials Tutorial</a>
               </li>
             
               <li>
                 <a href="../tutorial_glhepro">GLHEPro Tutorial</a>
               </li>
             
-              <li class="active">
-                <a href=".">Shading Controls Tutorial</a>
+              <li>
+                <a href="../tutorial_shadingcontrols">Shading Controls Tutorial</a>
               </li>
             
             </ul>
@@ -194,19 +194,19 @@
           <div class="bs-docs-sidebar hidden-print affix well" role="complementary">
   <ul class="nav">
   
-    <li class="main active"><a href="#create-shading-controls">Create Shading Controls</a>
+    <li class="main active"><a href="#material-measure-tags">Material Measure Tags</a>
       <ul class="nav">
         
       </ul>
     </li>
   
-    <li class="main"><a href="#apply-shading-controls">Apply Shading Controls</a>
+    <li class="main"><a href="#construction-measure-tags">Construction Measure Tags</a>
       <ul class="nav">
         
       </ul>
     </li>
   
-    <li class="main"><a href="#edit-shading-controls">Edit Shading Controls</a>
+    <li class="main"><a href="#load-the-cectemplate-library">Load the CECTemplate library</a>
       <ul class="nav">
         
       </ul>
@@ -219,22 +219,23 @@
 </div>
         </div>
         <div class="col-md-9" role="main">
-          <h1>OpenStudio Shading Controls</h1>
+          <h1>OpenStudio Materials and Constructions for CBECC-COM</h1>
 
-<p>This tutorial explains how to add shading controls to an OpenStudio model to study the impact of blinds, shades, switchable glazing, or other shading controls.</p>
-<h2 id="create-shading-controls">Create Shading Controls</h2>
-<p>Create a model with fenestration. Apply a fenestration construction which represents the unshaded state to your windows. Create either a fenestration construction representing the shaded state or a shading material such as a blind, screen, or shade. If you choose a shading material it will be added to the unshaded construction when the window is in the shaded state. Run the "Add Shading Controls" user script to create a shading control object.</p>
-<p><img alt="Add Shading Controls Menu" src="../../../img/tutorials/shadingcontrols1.jpg" /></p>
-<p>Choose either your shaded construction or shading material, you cannot choose both.</p>
-<p><img alt="Add Shading Controls Dialog" src="../../../img/tutorials/shadingcontrols2.jpg" /></p>
-<h2 id="apply-shading-controls">Apply Shading Controls</h2>
-<p>Select the windows that you want to apply the shading controls to. This can be done individually or by using the surface search feature. Run the "Apply Shading Controls" user script to apply a shading control object to the selected windows.</p>
-<p><img alt="Apply Shading Controls" src="../../../img/tutorials/shadingcontrols3.jpg" /></p>
-<h2 id="edit-shading-controls">Edit Shading Controls</h2>
-<p>Edit details related to the shading control object (e.g. control algorithm) using the OpenStudio inspector.</p>
-<p><img alt="OpenStudio Inspector" src="../../../img/tutorials/shadingcontrols4.jpg" /></p>
-<p>You can also assign shading control objects to individual surfaces using the OpenStudio inspector.</p>
-<p><img alt="OpenStudio Inspector" src="../../../img/tutorials/shadingcontrols5.jpg" /></p>
+<p><a href="http://bees.archenergy.com/software.html">CBECC-Com (California Building Energy Code Compliance)</a> is an open source project that may be used by Code Agencies, Rating Authorities, or Utility Programs in the development of energy codes, standards, or efficiency programs. Architects, engineers, and energy consultants may also use these tools to demonstrate compliance with energy codes or beyond-code programs. OpenStudio models can be exported to the SDD format which may then be imported into CBECC-Com.  OpenStudio 1.6.0 added the ability to specify material and construction properties needed by CBECC-Com, these are then exported to SDD and imported into CBECC-Com.  This tutorial will explain how to set these properties using the OpenStudio application so they can be properly imported into CBECC-Com.  Future versions of OpenStudio will add additional information to the SDD export with the ultimate goal of being able to run an exported SDD from OpenStudio through the CBECC-Com interface with no manual modification.</p>
+<h2 id="material-measure-tags">Material Measure Tags</h2>
+<p>In order to apply energy codes to a SDD model, CBECC-Com requires information that is not used by energy simulation software.  OpenStudio has augmented several model objects with measure tags that can be used to add this information to an OpenStudio model.  These tags allow you to specify information like composite framing material or the standards identifier used to reference a particular material.  This information is not used when running an energy simulation using OpenStudio.  However, this information is included in the SDD export and used by CBECC-Com to apply energy codes.  These tags may also be used by measures that operate on the OpenStudio model.  OpenStudio measure tags are populated with a set of suggested values that are compatible with CBECC-Com.  You may choose to enter any value that you wish, but only the suggested values will work with CBECC-Com.  The set of measure tags available for a Material object is shown in the figure below.  In this example, the material is tagged as belonging to the standards category Roofing.  CBECC-Com provides a set of identifiers for materials in this category, choosing one of these identifiers specifies the material in CBECC-Com's library.  The performance values used in the OpenStudio model are not translated to SDD, only the standards category and identifier as this is all that CBECC-Com allows for compliance analysis.</p>
+<p><a href="../../../img/tutorials/cbecc_materials_material1.jpg"><img alt="Material Measure Tags" src="../../../img/tutorials/cbecc_materials_material1.jpg" title="Click to view larger version." /></a></p>
+<p>The Composite material standards category behaves slightly differently.  For this category, you are prompted to specify framing material, configuration, depth, size, and cavity insulation for your composite layer.  CBECC-Com uses these properties to model your composite material, there is no standards identifier for composite materials.  </p>
+<p><a href="../../../img/tutorials/cbecc_materials_material2.jpg"><img alt="Composite Material Measure Tags" src="../../../img/tutorials/cbecc_materials_material2.jpg" title="Click to view larger version." /></a></p>
+<p>When modeling fenestration, no standards information is needed at the material level as this is input at the construction level in CBECC-Com.  The only performance data which is translated from OpenStudio material objects to SDD are the u-factor, solar heat gain coefficient, and visible transmittance properties of Simple Glazing System Window objects.</p>
+<p><a href="../../../img/tutorials/cbecc_materials_material3.jpg"><img alt="Simple Glazing System Window Measure Tags" src="../../../img/tutorials/cbecc_materials_material3.jpg" title="Click to view larger version." /></a></p>
+<h2 id="construction-measure-tags">Construction Measure Tags</h2>
+<p>At the construction level, the only measure tags available for opaque constructions are the intended surface type and the construction type, the values for construction type are  populated based on the intended surface type.</p>
+<p><a href="../../../img/tutorials/cbecc_materials_constructions2.jpg"><img alt="Composite Construction Measure Tags" src="../../../img/tutorials/cbecc_materials_constructions2.jpg" title="Click to view larger version." /></a></p>
+<p>For fenestration constructions that consist of a single layer of a Simple Glazing System Window, the performance values in the Simple Glazing System Window will be used.  However, if you have specified your window constructions in a different way (e.g. layer by layer) you can use the fenestration measure tags to specify data (e.g. number of panes, frame type) that CBECC-Com will use to look up default performance information for compliance analysis.</p>
+<p><a href="../../../img/tutorials/cbecc_materials_constructions1.jpg"><img alt="Composite Construction Measure Tags" src="../../../img/tutorials/cbecc_materials_constructions1.jpg" title="Click to view larger version." /></a></p>
+<h2 id="load-the-cectemplate-library">Load the CECTemplate library</h2>
+<p>It is possible to assign measure tags to your own materials.  However, there is no guarantee that the performance values in your materials will match those used by CBECC-Com for compliance analysis.  Therefore, OpenStudio has been distributed with a library of materials which include both performance data and the measure tags used by CBECC-Com.  This library file may be loaded in the OpenStudio application using "File-&gt;Load Library" and selecting CECTemplate.osm.  Currently, this library contains only materials, it does not include constructions or constructions sets, these may be added at a later date.</p>
 
           <div class="footer">
   <p class="text-center"><a href="https://www.openstudio.net/contact">Contact Us</a></p>

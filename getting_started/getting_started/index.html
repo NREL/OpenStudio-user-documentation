@@ -92,6 +92,10 @@
               </li>
             
               <li>
+                <a href="../../next_steps/detailed_tutorials/tutorial_cbecc_materials">CBECC Materials Tutorial</a>
+              </li>
+            
+              <li>
                 <a href="../../next_steps/detailed_tutorials/tutorial_glhepro">GLHEPro Tutorial</a>
               </li>
             
@@ -245,17 +249,11 @@
 
 <p>This page walks you through installing OpenStudio, the basics of the applications, and the basic workflow.</p>
 <h2 id="installation-instructions">Installation Instructions</h2>
-<p>OpenStudio is supported on Windows 7 - 8.1, OS X 10.9 - 10.10, and 64-bit Ubuntu 14.04.
-OpenStudio 1.5.0 works with EnergyPlus 8.1.</p>
-<p><strong>Download and install EnergyPlus 8.1</strong></p>
-<ol>
-<li>Login to the <a href="http://apps1.eere.energy.gov/buildings/energyplus/index.cfm">EnergyPlus website</a>. Create an account if you don't have one.</li>
-<li>Click "Download Older Versions of Energy Plus".</li>
-<li>Choose the installer for <strong>EnergyPlus 8.1</strong> that matches your operating system. OpenStudio works with both the 32 and 64-bit installers.</li>
-</ol>
+<p>OpenStudio is supported on Windows 7 - 8.1, OS X 10.9 - 10.10, and 64-bit Ubuntu 14.04.</p>
+<p>OpenStudio 1.6.0 works with EnergyPlus 8.2.0 Update 1, which is now bundled with the OpenStudio installer.  It is no longer necessary to download and install EnergyPlus separately.</p>
 <p><strong>Download and install SketchUp</strong></p>
 <ol>
-<li>The OpenStudio SketchUp Plug-in requires <a href="http://www.sketchup.com/">SketchUp 2015</a> (not available for Linux). Older versions of SketchUp are not supported.  To use OpenStudio 1.5.0 with SketchUp 2015, copy all the files in "C:\Program Files (x86)\OpenStudio 1.5.0\Ruby\Plugins" to "C:\ProgramData\SketchUp\SketchUp 2015\SketchUp\Plugins".</li>
+<li>The OpenStudio SketchUp Plug-in requires <a href="http://www.sketchup.com/">SketchUp 2015</a> (not available for Linux). Older versions of SketchUp are not supported.  SketchUp 2015 is available in 32 and 64 bit versions, the 32 bit version of OpenStudio on Windows will only work with the 32 bit version of SketchUp 2015 and the 64 bit version of OpenStudio will only work with the 64 bit version of SketchUp 2015.</li>
 </ol>
 <p><strong>Download and install OpenStudio</strong></p>
 <ol>
@@ -291,7 +289,7 @@ If you plan to use the OpenStudio SDK Ruby bindings via command prompt on Window
 <li>
 <p>Create a text file called with the following text inside:</p>
 <p><code>ruby
-require 'C:\Program Files (x86)\OpenStudio 1.5.0\Ruby\openstudio.rb'</code></p>
+require 'C:\Program Files (x86)\OpenStudio 1.6.0\Ruby\openstudio.rb'</code></p>
 </li>
 <li>
 <p>Save the file as <code>openstudio.rb</code> here: <code>C:\Ruby200\lib\ruby\site_ruby\openstudio.rb</code> (next to the <code>2.0.0</code> folder).</p>
