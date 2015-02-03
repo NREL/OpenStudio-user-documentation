@@ -1,5 +1,5 @@
 <h1>Frequently Asked Questions</h1>
-This page is a collection of questions that new users commonly ask. If you don't see the answer to your question here, you can also search [UnmetHours](https://unmethours.com/questions/) to see if someone has already answered your question there.
+This page is a collection of questions that new users commonly ask. If you don't see the answer to your question here, you can also search [UnmetHours](https://unmethours.com/questions/scope:all/sort:activity-desc/tags:openstudio/) to see if someone has already answered your question there.
 
 ## What is the difference between a Space and a Zone?
 This video provides information on using space types in OpenStudio:

@@ -9,6 +9,11 @@ The documentation is written in Markdown, and uses [MkDocs] (http://www.mkdocs.o
 ###Mac
 Install MkDocs by following the direction at [MkDocs](http://www.mkdocs.org).  You will need python.
 
+To update your MkDocs version:
+```python
+	sudo pip install -U mkdocs
+```
+
 ###Windows
 Getting mkdocs to work on Windows is very particular.  We recommend uninstalling python and deleting the install directory before following these steps.  If you don't, it probably won't work.  We tried many different ways to do this, and starting from scratch and following these steps is the only thing we could get to work.
 

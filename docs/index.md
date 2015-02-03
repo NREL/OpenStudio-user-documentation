@@ -65,6 +65,7 @@
           <p><a href="help/best_practices.md" class="btn btn-primary" role="button">Best Practices</a></p>
           <p><a href="help/troubleshooting.md" class="btn btn-primary" role="button">Troubleshooting</a></p>
           <p><a href="help/faq.md" class="btn btn-primary" role="button">FAQ</a></p>
+          <p><a href="https://unmethours.com/questions/scope:all/sort:activity-desc/tags:openstudio/" class="btn btn-primary" role="button">Get Help</a></p>
         </div>
       </div>
     </div>

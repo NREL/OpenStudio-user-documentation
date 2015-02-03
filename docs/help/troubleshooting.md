@@ -97,14 +97,15 @@ _________________
 
 ## Energy Modeling Forum
 Post your questions to the forum below for energy modeling information.
-[__Unmet Hours__](https://unmethours.com/questions/scope:all/sort:activity-desc/tags:openstudio/)
+
+<a class="btn btn-primary" role="button" href="https://unmethours.com/questions/scope:all/sort:activity-desc/tags:openstudio/">Unmet Hours</a>
 
 _________________
 
 ## Submit a Bug
 Please let us know if you find a bug in the OpenStudio software.
 
-<a class="btn btn-primary" role="button" href="https://www.openstudio.net/contact">Submit a Bug</a>
+<a class="btn btn-primary" role="button" href="https://github.com/NREL/OpenStudio/blob/develop/CONTRIBUTING.md">Submit a Bug</a>
 
 _________________
 
