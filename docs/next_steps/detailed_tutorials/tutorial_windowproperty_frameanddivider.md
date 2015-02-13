@@ -7,7 +7,8 @@ Window Property Frame and Divider objects can be created using the object inspec
 
 ![Add Window Property Frame and Divider](img/tutorials/windowproperty_frameanddivider1.jpg)
 
-IDF files exported from [WINDOW](http://windows.lbl.gov/software/window/window.html) containing Window Property Frame and Divider objects can also be imported using the OpenStudio SketchUp plug-in.  WINDOW exports two IDF files, a *_Avg.idf and a *_Spec.idf file, only the *_Avg.idf file may be imported as the MaterialProperty:GlazingSpectralData object is not yet supported by OpenStudio.
+### Importing IDF files from the WINDOW program
+IDF files exported from [WINDOW](http://windows.lbl.gov/software/window/window.html) containing Window Property Frame and Divider objects can be imported using the OpenStudio SketchUp plug-in via Extensions>OpenStudio>Import>Import EnergyPlus Idf Constructions.  WINDOW exports two IDF files, a *_Avg.idf and a *_Spec.idf file. Only the *_Avg.idf file may be imported as the MaterialProperty:GlazingSpectralData object in the *_Spec.idf file is not yet supported by OpenStudio.
 
 ![Import Window Property Frame and Divider](img/tutorials/windowproperty_frameanddivider2.jpg)
 
