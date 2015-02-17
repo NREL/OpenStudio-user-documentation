@@ -23,8 +23,6 @@
           <p><a href="next_steps/openstudio_application_interface.md" class="btn btn-primary" role="button">OpenStudio Application</a></p>
           <p><a href="next_steps/creating_your_model.md" class="btn btn-primary" role="button">Creating Your Model</a></p>
           <p><a href="next_steps/running_your_simulation.md" class="btn btn-primary" role="button">Running Your Simulation</a></p>
-          <p>Sizing a Vertical Ground Heat Exchanger.</p>
-          <p><a href="next_steps/detailed_tutorials/tutorial_glhepro.md" class="btn btn-primary" role="button">GLHEPro and OpenStudio</a></p>
         </div>
       </div>
     </div>
