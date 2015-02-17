@@ -258,7 +258,13 @@
 <hr />
 <h2 id="how-do-you-use-measures">How Do You Use Measures?</h2>
 <h3 id="apply-measure-now">Apply Measure Now</h3>
+<p>The "Apply Measure Now" dialog, which can be found under the "Components &amp; Measures" menu in the OpenStudio application, applies a measure to your current model. It is similar to using the user scripts in the OpenStudio SketchUp Plugin, in that it alters the currently open model. Apply Measures Now is only applicable for OpenStudio measures, vs. EnergyPlus or Reporting. You need to save your model before using this tool, you have two levels of inspection available to you. First you can cancel out of the measure after inspecting the logs reported by it. If you accept the measure, then your model is updated but not yet saved. After inspecting the model if you don't like the changes that were made you can revert to the previously saved model.</p>
+<p><img alt="Apply Measure Now" src="../../img/measures/apply_measure_now.png" /></p>
+<p><em>Above: Apply Measure Now Dialog.</em></p>
 <h3 id="openstudio-application-measures-tab">OpenStudio Application Measures Tab</h3>
+<p>The Measures tab allows you to browse measures and add them to the workflow for your current model. Unlike the "Apply Measure Now" tool, this tab doesn't alter your current model. Instead it sets up one or more measures to be applied at run-time. It will affect the results of your simulation but won't alter what the current OSM looks like when you inspect it with the application. This tab support OpenStudio, EnergyPlus, and Reporting measures.</p>
+<p><img alt="Measures Tab OpenStudio Application" src="../../img/measures/measures_tab_os_app.png" /></p>
+<p><em>Above: Measures Tab in OpenStudio Application.</em></p>
 <h3 id="parametric-analysis-tool">Parametric Analysis Tool</h3>
 <p>In the ParametricAnalysisTool (PAT), you first drag all the measures you will use into your project and edit them to have the desired inputs. On the second tab, you create the design alternatives using the measures you set up on the first tab.</p>
 <p><img alt="Easy to Use Drag-and-Drop" src="../../img/measures/draganddrop.png" /></p>
@@ -266,12 +272,14 @@
 <p><img alt="Edit Measure Inputs" src="../../img/measures/set_inputs.png" /></p>
 <p><em>Above: Edit the measure inputs by selecting the measure and going to the right panel "Edit" tab.</em></p>
 <h3 id="command-line">Command Line</h3>
+<p>Measures can be run from a command line using a custom user script. The .rb file in the test directory of a measure is an example of this use case.</p>
 <hr />
 <h2 id="where-do-you-find-measures">Where Do You Find Measures?</h2>
 <h3 id="building-component-library-bcl">Building Component Library (BCL)</h3>
 <p>You can find measures by going directly to the <a href="https://bcl.nrel.gov/">BCL site</a> and searching or browsing for measures.</p>
 <p>Measures can be downloaded directly from BCL through the <a href="../..//../next_steps/openstudio_application_interface/#components-measures-menu">OpenStudio Application</a> and <a href="../..//../comparative_analysis/ParametricStudies/#downloading-measures-from-the-building-component-library">PAT</a> as well.</p>
 <h3 id="locally-shared-measures">Locally Shared Measures</h3>
+<p>Under the "Preferences" menu you can set a local measure path using the "Change My Measures Directory" menu option. This allows you to set a local or network directory for measures to show in the OpenStudio Application and Parametric Analysis Tool. This is in addition to any BCL measures you already have downloaded. They local measures will have say "My" in front of them vs. "BCL".</p>
 <h3 id="create-your-own">Create Your Own</h3>
 <p>Want to write your own custom measure? Start with the <a href="../measure_writing_guide">Measure Writing Guide</a>.</p>
 
