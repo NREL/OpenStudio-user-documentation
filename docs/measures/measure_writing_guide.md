@@ -790,6 +790,167 @@ Example xml:
 </attributes>
 ```
 
+## Measure Testing
+Measure testing is an excellent tool to validate your code as you are writing a measure and to test your completed measures as new versions of OpenStudio are released. Tests allow you to run the test pragmatically outside of the OpenStudio GUI's.  When you create a new measure using the OpenStudio Application or the Parametric Analysis Tool it comes with a functioning test. Ideally all measures on BCL will also have at least one test, but that isn't currently enforced. Below are a number of reasons you want measure tests.
+
+*   Test measures with various versions of Ruby.
+*   Test measures with various versions of OpenStudio.
+*   Test various combinations of argument values.
+*   Test various seed models.
+*   Validate not only that the measure runs without any ruby errors, but that it has the desired outcome.
+*   Optionally export the resulting model to IDF or even run EnergyPlus to confirm for another level of model validation.
+*   Tests for reporting measures can use pre-run results, allowing for very quick testing.
+*   Test using the same tool you are writing measures with (if you are using an text editor that supports running ruby).
+
+### Require statements
+There are a few objects that are requuired for measure testing. Generally these won't change from one test to another. You can just leave them as they are in the test that is created when you make a new measure.
+
+```ruby
+require 'openstudio'
+require 'openstudio/ruleset/ShowRunnerOutput'
+require 'minitest/autorun'
+require_relative '../measure.rb'
+require 'fileutils'
+```
+
+### Class - MiniTest::Unit::TestCase
+The class should typically be a CamelCase version of your measure name with "Test" at the end. All of measure test code excluding the require statements will be contained within this class.
+
+```ruby
+class MyMeasureTest < MiniTest::Unit::TestCase
+```
+
+### Setup and Teardown
+By default the setup and teardown definitions are emtpy and commented out. You can use these to run a block of code before and/or after each test. For more documentation see the [MiniTest documentation](http://ruby-doc.org/stdlib-2.0.0/libdoc/minitest/rdoc/MiniTest/Unit/TestCase.html#method-i-setup).
+
+```ruby
+  # def setup
+  # end
+
+  # def teardown
+  # end
+```
+
+To provide more useful sample code for a setup and teardown, here is the code from a reporting measure.
+
+```ruby
+  # create test files if they do not exist
+  def setup
+
+    if File.exist?(reportPath())
+      FileUtils.rm(reportPath())
+    end
+
+    assert(File.exist?(modelPath()))
+
+    assert(File.exist?(runDir()))
+
+    if not File.exist?(sqlPath())
+      puts "Running EnergyPlus"
+
+      co = OpenStudio::Runmanager::ConfigOptions.new(true)
+      co.findTools(false, true, false, true)
+
+      wf = OpenStudio::Runmanager::Workflow.new("modeltoidf->energypluspreprocess->energyplus")
+      wf.add(co.getTools())
+      job = wf.create(OpenStudio::Path.new(runDir()), OpenStudio::Path.new(modelPath()))
+
+      rm = OpenStudio::Runmanager::RunManager.new
+      rm.enqueue(job, true)
+      rm.waitForFinished
+    end
+  end
+
+  # delete output files
+  def teardown
+
+    # comment this out if you don't want to rerun EnergyPlus each time
+    if File.exist?(sqlPath())
+      #FileUtils.rm(sqlPath())
+    end
+
+    # comment this out if you want to see the resulting report
+    if File.exist?(reportPath())
+      #FileUtils.rm(reportPath())
+    end
+  end
+```
+
+### Test definition
+You can and should have multiple tests in your test file. This will assure that your measure is more robust for a variety of models and inputs that are passed to it. This is particularly important when you are making public facing measure vs. measures for your own internal use. You can copy one test to make the starting point for the next, but be sure that each test def has a unique name. Here are some typical tests you might include
+
+```ruby
+  def test_my_measure_good_argument_values_test_a
+```
+
+*   Test the number and name of measure arguments. This is useful when you are copying or altering a measure to make sure the measure is in sync with the tests
+*   Test for bad argument values. If for example you ask for a double but you expect to get a non-negative value. Use this to make sure the measure fails gracefully with the proper error message to the user. Ideally you can have one of these for any argument which has the possibility of invalid use entry.
+*   Test good argument values. You may have a number of these testing various input conditions. You may also swap out different seed models.
+
+### Setup Measure and Runner
+This will look pretty much the same for all measures and tests. The main change will be updating teh class of the measure. Refer to the measure.rb that goes with the test to confirm it is correct.
+
+```ruby
+    # create an instance of the measure
+    measure = MyMeasure.new
+
+    # create an instance of a runner
+    runner = OpenStudio::Ruleset::OSRunner.new
+```
+
+### Create New Model or Open Existing Model
+Every measure needs a Model or Workspace, or results as well if it is a reporting measure.
+
+Below is the most simple code you can write to add an empty model
+```ruby
+    # make an empty model
+    model = OpenStudio::Model::Model.new
+```
+
+The code below shows how to load in an existing model. This is often useful because your measure may need to operate on specific type of objects in yoru model.
+```ruby
+    # load the test model
+    translator = OpenStudio::OSVersion::VersionTranslator.new
+    path = OpenStudio::Path.new(File.dirname(__FILE__) + "/my_test_model.osm")
+    model = translator.loadModel(path)
+    assert((not model.empty?))
+    model = model.get
+```
+
+Here is basic code for an EnergyPlus measure
+```ruby
+    # make an empty workspace
+    workspace = OpenStudio::Workspace.new
+```
+
+The source for an EnergyPlus measure could be an IDF, or as shown below you can pass in and forward translate an OSM, which is often more convenient.
+```ruby
+    # load the test model
+    translator = OpenStudio::OSVersion::VersionTranslator.new
+    path = OpenStudio::Path.new(File.dirname(__FILE__) + "/my_test_model.osm")
+    model = translator.loadModel(path)
+    assert((not model.empty?))
+    model = model.get
+
+    # forward translate OSM file to IDF file
+    ft = OpenStudio::EnergyPlus::ForwardTranslator.new
+    workspace = ft.translateModel(model)
+```
+
+To see reporting measure, refer to the template code that comes with a new reporting measure.
+
+### Asserts for seed model
+
+### Get and Set Argument Values
+
+### Run the Measure
+
+### Show log messages
+
+### Save the resulting model
+
+### Asserts for resulting model
+
 ## Advanced Topics
 
 ### EnergyPlus Measures
