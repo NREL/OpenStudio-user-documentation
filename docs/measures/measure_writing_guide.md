@@ -1161,9 +1161,61 @@ class NewMeasureTest < MiniTest::Unit::TestCase
 end
 ```
 
-### Running the Measure tests
-TBD - I'll show how to setup Ruby, how to tell ruby where to find OpenStudio,and then describe with screenshots how to run via Notepad++ and also via command line
+### Running the Measure Tests
+To use the test files described above you need to leave the OpenStudio GUI's and either use the command line or an Interactive Development Environment (IDE) to run ruby. Ideally you will be able to run your tests while you write your measures and measure tests from within the same environment. I'll show [Notepad++](http://notepad-plus-plus.org/) below but there are many options. I'll also show using a command line.
 
+#### Configuring Your Computer for Testing
+On the mac, you don't have to configure anything. Ruby is already installed and it knows how to find OpenStudio. On windows you need to either tell your computer where to find the version of ruby that OpenStudio installed, or if you have another version or ruby installed on your system, you need to tell it where to find OpenStudio.
+
+On windows you need to type "environment variables" in the start menu search and then choose the option to change the environment variables for your account as shown in the screenshots below.
+
+![Finding Doc](img/measures/env_var_win.png)
+
+The text to add to the beginning of the path should look like this. It wil vary based on your version of OpenStudio and if you installed the 32 vs. 64bit version.
+
+```
+C:\Program Files\OpenStudio 1.6.0\ruby-install\ruby\bin
+```
+
+If you want to use an already existing ruby install that is in the environment variables path, you need to add a file named "openstudio.rb" to the "lib\ruby\site_ruby" folder with text pointing to your version of OpenStudio. Only use 2.0.x versions of ruby.
+
+```
+require 'C:\Program Files\OpenStudio 1.6.0\Ruby\openstudio.rb'
+```
+
+#### Using Notepad ++
+To run ruby using [Notepad++](http://notepad-plus-plus.org/) you need to install a plugin named NppExec. You can do this from the plugin manager within NotePad++
+
+![Finding Doc](img/measures/notepad_plus_plus_01.png)
+
+After installing NppExec you can go back to the Plugins menu to run it using "Execute". Make sure "Follow $(CURRENT_DIRECTORY)" is checked.
+
+![Finding Doc](img/measures/notepad_plus_plus_02.png)
+
+After you click "Execute" you will see a dialog. If you don't already see the following text in the command window, type it in.
+
+```
+ruby "$(FULL_CURRENT_PATH)"
+```
+
+The bottom fo the screenshot show the output from the measure. You can see the log messages and also the number of tests run and assertions. Note that if you use "puts" statements in your measure, they will show in this output, but they won't be visible when the measure is run from the OpenStudio GUI's.
+
+![Finding Doc](img/measures/notepad_plus_plus_03.png)
+
+#### Using the command line
+To run measure from the command line first open a command window in the directory of the measure test. You can manually browse to this, or you can shift right click on the tests directory in windows explorer and choose "Open command window here".
+
+Type ruby followed by a space and then the name of your measure test file name to run the tests. You can start to type the name of the test ruby file and click the "Tab" key to auto complete it.
+```
+ruby my_measure_test.rb
+```
+
+The output looks very similar to what you see in Notepad++. The QSslSocket messages at the top can be ignored. If ruby or OpenStudio can't be found, go back and look at yoru configuration.
+
+![Finding Doc](img/measures/test_command_line.png)
+
+#### Automated testing
+If you have a large collection of measures, it is a good idea to setup an automated process to batch test all of your measures. We will add more documentation on this in the future.
 
 ## Advanced Topics
 
