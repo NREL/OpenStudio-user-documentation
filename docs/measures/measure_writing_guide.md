@@ -969,9 +969,9 @@ There are a number of ways to set the argument values for the test. Below is a s
     # create hash of argument values
     args_hash = {}
     args_hash["space_name"] = "New Space"
-    args_hash["some integer_we_need"] = 10
-    args_hash["some double we need"] = 10.0
-    args_hash["a bool argument"] = true
+    args_hash["some_integer_we_need"] = 10
+    args_hash["some_double_we_need"] = 10.0
+    args_hash["a_bool_argument"] = true
 ```
 
 After the hash has been created, then loop through the arguments to apply the hash values to the arguments. Typically the size of the hash will match the size of the arguments.
@@ -1078,9 +1078,9 @@ class NewMeasureTest < MiniTest::Unit::TestCase
     # create hash of argument values
     args_hash = {}
     args_hash["space_name"] = ""
-    args_hash["some integer_we_need"] = 10
-    args_hash["some double we need"] = 10.0
-    args_hash["a bool argument"] = true
+    args_hash["some_integer_we_need"] = 10
+    args_hash["some_double_we_need"] = 10.0
+    args_hash["a_bool_argument"] = true
 
     # populate argument with specified hash value if specified
     arguments.each do |arg|
