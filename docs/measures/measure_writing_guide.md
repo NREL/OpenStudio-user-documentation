@@ -790,6 +790,433 @@ Example xml:
 </attributes>
 ```
 
+## Measure Testing
+Measure testing is an excellent tool to validate your code as you are writing a measure and to test your completed measures as new versions of OpenStudio are released. Tests allow you to run the test programmatically outside of the OpenStudio GUI's.  When you create a new measure using the OpenStudio Application or the Parametric Analysis Tool it comes with a functioning test. Ideally all measures on BCL will also have at least one test, but that isn't currently enforced. Below are a number of reasons you want measure tests.
+
+*   Test measures with various versions of Ruby.
+*   Test measures with various versions of OpenStudio.
+*   Test various combinations of argument values.
+*   Test various seed models.
+*   Validate not only that the measure runs without any ruby errors, but that it has the desired outcome.
+*   Optionally export the resulting model to IDF or even run EnergyPlus to confirm for another level of model validation.
+*   Tests for reporting measures can use pre-run results, allowing for very quick testing.
+*   Test using the same tool you are writing measures with (if you are using an text editor that supports running ruby).
+
+The following sections summary the different parts of a typical measure test file.
+
+### Require statements
+There are a few objects that are required for measure testing. Generally these won't change from one test to another. You can just leave them as they are in the test that is created when you make a new measure.
+
+```ruby
+require 'openstudio'
+require 'openstudio/ruleset/ShowRunnerOutput'
+require 'minitest/autorun'
+require_relative '../measure.rb'
+require 'fileutils'
+```
+
+### Class - MiniTest::Unit::TestCase
+The class should typically be a CamelCase version of your measure name with "Test" at the end. All of measure test code excluding the require statements will be contained within this class.
+
+```ruby
+class MyMeasureTest < MiniTest::Unit::TestCase
+```
+
+### Setup and Teardown
+By default the setup and teardown definitions are emtpy and commented out. You can use these to run a block of code before and/or after each test. For more documentation see the [MiniTest documentation](http://ruby-doc.org/stdlib-2.0.0/libdoc/minitest/rdoc/MiniTest/Unit/TestCase.html#method-i-setup).
+
+```ruby
+  # def setup
+  # end
+
+  # def teardown
+  # end
+```
+
+To provide more useful sample code for a setup and teardown, here is the code from a reporting measure.
+
+```ruby
+  # create test files if they do not exist
+  def setup
+
+    if File.exist?(reportPath())
+      FileUtils.rm(reportPath())
+    end
+
+    assert(File.exist?(modelPath()))
+
+    assert(File.exist?(runDir()))
+
+    if not File.exist?(sqlPath())
+      puts "Running EnergyPlus"
+
+      co = OpenStudio::Runmanager::ConfigOptions.new(true)
+      co.findTools(false, true, false, true)
+
+      wf = OpenStudio::Runmanager::Workflow.new("modeltoidf->energypluspreprocess->energyplus")
+      wf.add(co.getTools())
+      job = wf.create(OpenStudio::Path.new(runDir()), OpenStudio::Path.new(modelPath()))
+
+      rm = OpenStudio::Runmanager::RunManager.new
+      rm.enqueue(job, true)
+      rm.waitForFinished
+    end
+  end
+
+  # delete output files
+  def teardown
+
+    # comment this out if you don't want to rerun EnergyPlus each time
+    if File.exist?(sqlPath())
+      #FileUtils.rm(sqlPath())
+    end
+
+    # comment this out if you want to see the resulting report
+    if File.exist?(reportPath())
+      #FileUtils.rm(reportPath())
+    end
+  end
+```
+
+### Test definition
+You can and should have multiple tests in your test file. This will assure that your measure is more robust for a variety of models and inputs that are passed to it. This is particularly important when you are making public facing measure vs. measures for your own internal use. You can copy one test to make the starting point for the next, but be sure that each test def has a unique name. Here are some typical tests you might include
+
+```ruby
+  def test_my_measure_good_argument_values_test_a
+```
+
+*   Test the number and name of measure arguments. This is useful when you are copying or altering a measure to make sure the measure is in sync with the tests
+*   Test for bad argument values. If for example you ask for a double but you expect to get a non-negative value. Use this to make sure the measure fails gracefully with the proper error message to the user. Ideally you can have one of these for any argument which has the possibility of invalid use entry.
+*   Test good argument values. You may have a number of these testing various input conditions. You may also swap out different seed models.
+
+### Create Measure Instance and Runner
+This will look pretty much the same for all measures and tests. The main change will be updating the class of the measure. Refer to the measure.rb that goes with the test to confirm it is correct.
+
+```ruby
+    # create an instance of the measure
+    measure = MyMeasure.new
+
+    # create an instance of a runner
+    runner = OpenStudio::Ruleset::OSRunner.new
+```
+
+### Create New Model or Open Existing Model
+Every measure needs a Model or Workspace, or results as well if it is a reporting measure. Below is the most simple code you can write to add an empty model
+```ruby
+    # make an empty model
+    model = OpenStudio::Model::Model.new
+```
+
+The code below shows how to load in an existing model. This is often useful because your measure may need to operate on specific type of objects in your model. This allows you to use a model created in teh GUI as a starting point instead of using the OpenStudio API to build the model within the test.
+```ruby
+    # load the test model
+    translator = OpenStudio::OSVersion::VersionTranslator.new
+    path = OpenStudio::Path.new(File.dirname(__FILE__) + "/my_test_model_test_input.osm")
+    model = translator.loadModel(path)
+    assert((not model.empty?))
+    model = model.get
+```
+
+Here is basic code for an EnergyPlus measure.
+```ruby
+    # make an empty workspace
+    workspace = OpenStudio::Workspace.new
+```
+
+The source for an EnergyPlus measure could be an IDF, or as shown below you can pass in and forward translate an OSM, which is often more convenient.
+```ruby
+    # load the test model
+    translator = OpenStudio::OSVersion::VersionTranslator.new
+    path = OpenStudio::Path.new(File.dirname(__FILE__) + "/my_test_model_test_input.osm")
+    model = translator.loadModel(path)
+    assert((not model.empty?))
+    model = model.get
+
+    # forward translate OSM file to IDF file
+    ft = OpenStudio::EnergyPlus::ForwardTranslator.new
+    workspace = ft.translateModel(model)
+```
+
+To see what is loaded for reporting measure, refer to the template code that comes with a new reporting measure.
+
+### Seed model variables
+You may want to store information about the seed model before the measure runs for use later on. In this case the number of spaces in the model is stored. This code should run after the model is loaded, but before the measure is run.
+
+```ruby
+# store the number of spaces in the seed model
+num_spaces_seed = model.getSpaces.size
+```
+
+### Get and Set Argument Values
+The lines below show how to get the arguments. For a model measure you pass in "model". For an EnergyPlus measure you pass in "workspace". Nothing is passed in for a reporting measure.
+
+```ruby
+    # get arguments
+    arguments = measure.arguments(model)
+    argument_map = OpenStudio::Ruleset.convertOSArgumentVectorToMap(arguments)
+```
+
+If you want to you can assert that there are the expected number of arguments, or what the name is of an argument at a specific index location.
+
+```ruby
+    assert_equal(1, arguments.size)
+    assert_equal("space_name", arguments[0].name)
+```
+
+There are a number of ways to set the argument values for the test. Below is a streamline method that creates a hash and then populates the arguments from the hash. When entering values make sure that if the argument type is a double that you enter 2.0 instead of just 2 for your argument value. You can skip arguments where you want to apply the default value
+
+```ruby
+    # create hash of argument values
+    args_hash = {}
+    args_hash["space_name"] = "New Space"
+    args_hash["some integer_we_need"] = 10
+    args_hash["some double we need"] = 10.0
+    args_hash["a bool argument"] = true
+```
+
+After the hash has been created, then loop through the arguments to apply the hash values to the arguments. Typically the size of the hash will match the size of the arguments.
+
+```ruby
+    # populate argument with specified hash value if specified
+    arguments.each do |arg|
+      temp_arg_var = arg.clone
+      if args_hash[arg.name]
+        assert(temp_arg_var.setValue(args_hash[arg.name]))
+      end
+      argument_map[arg.name] = temp_arg_var
+    end
+```
+
+### Run the Measure
+Below shows the code to run an OpenStudio measure. If the meausre is an EnergyPlus measure replace "model" with "workspace. For a Reporting measure skip this so only "runner, argument_map" is passed in.
+
+```ruby
+    measure.run(model, runner, argument_map)
+    result = runner.result
+```
+
+### Show log messages
+You don't have to show log message, but this gives you a view into the same feedback users in the GUI wil see. By running this before the asserts it will show even if an assert fails. The messages can be good for diagnostics as to why an assert failed.
+
+```ruby
+    show_output(result)
+```
+
+### Asserts
+Asserts can be as detailed as you like. Below are some example asserts on the results of the measure, and on the resulting model.
+
+At a minimum you always want an assert that shows the result state. Valid options are "Success", "Fail", or "NA"
+```ruby
+    assert_equal("Success", result.value.valueName)
+```
+
+It is also typically a good idea to see that you had the expected number of info, warning messages.
+```ruby
+    assert(result.info.size == 1)
+    assert(result.warnings.size == 0)
+```
+
+Lastly, here is a more detailed example that inspect the model itself to see that it was altered as expected.
+```ruby
+    # check that there is now 1 more space than in the seed model
+    assert_equal(1, model.getSpaces.size - num_spaces_seed)
+```
+
+### Save the resulting model
+You don't have to save the resulting model, but it can be nice to open up the model and hand inspect it, in particular as you are writing and extending the functionality of your measure. It can also be a nice resource for people downloading your measure to see a before and after state of the model. The code below will save the model right next to the test input model. If you have multiple tests that save models make sure the name of the model saved is unique.
+
+```ruby
+    #save the model
+    output_file_path = OpenStudio::Path.new(File.dirname(__FILE__) + "/my_test_model_test_a_output.osm")
+    model.save(output_file_path,true)
+```
+
+### Putting It All Together - A Complete Measure Test File
+
+```ruby
+require 'openstudio'
+require 'openstudio/ruleset/ShowRunnerOutput'
+require 'minitest/autorun'
+require_relative '../measure.rb'
+require 'fileutils'
+
+class NewMeasureTest < MiniTest::Unit::TestCase
+
+  # def setup
+  # end
+
+  # def teardown
+  # end
+
+  def test_number_of_arguments_and_argument_names
+    # create an instance of the measure
+    measure = NewMeasure.new
+
+    # make an empty model
+    model = OpenStudio::Model::Model.new
+
+    # get arguments and test that they are what we are expecting
+    arguments = measure.arguments(model)
+    assert_equal(4, arguments.size)
+    assert_equal("space_name", arguments[0].name)
+  end
+
+  def test_bad_argument_values
+    # create an instance of the measure
+    measure = NewMeasure.new
+
+    # create an instance of a runner
+    runner = OpenStudio::Ruleset::OSRunner.new
+
+    # make an empty model
+    model = OpenStudio::Model::Model.new
+
+    # get arguments
+    arguments = measure.arguments(model)
+    argument_map = OpenStudio::Ruleset.convertOSArgumentVectorToMap(arguments)
+
+    # create hash of argument values
+    args_hash = {}
+    args_hash["space_name"] = ""
+    args_hash["some integer_we_need"] = 10
+    args_hash["some double we need"] = 10.0
+    args_hash["a bool argument"] = true
+
+    # populate argument with specified hash value if specified
+    arguments.each do |arg|
+      temp_arg_var = arg.clone
+      if args_hash[arg.name]
+        assert(temp_arg_var.setValue(args_hash[arg.name]))
+      end
+      argument_map[arg.name] = temp_arg_var
+    end
+
+    # run the measure
+    measure.run(model, runner, argument_map)
+    result = runner.result
+
+    # show the output
+    show_output(result)
+
+    # assert that it ran correctly
+    assert_equal("Fail", result.value.valueName)
+  end
+
+  def test_good_argument_values
+    # create an instance of the measure
+    measure = NewMeasure.new
+
+    # create an instance of a runner
+    runner = OpenStudio::Ruleset::OSRunner.new
+
+    # load the test model
+    translator = OpenStudio::OSVersion::VersionTranslator.new
+    path = OpenStudio::Path.new(File.dirname(__FILE__) + "/my_test_model_test_input.osm")
+    model = translator.loadModel(path)
+    assert((not model.empty?))
+    model = model.get
+
+    # store the number of spaces in the seed model
+    num_spaces_seed = model.getSpaces.size
+
+    # get arguments
+    arguments = measure.arguments(model)
+    argument_map = OpenStudio::Ruleset.convertOSArgumentVectorToMap(arguments)
+
+    # create hash of argument values.
+    # If the argument has a default that you want to use, you don't need it in the hash
+    args_hash = {}
+    args_hash["space_name"] = "New Space"
+    # using defaults values from measure.rb for other arguments
+
+    # populate argument with specified hash value if specified
+    arguments.each do |arg|
+      temp_arg_var = arg.clone
+      if args_hash[arg.name]
+        assert(temp_arg_var.setValue(args_hash[arg.name]))
+      end
+      argument_map[arg.name] = temp_arg_var
+    end
+
+    # run the measure
+    measure.run(model, runner, argument_map)
+    result = runner.result
+
+    # show the output
+    show_output(result)
+
+    # assert that it ran correctly
+    assert_equal("Success", result.value.valueName)
+    assert(result.info.size == 1)
+    assert(result.warnings.size == 0)
+
+    # check that there is now 1 space
+    assert_equal(1, model.getSpaces.size - num_spaces_seed)
+
+    # save the model
+    output_file_path = OpenStudio::Path.new(File.dirname(__FILE__) + "/my_test_model_test_a_output.osm")
+    model.save(output_file_path,true)
+  end
+
+end
+```
+
+### Running the Measure Tests
+To use the test files described above you need to leave the OpenStudio GUI's and either use the command line or an Interactive Development Environment (IDE) to run ruby. Ideally you will be able to run your tests while you write your measures and measure tests from within the same environment. I'll show [Notepad++](http://notepad-plus-plus.org/) below but there are many options. I'll also show using a command line.
+
+#### Configuring Your Computer for Testing
+On the mac, you don't have to configure anything. Ruby is already installed and it knows how to find OpenStudio. On windows you need to either tell your computer where to find the version of ruby that OpenStudio installed, or if you have another version or ruby installed on your system, you need to tell it where to find OpenStudio.
+
+On windows you need to type "environment variables" in the start menu search and then choose the option to change the environment variables for your account as shown in the screenshots below.
+
+![Finding Doc](img/measures/env_var_win.png)
+
+The text to add to the beginning of the path should look like this. It wil vary based on your version of OpenStudio and if you installed the 32 vs. 64bit version.
+
+```
+C:\Program Files\OpenStudio 1.6.0\ruby-install\ruby\bin
+```
+
+If you want to use an already existing ruby install that is in the environment variables path, you need to add a file named "openstudio.rb" to the "lib\ruby\site_ruby" folder with text pointing to your version of OpenStudio. Only use 2.0.x versions of ruby.
+
+```
+require 'C:\Program Files\OpenStudio 1.6.0\Ruby\openstudio.rb'
+```
+
+#### Using Notepad ++
+To run ruby using [Notepad++](http://notepad-plus-plus.org/) you need to install a plugin named NppExec. You can do this from the plugin manager within NotePad++
+
+![Finding Doc](img/measures/notepad_plus_plus_01.png)
+
+After installing NppExec you can go back to the Plugins menu to run it using "Execute". Make sure "Follow $(CURRENT_DIRECTORY)" is checked.
+
+![Finding Doc](img/measures/notepad_plus_plus_02.png)
+
+After you click "Execute" you will see a dialog. If you don't already see the following text in the command window, type it in.
+
+```
+ruby "$(FULL_CURRENT_PATH)"
+```
+
+The bottom fo the screenshot show the output from the measure. You can see the log messages and also the number of tests run and assertions. Note that if you use "puts" statements in your measure, they will show in this output, but they won't be visible when the measure is run from the OpenStudio GUI's.
+
+![Finding Doc](img/measures/notepad_plus_plus_03.png)
+
+#### Using the command line
+To run measure from the command line first open a command window in the directory of the measure test. You can manually browse to this, or you can shift right click on the tests directory in windows explorer and choose "Open command window here".
+
+Type ruby followed by a space and then the name of your measure test file name to run the tests. You can start to type the name of the test ruby file and click the "Tab" key to auto complete it.
+```
+ruby my_measure_test.rb
+```
+
+The output looks very similar to what you see in Notepad++. The QSslSocket messages at the top can be ignored. If ruby or OpenStudio can't be found, go back and look at yoru configuration.
+
+![Finding Doc](img/measures/test_command_line.png)
+
+#### Automated testing
+If you have a large collection of measures, it is a good idea to setup an automated process to batch test all of your measures. We will add more documentation on this in the future.
+
 ## Advanced Topics
 
 ### EnergyPlus Measures
