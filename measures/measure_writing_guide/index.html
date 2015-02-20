@@ -1119,9 +1119,9 @@ num_spaces_seed = model.getSpaces.size
 <pre><code class="ruby">    # create hash of argument values
     args_hash = {}
     args_hash[&quot;space_name&quot;] = &quot;New Space&quot;
-    args_hash[&quot;some integer_we_need&quot;] = 10
-    args_hash[&quot;some double we need&quot;] = 10.0
-    args_hash[&quot;a bool argument&quot;] = true
+    args_hash[&quot;some_integer_we_need&quot;] = 10
+    args_hash[&quot;some_double_we_need&quot;] = 10.0
+    args_hash[&quot;a_bool_argument&quot;] = true
 </code></pre>
 
 <p>After the hash has been created, then loop through the arguments to apply the hash values to the arguments. Typically the size of the hash will match the size of the arguments.</p>
@@ -1214,9 +1214,9 @@ class NewMeasureTest &lt; MiniTest::Unit::TestCase
     # create hash of argument values
     args_hash = {}
     args_hash[&quot;space_name&quot;] = &quot;&quot;
-    args_hash[&quot;some integer_we_need&quot;] = 10
-    args_hash[&quot;some double we need&quot;] = 10.0
-    args_hash[&quot;a bool argument&quot;] = true
+    args_hash[&quot;some_integer_we_need&quot;] = 10
+    args_hash[&quot;some_double_we_need&quot;] = 10.0
+    args_hash[&quot;a_bool_argument&quot;] = true
 
     # populate argument with specified hash value if specified
     arguments.each do |arg|
