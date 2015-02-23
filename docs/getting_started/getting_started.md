@@ -43,7 +43,7 @@ If you plan to use the OpenStudio SDK Ruby bindings via command prompt on Window
 2. Add `C:\Ruby200\bin` to the PATH environment variable. [Detailed instructions](http://geekswithblogs.net/renso/archive/2009/10/21/how-to-set-the-windows-path-in-windows-7.aspx).
 3. Create a text file called with the following text inside:
 
-    ```ruby
+    ```
     require 'C:\Program Files (x86)\OpenStudio 1.6.0\Ruby\openstudio.rb'
     ```
 
