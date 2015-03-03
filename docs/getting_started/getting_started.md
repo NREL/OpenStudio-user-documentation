@@ -39,15 +39,16 @@ If you want to be able to use Radiance for daylighting simulations, you must ins
 __Optional - Install Ruby__
 If you plan to use the OpenStudio SDK Ruby bindings via command prompt on Windows, you must install Ruby. OS X already has Ruby installed.
 
-1. Download the [Ruby 2.0.0](http://rubyinstaller.org/downloads/) installer.
-2. Add `C:\Ruby200\bin` to the PATH environment variable. [Detailed instructions](http://geekswithblogs.net/renso/archive/2009/10/21/how-to-set-the-windows-path-in-windows-7.aspx).
-3. Create a text file called with the following text inside:
+1. Download the [Ruby 2.0.0](http://rubyinstaller.org/downloads/) installer.  If you have the Windows (x64) version of OpenStudio (Help>About>Compiler shows Visual Studio 12 2013 Win64), you'll need the x64 Ruby installer.  If you have the Windows (x32) version of OpenStudio, you'll need the non-x64 Ruby installer.
+2. Add `C:\Ruby200\bin` (or wherever you installed Ruby) to the PATH environment variable. [Detailed instructions](http://geekswithblogs.net/renso/archive/2009/10/21/how-to-set-the-windows-path-in-windows-7.aspx).
+3. Create a text file with the following text inside:
 
     ```
     require 'C:\Program Files (x86)\OpenStudio 1.6.0\Ruby\openstudio.rb'
     ```
 
 4. Save the file as `openstudio.rb` here: `C:\Ruby200\lib\ruby\site_ruby\openstudio.rb` (next to the `2.0.0` folder).
+5. Test your installation by opening a command prompt and typing: `irb` ENTER.  Then, type `require 'openstudio` ENTER.  If you see some QSslSocket messages and => true, it's working.
 
 ## Workflow Overview
 After installing OpenStudio you will have the SketchUp Plug-in, OpenStudio Application, ParametricAnalysisTool (PAT) and ResultsViewer. The typical OpenStudio workflow is shown in the diagram below.
