@@ -198,7 +198,8 @@ You can create shading surface groups within or outside a space. Once you enter 
 <td>![New Interior Partition Surface Group Icon](img/plugin_reference_guide/NewPartition-24.png)
 </td>
 <td>
-#### New Interior Partition Surface Group
+
+#### New Interior Partition Surface Group <a id="NewInteriorPartitionSurfaceGroup"></a>
 The New Interior Partition Surface Group tool is used to create a new OpenStudio Interior Partition Group. Activate the tool and then click where you want your interior partition group origin to be. If you want to draw in the group, you first need to enter into the group through one of the following methods:
 
 - Double-click on the space while it is selected (this may be difficult if other model objects get in the way)
