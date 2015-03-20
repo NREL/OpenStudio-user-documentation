@@ -18,6 +18,8 @@ pages:
 - [next_steps/detailed_tutorials/tutorial_glhepro.md, References & Tutorials, GLHEPro Tutorial]
 - [next_steps/detailed_tutorials/tutorial_shadingcontrols.md, References & Tutorials, Shading Controls Tutorial]
 - [next_steps/detailed_tutorials/tutorial_windowproperty_frameanddivider.md, References & Tutorials, Window Property Frame and Divider Tutorial]
+- [next_steps/detailed_tutorials/tutorial_radiance.md, References & Tutorials, Radiance Tutorial]
+- [next_steps/refguide_radiance.md, References & Tutorials, Radiance Reference Guide]
 - [measures/about_measures.md, Measures, About Measures]
 - [measures/measure_writing_guide.md, Measures, Measure Writing Guide]
 - [measures/measure_code_examples.md, Measures, Measure Code Examples]
