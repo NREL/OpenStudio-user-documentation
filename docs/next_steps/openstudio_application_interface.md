@@ -67,7 +67,7 @@ To add items from the library, select the "Library" tab on the right panel and f
 ### Grid Features
 Earlier releases have included a grid view for the refrigeration section in the HVAC tab. Now you can edit thermal zones and space types in a grid view. This makes it easier to view all your zones and space types at once and compare settings. By selecting the buttons across the top you can select the fields you would like to see and edit. 
 
-Select the check box in the top of the column if you want to view that column in the "Custom" category. You can create your own custom collection of field that are important to you.
+Select cell at the top of the column if you want to view that column in the "Custom" category. You can create your own custom collection of fields.
 
 ![Grid View on Windows](img/os_interface/pc_grid.png)
 
