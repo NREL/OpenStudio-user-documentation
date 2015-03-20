@@ -222,10 +222,10 @@ You can create interior partition groups within a space only. Once you enter int
 <td>![New Daylighting Controls Object Icon](img/plugin_reference_guide/NewDaylighting-24.png)
 </td>
 <td>
-#### New Daylighting Control Objects
-The New Daylighting Control Object tool creates a new OpenStudio Daylighting Control object. This consists of a single sensor, which by default will be placed 30 inches above the surface you click on. You can move the object with the SketchUp move tool or through the Object Inspector, and you can set many attributes that feed information to EnergyPlus. The Glare Calculation Azimuth Angle of View Direction also changes the appearance of the object in OpenStudio. To report data from the sensors in EnergyPlus, you also need to include light objects in your model. Most space types in the template files already include a light object.
+#### New Daylighting Control Object
+The New Daylighting Control Object tool creates a new OpenStudio Daylighting Control object. This consists of a single sensor, which by default will be placed 30 inches above the surface you click on. You can move the object with the SketchUp Move tool or via the Object Inspector, and you can set many attributes that feed information to EnergyPlus and Radiance. The Glare Calculation Azimuth Angle of View Direction also changes the appearance of the object in OpenStudio. To report data from the sensors in EnergyPlus, you also need to include light objects in your model. Most space types in the template files already include a light object.
 
-You can create a daylighting controls object from within a space, or you can copy and paste one into a different space.
+You can create a Daylighting Control object from within a space, or you can copy and paste one from ne space to another.
 
 ![Daylighting Control Objects](img/plugin_reference_guide/width_SU_DaylightingControlObjects.png)
 
@@ -235,7 +235,7 @@ You can create a daylighting controls object from within a space, or you can cop
 
 *Above: Screenshot of Daylighting Controls Inspector*
 
-To associate a daylighting control object with a thermal zone, select the desired thermal zone object and then choose a primary (and optionally a secondary) daylighting control object.
+To associate a daylighting control object with a thermal zone, select the desired thermal zone object and then choose a primary (and optionally a secondary) daylighting control object. __NOTE__: Secondary daylighting control objects are not supported by Radiance at this time, they (and the percentage of load controlled by them) are ignored.
 
 ![OpenStudio Inspector With a Thermal Zone Selected](img/plugin_reference_guide/width_Inspector_thermal_zone.png)
 
@@ -247,7 +247,7 @@ To associate a daylighting control object with a thermal zone, select the desire
 </td>
 <td>
 #### New Illuminance Map
-The New Illuminance Map tool creates a new EnergyPlus Illuminance Map object. This consists of a rectangle with a grid representing map data points. By default it will be placed 30 inches above the surface you click on. You can move and resize the Illuminance Map with the SketchUp Move and Scale Tool and through the Object Inspector. To obtain data reported for the map in EnergyPlus, you also need to include a Daylighting Controls Object and lights. Most space types in the template files already include a light object.
+The New Illuminance Map tool creates a new OpenStudio Illuminance Map object. This consists of a rectangle with a grid representing map data points. By default it will be placed 30 inches above the surface you click on. You can move and resize the Illuminance Map with the SketchUp Move and Scale Tool and through the Object Inspector. To obtain data reported for the map in EnergyPlus, you also need to include a Daylighting Controls Object and lights. Most space types in the template files already include a light object.
 
 You can create an illuminance map from  within a space, or you can copy and paste the map into a different space. You can have multiple illuminance maps in a space.
 
