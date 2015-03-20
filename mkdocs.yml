@@ -7,6 +7,7 @@ pages:
 - [getting_started/features.md, Getting Started, Current Features]
 - [getting_started/roadmap.md, Getting Started, Planned Features]
 - [getting_started/getting_started.md, Getting Started, Installation and Introductory Tutorial]
+<<<<<<< HEAD
 - [next_steps/quick_start_guides.md, References & Tutorials, Quick Start Guides]
 - [next_steps/sketchup_plugin_interface.md, References & Tutorials, SketchUp Plug-in]
 - [next_steps/openstudio_application_interface.md, References & Tutorials, OpenStudio Application]
@@ -25,6 +26,7 @@ pages:
 - [measures/measure_code_examples.md, Measures, Measure Code Examples]
 - [comparative_analysis/parametric_studies.md, Comparative Analysis, ParametricAnalysisTool]
 - [comparative_analysis/large_scale_analysis.md, Comparative Analysis, Large Scale Analysis]
+- [reference/refguide_radiance.md, Reference Guides, OpenStudio-Radiance Reference Guide]
 - [help/training.md, Help, Training]
 - [help/finding_model_data.md, Help, Finding Model Data]
 - [help/best_practices.md, Help, Best Practices]
