@@ -62,16 +62,9 @@ To add items from the library, select the "Library" tab on the right panel and f
 
 ------
 
-## Grid View and Multi-edit: Thermal Zones, Space Types, and Refrigeration
+## Grid View and Multi-edit: Thermal Zones, Space Types, and Refrigeration (Version 1.7.0)
 
-<iframe width="640" height="360" src="http://www.youtube.com/embed/LnOUfiMajD0?rel=0&start=0&end=340&autoplay=0" frameborder="0" allowfullscreen></iframe>
-
-*Above: This video provides an introduction to using the grid view and multi-edit features.*
-
-### Grid Features
-Earlier releases have included a grid view for the refrigeration section in the HVAC tab. Now you can edit thermal zones and space types in a grid view. This makes it easier to view all your zones and space types at once and compare settings. By selecting the buttons across the top you can select the fields you would like to see and edit. 
-
-Select cell at the top of the column if you want to view that column in the "Custom" category. The cell will turn blue to indicate that it will be shown under Custom.
+Earlier releases have included a grid view for the refrigeration section in the HVAC tab. Now you can edit thermal zones and space types in a grid view. This makes it easier to view all your zones and space types at once and compare settings. By selecting the buttons across the top you can select the fields you would like to see and edit.
 
 [![Grid Image](img/os_interface/grid_view_multi1_small.png "Click to view")](img/os_interface/grid_view_multi1.png)
 
@@ -79,27 +72,22 @@ Select cell at the top of the column if you want to view that column in the "Cus
 
 Drag components and schedules into the grid view. Most items on the grid can be inspected in the right panel "Edit" tab, except schedules. A yellow highlight indicates the item you have selected in the grid. When you start editing the item in the "Edit" tab the highlight will disappear indicating that the focus is now on editing the item.
 
-Schedules can't be edited in the right panel. To edit or view schedules go to the schedules tab. Use the delete in the "Edit" panel to remove a component from the grid.
+Select the check box in the top of the column if you want to view that column in the "Custom" category.
 
-On "Space Type" under the "Loads" view you can filter the loads displayed to show all loads or just certain loads like people or lights. This filtering feature will be expanded in the future to help with filtering content on other tabs. 
+Drag components and schedules into the grid view. Most items on the grid can be inspected in the right panel "Edit" tab, except schedules. To edit or view schedules go to the schedules tab. Use the delete in the "Edit" panel to remove a component from the grid.
 
-[![Grid Image Loads](img/os_interface/loads_filter_small.png "Click to view")](img/os_interface/loads_filter.png)
+Click on the color box on the "General" button to change the rendering color of the space type. This will change the rendering color in the SketchUp Plug-in as well.
 
-*Above: Hit the "Loads" button to edit and view loads by space type. Click on the name of a component and select the  "Edit" panel on the right to inspect and edit that item. You can edit the load definition in the example shown above.*
+![Grid Image Loads](img/os_interface/pc_grid.png)
 
-### Multi-edit
-The check boxes in the rows are used by the multi-edit feature. This feature allows you to bring in an item from the library, edit it, and copy it to other rows in the grid. Components can only be duplicated within the same column. 
+*Above: The grid view provides a spreadsheet style layout.*
 
-__The steps for using multi-edit for duplicating items to other rows are:__
+![Space Type Grid](img/os_interface/pc_grid.png)
 
-1. After dragging in an item from the library, select it and edit any features you need to in the "Edit" panel on the right. 
-2. Check the rows you would like to add this same component to. Note that when you check the rows the yellow highlight disappears on the component you edited in step 1.
-3. After selecting the rows you would like to apply the component to, then click the text of the item you would like to duplicate. It should turn yellow again.
-4. Hit the "Apply to Selected" button at the top of the column containing that component and the yellow highlighted component will be copied to the checked rows.
+*Above: Above: Hit the "Loads" button to edit and view loads by space type. Click on the name of a component and select the  "Edit" panel on the right to inspect and edit that item. You can edit the load definition in the example shown above.*
 
-[![Multi-edit Steps](img/os_interface/multi-edit-steps-small.png "Click to view")](img/os_interface/multi-edit-steps.png)
+![Thermal Zone Grid](img/os_interface/thermal_zone_grid.png)
 
-*Above: You can use the multi-edit to save time. The add, duplicate, and delete buttons on the left bottom panel will also work with the check to select a row. You can duplicate several rows at a time.*
 
 ------
 
