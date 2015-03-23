@@ -64,6 +64,10 @@ To add items from the library, select the "Library" tab on the right panel and f
 
 ## Grid View and Multi-edit: Thermal Zones, Space Types, and Refrigeration
 
+<iframe width="640" height="360" src="http://www.youtube.com/embed/LnOUfiMajD0?rel=0&start=0&end=340&autoplay=0" frameborder="0" allowfullscreen></iframe>
+
+*Above: This video provides an introduction to using the grid view and multi-edit features.*
+
 ### Grid Features
 Earlier releases have included a grid view for the refrigeration section in the HVAC tab. Now you can edit thermal zones and space types in a grid view. This makes it easier to view all your zones and space types at once and compare settings. By selecting the buttons across the top you can select the fields you would like to see and edit. 
 
