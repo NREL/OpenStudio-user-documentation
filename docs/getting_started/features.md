@@ -1,22 +1,23 @@
 <h1>Current Features</h1>
 OpenStudio is constantly being improved, with a less stable developer release available every 2 weeks and a stable major release quarterly (4 per year). The features that are available in the current major release are described below. To learn what is coming in the future, see the [Planned Features](../getting_started/roadmap.md) page.
 
-## New in OpenStudio 1.6.0
-###OverviewThis version of OpenStudio has been updated to work with EnergyPlus 8.2.0 Update 1, which is now bundled with the OpenStudio installer.  It is no longer necessary to download and install EnergyPlus separately.
-OpenStudio SketchUp plug-in is updated to work with SketchUp 2015.  SketchUp 2015 is available in 32 and 64 bit versions, the 32 bit version of OpenStudio on Windows will work with the 32 bit version of SketchUp 2015 and the 64 bit version of OpenStudio will work with the 64 bit version of SketchUp 2015
+## New in OpenStudio 1.7.0
+The biggest new feature in OpenStudio 1.7.0 is the addition of multi-edit capability to grid views in the OpenStudio Application. Implemented for the Thermal Zone and Space Type tabs, this new feature allows users to change properties of several objects at once. More grid views will be applied throughout the remainder of the OpenStudio Application in coming releases. A video tutorial for this new feature is available at below.
 
-#### New Features
+<iframe width="640" height="360" src="http://www.youtube.com/embed/LnOUfiMajD0?rel=0&start=0&end=340&autoplay=0" frameborder="0" allowfullscreen></iframe>
 
-This release includes the addition of standards specific properties to material and construction objects to support Title 24 compliance modeling.  These fields are completely optional but will be translated to Standards Data Dictionary (SDD) format if they are populated in the OpenStudio Application. The SDD format is used by [CBECC-Com](http://bees.archenergy.com/index.html) and can be imported into the application and edited to submit for compliance. A template file, CECTemplate.osm, contains a set of materials populated with CEC Title 24 2013 information.  This file is installed with OpenStudio and may be loaded as a library in the OpenStudio Application for easy inclusion in your model. [This tutorial](../next_steps/detailed_tutorials/tutorial_cbecc_materials.md) provides more information on this new feature.
+OpenStudio now supports Radiance 3-phase simulation of dynamic window shading controls. Currently, shading devices are simulated only as venetian blinds, using pre-defined BSDFs hosted on the BCL. Blind operation is automated, with the blinds retracted by default, and covering the window when the illuminance on the shade-controlled window(s) exceeds 2,000 lux. Support for user-defined BSDFs and alternative shade control algorithms will be added in a future release. Documentation for this new feature is available on the OpenStudio website.
 
-For the full list of added features and bug fixes see the [__Release Notes on GitHub__](https://github.com/NREL/OpenStudio/releases/tag/v1.6.0)
+The OS:WindowFrameAndDivider object was added to allow import of detailed Window properties from the LBNL WINDOW program. Currently only spectral average data from WINDOW is supported for import into OpenStudio. Wall thickness around windows can be represented in daylighting models using the window reveal and sill dimensions specified in the OS:WindowFrameAndDivider. These dimensions are translated to both EnergyPlus and Radiance. Note: window frame geometry is not currently translated to Radiance, this will be added in a future release. Documentation for this new feature is available on the OpenStudio website.
+
+For the full list of added features and bug fixes see the [__Release Notes on GitHub__](https://github.com/NREL/OpenStudio/releases/tag/v1.7.0)
 
 View the [OpenStudio Roadmap](roadmap.md) to see the release plan for future features.
 ____________________________
 
 ## Current Features
 
-As of OpenStudio Version 1.6.0
+As of OpenStudio Version 1.7.0
 
 ### Building Geometry/3D CAD
 
