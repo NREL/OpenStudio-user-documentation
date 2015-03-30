@@ -56,19 +56,19 @@ After installing OpenStudio you will have the SketchUp Plug-in, OpenStudio Appli
 
 *About: Click on the diagram above to view a larger version.*
 
-ResultsViewer is used to view simulation results. The section on Running Simulation & Viewing Results has information on using [ResultsViewer](../../next_steps/running_your_simulation/#using-resultsviewer).
+ResultsViewer is used to view simulation results. The section on Running Simulation & Viewing Results has information on using [ResultsViewer](../../tutorials/running_your_simulation/#using-resultsviewer).
 
 ## Quick Start Guide to OpenStudio Modeling Tools
 The [OpenStudio Quick Start Guide (PDF)](img/pdfs/openstudio_interface_quickstart.pdf) provides an introduction to the interface for the Plug-in and the OpenStudio application. It also provides guidance on the basic workflow. Read the [Introductory Tutorial](#introductory-tutorial) below to get started.
 
 ## Quick Start Guide to the ParametricAnalysisTool (PAT)
-The [ParametricAnalysisTool Quick Start Guide (PDF)](img/pdfs/PAT-Quick_Start_Guide.pdf) and the [ParametricAnalysisTool section](../comparative_analysis/parametric_studies.md) provide an introduction to the interface and workflow for creating multiple design alternatives from a seed model.
+The [ParametricAnalysisTool Quick Start Guide (PDF)](img/pdfs/PAT-Quick_Start_Guide.pdf) and the [ParametricAnalysisTool section](../tutorials/parametric_studies.md) provide an introduction to the interface and workflow for creating multiple design alternatives from a seed model.
 
 ## Introductory Tutorial
-The tutorial below was created before the grid view was added to the Space Types and Thermal Zones tabs. Grid view allows you to view and edit more than one space type or thermal zone at a time. Go to the [OpenStudio Application Interface](../next_steps/openstudio_application_interface.md) to learn more about grid view.
+The tutorial below was created before the grid view was added to the Space Types and Thermal Zones tabs. Grid view allows you to view and edit more than one space type or thermal zone at a time. Go to the [OpenStudio Application Interface](../reference/openstudio_application_interface.md) to learn more about grid view.
 
 ### SketchUp Plug-in - Building Envelope
-For additional information on the SketchUp Plug-in interface, go to the [SketchUp Plug-in Interface](../next_steps/sketchup_plugin_interface.md) section.
+For additional information on the SketchUp Plug-in interface, go to the [SketchUp Plug-in Interface](../reference/sketchup_plugin_interface.md) section.
 
 <iframe width="640" height="360" src="http://www.youtube.com/embed/wzzY_W2WELo" allowfullscreen></iframe>
 

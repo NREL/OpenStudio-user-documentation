@@ -19,12 +19,12 @@
         <div class="caption">
           <h3>References &amp; Tutorials</h3>
           <p>This section provides more detailed information on OpenStudio features and contains tutorials and other references.</p>
-          <p><a href="next_steps/sketchup_plugin_interface.md" class="btn btn-primary" role="button">SketchUp Plug-in</a></p>
-          <p><a href="next_steps/openstudio_application_interface.md" class="btn btn-primary" role="button">OpenStudio Application</a></p>
-          <p><a href="next_steps/creating_your_model.md" class="btn btn-primary" role="button">Creating Your Model</a></p>
-          <p><a href="next_steps/running_your_simulation.md" class="btn btn-primary" role="button">Running Your Simulation</a></p>
+          <p><a href="reference/sketchup_plugin_interface.md" class="btn btn-primary" role="button">SketchUp Plug-in</a></p>
+          <p><a href="reference/openstudio_application_interface.md" class="btn btn-primary" role="button">OpenStudio Application</a></p>
+          <p><a href="tutorials/creating_your_model.md" class="btn btn-primary" role="button">Creating Your Model</a></p>
+          <p><a href="tutorials/running_your_simulation.md" class="btn btn-primary" role="button">Running Your Simulation</a></p>
           <p>Sizing a Vertical Ground Heat Exchanger.</p>
-          <p><a href="next_steps/detailed_tutorials/tutorial_glhepro.md" class="btn btn-primary" role="button">GLHEPro and OpenStudio</a></p>
+          <p><a href="tutorials/tutorial_glhepro.md" class="btn btn-primary" role="button">GLHEPro and OpenStudio</a></p>
         </div>
       </div>
     </div>
@@ -33,9 +33,9 @@
         <div class="caption">
           <h3>Speed Up Your Workflow With Measures</h3>
           <p>Learn what measures are, how to use them for various use cases, and where to find them.</p>
-          <p><a href="measures/about_measures.md" class="btn btn-primary" role="button">About Measures</a></p>
+          <p><a href="reference/about_measures.md" class="btn btn-primary" role="button">About Measures</a></p>
           <p>Can't find the measures you want, or need to customize an existing measure? The Measure Writing Guide will help you get started.</p>
-          <p><a href="measures/measure_writing_guide.md" class="btn btn-primary" role="button">Measure Writing Guide</a></p>
+          <p><a href="reference/measure_writing_guide.md" class="btn btn-primary" role="button">Measure Writing Guide</a></p>
         </div>
       </div>
     </div>
@@ -49,8 +49,8 @@
         <div class="caption">
           <h3>Comparative Analysis</h3>
           <p>Learn how to create design alternatives as part of a parametric study using the OpenStudio ParametricAnalysisTool (PAT). Run simulations locally and on the cloud.</p>
-          <p><a href="comparative_analysis/parametric_studies.md" class="btn btn-primary" role="button">ParametricAnalysisTool (PAT)</a></p>
-          <p><a href="comparative_analysis/large_scale_analysis.md" class="btn btn-primary" role="button">Large Scale Analysis</a></p>
+          <p><a href="tutorials/parametric_studies.md" class="btn btn-primary" role="button">ParametricAnalysisTool (PAT)</a></p>
+          <p><a href="tutorials/large_scale_analysis.md" class="btn btn-primary" role="button">Large Scale Analysis</a></p>
         </div>
       </div>
     </div>
