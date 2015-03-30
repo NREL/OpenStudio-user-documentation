@@ -38,6 +38,8 @@ Clone this repo locally.  In a terminal window, navigate to the repo directory, 
 mkdocs serve
 ```
 
+On Windows you can also double-click the start_mkdocs.bat file (assuming you have used standard install locations).
+
 This will start a server that will let you see what your changes will look like on the site.  Open a browser and go to http://127.0.0.1:8000/ to see your local site.
 
 

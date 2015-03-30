@@ -17,9 +17,9 @@ pages:
 - [tutorials/tutorial_glhepro.md, Tutorials, GLHEPro Tutorial]
 - [tutorials/tutorial_shadingcontrols.md, Tutorials, Shading Controls Tutorial]
 - [tutorials/tutorial_windowproperty_frameanddivider.md, Tutorials, Window Property Frame and Divider Tutorial]
-- [tutorials/radiance_tutorial.md, Tutorials, Using Radiance with OpenStudio]
 - [tutorials/parametric_studies.md, Tutorials, Parametric Analysis Tool (PAT)]
 - [tutorials/large_scale_analysis.md, Tutorials, Large Scale Analysis]
+- [tutorials/radiance_tutorial.md, Tutorials, Using Radiance with OpenStudio]
 
 - [reference/openstudio_application_interface.md, Reference, OpenStudio Application]
 - [reference/sketchup_plugin_interface.md, Reference, SketchUp Plug-in]
