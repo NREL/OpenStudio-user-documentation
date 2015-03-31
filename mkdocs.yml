@@ -10,8 +10,8 @@ pages:
 - [getting_started/getting_started.md, Getting Started, Installation and Introductory Tutorial]
 - [getting_started/quick_start_guides.md, Getting Started, Quick Start Guides]
 
-- [tutorials/creating_your_model.md, Tutorials, Creating Your Model]
-- [tutorials/running_your_simulation.md, Tutorials, Running Your Simulation & Viewing Results]
+- [tutorials/creating_your_model.md, Tutorials, Creating a Model]
+- [tutorials/running_your_simulation.md, Tutorials, Running Simulations & Viewing Results]
 - [tutorials/life_cycle_costing_examples.md, Tutorials, Life Cycle Costing Examples]
 - [tutorials/tutorial_cbecc_materials.md, Tutorials, CBECC Materials Tutorial]
 - [tutorials/tutorial_glhepro.md, Tutorials, GLHEPro Tutorial]
@@ -23,12 +23,12 @@ pages:
 
 - [reference/openstudio_application_interface.md, Reference, OpenStudio Application]
 - [reference/sketchup_plugin_interface.md, Reference, SketchUp Plug-in]
-- [reference/model_objects.md, Reference, Overview of OpenStudio Model Objects]
+- [reference/model_objects.md, Reference, OpenStudio Model Objects Overview]
 - [reference/about_measures.md, Reference, About Measures]
 - [reference/measure_writing_guide.md, Reference, Measure Writing Guide]
 - [reference/measure_code_examples.md, Reference, Measure Code Examples]
-
 - [reference/refguide_radiance.md, Reference, OpenStudio-Radiance Reference Guide]
+
 - [help/training.md, Help, Find Training]
 - [help/finding_model_data.md, Help, Finding Model Data]
 - [help/best_practices.md, Help, Modeling Best Practices]

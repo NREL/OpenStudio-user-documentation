@@ -917,13 +917,22 @@ The code below shows how to load in an existing model. This is often useful beca
     model = model.get
 ```
 
-Here is basic code for an EnergyPlus measure.
+Here is basic code for creating a new Workspace in an EnergyPlus measure.  Don't worry about the arguments to Workspace.new, they are just boilerplate for an EnergyPlus Workspace. 
 ```ruby
     # make an empty workspace
-    workspace = OpenStudio::Workspace.new
+    workspace = OpenStudio::Workspace.new("Draft".to_StrictnessLevel, "EnergyPlus".to_IddFileType)
 ```
 
-The source for an EnergyPlus measure could be an IDF, or as shown below you can pass in and forward translate an OSM, which is often more convenient.
+The source for an EnergyPlus measure test could be an IDF that you load as shown below.
+```ruby
+    # load an IDF
+    path = OpenStudio::Path.new(File.dirname(__FILE__) + "/my_test_input.idf")
+    workspace = OpenStudio::Workspace.load(path)
+    assert((not workspace.empty?))
+    workspace = workspace.get
+```
+
+Or you can load an OSM and then forward translate it to IDF, this is often more convenient.
 ```ruby
     # load the test model
     translator = OpenStudio::OSVersion::VersionTranslator.new
@@ -1023,11 +1032,11 @@ Lastly, here is a more detailed example that inspect the model itself to see tha
 ```
 
 ### Save the resulting model
-You don't have to save the resulting model, but it can be nice to open up the model and hand inspect it, in particular as you are writing and extending the functionality of your measure. It can also be a nice resource for people downloading your measure to see a before and after state of the model. The code below will save the model right next to the test input model. If you have multiple tests that save models make sure the name of the model saved is unique.
+You don't have to save the resulting model, but it can be nice to open up the model and hand inspect it, in particular as you are writing and extending the functionality of your measure. It can also be a nice resource for people downloading your measure to see a before and after state of the model. The code below will save the resulting model in an output directory underneath the test directory.  It is important to save all test output files in this directory otherwise OpenStudio will think that your test outputs are part of your measure and will copy them every time you use your measure! If you have multiple tests that save models make sure the name of the model saved is unique.
 
 ```ruby
-    #save the model
-    output_file_path = OpenStudio::Path.new(File.dirname(__FILE__) + "/my_test_model_test_a_output.osm")
+    #save the model to test output directory
+    output_file_path = OpenStudio::Path.new(File.dirname(__FILE__) + "/output/my_test_model_test_a_output.osm")
     model.save(output_file_path,true)
 ```
 
@@ -1153,8 +1162,8 @@ class NewMeasureTest < MiniTest::Unit::TestCase
     # check that there is now 1 space
     assert_equal(1, model.getSpaces.size - num_spaces_seed)
 
-    # save the model
-    output_file_path = OpenStudio::Path.new(File.dirname(__FILE__) + "/my_test_model_test_a_output.osm")
+    # save the model to test output directory
+    output_file_path = OpenStudio::Path.new(File.dirname(__FILE__) + "/output/my_test_model_test_a_output.osm")
     model.save(output_file_path,true)
   end
 
