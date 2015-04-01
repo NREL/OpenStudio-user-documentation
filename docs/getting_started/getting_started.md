@@ -63,7 +63,7 @@ ResultsViewer is used to view simulation results. The section on Running Simulat
 The [OpenStudio Quick Start Guide (PDF)](img/pdfs/openstudio_interface_quickstart.pdf) provides an introduction to the interface for the Plug-in and the OpenStudio application. It also provides guidance on the basic workflow. Read the [Introductory Tutorial](#introductory-tutorial) below to get started.
 
 ## Quick Start Guide to the ParametricAnalysisTool (PAT)
-The [ParametricAnalysisTool Quick Start Guide (PDF)](img/pdfs/PAT-Quick_Start_Guide.pdf) and the [ParametricAnalysisTool section](../tutorials/parametric_studies.md) provide an introduction to the interface and workflow for creating multiple design alternatives from a seed model.
+The [ParametricAnalysisTool Quick Start Guide (PDF)](img/pdfs/PAT-Quick_Start_Guide.pdf) and the [ParametricAnalysisTool section](../reference/parametric_studies.md) provide an introduction to the interface and workflow for creating multiple design alternatives from a seed model.
 
 ## Introductory Tutorial
 The tutorial below was created before the grid view was added to the Space Types and Thermal Zones tabs. Grid view allows you to view and edit more than one space type or thermal zone at a time. Go to the [OpenStudio Application Interface](../reference/openstudio_application_interface.md) to learn more about grid view.

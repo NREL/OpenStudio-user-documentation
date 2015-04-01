@@ -33,7 +33,7 @@
         <div class="caption">
           <h3>Speed Up Your Workflow With Measures</h3>
           <p>Learn what measures are, how to use them for various use cases, and where to find them.</p>
-          <p><a href="reference/about_measures.md" class="btn btn-primary" role="button">About Measures</a></p>
+          <p><a href="getting_started/about_measures.md" class="btn btn-primary" role="button">About Measures</a></p>
           <p>Can't find the measures you want, or need to customize an existing measure? The Measure Writing Guide will help you get started.</p>
           <p><a href="reference/measure_writing_guide.md" class="btn btn-primary" role="button">Measure Writing Guide</a></p>
         </div>
@@ -49,7 +49,7 @@
         <div class="caption">
           <h3>Comparative Analysis</h3>
           <p>Learn how to create design alternatives as part of a parametric study using the OpenStudio ParametricAnalysisTool (PAT). Run simulations locally and on the cloud.</p>
-          <p><a href="tutorials/parametric_studies.md" class="btn btn-primary" role="button">ParametricAnalysisTool (PAT)</a></p>
+          <p><a href="reference/parametric_studies.md" class="btn btn-primary" role="button">ParametricAnalysisTool (PAT)</a></p>
           <p><a href="tutorials/large_scale_analysis.md" class="btn btn-primary" role="button">Large Scale Analysis</a></p>
         </div>
       </div>

@@ -1,4 +1,4 @@
-<h1>The SketchUp Plug-in</h1>
+<h1>OpenStudio SketchUp Plug-in Interface Guide</h1>
 This section provides the legend for toolbars and menus available in the Plug-in. You may also find helpful information in the [OpenStudio Quick Start Guide (PDF)](img/pdfs/openstudio_interface_quickstart.pdf).
 
 ![Plug-in Toolbars](img/plugin_reference_guide/toolbars_os.png)
