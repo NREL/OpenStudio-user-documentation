@@ -27,6 +27,7 @@ pages:
 - [reference/about_measures.md, Reference, About Measures]
 - [reference/measure_writing_guide.md, Reference, Measure Writing Guide]
 - [reference/measure_code_examples.md, Reference, Measure Code Examples]
+- [reference/developing_measure_collections.md, Reference, Developing Measure Collections]
 - [reference/refguide_radiance.md, Reference, OpenStudio-Radiance Reference Guide]
 
 - [help/training.md, Help, Find Training]
