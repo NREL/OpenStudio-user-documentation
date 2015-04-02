@@ -7,11 +7,11 @@ pages:
 
 - [getting_started/features.md, Getting Started, Current Features]
 - [getting_started/roadmap.md, Getting Started, Planned Features]
-- [getting_started/getting_started.md, Getting Started, Installation and Introductory Tutorial]
+- [getting_started/getting_started.md, Getting Started, Installation Guide]
 - [getting_started/quick_start_guides.md, Getting Started, Quick Start Guides]
 - [getting_started/about_measures.md, Getting Started, About Measures]
 
-- [tutorials/creating_your_model.md, Tutorials, Creating a Model]
+- [tutorials/creating_your_model.md, Tutorials, Creating Your Model]
 - [tutorials/running_your_simulation.md, Tutorials, Running Simulations & Viewing Results]
 - [tutorials/life_cycle_costing_examples.md, Tutorials, Life Cycle Costing Examples]
 - [tutorials/tutorial_cbecc_materials.md, Tutorials, CBECC Materials Tutorial]
