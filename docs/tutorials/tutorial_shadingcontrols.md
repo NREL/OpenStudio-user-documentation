@@ -1,4 +1,4 @@
-<h1>OpenStudio Shading Controls</h1>
+<h1>Shading Controls</h1>
 This tutorial explains how to add shading controls to an OpenStudio model to study the impact of blinds, shades, switchable glazing, or other shading controls.
 
 ## Create Shading Controls

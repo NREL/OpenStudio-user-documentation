@@ -1,4 +1,4 @@
-<h1>OpenStudio Materials and Constructions for CBECC-COM</h1>
+<h1>CBECC Materials and Constructions</h1>
 [CBECC-Com (California Building Energy Code Compliance)](http://bees.archenergy.com/software.html) is an open source project that may be used by Code Agencies, Rating Authorities, or Utility Programs in the development of energy codes, standards, or efficiency programs. Architects, engineers, and energy consultants may also use these tools to demonstrate compliance with energy codes or beyond-code programs. OpenStudio models can be exported to the SDD format which may then be imported into CBECC-Com.  OpenStudio 1.6.0 added the ability to specify material and construction properties needed by CBECC-Com, these are then exported to SDD and imported into CBECC-Com.  This tutorial will explain how to set these properties using the OpenStudio application so they can be properly imported into CBECC-Com.  Future versions of OpenStudio will add additional information to the SDD export with the ultimate goal of being able to run an exported SDD from OpenStudio through the CBECC-Com interface with no manual modification.
 
 ## Material Measure Tags

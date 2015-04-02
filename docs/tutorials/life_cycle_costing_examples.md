@@ -1,4 +1,4 @@
-<h1>OpenStudio Life Cycle Costing Examples</h1>
+<h1>Life Cycle Cost Analysis</h1>
 
 ## Purpose
 Life cycle cost analysis is commonly performed by energy modelers in order to determine if energy cost savings due to reduced energy usage will be enough to justify the additional investment required to implement the conservation measure. Different projects are interested in different life cycle metrics (e.g. simple payback, net present value, etc.) and will have different cost assumptions. However, in all cases the modeler needs a way to specify costs associated with the energy conservation measures, enter utility rate tariffs related to energy use, and set life cycle cost parameters such as the analysis period length and discount rate. This document explains how to use the OpenStudio Parametric Analysis Tool (PAT) to perform each of these functions as part of a life cycle cost analysis.

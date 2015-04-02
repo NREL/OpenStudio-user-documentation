@@ -1,4 +1,4 @@
-<h1>Sizing a Vertical Ground Heat Exchanger with GLHEPro and OpenStudio</h1>
+<h1>Vertical Ground Heat Exchanger sizing with GLHEPro</h1>
 This tutorial explains how to size a vertical ground heat exchanger with OpenStudio and an external program called GLHEPro. First, you make a model with water-to-water heat pumps and use district heating and district cooling objects to determine the loads on the heat-pump loop. You run this model and use a Measure to export these loads in a format that GLHEPro will accept. Then you run GLHEPro and use another Measure to bring the G-Function from GLHEPro back into your model, replacing the district heating and district cooling objects on the loop.
 
 ## Setting up the initial model

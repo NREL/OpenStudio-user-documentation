@@ -1,4 +1,4 @@
-<h1>Best Practices</h1>
+<h1>Modeling Best Practices</h1>
 This page is a collection of best practices that have been developed over time and by experience. Following these best practices will help you avoid the issues that users experience most often.
 
 ## General

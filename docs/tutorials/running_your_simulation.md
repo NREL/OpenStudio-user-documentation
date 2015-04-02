@@ -1,4 +1,4 @@
-<h1>Running Simulation & Viewing Results</h1>
+<h1>Running Simulations & Viewing Results</h1>
 These guides provide a handy reference to the features of the applications that are installed with OpenStudio.
 
 ## Weather File and Design Days

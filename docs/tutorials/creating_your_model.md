@@ -2,7 +2,7 @@
 After completing the [Introductory Tutorial](../getting_started/getting_started.md#introductory-tutorial), you can find additional information on using OpenStudio by topic below.
 
 ## Envelope
-The building envelope is created using the SketchUp OpenStudio Plug-in. Refer to the [SketchUp Plug-in Interface Section](../reference/sketchup_plugin_interface.md) to learn more about the interface and toolbars for the plug-in.
+The building envelope is created using the SketchUp OpenStudio Plug-in. Refer to the [OpenStudio SketchUp Plug-in Interface Guide](../reference/sketchup_plugin_interface.md) to learn more about the interface and toolbars for the plug-in.
 
 ------
 
@@ -118,7 +118,7 @@ To assign schedules, add loads, add HVAC systems, and more, open your model in t
 ------
 
 ## Schedules
-To create and edit schedules in the OpenStudio application go to the schedules tab. Check out the [OpenStudio Application Interface](../reference/openstudio_application_interface.md) section for an overview of the interface.
+To create and edit schedules in the OpenStudio application go to the schedules tab. Check out the [OpenStudio Application Interface Guide](../reference/openstudio_application_interface.md) for an overview of the interface.
 
 ### Year Settings
 The Year Settings sub-tab lets you set the day of the week the simulation should start. Define using Calendar Year or First Day Of Year buttons and pull-downs.
@@ -667,7 +667,7 @@ With measures, downloaded from BCL,  life cycle costs for different design alter
 
 ![Measures Tab Costs](img/create_model/lifecycle_costs.png)
 
-*Above: Add costs to measures to calculate and compare different options. This can also be done in the ParametricAnalysisTool.*
+*Above: Add costs to measures to calculate and compare different options. This can also be done in the Parametric Analysis Tool.*
 
 ------
 

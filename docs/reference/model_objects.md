@@ -1,4 +1,4 @@
-<h1>Overview of OpenStudio Model Objects</h1>
+<h1>OpenStudio Model Objects Overview</h1>
 One of the advantages of OpenStudio is that it adds modern object-oriented software concepts such as relationships and inheritance to EnergyPlus. This makes it much easier to add new functionality to tools or write measures that can quickly manipulate energy models. From a practitioner's perspective, inheritance makes it very easy to quickly create new models. __When you are using OpenStudio templates to define building and space types, you are using this capability to avoid specifying the hundreds or thousands of pieces of information EnergyPlus requires to create a detailed simulation.__
 
 ## Relationship Diagram

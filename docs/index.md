@@ -19,12 +19,10 @@
         <div class="caption">
           <h3>References &amp; Tutorials</h3>
           <p>This section provides more detailed information on OpenStudio features and contains tutorials and other references.</p>
-          <p><a href="reference/sketchup_plugin_interface.md" class="btn btn-primary" role="button">SketchUp Plug-in</a></p>
+          <p><a href="reference/sketchup_plugin_interface.md" class="btn btn-primary" role="button">OpenStudio SketchUp Plug-in</a></p>
           <p><a href="reference/openstudio_application_interface.md" class="btn btn-primary" role="button">OpenStudio Application</a></p>
           <p><a href="tutorials/creating_your_model.md" class="btn btn-primary" role="button">Creating Your Model</a></p>
           <p><a href="tutorials/running_your_simulation.md" class="btn btn-primary" role="button">Running Your Simulation</a></p>
-          <p>Sizing a Vertical Ground Heat Exchanger.</p>
-          <p><a href="tutorials/tutorial_glhepro.md" class="btn btn-primary" role="button">GLHEPro and OpenStudio</a></p>
         </div>
       </div>
     </div>
@@ -48,8 +46,8 @@
       <div class="thumbnail"> <img src="img/comparative_thumb.png" alt="Analysis Charts">
         <div class="caption">
           <h3>Comparative Analysis</h3>
-          <p>Learn how to create design alternatives as part of a parametric study using the OpenStudio ParametricAnalysisTool (PAT). Run simulations locally and on the cloud.</p>
-          <p><a href="reference/parametric_studies.md" class="btn btn-primary" role="button">ParametricAnalysisTool (PAT)</a></p>
+          <p>Learn how to create design alternatives as part of a parametric study using the OpenStudio Parametric Analysis Tool (PAT). Run simulations locally and on the cloud.</p>
+          <p><a href="reference/parametric_studies.md" class="btn btn-primary" role="button">Parametric Analysis Tool (PAT)</a></p>
           <p><a href="tutorials/large_scale_analysis.md" class="btn btn-primary" role="button">Large Scale Analysis</a></p>
         </div>
       </div>

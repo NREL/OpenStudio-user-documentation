@@ -17,7 +17,7 @@ __Download and install OpenStudio__
 3. Choose the installer that matches your operating system. The OpenStudio package contains the following tools:
     - SketchUp Plug-in
     - OpenStudio Application
-    - ParametricAnalysisTool(PAT)
+    - Parametric Analysis Tool(PAT)
     - ResultsViewer
 
 __Optional - Setup a Building Component Library (BCL) Account__
@@ -51,7 +51,7 @@ If you plan to use the OpenStudio SDK Ruby bindings via command prompt on Window
 5. Test your installation by opening a command prompt and typing: `irb` ENTER.  Then, type `require 'openstudio` ENTER.  If you see some QSslSocket messages and => true, it's working.
 
 ## Workflow Overview
-After installing OpenStudio you will have the SketchUp Plug-in, OpenStudio Application, ParametricAnalysisTool (PAT) and ResultsViewer. The typical OpenStudio workflow is shown in the diagram below.
+After installing OpenStudio you will have the SketchUp Plug-in, OpenStudio Application, Parametric Analysis Tool (PAT) and ResultsViewer. The typical OpenStudio workflow is shown in the diagram below.
 
 [![Workflow Diagram](img/workflow_diagram.png "Click to view")](img/workflow_diagram.png)
 
@@ -62,14 +62,14 @@ ResultsViewer is used to view simulation results. The section on Running Simulat
 ## Quick Start Guide to OpenStudio Modeling Tools
 The [OpenStudio Quick Start Guide (PDF)](img/pdfs/openstudio_interface_quickstart.pdf) provides an introduction to the interface for the Plug-in and the OpenStudio application. It also provides guidance on the basic workflow. Read the [Introductory Tutorial](#introductory-tutorial) below to get started.
 
-## Quick Start Guide to the ParametricAnalysisTool (PAT)
-The [ParametricAnalysisTool Quick Start Guide (PDF)](img/pdfs/PAT-Quick_Start_Guide.pdf) and the [ParametricAnalysisTool section](../reference/parametric_studies.md) provide an introduction to the interface and workflow for creating multiple design alternatives from a seed model.
+## Quick Start Guide to the Parametric Analysis Tool (PAT)
+The [Parametric Analysis Tool Quick Start Guide (PDF)](img/pdfs/PAT-Quick_Start_Guide.pdf) and the [Parametric Analysis Tool Interface Guide](../reference/parametric_studies.md) provide an introduction to the interface and workflow for creating multiple design alternatives from a seed model.
 
 ## Introductory Tutorial
-The tutorial below was created before the grid view was added to the Space Types and Thermal Zones tabs. Grid view allows you to view and edit more than one space type or thermal zone at a time. Go to the [OpenStudio Application Interface](../reference/openstudio_application_interface.md) to learn more about grid view.
+The tutorial below was created before the grid view was added to the Space Types and Thermal Zones tabs. Grid view allows you to view and edit more than one space type or thermal zone at a time. Go to the [OpenStudio Application Interface Guide](../reference/openstudio_application_interface.md) to learn more about grid view.
 
 ### SketchUp Plug-in - Building Envelope
-For additional information on the SketchUp Plug-in interface, go to the [SketchUp Plug-in Interface](../reference/sketchup_plugin_interface.md) section.
+For additional information on the SketchUp Plug-in interface, go to the [OpenStudio SketchUp Plug-in Interface Guide](../reference/sketchup_plugin_interface.md) section.
 
 <iframe width="640" height="360" src="http://www.youtube.com/embed/wzzY_W2WELo" allowfullscreen></iframe>
 
