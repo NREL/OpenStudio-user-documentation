@@ -1,10 +1,10 @@
-<h1>Comparative Analysis Using the ParametricAnalysisTool (PAT)</h1>
+<h1>Parametric Analysis Tool (PAT) Interface Guide</h1>
 PAT removes the need to hand edit each model to try out different architectures, energy efficiency measures, and mechanical systems. PAT applies scripts to your baseline model and lets you quickly compare many alternatives. OpenStudio has developed a workflow that allows energy modelers to create and run a customized parametric analysis using commercially available cloud computing services. This workflow will enable anyone to perform powerful parametric studies in a reasonable time for a relatively low cost.
 
 ___________________
 
 ## Creating a Project
-The [ParametricAnalysisTool Quick Start Guide (PDF)](img/pdfs/PAT-Quick_Start_Guide.pdf) provides an introduction to the interface and workflow for creating multiple design alternatives from a seed model.
+The [Parametric Analysis Tool Quick Start Guide (PDF)](img/pdfs/PAT-Quick_Start_Guide.pdf) provides an introduction to the interface and workflow for creating multiple design alternatives from a seed model.
 
 When you first open PAT you will see the screen below. It shows the workflow:
 
@@ -47,7 +47,7 @@ ___________________
 ## Organize and Edit Measures for Project
 To add measures to your project, drag measures from the library to the central panel.
 
-If you want to learn more about measures, check out the [About Measures](../reference/about_measures.md) section.
+If you want to learn more about measures, check out the [About Measures](../getting_started/about_measures.md) section.
 
 There are three types of measures:
 
@@ -125,7 +125,7 @@ ___________________
 ## Select Measures and Create Design Alternatives
 <iframe width="640" height="360" src="http://www.youtube.com/embed/4g5nJzDoh58?end=116" allowfullscreen></iframe>
 
-*Above: This video shows you how to create design alternatives in an OpenStudio ParametricAnalysisTool Project.*
+*Above: This video shows you how to create design alternatives in an OpenStudio Parametric Analysis Tool Project.*
 
 ___________________
 

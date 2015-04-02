@@ -46,7 +46,7 @@ The Measures tab allows you to browse measures and add them to the workflow for 
 *Above: Measures Tab in OpenStudio Application.*
 
 ### Parametric Analysis Tool
-In the ParametricAnalysisTool (PAT), you first drag all the measures you will use into your project and edit them to have the desired inputs. On the second tab, you create the design alternatives using the measures you set up on the first tab.
+In the Parametric Analysis Tool (PAT), you first drag all the measures you will use into your project and edit them to have the desired inputs. On the second tab, you create the design alternatives using the measures you set up on the first tab.
 
 ![Easy to Use Drag-and-Drop](img/measures/draganddrop.png)
 
@@ -65,10 +65,10 @@ _________________
 ### Building Component Library (BCL)
 You can find measures by going directly to the [BCL site](https://bcl.nrel.gov/) and searching or browsing for measures.
 
-Measures can be downloaded directly from BCL through the [OpenStudio Application](/../next_steps/openstudio_application_interface/#components-measures-menu) and [PAT](/../comparative_analysis/ParametricStudies/#downloading-measures-from-the-building-component-library) as well.
+Measures can be downloaded directly from BCL through the [OpenStudio Application](../reference/openstudio_application_interface#components-measures-menu) and [PAT](../reference/parametric_studies/#downloading-measures-from-the-building-component-library) as well.
 
 ### Locally Shared Measures
 Under the "Preferences" menu you can set a local measure path using the "Change My Measures Directory" menu option. This allows you to set a local or network directory for measures to show in the OpenStudio Application and Parametric Analysis Tool. This is in addition to any BCL measures you already have downloaded. They local measures will have say "My" in front of them vs. "BCL".
 
 ### Create Your Own
-Want to write your own custom measure? Start with the [Measure Writing Guide](measure_writing_guide.md).
+Want to write your own custom measure? Start with the [Measure Writing Guide](../reference/measure_writing_guide.md).
