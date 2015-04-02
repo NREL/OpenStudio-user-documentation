@@ -14,6 +14,7 @@ Most users will want to install a stand-alone version of BIMserver on their loca
 - Assuming this is your first installation, create a new folder in your system, e.g. C:\BIMserver. Copy the downloaded bimserver-[version].jar file into the above folder. Note: avoid the creating BIMserver subfolder under C:\Program Files or C:\Program Files (x86). 
 
 - Double-click on the bimserver-[version].jar file to execute it. Enter the path to your JVM install, e.g. C:\Program Files\Java\jdk1.7.0_75.  Press the start button to start the BIMserver. Wait for BIMserver to expand all the files and configure itself and until the phrase "Server started successfully" appears. Click the Stop button to stop the BIMserver.
+
 ![BIMserver install](img/ifcimport/ifcimport1.jpg)
 
 - Download the [latest OSMSerializer](https://github.com/BIMDataHub/OsmSerializer/releases) and copy the OSMSerializer.jar file into the plugins subfolder under the bimserver-[version] folder.
@@ -25,6 +26,7 @@ Most users will want to install a stand-alone version of BIMserver on their loca
 ![BIMserver setup](img/ifcimport/ifcimport2.jpg)
  
 - Enter the Administrator username (e.g. 'Administrator'), email (e.g. 'admin@bimserver.org'), and password (e.g. 'admin') then click Setup.
+
 ![BIMserver setup](img/ifcimport/ifcimport3.jpg)
   
 - The BIMserver is now correctly setup and running. You can close the browser and continue to use OpenStudio to import IFC file.  BIMserver needs to be running during the IFC import, you can stop BIMserver when you are done by pressing the Stop button. 
@@ -47,19 +49,23 @@ If you want to host BIMserver on a public website you should install the server 
 ![BIMserver settings](img/ifcimport/ifcimport5.jpg)
 
 - The left part of the Import IFC Utility lists all BIM projects hosted on BIMserver. The right part displays a list of IFC revisions of a project.
+
 ![Import Project](img/ifcimport/ifcimport6.jpg)
 
 ### Create a new Project
 - Create a new project by clicking the New Project Button and specify the name for the project e.g. “Test”.
+
 ![Import Project](img/ifcimport/ifcimport7.jpg)
 
 - You will see the newly created project on the left. It contains Project ID on the BIMserver and the Project Name separated by colon. 
+
 ![Import Project](img/ifcimport/ifcimport8.jpg)
 
 - Click the “>” button to view the current IFC files hosted on BIMserver. It will not display anything for now since we have not yet checked in the IFC file.
 
 ### Check in IFC File
 - After selecting a project and clicked “>” button, click the Check in IFC File button and select an IFC file to upload to BIMserver.
+
 ![Import Project](img/ifcimport/ifcimport9.jpg)
 
 - Now you can click the “>” button again to refresh the IFC revision list. Select the newly added file. It displays the IFC Revision ID and the time when the IFC file is uploaded, separated by colon.
@@ -68,7 +74,7 @@ If you want to host BIMserver on a public website you should install the server 
 - Click the Download OSM File button to start importing this IFC file into OpenStudio. It will ask you to save your current OpenStudio model and restart the application with the newly imported model.
 
 ### Change the BIMserver Settings
-- If you want to change the BIMserver Settings, please simply click the Setting button and type in the new settings. It will automatically access to the new BIMserver after you click Okay.
+- If you want to change the BIMserver Settings, please simply click the Setting button and type in the new settings. It will automatically access the new BIMserver after you click OK.
 
 ## Scope of our current IFC importation Utility
 

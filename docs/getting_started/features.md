@@ -48,11 +48,10 @@ As of OpenStudio Version 1.7.0
 - Built in library of space types (loads and associated schedules) for DOE reference buildings for all vintages (pre-1980, 1980-2004, and 2004) plus ASHRAE 189.1-2009, ASHRAE 90.1-2007, and ASHRAE 90.1-2010
 - Can apply loads in one place (space type) and apply throughout the building
 
-#### Grid View for Thermal Zones and Space Types
+### Grid View for Thermal Zones and Space Types
 
-Previously available for Refrigeration Walk Ins and Refrigeration Cases, grid-view (a grid-style interface providing detailed component views) has now been applied to the Space Types tab, as well as the Thermal Zones tab.
-
-Viewing and editing your thermal zones and space types in a grid view allows you to see all your thermal zones at once and compare settings.
+- Previously available for Refrigeration Walk Ins and Refrigeration Cases, grid-view (a grid-style interface providing detailed component views) has now been applied to the Space Types tab, as well as the Thermal Zones tab.
+- Viewing and editing your thermal zones and space types in a grid view allows you to see all your thermal zones at once and compare settings.
 
 ![Grid view example](img/features/grid_thumb.png)
 

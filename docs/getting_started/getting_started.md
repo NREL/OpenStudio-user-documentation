@@ -4,7 +4,7 @@ This page walks you through installing OpenStudio, the basics of the application
 ## Installation Instructions
 OpenStudio is supported on Windows 7 - 8.1, OS X 10.9 - 10.10, and 64-bit Ubuntu 14.04.
 
-OpenStudio 1.6.0 works with EnergyPlus 8.2.0 Update 1, which is now bundled with the OpenStudio installer.  It is no longer necessary to download and install EnergyPlus separately.
+OpenStudio 1.7.0 works with EnergyPlus 8.2.0 Update 1, which is now bundled with the OpenStudio installer.  It is no longer necessary to download and install EnergyPlus separately.
 
 __Download and install SketchUp__
 
@@ -44,7 +44,7 @@ If you plan to use the OpenStudio SDK Ruby bindings via command prompt on Window
 3. Create a text file with the following text inside:
 
     ```
-    require 'C:\Program Files (x86)\OpenStudio 1.6.0\Ruby\openstudio.rb'
+    require 'C:\Program Files (x86)\OpenStudio 1.7.0\Ruby\openstudio.rb'
     ```
 
 4. Save the file as `openstudio.rb` here: `C:\Ruby200\lib\ruby\site_ruby\openstudio.rb` (next to the `2.0.0` folder).

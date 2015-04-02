@@ -6,7 +6,7 @@
       <div class="thumbnail"> <img src="img/os_thumb.png" alt="OpenStudio Logo">
         <div class="caption">
           <h3>Getting Started</h3>
-          <p>This section provides installation instructions, Building Component Library (BCL) key instructions, introductory tutorials, and licensing information to get you up and running.</p>
+          <p>This section provides installation instructions, introductory tutorials, and information to get you up and running.</p>
           <p><a href="getting_started/getting_started.md" class="btn btn-primary" role="button">Installation &amp; Tutorial</a></p>
           <p>Review the list of features and building elements that can be modeled.</p>
           <p><a href="getting_started/features.md" class="btn btn-primary" role="button">Current Features</a></p>
@@ -18,9 +18,10 @@
       <div class="thumbnail"> <img src="img/model_thumb.png" alt="Openstudio Model Image">
         <div class="caption">
           <h3>References &amp; Tutorials</h3>
-          <p>This section provides more detailed information on OpenStudio features and contains tutorials and other references.</p>
-          <p><a href="reference/sketchup_plugin_interface.md" class="btn btn-primary" role="button">OpenStudio SketchUp Plug-in</a></p>
+          <p>Interface guides give detailed overviews of the OpenStudio applications.</p>
+          <p><a href="reference/sketchup_plugin_interface.md" class="btn btn-primary" role="button">SketchUp Plug-in</a></p>
           <p><a href="reference/openstudio_application_interface.md" class="btn btn-primary" role="button">OpenStudio Application</a></p>
+          <p>Tutorials cover essential workflows as well as advanced topics.</p>
           <p><a href="tutorials/creating_your_model.md" class="btn btn-primary" role="button">Creating Your Model</a></p>
           <p><a href="tutorials/running_your_simulation.md" class="btn btn-primary" role="button">Running Your Simulation</a></p>
         </div>
@@ -47,7 +48,8 @@
         <div class="caption">
           <h3>Comparative Analysis</h3>
           <p>Learn how to create design alternatives as part of a parametric study using the OpenStudio Parametric Analysis Tool (PAT). Run simulations locally and on the cloud.</p>
-          <p><a href="reference/parametric_studies.md" class="btn btn-primary" role="button">Parametric Analysis Tool (PAT)</a></p>
+          <p><a href="reference/parametric_studies.md" class="btn btn-primary" role="button">Parametric Analysis Tool</a></p>
+          <p>Move beyond PAT by running large scale analyses on the cloud.</p>
           <p><a href="tutorials/large_scale_analysis.md" class="btn btn-primary" role="button">Large Scale Analysis</a></p>
         </div>
       </div>

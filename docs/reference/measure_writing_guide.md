@@ -1180,16 +1180,16 @@ On windows you need to type "environment variables" in the start menu search and
 
 ![Finding Doc](img/measures/env_var_win.png)
 
-The text to add to the beginning of the path should look like this. It wil vary based on your version of OpenStudio and if you installed the 32 vs. 64bit version.
+The text to add to the beginning of the path should look like this. It will vary based on your version of OpenStudio and if you installed the 32 vs. 64bit version.
 
 ```
-C:\Program Files\OpenStudio 1.6.0\ruby-install\ruby\bin
+C:\Program Files\OpenStudio 1.7.0\ruby-install\ruby\bin
 ```
 
 If you want to use an already existing ruby install that is in the environment variables path, you need to add a file named "openstudio.rb" to the "lib\ruby\site_ruby" folder with text pointing to your version of OpenStudio. Only use 2.0.x versions of ruby.
 
 ```
-require 'C:\Program Files\OpenStudio 1.6.0\Ruby\openstudio.rb'
+require 'C:\Program Files\OpenStudio 1.7.0\Ruby\openstudio.rb'
 ```
 
 #### Using Notepad ++
