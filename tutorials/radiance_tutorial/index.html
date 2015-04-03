@@ -246,7 +246,7 @@
 <p>This tutorial describes the workflow for using OpenStudio (the plug-in and the application) to perform a <a href="http://climate-based-daylighting.com/doku.php?id=academic:climate-based-daylight-modelling">climate-based daylight simulation</a>, using Radiance as the lighting simulation engine (in lieu of EnergyPlus' daylight simulation options). For implementation details, and caveats, refer to the OpenStudio-Radiance Reference Guide.</p>
 <p>The process for using Radiance for daylighting analysis in OpenStudio is not dissimilar from using EnergyPlus. The basic steps are as follows, with the required applications in parentheses:</p>
 <h3 id="1-create-or-import-building-geometry-define-thermal-zones-spaces-sketchup-plug-in">1. Create (or Import) Building Geometry, Define Thermal Zones &amp; Spaces (SketchUp Plug-in)</h3>
-<p>Many of the Radiance-related elements are not directly accessible from the OpenStudio Application, so regardless of whether you are starting your geometric model from scratch or importing from another CAD tool, you must start in the SketchUp Plugin. </p>
+<p>Many of the Radiance-related elements are not directly accessible from the OpenStudio Application, so regardless of whenther you are starting your geometric model from scratch or importing form another CAD tool, you must start in the SketchUp Plugin. </p>
 <p>Using the SketchUp Plugin tools, create the following elements:</p>
 <ul>
 <li>Building Shading Objects - to represent overhangs, fins, parapets</li>
@@ -276,7 +276,7 @@
 <ul>
 <li>Associate Space with Thermal Zone(s)</li>
 <li>Assign primary Illuminance Map to daylit Thermal Zone(s)</li>
-<li>Assign primary Daylighting Control Point to Thermal Zone</li>
+<li>Assign primary Daylightng Control Point to Thermal Zone</li>
 <li>Thermal zone load percentages to daylighting controls</li>
 <li>Attach shading controls to windows (user script)</li>
 </ul>
@@ -289,14 +289,10 @@
 <h3 id="6-review-results-results-viewer-excel-et-al">6. Review Results (Results Viewer, Excel, et al.)</h3>
 <p>The results of the Radiance/EnergyPlus simulation are stored in a few locations:</p>
 <ul>
-<li><strong>radout.sql</strong> - this file contains all the Radiance-computed daylighting information, as well as the exterior daylight data from the weather file, for reference</li>
-<li><strong>daylightmetrics.csv</strong> - this file contains data for the following metrics:<ul>
-<li>Daylight Autonomy (DA)</li>
-<li>Continuous Daylight Autonomy (cDA)</li>
-<li>Useful Daylight Illuminance (UDI)</li>
-</ul>
-</li>
-<li><strong>[windowGroupName].ill</strong> - annual daylight illuminance schedules for each window group, used for the shade control simulation</li>
+<li><strong>radout.sql</strong> - this file contains the Radiance-computed daylighting information, as well as the exterior daylight data from the weather file, for reference.</li>
+<li><strong>daylightmetrics.csv</strong> -</li>
+<li><strong><em>windowgroup</em>.ill</strong> - </li>
+<li><strong>eplusout.sql</strong> - the electric lighting schedules</li>
 </ul>
 
           <div class="footer">
