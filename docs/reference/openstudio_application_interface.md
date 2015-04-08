@@ -62,13 +62,16 @@ To add items from the library, select the "Library" tab on the right panel and f
 
 ------
 
-## Grid View and Multi-edit: Thermal Zones, Space Types, and Refrigeration (Version 1.7.0)
-
+## Grid View and Multi-edit: Thermal Zones, Space Types, and Refrigeration
 Earlier releases have included a grid view for the refrigeration section in the HVAC tab. Now you can edit thermal zones and space types in a grid view. This makes it easier to view all your zones and space types at once and compare settings. By selecting the buttons across the top you can select the fields you would like to see and edit.
 
 [![Grid Image](img/os_interface/grid_view_multi1_small.png "Click to view")](img/os_interface/grid_view_multi1.png)
 
 *Above: The grid view provides a spreadsheet style layout. Click on the image to view a larger version.*
+
+<iframe width="640" height="360" src="http://www.youtube.com/embed/LnOUfiMajD0?rel=0&start=0&end=340&autoplay=0" frameborder="0" allowfullscreen></iframe>
+
+*View this video to see multi-edit in action.*
 
 Drag components and schedules into the grid view. Most items on the grid can be inspected in the right panel "Edit" tab, except schedules. A yellow highlight indicates the item you have selected in the grid. When you start editing the item in the "Edit" tab the highlight will disappear indicating that the focus is now on editing the item.
 
@@ -78,15 +81,18 @@ Drag components and schedules into the grid view. Most items on the grid can be 
 
 Click on the color box on the "General" button to change the rendering color of the space type. This will change the rendering color in the SketchUp Plug-in as well.
 
-![Grid Image Loads](img/os_interface/pc_grid.png)
+You can use the Multi-edit feature on individual columns (as shown below) or on whole rows by selecting a row or rows and hitting the "2X" button on the bottom left to duplicate those rows.
 
-*Above: The grid view provides a spreadsheet style layout.*
+[![Grid Image](img/os_interface/multi-edit-steps-small.png "Click to view")](img/os_interface/multi-edit-steps.png)
 
-![Space Type Grid](img/os_interface/pc_grid.png)
+*Above: The steps for using the multi-edit function are shown above.*
 
-*Above: Above: Hit the "Loads" button to edit and view loads by space type. Click on the name of a component and select the  "Edit" panel on the right to inspect and edit that item. You can edit the load definition in the example shown above.*
+[![Grid Image](img/os_interface/loads_filter_small.png "Click to view")](img/os_interface/loads_filter.png)
+
+*Above: Above: Hit the "Loads" button to edit and view loads by space type. Click on the name of a component and select the  "Edit" panel on the right to inspect and edit that item.*
 
 ![Thermal Zone Grid](img/os_interface/thermal_zone_grid.png)
+
 
 
 ------
