@@ -138,7 +138,7 @@ To save untranslated EnergyPlus IDF objects, select the menu item "Plugins->Open
 </td>
 </tbody>
 </table>
-### Modeling Tools
+## Modeling Tools
 Tools in this set create new zones, groups, and geometry.
 <table class="table table-striped">
 <thead>
@@ -375,7 +375,7 @@ The image below shows the resulting model after you have projected selected loos
 </tbody>
 </table>
 
-### Information Tools
+## Information Tools
 Tools in this set are generally for viewing model attributes, however some editing may be done as well.
 <table class="table table-striped">
 <thead>
@@ -509,8 +509,8 @@ The Input File Errors and Warnings dialog automatically opens when there is an e
 </tbody>
 </table>
 
-### Rendering Modes
-This set contains render modes that are used to change how heat transfer, shading, and interior partition surfaces are rendered.
+## Rendering Modes
+This toolbar contains render modes that are used to change how heat transfer, shading, and interior partition surfaces are rendered.
 <table class="table table-striped">
 <thead>
 <tr>
@@ -630,7 +630,7 @@ The Render by Surface Normal mode is built on the SketchUp face setting where fa
 </tbody>
 </table>
 
-###  Integration with Other OpenStudio Resources
+##  Integration with Other OpenStudio Resources
 This set contains tools integration for other OpenStudio applications and resources.
 <table class="table table-striped">
 <thead>
@@ -659,7 +659,7 @@ This takes you to the online help for the OpenStudio SketchUp Plug-in, where you
 </tbody>
 </table>
 
-###  Additional OpenStudio Plug-in Tools
+##  Additional OpenStudio Plug-in Tools
 
 #### About OpenStudio
 For information on the SketchUp Plug-in version go to `Plugins->OpenStudio->About OpenStudio`.
@@ -682,7 +682,7 @@ Check to see if you are using the most current release of the OpenStudio SketchU
 
 *Above: Screenshot of Update Dialog Box*
 
-###  Helpful SketchUp Tools
+##  Helpful SketchUp Tools
 <table class="table table-striped">
 <thead>
 <tr>

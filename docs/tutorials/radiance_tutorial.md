@@ -7,7 +7,7 @@ This tutorial describes the workflow for using OpenStudio (the plug-in and the a
 The process for using Radiance for daylighting analysis in OpenStudio is not dissimilar from using EnergyPlus. The basic steps are as follows, with the required applications in parentheses:
 ### 1. Create (or Import) Building Geometry, Define Thermal Zones & Spaces (SketchUp Plug-in)
 
-Many of the Radiance-related elements are not directly accessible from the OpenStudio Application, so regardless of whenther you are starting your geometric model from scratch or importing form another CAD tool, you must start in the SketchUp Plugin. 
+Many of the Radiance-related elements are not directly accessible from the OpenStudio Application, so regardless of whether you are starting your geometric model from scratch or importing from another CAD tool, you must start in the SketchUp Plugin. 
 
 Using the SketchUp Plugin tools, create the following elements:
 
@@ -39,7 +39,7 @@ Optionally to these spaces, add:
 
 * Associate Space with Thermal Zone(s)
 * Assign primary Illuminance Map to daylit Thermal Zone(s)
-* Assign primary Daylightng Control Point to Thermal Zone
+* Assign primary Daylighting Control Point to Thermal Zone
 * Thermal zone load percentages to daylighting controls
 * Attach shading controls to windows (user script)
 
@@ -52,9 +52,11 @@ The Radiance daylighting results will inform the electric lighting load schedule
 ###6. Review Results (Results Viewer, Excel, et al.)
 The results of the Radiance/EnergyPlus simulation are stored in a few locations:
 
-* **radout.sql** - this file contains the Radiance-computed daylighting information, as well as the exterior daylight data from the weather file, for reference.
-* **daylightmetrics.csv** -
-* **_windowgroup_.ill** - 
-* **eplusout.sql** - the electric lighting schedules
+* **radout.sql** - this file contains all the Radiance-computed daylighting information, as well as the exterior daylight data from the weather file, for reference
+* **daylightmetrics.csv** - this file contains data for the following metrics:
+	* Daylight Autonomy (DA)
+	* Continuous Daylight Autonomy (cDA)
+	* Useful Daylight Illuminance (UDI)
+* **[windowGroupName].ill** - annual daylight illuminance schedules for each window group, used for the shade control simulation
 
 
