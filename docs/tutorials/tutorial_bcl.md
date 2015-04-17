@@ -26,7 +26,7 @@ To join a public group, click the *Groups* button on the BCL homepage.  Select t
 
 ###Adding a Member to a Group
 
-If you are a group admin, you can add members to your group by clicking the *My Dashboard* link at the top right of the page and then  clicking on the *My groups* tab. Your group should now be listed on the page. Click on the linked group’s name, which will take you to the group description page. 
+If you are a group administrator, you can add members to your group by clicking the *My Dashboard* link at the top right of the page, then clicking on the *My groups* tab. Your group should now be listed on the page. Click on the linked group’s name, which will take you to the group description page. 
 
 ![Select Group](img/bcl/select_group.png)
 *Above: Selecting your group for viewing.*
@@ -100,12 +100,17 @@ The *Data* tab contains a file upload field that will accept either a zip compon
 ![Component Visibility](img/bcl/component_visibility.png)
 *Above: Select desired group and component visibility.*
 
-The component package to upload should contain a component.xml file created with the current [component schema](https://bcl.nrel.gov/xsd/component/v/2), available on the [BCL](https://bcl.nrel.gov) website.  It should also contain the associated files referenced inside the component.xml file’s &lt;files&gt; section.  The compressed package should directly contain these files; the upload will fail if the package has an inner directory containing the files.
+The component package to upload should contain a component.xml file created with the current [component schema](https://bcl.nrel.gov/xsd/component/v/2), available on the [BCL](https://bcl.nrel.gov) website.  The &lt;uid&gt; and &lt;version_id&gt; fields can be left blank as they will be assigned by the BCL.  
+
+Make sure to include the type of your component in the &lt;tag&gt; field. Select from the available [BCL component types](https://bcl.nrel.gov/component-types), and include the full hierarchy.  This is usually 2 or 3 levels separated by a dot.  For example, if you are uploading a weather file component, the &lt;tag&gt; should be: *Location-Dependent Component.Weather File*.  If you do not see a suitable component type for your component in the list, please [contact us](https://www.openstudio.net/contact). 
+
+Attributes can also be applied to components via the component.xml file.  Consult the supported list of [BCL attributes](https://bcl.nrel.gov/list-of-attributes) to view the correct names.  For OpenStudio compatibility, the *OpenStudio Type* attribute should be used.
+
+The package should also contain the associated files referenced inside the component.xml file’s &lt;files&gt; section.  The compressed package should directly contain these files; the upload will fail if the package has an inner directory containing the files.
 
 ![Component Package Creation](img/bcl/create_component_package.png)
 
 *Above: Compress the files directly to create the component package; do not compress a directory containing the files.*
-
 
 ###Uploading a Measure
 There are two methods of uploading measures to the BCL website:  either through an input form or a file upload. **At this time, only the file upload method is compatible with OpenStudio.** Users must be part of a group to upload content, and only group admins can publish content for their group.  
@@ -120,17 +125,33 @@ The *Data* tab contains a file upload field that will accept either a zip measur
 ![Measure Visibility](img/bcl/measure_visibility.png)
 *Above: Select desired group and measure visibility.*
 
-The component package to upload should contain a measure.xml file created with the current [measure schema](https://bcl.nrel.gov/xsd/measure/v/2), available on the [BCL](https://bcl.nrel.gov) website.  It should also contain the associated files referenced inside the measure.xml file’s &lt;files&gt; section. These files should be contained in directories according to usage type:  the main measure file, usually named *measure.rb* should be compressed directly (same level as measure.xml), resource files should be in a *resources* directory, and test files should be in a *tests* directory. The compressed package should directly contain these files and directories; the upload will fail if the package has an inner directory containing the files.
+The measure package to upload should contain a measure.xml file created with the current [measure schema](https://bcl.nrel.gov/xsd/measure/v/2), available on the [BCL](https://bcl.nrel.gov) website.  The &lt;uid&gt; and &lt;version_id&gt; fields can be left blank as they will be assigned by the BCL.  
+
+Make sure to include the type of your measure in the &lt;tag&gt; field. Select from the available [BCL measure types](https://bcl.nrel.gov/measure-types), and include the full hierarchy.  This is usually 2 or 3 levels separated by a dot.  For example, if you are uploading a space types measure, the &lt;tag&gt; should be: *Whole Building.Space Types*.  If you do not see a suitable measure type for your measure in the list, please [contact us](https://www.openstudio.net/contact).
+
+Attributes can also be applied to measures via the component.xml file.  Consult the supported list of [BCL attributes](https://bcl.nrel.gov/list-of-attributes) to view the correct names.  For OpenStudio compatibility, the *Measure Type* attribute should be used.
+
+The package should also contain the associated files referenced inside the measure.xml file’s &lt;files&gt; section. These files should be contained in directories according to usage type:  the main measure file, usually named *measure.rb* should be compressed directly (same level as measure.xml), resource files should be in a *resources* directory, and test files should be in a *tests* directory. The compressed package should directly contain these files and directories; the upload will fail if the package has an inner directory containing the files.
 
 ![Measure Package Creation](img/bcl/create_measure_package.png)
 
 *Above: Compress the files directly to create the measure package; do not compress a directory containing the files.*
 
-###Attributes not in BCL
+###Publishing Content
 
-###Component and Measure Types
+All members of a group can add content to the BCL, but only users with the *editor* or *administrator member* group roles can review and publish their group's content.  Content can be published by clicking the *My Dashboard* link at the top right of the page, then clicking on the *My content* tab and selecting the *group content* sub-tab. 
+
+![Review Content for Publication](img/bcl/moderate_content.png)
+*Above: Review group content.*
+
+Content in either the *Draft* or *Needs Review* states can be published by changing the moderation state to *Published*.  The intended workflow is as follows:
+
+* A content author creates a component or measure.  The content is in the *Draft* state.  
+* Once the author is satisfied with the content, he/she sets the state to *Needs Review*.  This indicates to the group editors and administrators that content is ready to be reviewed and published.
+* Once reviewed, a group editor or administrator sets the state to *Published.
+* The process is repeated for future revisions to the content.
 
 
-###Publishing Content (Group Admin)
+
 
 
