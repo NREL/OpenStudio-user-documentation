@@ -137,3 +137,14 @@ a.navbar-brand > img {
     height: 100%;
     padding-top: 20px;
 }
+
+.centered-image {
+   text-align:center;
+   padding:15px; 
+}
+
+.centered-image img {
+    width:80%;
+    height:80%;
+    border:1px solid #ddd;
+}
