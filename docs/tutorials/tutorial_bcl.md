@@ -127,8 +127,38 @@ There are 4 roles that users can have relative to the group to which they belong
 ##Uploading and Publishing Content
 There are 2 types of content on the BCL:  components and measures.  Components are the building blocks of an energy model, and include roofs, walls, windows, occupancy and equipment schedules, and weather information, to name a few.  Measures describe a change to an energy model for purposes such as comparison to a baseline model or estimation of potential energy savings.
 
-###Uploading a Component
+###Components
 There are two methods of uploading components to the BCL website:  either through an input form or a file upload. **At this time, only the file upload method is compatible with OpenStudio.** Users must be part of a group to upload content, and only group admins can publish content for their group.  
+
+####Creating the Component Zip File
+
+If you are using the OpenStudio Application and want to make a component based on an object in your current model you can use the Apply Measure Now in conjunction with measures such as "Make Components From Constructions" on BCL. The measure will make the zip file for you including the component.xml file. More measures for other object types will be added over time.
+
+<div class="centered-image">
+	<figure>
+  	<img src="img/bcl/make_components_from_constructions.png" alt="Make Components from Construction Measure Dialog" />
+  	<figcaption>Make Components from Construction Measure Dialog.</figcaption>
+  </figure>
+</div>
+
+If you used the workflow above you can skip to the "Upload Component Zip File" section on this page. If you want to make the components through other workflows, such as batch processing a spreadsheet, follow the steps below that describe in more detail how the zip file needs to be organized and what data needs to be in the xml.
+
+> The component package to upload should contain a component.xml file created with the current [component schema](https://bcl.nrel.gov/xsd/component/v/2), available on the [BCL](https://bcl.nrel.gov) website.  The &lt;uid&gt; and &lt;version_id&gt; fields can be left blank as they will be assigned by the BCL.
+
+> Make sure to include the type of your component in the &lt;tag&gt; field. Select from the available [BCL component types](https://bcl.nrel.gov/component-types), and include the full hierarchy.  This is usually 2 or 3 levels separated by a dot.  For example, if you are uploading a weather file component, the &lt;tag&gt; should be: *Location-Dependent Component.Weather File*.  If you do not see a suitable component type for your component in the list, please [contact us](https://www.openstudio.net/contact).
+
+> Attributes can also be applied to components via the component.xml file.  Consult the supported list of [BCL attributes](https://bcl.nrel.gov/list-of-attributes) to view the correct names.  For OpenStudio compatibility, the *OpenStudio Type* attribute should be used.
+
+> The package should also contain the associated files referenced inside the component.xml file’s &lt;files&gt; section.  The compressed package should directly contain these files; the upload will fail if the package has an inner directory containing the files.
+
+<div class="centered-image">
+	<figure>
+  	<img src="img/bcl/create_component_package.png" alt="Component Package Creation" />
+  	<figcaption>Compress the files directly to create the component package; do not compress a directory containing the files.</figcaption>
+  </figure>
+</div>
+
+####Uploading the Component Zip File
 
 To begin, click on the *My Dashboard* link at the top right of the BCL site.  Click on the *Create content* tab.  You should see a list of buttons.  Press the *Upload Component* button, which will direct you to a multi-tab form.
 
@@ -136,7 +166,7 @@ To begin, click on the *My Dashboard* link at the top right of the BCL site.  Cl
 	<figure>
   	<img src="img/bcl/upload_component.png" alt="Upload a Component" />
   	<figcaption>Upload a Component.</figcaption>
-  </figure> 	
+  </figure>
 </div>
 
 The *Data* tab contains a file upload field that will accept either a zip component or a tar.gz component package.  The *Group* tab contains a list of the groups with which you are affiliated.  Select the appropriate group, as well as your desired content visibility for this component (public or private to the group).	Save the form.
@@ -145,26 +175,47 @@ The *Data* tab contains a file upload field that will accept either a zip compon
 	<figure>
   	<img src="img/bcl/component_visibility.png" alt="Component Visibility" />
   	<figcaption>Select desired group and component visibility.</figcaption>
-  </figure> 	
+  </figure>
 </div>
 
-The component package to upload should contain a component.xml file created with the current [component schema](https://bcl.nrel.gov/xsd/component/v/2), available on the [BCL](https://bcl.nrel.gov) website.  The &lt;uid&gt; and &lt;version_id&gt; fields can be left blank as they will be assigned by the BCL.  
+Once the component has been saved, follow instructions in the "Publishing Content" section below for instructions on making the component visible to others.
 
-Make sure to include the type of your component in the &lt;tag&gt; field. Select from the available [BCL component types](https://bcl.nrel.gov/component-types), and include the full hierarchy.  This is usually 2 or 3 levels separated by a dot.  For example, if you are uploading a weather file component, the &lt;tag&gt; should be: *Location-Dependent Component.Weather File*.  If you do not see a suitable component type for your component in the list, please [contact us](https://www.openstudio.net/contact). 
+####Editing an Existing Component
 
-Attributes can also be applied to components via the component.xml file.  Consult the supported list of [BCL attributes](https://bcl.nrel.gov/list-of-attributes) to view the correct names.  For OpenStudio compatibility, the *OpenStudio Type* attribute should be used.
-
-The package should also contain the associated files referenced inside the component.xml file’s &lt;files&gt; section.  The compressed package should directly contain these files; the upload will fail if the package has an inner directory containing the files.
+If you want to update a component that has already been uploaded to the BCL, you start by going to the URL for your component and then clicking the "New draft" button. If your browser doesn't look like the screen shot below please go to the URL and add "/xml" to the end. To properly update an existing component you want to re-upload the entire updated zip file.
 
 <div class="centered-image">
 	<figure>
-  	<img src="img/bcl/create_component_package.png" alt="Component Package Creation" />
-  	<figcaption>Compress the files directly to create the component package; do not compress a directory containing the files.</figcaption>
-  </figure> 	
+  	<img src="img/bcl/new_draft.png" alt="New Draft of Existing Component" />
+  	<figcaption>New Draft of Existing Component.</figcaption>
+  </figure>
 </div>
 
-###Uploading a Measure
+Once the new draft of the component has been saved, follow instructions in the "Publishing Content" section below for instructions on making the component visible to others.
+
+###Measures
 There are two methods of uploading measures to the BCL website:  either through an input form or a file upload. **At this time, only the file upload method is compatible with OpenStudio.** Users must be part of a group to upload content, and only group admins can publish content for their group.  
+
+####Creating the Measure Zip File
+
+New measures are made in the OpenStudio application or Parametric Analysis tool by either creating a new measure or cloning an existing one. OpenStudio will place all of the necessary files in the directory set under preferences as "My Measures Directory". All that is necessary for you to prepare the files is to go within the directory for the measure and compress the files as shown below. You do want to confirm that the xml file is updated after you last edit the measure.rb file. Clicking the "Sync Project Measures with Library" button or opening the Apply Measure now Dialog should do this.
+
+<div class="centered-image">
+	<figure>
+  	<img src="img/bcl/create_measure_package.png" alt="Measure Package Creation" />
+  	<figcaption>Compress the files directly to create the measure package; do not compress a directory containing the files.</figcaption>
+  </figure>
+</div>
+
+For reference below is additional information on the xml and other files.
+
+> The measure package to upload should contain a measure.xml file created with the current [measure schema](https://bcl.nrel.gov/xsd/measure/v/2), available on the [BCL](https://bcl.nrel.gov) website.  The &lt;uid&gt; and &lt;version_id&gt; fields can be left blank as they will be assigned by the BCL.
+>
+> Make sure to include the type of your measure in the &lt;tag&gt; field. Select from the available [BCL measure types](https://bcl.nrel.gov/measure-types), and include the full hierarchy.  This is usually 2 or 3 levels separated by a dot.  For example, if you are uploading a space types measure, the &lt;tag&gt; should be: *Whole Building.Space Types*.  If you do not see a suitable measure type for your measure in the list, please [contact us](https://www.openstudio.net/contact).  Attributes can also be applied to measures via the measure.xml file.  Consult the supported list of [BCL attributes](https://bcl.nrel.gov/list-of-attributes) to view the correct names. For more detailed information on writing OpenStudio measures, consult the [Measure Writing Guide](../reference/measure_writing_guide.md) for further details.
+>
+> The package should also contain the associated files referenced inside the measure.xml file’s &lt;files&gt; section. These files should be contained in directories according to usage type:  the main measure file, usually named *measure.rb* should be compressed directly (same level as measure.xml), resource files should be in a *resources* directory, and test files should be in a *tests* directory. The compressed package should directly contain these files and directories; the upload will fail if the package has an inner directory containing the files.
+
+####Uploading the Measure Zip File
 
 To begin, click on the *My Dashboard* link at the top right of the BCL site.  Click on the *Create content* tab.  You should see a list of buttons.  Press the *Upload Measure* button, which will direct you to a multi-tab form.
 
@@ -172,7 +223,7 @@ To begin, click on the *My Dashboard* link at the top right of the BCL site.  Cl
 	<figure>
   	<img src="img/bcl/upload_measure.png" alt="Upload Measure" />
   	<figcaption>Upload a Measure.</figcaption>
-  </figure> 	
+  </figure>
 </div>
 
 The *Data* tab contains a file upload field that will accept either a zip measure or a tar.gz measure package.  The *Group* tab contains a list of the groups with which you are affiliated.  Select the appropriate group, as well as your desired content visibility for this measure (public or private to the group).	Save the form.
@@ -181,21 +232,23 @@ The *Data* tab contains a file upload field that will accept either a zip measur
 	<figure>
   	<img src="img/bcl/measure_visibility.png" alt="Measure Visibility" />
   	<figcaption>Select desired group and measure visibility.</figcaption>
-  </figure> 	
+  </figure>
 </div>
 
-The measure package to upload should contain a measure.xml file created with the current [measure schema](https://bcl.nrel.gov/xsd/measure/v/2), available on the [BCL](https://bcl.nrel.gov) website.  The &lt;uid&gt; and &lt;version_id&gt; fields can be left blank as they will be assigned by the BCL.  
+Once the measure has been saved, follow instructions in the "Publishing Content" section below for instructions on making the measure visible to others.
 
-Make sure to include the type of your measure in the &lt;tag&gt; field. Select from the available [BCL measure types](https://bcl.nrel.gov/measure-types), and include the full hierarchy.  This is usually 2 or 3 levels separated by a dot.  For example, if you are uploading a space types measure, the &lt;tag&gt; should be: *Whole Building.Space Types*.  If you do not see a suitable measure type for your measure in the list, please [contact us](https://www.openstudio.net/contact).  Attributes can also be applied to measures via the measure.xml file.  Consult the supported list of [BCL attributes](https://bcl.nrel.gov/list-of-attributes) to view the correct names. For more detailed information on writing OpenStudio measures, consult the [Measure Writing Guide](../reference/measure_writing_guide.md) for further details.
+####Editing an Existing Measure
 
-The package should also contain the associated files referenced inside the measure.xml file’s &lt;files&gt; section. These files should be contained in directories according to usage type:  the main measure file, usually named *measure.rb* should be compressed directly (same level as measure.xml), resource files should be in a *resources* directory, and test files should be in a *tests* directory. The compressed package should directly contain these files and directories; the upload will fail if the package has an inner directory containing the files.
+If you want to update a measure that has already been uploaded to the BCL you can do that by first going to the URL for your component and then clicking the "New draft" button. If your browser doesn't look like the screen shot below please go to the URL and add "/xml" to the end. To properly update an existing measure you want to re-upload the entire updated zip file.
 
 <div class="centered-image">
 	<figure>
-  	<img src="img/bcl/create_measure_package.png" alt="Measure Package Creation" />
-  	<figcaption>Compress the files directly to create the measure package; do not compress a directory containing the files.</figcaption>
-  </figure> 	
+  	<img src="img/bcl/new_draft_measure.png" alt="New Draft of Existing Component" />
+  	<figcaption>New Draft of Existing Component.</figcaption>
+  </figure>
 </div>
+
+Once the new draft of the measure has been saved, follow instructions in the "Publishing Content" section below for instructions on making the measure visible to others.
 
 ###Publishing Content
 
