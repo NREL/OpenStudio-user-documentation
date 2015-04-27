@@ -148,3 +148,7 @@ a.navbar-brand > img {
     height:80%;
     border:1px solid #ddd;
 }
+
+blockquote {
+    font-size: 14px;
+}
