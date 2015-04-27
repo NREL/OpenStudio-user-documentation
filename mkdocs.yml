@@ -19,9 +19,10 @@ pages:
 - [tutorials/life_cycle_costing_examples.md, Advanced Tutorials, Life Cycle Cost Analysis]
 - [tutorials/tutorial_cbecc_materials.md, Advanced Tutorials, CBECC Materials and Constructions]
 - [tutorials/tutorial_glhepro.md, Advanced Tutorials, Vertical Ground Heat Exchanger sizing with GLHEPro]
-- [tutorials/tutorial_ifcimport.md, Advanced Tutorials, Import IFC]
 - [tutorials/tutorial_shadingcontrols.md, Advanced Tutorials, Shading Controls]
 - [tutorials/tutorial_windowproperty_frameanddivider.md, Advanced Tutorials, Window Property Frame and Divider]
+- [tutorials/tutorial_ifcimport.md, Advanced Tutorials, Third Party Applications - BIMServer (Import IFC)]
+- [tutorials/tutorial_virtual_pulse.md, Advanced Tutorials, Third Party Applications - VirtualPULSE]
 
 - [reference/openstudio_application_interface.md, Reference, OpenStudio Application Interface Guide]
 - [reference/sketchup_plugin_interface.md, Reference, SketchUp Plug-in Interface Guide]
