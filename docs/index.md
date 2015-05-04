@@ -1,5 +1,5 @@
 <h1>Welcome to OpenStudio User Documentation</h1>
-<p>This is OpenStudio's user documentation. A brief summary of the content and intent of each section is below. Use the buttons below or the horizontal navigation above to learn more about the OpenStudio suite of applications.</p>
+<p>This is OpenStudio's user documentation. A brief summary of the content of the site is below. Use the buttons or the horizontal navigation above to learn more about the OpenStudio suite of applications.</p>
 <div class="container-fluid">
   <div class="row">
     <div class="col-sm-6 col-md-4">
@@ -24,6 +24,7 @@
           <p>Tutorials cover essential workflows as well as advanced topics.</p>
           <p><a href="tutorials/creating_your_model.md" class="btn btn-primary" role="button">Creating Your Model</a></p>
           <p><a href="tutorials/running_your_simulation.md" class="btn btn-primary" role="button">Running Your Simulation</a></p>
+          <p><a href="tutorials/radiance_tutorial.md" class="btn btn-primary" role="button">Radiance &amp; OpenStudio</a></p>
         </div>
       </div>
     </div>
@@ -55,30 +56,35 @@
       </div>
     </div>
     <div class="col-md-4">
-      <div class="thumbnail"> <img src="img/help_thumb.png" alt="Help Image">
+      <div class="thumbnail"> 
         <div class="caption">
-          <h3>Help</h3>
-          <p>Find professional training for OpenStudio.</p>
-          <p><a href="help/training.md" class="btn btn-primary" role="button">Training, Support, &amp; Consulting</a></p>
-          <p>Additional help topics.</p>
-          <p><a href="help/finding_model_data.md" class="btn btn-primary" role="button">Finding Model Data</a></p>
-          <p><a href="help/best_practices.md" class="btn btn-primary" role="button">Best Practices</a></p>
-          <p><a href="help/troubleshooting.md" class="btn btn-primary" role="button">Troubleshooting</a></p>
-          <p><a href="help/faq.md" class="btn btn-primary" role="button">FAQ</a></p>
-          <p><a href="https://unmethours.com/questions/scope:all/sort:activity-desc/tags:openstudio/" class="btn btn-primary" role="button">Get Help</a></p>
+          <h3>Using Third Party Tools</h3>
+          <p> Set materials and constructions so they can be properly imported into CBECC-Com.</p> 
+          <p><a href="tutorials/tutorial_cbecc_materials/" class="btn btn-primary" role="button">CBECC-Com Tutorial</a></p>
+          <p>Import an IFC file into OpenStudio using BIMserver. </p>
+          <p><a href="tutorials/tutorial_ifcimport.md" class="btn btn-primary" role="button">Import IFC Tutorial</a></p>
+          <p>Size a vertical ground heat exchanger with OpenStudio and GLHEPro.</p>
+          <p><a href="tutorials/tutorial_glhepro.md" class="btn btn-primary" role="button">GLHEPro Tutorial</a></p>
         </div>
       </div>
     </div>
     <div class="col-md-4">
       <div class="thumbnail">
         <div class="caption">
-          <h3>Additional Resources.</h3>
-          <p>Check out Unmet Hours a Question-and-Answer Resource for the Building Energy Modeling Community.</p>
-          <p><a href="https://unmethours.com/questions/scope:all/sort:activity-desc/tags:openstudio/" class="btn btn-primary" role="button">Unmet Hours</a></p>
+          <h3>Help &amp; Additional Resources.</h3>
+          <p>Find professional training for OpenStudio.</p>
+          <p><a href="help/training.md" class="btn btn-primary" role="button">Training, Support, &amp; Consulting</a></p>
+           <p>Check out Unmet Hours, to post a question or search for answers to your energy modeling questions.</p>
+          <p><a href="https://unmethours.com/questions/scope:all/sort:activity-desc/tags:openstudio/" class="btn btn-primary" role="button">OpenStudio on Unmet Hours</a></p>
+          <p>Additional help topics.</p>
+          <p><a href="help/finding_model_data.md" class="btn btn-primary" role="button">Finding Model Data</a></p>
+          <p><a href="help/best_practices.md" class="btn btn-primary" role="button">Best Practices</a></p>
+          <p><a href="help/troubleshooting.md" class="btn btn-primary" role="button">Troubleshooting</a></p>
+          <p><a href="help/faq.md" class="btn btn-primary" role="button">FAQ</a></p>
           <p>More training videos are available on our YouTube page.</p>
           <p><a href="http://www.youtube.com/channel/UC5NGj39XfJkhYUfCtKr-r_w/questions/" class="btn btn-primary" role="button">YouTube Videos</a></p>
-          <p>Additional Resources.</p>
-          <p><a href="http://github.com/NREL/OpenStudio" class="btn btn-primary" role="button">Code on GitHub</a></p>
+          <p>The OpenStudio Repository on GitHub</p>
+          <p><a href="http://github.com/NREL/OpenStudio" class="btn btn-primary" role="button">OpenStudio on GitHub</a></p>
         </div>
       </div>
     </div>
