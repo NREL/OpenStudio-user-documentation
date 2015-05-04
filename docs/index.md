@@ -65,6 +65,8 @@
           <p><a href="tutorials/tutorial_ifcimport.md" class="btn btn-primary" role="button">Import IFC Tutorial</a></p>
           <p>Size a vertical ground heat exchanger with OpenStudio and GLHEPro.</p>
           <p><a href="tutorials/tutorial_glhepro.md" class="btn btn-primary" role="button">GLHEPro Tutorial</a></p>
+          <p>Create OpenStudio models using the web based VirtualPULSE tool.</p>
+          <p><a href="tutorials/tutorial_virtual_pulse.md" class="btn btn-primary" role="button">VirtualPULSE Tutorial</a></p>
         </div>
       </div>
     </div>
