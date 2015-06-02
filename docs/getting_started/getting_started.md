@@ -68,12 +68,35 @@ The [Parametric Analysis Tool Quick Start Guide (PDF)](img/pdfs/PAT-Quick_Start_
 ## Introductory Tutorial
 The tutorial below was created before the grid view was added to the Space Types and Thermal Zones tabs. Grid view allows you to view and edit more than one space type or thermal zone at a time. Go to the [OpenStudio Application Interface Guide](../reference/openstudio_application_interface.md) to learn more about grid view.
 
+### Selecting a Template for Constructions in SketchUp using the OpenStudio Plug-in
+Templates contain data for constructions, loads, and schedules for 6 vintages across all U.S. climate zones. Templates do not contain any geometry. Load templates by using the menu under __Extentions/OpenStudio User Scripts/On-Demand Template Generators/Space Type and Construction Set Wizard__. Then select your type of building, vintage, and climate zone from the dialog. You can also get standard space types for that template by choosing "true" on the dialog. Space types can define internal loads, schedule sets, and construction sets. It can take a few minutes to load.
+
+![New OpenStudio Model From Template Dialog](img/menu_template.png)
+
+*Above: Load a new template using the menu.*
+
+![New OpenStudio Model From Template Dialog](img/from_template.png)
+
+Vintages:
+
+- DOE Ref Pre-1980
+- DOE Ref 1980-2004
+- DOE Ref 2004
+- 90.1-2010
+- 189.1-2009
+- 90.1-2007
+
+Climate Zones: 1 - 8
+
+![Climate Zone Map](img/create_model/climate_zones.png)
+ 
+
 ### SketchUp Plug-in - Building Envelope
 For additional information on the SketchUp Plug-in interface, go to the [OpenStudio SketchUp Plug-in Interface Guide](../reference/sketchup_plugin_interface.md) section.
 
-<iframe width="640" height="360" src="http://www.youtube.com/embed/wzzY_W2WELo" allowfullscreen></iframe>
+<iframe width="640" height="360" src="http://www.youtube.com/embed/wzzY_W2WELo?start=44&end=129" allowfullscreen></iframe>
 
-*Above: This video shows you how to choose a template and create your building envelope. It uses the OpenStudio SketchUp Plug-in.*
+*Above: This video shows you how to create your building envelope. It uses the OpenStudio SketchUp Plug-in.*
 
 ### SketchUp Plug-in - Space Types and Thermal Zones
 <iframe width="640" height="360" src="http://www.youtube.com/embed/8LTexVna_vw" allowfullscreen></iframe>

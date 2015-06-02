@@ -7,20 +7,21 @@ The building envelope is created using the SketchUp OpenStudio Plug-in. Refer to
 ------
 
 ### Choosing a template
-The New OpenStudio Model From Template (![New OpenStudio Model From Template Icon](img/plugin_reference_guide/os_new.png)) tool is represented by this icon in the toolbar. Templates contain data for constructions, loads, and schedules for four vintages across all U.S. climate zones. Templates do not contain any geometry.
+Templates contain data for constructions, loads, and schedules for 6 vintages across all U.S. climate zones. Templates do not contain any geometry. Load templates by using the menu under __Extentions/OpenStudio User Scripts/On-Demand Template Generators/Space Type and Construction Set Wizard__. Then select your type of building, vintage, and climate zone from the dialog. You can also get standard space types for that template by choosing "true" on the dialog. Space types can define internal loads, schedule sets, and construction sets.
 
-![New OpenStudio Model From Template Dialog](img/create_model/from_template.png)
 
-*Above: Dialog to choose template.*
+![New OpenStudio Model From Template Dialog](img/menu_template.png)
 
-<iframe width="640" height="360" src="http://www.youtube.com/embed/wzzY_W2WELo" allowfullscreen></iframe>
-*Above: This video shows you how to choose a template before setting up you model.*
+*Above: Load a new template using the menu.*
+
+![New OpenStudio Model From Template Dialog](img/from_template.png)
 
 Vintages:
 
 - DOE Ref Pre-1980
 - DOE Ref 1980-2004
 - DOE Ref 2004
+- 90.1-2010
 - 189.1-2009
 - 90.1-2007
 

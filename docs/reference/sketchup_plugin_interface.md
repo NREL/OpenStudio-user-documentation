@@ -16,8 +16,8 @@ Tools in this set create, open, save, import, or export data to or from your mod
 <tr>
 <td>![New Model From Template Icon](img/plugin_reference_guide/os_new.png)</td>
 <td>
-#### New OpenStudio Model From Template
-This tool closes your current OpenStudio model and creates a new one. It does not close your current SketchUp file, but loads a new OpenStudio model into it.</td>
+#### New OpenStudio Model
+This tool closes your current OpenStudio model and creates a new one. On a Mac it creates an empty model and you have to go under the menu item __Extentions/OpenStudio User Scripts/On-Demand Template Generators/Space Type and Construction Set Wizard__ to add template items like constructions, schedules, and space types. On a PC the template dialog will be available once and you can choose templates. If you want to add additional template types you must go to the __Extentions/OpenStudio User Scripts/On-Demand Template Generators/Space Type and Construction Set Wizard__. </td>
 </tr>
 <tr>
 <td>![Open OpenStudio Model Icon](img/plugin_reference_guide/OSOpen-24_0.png)</td>
