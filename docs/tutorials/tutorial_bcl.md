@@ -125,7 +125,7 @@ There are 4 roles that users can have relative to the group to which they belong
 
 
 ##Uploading and Publishing Content
-There are 2 types of content on the BCL:  components and measures.  Components are the building blocks of an energy model, and include roofs, walls, windows, occupancy and equipment schedules, and weather information, to name a few.  Measures describe a change to an energy model for purposes such as comparison to a baseline model or estimation of potential energy savings. There are two methods of uploading measures to the BCL website:  either through an input form or a file upload. **At this time, only the file upload method is compatible with OpenStudio.** Users must be part of a group to upload content, and only group admins can publish content for their group.
+There are 2 types of content on the BCL:  components and measures.  Components are the building blocks of an energy model, and include roofs, walls, windows, occupancy and equipment schedules, and weather information, to name a few.  Measures describe a change to an energy model for purposes such as comparison to a baseline model or estimation of potential energy savings. Users must be part of a group to upload content, and only group admins can publish content for their group.  Although the instructions below pertain to measures, a similar process can be followed for uploading and updating components.
 
 ###Creating the Measure Zip File
 
@@ -171,16 +171,16 @@ Once the measure has been saved, follow instructions in the [Publishing Content]
 
 ###Editing an Existing Measure
 
-If you want to update a measure that has already been uploaded to the BCL, first go to the URL for your component and click the *New draft* button. If your browser doesn't look like the screenshot below, edit the URL and add "/xml" to the end. To properly update an existing measure, you must re-upload the entire updated zip file.
+If you want to update a measure that has already been uploaded to the BCL, first go to the URL for your component and click the *Upload New Version* button.  To properly update an existing measure, you must re-upload the entire updated zip file.
 
 <div class="centered-image">
 	<figure>
-  	<img src="img/bcl/new_draft_measure.png" alt="New Draft of Existing Component" />
-  	<figcaption>New Draft of Existing Component.</figcaption>
+  	<img src="img/bcl/new_version_measure.png" alt="Upload New Version of Existing Component" />
+  	<figcaption>New Version of Existing Component.</figcaption>
   </figure>
 </div>
 
-Once the new draft of the measure has been saved, follow instructions in the [Publishing Content](#publishing-content) section below for instructions on making the measure visible to others.
+Once the new version of the measure has been saved, follow instructions in the [Publishing Content](#publishing-content) section below for instructions on making the measure visible to others.
 
 ###Publishing Content
 
