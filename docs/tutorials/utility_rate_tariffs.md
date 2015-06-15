@@ -3,9 +3,30 @@ Typically, life cycle cost analyses compare current capital costs required to im
 
 Before this interface is completed, users in the Xcel EDA program may set utility rates for their project in the PAT application using the "Xcel EDA Tariff Selection and Model Setup" EnergyPlus measure. This measure should be added to the simulation workflow as an always run measure so it is applied to all design alternatives in the analysis. Users interested in other utility rates may modify this measure as needed.
 
-## Weather File and Design Days
-Add weather files in the OpenStudio application under the Site tab (first vertical tab) on the left and the "Weather File & Design Days" sub-tab across the top. You can [download weather files](http://apps1.eere.energy.gov/buildings/energyplus/) on the EnergyPlus site.
+## EDA Program Tariffs
+description_tbd
 
-![Open DDY File Dialog](img/run/weather_ddy.png)
+![Xcel Energy EDA Tariff selection measure inputs](img/tariffs/tariffs_xcel.png)
 
-*Above: Screenshot of browsing for design day file.*
+*Above: Screenshot of Xcel Energy EDA Tariff selection measure inputs.*
+
+## Flat Tariffs
+description_tbd
+
+![Flat Tariff measure inputs](img/tariffs/tariffs_flat.png)
+
+*Above: Screenshot of Flat Tariff measure inputs.*
+
+## Block Tariffs
+description_tbd
+
+![Block Tariff measure inputs](img/tariffs/tariffs_block.png)
+
+*Above: Screenshot of Block Tariff measure inputs.*
+
+## Time and Date Dependant Tariffs
+description_tbd
+
+![Time and Date Dependant Tariff measure inputs](img/tariffs/tariffs_time_and_date.png)
+
+*Above: Screenshot of Time and Date Dependant Tariff measure inputs.*
