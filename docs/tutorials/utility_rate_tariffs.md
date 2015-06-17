@@ -34,5 +34,8 @@ The time and date dependant tariff has four possible rates for electricity consu
 *Above: Screenshot of Time and Date Dependant Tariff measure inputs.*
 
 ## Custom Tariff Solutions
-If none of these tariff examples meet your needs you have a few options. If you are comfortable with ruby, you can modify one of our non-EDA tariff measures. This is good if you want to change how the tariffs are structured but want to leave user editable inputs exposed for the actual rates. If you want your rates hard coded then you could also modify one of the EDA tariff measures. One advantage of this approach is that you mainly need to edit the IDF files in the measure's "resources" directory. Changes to the ruby code are minimal.
+If none of these tariff examples meet your needs we have created a generic tariff measure. You can save your own IDF snippets into the "resources" directory for this measure. Each file shoudl have one UtilityCost:Tariff object, and any associated objects that refer to it such as UtilityCost:Charge:Simple or  Schedule:Compact. The Measure will create a user argument for each type of meter refered to by UtilityCost:Charge:Simple objects in the directory. You can then choose one tariff object to be imported for ech meter. It has be pre-loaded with a number of examples from the [EnergyPlus Input/Output Reference](http://nrel.github.io/EnergyPlus/InputOutputReference/03-Economics/#utilitycosttariff-examples)
 
+![Generic Tariff measure inputs](img/tariffs/tariffs_generic.png)
+
+*Above: Screenshot of Generic Tariff measure inputs.*
