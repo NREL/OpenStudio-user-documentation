@@ -101,6 +101,10 @@
             <ul class="dropdown-menu" role="menu">
             
               <li>
+                <a href="../utility_rate_tariffs">Utiity Rate Tariffs</a>
+              </li>
+            
+              <li>
                 <a href="../life_cycle_costing_examples">Life Cycle Cost Analysis</a>
               </li>
             
@@ -367,7 +371,7 @@
 </li>
 </ul>
 <h2 id="uploading-and-publishing-content">Uploading and Publishing Content</h2>
-<p>There are 2 types of content on the BCL:  components and measures.  Components are the building blocks of an energy model, and include roofs, walls, windows, occupancy and equipment schedules, and weather information, to name a few.  Measures describe a change to an energy model for purposes such as comparison to a baseline model or estimation of potential energy savings. Users must be part of a group to upload content, and only group admins can publish content for their group.  Although the instructions below pertain to measures, a similar process can be followed for uploading and updating components.</p>
+<p>There are 2 types of content on the BCL:  components and measures.  Components are the building blocks of an energy model, and include roofs, walls, windows, occupancy and equipment schedules, and weather information, to name a few.  Measures describe a change to an energy model for purposes such as comparison to a baseline model or estimation of potential energy savings. There are two methods of uploading measures to the BCL website:  either through an input form or a file upload. <strong>At this time, only the file upload method is compatible with OpenStudio.</strong> Users must be part of a group to upload content, and only group admins can publish content for their group.</p>
 <h3 id="creating-the-measure-zip-file">Creating the Measure Zip File</h3>
 <p>New measures are made in the OpenStudio application or Parametric Analysis tool by either creating a new measure or cloning an existing one. OpenStudio will place all necessary files in the directory set under preferences as <em>My Measures Directory</em>. Go within the directory for the measure and compress the files as shown below. Confirm that the xml file is updated after your last edit of the measure.rb file by clicking the <em>Sync Project Measures with Library</em> button or opening the <em>Apply Measure Now</em> dialog.</p>
 <div class="centered-image">
@@ -402,15 +406,15 @@
 
 <p>Once the measure has been saved, follow instructions in the <a href="#publishing-content">Publishing Content</a> section below for instructions on making the measure visible to others.</p>
 <h3 id="editing-an-existing-measure">Editing an Existing Measure</h3>
-<p>If you want to update a measure that has already been uploaded to the BCL, first go to the URL for your component and click the <em>Upload New Version</em> button.  To properly update an existing measure, you must re-upload the entire updated zip file.</p>
+<p>If you want to update a measure that has already been uploaded to the BCL, first go to the URL for your component and click the <em>New draft</em> button.</p>
 <div class="centered-image">
     <figure>
-    <img src="../../img/bcl/new_version_measure.png" alt="Upload New Version of Existing Component" />
-    <figcaption>New Version of Existing Component.</figcaption>
+    <img src="../../img/bcl/new_draft_measure.png" alt="New Draft of Existing Component" />
+    <figcaption>New Draft of Existing Component.</figcaption>
   </figure>
 </div>
 
-<p>Once the new version of the measure has been saved, follow instructions in the <a href="#publishing-content">Publishing Content</a> section below for instructions on making the measure visible to others.</p>
+<p>Once the new draft of the measure has been saved, follow instructions in the <a href="#publishing-content">Publishing Content</a> section below for instructions on making the measure visible to others.</p>
 <h3 id="publishing-content">Publishing Content</h3>
 <p>All members of a group can add content to the BCL, but only users with the <em>editor</em> or <em>administrator member</em> group roles can review and publish their group's content.  Content can be published by clicking the <em>My Dashboard</em> link at the top right of the page, then clicking on the <em>My content</em> tab and selecting the <em>group content</em> sub-tab. </p>
 <div class="centered-image">
