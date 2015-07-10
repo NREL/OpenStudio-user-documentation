@@ -171,7 +171,7 @@ Once the measure has been saved, follow instructions in the [Publishing Content]
 
 ###Editing an Existing Measure
 
-If you want to update a measure that has already been uploaded to the BCL, first go to the URL for your component and click the *New draft* button. If your browser doesn't look like the screenshot below, edit the URL and add "/xml" to the end. To properly update an existing measure, you must re-upload the entire updated zip file.
+If you want to update a measure that has already been uploaded to the BCL, first go to the URL for your component and click the *New draft* button.
 
 <div class="centered-image">
 	<figure>
