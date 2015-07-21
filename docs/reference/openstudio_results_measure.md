@@ -1,11 +1,11 @@
 <h1>OpenStudio Results Measure</h1>
 
 ## Measure Overview
-In OpenStudio 1.8.1 and later this measure replaces the monthly end use overview as the default measure on any simulation. You don't have to add it to your workflow, it just runs. This measure creates high level tables and charts pulling both from model inputs and EnergyPlus results, all data is in IP units. It has building level information as well as detail on space types, thermal zones, HVAC systems, envelope characteristics, and economics. Click the heading above a chart to view a table of the chart data. If you have OpenStudio 1.7.5 or later, you can also download a copy of this from the [BCL](https://bcl.nrel.gov/node/82918), however offline viewing of charts within the OpenStudio Application requires 1.8.1 or later. If you are viewing the report through a web browser you won't see charts if you are offline, but you will still see tables. While the report generally uses high level model data or tabular results, a few sections do request hourly or monthly timeseries data. This applies to the HVAC Load Profiles and Zone Conditions sections.
+In OpenStudio 1.8.1 and later this measure replaces the monthly end use overview as the default measure on any simulation. You don't have to add it to your workflow, it just runs. This measure creates high level tables and charts pulling both from model inputs and EnergyPlus results, all data is in IP units. It has building level information as well as detail on space types, thermal zones, HVAC systems, envelope characteristics, and economics. Click the heading above a chart to view a table of the chart data. If you have OpenStudio 1.7.5 or later, you can also download a copy of this from the [BCL](https://bcl.nrel.gov/node/82918), however offline viewing of charts within the OpenStudio Application requires 1.8.1 or later. If you are viewing the report through a web browser you won't see charts if you are offline, but you will still see tables. While the report generally uses high level model data or tabular results, a few sections do request hourly or monthly time-series data. This applies to the HVAC Load Profiles and Zone Conditions sections.
 
-The report is broken down into section, which can be navigated using the table of contents at the left side of the report. If the table of contents and the main body of the report start to overlap with each other than increase the width of your application or web browser window. Each section has one or moore tables or charts. Be default where there is a chart table data is hidden, but you can expand it by clicking on the blue title above the chart that says "view table". If there is no data for a section, the header for the section will still show but you will see a message that says "No Data to Show for ...". For some tables or charts within a section the table may be hidden if there isn't any content. This is true for example for Renewable Energy Source Summary in the Model Summary, Fuel Tables in the Monthly Overview, and Thermal Zones in Zone Equipment Detail.
+The report is broken down into 21 sections which can be navigated using the table of contents at the left side of the report. If the table of contents and the main body of the report start to overlap with each other,  increase the width of your application or web browser window. Each section has one or moore tables or charts. Be default where there is a chart, table data is hidden, but you can expand it by clicking on the blue title above the chart that says "view table". If there is no data for a section, the header for the section will still show but you will see a message that says "No Data to Show for ...". For some tables or charts within a section the table may be hidden if there isn't any content. This is true for example for Renewable Energy Source Summary in  Model Summary, Fuel Tables in  Monthly Overview, and Thermal Zones in Zone Equipment Detail.
 
-As this measure develops more data may be added to specific sections and new sections may be added, but we don't want this to be an all purpose measure. It is mean to provide general data that you would typically want on any simulation. If you want to trouble shoot specific aspects of your model or have use case or specific reporting requirements, you can add additional reporting measures to the workflow. As described in the "Developing Your Own Reporting Measures" section below, we hope both internally and externally to see the same framework and charting libraries used as much as possible. This will provide a more consistent experiance for both users and measure writers.
+As this measure develops more data may be added to specific sections and new sections may be added, but we don't want this to be an all purpose measure. It is meant to provide general data that you would typically want on any simulation. If you want to trouble shoot specific aspects of your model or have use case or specific reporting requirements, you can add additional reporting measures to the workflow. As described in the "Developing Your Own Reporting Measures" section below, we hope both internally and externally to see the same framework and charting libraries used as much as possible. This will provide a more consistent experience for users and measure writers.
 
 The rest of this section describes the specific sections of the current version of the measure.
 
@@ -101,67 +101,67 @@ The second table shows relative humidity in 5% bins, along with mean relative hu
 *Above: Zone Conditions - Humidity Table.*
 
 ## Zone Overview
-Brief Description
+This section gives an overview of zone geometry and internal loads. It also identifies if a zone is conditioned, is part of the flor area, and what its zone multiplier is.
 
-![Xcel Energy EDA Tariff selection measure inputs](img/openstudio_results/measure_args.png)
+![Zone Overview section](img/openstudio_results/zone_overview.png)
 
-*Above: caption_text.*
+*Above: Zone Overview section.*
 
 ## Zone Equipment Detail
-Brief Description
+This section lists creates a table for each thermal zone that has zone equipment, other than a terminal. Each table lists all zone equipment except for terminals, information on terminal types used can be found in the Air Loops Details section. For some types of equipment we list additional information, for others we just list the object type. Over time we will provide more information on additional object types. This is also true for the Air Loops and Plant Loops Detail sections.
 
-![Xcel Energy EDA Tariff selection measure inputs](img/openstudio_results/zone_equip_k12.png)
+![Zone Equipment section](img/openstudio_results/zone_equip_k12.png)
 
-*Above: caption_text.*
+*Above: Zone Equipment section.*
 
 ## Air Loops Detail
-Brief Description
+This section has a table for each air loop in the model. Each table is broken down into supply, demand, and controls sub-tables. The demand supply section lists objects on the supply side of the air loop. As with Zone Equipment Detail section, some objects have additional information listed, other objects just list the class of object. The demand section summaries the number of zones on the air loop along with the floor area of those thermal zones, the range of thermostat setpoint values for both heating and cooling, and a list of the types of terminals used on the air loop. The controls sub-table provides high level controls information about the air loop.
 
-![Xcel Energy EDA Tariff selection measure inputs](img/openstudio_results/air_loop.png)
+![First table in Air Loops Detail section](img/openstudio_results/air_loop.png)
 
-*Above: caption_text.*
+*Above: First table in Air Loops Detail section.*
 
 ## Plant Loops Detail
-Brief Description
+This section has a table for each plant loop in the model. It is organized very much like the Air Loops Detail section. The demand section of the plant loop summary will list thermal zones, air loops or other plant loops that are on the demand side of the loop. In addition to loops that condition the building, loops providing service water heating will also appear hear.
 
-![Xcel Energy EDA Tariff selection measure inputs](img/openstudio_results/plant_loop.png)
+![First table in Plant Loops Detail section](img/openstudio_results/plant_loop.png)
 
-*Above: caption_text.*
+*Above: First table in Plant Loops Detail section.*
 
 ## Outdoor Air
-Brief Description
+This section has a table that lists the number of occupants and volume of each zone along with the average and minimum values for mechanical ventilation and infiltration.
 
-![Xcel Energy EDA Tariff selection measure inputs](img/openstudio_results/outdoor_air.png)
+![Outdoor Air section](img/openstudio_results/outdoor_air.png)
 
-*Above: caption_text.*
+*Above: Outdoor Air section.*
 
 ## Cash Flow
-Brief Description
+This section shows the cash flow over the analysis period for your project, which defaults to 25 years. You wont see any data in this section unless you have added lifecycle costs and or utility rates to your model. As with other charts you can hover over chart data or click the blue heading above the chart to view precise value in tabular form.
 
-![Xcel Energy EDA Tariff selection measure inputs](img/openstudio_results/cash_flow.png)
+![Cash Flow chart](img/openstudio_results/cash_flow.png)
 
-*Above: caption_text.*
+*Above: Cash Flow chart.*
 
 ## Site and Source Summary
-Brief Description
+This section has two tables. The lists total and net values for both site and source energy. The second table lists the site to source conversion factors by fuel to calculate values in the first table.
 
-![Xcel Energy EDA Tariff selection measure inputs](img/openstudio_results/site_and_source.png)
+![Site and Source Summary section](img/openstudio_results/site_and_source.png)
 
-*Above: caption_text.*
+*Above: Site and Source Summary section.*
 
 ## Schedule Overview
-Brief Description
+This section provides a small chart for each schedule used in the model. This looks very much like what you can see in the Schedule Tab of the OpenStudio application except that all of the possible day profiles for a schedule are overlaid on each other. Rules are listed by their priority with a description for the days of teh week and dates of the year they are applicable. The colors for the default profile adn rules match what is used in the application. You can expand the table for this section to see the use count for each schedule.
 
-![Xcel Energy EDA Tariff selection measure inputs](img/openstudio_results/schedule_overview.png)
+![Schedule Overview charts](img/openstudio_results/schedule_overview.png)
 
-*Above: caption_text.*
+*Above: Schedule Overview charts.*
 
 ## Measure Arguments
-Brief Description
+If you are running this report in OpenStudio 8.1 or later all sections are automatically shown. If you add it to the workflow then user arguments will become visible. For this measure there is a check box for each section to determine if you want to generate that section or not. You could use this to create a streamline report with only the sections are are interested visible. If you disable sections that request time-series data, then those output variables wont' be requested, resulting in a smaller SQL file. Since most sections in this report only request tabular data, it won't affect much, but for other future reports this coudl be more useful. The Zone Conditions section requests hourly zone temperature and humidity values and the HVAC Load Profiles section requests monthly outdoor air dry bulb temperatures.
 
-![Xcel Energy EDA Tariff selection measure inputs](img/openstudio_results/measure_args.png)
+![View of Arguments in OpenStudio Results measure](img/openstudio_results/measure_args.png)
 
-*Above: caption_text.*
+*Above: View of Arguments in OpenStudio Results measure.*
 
 ## Developing Your Own Reporting Measures
 Brief Description
