@@ -96,7 +96,7 @@ The zone conditions section has two tables. Both tables list all of the zones in
 
 The second table shows relative humidity in 5% bins, along with mean relative humidity for each zone. In both cases the table cells are color coded to make it easier to quickly can over. Cells with under 500 hours are not colored. Cells with more than 500 hours are yellow. More than 1000 hours - orange. More than 200 hours - red.
 
-![Zone Conditions - Humidity Table](img/openstudio_results/zone_equip_k12.png)
+![Zone Conditions - Humidity Table](img/openstudio_results/zone_conditions_rh.png)
 
 *Above: Zone Conditions - Humidity Table.*
 
@@ -164,5 +164,111 @@ If you are running this report in OpenStudio 8.1 or later all sections are autom
 *Above: View of Arguments in OpenStudio Results measure.*
 
 ## Developing Your Own Reporting Measures
-Brief Description
+This measure was created to fill a need in providing easy access to more detailed model and simulation results data, but it serves another role as well. It was created in a way that was very easy to use as a template for custom user reports. We setup a framework and added support for a variety of chart types. The only coding required to make your own custom report is to provide the data. While we have a separate [Measure Writing Guide](http://nrel.github.io/OpenStudio-user-documentation/reference/measure_writing_guide/) in our documentation, it seemed fitting to explain here how you would add your own tables and charts to this report, or to create a new clean report.
 
+The first step is to gather the data you want in a table or chart. This could be simulation results, model inputs, or even just hard coded table as in this example. It could also be read in from a text file. In the "resources" folder of the measure this is a file named "os_lib_reporting.rb". Most of the methods (start with "def OsLib_Reporting.my_method") in this file do one of two things. They define a section used in the report or they define a table that is used by one of the sections. The code below shows two sample methods with hard coded table data about tasty treats. You can copy and modify these methods to show what you want. The section description and all of the table data can be in one method, or if it is easier to break things up you can have a method for each table, and then call it from the method that makes the section. in this case.  ```template_tables << OsLib_Reporting.template_table(model,sqlFile,runner) ``` adds in a table defined elsewhere. The code for a sample section method and table method are shown below.
+
+```ruby
+  # create template section
+  def OsLib_Reporting.template_section(model,sqlFile,runner,name_only = false)
+
+    # array to hold tables
+    template_tables = []
+
+    # gather data for section
+    @template_section = {}
+    @template_section[:title] = 'Tasty Treats'
+    @template_section[:tables] = template_tables
+
+    # stop here if only name is requested this is used to populate display name for arguments
+    if name_only == true
+      return @template_section
+    end
+
+    # notes:
+    # The data below would typically come from the model or simulation results
+    # You can loop through objects to make a table for each item of that type, such as air loops
+    # If a section will only have one table you can leave the table title blank and just rely on the section title
+    # these will be updated later to support graphs
+
+    # create table
+    template_table_01= {}
+    template_table_01[:title] = 'Fruit'
+    template_table_01[:header] = ['Definition','Value']
+    template_table_01[:units] = ['','$/pound']
+    template_table_01[:data] = []
+
+    # add rows to table
+    template_table_01[:data] << ['Banana',0.23]
+    template_table_01[:data] << ['Apple',0.75]
+    template_table_01[:data] << ['Orange',0.50]
+
+    # add table to array of tables
+    template_tables << template_table_01
+
+    # using helper method that generates table for second example
+    template_tables << OsLib_Reporting.template_table(model,sqlFile,runner)
+
+    return @template_section
+
+  end
+
+  # create template section
+  def OsLib_Reporting.template_table(model,sqlFile,runner)
+
+    # create a second table
+    template_table = {}
+    template_table[:title] = 'Ice Cream'
+    template_table[:header] = ['Definition','Base Flavor','Toppings','Value']
+    template_table[:units] = ['','','','scoop']
+    template_table[:data] = []
+
+    # add rows to table
+    template_table[:data] << ['Vanilla','Vanilla','NA',1.5]
+    template_table[:data] << ['Rocky Road','Chocolate','Nuts',1.5]
+    template_table[:data] << ['Mint Chip','Mint','Chocolate Chips',1.5]
+
+    return template_table
+
+  end
+```
+
+This example doesn't discuss charts, but you can look at other methods to learn how to add charts. It looks something like this
+
+```ruby
+     output_data_space_type_breakdown[:chart_type] = 'simple_pie'
+     output_data_space_type_breakdown[:chart] = []
+
+     # data for graph
+     output_data_space_type_breakdown[:chart] << JSON.generate({:label =>display,:value => value, :color => color})
+```
+
+Once you have defined your need to tell the measure to use the new section method. For this last step you need to add a line to the possible_sections method of the measure.rb file. In this example I added ```result << "template_section"``` to the top of the table of contents.
+
+```ruby
+  def possible_sections
+    result = []
+
+    # methods for sections in order that they will appear in report
+    result << "template_section"
+    result << "building_summary_section"
+    result << "annual_overview_section"
+    result << "monthly_overview_section"
+    result << "utility_bills_rates_section"
+    result << "envelope_section_section"
+    result << "space_type_breakdown_section"
+    result << "space_type_details_section"
+
+    # removed other sections from code example to make it shorter
+
+    return result
+  end
+```
+
+Adding that line of code will not only add the new section to the arguments for the measure, but will also call the method in the run method of the measure to gather the data and generate an HTML table. If you don't want to extend the os_lib_reporting.rb file, you can create your own version that functions in the same way, but only has code for sections you are using. You just need to modify this line at the top of the "measure.rb" file to point to your library ```require "#{File.dirname(__FILE__)}/resources/os_lib_reporting"```. Below is a screenshot of the resting Tasty Treats section. If you want to change the title in the HTML file it is in this code in the "report.html.erb" file in the "resources" directory ```<title>OpenStudio Results</title>```.
+
+![Example section with two tables](img/openstudio_results/example_section.png)
+
+*Above: Example section with two tables.*
+
+You can write completely custom measure reports that don't look anything like this, and use different html and charting technologies. This framework is just provided as a way to make reports where all you want to worry about is how to get the data you want to see, and not how to generate the HTML code.
