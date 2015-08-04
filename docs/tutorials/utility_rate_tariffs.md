@@ -34,7 +34,7 @@ The time and date dependent tariff has four possible rates for electricity consu
 *Above: Screenshot of Time and Date Dependant Tariff measure inputs.*
 
 ## Custom Tariff Solutions
-If none of these tariff examples meet your needs we have created a generic tariff measure. You can save your own IDF snippets into the "resources" directory for this measure. Each file should have one UtilityCost:Tariff object, and any associated objects that refer to it such as UtilityCost:Charge:Simple or Schedule:Compact. The Measure will create a user argument for each type of meter referred to by UtilityCost:Charge:Simple objects in the directory. You can then choose one tariff object to be imported for each meter. It has been pre-loaded with a number of examples from the [EnergyPlus Input/Output Reference](http://nrel.github.io/EnergyPlus/InputOutputReference/03-Economics/#utilitycosttariff-examples)
+If none of these tariff examples meet your needs we have created a generic tariff measure. You can save your own IDF snippets into the "resources" directory for this measure. Each file should have one UtilityCost:Tariff object, and any associated objects that refer to it such as UtilityCost:Charge:Simple or Schedule:Compact. The Measure will create a user argument for each type of meter referred to by UtilityCost:Tariff objects in the directory. You can then choose one tariff object to be imported for each meter. It has been pre-loaded with a number of examples from the [EnergyPlus Input/Output Reference](http://nrel.github.io/EnergyPlus/InputOutputReference/03-Economics/#utilitycosttariff-examples)
 
 ![Generic Tariff measure inputs](img/tariffs/tariffs_generic.png)
 
