@@ -28,22 +28,28 @@ To run your simulation hit the green run button. Select the daylighting engine y
 
 *Above: Hit the run button to start running your simulation.*
 
-![Radiance Error Dialog](img/run/radiance_warning.png)
-
-*Above: If you select Radiance you must have the required objects in your model.*
-
 ![Run Simulation Output](img/run/output.png)
 
 *Above: The output area displays the status of the run.*
 
+![Run Tree Simulation Output](img/run/run_tree.png)
+
+*Above: Right click on items to open directories and files.*
+
 ## Looking at Results
-Standard OpenStudio results are provided with your run. If you add in utility bills you can also view a calibration report.
+Standard OpenStudio results are provided with your run. If you add in utility bills you can also view a calibration report. The links on the left side of the report will take you through the sections.
+
+[__Learn more about the OpenStudio Standard Results Measure in our References Section.__](../reference/openstudio_results_measure/)
 
 You can also use measures to add additional reports. You can also write your own measures to create custom reports. Add reporting measures on the OpenStudio Measures or Scripts tab.
 
 ![Results Summary Tab](img/run/os_results.png)
 
 *Above: This screenshot shows and example of the standard OpenStudio results.*
+
+![Results 2 Summary Tab](img/run/reports2.png)
+
+*Above: This is another chart available in the standard OpenStudio results.*
 
 ![Calibration Report](img/run/calibration_report.png)
 
