@@ -8,7 +8,7 @@ The [OpenStudio Quick Start Guide](img/pdfs/openstudio_interface_quickstart.pdf)
 ## Overview
 The tabs on the left that move vertically are ordered in a suggested workflow.
 
-![Interface Overview](img/os_interface/overview.png)
+[![Overview](img/os_interface/overview.png "Click to view")](img/os_interface/overview.png)
 
 *Above: Overview of the OpenStudio Application Interface.*
 
@@ -90,10 +90,6 @@ You can use the Multi-edit feature on individual columns (as shown below) or on 
 [![Grid Image](img/os_interface/loads_filter_small.png "Click to view")](img/os_interface/loads_filter.png)
 
 *Above: Above: Hit the "Loads" button to edit and view loads by space type. Click on the name of a component and select the  "Edit" panel on the right to inspect and edit that item.*
-
-![Thermal Zone Grid](img/os_interface/thermal_zone_grid.png)
-
-
 
 ------
 

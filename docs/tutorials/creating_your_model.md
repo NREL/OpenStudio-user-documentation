@@ -74,7 +74,7 @@ Entire Model." This will not work if you are inside a single space when you run 
 
 ![Surface Matching](img/create_model/surface_matching.png)
 
-*Above: Surface Matching dialog shown.*
+*Above: Surface Matching window shown.*
 
 <!--
 ### Air Walls
@@ -118,17 +118,21 @@ To assign schedules, add loads, add HVAC systems, and more, open your model in t
 
 ------
 
+## Site
+Under site you can add the weather file, import design days, and set the year. 
+
+You can set the day of the week the simulation should start or select a calendar year. Use a calendar year if you are going to calibrate the model with utility bills.
+
+The tab can also be used to configure and turn daylight savings time on and off.
+
+[![Site Weather and Design Days](img/create_model/weather_ddy_new.png "Click to view")](img/create_model/weather_ddy_new.png)
+
+*Above: Add weather file, select year, and import design days.*
+
+------
+
 ## Schedules
 To create and edit schedules in the OpenStudio application go to the schedules tab. Check out the [OpenStudio Application Interface Guide](../reference/openstudio_application_interface.md) for an overview of the interface.
-
-### Year Settings
-The Year Settings sub-tab lets you set the day of the week the simulation should start. Define using Calendar Year or First Day Of Year buttons and pull-downs.
-
-The tab can also be used to configure and turn Daylight Savings Time on and off.
-
-![Year Settings Tab](img/create_model/year.png)
-
-*Above: Select the year for you simulation.*
 
 ------
 
@@ -156,13 +160,13 @@ Although you can use Compact and other schedule types in your model, you can vis
 
 The lower profile view is a navigation for when you are zoomed to 15-minute or 1-minute time steps.
 
-[![Schedules Editor Tab](img/create_model/schedules_large.png "Click to view")](img/create_model/schedules_large.png)
+[![Schedules Editor Tab](img/create_model/schedules.png "Click to view")](img/create_model/schedules.png)
 
 *Above: An annotated screenshot of the schedules editing interface. Click image for a large view of the image.*
 
 <iframe width="640" height="360" src="http://www.youtube.com/embed/PCcxruCaZO0?start=210&end=788" allowfullscreen></iframe>
 
-*Above: This video demonstrates how you can inspect, alter, and apply resource objects in the OpenStudio Application.*
+*Above: This video demonstrates how you can inspect, alter, and apply resource objects in an older version of the  OpenStudio Application.*
 
 <!--
 - Assigning Schedules and Schedule Sets
@@ -181,7 +185,7 @@ A Construction Set object is structured very much like the Schedule Set. It can 
 
 Construction sets do not have to be complete sets. For example, you can have a construction set assigned to a story that has only an exterior wall. For the rest of the surface types, constructions will be inherited from the building object.
 
-![Construction Sets Tab](img/create_model/construct_set.png)
+![Construction Sets Tab](img/create_model/construct_sets.png)
 
 *Above: This screenshot shows an example of a construction set added from the library.*
 
@@ -278,9 +282,7 @@ Water Use Equipment is also unique in that it takes schedules, and is not part o
 ------
 
 ## Space Types
-Space types are the work horses of the resources in OpenStudio. Space types can define internal loads, schedule sets, and construction sets.
-
-Space types define specific spaces or groups of specific spaces in your model. The spaces inherit all objects of the space type. If you redefine a space type, or an underlying object, it will affect all spaces using that space type.
+Space types can define internal loads, schedule sets, and construction sets.cSpace types define specific spaces or groups of specific spaces in your model. The spaces inherit all objects of the space type. If you redefine a space type, or an underlying object, it will affect all spaces using that space type.
 
 The space types tab in the OpenStudio application is organized into a grid view. You can look through all your space types and edit the settings.
 
@@ -288,16 +290,22 @@ The space types tab in the OpenStudio application is organized into a grid view.
 - Inspecting and Adjusting Space Types
 - Assigning Space Types and Default Space Types
 -->
-
-![Space Type Grid](img/os_interface/space_type_grid1.png)
+[![Space Types General](img/create_model/space_types_general.png "Click to view")](img/create_model/space_types_general.png)
 
 *Above: The grid view provides a spreadsheet style layout.*
+
+### Editing Multiple Items
+You are now able to check rows and then select an item you want to apply to those rows. When you hit the "Apply to Selected" the yellow selected item will be copied to the checked rows.
+ 
+[![Space Types Multiedit](img/create_model/space_types_multiedit.png "Click to view")](img/create_model/space_types_multiedit.png)
+
+*Above: You can apply settings from one space to other using the "Apply to Selected" button at the top of the columns.*
 
 ### General
 #### Rendering Color
 This feature can be adjusted in the SketchUp Plug-in as well and the color selected will be used in the other application as well.
 
-![Rendering Color Dialog](img/create_model/render_color.png)
+![Rendering Color Dialog](img/create_model/space_types_render.png)
 
 #### Default Construction and Schedule
 You can assign constructions and schedules to each space type that will be used whenever that space type is used in the model.
@@ -305,19 +313,13 @@ You can assign constructions and schedules to each space type that will be used 
 #### Design Specification Outdoor Air
 This drop zone is located under the "General" button.
 
-![Outdoor Air](img/create_model/outdoor_air.png)
-
 #### Space Infiltration Design Flow Rates and Space Infiltration Effective Leakage Areas
 These can be added and edited under the "General" button by scrolling to the right. Drag-and-drop from library.
-
-[![Infiltration Leakage](img/create_model/infiltration_leakage.png "Click to view")](img/create_model/infiltration_leakage.png)
-
-*Above: Click on the image above to view a larger version.*
 
 ### Loads
 If you select the "Loads" button in the Space Type tab, you will see a drop zone to create new loads. You can have multiple loads of the same type.
 
-![Space Type Loads](img/os_interface/space_type_grid_loads.png)
+[![Schedules Editor Tab](img/create_model/space_types_loads.png "Click to view")](img/create_model/space_types_loads.png)
 
 *Above: Hit the "Loads" button to edit and view loads by space type. Click on the name of a component and select the "Edit" panel on the right to inspect, edit, or delete that item. You can edit the load definition in the example shown above.*
 
@@ -354,33 +356,45 @@ Measures are scripts that can quickly alter your model or create different repor
 ------
 
 ## Using the Facility Tab to Inspect and Edit Your Model
-The Facility tab serves a number of functions. First, it allows you to see a hierarchical tree of your model. This tree can be organized by building story, thermal zone, or space type.
+The Facility tab includes settings for your building, stories, shading, and exterior equipment. It used to be a tree view, but this did not allow the user to view more than one item at a time. You can view the Building object. This contains top level construction, schedule, or space type assignments, and sets the rotation for the building.
 
-If you are viewing the tree by space type, and a space does not have a space type assigned, it would appear under Unassigned Space Type. A similar pattern is followed for Thermal Zone and Story.
+To view and edit the spaces in your model, use the Spaces tab below the Facility tab on the left.
 
-The Facility tab is also where you can select spaces and assign a building story, thermal zone, and space type. This is also where you can add loads to a space. These loads would be on top of loads inherited from the space type.
+![Facility Tab](img/create_model/facility.png)
 
-You can also drill down to inspect individual surfaces or subsurfaces.
+*Above: A screenshot of the facilities tab with the building sub-tab selected.*
 
-![Facility Tab](img/create_model/facility_bldg.png)
+![Annotated Facility Tab](img/create_model/facility_strories.png)
 
-*Above: A screenshot of the facilities tab with the building selected.*
+*Above: this screenshot shows the contents of the stories tab. You can add and edit story settings here.*
 
-You can view the Building object. This contains top level construction, schedule, or space type assignments, and sets the rotation for the building.
+------
 
-![Annotated Facility Tab](img/create_model/facility.png)
+## Spaces
+The new spaces view lets you edit the spaces and view the surfaces and sub-surfaces in those spaces. The Story, Thermal Zone, and Space Type filters can help you find a particular space to edit.
 
-*Above: An annotated screenshot of the facilities tab with space sort on.*
+Some items are not editable in the OpenStudio application and have to be edited in the SketchUp Plug-in. Use the horizontal tabs to inspect and edit space attributes. 
 
-This screenshot of the Facility tab below shows a surface selected.
+* Properties
+* Loads
+* Surfaces
+* Subsurfaces
+* Interior Partitions
+* Shading
 
-Although you will generally work with the SketchUp Plug-in to define the building envelope, having a surface or subsurface selected in the Facility tab will allow you inspect and edit most attributes. Only the vertices are locked down.
+Each horizontal tab may have sub-buttons that hold additional settings.
 
-Spaces and surfaces cannot be deleted or created in the OpenStudio application. You need to use the SketchUp Plug-in to do that.
+[![Spaces Properties](img/create_model/spaces_properties.png "Click to view")](img/create_model/spaces_properties.png)
 
-![Facility Tab Sub-surface](img/create_model/facility_subsurface.png)
+*Above: The sub-buttons under the Properties tab are General, Airflow, and Custom.*
 
-*Above: Selecting and editing a sub-surface.*
+[![Spaces Surfaces](img/create_model/spaces_surfaces.png "Click to view")](img/create_model/spaces_surfaces.png)
+
+*Above: The spaces in your model are listed with all their surfaces under the Surfaces tab.*
+
+[![Spaces Subsurfaces](img/create_model/spaces_subsurfaces.png "Click to view")](img/create_model/spaces_subsurfaces.png)
+
+*Above: The subsurfaces are organized under the space they belong to and the surface they are connected to is displayed as well.*
 
 ------
 
@@ -552,7 +566,7 @@ To add a refrigeration system select one from the library and add drag it to the
 
 Click on the zoom button by the name of the refrigeration system to go to a view of that system, add components from the library.
 
-[![Refrigeration System](img/create_model/refrig_1_large.png "Click to view")](img/create_model/refrig_1_large.png)
+[![Refrigeration System](img/create_model/refrig_grid.png "Click to view")](img/create_model/refrig_grid.png)
 
 *Above: Add refrigeration systems to your model under the HVAC tab. Click image to view a larger version.*
 
@@ -675,7 +689,7 @@ With measures, downloaded from BCL,  life cycle costs for different design alter
 ## Calibration with Utility Bills
 Add utility bills for calibration on the Utility Bills Tab under Site.
 
-First, you must __select a weather file__ and __go to the schedules tab under year and select the year__ before you can enter the bills.
+First, you must __select a weather file__ and __a year__ before you can enter the bills.
 
 1. Select the type of utility on the left.
 2. Hit the plus button to add bills.
