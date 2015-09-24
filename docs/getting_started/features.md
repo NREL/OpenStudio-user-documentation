@@ -1,17 +1,90 @@
 <h1>Current Features</h1>
 OpenStudio is constantly being improved, with a less stable developer release available every 2 weeks and a stable major release quarterly (4 per year). The features that are available in the current major release are described below. To learn what is coming in the future, see the [Planned Features](../getting_started/roadmap.md) page.
 
-## New in OpenStudio 1.7.0
+## New in OpenStudio 1.9.0
 
-The biggest new feature in OpenStudio 1.7.0 is the addition of multi-edit capability to grid views in the OpenStudio Application. Implemented for the Thermal Zone and Space Type tabs, this new feature allows users to change properties of several objects at once. More grid views will be applied throughout the remainder of the OpenStudio Application in coming releases. A video tutorial for this new feature is available below.
+OpenStudio 1.9.0 adds a substantial number of new HVAC features. Among the new features are three entirely new categories of HVAC capability beyond the routine component additions. The first new category is a family of availability managers that allow for detailed control over the air system period of operation. With these new availability managers, it is possible to have detailed control over night cycling, night ventilation, optimum morning start, temperature-based on/off and more. The second new category of HVAC capability included in this release is another family of control related inputs known as plant operation schemes. With plant operation schemes, it is possible to control the sequencing of plant system supply components relative to one another while considering ambient conditions. Third, OpenStudio has added support for dual duct air based systems. These new features are available through the OpenStudio API and Measures; user interface controls will be added in a future release. All of these features are backwards compatible, meaning users now have access to detailed control inputs, but the established OpenStudio default control remains in place. Therefore, these new features can be utilized on an as-needed basis and existing models will continue to operate in the same way. Examples and tutorials of applying these new features will be available in the weeks following the release of OpenStudio 1.9.0.
+There are significant additions at the HVAC component level, including a large number of new coil types, Zone HVAC, and plant components. Of particular interest are a number of new variable speed DX coils, new zone mixing inputs, a new Zone HVAC model that accommodates natural ventilation, idealized plant components that allow a user defined constant temperature source on the supply side, and a user defined load on the demand. The full list of new input object types is included below. All of these are available in the OpenStudio API and Measures, and many of them are available in the graphical interface through drag and drop.
+* ZoneCrossMixing 
+* ZoneMixing 
+* SolarCollectorPerformanceFlatPlate 
+* SolarCollectorFlatPlateWater 
+* SolarCollectorIntegralCollectorStorage 
+* SolarCollectorPerformanceIntegralCollectorStorage 
+* SolarCollectorFlatPlatePhotovoltaicThermal 
+* ZoneVentilationDesignFlowRate 
+* FluidCoolerTwoSpeed 
+* FluidCoolerSingleSpeed 
+* PipeOutdoor 
+* PipeIndoor 
+* Duct
+* AvailabilityManagerHybridVentilation 
+* CoilSystemCoolingWaterHeatExchangerAssisted 
+* CoilSystemCoolingDXHeatExchangerAssisted 
+* PlantEquipmentOperationOutdoorDewpoint 
+* PlantEquipmentOperationOutdoorWetBulb
+* TemperingValve 
+* ChillerAbsorption 
+* ChillerAbsorptionIndirect 
+* CoilCoolingDXTwoStageWithHumidityControlMode 
+* AirTerminalDualDuctVAV 
+* AvailabilityManagerOptimumStart 
+* AvailabilityManagerDifferentialThermostat 
+* ThermalStorageIceDetailed 
+* GroundHeatExchangerHorizontalTrench 
+* PlantEquipmentOperationOutdoorRelativeHumidity 
+* AvailabilityManagerNightVentilation 
+* PlantEquipmentOperationOutdoorDryBulbDifference
+* PlantEquipmentOperationOutdoorDewpointDifference 
+* PlantEquipmentOperationOutdoorWetBulbDifference 
+* PlantEquipmentOperationOutdoorDryBulb 
+* HeaderedPumpsConstantSpeed 
+* HeaderedPumpsVariableSpeed 
+* WaterHeaterHeatPump 
+* CoilPerformanceDXCooling 
+* CoilWaterHeatingAirToWaterHeatPump 
+* CoilHeatingWaterToAirHeatPumpVariableSpeedEquationFit 
+* CoilHeatingDXVariableSpeed 
+* CoilCoolingWaterToAirHeatPumpVariableSpeedEquationFit 
+* SetpointManagerSingleZoneHumidityMaximum 
+* ThermalStorageChilledWaterStratified 
+* SetpointManagerColdest 
+* EvaporativeFluidCoolerTwoSpeed
+* SetpointManagerMultiZoneCoolingAverage 
+* SetpointManagerMultiZoneHeatingAverage 
+* ZoneHVACDehumidifierDX 
+* ZoneHVACEnergyRecoveryVentilatorController 
+* ZoneHVACEnergyRecoveryVentilator 
+* CoilCoolingDXVariableSpeed 
+* CentralHeatPumpSystem 
+* SetpointManagerMultiZoneHumidityMaximum 
+* CoilHeatingDXMultiSpeed 
+* SetpointManagerFollowSystemNodeTemperature 
+* SetpointManagerSingleZoneOneStageCooling 
+* SetpointManagerSingleZoneOneStageHeating 
+* SetpointManagerMultiZoneMaximumHumidityAverage
+* SetpointManagerMultiZoneMinimumHumidityAverage 
+* SetpointManagerReturnAirBypassFlow 
+* SetpointManagerFollowGroundTemperature 
+* ChillerHeaterPerformanceElectricEIR 
+* PlantComponentTemperatureSource 
+* ZoneHVACUnitVentilator 
+* WaterHeaterStratified 
+* ZoneHVACBaseboardRadiantConvectiveWater 
+* ZoneHVACBaseboardRadiantConvectiveElectric 
+* LoadProfilePlant
 
-<iframe width="640" height="360" src="http://www.youtube.com/embed/LnOUfiMajD0?rel=0&start=0&end=340&autoplay=0" frameborder="0" allowfullscreen></iframe>
+There are a number of enhancements in areas beyond HVAC capability particularly to the OpenStudio application and the Measure ecosystem:
+The OpenStudio application has been enhanced with new grid views for the design day and facility interfaces. A spaces grid tab was also added.
 
-OpenStudio now supports Radiance 3-phase simulation of dynamic window shading controls. Currently, shading devices are simulated as venetian blinds, using pre-defined BSDFs hosted on the BCL. Blind operation is automated, with the blinds retracted by default, and covering the window when the illuminance on the shade-controlled window(s) exceeds 2,000 lux. Support for user-defined BSDFs and alternative shade control algorithms will be added in a future release. [A tutorial documenting this new feature is available on the OpenStudio website.](../tutorials/radiance_tutorial.md)
+* Users can now specify costs and ECMs on external models imported to PAT for export to EDAPT    * A new standard reporting Measure has been added
+* Radiance functionality has been refactored as a Measure; as a result, the “select daylight simulation engine” radio buttons have been removed from the Run Tab. Users wishing to use Radiance for their daylight simulations must apply the “Radiance Daylighting Measure” from their measures library (under Electric Lighting / Electric Lighting Controls / Radiance Daylighting Measure) as an “Always Run Measure”. Support for shadecloth (e.g. Mechoshade) and daylight redirecting louvers (exemplified in this release with Lightlouver) have been added to the shade material types along with the existing venetian blind option. Daylight metrics reporting has been improved, and a fully automated 3-phase simulation workflow that supports multiple window groups is part of this new measure. As a measure, this also allows users to run Radiance-based daylighting simulations with PAT and OpenStudio Server.
+* OpenStudio ships with select gems [(https://github.com/NREL/OpenStudio/wiki/OpenStudio- Version-Compatibility-Matrix#packaged-gems)](https://github.com/NREL/OpenStudio/wiki/OpenStudio- Version-Compatibility-Matrix#packaged-gems)
+* Improvements have been made to EpwFile allow direct access to timeseries properties from the weather file"
+* IFC import improvements were contributed by the BIMDataHub team at Penn State/CBEI"
+* This release resolves a long-standing issue using OpenStudio with Honeybee: [https://github.com/mostaphaRoudsari/Honeybee/issues/214](https://github.com/mostaphaRoudsari/Honeybee/issues/214).
 
-The OS:WindowFrameAndDivider object was added to allow import of detailed Window properties from the LBNL WINDOW program. Currently only spectral average data from WINDOW is supported for import into OpenStudio. Wall thickness around windows can be represented in daylighting models using the window reveal and sill dimensions specified in the OS:WindowFrameAndDivider. These dimensions are translated to both EnergyPlus and Radiance. Note: window frame geometry is not currently translated to Radiance, this will be added in a future release. [A tutorial on this new feature is available.](../tutorials/tutorial_windowproperty_frameanddivider.md)
-
-For the full list of added features and bug fixes see the [__Release Notes on GitHub__](https://github.com/NREL/OpenStudio/releases/tag/v1.7.0)
+OpenStudio 1.9.0 includes several other minor features as well as many bug fixes. For a full list of changes included in OpenStudio 1.9.0, please see the [complete changelog](https://github.com/NREL/OpenStudio/blob/v1.9.0/CHANGELOG.md).
 
 View the [OpenStudio Roadmap](roadmap.md) to see the release plan for future features.
 ____________________________
