@@ -2,17 +2,21 @@
 This page walks you through installing OpenStudio, the basics of the applications, and the basic workflow.
 
 ## Installation Instructions
-OpenStudio is supported on Windows 7 - 8.1, OS X 10.9 - 10.10, and 64-bit Ubuntu 14.04.
+OpenStudio is supported on Windows 7 – Windows 10, OS X 10.9 – 10.10, and 64-bit Ubuntu 14.04.
 
-OpenStudio 1.7.0 works with EnergyPlus 8.2.0 Update 1, which is now bundled with the OpenStudio installer.  It is no longer necessary to download and install EnergyPlus separately.
+The OpenStudio SketchUp Plug-in requires SketchUp 2015 (not available for Linux). The OpenStudio SketchUp Plug-in does not support older versions of SketchUp. SketchUp 2015 is available in 32 and 64-bit versions; the 32-bit version of OpenStudio on Windows will only work with the 32-bit version of SketchUp 2015, and the 64-bit version of OpenStudio will only work with the 64-bit version of SketchUp 2015.
+
+OpenStudio 1.9.0 supports EnergyPlus Release 8.3.0, which is bundled with the OpenStudio installer. It is no longer necessary to download and install EnergyPlus separately. However, an installer is available at [https://github.com/NREL/EnergyPlus/releases/tag/v8.3.0](https://github.com/NREL/EnergyPlus/releases/tag/v8.3.0). Other builds of EnergyPlus 8.3 are not supported by OpenStudio 1.9.0.
+
+OpenStudio 1.9.0 supports Radiance 5.0.a.4, which is bundled with the OpenStudio installer. It is no longer necessary to download and install Radiance separately. However, an installer is available at [https://github.com/NREL/Radiance/releases/tag/5.0.a.4](https://github.com/NREL/Radiance/releases/tag/5.0.a.4). Other builds of Radiance are not supported by OpenStudio 1.9.0.
 
 __Download and install SketchUp__
 
-1. The OpenStudio SketchUp Plug-in requires [SketchUp 2015](http://www.sketchup.com/) (not available for Linux). Older versions of SketchUp are not supported.  SketchUp 2015 is available in 32 and 64 bit versions, the 32 bit version of OpenStudio on Windows will only work with the 32 bit version of SketchUp 2015 and the 64 bit version of OpenStudio will only work with the 64 bit version of SketchUp 2015.
+1. The OpenStudio SketchUp Plug-in requires [SketchUp 2015](http://www.sketchup.com/).
 
 __Download and install OpenStudio__
 
-1. Login to the [OpenStudio website](www.openstudio.net). Create an account if you don't have one.
+1. Login to the [OpenStudio website](www.openstudio.net). Create an account if you don't have one. EnergyPlus and OpenStudio now share a password.
 2. Click "Downloads" at the top of the page.
 3. Choose the installer that matches your operating system. The OpenStudio package contains the following tools:
     - SketchUp Plug-in
@@ -30,11 +34,6 @@ BCL content can now be accessed from within the OpenStudio SketchUp Plug-in and 
 Enter the key through the OpenStudio SketchUp Plug-in under the menu `Plugins->OpenStudio User Scripts->Building Component Library->Setup BCL Key` and click `OK`. __Or__ register the key through the OpenStudio Application under the menu `Components & Measures->Find Components`. If a key is not already registered, it will prompt you for one.
 
 ![Key request dialog](img/bcl_key_request.png)
-
-__Optional - Install Radiance__
-If you want to be able to use Radiance for daylighting simulations, you must install Radiance.
-
-1. Download and install [Radiance 4.2.2](https://github.com/NREL/Radiance/releases/tag/4.2.2).
 
 __Optional - Install Ruby__
 If you plan to use the OpenStudio SDK Ruby bindings via command prompt on Windows, you must install Ruby. OS X already has Ruby installed.
