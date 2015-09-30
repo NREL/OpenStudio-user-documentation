@@ -91,7 +91,7 @@ ____________________________
 
 ## Current Features
 
-As of OpenStudio Version 1.7.0
+As of OpenStudio Version 1.9.0
 
 ### Building Geometry/3D CAD
 
