@@ -3,6 +3,10 @@ This section contains an overview of the OpenStudio Application.
 
 The [OpenStudio Quick Start Guide](img/pdfs/openstudio_interface_quickstart.pdf) provides an introduction to the interface for the Plug-in and the OpenStudio application. It also provides guidance on the basic workflow.
 
+<iframe width="640" height="360" src="http://www.youtube.com/embed/9uBcb3NBQ84" allowfullscreen></iframe>
+
+*Above: This video demonstrates the new Spaces tab and the redesigned Facilities and Site tab from version 1.9.0.*
+
 ------
 
 ## Overview

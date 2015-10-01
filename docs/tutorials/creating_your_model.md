@@ -355,10 +355,14 @@ Measures are scripts that can quickly alter your model or create different repor
 
 ------
 
-## Using the Facility Tab to Inspect and Edit Your Model
+## Using the Facility Tab 
 The Facility tab includes settings for your building, stories, shading, and exterior equipment. It used to be a tree view, but this did not allow the user to view more than one item at a time. You can view the Building object. This contains top level construction, schedule, or space type assignments, and sets the rotation for the building.
 
 To view and edit the spaces in your model, use the Spaces tab below the Facility tab on the left.
+
+<iframe width="640" height="360" src="http://www.youtube.com/embed/9uBcb3NBQ84" allowfullscreen></iframe>
+
+*Above: This video demonstrates the new Spaces tab and the redesigned Facilities and Site tab.*
 
 ![Facility Tab](img/create_model/facility.png)
 

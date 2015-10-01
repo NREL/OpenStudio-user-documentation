@@ -26,11 +26,7 @@ To run your simulation hit the green run button. Select the daylighting engine y
 
 ![Run Simulation Tab](img/run/run.png)
 
-*Above: Hit the run button to start running your simulation.*
-
-![Run Simulation Output](img/run/output.png)
-
-*Above: The output area displays the status of the run.*
+*Above: Hit the run button to start running your simulation.The output area displays the status of the run.*
 
 ![Run Tree Simulation Output](img/run/run_tree.png)
 
@@ -38,6 +34,10 @@ To run your simulation hit the green run button. Select the daylighting engine y
 
 ## Looking at Results
 Standard OpenStudio results are provided with your run. If you add in utility bills you can also view a calibration report. The links on the left side of the report will take you through the sections.
+
+<iframe width="640" height="360" src="http://www.youtube.com/embed/PlrWE3ugcdE" allowfullscreen></iframe>
+
+*Above: This video demonstrates the 1.9.0 Release with the Reporting Measure.*
 
 [__Learn more about the OpenStudio Standard Results Measure in our References Section.__](../reference/openstudio_results_measure.md)
 

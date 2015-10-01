@@ -107,6 +107,10 @@ For additional information on the SketchUp Plug-in interface, go to the [OpenStu
 
 *Above: This video goes into the OpenStudio application, adds weather data, shows the outline view in the facility tab, and runs a simulation with ideal air loads.*
 
+<iframe width="640" height="360" src="http://www.youtube.com/embed/9uBcb3NBQ84" allowfullscreen></iframe>
+
+*Above: Version 1.9.0: This video demonstrates the new Spaces tab and the redesigned Facilities and Site tab.*
+
 ### Space Types, Internal Loads, and Schedules
 <iframe width="640" height="360" src="http://www.youtube.com/embed/PCcxruCaZO0" allowfullscreen></iframe>
 
