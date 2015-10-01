@@ -26,7 +26,7 @@ To run your simulation hit the green run button. Select the daylighting engine y
 
 ![Run Simulation Tab](img/run/run.png)
 
-*Above: Hit the run button to start running your simulation.The output area displays the status of the run.*
+*Above: Hit the run button to start running your simulation. The output area displays the status of the run.*
 
 ![Run Tree Simulation Output](img/run/run_tree.png)
 
