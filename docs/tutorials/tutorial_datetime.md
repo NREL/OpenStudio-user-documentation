@@ -22,7 +22,7 @@ There is currently a deficiency in the OpenStudio SqlFile class.  Timeseries res
 
 ### Weather Data
 
-The idea of actual vs typical years also appears in the weather files used for simulation.  Typical Meteorological Year (TMY) weather files are assembled by combining weather data from different months across multiple years.  Actual  Meteorological Year (AMY) weather files contain weather data for a continguous period.  The EpwFile class detects whether a given EPW file is a TMY or AMY when it is read, the `isActual` method returns true if the weather file includes actual year data.  The RunPeriod and YearDescription objects are reset to match the weather file when assigning a new EPW file using the OpenStudio Application.  Any dates returned from the EpwFile class will be constructed using the year specified within the EPW file, the OpenStudio Model's YearDescription object is not used.
+The idea of actual vs typical years also appears in the weather files used for simulation.  Typical Meteorological Year (TMY) weather files are assembled by combining weather data from different months across multiple years.  Actual  Meteorological Year (AMY) weather files contain weather data for a contiguous period.  The EpwFile class detects whether a given EPW file is a TMY or AMY when it is read, the `isActual` method returns true if the weather file includes actual year data.  The RunPeriod and YearDescription objects are reset to match the weather file when assigning a new EPW file using the OpenStudio Application.  Any dates returned from the EpwFile class will be constructed using the year specified within the EPW file, the OpenStudio Model's YearDescription object is not used.
 
 ### Utility Bills
 
