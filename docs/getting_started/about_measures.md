@@ -65,7 +65,7 @@ _________________
 ### Building Component Library (BCL)
 You can find measures by going directly to the [BCL site](https://bcl.nrel.gov/) and searching or browsing for measures.
 
-Measures can be downloaded directly from BCL through the wnloading-components-and-measures-from-the-building-component-library-bcl) and as well.
+Measures can be downloaded directly from BCL through the OpenStudio Application and the ParametricAnalysisTool.
 
 ### Locally Shared Measures
 Under the "Preferences" menu you can set a local measure path using the "Change My Measures Directory" menu option. This allows you to set a local or network directory for measures to show in the OpenStudio Application and Parametric Analysis Tool. This is in addition to any BCL measures you already have downloaded. They local measures will have say "My" in front of them vs. "BCL".
