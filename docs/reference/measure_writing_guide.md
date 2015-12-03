@@ -1542,25 +1542,6 @@ The key and units parameters must be strings, the value passed to registerValue 
 | ! @ # $ % ^ & * ( ) { } \ [ ] ; : ' " , < . > \ / ? + =
 ```
 
-<table class="table table-striped">
-  <tr>
-    <th>Valid Keys</th>
-    <th>Invalid Keys</th>
-  </tr>
-  <tr>
-    <td>pumps_electricity</td>
-    <td>invalid&#124;pipe&#124;attribute&#124;not&#124;okay</td>
-  </tr>
-  <tr>
-    <td>wwrRatioWest</td>
-    <td>ExclamationPoints!NotOkay!</td>
-  </tr>
-  <tr>
-    <td>Not Recommended but okay</td>
-    <td>Separator.With.Periods.Not.Okay</td>
-  </tr>
-</table>
-
 By default, all measure arguments are automatically output in machine readable format. For example, if a measure takes an argument named 'rotation':
 
 ```ruby
