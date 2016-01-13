@@ -3,20 +3,16 @@ This page walks you through installing OpenStudio, the basics of the application
 
 ## Installation Instructions
 OpenStudio is supported on Windows 7 – Windows 10, OS X 10.9 – 10.10, and 64-bit Ubuntu 14.04.
-
-The OpenStudio SketchUp Plug-in requires SketchUp 2015 (not available for Linux). The OpenStudio SketchUp Plug-in does not support older versions of SketchUp. SketchUp 2015 is available in 32 and 64-bit versions; the 32-bit version of OpenStudio on Windows will only work with the 32-bit version of SketchUp 2015, and the 64-bit version of OpenStudio will only work with the 64-bit version of SketchUp 2015.
-
-OpenStudio 1.9.0 supports EnergyPlus Release 8.3.0, which is bundled with the OpenStudio installer. It is no longer necessary to download and install EnergyPlus separately. However, an installer is available at [https://github.com/NREL/EnergyPlus/releases/tag/v8.3.0](https://github.com/NREL/EnergyPlus/releases/tag/v8.3.0). Other builds of EnergyPlus 8.3 are not supported by OpenStudio 1.9.0.
-
-OpenStudio 1.9.0 supports Radiance 5.0.a.4, which is bundled with the OpenStudio installer. It is no longer necessary to download and install Radiance separately. However, an installer is available at [https://github.com/NREL/Radiance/releases/tag/5.0.a.4](https://github.com/NREL/Radiance/releases/tag/5.0.a.4). Other builds of Radiance are not supported by OpenStudio 1.9.0.
-
+OpenStudio 1.10.0 supports EnergyPlus Release 8.4.0, which is bundled with the OpenStudio installer. It is no longer necessary to download and install EnergyPlus separately. However, an installer is available at [https://github.com/NREL/EnergyPlus/releases/tag/v8.4.0.](https://github.com/NREL/EnergyPlus/releases/tag/v8.4.0) Other builds of EnergyPlus 8.4 are not supported by OpenStudio 1.10.0.
+OpenStudio 1.10.0 supports Radiance 5.0.a.5, which is bundled with the OpenStudio installer. It is no longer necessary to download and install Radiance separately. However, an installer is available at [https://github.com/NREL/Radiance/releases/tag/5.0.a.5.](https://github.com/NREL/Radiance/releases/tag/5.0.a.5) Other builds of Radiance are not supported by OpenStudio 1.10.0.
+###Installation Steps
 __Download and install SketchUp__
 
-1. The OpenStudio SketchUp Plug-in requires [SketchUp 2015](http://www.sketchup.com/).
+1. The OpenStudio SketchUp Plug-in requires SketchUp 2016 (not available for Linux). The OpenStudio SketchUp Plug-in does not support older versions of SketchUp. SketchUp 2016 is available in 32 and 64-bit versions; the 32-bit version of OpenStudio on Windows will only work with the 32-bit version of SketchUp 2016, and the 64-bit version of OpenStudio will only work with the 64-bit version of [SketchUp 2016](http://www.sketchup.com/).
 
 __Download and install OpenStudio__
 
-1. Login to the [OpenStudio website](www.openstudio.net). Create an account if you don't have one. EnergyPlus and OpenStudio now share a password.
+1. Login to the [OpenStudio website](https://www.openstudio.net/downloads). Create an account if you don't have one. EnergyPlus and OpenStudio now share a password.
 2. Click "Downloads" at the top of the page.
 3. Choose the installer that matches your operating system. The OpenStudio package contains the following tools:
     - SketchUp Plug-in
