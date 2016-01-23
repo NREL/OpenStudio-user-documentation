@@ -3,6 +3,22 @@ This page is a collection of troubleshooting advice that helps users deal with c
 
 _________________
 
+## OpenStudio Plug-in does not load when SketchUp starts
+Ensure that the architecture of your installation of SketchUp (32 or 64 bit) matches the architecture of OpenStudio.  Try opening the Window->Preferences->Extensions window in SketchUp, enable the OpenStudio plug-in if it is listed.  If OpenStudio is not listed you may have to manually install it (this is the case if you are using a different version of SketchUp than the OpenStudio installer targets).  To install OpenStudio manually please copy the files in:
+
+    C:\Program Files (x86)\OpenStudio %VERSION%\Ruby\Plugins
+
+or 
+
+    C:\Program Files\OpenStudio %VERSION%\Ruby\Plugins
+
+to:
+
+    C:\Users\%YOURUSERNAME%\AppData\Roaming\SketchUp\SketchUp %VERSION%\SketchUp\Plugins
+
+where %YOURUSERNAME% is replaced by your user name and %VERSION% is the version of the software you are using.
+_________________
+
 ## Model Will Not Open in SketchUp Plug-in
 If you have an OSM file that will not open, or opens incorrectly in the SketchUp Plug-in then running the user script linked in this thread can help identify the problem objects and create a new diagnostic copy of your file. This script creates a report identifying problem objects, and saves a new copy of your file leaving the original untouched. This script is installed with 0.6.2 or later, but you can manually download this file and use it with 0.6.0 or later. Some reasons you may need to run this script include:
 
