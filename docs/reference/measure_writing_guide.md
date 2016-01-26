@@ -1536,31 +1536,11 @@ We have seen how to output human readable messages from measures. These messages
 runner.registerValue("total_life_cycle_cost", total_life_cycle_cost, "$")
 ```
 
-The key and units parameters must be strings, the value passed to registerValue can be a double, bool, integer, string, or nil object. The output atribute key needs be machine readable. The following characters should not be used in output attribute key names.
+The key and units parameters must be strings, the value passed to registerValue can be a double, bool, integer, string, or nil object. The output atribute key should contain lowercase alphanumeric characters with underscores where you would typically have a space (snake_case). The attribute key should not start with a number. Additionally the following characters should not be used in output attribute key names.
 
 ```
 | ! @ # $ % ^ & * ( ) { } \ [ ] ; : ' " , < . > \ / ? + =
 ```
-*Note: Spaces are allowed, but not recommended*
-
-<table class="table table-striped">
-  <tr>
-    <th>Valid Keys</th>
-    <th>Invalid Keys</th>
-  </tr>
-  <tr>
-    <td>pumps_electricity</td>
-    <td>invalid&#124;pipe&#124;attribute&#124;not&#124;okay</td>
-  </tr>
-  <tr>
-    <td>wwrRatioWest</td>
-    <td>ExclamationPoints!NotOkay!</td>
-  </tr>
-  <tr>
-    <td>Not Recommended but okay</td>
-    <td>Separator.With.Periods.Not.Okay</td>
-  </tr>
-</table>
 
 By default, all measure arguments are automatically output in machine readable format. For example, if a measure takes an argument named 'rotation':
 
