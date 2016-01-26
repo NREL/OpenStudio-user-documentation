@@ -58,7 +58,7 @@ rm -rf site
 mkdocs build
 ```
 
-If you are ready to deploy your changes to the live site, return to the terminal window and type:
+If you are ready to deploy your changes to the live site, first **commit your markdown changes to the master branch**.  Then return to the terminal window and type:
 
 ```shell
 mkdocs gh-deploy
