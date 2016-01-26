@@ -230,7 +230,13 @@
           <div class="bs-docs-sidebar hidden-print affix well" role="complementary">
   <ul class="nav">
   
-    <li class="main active"><a href="#model-will-not-open-in-sketchup-plug-in">Model Will Not Open in SketchUp Plug-in</a>
+    <li class="main active"><a href="#openstudio-plug-in-does-not-load-when-sketchup-starts">OpenStudio Plug-in does not load when SketchUp starts</a>
+      <ul class="nav">
+        
+      </ul>
+    </li>
+  
+    <li class="main"><a href="#model-will-not-open-in-sketchup-plug-in">Model Will Not Open in SketchUp Plug-in</a>
       <ul class="nav">
         
       </ul>
@@ -288,6 +294,18 @@
           <h1>Troubleshooting</h1>
 
 <p>This page is a collection of troubleshooting advice that helps users deal with common issues.</p>
+<hr />
+<h2 id="openstudio-plug-in-does-not-load-when-sketchup-starts">OpenStudio Plug-in does not load when SketchUp starts</h2>
+<p>Ensure that the architecture of your installation of SketchUp (32 or 64 bit) matches the architecture of OpenStudio.  Try opening the Window-&gt;Preferences-&gt;Extensions window in SketchUp, enable the OpenStudio plug-in if it is listed.  If OpenStudio is not listed you may have to manually install it (this is the case if you are using a different version of SketchUp than the OpenStudio installer targets).  To install OpenStudio manually please copy the files in:</p>
+<pre><code>C:\Program Files (x86)\OpenStudio %VERSION%\Ruby\Plugins
+</code></pre>
+<p>or </p>
+<pre><code>C:\Program Files\OpenStudio %VERSION%\Ruby\Plugins
+</code></pre>
+<p>to:</p>
+<pre><code>C:\Users\%YOURUSERNAME%\AppData\Roaming\SketchUp\SketchUp %VERSION%\SketchUp\Plugins
+</code></pre>
+<p>where %YOURUSERNAME% is replaced by your user name and %VERSION% is the version of the software you are using.</p>
 <hr />
 <h2 id="model-will-not-open-in-sketchup-plug-in">Model Will Not Open in SketchUp Plug-in</h2>
 <p>If you have an OSM file that will not open, or opens incorrectly in the SketchUp Plug-in then running the user script linked in this thread can help identify the problem objects and create a new diagnostic copy of your file. This script creates a report identifying problem objects, and saves a new copy of your file leaving the original untouched. This script is installed with 0.6.2 or later, but you can manually download this file and use it with 0.6.0 or later. Some reasons you may need to run this script include:</p>
