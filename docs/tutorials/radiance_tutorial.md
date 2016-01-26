@@ -1,8 +1,10 @@
 <h1>Radiance and OpenStudio</h1>
-This tutorial explains how to use [Radiance](http://www.radiance-online.org/) to simulate the daylight ingress in your OpenStudio model, allowing for higher fidelity simulations of daylighting-related energy efficiency measures. For OpenStudio [v1.7.0](https://github.com/NREL/OpenStudio/releases/tag/v1.7.0), added support for window shades and wall thickness has increased the utility of the Radiance simulation option in the OpenStudio application. 
+This tutorial explains how to use [Radiance](http://www.radiance-online.org/) to simulate the daylight ingress in your OpenStudio model, allowing for higher fidelity simulations of daylighting-related energy efficiency measures. 
+
+For OpenStudio [v1.9.0](https://github.com/NREL/OpenStudio/releases/tag/v1.9.0), the Radiance simulation option has been refactored (moved) to a measure, eliminating the "daylight simulation engine" selection radio buttons from the app, and modifying the workflow slightly. We've also added support for more shading options, including daylight redirecting louvers. 
 
 ## Workflow
-This tutorial describes the workflow for using OpenStudio (the plug-in and the application) to perform a [climate-based daylight simulation](http://climate-based-daylighting.com/doku.php?id=academic:climate-based-daylight-modelling), using Radiance as the lighting simulation engine (in lieu of EnergyPlus' daylight simulation options). For implementation details, and caveats, refer to the OpenStudio-Radiance Reference Guide.
+This workflow uses OpenStudio (the plug-in and the application) to perform a [climate-based daylight simulation](http://climate-based-daylighting.com/doku.php?id=academic:climate-based-daylight-modelling), using Radiance as the lighting simulation engine (in lieu of EnergyPlus' daylight simulation options). For implementation details, and caveats, refer to the OpenStudio-Radiance Reference Guide.
 
 The process for using Radiance for daylighting analysis in OpenStudio is not dissimilar from using EnergyPlus. The basic steps are as follows, with the required applications in parentheses:
 ### 1. Create (or Import) Building Geometry, Define Thermal Zones & Spaces (SketchUp Plug-in)
@@ -41,18 +43,19 @@ Optionally to these spaces, add:
 * Assign primary Illuminance Map to daylit Thermal Zone(s)
 * Assign primary Daylighting Control Point to Thermal Zone
 * Thermal zone load percentages to daylighting controls
-* Attach shading controls to windows (user script)
 
 ###5. Run Simulation (OpenStudio Application)
-* Attach a weather file
-* Select "Radiance" as the daylight simulation engine on the Run Tab
+* Attach a weather file (Site Tab)
+* Select Radiance simulation parameters (Simulation Settings Tab)
+* Add the "Radiance Daylighting Measure" to the model's workflow (Measures Tab)
+* Run the analysis (Run Tab (_duh_))
 
 The Radiance daylighting results will inform the electric lighting load schedules and will be automatically used in the EnergyPlus model
 
 ###6. Review Results (Results Viewer, Excel, et al.)
 The results of the Radiance/EnergyPlus simulation are stored in a few locations:
 
-* **radout.sql** - this file contains all the Radiance-computed daylighting information, as well as the exterior daylight data from the weather file, for reference
+* **radout.sql** - this file contains all the Radiance-computed daylighting information, as well as the exterior daylight data from the weather file, for reference. Its data can be reviewed with the Results Viewer application. 
 * **daylightmetrics.csv** - this file contains data for the following metrics:
 	* Daylight Autonomy (DA)
 	* Continuous Daylight Autonomy (cDA)

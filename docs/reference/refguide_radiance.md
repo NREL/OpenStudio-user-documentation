@@ -3,6 +3,8 @@ This reference guide explains the methods used in OpenStudio to utilize [Radianc
 
 For OpenStudio [v1.7.0](https://github.com/NREL/OpenStudio/releases/tag/v1.7.0), added support for window shades and wall thickness has increased the utility of the Radiance simulation option in the OpenStudio application. 
 
+With OpenStudio [v1.9.0](https://github.com/NREL/OpenStudio/releases/tag/v1.9.0), the Radiance simulation option has been refactored (moved) to a measure, eliminating the "daylight simulation engine" selection radio buttons from the app, and modifying the workflow slightly. 
+
 ##Overview
 In short, OpenStudio manages the model translation, simulation, and results processing of an OpenStudio building model (.osm), deriving geometry, materials, loads, schedules, and site information from the OSM. An annual climate-based daylight simulation is performed, new lighting load schedules are generated and embedded in the osm for the subsequent EnergyPlus simulation. In addition, a number of daylight metrics are calculated for those spaces with daylighting objects in them (illuminance maps and glare sensors), and are reported in a comma-delineated format, suitable for import and plotting in the modeler's tool of choice. 
 
