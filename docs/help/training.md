@@ -3,7 +3,7 @@ Below are companies and universities that are licensed OpenStudio training and s
 
 ##Commercial Organizations
 
-### [Bigg Ladder Software](http://bigladdersoftware.com/) - Denver, CO
+### [Big Ladder Software](http://bigladdersoftware.com/) - Denver, CO
 ####Contact: [Peter Ellis](mailto:peter.ellis@bigladdersoftware.com)
 Big Ladder Software is dedicated to providing software and services for the building energy modeling industry. The company provides training, support, software development, and consulting services for OpenStudio and EnergyPlus to mechanical, architectural, and design engineering firms across the US. With a unique combination of expertise in building science, computer simulation, and programming, Big Ladder has experienced steady growth and achieved significant success and recognition in the industry.
 
