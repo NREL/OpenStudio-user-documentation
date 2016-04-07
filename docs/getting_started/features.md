@@ -1,6 +1,17 @@
 <h1>Current Features</h1>
 OpenStudio is constantly being improved, with a less stable developer release available every 2 weeks and a stable major release quarterly (4 per year). The features that are available in the current major release are described below. To learn what is coming in the future, see the [Planned Features](../getting_started/roadmap.md) page.
 
+##OpenStudio 1.11.0 has a number of new features and bug fixes. Some of the more noteworthy are as follows:
+
+* OpenStudio now supports EnergyPlus version 8.5.0
+* OpenStudio now includes Radiance version 5.0.a.8 
+* Added support for graphical dual duct system layout in the OpenStudio Application
+* Added class PointLatLon for converting geographic coordinates to building coordinates
+*  Added version_modified element to BCL Measure XML
+* Correct parsing of ISO 8601 formatted time strings
+* Radiance measure now supports multiple (unlimited) glare sensors per space
+* Construction inheritance is now displayed in the space tab
+
 ## OpenStudio 1.10.0 has a number of new features and bug fixes. Some of the more noteworthy are as follows:
 *	Updated plug-in to work with SketchUp 2016.  SketchUp autosave will no longer save the osm.  Surfaces referencing constructions with no layers are no longer shown as air walls in the plug-in.*	Fixed code in Date and Time classes that resulted in memory access violation crashes in Ruby bindings. *	Changed operation of ConstructionBase.getNetArea, see documentation for details.*	Deprecated field 'Source Zone Infiltration Treatment' from object ZoneAirMassFlowConservation, adding E+ 8.4 fields 'Infiltration Balancing Method' and 'Infiltration Balancing Zones'.*	The Radiance Daylighting Measure has the following additions:	*	Added support for electrochromic glazing (two-state)	*	Renderings are generated for each primary daylighting control point and glare sensor found in the model	*	Added ability to optionally generate "debug" images showing each window group octree*	Made minor enhancements to standard OpenStudio simulation results. *	Added water to water heat pump component models, including HeatPumpWaterToWaterEquationFitCooling and HeatPumpWaterToWaterEquationFitHeating.*	Added capability to assign DesignSpecificationOutdoorAir object directly on VAV air terminals, including  AirTerminalSingleDuctVAVReheat and AirTerminalSingleDuctVAVNoReheat. This is an EnergyPlus feature that allows for more precise outdoor air control, but was previously not available in OpenStudio.*	Refined GridView elements in the OpenStudio Application to increase their performance.*	Extended OSGridController and SpacesLoadsGridView to show loads inherited from SpaceTypes, and more generally, inherited subrows.OpenStudio 1.10.0 includes several other minor features as well as many bug fixes. For a full list of changes included in OpenStudio 1.10.0, please see the [complete changelog](http://github.com/NREL/OpenStudio/blob/v1.10.0/CHANGELOG.md).
 
