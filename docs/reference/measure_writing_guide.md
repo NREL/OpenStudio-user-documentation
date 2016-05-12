@@ -1,53 +1,86 @@
-<h1>Measure Writing Guide</h1>
-This guide goes through the details of an OpenStudio Measure, focusing mainly on writing new Measures and understanding existing Measures.
+<h1>OpenStudio Measure Writer's Reference Guide</h1>
+This OpenStudio Measure Writer's Reference Guide is an in-depth resource regarding the authoring, testing, and distribution of OpenStudio Measures. The primary purposes of an OpenStudio measure are to: inspect, and optionally make some change/addition to, an OpenStudio model; validate model input; and report model input and output. 
 
-## What is a Measure?
-In building design and retrofits, the terms *energy efficiency measure* (EEM) and *energy conservation measure* (ECM) refer to a specific change that can be made to a building to reduce its energy use. As an example, if you are retrofitting an existing building and one of the ECMs suggested by the design team is "Add continuous insulation to the walls", then you can run that measure to quickly alter your model.
+Where applicable, the reader is directed to other resources, such as the [OpenStudio SDK documentation](https://openstudio-sdk-documentation.s3.amazonaws.com/index.html), and many of the other references found at the [OpenStudio Documentation Home](http://nrel.github.io/OpenStudio-user-documentation/). 
 
-In OpenStudio, a measure is a set of programmatic instructions (such as an Excel macro) that makes changes to an energy model to reflect its application. In our example, the measure might find the construction used by exterior wall surfaces in the model and add a layer of continuous insulation. Measures can be written specifically for an individual model, or they may be more generic to work on a wide range of possible models.
+# Table of Contents
+- Introduction 
+- Writing Measures
+    - Best Practices
+    - File Structure
+    - measure.rb (program)
+    - measure.xml (metadata)
+- Testing
+- Distribution
+- Changes for OpenStudio 2.0
+- Additional References
 
-<!--- DLM: we need a link to how to create, copy, and update measures in the app and PAT-->
-OpenStudio measures may be created using either the OpenStudio Application or the Parametric Analysis Tool. Measures can be created from scratch or may be copied from another measure as a starting point. Users should use either the OpenStudio Application or PAT to create measures, copying files directly in the file system is not supported.
+# Introduction
+In its most basic form, an OpenStudio measure (henceforth referred to as a "measure") is a program (or 'script', or 'macro', if you like) that can access and leverage the OpenStudio model and API to create or make changes to a building energy model, as defined by an OpenStudio model (.osm). Typically, a measure modifies an existing .osm in order to implement a given *energy conservation measure* (ECM). For example, a measure might change the insulation rating of the exterior walls, change the window-to-wall ratio of a specific facade, or modify operational or occupancy schedules. Measures may also generate reports on the input and output of a given energy model; as such, these are referred to as _reporting measures_. 
 
-## Using this Guide
-Each OpenStudio measure is contained in its own folder (usually named after the measure) and contains two key files:
+Measures may be linked together in a workflow in order to implement complex ECMs, or to repeatably implement ECMs across building types or climate zones; measures can even generate entire -- code-compliant and climate-zone specific -- building models soley from user inputs. 
 
-- measure.rb (contains the programmatic code to change the building mode)
-- measure.xml (contains information about the measure that allows other people to search for and find it).
+Measures are written in Ruby, which allows the measure author to access OpenStudio directly as well as through the SketchUp plugin. Measures can be created from scratch, but existing measures may also be used as a starting basis (recommended).
 
-The measure may also contain tests to ensure that it works correctly and resources which are other files that the measure uses during its operation. This file structure allows OpenStudio to easily share and use measures.
+<!--- RPG: Recommend a "workflow" section here.-->
+
+## Best Practices
+
+For general Ruby coding and style advice (formatting, variable names, etc.), we recommend following the guidance of the [Ruby Style Guide](https://github.com/bbatsov/ruby-style-guide). 
+
+For simple (short) measures, a text editor is all that is necessary. More extensive measures and resource files may benefit from the use of a proper IDE such as [RubyMine](https://www.jetbrains.com/ruby/).
+
+We cannot stress enough the importance of version control and backup. The OpenStudio dev team relies on Git for version control, and [GitHub](https://github.com/) for hosting all code repositories.
+
+# Writing Measures
+ 
+## File Structure
+Every OpenStudio measure is comprised of a program and metadata, and optionally includes additional resources (e.g. libraries, helper functions) and tests. These are all contained in a single directory, generally named after the measure itself. A typical measure directory structure is as follows:
 
 ![guide image](img/measure-writing-guide/1.png)
 
-This guide is directed primarily toward measure authors; some instructions also apply to users.
+<!--- DLM: we need a link to how to create, copy, and update measures in the app and PAT-->
 
-This guide explains the purpose of each of these files and walks through their contents step-by-step to help you create your own measures. The programming instructions for each measure are written in a programming language called Ruby (http://www.ruby-lang.org/en/). If you are unfamiliar with the basic concepts of computer programming, it would be wise to acquire some background (preferably in the Ruby language, http://tryruby.org) before proceeding. That said, the Ruby code in these examples is simple, so anyone familiar with basic programming concepts (variables, loops, etc.) should be able to read this guide with little difficulty.
+## Measure Program File - measure.rb
+The file 'measure.rb' is the main measure program. It may contain the entire program or may rely on additional functionality defined in one or more resource files, located in the 'resources' directory. 
 
-The types of files we discuss can be opened in a text editor (notepad++ is a free editor that works well for these examples, http://notepad-plus-plus.org/). File content appears in boxes to differentiate it from the rest of the text. Ellipses (...) represent code that was removed because it is not relevant to the current discussion.
-
-```
-a = 5
-...
-```
-
-## Measure File - measure.rb
-The measure.rb file contains the Ruby program that allows the measure to make changes to the input model. The bulk of the work done when writing a measure lies in editing this file. The measure.rb file includes the beginning and end of the measure; the content of the measure is then divided into three general sections:  name, arguments, and run. The following sections explain each section.
-
-### Starting and Ending the Measure
-Generally, each measure is a variation of an OpenStudio ModelUserScript. You do not need to worry about what this means right now; we will explain the details later. The important point is that the text below starts and ends a measure. The class name for the measure (in light blue) is user defined. The same class name appears again on the last line where a new instance of the class is instantiated and registered with OpenStudio. It is good practice to use UpperCamelCase (CapitalizeTheFirstLetterOfEveryWord) for your class name. This must be a valid class name in Ruby; it must start with an uppercase letter and cannot contain spaces or other special characters. Everything else about the measure (name, arguments, and run) will be inserted where the ellipsis is.
-
-<!--- DLM: should we explain model, e+, and reporting measures here or later?-->
+## Initialization
+OpenStudio measures are instantiated by creating a class based on the OpenStudio **ModelUserScript** object:
 
 ```ruby
 class AddContinuousInsulationToWalls < OpenStudio::Ruleset::ModelUserScript
   ...
 end
+```
+...and instantiating thusly:
 
+```ruby
 AddContinuousInsulationToWalls.new.registerWithApplication
 ```
 
+Class naming convention shall follow [Ruby best practices](https://github.com/bbatsov/ruby-style-guide). 
+
+## Measure Elements
+Every measure requires the following elements, defined as functions of the main program: 
+
+- name
+- description
+- modeler_description
+- arguments
+- run
+
 ### Name
-The measure's Name should be written such that another building professional (architect, engineer, etc.) can quickly understand what the measure will do when searching through a list of measures. This name is intended to be used in automatically generated reports. For example, in a table of energy savings by measure this name would identify each measure.
+The measure name is the first contact a user has with the measure; it is also shared throughout the measure workflow, visible in the OpenStudio Application, PAT, Server Management Consoles, and in output reports. As such, measure names should clearly describe the measure's function, while remaining general in nature.
+
+**Example Measure Names**
+
+| Good  ||Poor |
+|------ ||------|
+| Replace HVAC System with DX and Natural Gas AHUs || DX and Natural Gas AHUs |
+| [Set Interior Walls to Selected Construction](https://bcl.nrel.gov/node/37856) || Insulate Walls|
+| Remove all Electrical Equipment in Specified Space Types || Modify Electric Equipment|
+
+**Usage:**
 
 ```ruby
 def name
@@ -55,25 +88,10 @@ def name
 end
 ```
 
-Best practice measure names will be explicit about what they do, particularly with respect to whether they add, change, replace, or remove things from the model. Compare specific names such as:
-
-- Replace HVAC System with DX and Natural Gas AHUs
-- Add Continuous Insulation to Walls
-- Remove all Electric Equipment in Specified Space Types
-
-With vague names like:
-
-- DX and Natural Gas AHUs
-- Insulate Walls
-- Modify Electric Equipment
-
-Remember that the measure name is the first contact a user has with the measure. If the name is vague or misleading, it is detrimental to sharing and likely will not be used often.
-
 ### Description
-The Description should explain what the measure does in terms that general building professionals (architects, engineers, contractors, etc.) can understand. This description is intended to be used in energy modeling reports that persuade the design team to implement the measure in the actual building design. The  Description is written for a general audience and should not assume that the reader is familiar with the construction and design practices suggested by the measure. Thus, the Description may include details about how the measure would be implemented, along with explanations of associated qualitative benefits. It is good practice to include citations in the measure if the description is taken from a known source or if specific benefits are listed.
+The measure description is intended for a general audience and should not assume that the reader is familiar with the design and construction practices suggested by the measure. Thus, the description should include general details about how the measure would be implemented, along with explanations of associated qualitative benefits thereof. It is good practice to include citations in the description if the measure's intended effect is grounded in published work.
 
-<!---DLM: what voice should be used here?  is there a standard?-->
-<!---DLM: should description take the user args and allow substitution of values the user passed?-->
+**Usage:**
 
 ```ruby
 def description
@@ -82,76 +100,67 @@ end
 ```
 
 ### Modeler Description
-The Modeler Description is intended for the energy modeler using the measure. It should explain how the measure is modeled, including any requirements about how the baseline model must be set up, major assumptions made by the measure, citations of references to applicable modeling resources, etc. The energy modeler should be able to read this description and understand the changes the measure is making to the model and why. The Modeler Description is written for an expert audience and can assume that the reader is familiar with common modeling practices. This description is intended to be used in automatically generated reports. For example, in an appendix describing each the modeling approach of each measure considered for an energy savings study this description would be printed for each measure.
+The modeler description is intended for the energy modeler using the measure. It should explain the measure's intent, and include any requirements about how the baseline model must be set up, major assumptions made by the measure, and relevant citations or references to applicable modeling resources. The energy modeler should be able to read this description and understand the changes the measure make to the model and why. 
 
-<!---DLM: what voice should be used here?  is there a standard?-->
-<!---DLM: should modeler_description take the user args and allow substitution of values the user passed?-->
+TIP: This description could be used in automatically generated reports, e.g. in an appendix describing the modeling approach of each measure considered for an energy savings study.
+
+**Usage:**
 
 ```ruby
 def modeler_description
-  return "This measure will search through all constructions used on exterior walls. For each construction, if the second material layer is of type OS:Material:NoMass, then that layer will be assumed to be existing continuous insulation and will be replaced by the material layer specified in this measure. If the second layer is not of type OS:Material:NoMass, then a new material layer will be inserted at the second material layer position. If any non-exterior wall surfaces use this construction, it will be cloned before being altered and the altered construction will be hard assigned to the appropriate exterior wall surfaces."
+  return "This measure will select all constructions used on exterior walls. For each construction found, if the second material layer is of type OS:Material:NoMass, then that layer will be assumed to be existing continuous insulation and will be replaced by the material layer user-specified by this measure. If the second layer is not of type OS:Material:NoMass, then a new material layer will be inserted at the second material layer position. If any non-exterior wall surfaces use this construction, it will be cloned before being altered and the altered construction will be hard assigned to the appropriate exterior wall surfaces."
 end
 ```
 
 ### Arguments
-Inside this method, you describe which, if any, input parameters the user should be able to change before running the measure. In the example "Add Continuous Insulation to Walls", you might want the user to specify the thickness of the insulation along with the R-value per inch of thickness. When a measure has input parameters that the user can edit, the user can change the input values to perform a parametric analysis to answer "what-if" questions and find the best option.
+Measure arguments define which -- if any -- input parameters the user may set before running the measure. In our example measure "Add Continuous Insulation to Walls", the thickness of the insulation, and the R-value per inch of thickness, are the user-definable arguments. The measure arguments make a general meaure, specific. Further, these arguments become the variables in a parametric analysis that are passed to PAT, or the OpenStudio Analysis Spreadsheet.
 
-The arguments section opens and closes as follows:
+**Usage:**
+
+We define a user argument vector and create a single argument for insulation thickness, provide the user a single argument, insulation thickness, along with a few argument parameters. Note we pass the entire model to the function, in case any arguments presented to the user are model dependent:
 
 ```ruby
 def arguments(model)
-  args = OpenStudio::Ruleset::OSArgumentVector.new
-  ...
-  return args
+    args = OpenStudio::Ruleset::OSArgumentVector.new
+    insl_thckn = OpenStudio::Ruleset::makeDoubleArgument('insl_thckn',true)
+    insl_thckn.setDisplayName('Insulation Thickness (in)')
+    insl_thckn.setDefaultValue(1.5)
+    args << insl_thckn
+    return args
 end
 ```
 
-On the first line, you start the method and pass in the model, in case the arguments presented to the user are model dependent. For example, if the user can only choose from air loops in the model, you should present only valid air loop names. The second line sets the variable that will hold the arguments the user can edit. The last line passes these arguments back to the user to fill out.
+There is a statement to create a new argument of the type "double" and assign it to the variable "insl_thckn". The "true" at the end of this line indicates that the argument is required. The next line defines the display name of the argument; the user will see this in the GUI (recommended practice dictates we identify the units for the argument inside parentheses at the end of the display name). Lastly, we specify the default value for the argument. This default value is presented initially to the user, but the user can change the value in the GUI.
 
-In our example, you might want to give the user two inputs:  insulation thickness and R-value per inch of insulation. The argument for insulation thickness would look like this:
+#### Argument Types
 
-```ruby
-insl_thckn = OpenStudio::Ruleset::makeDoubleArgument('insl_thckn',true)
-insl_thckn.setDisplayName('Insulation Thickness (in)')
-insl_thckn.setDefaultValue(1.5)
-args << insl_thckn
-```
-
-The first line is a command to create a new argument of the type double (more on the arguments types later) and assign it to the variable "insl_thckn". The "true" at the end of this line indicates that the argument is required; "false" indicates that the argument is not required. On the second line, the display name of the argument is set. The user will see this in the graphical user interface (GUI). It is good practice to identify the units of the argument inside parentheses at the end of the display name so the user knows what value to input. On the third line, you specify the default value for the argument. This default value is presented initially to the user, but the user can change the value in the GUI.
-
-#### Types of Arguments
-You can create a few types of arguments
-
-##### Double
-A double argument is any real number such as 1.0, -1.5, or 50.5.
+Valid argument types are as follows:
+ 
+**Double** - any real number e.g. 1.0, -1.5, 50.5
 
 ```ruby
 v1 = OpenStudio::Ruleset::OSArgument::makeDoubleArgument('v1', false)
 ```
 
-##### Integer
-An integer argument is any real whole number such as 1, -2, or 51.
+**Integer** - any whole number e.g. 1, -2, 51
 
 ```ruby
 v2 = OpenStudio::Ruleset::OSArgument::makeIntegerArgument('v2', false)
 ```
 
-##### Boolean (Bool)
-A boolean argument gives the user the choices of true or false.
+**Boolean (Bool)** - logical (true/false) choice option
 
 ```ruby
 v3 = OpenStudio::Ruleset::OSArgument::makeBoolArgument('v3', false)
 ```
 
-##### String
-A string argument allows the user to input text.
+**String** - for accepting text input
 
 ```ruby
 v4 = OpenStudio::Ruleset::OSArgument::makeStringArgument('v4', false)
 ```
 
-##### Choice
-A choice argument allows you to limit the user to picking from a set list of options. For the choice argument, you must create the choices and pass them into the argument.
+**Choice** - a vector of list options. For the choice argument, the measure author creates the options and passes them to the argument, e.g.:
 
 ```ruby
 chs = OpenStudio::StringVector.new
@@ -160,27 +169,15 @@ chs << "Option 2"
 v5 = OpenStudio::Ruleset::OSArgument::makeChoiceArgument('v5', chs, true)
 ```
 
-Possible values for the choice arguments can also be extracted from the model. For example, the following would give the user a choice of any zones in the model, by zone name.
+Possible values for the choice arguments may also be extracted from the model. For example, the following would give the user a choice of any zones in the model, sorted by zone name.
 
 ```ruby
 v6 = OpenStudio::Ruleset::makeChoiceArgumentOfWorkspaceObjects
           ("v6","OS_Thermal_Zone".to_IddObjectType,model,true)
 ```
 
-#### Defaults and Required Arguments
-When deciding how to ask the user for each input, you should consider whether the input is required and whether there is a reasonable default value. Required arguments are inputs that the measure needs to run, such as the lighting level for each space. Non-required arguments are optional, but you must make clear to the user what will happen if no value is provided. Default values may be based on current best practices (e.g., current lighting power reductions to 0.8 W/ft2 are possible), or they may be chosen specifically for the model (e.g., choose the most common space type for adjusting the lighting power). Where the argument is not required but there is a good default, it is good practice to set the argument to be required anyway, as there is no burden on the user to provide any input.
-
-| Required? | Has a Default? | Best Practice?     |
-|-----------|----------------|--------------------|
-| Yes       | Yes            | Yes                |
-| Yes       | No             | Yes                |
-| No        | Yes            | No                 |
-| No        | No             | Must be documented |
-
 ### Run
-The run method is where all the magic happens. This is where you write the programmatic instructions that take the user inputs and change the energy model in specific ways. This method has more pieces than the name or arguments method. We explain each piece separately, and then show all the pieces together.
-
-The run method starts much like the other methods:
+The run method is the container for the main measure code -- your program -- and is formatted as follows:
 
 ```ruby
 def run(model, runner, user_arguments)
@@ -190,162 +187,64 @@ def run(model, runner, user_arguments)
 end
 ```
 
-The super line is boilerplate; it is necessary, but you do not need to worry about how it works. Just before the end to the run method there should be a "return true" line. If a measure does not return "true," OpenStudio will think that the measure failed and the simulation workflow will stop.
+The template above will define your measure as "runnable" to the OpenStudio API. super() tells the code to call the base class <a href='https://github.com/NREL/OpenStudio/blob/develop/openstudiocore/src/ruleset/ModelUserScript.cpp#L35'>ModelUserScript::run</a> method. Ruby best practice calls for the "return true" line, for proper exit status reporting.
 
-#### Input Validation
-When the user applies a measure to a model, he or she first fills in the inputs the author exposed in the arguments method. Because the user may have entered bad values, you first need to validate the input in the run method. For example, the user may have indicated that the building is 1 ft long instead of 100 ft long, or the input asked for an integer and the user input 2.5. Regardless, you must check the inputs before moving forward.
+## Log Messages
+Log messages may be directed to the GUI, the command line interface, and/or to log streams. The OpenStudio GUI supports three log levels: **Info**, **Warning**, and **Error**.
 
-The first step is to make sure that each required argument appears, has a value, and the value is the right type (strings are strings, doubles are doubles, etc.). This part of the error checking is built into OpenStudio and is shown below. If the argument fails to validate, this built-in method will give the user specific error messages that describe the problem. The second line is "return false."  This tells the run method to stop here; "false" indicates that the measure's run method did not complete successfully.
-
-```ruby
-if not runner.validateUserArguments(arguments(model), user_arguments)
-  return false
-end
-```
-
-Assuming that all the required inputs are present and have the right kinds of values, you next need to ensure that values make sense in the context of the script. For example, -2 is a valid integer, but it is not a valid number of chillers in a building.
-
-The first step in this type of error checking is to pull the values from the "user_arguments" variable and assign them to variables in the run method. Best practice is to use the same variable names in the arguments method and the run method.
-
-```ruby
-v1 = runner.getDoubleArgumentValue('v1',user_arguments)
-v2 = runner.getIntegerArgumentValue('v2',user_arguments)
-v3 = runner.getBoolArgumentValue('v3',user_arguments)
-v4 = runner.getStringArgumentValue('v4',user_arguments)
-v5 = runner.getStringArgumentValue('v5',user_arguments)
-v6 = runner.getOptionalWorkspaceObjectChoiceValue('v6',user_arguments, model)
-```
-
-Now that the user inputs have been assigned to variables, you need to check the validity of each value. If you encounter a problem, you need a way to let the user know what happened (and how to fix it). We will now take a brief detour to explain how you can pass this type of information back to the user. We will then continue on with input validation.
-
-#### Info, Warning, and Error Messages
-You can send three types of messages to the user from the measure. These messages will be shown in the GUI when the measure is run. You can thus let the user know something, but does not need to force the user to go into obscure error and output files. Each message has a specific purpose. The messages below are short for clarity; however, there is no limit to the length of the messages passed. Best practice messages will be concise, yet specific enough that the user knows exactly where to go to address any issue.
-
-##### Info Messages
-Info messages simply let the user know what happened as the measure was running. Info messages do not cause the measure to fail or stop running. In our example of "Add Continuous Insulation to Walls", you might decide to tell the user the number of surfaces to which insulation was added. In Ruby, inserting "#{num_surfaces}" in the message tells Ruby to convert the value of the variable "num_surfaces" to a string and substitute the result into the message.
+### Info (runner.registerInfo)
+Info messages just that, informative in nature. Generally used for passing status or non-failure events to the user, info messages do not cause the measure to fail or stop running. In the "Add Continuous Insulation to Walls" measure example, a successful application of the measure would affect a number of surfaces in the model; the number of surfaces affected could be communicated to the user via an info message. 
 
 ```ruby
 runner.registerInfo("Added insulation to #{num_surfaces} surfaces.")
 ```
 
-##### Warning Messages
-Warning messages enable you to warn the user about something that may be critical to the assumptions or that significantly affects how the measure runs. Warning messages do not cause the measure to stop running. In our example of "Add Continuous Insulation to Walls", you might want to warn the user if the insulation thickness entered exceeds 12 inches, because adding more than 12 inches of insulation is unusual but not unheard of.
+### Warning (runner.registerWarning)
+Warning messages should inform the user about something that may be critical to the assumptions or that significantly affects how the measure runs. Warning messages do not cause the measure to stop running. e.g., to warn the user of an out of bounds insulation thickness (e.g. > 12) in our example measure:
 
 ```ruby
-runner.registerWarning("#{insul_thckns} inches of insulation seems high.")
+if insul_thckns > 12
+  runner.registerWarning("Insulation thickness (#{insul_thckns}) beyond normal range."
+end
 ```
 
-##### Error Messages
-Error messages are used when the measure simply cannot continue. Perhaps the user entered
--1.5 for a fractional schedule value. Error messages stop the measure from running. Error messages should point the user to the specific error and suggest a way to fix or avoid it. The measure should return "false" and issue an error message:
+### Error (runner.registerError)
+Error messages are used when the measure issued a faulty instruction or otherwise cannot continue. Error messages stop the measure from running, and should inform the user of what caused the error condition. For example, if we assume that ```v1``` is a fractional value:
 
 ```ruby
-runner.registerError("v1 must be greater than or equal to 0 and less than or equal to 1.  You entered #{v1}.")
-
-return false
-```
-
-#### Input Validation (Continued)
-Now that we have covered how to send information messages back to the user, we will continue discussing how to validate the input. In this first example, we assume that v1 is a fractional value; therefore, it must be between 0 and 1.
-
-```ruby
-if v1 < 0 or v1 > 1
-  runner.registerError("v1 must be greater than or equal to 0 and less than or equal to 1.  You entered #{v1}.")
+if !glass_type
+  runner.registerError("Glazing Type not selected, cannot continue.")
   return false
 end
 ```
 
-This error checking is performed with a Ruby if statement. If the input check test fails,  an error message is registered, and then the measure's run method returns "false," stopping the measure from continuing.
+Beyond the standard info, warning, and error messages, three other measure-specific log messages may be issued:  the ```initial condition```, the ```final condition```, and whether the measure was applicable to this particular model (```NotAplicable```).
 
-Input validation can be as simple or as detailed as the situation requires. The goal is to catch any bad inputs before wasting time making nonsensical changes to the model and alert the user of the problem so it can be corrected as quickly as possible.
-
-#### Making Changes to the Model
-Once all the inputs have been checked, it is time to start doing something to the model. A vast number of possible changes can be made, so rather than describing each one, this section gives a few examples and explains how to determine which commands to use to do other things.
-
-The goal of the first example will be to loop through all the spaces in the model and check whether the space is assigned to a thermal zone. If it not assigned to a thermal zone, you need to create a new thermal zone and assign this space to it.
+### Initial Condition (runner.registerInitialCondition)
+The initial condition gives the user a "before" snapshot of the model with respect to what the measure will change.
 
 ```ruby
-def run(model, runner, user_arguments)
-  super(model,runner,user_arguments)
-  spaces = model.getSpaces
-
-  spaces.each do |space|
-    if space.thermalZone.empty?
-      new_thermal_zone = OpenStudio::Model::ThermalZone.new(model)
-      space.setThermalZone(new_thermal_zone)
-      runner.registerInfo("Space #{space.name} didn't have a thermal zone,
-                          so a new thermal zone was created and assigned.")
-    end
-  end
-
-end
+runner.registerInitialCondition("Input model had #{num_flrs} floors")
 ```
 
-The first command is to get all the spaces in the model. Whenever you want a vector of a certain class of objects from a model, the command is "get#{ClassName}s" (e.g., getThermalZones, getSpaces). Next you start a loop that iterates through all spaces in the model. Within this loop the next command checks to see if the space has a thermal zone assigned. Now you begin to get into the programming weeds... be patient, this is one of the hardest parts to understand.
+### Final Condition (runner.registerFinalCondition)
+The final condition gives the user an "after" snapshot of the model with respect to what the measure changed. Reporting the final condition is optional, but is good practice. 
 
-#### Optionals and .get
-OpenStudio is written in C++, and translated to be available in Ruby by software called SWIG. This auto-translation leaves one artifact that Ruby users generally do not deal with:  the "optional" return type.
-
-Some OpenStudio methods return an "OptionalSomething" (Ruby hint: if you ever want to know the type of a variable in Ruby, you can use the ".class" method to find out). An optional result is either empty (the method did not return anything) or it points to what you are trying to get. Look at the example line.
+Reporting the initial and final conditions is optional, but is recommended practice. These messages together can be used in reporting measures to explain the specific changes the a measure made to a model.
 
 ```ruby
-if space.thermalZone.empty?
+runner.registerFinalCondition("Model currently has #{num_flrs} floors")
 ```
 
-In the online [documentation](http://openstudio.nrel.gov/sites/openstudio.nrel.gov/files/nv_data/cpp_documentation/model/html/classopenstudio_1_1model_1_1_space.html) for the "Space" object, the method ".thermalZone" is defined as:
-
-boost::optional<[ThermalZone](http://openstudio.nrel.gov/sites/openstudio.nrel.gov/files/nv_data/cpp_documentation_it/model/html/classopenstudio_1_1model_1_1_thermal_zone.html)> openstudio::model::Space::thermalZone( ) const
-
-This indicates that calling "space.thermalZone" returns a "boost::optional< [ThermalZone](http://openstudio.nrel.gov/sites/openstudio.nrel.gov/files/nv_data/cpp_documentation_it/model/html/classopenstudio_1_1model_1_1_thermal_zone.html) >" result. Ignoring the syntax for now, the main point is that the method returns an "OptionalThermalZone" and not a "ThermalZone". To learn whether this "OptionalThermalZone" points to an actual "ThermalZone," you use the ".empty?" method. If the result is empty, it does not point to an actual "ThermalZone" and cannot be used. In the example if "space.thermalZone.empty?" is true, the space has no thermal zone. Calling "get" on an empty "OptionalSomething" will crash the measure.
-
-If an "OptionalSomething" is not empty, it points to an actual "Something" and can be used. To get the actual "Something" that the variable points to, you can use the ".get" method. In the example if "space.thermalZone.empty?" is not true, you can use ".get" to get a reference to the space's thermal zone.
+### Not Applicable (runner.registerAsNotApplicable)
+Not all measures are applicable to all models. For example, a measure called "Replace all windows with triple-paned windows" would not be applicable to a building with no windows. This log message simply allows the measure author to register the fact that a measure ran successfully, but made no changes to the model.
 
 ```ruby
-if not space.thermalZone.empty?
-  thermal_zone = space.thermalZone.get
-end
-```
-
-The OpenStudio API has many places where optional results are returned. The API documentation can be very helpful for determining the type of result a given method returns. Several methods in OpenStudio return a "ModelObject" (".clone", ".optionalWorkspaceObjectChoiceValue", etc.). This is fine for many purposes; however, if you want to test if the object returned is of a particular type (e.g., is it a Space or a SpaceType), you will have to try converting the object to those types using the ".to_#{ClassName}"  (".to_Space", ".to_SpaceType", etc). Those methods will return an optional result, which will be empty if the conversion failed and will contain the value if it succeeded. If the conversion was successful, you can use all the methods of that type on the result.
-
-```ruby
-new_object = old_object.clone(model)
-if not new_object.to_LightsDefinition.empty?
-  #what you cloned was a LightsDefinition
-  new_light_def = new_object.to_LightsDefinition.get
-else
-  #what you cloned was not a LightsDefinition
-end
-```
-
-Don't worry if you did not understand all this on the first pass, keep going forward and look at the next example, referring back as needed.
-
-#### Info, Warning, and Error Messages (Continued)
-Beyond the info, warning, and error messages that you can give to the user, three other specific pieces of information can be returned:  the initial condition, the final condition, and whether the measure was applicable to this particular model.
-
-##### Initial Condition
-The initial condition is a way for you to give the user a "before" snapshot of the model with respect to what the measure will change. Reporting the initial condition is optional, but is good practice.
-
-```ruby
-runner.registerInitialCondition("Model started with #{num_flrs} floors")
-```
-
-##### Final Condition
-The final condition is a way for you to give the user an "after" snapshot of the model with respect to what the measure changed. Reporting the final condition is optional, but is good practice. The initial and final conditions can be useful when explaining the specific changes the measure made to the model.
-
-```ruby
-runner.registerFinalCondition("Model ended with #{num_flrs} floors")
-```
-
-##### Not Applicable
-Not all measures are applicable to all models. For example, a measure called "Replace all windows with triple-paned windows" would not be applicable to a building with no windows. The fact that a measure ran successfully, but made no changes to the model, should be recorded. Imagine that the user applied the example measure to many buildings and looked at its impact across all the buildings. For the building with no windows, the measure was "Not Applicable", so the user could therefore exclude this building from the impact analysis. It is good practice to track whether a measure makes any changes to the model, and register it as "Not Applicable" if no changes were made.
-
-```ruby
-runner.registerAsNotApplicable("Measure not applicable because XYZ")
+runner.registerAsNotApplicable("Measure not applicable because [logic!]")
 return true
 ```
-
-This extended example shows how the initial condition, final condition, and applicability flags are used.
+#### Extended Log Message Example
+This example shows how the initial condition, final condition, and applicability messages can be used.
 
 ```ruby
 def run(model, runner, user_arguments)
@@ -386,15 +285,104 @@ def run(model, runner, user_arguments)
 end
 ```
 
-#### What Methods Are Available?
-After looking at the examples above, you might be thinking "I understand the structure of a measure, but what if I want to write a measure that does something besides add thermal zones to spaces?"  This is a good question.
+## Input Validation
+Measure authors are engouraged to perform some degree of validation of the user arguments, and the OpenStudio API includes methods for this. Every required argument must have a value, and be of the right type. This is easily accomplished via the validateUserArguments() method:
 
-The next example illustrates the process of going from an idea for a measure through writing the measure, assuming little behind-the-scenes knowledge of OpenStudio.
+```ruby
+if not runner.validateUserArguments(arguments(model), user_arguments)
+  return false
+end
+```
 
-##### The Idea
-Write a measure that will remove all lights currently in the "Enclosed Office" space type and replace them with new lights that have a lighting power density (LPD) of 10 W/m2.
+For additional robustness, authors may ensure that values make sense in the context of the script (e.g., '-2' is not a valid number of chillers in a building). The first step in this type of input validation is to pull the values from the "user_arguments" variable and assign them to variables in the run method. Best practice is to use the same variable names in the arguments method and the run method:
 
-##### Figuring Out the Modeling Approach
+```ruby
+v1 = runner.getDoubleArgumentValue('v1',user_arguments)
+v2 = runner.getIntegerArgumentValue('v2',user_arguments)
+v3 = runner.getBoolArgumentValue('v3',user_arguments)
+v4 = runner.getStringArgumentValue('v4',user_arguments)
+v5 = runner.getStringArgumentValue('v5',user_arguments)
+v6 = runner.getOptionalWorkspaceObjectChoiceValue('v6',user_arguments, model)
+```
+
+Upon assignment to variables, the author may apply logical tests to each user argument for validity. For example, we assume that ```v1``` is a fractional value, and must be between 0 and 1. The following example will test the variable for validity; the measure will exit and inform the user if the test fails:
+
+```ruby
+if v1 < 0 or v1 > 1
+  runner.registerError("Fractional input 'v1' is #{v1}; must be between 0 and 1 inclusive.")
+  return false
+end
+```
+
+Input validation can be as simple or as detailed as required, or as defined by the measure author. The goal is to increase the utility, accuracy, and user-friendliness of the measure.
+
+## Measure Writing
+This section provides a few examples of partial and complete measures, and pointers on where to find details on OpenStudio objects and methods -- the building blocks of Measures -- so that you can begin writing your own. The run() and super() methods are now familiar, as are the user arguments and validation thereof. The examples here are the "main" elements of a typical measure.
+
+### Example: Check Spaces for Thermal Zone Assignment
+This first example is essentially a *validation*, or *quality assurance/quality control* (QAQC) measure; the measure validates the model input and takes corrective action if needed.
+
+####The Task
+*"Loop through all the spaces in the model and check whether each space is assigned to a thermal zone (a required input). If a space is not assigned to a thermal zone, create a new one, and assign to the space."*
+
+```ruby
+def run(model, runner, user_arguments)
+  super(model,runner,user_arguments)
+  spaces = model.getSpaces
+
+  spaces.each do |space|
+    if space.thermalZone.empty?
+      new_thermal_zone = OpenStudio::Model::ThermalZone.new(model)
+      space.setThermalZone(new_thermal_zone)
+      runner.registerInfo("Space #{space.name} did not have a thermal zone; 
+      a new thermal zone was created and assigned.")
+    end
+  end
+end
+```
+
+While not intended as a Ruby programming tutorial, let's break down the preceding code snippet, as it uses some fundamental elements of the OpenStudio API:
+
+```spaces = model.getSpaces``` retrieves all the spaces in the model, and stores them in an array called ```spaces```. Measure authors can use this syntax to retrieve a vector of many objects from a model (e.g., ```.getThermalZones```, ```.getSpaces```, etc.). 
+
+The next line starts an iterator on spaces. Within this loop, the next command checks to see if the space has a thermal zone assigned (```.thermalZone.empty?```). If there is no thermal zone assigned, a new one is created (```new_thermal_zone = OpenStudio::Model::ThermalZone.new(model)```), and assigned (```space.setThermalZone(new_thermal_zone)```). 
+
+### OpenStudio Measures and the ```boost::optional``` Type
+OpenStudio leverages the [Boost libraries](http://www.boost.org/) quite a bit, making repeated use of the ```boost::optional``` type. In Ruby, this type requires a slightly different approach to accessing object classes and their methods than typical. In short, calling ```.get``` on an *empty* ```boost::optional``` object will cause the program to crash, so one must make a precautionary inspection of several objects (the OpenStudio ```Space``` is but one) prior to attempting to use their methods. 
+
+In the online [documentation](https://openstudio-sdk-documentation.s3.amazonaws.com/cpp/OpenStudio-1.11.0-doc/model/html/classopenstudio_1_1model_1_1_space.html) for the ```Space``` class, the method ```.thermalZone``` is defined as:
+
+```boost::optional< ThermalZone > thermalZone () const```
+
+Calling ```space.thermalZone``` returns a ```boost::optional< ThermalZone >``` not a ```ThermalZone```. To determine whether the **optional** points to an **actual** ```ThermalZone``` you must use the ```.empty?``` method. If the result is empty, it does not point to an actual "ThermalZone" and cannot be used. 
+
+If the example: ```if space.thermalZone.empty?``` evaluates "true", the space has no thermal zone. Again, calling ```.get``` on this empty object **would crash a measure**. Conversely, if ```if "space.thermalZone.empty?``` were false, then the program could leverage all the object's methods:
+
+```ruby
+if not space.thermalZone.empty?
+  thermal_zone = space.thermalZone.get
+end
+```
+
+The OpenStudio API has many places where optional results are returned. The API documentation can be very helpful for determining the type of result a given method returns. Several methods in OpenStudio return a "ModelObject" (".clone", ".optionalWorkspaceObjectChoiceValue", etc.). This is fine for many purposes; however, if you want to test if the object returned is of a particular type (e.g., is it a Space or a SpaceType), you will have to try converting the object to those types using the ".to_#{ClassName}"  (".to_Space", ".to_SpaceType", etc). Those methods will return an optional result, which will be empty if the conversion failed and will contain the value if it succeeded. If the conversion was successful, you can use all the methods of that type on the result.
+
+```ruby
+new_object = old_object.clone(model)
+if not new_object.to_LightsDefinition.empty?
+  #what you cloned was a LightsDefinition
+  new_light_def = new_object.to_LightsDefinition.get
+else
+  #what you cloned was not a LightsDefinition
+end
+```
+
+### Example: Update Lighting Power Density
+This next example illustrates the process of going from an idea for a measure through writing the measure, leveraging the OpenStudio API to accomplish the goal.
+
+#### The Task
+*"Write a measure that will remove all lights objects currently in the "Enclosed Office" space type and replace them with new lights objects that have a lighting power density (LPD) of 10 W/m2."*
+
+#### Figuring Out the Modeling Approach
 The first thing to do is understand how the measure would be modeled in OpenStudio, and make a list of the objects involved. The easiest way to do this is to open the OpenStudio Application and look through the GUI. In this case, we'll start on the "Space Types" tab.
 
 ![guide image2](img/measure-writing-guide/2.png)
@@ -405,17 +393,15 @@ On this tab, first click on the first object (in the left column) is "Space Type
 
 On the left side under the "Loads" tab is a category called "Lights Definitions."  Under this category is the definition "ASHRAE_90.1-2004_Office_LPD" that was referenced on the "Space Types" tab. One field is titled "Energy Per Space Floor Area" with units of "W/ft2."  Although the GUIs may show IP units, the methods of the OpenStudio model are all written in SI units.
 
-##### Restating the Measure Using OpenStudio Terms
-Restate the measure using the names of the OpenStudio model objects found during the GUI exploration:
+#### The Task, in OpenStudio Terms
+*"Find the ```SpaceType``` called "```Enclosed Office```". Replace any ```LightsDefinitions``` referenced by ```Lights``` in this ```SpaceType``` with a new ```LightsDefinition```, where "Energy Per Space Floor Area" = 10 W/m2.*"
 
-Find the SpaceType called "Enclosed Office". Replace any LightsDefinitions referenced by Lights in this SpaceType with a new LightsDefinition having "Energy Per Space Floor Area" = 10 W/m2.
-
-##### Finding the OpenStudio Methods: Using the Documentation
-All the OpenStudio code documentation lives online at https://s3.amazonaws.com/openstudio-sdk-documentation/index.html. [Open this website.](https://s3.amazonaws.com/openstudio-sdk-documentation/index.html)
+#### Finding the OpenStudio Methods: Using the Documentation
+For this example and all your measure writing work, the [OpenStudio API documentation](https://s3.amazonaws.com/openstudio-sdk-documentation/index.html) is the principal resource.
 
 ![Methods 1](img/measure-writing-guide/4.png)
 
-Click on the model link to explore.
+Click on the [model](https://openstudio-sdk-documentation.s3.amazonaws.com/cpp/OpenStudio-1.11.0-doc/model/html/index.html) link to explore.
 
 ![Methods 2](img/measure-writing-guide/5.png)
 
@@ -426,13 +412,13 @@ This will take you to the OpenStudio Model Overview page.
 Select the "Objects/Objects List" to find more information on individual model objects.
 ![Core](img/measure-writing-guide/6b.png)
 
-Click "__SpaceType__"."
+Clicking "__SpaceType__" takes you to the class reference for that object:
 
 ![click space](img/measure-writing-guide/7.png)
 
-This screen contains the documentation for the SpaceType class. The methods are generally split into four categories: Constructors and Destructors, Getters, Setters, and Other. SpaceType is a base class of ResourceObject. You can look into the ResourceObject for additional methods beyond what is in the SpaceType documentation.
+This is the documentation for the SpaceType class. The methods are generally split into four categories: Constructors and Destructors, Getters, Setters, and Other. SpaceType is a base class of ResourceObject. You can look into the ResourceObject for additional methods beyond what is in the SpaceType documentation.
 
-###### Understanding the Methods
+#### Understanding the Methods
 At first glance, the methods look cryptic, not at all like those shown in the examples, because this is the C++ documentation and the methods used are the Ruby translation of these same methods. These methods can be decoded as follows:
 
 The name of the method:
@@ -449,19 +435,13 @@ The type of object returned by the method:
 
 ![type of object](img/measure-writing-guide/9.png)
 
-Methods Return Types:
-
-bool = true/false
-
-double = a number
-
-std::string = text
-
-void = does not return anything
-
-std::vector<InternalMass> = A vector of the type of objects inside the <>; in this case the Ruby class returned will be a InternalMassVector.
-
-boost::optional<DesignSpecificationOutdoorAir> = an optional that may either be empty or point to an actual object of the type inside the <>; in this case the Ruby class returned will be an Optional DesignSpecificationOutdoorAir. See the section [Optionals and .get](#345-optionals-and-get) for more information about optional types.
+Method Return Types:
+* bool = true/false
+* double = a number
+* std::string = text
+* void = does not return anything
+* std::vector<> = vector of the type objects inside the carets (<>)
+* boost::optional<> = an "optional"; may either be empty or point to an actual object of the type inside the <> 
 
 The written description of the method:
 
@@ -471,12 +451,10 @@ The inputs needed by the method:
 
 ![inputs](img/measure-writing-guide/11.png)
 
-Methods that do not need inputs have empty parentheses (). Ruby allows you to skip adding the empty parentheses when you call methods with no arguments. You can ignore the const and & C++ keywords in the declarations for now.
-
-##### Using the Documentation for the Example Measure
+### Using the Documentation for the Example Measure
 With an understanding of how to read the documentation, the example measure continues.
 
-The first step is to find the SpaceType called "Enclosed Office". As you loop through all the spaces in the model, you can use the ".name" method to get the name of each space. Note that the ".name" method returns an "OptionalString"; however,  OpenStudio will assign names to all model objects, so there is no need to check if the name is empty before using it. You can use the ".match" method to see if the SpaceType's name matches the value you are looking for.
+The first step is to find the SpaceType named "Enclosed Office". Looping through all the spaces in the model, we can use the ```.name``` method to get the name of each space. Note that while ```.name``` returns an ```OptionalString```, OpenStudio assigns names to all model objects, so there is no need to check if the name is empty before using it (a rare exception to the rule of testing all Optional types for ```!empty```). Using the ```.match``` method, we test if the SpaceType's name matches the value we are looking for:
 
 ```ruby
 space_types = model.getSpaceTypes
@@ -487,11 +465,11 @@ space_types.each do |space_type|
 end
 ```
 
-Once you have found a SpaceType matching the name you are looking for, you need to get all the Lights in Spaces of this SpaceType. The documentation for SpaceType includes a method to get a vector of all Lights in Spaces of this SpaceType:
+Once found, we need to get all the ```Lights``` in ```Spaces``` of this ```SpaceType```. The documentation for SpaceType includes a method to get a vector of all Lights in Spaces of this SpaceType:
 
 ![Space Matching](img/measure-writing-guide/12.png)
 
-You can extend the code to then loop over all these Lights:
+Now, loop over all these Lights:
 
 ```ruby
 space_types = model.getSpaceTypes
@@ -504,21 +482,21 @@ space_types.each do |space_type|
 end
 ```
 
-Now you need to make a new LightsDefinition to replace the ones these Lights currently use. The documentation for LightsDefinition shows a constructor that expects a Model as the input.
+We need to make a new LightsDefinition to replace the ones these Lights currently use. The documentation for LightsDefinition shows a constructor that expects a Model as the input:
 
 ![Lights def](img/measure-writing-guide/13.png)
 
-Constructors translated from C++ to Ruby take the following form. The only difference may be which arguments the constructor requires; usually it is simply a Model.
+Constructors translated from C++ to Ruby generally take the following form; the only difference may be which arguments the constructor requires (usually it is simply a ```model```).
 
 ```ruby
 new_thing = OpenStudio::Model::NewThingClassName.new(model)
 ```
 
-Now, figure out how to set the LPD of the LightsDefinition to 10 W/m2. The LightsDefinition documentation presents a method.
+Next, we need to set the LPD of the LightsDefinition to 10 W/m2. The LightsDefinition documentation presents a method for this:
 
 ![lights def2](img/measure-writing-guide/14.png)
 
-You will also want to name the new LightsDefinition object for better user comprehension. Most OpenStudio objects have a ".setName(new_name)" method. You can put this together to make the LightsDefinition object.
+Name the new LightsDefinition object, following best practices. Most OpenStudio objects have a ```.setName(new_name)``` method, and the Lights object is no exception:
 
 ```ruby
 new_lights_def = OpenStudio::Model::LightsDefinition.new(model)
@@ -526,7 +504,7 @@ new_lights_def.setWattsperSpaceFloorArea(10.0)
 new_lights_def.setName("10 W/m^2 Lights Definition")
 ```
 
-Now that you have a new LightsDefinition object, you need to figure out how to replace the existing LightsDefinition with the new one. The Lights documentation contains a method to set the lights definition.
+Now that we have a new LightsDefinition object, we must replace the existing LightsDefinition with the new one. The Lights documentation contains a method to set the lights definition:
 
 ![Replace Existing](img/measure-writing-guide/15.png)
 
@@ -548,12 +526,8 @@ space_types.each do |space_type|
 end
 ```
 
-#### Putting It All Together
-The following example is a complete measure.rb file, including all the pieces described previously. Notice that there are comments in this script. It is good practice to include comments directly inside the measure.rb file, so anyone who opens the file can understand what is happening. These comments were omitted from the previous examples because the main text described what was happening.
-
-```ruby
-# a pound sign denotes a comment
-```
+### Full Example 
+The following example is a complete measure.rb file, including all the pieces described previously. We include comments (text preceded by '#'), following Ruby best practices.
 
 ```ruby
 #start the measure
@@ -666,11 +640,12 @@ end #end the measure
 ReplaceLightsInSpaceTypeWithLPD.new.registerWithApplication
 ```
 
-## Measure File - measure.xml
-The measure.xml file contains metadata that allow the measure to be filed into an organizational structure, provide an explanation about what the measure does and how it works, and tell the GUI where in the workflow the measure can go. The GUI creates a new measure.xml file when you click on the "Create a New Measure" button. In general, you should not need to make any changes to the measure.xml file manually. The OpenStudio Application and PAT detect any changes that are made to measures in your "My Measures" directory when you press the "Sync Project Measures with Library" button. Changes to the name, description, modeler description or any other measure properties will be updated in the measure and the measure will be given a new version identifier. However, there are a few limited cases when you will need to modify the measure.xml file by hand. These cases are 1) changing the measure's author information (i.e. provenance), 2) changing the tags which determine where the measure is listed in the BCL measure taxonomy, 3) changing attributes which are used when searching for the measure on the BCL. To make changes to any of these items you will have to edit the appropriate section (described below) in the measure.xml file by hand, then press the "Sync Project Measures with Library" button in either the OpenStudio Application or PAT to assign a new version identifier.
+## Measure Metadata File - measure.xml
+The **measure.xml** file contains metadata that allow the measure to be filed into an organizational structure, provide an explanation about what the measure does and how it works, and inform the GUI where in the workflow the measure can go. The GUI creates a new measure.xml file when you click on the "Create a New Measure" button. In general, you should not need to make any changes to the measure.xml file manually. The OpenStudio Application and PAT detect any changes that are made to measures in your "My Measures" directory when you press the "Sync Project Measures with Library" button. Changes to the name, description, modeler description or any other measure properties will be updated in the measure and the measure will be given a new version identifier. However, there are a few limited cases when you will need to modify the measure.xml file by hand. These cases are 1) changing the measure's author information (i.e. provenance), 2) changing the tags which determine where the measure is listed in the BCL measure taxonomy, 3) changing attributes which are used when searching for the measure on the BCL. To make changes to any of these items you will have to edit the appropriate section (described below) in the measure.xml file by hand, then press the "Sync Project Measures with Library" button in either the OpenStudio Application or PAT to assign a new version identifier.
+**NOTE**: This process of creating and updating the **measure.xml** file will change for PAT 2.0, and the advent of the OpenStudio Command Line Interface (CLI).
 
 ### Provenance
-The Provenance section describes who wrote the measure and when. As author, you may identify yourself however you desire; current convention is to use first initial of first name, followed by full last name (Andrew Parker -> aparker). You may name multiple authors. The time format follows ISO 8601 (http://en.wikipedia.org/wiki/ISO_8601).
+The Provenance section describes who wrote the measure and when. As author, you may identify yourself however you desire; current convention is to use first initial of first name, followed by full last name (e.g., jdoe). You may name multiple authors. The time format follows [ISO Standard 8601](http://en.wikipedia.org/wiki/ISO_8601).
 
 ```xml
 <provenances>
@@ -683,85 +658,25 @@ The Provenance section describes who wrote the measure and when. As author, you 
 ```
 
 ### Tags
-The Tags section describes where the measure lives in the BCL Measure taxonomy. This taxonomy is used to indicate where in the GUI the measure should be displayed. If the Tags section is blank, the measure will not show up in the GUI.
-
-#### BCL Measures Taxonomy
-The BCL Measures Taxonomy is available at http://bcl.nrel.gov/api/taxonomy/measure, the current taxonomy is:
-
-- Envelope
-    - Fenestration
-    - Daylighting
-    - Form
-    - Infiltration
-    - Opaque
-- Electric Lighting
-    - Controls
-    - Lighting Equipment
-- Equipment
-    - Controls
-    - Electric Equipment
-- HVAC
-    - Controls
-    - Heating
-    - Cooling
-    - Heat Rejection
-    - Energy Recovery
-    - Distribution
-    - Ventilation
-    - Whole System
-- Refrigeration
-- Service Water Heating
-    - Water Use
-    - Water Heating
-    - Distribution
-- Onsite Power Generation
-    - Photovoltaic
-- Reporting
-    - QAQC
-    - Troubleshooting
-
-The place inside the measure taxonomy is indicated Level1.level2. An example is Envelope.Fenestration.
-
-```xml
-<tags>
-  <tag>Envelope.Fenestration</tag>
-</tags>
-```
+The Tags section describes where the measure lives in the BCL Measure taxonomy. This taxonomy is used to indicate where in the GUI the measure should be displayed. If the Tags section is blank, the measure will not show up in the GUI. The BCL Measures Taxonomy is available [here](http://bcl.nrel.gov/api/taxonomy/measure).
 
 ### Attributes
-The Attributes section gives additional metadata that allow the GUI to display the measure in the correct place in the workflow and show only measures that can be used by a particular tool. There are currently two standardized attributes used for measures "Intended Software Tool" and "Intended Use Case", these are populated when a new measure is created. If you wish to change these after the measure has been created you must edit the measure.xml file manually. Other attributes may be added but are not used by OpenStudio applications.
+The Attributes section provides additional metadata that allow the GUI to display the measure in the correct place in the workflow and show only measures that can be used by a particular tool. There are currently two attributes used for the latter: "Intended Software Tool", and "Intended Use Case". These attributes are populated when a new measure is created; if you must change these after the measure has been created you must edit the measure.xml file manually. Other attributes may be added but are not currently used by OpenStudio applications.
 
 <!--- DLM: at some point we might want to create a list of measure attributes similar to the component ones https://bcl.nrel.gov/list-of-attributes -->
 
-#### Intended Software Tool
-The Intended Software Tool attribute lists the tools that this measure is intended to be used by. Software tools may choose to only display measures which list them as an intended software tool. A measure can list more than one tool as intended software tool. The list of software tools used by OpenStudio is:
+#### Intended Software Tool (deprecated)
+The Intended Software Tool attribute lists the tools that this measure is intended to be used by. Software tools may choose to only display measures which list them as an intended software tool. A measure may indicate more than one tool as intended software tool. The list of software tools used by OpenStudio is:
 
-*   Apply Measure Now - measures intended to be run directly on the current model in the OpenStudio Application. Only Model measures may be used in the Apply Measure Now feature.
-*   OpenStudio Application - measures intended to be run as part of the simulation workflow in the OpenStudio Application.
+*   Apply Measure Now - measures intended to be run directly on the currently open model in the OpenStudio Application. Only Model measures may be used with the "Apply Measure Now" feature.
+*   OpenStudio Application - measures intended to be run as part of the simulation workflow with the OpenStudio Application.
 *   Parametric Analysis Tool - measures intended to be run as part of the simulation workflow in PAT.
-*   Analysis Spreadsheet - measures intended to be run on the cloud using the OpenStudio Analysis Spreadsheet.
+*   Analysis Spreadsheet - measures intended to be run using the OpenStudio Analysis Spreadsheet.
 
-<!--- DLM: I forgot all the details about which things are which, need to review with David and Nick -->
-
-Example xml:
-
-```xml
-<attributes>
-  <attribute>
-    <name>Intended Software Tool</name>
-    <value>Apply Measure Now</value>
-    <datatype>string</datatype>
-  </attribute>
-  <attribute>
-    <name>Intended Software Tool</name>
-    <value>OpenStudio Application</value>
-    <datatype>string</datatype>
-  </attribute>
-</attributes>
-```
+**Intended Software Tool has been deprecated; it will be removed from the schema for PAT 2.0**
 
 #### Intended Use Case
-The Intended Use Case attribute describes the typical scenarios that this measure will be used in. Software tools may choose to only display measures which apply to their intended use case. A measure can list more than one intended use case. The list of use cases used by OpenStudio is:
+The Intended Use Case attribute describes the typical use case(s) for this measure. Software tools may choose to only display measures which apply to their intended use case. A measure can list more than one intended use case. The list of use cases used by OpenStudio is:
 
 <!--- DLM: I forgot all the details about which things are which, need to review with David and Nick -->
 <!--- DLM: Do we need a standards use case? For things that require standards markup?-->
@@ -790,22 +705,24 @@ Example xml:
 </attributes>
 ```
 
-## Measure Testing
-Measure testing is an excellent tool to validate your code as you are writing a measure and to test your completed measures as new versions of OpenStudio are released. Tests allow you to run the test programmatically outside of the OpenStudio GUI's.  When you create a new measure using the OpenStudio Application or the Parametric Analysis Tool it comes with a functioning test. Ideally all measures on BCL will also have at least one test, but that isn't currently enforced. Below are a number of reasons you want measure tests.
+# Measure Testing
+As the measure writing community has grown, and the Building Component Library is open to all measure writers (and consumers), we believe **testing** should be an integral element of the measure authoring process. A continuous integration (CI) system for the OpenStudio Measures on the BCL is in development, and we are now recommending all measures submitted to the BCL include a series of functional and unit tests, for integration with the CI system. 
 
-*   Test measures with various versions of Ruby.
-*   Test measures with various versions of OpenStudio.
-*   Test various combinations of argument values.
-*   Test various seed models.
-*   Validate not only that the measure runs without any ruby errors, but that it has the desired outcome.
-*   Optionally export the resulting model to IDF or even run EnergyPlus to confirm for another level of model validation.
-*   Tests for reporting measures can use pre-run results, allowing for very quick testing.
-*   Test using the same tool you are writing measures with (if you are using an text editor that supports running ruby).
+Software testing is a means to code quality assurance and output validation, and allow the author to test their work:
 
-The following sections summary the different parts of a typical measure test file.
+*   against various versions of Ruby
+*   against various versions of OpenStudio
+*   using combinations of argument values
+*   against a variety of permutations of input models
+*   for general runtime errors
+*   for valid IDF output (may even run EnergyPlus to confirm)
+*   for reporting measure output quality
+
+## Measure Test Components
+The following sections discuss the elements of a typical measure test file.
 
 ### Require statements
-There are a few objects that are required for measure testing. Generally these won't change from one test to another. You can just leave them as they are in the test that is created when you make a new measure.
+The default test that is automatically created when you make a new measure will contain the Ruby Classes and Modules necessary for all measures to function (you may include others here, that your code requires): 
 
 ```ruby
 require 'openstudio'
@@ -816,14 +733,14 @@ require 'fileutils'
 ```
 
 ### Class - MiniTest::Unit::TestCase
-The class should typically be a CamelCase version of your measure name with "Test" at the end. All of measure test code excluding the require statements will be contained within this class.
+The test class name shall take the form "[YourMeasureName]Test". All of measure test code excluding the require statements will be contained within this class. Following this guidance, a test class for a measure named "My Measure" would be initialized:
 
 ```ruby
 class MyMeasureTest < MiniTest::Unit::TestCase
 ```
 
 ### Setup and Teardown
-By default the setup and teardown definitions are emtpy and commented out. You can use these to run a block of code before and/or after each test. For more documentation see the [MiniTest documentation](http://ruby-doc.org/stdlib-2.0.0/libdoc/minitest/rdoc/MiniTest/Unit/TestCase.html#method-i-setup).
+The Setup and Teardown methods are inherent to the Ruby unit test framework, and we include the empty, disabled (commented-out) definitions in all auto-generated measure tests:
 
 ```ruby
   # def setup
@@ -833,7 +750,7 @@ By default the setup and teardown definitions are emtpy and commented out. You c
   # end
 ```
 
-To provide more useful sample code for a setup and teardown, here is the code from a reporting measure.
+These methods are useful for reliably creating an environment suitable for the ensuing test (e.g. setting paths; creating environment variables, data), and for restoring the system to its initial state. For additional details on the setup and teardown methods refer to the [MiniTest documentation](http://ruby-doc.org/stdlib-2.0.0/libdoc/minitest/rdoc/MiniTest/Unit/TestCase.html#method-i-setup), and refer to the example setup and teardown methods from an actual OpenStudio measure, below:
 
 ```ruby
   # create test files if they do not exist
@@ -844,7 +761,6 @@ To provide more useful sample code for a setup and teardown, here is the code fr
     end
 
     assert(File.exist?(modelPath()))
-
     assert(File.exist?(runDir()))
 
     if not File.exist?(sqlPath())
@@ -878,16 +794,16 @@ To provide more useful sample code for a setup and teardown, here is the code fr
   end
 ```
 
-### Test definition
-You can and should have multiple tests in your test file. This will assure that your measure is more robust for a variety of models and inputs that are passed to it. This is particularly important when you are making public facing measure vs. measures for your own internal use. You can copy one test to make the starting point for the next, but be sure that each test def has a unique name. Here are some typical tests you might include
+### Test Definition(s)
+You may have as many individual tests in your test file as needed to ensure the quality of your work:
 
 ```ruby
-  def test_my_measure_good_argument_values_test_a
+  def test_my_measure_good_argument_values_test
 ```
-
-*   Test the number and name of measure arguments. This is useful when you are copying or altering a measure to make sure the measure is in sync with the tests
-*   Test for bad argument values. If for example you ask for a double but you expect to get a non-negative value. Use this to make sure the measure fails gracefully with the proper error message to the user. Ideally you can have one of these for any argument which has the possibility of invalid use entry.
-*   Test good argument values. You may have a number of these testing various input conditions. You may also swap out different seed models.
+### Example Tests
+*   Test the number and name(s) of measure arguments
+*   Test for incorrect or invalid argument values; the measure should fail gracefully with a meaningful error message to the user.
+*   Test a modeling result, e.g. source energy use, to remain within a specific range.
 
 ### Create Measure Instance and Runner
 This will look pretty much the same for all measures and tests. The main change will be updating the class of the measure. Refer to the measure.rb that goes with the test to confirm it is correct.
@@ -900,14 +816,21 @@ This will look pretty much the same for all measures and tests. The main change 
     runner = OpenStudio::Ruleset::OSRunner.new
 ```
 
-### Create New Model or Open Existing Model
-Every measure needs a Model or Workspace, or results as well if it is a reporting measure. Below is the most simple code you can write to add an empty model
+### Model and Workspace Creation, Loading
+Every measure needs a ```model``` or ```workspace``` (and results, in the case of a reporting measure) upon which to (inter)act. Measures can create source OSMs (and IDFs), or load existing ones. 
+
+
+**Create New Model**
+The OpenStudio Model Class provides a method (```.new```)to create an empty model (.OSM):
+
 ```ruby
     # make an empty model
     model = OpenStudio::Model::Model.new
 ```
 
-The code below shows how to load in an existing model. This is often useful because your measure may need to operate on specific type of objects in your model. This allows you to use a model created in teh GUI as a starting point instead of using the OpenStudio API to build the model within the test.
+**Load Existing Model**
+The code below shows how to load an existing model. This is useful when the author wishes to test some specific model objects or configuration; a pre-existing model may be included in the resources of a given test. Note in this example, we use ```assert``` to test if the model exists (i.e., the ```load``` was successful), prior to using the ```get``` method on it. 
+
 ```ruby
     # load the test model
     translator = OpenStudio::OSVersion::VersionTranslator.new
@@ -917,13 +840,13 @@ The code below shows how to load in an existing model. This is often useful beca
     model = model.get
 ```
 
-Here is basic code for creating a new Workspace in an EnergyPlus measure.  Don't worry about the arguments to Workspace.new, they are just boilerplate for an EnergyPlus Workspace. 
+**Create New Workspace, Blank IDF** 
 ```ruby
     # make an empty workspace
     workspace = OpenStudio::Workspace.new("Draft".to_StrictnessLevel, "EnergyPlus".to_IddFileType)
 ```
 
-The source for an EnergyPlus measure test could be an IDF that you load as shown below.
+**Load Existing IDF**
 ```ruby
     # load an IDF
     path = OpenStudio::Path.new(File.dirname(__FILE__) + "/my_test_input.idf")
@@ -932,7 +855,8 @@ The source for an EnergyPlus measure test could be an IDF that you load as shown
     workspace = workspace.get
 ```
 
-Or you can load an OSM and then forward translate it to IDF, this is often more convenient.
+**Load IDF from OSM**
+i.e., load an OSM and forward translate it to IDF:
 ```ruby
     # load the test model
     translator = OpenStudio::OSVersion::VersionTranslator.new
@@ -946,33 +870,27 @@ Or you can load an OSM and then forward translate it to IDF, this is often more 
     workspace = ft.translateModel(model)
 ```
 
-To see what is loaded for reporting measure, refer to the template code that comes with a new reporting measure.
+To see what is loaded for reporting measure, refer to the code template that comes with a new reporting measure.
 
-### Seed model variables
-You may want to store information about the seed model before the measure runs for use later on. In this case the number of spaces in the model is stored. This code should run after the model is loaded, but before the measure is run.
+## Testing Argument Values
+A fairly common test topic is the measure's arguments, as previously mentioned. Here we demonstrate how to accomplish this. We need to "get" the measure arguments, and then apply logical tests to them for validity.
 
-```ruby
-# store the number of spaces in the seed model
-num_spaces_seed = model.getSpaces.size
-```
-
-### Get and Set Argument Values
-The lines below show how to get the arguments. For a model measure you pass in "model". For an EnergyPlus measure you pass in "workspace". Nothing is passed in for a reporting measure.
-
+Get the arguments:
 ```ruby
     # get arguments
     arguments = measure.arguments(model)
     argument_map = OpenStudio::Ruleset.convertOSArgumentVectorToMap(arguments)
 ```
+**Note:** In the case of a model measure, we pass ```model``` to the ```.arguments``` method; for an EnergyPlus measure we pass in the ```workspace```. The reporting measure does not require an argument here.
 
-If you want to you can assert that there are the expected number of arguments, or what the name is of an argument at a specific index location.
+Let us test (assert) for the expected number of arguments (one (1) in this example), and the argument name at a specific index location:
 
 ```ruby
     assert_equal(1, arguments.size)
     assert_equal("space_name", arguments[0].name)
 ```
 
-There are a number of ways to set the argument values for the test. Below is a streamline method that creates a hash and then populates the arguments from the hash. When entering values make sure that if the argument type is a double that you enter 2.0 instead of just 2 for your argument value. You can skip arguments where you want to apply the default value
+Measure tests will often need to supply user argument values. Indeed, certain tests will specifically be testing for good and/or bad input, as mentioned. Here, we create a hash and populate it with the user arguments and their values:
 
 ```ruby
     # create hash of argument values
@@ -997,50 +915,57 @@ After the hash has been created, then loop through the arguments to apply the ha
 ```
 
 ### Run the Measure
-Below shows the code to run an OpenStudio measure. If the meausre is an EnergyPlus measure replace "model" with "workspace. For a Reporting measure skip this so only "runner, argument_map" is passed in.
+Here, we run the OpenStudio measure from the test. 
+**Note:** (For EnergyPlus measures, replace ```model``` with ```workspace```; reporting measures do not require a model argument at all, just ```runner``` and ```argument_map``` are passed to the method.)
 
 ```ruby
     measure.run(model, runner, argument_map)
     result = runner.result
 ```
 
-### Show log messages
-You don't have to show log message, but this gives you a view into the same feedback users in the GUI wil see. By running this before the asserts it will show even if an assert fails. The messages can be good for diagnostics as to why an assert failed.
+### Show Log Messages
+You may print log messages to the console: 
+```ruby
+show_output(result)
+```
+This will report the same feedback to the console that users in the GUI would see in the OpenStudio application, or PAT. Placing this directive ahead of any ```assert```s will provide feedback if an assert fails, aiding in assert failure diagnostics (see below).
+
+
+## Assertions
+[Assertions](http://ruby-doc.org/stdlib-2.0.0/libdoc/test/unit/rdoc/Test/Unit/Assertions.html) are the primary means for testing with the Ruby unit test class. Below are some example assertions in the context of OpenStudio measures.
+
+At a minimum a measure test suite should a test for result state. Valid options are "Success", "Fail", or "NA":
 
 ```ruby
-    show_output(result)
+assert_equal("Success", result.value.valueName)
 ```
 
-### Asserts
-Asserts can be as detailed as you like. Below are some example asserts on the results of the measure, and on the resulting model.
-
-At a minimum you always want an assert that shows the result state. Valid options are "Success", "Fail", or "NA"
-```ruby
-    assert_equal("Success", result.value.valueName)
-```
-
-It is also typically a good idea to see that you had the expected number of info, warning messages.
-```ruby
-    assert(result.info.size == 1)
-    assert(result.warnings.size == 0)
-```
-
-Lastly, here is a more detailed example that inspect the model itself to see that it was altered as expected.
-```ruby
-    # check that there is now 1 more space than in the seed model
-    assert_equal(1, model.getSpaces.size - num_spaces_seed)
-```
-
-### Save the resulting model
-You don't have to save the resulting model, but it can be nice to open up the model and hand inspect it, in particular as you are writing and extending the functionality of your measure. It can also be a nice resource for people downloading your measure to see a before and after state of the model. The code below will save the resulting model in an output directory underneath the test directory.  It is important to save all test output files in this directory otherwise OpenStudio will think that your test outputs are part of your measure and will copy them every time you use your measure! If you have multiple tests that save models make sure the name of the model saved is unique.
+Authors may test for the expected number of info, or warning messages:
 
 ```ruby
-    #save the model to test output directory
-    output_file_path = OpenStudio::Path.new(File.dirname(__FILE__) + "/output/my_test_model_test_a_output.osm")
-    model.save(output_file_path,true)
+assert(result.info.size == 1)
+assert(result.warnings.size == 0)
 ```
 
-### Putting It All Together - A Complete Measure Test File
+Here is a model-specific example that inspects the model to see that it was altered as expected:
+```ruby
+# check output model has one added space, where
+# 'num_spaces_seed' equals the initial space count from the input model
+assert_equal(1, model.getSpaces.size - num_spaces_seed)
+```
+
+### Saving Output Models
+Saving the measure output model is not required, but can be useful for debugging the measure workflow itself, either during the initial authoring, or later feature expansion of a given measure. 
+
+The example below will save the output model in a subdirectory of the test directory tree.  This "test" directory should be excluded from version control so that it is not distributed with the measure and tests.
+
+```ruby
+#save the model to test output directory
+output_file_path = OpenStudio::Path.new(File.dirname(__FILE__) + "/output/my_test_model_test_a_output.osm")
+model.save(output_file_path,true)
+```
+
+## Putting It All Together - A Complete Measure Test File
 
 ```ruby
 require 'openstudio'
@@ -1170,36 +1095,55 @@ class NewMeasureTest < MiniTest::Unit::TestCase
 end
 ```
 
-### Running the Measure Tests
-To use the test files described above you need to leave the OpenStudio GUI's and either use the command line or an Interactive Development Environment (IDE) to run ruby. Ideally you will be able to run your tests while you write your measures and measure tests from within the same environment. I'll show [Notepad++](http://notepad-plus-plus.org/) below but there are many options. I'll also show using a command line.
+## Running Tests
 
-#### Configuring Your Computer for Testing
-On the mac, you don't have to configure anything. Ruby is already installed and it knows how to find OpenStudio. On windows you need to either tell your computer where to find the version of ruby that OpenStudio installed, or if you have another version or ruby installed on your system, you need to tell it where to find OpenStudio.
+### System Configuration
+**MacOS/Linux**
+Generally speaking, no additional configuration is required for MacOS and Linux operating systems; Ruby is usually already installed, and if OpenStudio is installed, Ruby is configured to locate it. 
 
-On windows you need to type "environment variables" in the start menu search and then choose the option to change the environment variables for your account as shown in the screenshots below.
+**Windows** 
+The system's Ruby environment variables must be configured to either:
 
-![Finding Doc](img/measures/env_var_win.png)
+* point to the version of ruby that OpenStudio installed, or, if there is another version or ruby installed on the system:
+* point that version of Ruby to OpenStudio
 
-The text to add to the beginning of the path should look like this. It will vary based on your version of OpenStudio and if you installed the 32 vs. 64bit version.
+In either case, typing "environment variables" in the Windows Start Menu search field will present options to change the environment variables for your account; follow the screenshots below.
+
+![Environment Variables Dialog](img/measures/env_var_win.png)
+
+Add the following path to the system PATH variable. Specific path will vary based on OpenStudio version, as 32-bit and 64-bit versions of OpenStudio are also installed to different "Program Files" directory roots.
 
 ```
-C:\Program Files\OpenStudio 1.7.0\ruby-install\ruby\bin
+C:\Program Files\OpenStudio [version]\ruby-install\ruby\bin
 ```
 
-If you want to use an already existing ruby install that is in the environment variables path, you need to add a file named "openstudio.rb" to the "lib\ruby\site_ruby" folder with text pointing to your version of OpenStudio. Only use 2.0.x versions of ruby.
+Authors wishing to use an *existing* Ruby installation must add an ```openstudio.rb``` file in ```lib\ruby\site_ruby```, with a path reference to the preferred of OpenStudio. Ruby 2.0.x is required.
 
 ```
 require 'C:\Program Files\OpenStudio 1.7.0\Ruby\openstudio.rb'
 ```
+<!--- RPG: Clearly this ^^ needs a little more explanation, this alternate Ruby business?? Hellooo?-->
 
-#### Using Notepad ++
-To run ruby using [Notepad++](http://notepad-plus-plus.org/) you need to install a plugin named NppExec. You can do this from the plugin manager within NotePad++
 
-![Finding Doc](img/measures/notepad_plus_plus_01.png)
+### Test Environments
+#### Command Line Interface (CLI)
+Simply call Ruby with ```[your_test].rb``` as the input:
+```
+ruby my_measure_test.rb
+```
+![Test Running from Command Line](img/measures/test_command_line.png)
 
-After installing NppExec you can go back to the Plugins menu to run it using "Execute". Make sure "Follow $(CURRENT_DIRECTORY)" is checked.
 
-![Finding Doc](img/measures/notepad_plus_plus_02.png)
+#### IDE/Text Editor
+You may wish to execute your tests directly from your programming working environment, be that an Integrated Development Environment (IDE) or the text editor of your choice. By way of example, we include instructions on how to set up the popular Windows text editor [Notepad++](http://notepad-plus-plus.org/) to execute your tests:
+
+* Install the NppExec plugin, using the plugin manager within NotePad++:
+
+![IDE Config, 1](img/measures/notepad_plus_plus_01.png)
+
+* Return to the Plugins menu, and select "Execute"; ensure "Follow $(CURRENT_DIRECTORY)" is checked:
+
+![IDE Config, 2](img/measures/notepad_plus_plus_02.png)
 
 After you click "Execute" you will see a dialog. If you don't already see the following text in the command window, type it in.
 
@@ -1207,69 +1151,61 @@ After you click "Execute" you will see a dialog. If you don't already see the fo
 ruby "$(FULL_CURRENT_PATH)"
 ```
 
-The bottom fo the screenshot show the output from the measure. You can see the log messages and also the number of tests run and assertions. Note that if you use "puts" statements in your measure, they will show in this output, but they won't be visible when the measure is run from the OpenStudio GUI's.
+The bottom of the screenshot shows the measure output. We see the log messages, and the number of tests run and assertions. Note that ```puts``` statements visible here, but they are not visible when the measure is run from the OpenStudio GUIs. Use ```runner.Register[Info|Warning|Error]``` directives for those, as explained elsewhere.
 
-![Finding Doc](img/measures/notepad_plus_plus_03.png)
+![Measure Output](img/measures/notepad_plus_plus_03.png)
 
-#### Using the command line
-To run measure from the command line first open a command window in the directory of the measure test. You can manually browse to this, or you can shift right click on the tests directory in windows explorer and choose "Open command window here".
-
-Type ruby followed by a space and then the name of your measure test file name to run the tests. You can start to type the name of the test ruby file and click the "Tab" key to auto complete it.
-```
-ruby my_measure_test.rb
-```
-
-The output looks very similar to what you see in Notepad++. The QSslSocket messages at the top can be ignored. If ruby or OpenStudio can't be found, go back and look at yoru configuration.
-
-![Finding Doc](img/measures/test_command_line.png)
 
 #### Automated testing
-If you have a large collection of measures, it is a good idea to setup an automated process to batch test all of your measures. We will add more documentation on this in the future.
+NREL is in the process of developing an automated testing and continuous integration (CI) framework for the OpenStudio Measures contained on the BCL, and will include details on how to integrate your own measures with this test framework, here.
 
-## Advanced Topics
+# Advanced Topics
 
-### EnergyPlus Measures
-Measures are usually written to work on an OpenStudio model. This is preferred because it allows you to use the OpenStudio Model API, which includes specialized methods for each type of object in the OpenStudio Model. However, when a particular EnergyPlus feature is not yet exposed in the OpenStudio Model, you may choose to write a measure that operates on the EnergyPlus data model directly. Measures of this type are run only after the model is translated from OpenStudio to EnergyPlus.
+## EnergyPlus Measures
+Measures typically operate on an OpenStudio model, via the OpenStudio Model API, thus granting measure authors access to the entirety of the OpenStudio Model. However, as the OpenStudio model does not yet include the entirety of the EnergyPlus Data Model, we offer the **EnergyPlus Measure** as a means to access the full EnergyPlus IDD. 
 
-Below are some specific code differences for EnergyPlus versus model (OpenStudio) measures.
+EnergyPlus measures give measure authors the ability to continue a programmatic modeling workflow throughout the BEM process, but EnergyPlus measures operate on an IDF; as such, they are intended to be run *after* the OSM has been translated from OpenStudio to EnergyPlus. 
 
-The class line should refer to "WorkspaceScript" versus "ModelScript", as shown in the following example:
+Below are some specific code differences between EnergyPlus measures and OpenStudio measures:
+
+Classes must reference ```Workspace``` versus ```Model```, as shown in the following examples:
+
+#####Initialization:
 
 ```ruby
 class ConstructionTakeOff < OpenStudio::Ruleset::WorkspaceUserScript
 ```
 
-The argument will take a "workspace" in place of "model".
+#####Method arguments:
 
 ```ruby
 def arguments(workspace)
 ```
 
-Similar to argument, the "run" method also takes a "Workspace" in place of a "Model".
 
 ```ruby
 def run(workspace, runner, user_arguments)
   super(workspace, runner, user_arguments)
 ```
 
-The API available to work with EnergyPlus objects directly is simpler than the OpenStudio Model API; it allows for changing .idf fields directly, getting all objects of a certain type, etc. This functionality is [documented][10] under the utilities project in the classes "Workspace" and "WorkspaceObject".
+The EnergyPlus IDD API is simpler than the OpenStudio Model API; it allows for changing .idf fields directly, getting all objects of a certain type, etc. This functionality is under the utilities project in the classes ```Workspace``` and ```WorkspaceObject```.
 
 #### Finding and Inspecting EnergyPlus Objects
-The following example shows how to find and loop through EnergyPlus objects. You can find objects in an EnergyPlus Workspace based on their IDD type (e.g., "BuildingSurface:Detailed"). These types can be found in the EnergyPlus documentation shown in Section 5.4. The IDF model is not an object model. As a result, instead of requesting a name we access specific fields by index in the IDD, starting at 0 and going up, such as ".getString(2)".
+The following example shows how to find and loop through EnergyPlus objects. We locate objects in an EnergyPlus Workspace by IDD type (e.g., ```BuildingSurface:Detailed```). These types can be found in the EnergyPlus documentation shown in Section 5.4. The IDF model is not an object model. As a result, instead of requesting a name we access specific fields by index in the IDD (0-based), e.g. ```.getString(2)```:
 
 ```ruby
-  #get all surfaces and constructions in model
+  # get all surfaces and constructions in model
   heat_transfer_surfaces = workspace.getObjectsByType("BuildingSurface:Detailed".to_IddObjectType)
   #the line below won't get other objects such as Construction:InternalSource.
   constructions = workspace.getObjectsByType("Construction".to_IddObjectType)
 
-  #report initial condition
+  # report initial condition
   runner.registerInitialCondition("The model has #{constructions.size} construction objects.")
 
-  #array for constructions that are used on a heat transfer surface
+  # array for constructions that are used on a heat transfer surface
   used_constructions_names = [] #just holds names
 
-  #get names of constructions used in the model
+  # get names of constructions used in the model
   heat_transfer_surfaces.each do |heat_transfer_surface|
     construction = heat_transfer_surface.getString(2).to_s #(0) is name, (1) is Surface Type, etc.
     used_constructions_names << construction
@@ -1277,15 +1213,16 @@ The following example shows how to find and loop through EnergyPlus objects. You
 ```
 
 #### Adding EnergyPlus Workspace Objects
-The following example shows how to add a new EnergyPlus object into the Workspace. A string is created, using Ruby's string substitution mechanisms to set variable values, and then the string is turned into IdfObject and finally added to the Workspace.
+The following example shows how to insert a new EnergyPlus object into the Workspace. A string is created, using Ruby's string substitution mechanisms to set variable values, and then the string is turned into IdfObject and finally added to the Workspace.
 
 ```ruby
-  #array to hold new IDF objects
+  # array to hold new IDF objects
   string_objects = []
 
-  #loop through constructions adding ComponentCost:LineItem for each
+  # create sorted (.sort) list of unique (.uniq) constructions from all 
+  # constructions in model, adding ComponentCost:LineItem for each
+
   used_constructions_names.sort.uniq.each do |used_construction_name|
-  #.unig will only loop through unique values in an array
 
     #IDF object text for ComponentCost:LineItem
     string_objects << "
@@ -1300,7 +1237,7 @@ The following example shows how to add a new EnergyPlus object into the Workspac
         "
   end
 
-  #add all of the strings to workspace to create IDF objects
+  # add all of the strings to workspace to create IDF objects
   string_objects.each do |string_object|
     idfObject = OpenStudio::IdfObject::load(string_object)
     object = idfObject.get
@@ -1312,10 +1249,10 @@ The following example shows how to add a new EnergyPlus object into the Workspac
 The following example shows how to access and edit EnergyPlus objects in the Workspace.
 
 ```ruby
-  #get OutputControl:Table:Style object that was generated in forward translation from OSM to IDF
+  # get OutputControl:Table:Style object that was generated in forward translation from OSM to IDF
   table_style = workspace.getObjectsByType("OutputControl:Table:Style".to_IddObjectType)
 
-  #even though there is just a single object, it is still in an array
+  # even though there is just a single object, it is still in an array
   if not table_style.empty?
     # we can access the first object in the array using table_style[0]
     if table_units == "Inch-Pound"
@@ -1328,13 +1265,8 @@ The following example shows how to access and edit EnergyPlus objects in the Wor
   end
 ```
 
-#### Finding Documentation on EnergyPlus Objects
-The "[InputOutputReference.pdf][11]" document that ships with EnergyPlus describes every EnergyPlus object. Below is a screenshot of part of the documentation for the "ComponentCost:LineItem" object. It describes which fields are required versus optional, and what kinds of data are expected for each field. EnergyPlus also ships with example models that show each object being used in a model. In the "Examples" folder is a spreadsheet that documents the examples.
-
-![Finding Doc](img/measure-writing-guide/17.png)
-
-#### Putting It All Together - A Complete WorkspaceUserScript
-The script creates a ComponentCost:LineItem object for each construction used in the model.
+### Complete EnergyPlus Measure Example
+The following script creates a ComponentCost:LineItem object for each construction used in the model.
 
 ```ruby
 #start the measure
@@ -1392,8 +1324,8 @@ class ConstructionTakeOff < OpenStudio::Ruleset::WorkspaceUserScript
     #array to hold new IDF objects
     string_objects = []
 
-    #loop through constructions adding ComponentCost:LineItem for each
-    used_constructions_names.sort.uniq.each do |used_construction_name| #.unig will only loop through unique values in an array
+    # create sorted (.sort) list of unique (.uniq) constructions from all 
+    # constructions in model, adding ComponentCost:LineItem for each
 
       #IDF object text for ComponentCost:LineItem
       string_objects << "
@@ -1408,20 +1340,20 @@ class ConstructionTakeOff < OpenStudio::Ruleset::WorkspaceUserScript
           "
     end
 
-    #add all of the strings to workspace to create IDF objects
+    # add all of the strings to workspace to create IDF objects
     string_objects.each do |string_object|
       idfObject = OpenStudio::IdfObject::load(string_object)
       object = idfObject.get
       wsObject = workspace.addObject(object)
     end
 
-    #report final condition about objects added to the model
-    runner.registerFinalCondition("ComponentCost:LineItem objects were added for the #{used_constructions_names.uniq.size} constructions that are used in the model.")
+    # report final condition about objects added to the model
+    runner.registerFinalCondition("ComponentCost:LineItem objects were added for the {used_constructions_names.uniq.size} constructions that are used in the model.")
 
-    #if IP unites requested add OutputControl:Table:Style object
+    # if IP units requested add OutputControl:Table:Style object
     table_style = workspace.getObjectsByType("OutputControl:Table:Style".to_IddObjectType)
 
-    #even though there is just a single object, it is still in an array
+    # even though there is just a single object, it is still in an array
     if not table_style.empty?
       # we can access the first object in the array using table_style[0]
       if table_units == "Inch-Pound"
@@ -1437,15 +1369,20 @@ class ConstructionTakeOff < OpenStudio::Ruleset::WorkspaceUserScript
 
 end #end the measure
 
-#this allows the measure to be use by the application
+# this allows the measure to be used by the application
 ConstructionTakeOff.new.registerWithApplication
 ```
 
-### Reporting Measures
-After running a simulation with OpenStudio a large amount of data is available. However, this data is not in a format that can be easily explored and understood. This is where Reporting Measures come in. Reporting Measures run after the EnergyPlus simulation to extract data and reformat it in useful ways. Reporting Measures can extract machine readable attributes for a large automated analysis. Reporting Measures can also produce interactive, human readable html reports that include plots and charts.
+### EnergyPlus Object Documentation
+The "InputOutputReference.pdf" document that ships with EnergyPlus describes every EnergyPlus object. Below is a segment of the documentation for the ```ComponentCost:LineItem``` object. It describes which fields are required versus optional, and what kinds of data are expected for each field. EnergyPlus also ships with example models that illustrate the proper use of each object in a model. A spreadsheet documenting the examples is located in the ```EnergyPlus/examples``` directory of your installation.
+
+![EPlus Docs](img/measure-writing-guide/17.png)
+
+## Reporting Measures
+A **Reporting Measure** is used for reading and reporting on output data from an OpenStudio simulation. This includes Model input as well as EnergyPlus output data. These measures are typically run after the EnergyPlus simulation for obvious reasons. Reporting Measures can extract machine readable attributes for a large automated analysis, and may produce interactive, HTML-based reports that include plots and charts.
 
 #### EnergyPlus Output Requests
-There is a special method, available for reporting measures only, which allows reporting measures to request EnergyPlus output variables which are required by the run method. This feature is necessary to ensure that output the measure needs for reports will be present in the simulation output. This method takes in the runner and user arguments, it returns a vector of IdfObjects that request the required outputs, these objects will be added to the Idf before simulation. However, only certain types of IdfObjects may be requested, these are:
+A special method, available for reporting measures only, allows reporting measures to request EnergyPlus output variables required by the ```run``` method. This method accepts the ```runner``` and ```user``` arguments, returning a vector of IdfObjects that request the required outputs, these objects will be added to the .idf before simulation. A subset of IdfObject types may be requested by this method, and are listed here:
 
 *  Output:Surfaces:List
 *  Output:Surfaces:Drawing
@@ -1462,7 +1399,7 @@ There is a special method, available for reporting measures only, which allows r
 *  Meter:CustomDecrement
 *  Output:Table:SummaryReports (unique object)
 
-Duplicate requests will be ignored and in the case of unique objects, the requests will be merged with requests in the existing model.
+Duplicate requests are ignored; in the case of unique objects, the requests are merged with requests in the existing model:
 
 ```ruby
   def energyPlusOutputRequests(runner, user_arguments)
@@ -1486,8 +1423,9 @@ Duplicate requests will be ignored and in the case of unique objects, the reques
     return result
   end
 ```
-#### Reporting Measure Run Method
-Reporting Measures are different than OpenStudio Measures or EnergyPlus Measures because they run after the simulation is complete. Therefore, there is not much of a point in changing the current OpenStudio Model or EnergyPlus Workspace. However, access to the last model or workspace is very useful for extracting information about the simulation. For these reasons, Reporting Measures allow access to a read only copy of the last OpenStudio Model generated in the simulation workflow as well as the last EnergyPlus Workspace simulated by EnergyPlus. Additionally, the EnergyPlus SqlFile containing tabular and timeseries simulation results is available along with the EpwFile that was simulated. All of these objects can be accessed from the runner as shown below:
+
+### Reporting Measure Run Method
+As mentioned, Reporting Measures are run after the simulation is complete. However, access to the last model or workspace is very useful for extracting information about the simulation. For this reason, Reporting Measures allow access to a read only copy of the last OpenStudio Model generated in the simulation workflow as well as the last EnergyPlus Workspace simulated by EnergyPlus. Additionally, the EnergyPlus SqlFile containing tabular and timeseries simulation results is available along with the EpwFile (weather file) that was used in the simulation. These objects may be accessed from the ```runner``` as shown below:
 
 ```ruby
   # define what happens when the measure is run
@@ -1529,14 +1467,14 @@ Reporting Measures are different than OpenStudio Measures or EnergyPlus Measures
 ```
 
 ### Output Attributes
-We have seen how to output human readable messages from measures. These messages are useful when running and debugging measures manually using PAT. However, there is also a need to output machine readable attributes that can be used to create reports about design alternatives in parametric studies. Each attribute will be associated with the measure that generated it in the workflow. The registerValue method is used to register key value pairs:
+We have seen how to send log messages from measures, which are useful for providing general and debugging information to the user in the OpenStudio app, PAT, and at the command line. However, there is also a need to output machine readable attributes that can be used to create reports about design alternatives in parametric studies. These attributes are associated with the measure that generated them in the workflow. The ```registerValue``` method is used to register these **key-value pairs**:
 
 ```ruby
 # runner.registerValue(key,value,units)
 runner.registerValue("total_life_cycle_cost", total_life_cycle_cost, "$")
 ```
 
-The key and units parameters must be strings, the value passed to registerValue can be a double, bool, integer, string, or nil object. The output atribute key should contain lowercase alphanumeric characters with underscores where you would typically have a space (snake_case). The attribute key should not start with a number. Additionally the following characters should not be used in output attribute key names.
+The ```key``` and ```units``` parameters must be strings; the value passed to registerValue may be a ```double```, ```bool```, ```integer```, ```string```, or ```nil``` object. The output attribute key should contain lowercase alphanumeric characters with underscores where you would typically have a space (snake_case). The attribute key should not start with a number. Additionally the following characters shall not be used in output attribute key names:
 
 ```
 | ! @ # $ % ^ & * ( ) { } \ [ ] ; : ' " , < . > \ / ? + =
@@ -1545,10 +1483,10 @@ The key and units parameters must be strings, the value passed to registerValue 
 By default, all measure arguments are automatically output in machine readable format. For example, if a measure takes an argument named 'rotation':
 
 ```ruby
-relative_building_rotation = OpenStudio::Ruleset::OSArgument.makeDoubleArgument("rotation", true)
+relative_building_rotation = OpenStudio::Ruleset::OSArgument.makeDoubleArgument('rotation', true)
 ```
 
-An attribute named 'rotation' will automatically be added to the measure's output with the value passed in by the user. Measure writers can output any attributes that they want to. If a measure outputs multiple attributes with the same name, the last attribute reported by that name will be preserved. Measure writers are encouraged to use terms that are present in the BCL taxonomy (and the upcoming [DEnCity](http://dencity.org) API) to allow applications to understand attribute names. Additionally, special modifiers can be added to attribute names which will imply additional relationships between attributes. These special attribute modifiers are documented below, using the 'rotation' attribute.
+An attribute named 'rotation' will automatically be added to the measure's output, with the value passed in by the user. Measure writers may output any attributes they wish. If a measure outputs multiple attributes with the same name, preceding definitions are clobbered (i.e. the last attribute reported by that name will be preserved). Measure writers are encouraged to use terms that are present in the BCL taxonomy (and the upcoming [DEnCity](http://dencity.org) API) to allow applications to understand attribute names. Additionally, special modifiers can be added to attribute names which will imply additional relationships between attributes. These special attribute modifiers are documented below, using the ```rotation``` attribute:
 
 <table class="table table-striped">
   <tr>
@@ -1572,3 +1510,9 @@ An attribute named 'rotation' will automatically be added to the measure's outpu
     <td>This should be reported even if the measure returns false or NA.</td>
   </tr>
 </table>
+
+# Additional References
+[OpenStudio Documentation Home](http://nrel.github.io/OpenStudio-user-documentation/)
+[OpenStudio SDK documentation](https://openstudio-sdk-documentation.s3.amazonaws.com/index.html)
+[Ruby Style Guide](https://github.com/bbatsov/ruby-style-guide)
+
