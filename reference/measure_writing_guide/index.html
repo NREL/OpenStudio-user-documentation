@@ -230,13 +230,7 @@
           <div class="bs-docs-sidebar hidden-print affix well" role="complementary">
   <ul class="nav">
   
-    <li class="main active"><a href="#table-of-contents">Table of Contents</a>
-      <ul class="nav">
-        
-      </ul>
-    </li>
-  
-    <li class="main"><a href="#introduction">Introduction</a>
+    <li class="main active"><a href="#introduction">Introduction</a>
       <ul class="nav">
         
         <li><a href="#best-practices">Best Practices</a></li>
@@ -309,21 +303,6 @@
 
 <p>This OpenStudio Measure Writer's Reference Guide is an in-depth resource regarding the authoring, testing, and distribution of OpenStudio Measures. The primary purposes of an OpenStudio measure are to: inspect, and optionally make some change/addition to, an OpenStudio model; validate model input; and report model input and output. </p>
 <p>Where applicable, the reader is directed to other resources, such as the <a href="https://openstudio-sdk-documentation.s3.amazonaws.com/index.html">OpenStudio SDK documentation</a>, and many of the other references found at the <a href="http://nrel.github.io/OpenStudio-user-documentation/">OpenStudio Documentation Home</a>. </p>
-<h1 id="table-of-contents">Table of Contents</h1>
-<ul>
-<li>Introduction </li>
-<li>Writing Measures<ul>
-<li>Best Practices</li>
-<li>File Structure</li>
-<li>measure.rb (program)</li>
-<li>measure.xml (metadata)</li>
-</ul>
-</li>
-<li>Testing</li>
-<li>Distribution</li>
-<li>Changes for OpenStudio 2.0</li>
-<li>Additional References</li>
-</ul>
 <h1 id="introduction">Introduction</h1>
 <p>In its most basic form, an OpenStudio measure (henceforth referred to as a "measure") is a program (or 'script', or 'macro', if you like) that can access and leverage the OpenStudio model and API to create or make changes to a building energy model, as defined by an OpenStudio model (.osm). Typically, a measure modifies an existing .osm in order to implement a given <em>energy conservation measure</em> (ECM). For example, a measure might change the insulation rating of the exterior walls, change the window-to-wall ratio of a specific facade, or modify operational or occupancy schedules. Measures may also generate reports on the input and output of a given energy model; as such, these are referred to as <em>reporting measures</em>. </p>
 <p>Measures may be linked together in a workflow in order to implement complex ECMs, or to repeatably implement ECMs across building types or climate zones; measures can even generate entire -- code-compliant and climate-zone specific -- building models soley from user inputs. </p>
