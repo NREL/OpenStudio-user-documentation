@@ -3,18 +3,6 @@ This OpenStudio Measure Writer's Reference Guide is an in-depth resource regardi
 
 Where applicable, the reader is directed to other resources, such as the [OpenStudio SDK documentation](https://openstudio-sdk-documentation.s3.amazonaws.com/index.html), and many of the other references found at the [OpenStudio Documentation Home](http://nrel.github.io/OpenStudio-user-documentation/). 
 
-# Table of Contents
-- Introduction 
-- Writing Measures
-    - Best Practices
-    - File Structure
-    - measure.rb (program)
-    - measure.xml (metadata)
-- Testing
-- Distribution
-- Changes for OpenStudio 2.0
-- Additional References
-
 # Introduction
 In its most basic form, an OpenStudio measure (henceforth referred to as a "measure") is a program (or 'script', or 'macro', if you like) that can access and leverage the OpenStudio model and API to create or make changes to a building energy model, as defined by an OpenStudio model (.osm). Typically, a measure modifies an existing .osm in order to implement a given *energy conservation measure* (ECM). For example, a measure might change the insulation rating of the exterior walls, change the window-to-wall ratio of a specific facade, or modify operational or occupancy schedules. Measures may also generate reports on the input and output of a given energy model; as such, these are referred to as _reporting measures_. 
 
