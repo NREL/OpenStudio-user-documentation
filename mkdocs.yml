@@ -30,7 +30,7 @@ pages:
 - [reference/sketchup_plugin_interface.md, Reference, SketchUp Plug-in Interface Guide]
 - [reference/parametric_studies.md, Reference, Parametric Analysis Tool (PAT) Interface Guide]
 - [reference/model_objects.md, Reference, OpenStudio Model Objects Overview]
-- [reference/measure_writing_guide.md, Reference, Measure Writing Guide]
+- [reference/measure_writing_guide.md, Reference, Measure Writer's Reference Guide]
 - [reference/measure_code_examples.md, Reference, Measure Code Examples]
 - [reference/developing_measure_collections.md, Reference, Developing Measure Collections]
 - [reference/refguide_radiance.md, Reference, OpenStudio-Radiance Reference Guide]
