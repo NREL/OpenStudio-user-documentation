@@ -1612,7 +1612,7 @@ Below is same code that manipulates and reports values related to a user argumen
     when 'es'
         runner.registerInfo("El espesor resultante de #{some_material.name} fue #{thickness_value_pref_units.round(num_decimals)} (#{thickness_display_units).")
     else
-        runner.registerInfo("The Resulting thickness of #{some_material.name} was #{thickness_value_pref_units.round(num_decimals)} (#{thickness_display_units)."
+        runner.registerInfo("The Resulting thickness of #{some_material.name} was #{thickness_value_pref_units.round(num_decimals)} (#{thickness_display_units).")
     end
     
     # Similar approach as above would be used on initial condition, final condition, warning, error messages. runner.registerValue is a little different
