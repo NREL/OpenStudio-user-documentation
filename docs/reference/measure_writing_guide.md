@@ -1516,12 +1516,26 @@ units_preference = runner.unitsPreference
 ```
 
 ### Name, Description, and Modeler Description Enhancements
-TBD
+Prior to OpenStudio 2.0 the name, description, and modeler description methods each returned a string. OpenStudio 2.0 adds support for a hash to be returned, where the key defines the language and the value a string. To support the new functionality, the runner is now passed into these methods. The description method is unique in that a modeler can alter it. The language of the altered description won't be tracked.
+
+Below is an example of the name method. The same approach would be followed for description and modeler description.
+
+```ruby
+  # human readable name (is this good time to change method to display_name?)
+  def name (runner)
+    display_name_hash = {}
+    display_name_hash[:en] = "Set Insulation Thickness To User Specified Value."
+    display_name_hash[:fr] = "Réglez l'épaisseur d'isolation Pour l'utilisateur spécifié Valeur."
+    display_name_hash[:es] = "Establecer el grosor del aislamiento a un valor específico del usuario."
+  
+    return display_name_hash
+  end
+```
 
 ### Arguments Method Enhancements
 Methods to set an argument's display name, default, and description have been enhanced to accept the an input for preferred language. Methods to set an argument's default value and units have been enhanced to accept an input for for the preferred unit system. Arguments that don't take a double, integer, or take an argument that is unitless, don't have to address unit preference.
 
-Below is an example argument that supports English, French, and Spanish as languages, and SI and IP units.
+Below is an example arguments method that supports English, French, and Spanish as languages, and SI and IP units.
 
 ```ruby
   # define the arguments that the user will input
@@ -1570,7 +1584,7 @@ Below is an example argument that supports English, French, and Spanish as langu
 ### Run Method Enhancements
 The value and units for arguments can be retrieved in the run section. Generally units should stay in SI, unless a log message or register value needs IP. In that case, conversion should be done just for the message(s).
 
-Below is same code that manipulates and reports values related to a user argument
+Below is an example run method that manipulates and reports values related to a user argument
 
 ``` ruby
   # define what happens when the measure is run
@@ -1630,7 +1644,6 @@ Below is same code that manipulates and reports values related to a user argumen
     end    
     
     return true
-
   end
 ```
 
