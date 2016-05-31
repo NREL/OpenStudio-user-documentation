@@ -1499,6 +1499,77 @@ An attribute named 'rotation' will automatically be added to the measure's outpu
   </tr>
 </table>
 
+## Measure Internationalization
+This section describes how to use the new measure internationalization features of OpenStudio 2.0.0. The new functionality allows measure developers to build in support for multiple languages and multiple unit systems. Existing measures will continue to work without any  modification. Measure developers who don't want 'internationalized' measures can continue to write them as described in the "Writing Measures" section earlier on this page.
+
+### Runner Enhancements
+New Runner methods in OpenStudio 2.0.0 pass a an optional user specified language and an optional user specified unit type into the measure. If an interface using OpenStudio doesn't support this, then 'nil' will be passed in for both methods. Both methods take a string value used by methods in the measure. There should always be a default catchall language and unit system to use if a language or unit system is requested that the measure doesn't handle. For example if the measure is written to support "English" and "French", but "Spanish" is passed in, the measure should still run successfully, but will fall back to English.
+
+Below are examples of these two methods in use.
+
+```ruby
+# returns a string such as "fr"
+language_preference = runner.languagePreference
+
+# returns a string such as "SI"
+units_preference = runner.unitsPreference
+```
+
+### Name, Description, and Modeler Description Enhancements
+TBD
+
+### Arguments Method Enhancements
+Methods to set an argument's display name, default, and description have been enhanced to accept the an input for preferred language. Methods to set an argument's default value and units have been enhanced to accept an input for for the preferred unit system. Arguments that don't take a double, integer, or take an argument that is unitless, don't have to address unit preference.
+
+Below is an example argument that supports English, French, and Spanish as languages, and SI and IP units.
+
+```ruby
+  # define the arguments that the user will input
+  def arguments (model,runner)
+    args = OpenStudio::Ruleset::OSArgumentVector.new
+    
+    # get internationalization preferences
+    language_preference = runner.languagePreference
+    units_preference = runner.unitsPreference # not currently used here, does GUI handle this?
+
+    # make an argument
+    insl_thckn = OpenStudio::Ruleset::makeDoubleArgument('insl_thckn',true)
+
+    # set langauge specific argument display name
+    display_name_hash = {}
+    display_name_hash[:en] = 'Insulation Thickness'
+    display_name_hash[:fr] = 'Épaisseur d'isolation'
+    display_name_hash[:es] = 'Espesor de aislamiento'
+    # args for setDisplayName (string hash, unit pref from GUI, fallback language)
+    insl_thckn.setDisplayName(display_name_hash,units_preference,'en')
+    
+    # set langauge specific argument description
+    display_name_hash = {}
+    display_name_hash[:en] = 'Enter the resulting thickness for the insulation material, not a delta from the starting thickness.'
+    display_name_hash[:fr] = 'Entrer l'épaisseur résultante du matériau d'isolation et non pas un delta de l'épaisseur de départ.'
+    display_name_hash[:es] = 'Introduzca el espesor resultante para el material de aislamiento , no un delta a partir del espesor de partida.'
+    # args for setDescription (string hash, unit pref from GUI, fallback language)
+    insl_thckn.setDescription(display_name_hash,units_preference,'en')  
+
+    # set units for argument
+    # if units_preference is "IP" then GUI should show 1.5 (in)
+    # if units_preference is "SI" then GUI shoudl show 0.0381 (m)
+    # if GUI is in IP and user types 6 (in) the stored value in OSW will be 0.1524 (m)
+    insl_thckn.setUnits("m")
+    insl_thckn.setUnitsIp("in") # optional, set if don't want to use default mapping  
+    insl_thckn.setDefaultValue(0.0381) # tied to setUnits, assumed to be SI value
+    
+    # add to vector of arguments
+    args << insl_thckn
+    
+    return args
+  end # end the arguments method
+
+```
+
+### Run Method Enhancements
+TBD
+
 # Additional References
 [OpenStudio Documentation Home](http://nrel.github.io/OpenStudio-user-documentation/)
 [OpenStudio SDK documentation](https://openstudio-sdk-documentation.s3.amazonaws.com/index.html)
