@@ -1544,12 +1544,12 @@ Below is an example argument that supports English, French, and Spanish as langu
     insl_thckn.setDisplayName(display_name_hash,units_preference,'en')
     
     # set langauge specific argument description
-    display_name_hash = {}
-    display_name_hash[:en] = 'Enter the resulting thickness for the insulation material, not a delta from the starting thickness.'
-    display_name_hash[:fr] = 'Entrer l'épaisseur résultante du matériau d'isolation et non pas un delta de l'épaisseur de départ.'
-    display_name_hash[:es] = 'Introduzca el espesor resultante para el material de aislamiento , no un delta a partir del espesor de partida.'
+    display_description_hash = {}
+    display_description_hash[:en] = 'Enter the resulting thickness for the insulation material, not a delta from the starting thickness.'
+    display_description_hash[:fr] = 'Entrer l'épaisseur résultante du matériau d'isolation et non pas un delta de l'épaisseur de départ.'
+    display_description_hash[:es] = 'Introduzca el espesor resultante para el material de aislamiento , no un delta a partir del espesor de partida.'
     # args for setDescription (string hash, unit pref from GUI, fallback language)
-    insl_thckn.setDescription(display_name_hash,units_preference,'en')  
+    insl_thckn.setDescription(display_description_hash,units_preference,'en')  
 
     # set units for argument
     # if units_preference is "IP" then GUI should show 1.5 (in)
@@ -1568,7 +1568,71 @@ Below is an example argument that supports English, French, and Spanish as langu
 ```
 
 ### Run Method Enhancements
-TBD
+The value and units for arguments can be retrieved in the run section. Generally units should stay in SI, unless a log message or register value needs IP. In that case, conversion should be done just for the message(s).
+
+Below is same code that manipulates and reports values related to a user argument
+
+``` ruby
+  # define what happens when the measure is run
+  def run(model, runner, user_arguments)
+    super(model, runner, user_arguments)
+
+    # use the built-in error checking
+    if !runner.validateUserArguments(arguments(model), user_arguments)
+      return false
+    end
+
+    # assign the user inputs to variables
+    insl_thckn_si = runner.getDoubleArgumentValue("insl_thckn", user_arguments)
+    insl_thckn_units_si = runner.getDoubleArgumentUnits("insl_thckn", user_arguments) # runner.getDoubleArgumentsUnits isn't currently a valid method
+    insl_thckn_units_ip = runner.getDoubleArgumentUnitsIp("insl_thckn", user_arguments) # runner.getDoubleArgumentsUnitsIp isn't currently a valid method
+    
+    # get internationalization preferences
+    language_preference = runner.languagePreference
+    units_preference = runner.unitsPreference # needed here since the measure, not GUI will control log messages
+        
+    # change the model (didn't show code where 'some_material' is found in the model)
+    some_material.setThickness(insl_thckn_si)
+    
+    # get display value and units for thickness
+    if units_preference == "SI"
+        thickness_value_pref_units = some_material.thickness # if insl_thckn_units_si isn't same as unit for that field still need to convert e.g. OpenStudio::convert(value,'m',cm')
+        thickness_display_units = insl_thckn_units_si
+        num_decimals = 2 # bettter to specify significant digits in message vs unit specific rounding values?
+    else
+        thickness_value_pref_units = OpenStudio::convert(some_material.thickness,insl_thckn_units_si,insl_thckn_units_ip).get
+        thickness_display_units = insl_thckn_units_ip
+        num_decimals = 1
+    end
+    
+    # report back the user the thickness from the material
+    case language_preference
+    when 'fr'
+        runner.registerInfo("L'épaisseur résultante de #{some_material.name} était de #{thickness_value_pref_units.round(num_decimals)} (#{thickness_display_units)."
+    when 'es'
+        runner.registerInfo("El espesor resultante de #{some_material.name} fue #{thickness_value_pref_units.round(num_decimals)} (#{thickness_display_units)."
+    else
+        runner.registerInfo("The Resulting thickness of #{some_material.name} was #{thickness_value_pref_units.round(num_decimals)} (#{thickness_display_units)."   
+    end
+    
+    # Similar approach as above would be used on initial condition, final condition, warning, error messages. runner.registerValue is a little different
+    
+    # register value
+    # note that the first argmuent 'name' doesn't chagne by language, but the second argument 'displayName' does
+    # also note that registerValue isn't rounded like registerInfo and other messages are
+    case language_preference
+    when 'fr'
+        runner.registerValue('some_material_thickness',"Essai Epaisseur du matériau",thickness_value_pref_units,thickness_display_units)   
+    when 'es'
+        runner.registerValue('some_material_thickness',"Material de Ensayo Espesor",thickness_value_pref_units,thickness_display_units)   
+    else
+        runner.registerValue('some_material_thickness',"Test Material Thickness",thickness_value_pref_units,thickness_display_units)   
+    end    
+    
+    return true
+
+  end
+```
 
 # Additional References
 [OpenStudio Documentation Home](http://nrel.github.io/OpenStudio-user-documentation/)
