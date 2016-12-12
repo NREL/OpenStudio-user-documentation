@@ -1499,6 +1499,154 @@ An attribute named 'rotation' will automatically be added to the measure's outpu
   </tr>
 </table>
 
+## Measure Internationalization
+This section describes how to use the new measure internationalization features of OpenStudio 2.0.0. The new functionality allows measure developers to build in support for multiple languages and multiple unit systems. Existing measures will continue to work without any  modification. Measure developers who don't want 'internationalized' measures can continue to write them as described in the "Writing Measures" section earlier on this page.
+
+### Runner Enhancements
+New Runner methods in OpenStudio 2.0.0 pass a an optional user specified language and an optional user specified unit type into the measure. If an interface using OpenStudio doesn't support this, then 'nil' will be passed in for both methods. Both methods take a string value used by methods in the measure. There should always be a default catchall language and unit system to use if a language or unit system is requested that the measure doesn't handle. For example if the measure is written to support "English" and "French", but "Spanish" is passed in, the measure should still run successfully, but will fall back to English.
+
+Below are examples of these two methods in use.
+
+```ruby
+# returns a string such as "fr"
+language_preference = runner.languagePreference
+
+# returns a string such as "SI"
+units_preference = runner.unitsPreference
+```
+
+### Name, Description, and Modeler Description Enhancements
+Prior to OpenStudio 2.0 the name, description, and modeler description methods each returned a string. OpenStudio 2.0 adds support for a hash to be returned, where the key defines the language and the value a string. To support the new functionality, the runner is now passed into these methods. The description method is unique in that a modeler can alter it. The language of the altered description won't be tracked.
+
+Below is an example of the name method. The same approach would be followed for description and modeler description.
+
+```ruby
+  # human readable name (is this good time to change method to display_name?)
+  def name (runner)
+    display_name_hash = {}
+    display_name_hash[:en] = "Set Insulation Thickness To User Specified Value."
+    display_name_hash[:fr] = "Réglez l'épaisseur d'isolation Pour l'utilisateur spécifié Valeur."
+    display_name_hash[:es] = "Establecer el grosor del aislamiento a un valor específico del usuario."
+  
+    return display_name_hash
+  end
+```
+
+### Arguments Method Enhancements
+Methods to set an argument's display name, default, and description have been enhanced to accept the an input for preferred language. Methods to set an argument's default value and units have been enhanced to accept an input for for the preferred unit system. Arguments that don't take a double, integer, or take an argument that is unitless, don't have to address unit preference.
+
+Below is an example arguments method that supports English, French, and Spanish as languages, and SI and IP units.
+
+```ruby
+  # define the arguments that the user will input
+  def arguments (model,runner)
+    args = OpenStudio::Ruleset::OSArgumentVector.new
+    
+    # get internationalization preferences
+    language_preference = runner.languagePreference
+    units_preference = runner.unitsPreference # not currently used here, does GUI handle this?
+
+    # make an argument
+    insl_thckn = OpenStudio::Ruleset::makeDoubleArgument('insl_thckn',true)
+
+    # set langauge specific argument display name
+    display_name_hash = {}
+    display_name_hash[:en] = 'Insulation Thickness'
+    display_name_hash[:fr] = 'Épaisseur d'isolation'
+    display_name_hash[:es] = 'Espesor de aislamiento'
+    # args for setDisplayName (string hash, unit pref from GUI, fallback language)
+    insl_thckn.setDisplayName(display_name_hash,units_preference,'en')
+    
+    # set langauge specific argument description
+    display_description_hash = {}
+    display_description_hash[:en] = 'Enter the resulting thickness for the insulation material, not a delta from the starting thickness.'
+    display_description_hash[:fr] = 'Entrer l'épaisseur résultante du matériau d'isolation et non pas un delta de l'épaisseur de départ.'
+    display_description_hash[:es] = 'Introduzca el espesor resultante para el material de aislamiento , no un delta a partir del espesor de partida.'
+    # args for setDescription (string hash, unit pref from GUI, fallback language)
+    insl_thckn.setDescription(display_description_hash,units_preference,'en')  
+
+    # set units for argument
+    # if units_preference is "IP" then GUI should show 1.5 (in)
+    # if units_preference is "SI" then GUI shoudl show 0.0381 (m)
+    # if GUI is in IP and user types 6 (in) the stored value in OSW will be 0.1524 (m)
+    insl_thckn.setUnits("m")
+    insl_thckn.setUnitsIp("in") # optional, set if don't want to use default mapping  
+    insl_thckn.setDefaultValue(0.0381) # tied to setUnits, assumed to be SI value
+    
+    # add to vector of arguments
+    args << insl_thckn
+    
+    return args
+  end # end the arguments method
+
+```
+
+### Run Method Enhancements
+The value and units for arguments can be retrieved in the run section. Generally units should stay in SI, unless a log message or register value needs IP. In that case, conversion should be done just for the message(s).
+
+Below is an example run method that manipulates and reports values related to a user argument
+
+``` ruby
+  # define what happens when the measure is run
+  def run(model, runner, user_arguments)
+    super(model, runner, user_arguments)
+
+    # use the built-in error checking
+    if !runner.validateUserArguments(arguments(model), user_arguments)
+      return false
+    end
+
+    # assign the user inputs to variables
+    insl_thckn_si = runner.getDoubleArgumentValue("insl_thckn", user_arguments)
+    insl_thckn_units_si = runner.getDoubleArgumentUnits("insl_thckn", user_arguments) # runner.getDoubleArgumentsUnits isn't currently a valid method
+    insl_thckn_units_ip = runner.getDoubleArgumentUnitsIp("insl_thckn", user_arguments) # runner.getDoubleArgumentsUnitsIp isn't currently a valid method
+    
+    # get internationalization preferences
+    language_preference = runner.languagePreference
+    units_preference = runner.unitsPreference # needed here since the measure, not GUI will control log messages
+        
+    # change the model (didn't show code where 'some_material' is found in the model)
+    some_material.setThickness(insl_thckn_si)
+    
+    # get display value and units for thickness
+    if units_preference == "SI"
+        thickness_value_pref_units = some_material.thickness # if insl_thckn_units_si isn't same as unit for that field still need to convert e.g. OpenStudio::convert(value,'m',cm')
+        thickness_display_units = insl_thckn_units_si
+        num_decimals = 2 # bettter to specify significant digits in message vs unit specific rounding values?
+    else
+        thickness_value_pref_units = OpenStudio::convert(some_material.thickness,insl_thckn_units_si,insl_thckn_units_ip).get
+        thickness_display_units = insl_thckn_units_ip
+        num_decimals = 1
+    end
+    
+    # report back the user the thickness from the material
+    case language_preference
+    when 'fr'
+        runner.registerInfo("L'épaisseur résultante de #{some_material.name} était de #{thickness_value_pref_units.round(num_decimals)} (#{thickness_display_units).")
+    when 'es'
+        runner.registerInfo("El espesor resultante de #{some_material.name} fue #{thickness_value_pref_units.round(num_decimals)} (#{thickness_display_units).")
+    else
+        runner.registerInfo("The Resulting thickness of #{some_material.name} was #{thickness_value_pref_units.round(num_decimals)} (#{thickness_display_units).")
+    end
+    
+    # Similar approach as above would be used on initial condition, final condition, warning, error messages. runner.registerValue is a little different
+    
+    # register value
+    # note that the first argmuent 'name' doesn't chagne by language, but the second argument 'displayName' does
+    # also note that registerValue isn't rounded like registerInfo and other messages are
+    case language_preference
+    when 'fr'
+        runner.registerValue('some_material_thickness',"Essai Epaisseur du matériau",thickness_value_pref_units,thickness_display_units)   
+    when 'es'
+        runner.registerValue('some_material_thickness',"Material de Ensayo Espesor",thickness_value_pref_units,thickness_display_units)   
+    else
+        runner.registerValue('some_material_thickness',"Test Material Thickness",thickness_value_pref_units,thickness_display_units)   
+    end    
+    
+    return true
+  end
+```
+
 # Additional References
 [OpenStudio Documentation Home](http://nrel.github.io/OpenStudio-user-documentation/)
 [OpenStudio SDK documentation](https://openstudio-sdk-documentation.s3.amazonaws.com/index.html)
