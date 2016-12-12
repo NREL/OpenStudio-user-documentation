@@ -28,6 +28,7 @@ pages:
 
 - [reference/openstudio_application_interface.md, Reference, OpenStudio Application Interface Guide]
 - [reference/sketchup_plugin_interface.md, Reference, SketchUp Plug-in Interface Guide]
+- [reference/command_line_interface.md, Reference, Command Line Interface]
 - [reference/parametric_studies.md, Reference, Parametric Analysis Tool (PAT) Interface Guide]
 - [reference/model_objects.md, Reference, OpenStudio Model Objects Overview]
 - [reference/measure_writing_guide.md, Reference, Measure Writer's Reference Guide]

@@ -72,3 +72,6 @@ Under the "Preferences" menu you can set a local measure path using the "Change 
 
 ### Create Your Own
 Want to write your own custom measure? Start with the [Measure Writing Guide](../reference/measure_writing_guide.md).
+
+### Scripted Workflows
+Want to script your entire workflow?  The OpenStudio [Command Line Interface](../reference/command_line_interface.md) can run your measure based workflow quickly and easily.

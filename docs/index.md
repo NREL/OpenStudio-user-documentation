@@ -36,6 +36,8 @@
           <p><a href="getting_started/about_measures.md" class="btn btn-primary" role="button">About Measures</a></p>
           <p>Can't find the measures you want, or need to customize an existing measure? The Measure Writing Guide will help you get started.</p>
           <p><a href="reference/measure_writing_guide.md" class="btn btn-primary" role="button">Measure Writing Guide</a></p>
+          <p>Want to script your entire workflow?  The OpenStudio Command Line Interface can run your measure based workflow quickly and easily.</p>
+          <p><a href="reference/command_line_interface.md" class="btn btn-primary" role="button">Command Line Interface</a></p>
         </div>
       </div>
     </div>
