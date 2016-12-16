@@ -101,6 +101,8 @@ openstudio.exe measure --postprocess_only /path/to/workflow.osw
 
 The OpenStudio Workflow (OSW) format is a JSON file format that describes a simulation workflow.  In an OpenStudio Workflow, a seed OpenStudio Model is loaded.  OpenStudio Model Measures are applied to the seed model.  After these measures, the OpenStudio Model is translated to EnergyPlus IDF format.  Once in EnergyPlus IDF format, OpenStudio EnergyPlus Measures are applied.  After these measures, the EnergyPlus simulation is executed.  Once the EnergyPlus simulation is complete, OpenStudio Reporting Measures are applied which generate reports.  An error at any point in the workflow will halt the workflow.  Once the workflow is completed (successfully or unsuccessfully) an output OSW file is written which contains output related to running the workflow.
 
+An example OSW project is included in the OpenStudio installer under './Examples/compact_osw'.
+
 The OSW file format is described in JSON schema format [here](https://raw.githubusercontent.com/NREL/OpenStudio-workflow-gem/osw/spec/schema/osw_output.json).
 
 The OpenStudio API includes the class [WorkflowJSON](https://github.com/NREL/OpenStudio/tree/develop/openstudiocore/src/utilities/filetypes/WorkflowJSON.hpp) which is able read, modify, and write the OSW file format.  The WorkflowJSON class also includes features for finding measures and files associated with a simulation workflow.
