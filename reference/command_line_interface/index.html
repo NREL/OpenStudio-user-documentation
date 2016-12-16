@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Command Line Interface - OpenStudio<sup>&reg;</sup> User Docs</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    
+    <link href="../../css/bootstrap-3.3.0.min.css" rel="stylesheet">
+    <link href="../../css/font-awesome-4.2.0.min.css" rel="stylesheet">
+    <link href="../../css/prettify-1.0.css" rel="stylesheet">
+    <link href="../../css/base.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+  <nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../.."><img alt="" src="../../img/OS_32x32.png"> OpenStudio<sup>&reg;</sup> User Docs</a>
+      </div>
+      <div class="navbar-collapse collapse">
+        <!-- Main navigation -->
+        <ul class="nav navbar-nav">
+        
+          
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">Getting Started <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+            
+              <li>
+                <a href="../../getting_started/features">Current Features</a>
+              </li>
+            
+              <li>
+                <a href="../../getting_started/roadmap">Planned Features</a>
+              </li>
+            
+              <li>
+                <a href="../../getting_started/getting_started">Installation and Introductory Tutorial</a>
+              </li>
+            
+              <li>
+                <a href="../../getting_started/quick_start_guides">Quick Start Guides</a>
+              </li>
+            
+              <li>
+                <a href="../../getting_started/about_measures">About Measures</a>
+              </li>
+            
+            </ul>
+          </li>
+          
+        
+          
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">Essential Tutorials <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+            
+              <li>
+                <a href="../../tutorials/creating_your_model">Creating Your Model</a>
+              </li>
+            
+              <li>
+                <a href="../../tutorials/running_your_simulation">Running Simulations & Viewing Results</a>
+              </li>
+            
+              <li>
+                <a href="../../tutorials/large_scale_analysis">Large Scale Analysis</a>
+              </li>
+            
+              <li>
+                <a href="../../tutorials/radiance_tutorial">Radiance and OpenStudio</a>
+              </li>
+            
+              <li>
+                <a href="../../tutorials/tutorial_bcl">Building Component Library</a>
+              </li>
+            
+            </ul>
+          </li>
+          
+        
+          
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">Advanced Tutorials <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+            
+              <li>
+                <a href="../../tutorials/utility_rate_tariffs">Utiity Rate Tariffs</a>
+              </li>
+            
+              <li>
+                <a href="../../tutorials/life_cycle_costing_examples">Life Cycle Cost Analysis</a>
+              </li>
+            
+              <li>
+                <a href="../../tutorials/tutorial_cbecc_materials">CBECC Materials and Constructions</a>
+              </li>
+            
+              <li>
+                <a href="../../tutorials/tutorial_glhepro">Vertical Ground Heat Exchanger sizing with GLHEPro</a>
+              </li>
+            
+              <li>
+                <a href="../../tutorials/tutorial_ifcimport">BIMserver Import IFC</a>
+              </li>
+            
+              <li>
+                <a href="../../tutorials/tutorial_shadingcontrols">Shading Controls</a>
+              </li>
+            
+              <li>
+                <a href="../../tutorials/tutorial_windowproperty_frameanddivider">Window Property Frame and Divider</a>
+              </li>
+            
+              <li>
+                <a href="../../tutorials/tutorial_virtual_pulse">VirtualPULSE</a>
+              </li>
+            
+            </ul>
+          </li>
+          
+        
+          
+          <li class="dropdown active">
+            <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">Reference <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+            
+              <li>
+                <a href="../openstudio_application_interface">OpenStudio Application Interface Guide</a>
+              </li>
+            
+              <li>
+                <a href="../sketchup_plugin_interface">SketchUp Plug-in Interface Guide</a>
+              </li>
+            
+              <li class="active">
+                <a href=".">Command Line Interface</a>
+              </li>
+            
+              <li>
+                <a href="../parametric_studies">Parametric Analysis Tool (PAT) Interface Guide</a>
+              </li>
+            
+              <li>
+                <a href="../model_objects">OpenStudio Model Objects Overview</a>
+              </li>
+            
+              <li>
+                <a href="../measure_writing_guide">Measure Writer's Reference Guide</a>
+              </li>
+            
+              <li>
+                <a href="../measure_code_examples">Measure Code Examples</a>
+              </li>
+            
+              <li>
+                <a href="../developing_measure_collections">Developing Measure Collections</a>
+              </li>
+            
+              <li>
+                <a href="../refguide_radiance">OpenStudio-Radiance Reference Guide</a>
+              </li>
+            
+              <li>
+                <a href="../openstudio_results_measure">OpenStudio Results Measure</a>
+              </li>
+            
+            </ul>
+          </li>
+          
+        
+          
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">Help <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+            
+              <li>
+                <a href="../../help/training">Find Training</a>
+              </li>
+            
+              <li>
+                <a href="../../help/finding_model_data">Finding Model Data</a>
+              </li>
+            
+              <li>
+                <a href="../../help/best_practices">Modeling Best Practices</a>
+              </li>
+            
+              <li>
+                <a href="../../help/troubleshooting">Troubleshooting</a>
+              </li>
+            
+              <li>
+                <a href="../../help/faq">FAQ</a>
+              </li>
+            
+              <li>
+                <a href="../../help/software_license">Software License</a>
+              </li>
+            
+            </ul>
+          </li>
+          
+        
+        </ul>
+
+        <!-- Search, Navigation and Repo links -->
+        <ul class="nav navbar-nav navbar-right">
+        
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <div class="bs-docs-sidebar hidden-print affix well" role="complementary">
+  <ul class="nav">
+  
+    <li class="main active"><a href="#command-overview">Command Overview</a>
+      <ul class="nav">
+        
+      </ul>
+    </li>
+  
+    <li class="main"><a href="#measure-subcommand">Measure Subcommand</a>
+      <ul class="nav">
+        
+      </ul>
+    </li>
+  
+    <li class="main"><a href="#run-subcommand">Run Subcommand</a>
+      <ul class="nav">
+        
+      </ul>
+    </li>
+  
+    <li class="main"><a href="#osw-structure">OSW Structure</a>
+      <ul class="nav">
+        
+        <li><a href="#seed-file">Seed File</a></li>
+        
+        <li><a href="#weather-file">Weather File</a></li>
+        
+        <li><a href="#workflow-steps">Workflow Steps</a></li>
+        
+      </ul>
+    </li>
+  
+    <li class="main"><a href="#environment-variables">Environment Variables</a>
+      <ul class="nav">
+        
+      </ul>
+    </li>
+  
+  </ul>
+  <div class="home-btn">
+    <a class="btn btn-default" role="button" href="https://www.openstudio.net">Back to OpenStudio<sup>&reg;</sup></a>
+  </div>
+</div>
+        </div>
+        <div class="col-md-9" role="main">
+          <h1>OpenStudio Command Line Interface</h1>
+
+<p>The OpenStudio Command Line Interface (CLI) is a self-contained executable which includes everything needed to apply OpenStudio Measures to an OpenStudio Model and run an EnergyPlus simulation.  The CLI is only avaiable in OpenStudio version 2.0 and higher. The CLI contains a full OpenStudio Ruby environment, the list of Ruby Gems available in each version of OpenStudio can be found <a href="https://github.com/NREL/OpenStudio/wiki/OpenStudio-Version-Compatibility-Matrix">here</a>.  </p>
+<p>This document provides an overview of the most important features of the CLI, it is not meant to be an exhaustive reference.  For an exhaustive list of features available in the CLI please refer to the command line output of the <code>--help</code> command.  For a complete list of the properties available in the OSW file format please refer to the <a href="https://raw.githubusercontent.com/NREL/OpenStudio-workflow-gem/osw/spec/schema/osw_output.json">OSW JSON schema</a>.  For a complete description of the WorkflowJSON class please refer to the <a href="https://github.com/NREL/OpenStudio/tree/develop/openstudiocore/src/utilities/filetypes/WorkflowJSON.hpp">documentation</a>.  </p>
+<h1 id="command-overview">Command Overview</h1>
+<p>The CLI is executed by calling the OpenStudio executable from the command line with a set of command line arguments.  Calling the CLI with no arguments (such as when double-clicking the executable) causes the CLI to print a help message and then exit.  Several switches which control program behavior may be passed immediately following the OpenStudio executable.  Switches often have both a short form and a long form for convienence. Multiple program level switches may be combined.  Program level switches include:</p>
+<p>The <code>-h</code> or <code>--help</code> switches print the help message:</p>
+<pre><code>openstudio.exe --include /path/to/add/ --include /another/path/to/add
+</code></pre>
+
+<p>The <code>-I</code> or <code>--include</code> switches can be used to add additional directories to the Ruby $LOAD_PATH (this switch may be used more than once):</p>
+<pre><code>openstudio.exe --include /path/to/add/ --include /another/path/to/add
+</code></pre>
+
+<p>The <code>--verbose</code> switch can be used to print additional information for debugging:</p>
+<pre><code>openstudio.exe --verbose
+</code></pre>
+
+<p>Program level switches (if any) are followed by a subcommand which directs the program to perform a particular function.  These subcommands are explained in further detail below.</p>
+<h1 id="measure-subcommand">Measure Subcommand</h1>
+<p>The <code>measure</code> subcommand is used to query OpenStudio Measures on disk.  The following arguments may be passed to the <code>measure</code> subcommand. </p>
+<p>The <code>-h</code> switch prints help specific to the <code>measure</code> subcommand:</p>
+<pre><code>openstudio.exe measure -h
+</code></pre>
+
+<p>The <code>-t</code> or <code>--update_all</code> switches process all measures in a given directory and updates their measure.xml files if updates to their content are detected.  Information about the measures is printed to standard out in JSON format:</p>
+<pre><code>openstudio.exe measure --update_all /path/to/measures/
+</code></pre>
+
+<p>The <code>-u</code> or <code>--update</code> switches process a single measure in a given directory and updates its measure.xml file if updates to the content are detected. Information about the measure is printed to standard out in JSON format:</p>
+<pre><code>openstudio.exe measure --update /path/to/measure/
+</code></pre>
+
+<p>The <code>-a</code> or <code>--compute_arguments</code> switches process a single measure in a given directory and updates its measure.xml file if updates to the content are detected. Information about the measure, including model specific arguments, is printed to standard out in JSON format:</p>
+<pre><code>openstudio.exe measure --compute_arguments /path/to/model.osm /path/to/measure/
+</code></pre>
+
+<p>or for an EnergyPlus Measure:</p>
+<pre><code>openstudio.exe measure --compute_arguments /path/to/model.idf /path/to/measure/
+</code></pre>
+
+<h1 id="run-subcommand">Run Subcommand</h1>
+<p>The <code>run</code> subcommand is used to load an OpenStudio Model, apply a series of OpenStudio Model Measures, translate to EnergyPlus IDF, apply a series of OpenStudio EnergyPlus Measures, run an EnergyPlus simulation on the resulting model, and finally apply a series of OpenStudio Reporting Measures. The OpenStudio Workflow (OSW) file format is used to describe which OpenStudio Measures to apply to the model and what arguments to pass to each measure.  The OSW format is explained in the following section.</p>
+<p>The <code>-h</code> switch prints help specific to the <code>run</code> subcommand:</p>
+<pre><code>openstudio.exe run -h
+</code></pre>
+
+<p>The <code>-w</code> or <code>--workflow</code> switches run the complete simulation workflow as described in an OSW file:</p>
+<pre><code>openstudio.exe measure --workflow /path/to/workflow.osw
+</code></pre>
+
+<p>The <code>--debug</code> switch can be used to include additional outputs for debugging failing workflows and does not clean up the run directory:</p>
+<pre><code>openstudio.exe measure --debug --workflow /path/to/workflow.osw
+</code></pre>
+
+<p>The <code>-m</code> or <code>--measures_only</code> switches run only the OpenStudio Model and EnergyPlus Measures but do not run the EnergyPlus simulation or OpenStudio Reporting Measures in an OSW file:</p>
+<pre><code>openstudio.exe measure --measures_only /path/to/workflow.osw
+</code></pre>
+
+<p>The <code>-p</code> or <code>--postprocess_only</code> switches do not run the OpenStudio Modelm EnergyPlus Measures, or EnergyPlus simulation in an OSW file.  Existing simulation results are loaded and only OpenStudio Reporting Measures are run, this is useful for generating new reports without re-running simulations:</p>
+<pre><code>openstudio.exe measure --postprocess_only /path/to/workflow.osw
+</code></pre>
+
+<h1 id="osw-structure">OSW Structure</h1>
+<p>The OpenStudio Workflow (OSW) format is a JSON file format that describes a simulation workflow.  In an OpenStudio Workflow, a seed OpenStudio Model is loaded.  OpenStudio Model Measures are applied to the seed model.  After these measures, the OpenStudio Model is translated to EnergyPlus IDF format.  Once in EnergyPlus IDF format, OpenStudio EnergyPlus Measures are applied.  After these measures, the EnergyPlus simulation is executed.  Once the EnergyPlus simulation is complete, OpenStudio Reporting Measures are applied which generate reports.  An error at any point in the workflow will halt the workflow.  Once the workflow is completed (successfully or unsuccessfully) an output OSW file is written which contains output related to running the workflow.</p>
+<p>An example OSW project is included in the OpenStudio installer under './Examples/compact_osw'.</p>
+<p>The OSW file format is described in JSON schema format <a href="https://raw.githubusercontent.com/NREL/OpenStudio-workflow-gem/osw/spec/schema/osw_output.json">here</a>.</p>
+<p>The OpenStudio API includes the class <a href="https://github.com/NREL/OpenStudio/tree/develop/openstudiocore/src/utilities/filetypes/WorkflowJSON.hpp">WorkflowJSON</a> which is able read, modify, and write the OSW file format.  The WorkflowJSON class also includes features for finding measures and files associated with a simulation workflow.</p>
+<p>The WorkflowJSON associated with an OpenStudio Model can be accessed using <code>model.workflowJSON</code>.  The WorkflowJSON object can also be accessed from the OSRunner object within a measure using <code>runner.workflow</code>.  Within the context of a measure, the WorkflowJSON object can be used to find files and measures associated with the simulation.  It can also be used to tell which OpenStudio Measures will be run during the workflow, what arguments they will be passed, and capture output from previously run measures.  However, during the course of a simulation workflow the OSW associated with an OpenStudio Model or OSRunner cannot be altered.</p>
+<p>An example OSW is shown below, the meaning of key terms is explained in more detail later in this section:</p>
+<pre><code class="json">{
+  &quot;seed_file&quot;: &quot;baseline.osm&quot;,
+  &quot;weather_file&quot;: &quot;USA_CO_Golden-NREL.724666_TMY3.epw&quot;,
+  &quot;steps&quot;: [
+    {
+      &quot;measure_dir_name&quot;: &quot;IncreaseWallRValue&quot;,
+      &quot;arguments&quot;: {}
+    },
+    {
+      &quot;measure_dir_name&quot;: &quot;IncreaseRoofRValue&quot;,
+      &quot;arguments&quot;: {
+        &quot;r_value&quot;: 45
+      }
+    },
+    {
+      &quot;measure_dir_name&quot;: &quot;SetEplusInfiltration&quot;,
+      &quot;arguments&quot;: {
+        &quot;flowPerZoneFloorArea&quot;: 10.76
+      }
+    },
+    {
+      &quot;measure_dir_name&quot;: &quot;DencityReports&quot;,
+      &quot;arguments&quot;: {
+        &quot;output_format&quot;: &quot;CSV&quot;
+      }
+    }
+  ]
+}
+</code></pre>
+
+<h2 id="seed-file">Seed File</h2>
+<p>The seed file is the file name of the OpenStudio Model to be loaded at the beginning of the simulation workflow.  The seed model may be empty or the memeber may be missing, in this case a newly constructed OpenStudio Model is passed to the first OpenStudio Model Measure.  The seed model is found using the logic documented for <code>WorkflowJSON::findFile</code>.</p>
+<h2 id="weather-file">Weather File</h2>
+<p>The weather file is the file name of the EnergyPlus Weather (EPW) file loaded at the beginning of the simulation workflow.  The weather file may be empty or the memeber may be missing.  The weather file is found using the logic documented for <code>WorkflowJSON::findFile</code>.  The following logic applies to the weather file during a simulation workflow:</p>
+<ol>
+<li>If a weather file is specified in the OSW, that file replaces any weather file specified in the seed OpenStudio Model before measure processing begins.</li>
+<li>During OpenStudio Model Measure processing, the weather file may be changed by altering the WeatherFile object in the OpenStudio Model.</li>
+<li>On translation to EnergyPlus, the weather file referenced in the OSM is found using WorkflowJSON.findFile and copied to in.epw in the run directory.
+EnergyPlus measures may change the weather file by copying files on top of in.epw.</li>
+</ol>
+<h2 id="workflow-steps">Workflow Steps</h2>
+<p>Each step listed in the OSW file describes an OpenStudio Measure to apply.  Measures are applied in order and must progress from OpenStudio Model Measures to OpenStudio EnergyPlus Measures to OpenStudio Reporting Measures.  Each step lists a <code>measure_dir_name</code> which is the directory name of an OpenStudio Measure to apply. Measures are found at run time according to logic in <code>WorkflowJSON::findMeasure</code>.  Each step specifies arguments to be passed to the measure, the measure argument's name is the key and the value to pass is the measure.  Optional arguments may be ommitted, default values will be used in this case.  The value passed to choice arguments may be either a valid choice value or a valid choice value display name.</p>
+<h1 id="environment-variables">Environment Variables</h1>
+<p>The OpenStudio Command Line Interface can be configured with several environment variables.  In cases where a value can be configured with either a command line switch or an environment variable, the command line switch will take precedence.</p>
+<p>The <code>ENERGYPLUS_EXE_PATH</code> environment variable can be used to configure the CLI to use a different version of the EnergyPlus engine than the one OpenStudio is installed with:</p>
+<p>Windows</p>
+<pre><code>set ENERGYPLUS_EXE_PATH=/path/to/EnergyPlus.exe
+</code></pre>
+
+<p>Unix</p>
+<pre><code>export ENERGYPLUS_EXE_PATH=/path/to/energyplus
+</code></pre>
+
+<p>The <code>RUBYLIB</code> environment variable can be used to configure the CLI to require Ruby files from locations on the user's disk, locations passed using the <code>--include</code> take precedence over the path found in this environment variable:</p>
+<p>Windows</p>
+<pre><code>set RUBYLIB=/home/git/project;/home/git/project/app/helpers
+</code></pre>
+
+<p>Unix</p>
+<pre><code>export RUBYLIB=/home/git/project:/home/git/project/app/helpers
+</code></pre>
+
+<p>The <code>GEM_HOME</code> environment variable can be used to configure the CLI to load gems from a location on the user's disk, the location passed using the <code>--gem_path</code> take precedence over the path found in this environment variable. <em>Loading external gems is not currently available in CLI</em>:</p>
+<p>Windows</p>
+<pre><code>set GEM_HOME=/home/gems
+</code></pre>
+
+<p>Unix</p>
+<pre><code>export GEM_HOME=/home/gems
+</code></pre>
+
+
+          <div class="footer">
+  <p class="text-center"><a href="https://unmethours.com/questions/scope:all/sort:activity-desc/tags:openstudio/">Get Help</a> | <a href="https://www.openstudio.net/contact">Contact Us</a></p>
+  <p class="text-center"><a href="https://www.openstudio.net">OpenStudio</a><sup>&reg;</sup> is developed in collaboration by NREL, ANL, LBNL, ORNL, and PNNL.</p>
+  <p class="text-center">OpenStudio<sup>&reg;</sup> is a registered trademark of the Alliance for Sustainable Energy, LLC.</p>
+  <p class="text-center"><a href="http://www.nrel.gov">NREL</a> is a National Laboratory of the U.S. Department of Energy, Office of Energy Efficiency and Renewable Energy, operated by the Alliance for Sustainable Energy, LLC.</p>
+  <p class="text-center"><a href="#">Back to Top</a></p>
+</div>
+        </div>
+      </div>
+    </div>
+    
+
+    <script src="../../js/jquery-2.1.1.min.js"></script>
+    <script src="../../js/bootstrap-3.3.0.min.js"></script>
+    <script src="../../js/bootstrap-hover-dropdown-2.0.11.min.js"></script>
+    <script src="../../js/prettify-1.0.min.js"></script>
+    <script src="../../js/base.js"></script>
+  </body>
+</html>
