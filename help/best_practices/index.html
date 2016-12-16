@@ -1,290 +1,292 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        
-        
-        <link rel="shortcut icon" href="../../favicon.ico">
-        
-
-        <title>Best Practices - OpenStudio User Docs</title>
-
-        <link href="../../css/bootstrap-3.2.0.min.css" rel="stylesheet">
-        <link href="../../css/font-awesome-4.2.0.css" rel="stylesheet">
-        <link href="../../css/prettify-1.0.css" rel="stylesheet">
-        <link href="../../css/base.css" rel="stylesheet">
-
-        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!--[if lt IE 9]>
-            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-        <![endif]-->
-    </head>
-      
-    <body>
-
-        <div class="container">
-<nav class="navbar navbar-default" role="navigation">
-  <div class="container">
-    <div class="navbar-header">
-        <a class="logo navbar-btn pull-left" href="/" title="Home">
-        <img src="../../img/OS_32x32.png" alt="Home">
-        </a>
-      
-       
-        <a class="name navbar-brand" href="../..">OpenStudio User Docs</a>
-        <!-- Expander button -->
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
+  <head>
+    <title>Modeling Best Practices - OpenStudio<sup>&reg;</sup> User Docs</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    
+    <link href="../../css/bootstrap-3.3.0.min.css" rel="stylesheet">
+    <link href="../../css/font-awesome-4.2.0.min.css" rel="stylesheet">
+    <link href="../../css/prettify-1.0.css" rel="stylesheet">
+    <link href="../../css/base.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+  <nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
         </button>
-    </div>
-
-    <!-- Expanded navigation -->
-    <div class="navbar-collapse collapse">
-           <!-- Main navigation -->
-            <ul class="nav navbar-nav">
-            
-            
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Getting Started <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                    
-                        <li >
-                            <a href="../../getting_started/features">Current Features</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../getting_started/roadmap">Planned Features</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../getting_started/getting_started">Installation and Introductory Tutorial</a>
-                        </li>
-                    
-                    </ul>
-                </li>
-            
-            
-            
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">References & Tutorials <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                    
-                        <li >
-                            <a href="../../next_steps/quick_start_guides">Quick Start Guides</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../next_steps/sketchup_plugin_interface">SketchUp Plug-in</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../next_steps/openstudio_application_interface">OpenStudio Application</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../next_steps/model_objects">Overview of OpenStudio Model Objects</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../next_steps/creating_your_model">Creating Your Model</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../next_steps/running_your_simulation">Running Your Simulation & Viewing Results</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../next_steps/detailed_tutorials/tutorial_glhepro">GLHEPro Tutorial</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../next_steps/detailed_tutorials/tutorial_shadingcontrols">Shading Controls Tutorial</a>
-                        </li>
-                    
-                    </ul>
-                </li>
-            
-            
-            
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Measures <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                    
-                        <li >
-                            <a href="../../measures/about_measures">About Measures</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../measures/measure_writing_guide">Measure Writing Guide</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../measures/measure_code_examples">Measure Code Examples</a>
-                        </li>
-                    
-                    </ul>
-                </li>
-            
-            
-            
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Comparative Analysis <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                    
-                        <li >
-                            <a href="../../comparative_analysis/parametric_studies">ParametricAnalysisTool</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../comparative_analysis/large_scale_analysis">Large Scale Analysis</a>
-                        </li>
-                    
-                    </ul>
-                </li>
-            
-            
-            
-                <li class="dropdown active">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Help <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                    
-                        <li >
-                            <a href="../training">Training</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../finding_model_data">Finding Model Data</a>
-                        </li>
-                    
-                        <li class="active">
-                            <a href=".">Best Practices</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../troubleshooting">Troubleshooting</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../faq">FAQ</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../software_license">Software License</a>
-                        </li>
-                    
-                    </ul>
-                </li>
-            
-            
-            </ul>
-
-            <!-- Search, Navigation and Repo links -->
-            <ul class="nav navbar-nav navbar-right">
-                
-            
-            </ul>
-            
+        <a class="navbar-brand" href="../.."><img alt="" src="../../img/OS_32x32.png"> OpenStudio<sup>&reg;</sup> User Docs</a>
+      </div>
+      <div class="navbar-collapse collapse">
+        <!-- Main navigation -->
+        <ul class="nav navbar-nav">
+        
           
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">Getting Started <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+            
+              <li>
+                <a href="../../getting_started/features">Current Features</a>
+              </li>
+            
+              <li>
+                <a href="../../getting_started/roadmap">Planned Features</a>
+              </li>
+            
+              <li>
+                <a href="../../getting_started/getting_started">Installation and Introductory Tutorial</a>
+              </li>
+            
+              <li>
+                <a href="../../getting_started/quick_start_guides">Quick Start Guides</a>
+              </li>
+            
+              <li>
+                <a href="../../getting_started/about_measures">About Measures</a>
+              </li>
+            
+            </ul>
+          </li>
+          
+        
+          
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">Essential Tutorials <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+            
+              <li>
+                <a href="../../tutorials/creating_your_model">Creating Your Model</a>
+              </li>
+            
+              <li>
+                <a href="../../tutorials/running_your_simulation">Running Simulations & Viewing Results</a>
+              </li>
+            
+              <li>
+                <a href="../../tutorials/large_scale_analysis">Large Scale Analysis</a>
+              </li>
+            
+              <li>
+                <a href="../../tutorials/radiance_tutorial">Radiance and OpenStudio</a>
+              </li>
+            
+              <li>
+                <a href="../../tutorials/tutorial_bcl">Building Component Library</a>
+              </li>
+            
+            </ul>
+          </li>
+          
+        
+          
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">Advanced Tutorials <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+            
+              <li>
+                <a href="../../tutorials/utility_rate_tariffs">Utiity Rate Tariffs</a>
+              </li>
+            
+              <li>
+                <a href="../../tutorials/life_cycle_costing_examples">Life Cycle Cost Analysis</a>
+              </li>
+            
+              <li>
+                <a href="../../tutorials/tutorial_cbecc_materials">CBECC Materials and Constructions</a>
+              </li>
+            
+              <li>
+                <a href="../../tutorials/tutorial_glhepro">Vertical Ground Heat Exchanger sizing with GLHEPro</a>
+              </li>
+            
+              <li>
+                <a href="../../tutorials/tutorial_ifcimport">BIMserver Import IFC</a>
+              </li>
+            
+              <li>
+                <a href="../../tutorials/tutorial_shadingcontrols">Shading Controls</a>
+              </li>
+            
+              <li>
+                <a href="../../tutorials/tutorial_windowproperty_frameanddivider">Window Property Frame and Divider</a>
+              </li>
+            
+              <li>
+                <a href="../../tutorials/tutorial_virtual_pulse">VirtualPULSE</a>
+              </li>
+            
+            </ul>
+          </li>
+          
+        
+          
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">Reference <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+            
+              <li>
+                <a href="../../reference/openstudio_application_interface">OpenStudio Application Interface Guide</a>
+              </li>
+            
+              <li>
+                <a href="../../reference/sketchup_plugin_interface">SketchUp Plug-in Interface Guide</a>
+              </li>
+            
+              <li>
+                <a href="../../reference/command_line_interface">Command Line Interface</a>
+              </li>
+            
+              <li>
+                <a href="../../reference/parametric_studies">Parametric Analysis Tool (PAT) Interface Guide</a>
+              </li>
+            
+              <li>
+                <a href="../../reference/model_objects">OpenStudio Model Objects Overview</a>
+              </li>
+            
+              <li>
+                <a href="../../reference/measure_writing_guide">Measure Writer's Reference Guide</a>
+              </li>
+            
+              <li>
+                <a href="../../reference/measure_code_examples">Measure Code Examples</a>
+              </li>
+            
+              <li>
+                <a href="../../reference/developing_measure_collections">Developing Measure Collections</a>
+              </li>
+            
+              <li>
+                <a href="../../reference/refguide_radiance">OpenStudio-Radiance Reference Guide</a>
+              </li>
+            
+              <li>
+                <a href="../../reference/openstudio_results_measure">OpenStudio Results Measure</a>
+              </li>
+            
+            </ul>
+          </li>
+          
+        
+          
+          <li class="dropdown active">
+            <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">Help <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+            
+              <li>
+                <a href="../training">Find Training</a>
+              </li>
+            
+              <li>
+                <a href="../finding_model_data">Finding Model Data</a>
+              </li>
+            
+              <li class="active">
+                <a href=".">Modeling Best Practices</a>
+              </li>
+            
+              <li>
+                <a href="../troubleshooting">Troubleshooting</a>
+              </li>
+            
+              <li>
+                <a href="../faq">FAQ</a>
+              </li>
+            
+              <li>
+                <a href="../software_license">Software License</a>
+              </li>
+            
+            </ul>
+          </li>
+          
+        
+        </ul>
+
+        <!-- Search, Navigation and Repo links -->
+        <ul class="nav navbar-nav navbar-right">
+        
+        </ul>
+      </div>
     </div>
-
-
-  </div>
-</nav>
+  </nav>
 </div>
-
-        <div class="container">        
-            <div class="col-md-3">
-               
-                <div class="bs-sidebar hidden-print affix well" role="complementary">
-  <ul class="nav bs-sidenav">
-
-
-	
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <div class="bs-docs-sidebar hidden-print affix well" role="complementary">
+  <ul class="nav">
   
-
-  <li class="main active"><a href="#general">General</a></li>
-    
-
+    <li class="main active"><a href="#general">General</a>
+      <ul class="nav">
+        
+      </ul>
+    </li>
   
-
-
-	
-
-  <li class="main "><a href="#guidelines-for-spaces">Guidelines for Spaces</a></li>
-    
-
+    <li class="main"><a href="#guidelines-for-spaces">Guidelines for Spaces</a>
+      <ul class="nav">
+        
+      </ul>
+    </li>
   
-
-
-	
-
-  <li class="main "><a href="#guidelines-for-building-surfaces">Guidelines for Building Surfaces</a></li>
-    
-
+    <li class="main"><a href="#guidelines-for-building-surfaces">Guidelines for Building Surfaces</a>
+      <ul class="nav">
+        
+      </ul>
+    </li>
   
-
-
-	
-
-  <li class="main "><a href="#guidelines-for-subsurfaces">Guidelines for Subsurfaces</a></li>
-    
-
+    <li class="main"><a href="#guidelines-for-subsurfaces">Guidelines for Subsurfaces</a>
+      <ul class="nav">
+        
+      </ul>
+    </li>
   
-
-
-	
-
-  <li class="main "><a href="#guidelines-for-interior-partition-surfaces">Guidelines for Interior Partition Surfaces</a></li>
-    
-
+    <li class="main"><a href="#guidelines-for-interior-partition-surfaces">Guidelines for Interior Partition Surfaces</a>
+      <ul class="nav">
+        
+      </ul>
+    </li>
   
-
-
-	
-
-  <li class="main "><a href="#guidelines-for-shading-surfaces">Guidelines for Shading Surfaces</a></li>
-    
-
-   
-	
-
-
-
+    <li class="main"><a href="#guidelines-for-shading-surfaces">Guidelines for Shading Surfaces</a>
+      <ul class="nav">
+        
+      </ul>
+    </li>
+  
   </ul>
-  <div class='home-btn'>
-    <a class="btn btn-default" role="button" href="https://www.openstudio.net">Back to OpenStudio</a>
+  <div class="home-btn">
+    <a class="btn btn-default" role="button" href="https://www.openstudio.net">Back to OpenStudio<sup>&reg;</sup></a>
   </div>
 </div>
+        </div>
+        <div class="col-md-9" role="main">
+          <h1>Modeling Best Practices</h1>
 
-            </div>
-            <div class="col-md-9" role="main">
-                
-
-<h1>Best Practices</h1>
-
-<p>This page is a collection of best practices that have been developed over time and by experience.  Following these best practices will help you avoid the issues that users experience most often.</p>
+<p>This page is a collection of best practices that have been developed over time and by experience. Following these best practices will help you avoid the issues that users experience most often.</p>
 <h2 id="general">General</h2>
 <ul>
-<li>
-<p><strong>Save your model often and with different versions.</strong> Save multiple versions of your OpenStudio Model as you progress; this makes it easier to recover from an error and provides takeoff points for model variations.</p>
-</li>
-<li>
-<p>EnergyPlus is a detailed simulation engine, but you have to tell it how you want your building modeled. A common misunderstanding is that EnergyPlus will interpret "voids" between zones "correctly." EnergyPlus does not compute heat transfer between zones if they do not share a surface, so you must input the shared surfaces and set appropriate boundary conditions. To correctly model air transfer between zones, you have to add input objects that describe the airflow between zones. To model daylight transmission between zones, you need to add interior windows. Just because a building looks right, does not mean it is modeled correctly; digging in to the IDF and looking at detailed results is the only way to determine that you have modeled your building correctly.</p>
-</li>
-<li>
-<p>When you import an IDF into OpenStudio, it may be altered as part of the import process. For example, if your windows are not in the same plane as their base surface, OpenStudio moves them into the base surface plane. There may be other changes as well. If you want to keep your raw IDF untouched, you should "SaveAs", either as soon as you import it, or before you import it.
-To rename objects, go to the OpenStudio Inspector. Do not alter the names in SketchUp's Entity Information dialog.</p>
-</li>
-<li>
-<p>The OpenStudio Inspector works on one object at a time. If you select multiple objects or surfaces and make a change, it will affect only one object.</p>
-</li>
+<li><strong>Save your model often and with different versions.</strong> Save multiple versions of your OpenStudio Model as you progress; this makes it easier to recover from an error and provides takeoff points for model variations.</li>
+<li>EnergyPlus is a detailed simulation engine, but you have to tell it how you want your building modeled. A common misunderstanding is that EnergyPlus will interpret "voids" between zones "correctly." EnergyPlus does not compute heat transfer between zones if they do not share a surface, so you must input the shared surfaces and set appropriate boundary conditions. To correctly model air transfer between zones, you have to add input objects that describe the airflow between zones. To model daylight transmission between zones, you need to add interior windows. Just because a building looks right, does not mean it is modeled correctly; digging in to the IDF and looking at detailed results is the only way to determine that you have modeled your building correctly.</li>
+<li>When you import an IDF into OpenStudio, it may be altered as part of the import process. For example, if your windows are not in the same plane as their base surface, OpenStudio moves them into the base surface plane. There may be other changes as well. If you want to keep your raw IDF untouched, you should "SaveAs", either as soon as you import it, or before you import it.
+To rename objects, go to the OpenStudio Inspector. Do not alter the names in SketchUp's Entity Information dialog.</li>
+<li>The OpenStudio Inspector works on one object at a time. If you select multiple objects or surfaces and make a change, it will affect only one object.</li>
 </ul>
 <h2 id="guidelines-for-spaces">Guidelines for Spaces</h2>
 <ul>
@@ -325,24 +327,22 @@ To rename objects, go to the OpenStudio Inspector. Do not alter the names in Ske
 -->
 
 
-                 <div class="footer">
-
-  <p class="text-center"><a href="https://www.openstudio.net/contact">Contact Us</a></p>
-  <p class="text-center"><a href="https://www.openstudio.net">OpenStudio</a> is developed in collaboration by NREL, ANL, LBNL, ORNL, and PNNL.</>
-  <p class="text-center"><a href="http://www.nrel.gov">NREL</a> is a National Laboratory of the U.S. Department of Energy, Office of Energy Efficiency and Renewable Energy, operated by the Alliance for Sustainable Energy, LLC.
-  </p>
-  <p class="text-center"><a href='#'>Back to Top</a></p>
+          <div class="footer">
+  <p class="text-center"><a href="https://unmethours.com/questions/scope:all/sort:activity-desc/tags:openstudio/">Get Help</a> | <a href="https://www.openstudio.net/contact">Contact Us</a></p>
+  <p class="text-center"><a href="https://www.openstudio.net">OpenStudio</a><sup>&reg;</sup> is developed in collaboration by NREL, ANL, LBNL, ORNL, and PNNL.</p>
+  <p class="text-center">OpenStudio<sup>&reg;</sup> is a registered trademark of the Alliance for Sustainable Energy, LLC.</p>
+  <p class="text-center"><a href="http://www.nrel.gov">NREL</a> is a National Laboratory of the U.S. Department of Energy, Office of Energy Efficiency and Renewable Energy, operated by the Alliance for Sustainable Energy, LLC.</p>
+  <p class="text-center"><a href="#">Back to Top</a></p>
 </div>
-            </div>
-
         </div>
-       
+      </div>
+    </div>
+    
 
-        
-
-        <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-        <script src="../../js/bootstrap-3.2.0.min.js"></script>
-        <script src="../../js/prettify-1.0.min.js"></script>
-        <script src="../../js/base.js"></script>
-    </body>
+    <script src="../../js/jquery-2.1.1.min.js"></script>
+    <script src="../../js/bootstrap-3.3.0.min.js"></script>
+    <script src="../../js/bootstrap-hover-dropdown-2.0.11.min.js"></script>
+    <script src="../../js/prettify-1.0.min.js"></script>
+    <script src="../../js/base.js"></script>
+  </body>
 </html>
