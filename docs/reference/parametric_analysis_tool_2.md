@@ -1,5 +1,5 @@
 <h1>Parametric Analysis Tool 2.0 (PAT) Interface Guide</h1>
-PAT removes the need to hand edit each model to try out different architectures, energy efficiency measures, and mechanical systems. PAT applies measures to your seed model and lets you quickly compare many design alternatives.
+PAT allows you to quickly try out and compare different design options, energy efficiency measures, and mechanical systems by applying OpenStudio Measures to your seed model.
 
 ___________________
 
@@ -20,7 +20,7 @@ To create a new project :
 
 [comment]: # (remove restriction on spaces in path and project name once that is fixed. Item #59 on 2.0 google doc.)
 
-Note: The PAT 2.0 release requires that both the file name and path for the project don't have any spaces.
+Note: The PAT 2.0 release currently requires that both the file name and path for the project don't have any spaces.
 
 ![Make New Project](img/pat2/launch_03.png)
 
@@ -42,7 +42,7 @@ ___________________
 
 The function of the six tabs in the PAT 2.0 interface are to:
 
-1. Select measures, create measure options, define seed models, and weather files.
+1. Select measures, measure options, seed models, and weather files.
 2. Create design alternatives
 3. Request outputs *(future feature)*
 4. Run the analysis
@@ -82,7 +82,7 @@ If you want to learn more about measures, check out the [About Measures](../gett
 There are three types of measures:
 
 1. __OpenStudio measures__ are run on the OSM model before it is converted to an IDF.
-2. __EnergyPlus measures__ can be run on the IDF file before it is handed to EnergyPlus.
+2. __EnergyPlus measures__ can be run on the IDF file before it is simulated in EnergyPlus.
 3. __Reporting measures__ produce reports to chart results, provide quality assurance, and quality control on models.
 
 The measures are applied to the model in order from top to bottom.
@@ -119,7 +119,7 @@ Once the symbol changes to the green document symbol the measure has been downlo
 
 [comment]: # (remove this comment once the corrupted meaasure.xml issue is fixed. Item #64 on 2.0 google doc.)
 
-Note: There is an issue in the December 2016 2.0 release that causes issues if you both download and add a measure to your project while in the same dialog session. To avoid this first download the measures from BCL, then close the dialog, then re-open the dialog to add the measures to your project. This is only an issue the first time you use a measure from BCL.
+Note: There is an issue in the current 2.0 release that causes issues if you both download and add a measure to your project while in the same dialog session. To avoid this first download the measures from BCL, close the dialog, then re-open the dialog to add the measures to your project. This is only an issue the first time you use a measure from BCL.
 
 ### Add Measures to the Project
 
@@ -154,14 +154,14 @@ Every measure in the project needs at least one measure option. You can create a
 
 1. Clicking the __"Add Measure Option"__ button. This will add a column to the right side of the grid for the measure.
 2. Change default arguments and __add in missing argument values__ for the first measure option.
-3. If you want to use one or more measure arguments as variables then
-    1. __click the "Variable" box__ for one or more measure arguments.
+3. If you want create more than one measure option then
+    1. __Click the "Variable" box__ for the measure arguments you want to change across measure options.
     2. __Add additional measure options__ with unique variable combinations. 
-4. __Rename measure option names__ to meaningful name for better reporting and diagnostics.
+4. __Rename measure option names__ to meaningful names for better reporting and diagnostics.
 
 [comment]: # (remove this comment once change argument value issue is fixed. Item #63 on 2.0 google doc.)
 
-Note: In PAT 2.0 you can't change measure arguments without checking the variable box. If you want to change a value but don't intend for it to be a variable then check it to change the value, then un-check it.
+Note: In PAT 2.0 you can't change measure arguments without checking the variable box. If you want to change a value but don't intend for it to vary across measure options then check it to change the value, then un-check it.
 
 ![Measures Tab With Measure Options](img/pat2/measures_04.png)
 
@@ -250,7 +250,7 @@ ___________________
 
 ## View Analysis Reports
 
-PAT 2.0 includes three different analysis reports. The analysis reports have access to high level data from all of the design alternatives. The high level data comes from reporting measures, which is why it's necessary to include the OpenStudio Results reporting measure in each design alternative. 
+PAT 2.0 includes three different analysis reports. The analysis reports have access to high level data from all of the design alternatives. The high level data come from reporting measures, which is why it's necessary to include the OpenStudio Results reporting measure in each design alternative. 
 
 - Below are descriptions of the reports included with PAT 2.0. 
 - Additional reports will be added in future versions.
