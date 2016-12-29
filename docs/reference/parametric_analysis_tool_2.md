@@ -18,7 +18,7 @@ To create a new project :
 2. Type the name for the project, and click "Continue"
 3. Browse to the directory where you want the project saved, and click the "Open" button.
 
-[comment]: # (remove restriction on spaces in path and projet name once that is fixed. Item #59 on 2.0 google doc.)
+[comment]: # (remove restriction on spaces in path and project name once that is fixed. Item #59 on 2.0 google doc.)
 
 Note: The PAT 2.0 release requires that both the file name and path for the project don't have any spaces.
 
@@ -30,7 +30,7 @@ ___________________
 
 ## Open an Existing Project
 
-You can open an existing PAT proejct when you first launch PAT or from the file menu. In either case a dialog will open to to find the path where you created your Project. There is no file to select, just browse to the top level project directory.
+You can open an existing PAT project when you first launch PAT or from the file menu. In either case a dialog will open to find the path where you created your Project. There is no file to select, just browse to the top level project directory.
 
 ![Open Existing Project](img/pat2/launch_04.png)
   
@@ -56,22 +56,22 @@ You can move through the six vertical tabs on the left navigation by working in 
 *Above: PAT 2.0 introduction video*
 <br><br>
 
-[comment]: # (udpate documents and remove this once algorithmic workflow is added)
+[comment]: # (update documents and remove this once algorithmic workflow is added)
 
 Note: Analysis Type is currently limited to manual. Algorithmic analysis will be enabled in a future version.
 ___________________
 
 ## Load a Seed Model and Weather File
-Select your seed model by clicking the folder symbol for the "Defaul Seed Model". Select your weather file by clicking the folder symbol for the "Defautl Weather File."
+Select your seed model by clicking the folder symbol for the "Default Seed Model". Select your weather file by clicking the folder symbol for the "Default Weather File."
 
 ![Select Baseline Model and Weather File](img/pat2/measures_02.png)
 
 *Above: View of measures tab after browsing for both a seed model and a default weather file.*
 <br><br>
 
-[comment]: # (haven't mentioned multiple seed files and epws here or on the desgin alternatives tab. Not sure if I should address at all now. Changing epws doesn't work, and I haven' tested multiple seed files.)
+[comment]: # (haven't mentioned multiple seed files and epws here or on the design alternatives tab. Not sure if I should address at all now. Changing epws doesn't work, and I haven' tested multiple seed files.)
 
-Note: The PAT 2.0 interface allows for different seed models and weather files for different design alternatives, but this fucnctionality isn't complete and will likley produced unexpected results. This will be addressed in a future version.
+Note: The PAT 2.0 interface allows for different seed models and weather files for different design alternatives, but this functionality  isn't complete and will likely produced unexpected results. This will be addressed in a future version.
 ___________________
 
 ## Add Measures and Create Measure Options
@@ -97,7 +97,7 @@ The measure locations are:
 
 1. __My Project__ - shows are measures that have already been added to your currently open project.
 2. __Measure Directory__ - shows measures you have authored in a user configurable "MyMeasures" directory on your computer.
-3. __Local__ - are local instnaces of the Online BCL measures that have already been downloaded to your computer.
+3. __Local__ - are local instances of the Online BCL measures that have already been downloaded to your computer.
 4. __BCL (Online)__  - will show all public measures on the Building Component Library (Online). To use add these to a project they must first be downloaded. 
 
 ![Default View BCL Dialog](img/pat2/bcl_01.png)
@@ -113,9 +113,9 @@ To download measures:
 
 Once the symbol changes to the green document symbol the measure has been downloaded. 
 
-- It will typically move to the top of the list, but ou can click column headers to sort by other attributes. 
+- It will typically move to the top of the list, but you can click column headers to sort by other attributes. 
 - If there are online updates to a local BCL measure the "Update" column will have a an symbol you can click to update your local copy of the measure.
-- Clicking the green docment symbol will create a copy of the measure in your "MyMeasures" directory.
+- Clicking the green document symbol will create a copy of the measure in your "MyMeasures" directory.
 
 [comment]: # (remove this comment once the corrupted meaasure.xml issue is fixed. Item #64 on 2.0 google doc.)
 
@@ -127,7 +127,7 @@ Clicking the blue plus will add the measure to your project.
 
 ![Filtered View BCL Dialog](img/pat2/bcl_03.png)
 
-*Above: Filtered View showing Online BCL OpenStudio Fenestration measures. Set Window to Wall Ratio measure has been downloaded from Oneline BCL but not yet added to the project.*
+*Above: Filtered View showing Online BCL OpenStudio Fenestration measures. Set Window to Wall Ratio measure has been downloaded from Online BCL but not yet added to the project.*
 <br><br>
 
 After adding a measure to your project blue plus will change to a green check mark. 
@@ -139,7 +139,7 @@ After adding a measure to your project blue plus will change to a green check ma
 
 After closing the Building Component Library dialog, measures are now loaded in the project. 
 
-- Individual measures can be moved up or down using the arows at the right. 
+- Individual measures can be moved up or down using the arrows at the right. 
 - The "x" at the right will delete a measure from the project. 
 - The arrow at the left of each measures will let you expand and collapse the view into that measure.
 
@@ -152,12 +152,12 @@ After closing the Building Component Library dialog, measures are now loaded in 
 
 Every measure in the project needs at least one measure option. You can create a measure option for a measure by:
 
-1. Clicking the __"Add Measure Option"__ button. This will add a column to the right side fo the grid for the measure.
+1. Clicking the __"Add Measure Option"__ button. This will add a column to the right side of the grid for the measure.
 2. Change default arguments and __add in missing argument values__ for the first measure option.
-3. If you want to use one or more measure arguments as varaibles then
+3. If you want to use one or more measure arguments as variables then
     1. __click the "Variable" box__ for one or more measure arguments.
     2. __Add additional measure options__ with unique variable combinations. 
-4. __Rename measure option names__ to meaningful name for better reporting and diagonstics.
+4. __Rename measure option names__ to meaningful name for better reporting and diagnostics.
 
 [comment]: # (remove this comment once change argument value issue is fixed. Item #63 on 2.0 google doc.)
 
@@ -187,15 +187,15 @@ The second tab is used to create design alternatives. In the grid each row repre
 There are three ways to add design alternatives:
 
 1. __Add Alternative__ creates a single design alternative with all the measure options set to "None".
-2. __Create One Design Alternative with Each Measure Option__ will create a desgin alternative for each measure option that exists with all other measure option values set to "None"
-3. __Duplicate Alternative__ duplicates an existing design alternative, as a starting point for a new desgin alternative.
+2. __Create One Design Alternative with Each Measure Option__ will create a design alternative for each measure option that exists with all other measure option values set to "None"
+3. __Duplicate Alternative__ duplicates an existing design alternative, as a starting point for a new design alternative.
 
 Measure option values can be edited after the measure has been created by clicking on a cell and using the pull down menu to select a different measure option or "None". 
 
 - You can delete a design alternative by clicking the "x" at the left of each row. 
 - You can also sort the rows by clicking on the column header or move individual rows by clicking the arrows near the left of the row. 
 
-[comment]: # (remove item about row order not mattering if that is fixed in future release. Ideally order will be consist across desgin alternatives, run, and results tabs; at least for manual analyses. Not applicable for algorithmic.)
+[comment]: # (remove item about row order not mattering if that is fixed in future release. Ideally order will be consist across design alternatives, run, and results tabs; at least for manual analyses. Not applicable for algorithmic.)
 
 Note: Currently the row order doesn't affect the order that the simulations are run in, or the order the results presented.
 
@@ -227,7 +227,7 @@ Note: There is only partial support in PAT 2.0 to run on the cloud, so most user
  
 ![Run Tab pre run](img/pat2/run_01.png)
  
-*Above: View of Run Tab prior prior to running the analysis.*
+*Above: View of Run Tab prior to running the analysis.*
 <br><br>
  
 Soon after the analysis starts the progress bar will show "Analysis started" and a row will be added for each design alternative, with a column to monitor its status. For local runs all but one of the processors will be used for parallel simulations.
@@ -237,14 +237,14 @@ Soon after the analysis starts the progress bar will show "Analysis started" and
 *Above: View of Run Tab while the analysis is running.*
 <br><br>
  
-After the simulation is completed for a desgin alternative you can expand it to view the log messages from the individual measures. The number of not applicable, warning, and error messages for a design alternative can be inspected without expanding the design alternative. Reporting measure and EnergyPlus HTML files can be viewed by clicking the graph symbol.
+After the simulation is completed for a design alternative you can expand it to view the log messages from the individual measures. The number of not applicable, warning, and error messages for a design alternative can be inspected without expanding the design alternative. Reporting measure and EnergyPlus HTML files can be viewed by clicking the graph symbol.
  
 - There will be a short delay after the last simulation finishes before the progress bar displays "Analysis completed".
-- While the simulation is running you won't be able to swtich to other tabs.
+- While the simulation is running you won't be able to switch to other tabs.
  
 ![Run Tab post run](img/pat2/run_04.png)
   
-*Above: View of Run Tab after siulations are complete.*
+*Above: View of Run Tab after simulations are complete.*
 <br><br>
 ___________________
 
@@ -285,7 +285,7 @@ ___________________
 
 ## View the Server
 
-This tab won't be necessary for most users, but can provide additional functionality and diagnostics for advacned users. It provides an interface to the server the analysis ran on.
+This tab won't be necessary for most users, but can provide additional functionality and diagnostics for advanced users. It provides an interface to the server the analysis ran on.
 
 ![EDAPT Export](img/pat2/server_01.png)
   
