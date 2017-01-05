@@ -158,6 +158,10 @@
               </li>
             
               <li>
+                <a href="../parametric_analysis_tool_2">Parametric Analysis Tool Version 2 (PAT) Interface Guide</a>
+              </li>
+            
+              <li>
                 <a href="../model_objects">OpenStudio Model Objects Overview</a>
               </li>
             
@@ -342,7 +346,8 @@
 
 <h1 id="osw-structure">OSW Structure</h1>
 <p>The OpenStudio Workflow (OSW) format is a JSON file format that describes a simulation workflow.  In an OpenStudio Workflow, a seed OpenStudio Model is loaded.  OpenStudio Model Measures are applied to the seed model.  After these measures, the OpenStudio Model is translated to EnergyPlus IDF format.  Once in EnergyPlus IDF format, OpenStudio EnergyPlus Measures are applied.  After these measures, the EnergyPlus simulation is executed.  Once the EnergyPlus simulation is complete, OpenStudio Reporting Measures are applied which generate reports.  An error at any point in the workflow will halt the workflow.  Once the workflow is completed (successfully or unsuccessfully) an output OSW file is written which contains output related to running the workflow.</p>
-<p>An example OSW project is included in the OpenStudio installer under './Examples/compact_osw'.</p>
+<p>An example OSW project is included in the OpenStudio installer under './Examples/compact_osw'. To run this example, copy it to a user writable location and then:</p>
+<p>/path/to/openstudio.exe run -w /path/to/compact.osw</p>
 <p>The OSW file format is described in JSON schema format <a href="https://raw.githubusercontent.com/NREL/OpenStudio-workflow-gem/osw/spec/schema/osw_output.json">here</a>.</p>
 <p>The OpenStudio API includes the class <a href="https://github.com/NREL/OpenStudio/tree/develop/openstudiocore/src/utilities/filetypes/WorkflowJSON.hpp">WorkflowJSON</a> which is able read, modify, and write the OSW file format.  The WorkflowJSON class also includes features for finding measures and files associated with a simulation workflow.</p>
 <p>The WorkflowJSON associated with an OpenStudio Model can be accessed using <code>model.workflowJSON</code>.  The WorkflowJSON object can also be accessed from the OSRunner object within a measure using <code>runner.workflow</code>.  Within the context of a measure, the WorkflowJSON object can be used to find files and measures associated with the simulation.  It can also be used to tell which OpenStudio Measures will be run during the workflow, what arguments they will be passed, and capture output from previously run measures.  However, during the course of a simulation workflow the OSW associated with an OpenStudio Model or OSRunner cannot be altered.</p>
