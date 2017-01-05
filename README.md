@@ -63,4 +63,4 @@ If you are ready to deploy your changes to the live site, first **commit your ma
 ```shell
 mkdocs gh-deploy
 ```
-This will generate the static site in the `site/` directory and push this directory to the gh-pages branch of the repo, which will update the site.  Do not commit the `site/` directory to the master branch, however.
+This will generate the static site in the `site/` directory.  In a separate repo checkout the gh-pages branch.  Delete all the files in the gh-pages checkout and copy the files from the `site/` directory into the gh-pages checkout.  Add any new files and delete any missing ones from the repo.  Finally push this directory to the gh-pages branch of the repo, which will update the site.  Do not commit the `site/` directory to the master or gh-pages branch, however.
