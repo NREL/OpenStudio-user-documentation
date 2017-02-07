@@ -238,7 +238,13 @@
           <div class="bs-docs-sidebar hidden-print affix well" role="complementary">
   <ul class="nav">
   
-    <li class="main active"><a href="#openstudio-1110">OpenStudio 1.11.0</a>
+    <li class="main active"><a href="#openstudio-1140">OpenStudio 1.14.0</a>
+      <ul class="nav">
+        
+      </ul>
+    </li>
+  
+    <li class="main"><a href="#openstudio-1110">OpenStudio 1.11.0</a>
       <ul class="nav">
         
         <li><a href="#some-of-the-more-noteworthy-new-features-and-bug-fixes-are-listed-below">Some of the more noteworthy new features and bug fixes are listed below:</a></li>
@@ -324,6 +330,34 @@
           <h1>Current Features</h1>
 
 <p>OpenStudio is constantly being improved, with a less stable developer release available every 2 weeks and a stable major release quarterly (4 per year). The features that are available in the current major release are described below. To learn what is coming in the future, see the <a href="../roadmap">Planned Features</a> page.</p>
+<h2 id="openstudio-1140">OpenStudio 1.14.0</h2>
+<p>Within EnergyPlus, advanced building controls are typically implemented utilizing the EnergyManagementSystem (EMS) suite of objects. This involves defining Sensors and Actuators that interact with building parameters through Programs which are written in the EnergyPlus Runtime Language (ERL). With the creation and larger adoption of OpenStudio Measures, the desire to simulate advanced building and grid interaction related control strategies has only increased. To facilitate those efforts, the EMS objects have been wrapped in both the forward and reverse translators. The model objects are:</p>
+<ul>
+<li>EnergyManagementSystemActuator</li>
+<li>EnergyManagementSystemConstructionIndexVariable</li>
+<li>EnergyManagementSystemCurveOrTableIndexVariable</li>
+<li>EnergyManagementSystemGlobalVariable</li>
+<li>EnergyManagementSystemInternalVariable</li>
+<li>EnergyManagementSystemMeteredOutputVariable</li>
+<li>EnergyManagementSystemOutputVariable</li>
+<li>EnergyManagementSystemProgram</li>
+<li>EnergyManagementSystemProgramCallingManager</li>
+<li>EnergyManagementSystemSensor</li>
+<li>EnergyManagementSystemSubroutine</li>
+<li>EnergyManagementSystemTrendVariable</li>
+<li>OutputEnergyManagementSystem</li>
+</ul>
+<p>Currently the interface to include EMS into an OSM is strictly Measure based. Adding these Objects to the GUI in the OS Application is currently being scoped for the upcoming fiscal year, however it is funding dependent.</p>
+<p>In the OSM file, most EMS objects will attach directly to Model objects thru their Handles or UIDs. Upon EnergyPlus translation, those UIDs are replaced with Object names. While most Objects have restricted parameters, Programs and Subroutines can either be defined line by line thru the Measure API or all at once by defining a large string block.</p>
+<p>Also, all EMS objects reverse translate so if there are large legacy IDF models, the user can use this to at least get a start on what the new OSM would look like. One caveat is that when a referenced object exists that won’t reverse translate, OpenStudio will still translate the EMS object, but leave the referenced field blank and a warning message is thrown. The name of the object that didn’t translate is put in a comment above the EMS object so that the user can go find it in the IDF and manually figure out how to connect it up in the new OSM.</p>
+<p>In addition to the aforementioned EMS functionality, the following OpenStudio capability was implemented:</p>
+<ul>
+<li>Added BuildingUnit class for grouping Spaces into logical units</li>
+<li>Updated template OpenStudio Measures to work with OpenStudio 1.x and 2.x</li>
+<li>Added fuel type to OtherEquipment and CoilHeatingGas</li>
+<li>Enforce lowercase names in runner.registerValue</li>
+<li>Allow display name to be set instead of value for choice arguments</li>
+</ul>
 <h2 id="openstudio-1110">OpenStudio 1.11.0</h2>
 <h5 id="some-of-the-more-noteworthy-new-features-and-bug-fixes-are-listed-below">Some of the more noteworthy new features and bug fixes are listed below:</h5>
 <ul>
