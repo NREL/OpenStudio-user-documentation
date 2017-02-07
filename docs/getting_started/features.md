@@ -1,6 +1,37 @@
 <h1>Current Features</h1>
 OpenStudio is constantly being improved, with a less stable developer release available every 2 weeks and a stable major release quarterly (4 per year). The features that are available in the current major release are described below. To learn what is coming in the future, see the [Planned Features](../getting_started/roadmap.md) page.
 
+##OpenStudio 1.14.0 
+Within EnergyPlus, advanced building controls are typically implemented utilizing the EnergyManagementSystem (EMS) suite of objects. This involves defining Sensors and Actuators that interact with building parameters through Programs which are written in the EnergyPlus Runtime Language (ERL). With the creation and larger adoption of OpenStudio Measures, the desire to simulate advanced building and grid interaction related control strategies has only increased. To facilitate those efforts, the EMS objects have been wrapped in both the forward and reverse translators. The model objects are:
+
+* EnergyManagementSystemActuator
+*  EnergyManagementSystemConstructionIndexVariable
+* EnergyManagementSystemCurveOrTableIndexVariable
+* EnergyManagementSystemGlobalVariable
+* EnergyManagementSystemInternalVariable
+* EnergyManagementSystemMeteredOutputVariable
+* EnergyManagementSystemOutputVariable
+* EnergyManagementSystemProgram
+* EnergyManagementSystemProgramCallingManager
+* EnergyManagementSystemSensor
+* EnergyManagementSystemSubroutine
+* EnergyManagementSystemTrendVariable
+* OutputEnergyManagementSystem
+
+Currently the interface to include EMS into an OSM is strictly Measure based. Adding these Objects to the GUI in the OS Application is currently being scoped for the upcoming fiscal year, however it is funding dependent.
+
+In the OSM file, most EMS objects will attach directly to Model objects thru their Handles or UIDs. Upon EnergyPlus translation, those UIDs are replaced with Object names. While most Objects have restricted parameters, Programs and Subroutines can either be defined line by line thru the Measure API or all at once by defining a large string block.
+
+Also, all EMS objects reverse translate so if there are large legacy IDF models, the user can use this to at least get a start on what the new OSM would look like. One caveat is that when a referenced object exists that won’t reverse translate, OpenStudio will still translate the EMS object, but leave the referenced field blank and a warning message is thrown. The name of the object that didn’t translate is put in a comment above the EMS object so that the user can go find it in the IDF and manually figure out how to connect it up in the new OSM.
+
+In addition to the aforementioned EMS functionality, the following OpenStudio capability was implemented:
+
+* Added BuildingUnit class for grouping Spaces into logical units
+* Updated template OpenStudio Measures to work with OpenStudio 1.x and 2.x
+* Added fuel type to OtherEquipment and CoilHeatingGas
+* Enforce lowercase names in runner.registerValue
+* Allow display name to be set instead of value for choice arguments
+
 ##OpenStudio 1.11.0 
 
 ##### Some of the more noteworthy new features and bug fixes are listed below: 
