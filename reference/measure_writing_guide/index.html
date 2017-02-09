@@ -1523,7 +1523,7 @@ ConstructionTakeOff.new.registerWithApplication
     end
 
     model = runner.lastOpenStudioModel
-    if workspace.empty?
+    if model.empty?
       runner.registerError(&quot;Cannot find last model.&quot;)
       return false
     end
