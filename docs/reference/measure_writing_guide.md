@@ -1426,7 +1426,7 @@ As mentioned, Reporting Measures are run after the simulation is complete. Howev
     end
 
     model = runner.lastOpenStudioModel
-    if workspace.empty?
+    if model.empty?
       runner.registerError("Cannot find last model.")
       return false
     end
