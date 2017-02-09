@@ -329,19 +329,19 @@
 </code></pre>
 
 <p>The <code>-w</code> or <code>--workflow</code> switches run the complete simulation workflow as described in an OSW file:</p>
-<pre><code>openstudio.exe measure --workflow /path/to/workflow.osw
+<pre><code>openstudio.exe run --workflow /path/to/workflow.osw
 </code></pre>
 
 <p>The <code>--debug</code> switch can be used to include additional outputs for debugging failing workflows and does not clean up the run directory:</p>
-<pre><code>openstudio.exe measure --debug --workflow /path/to/workflow.osw
+<pre><code>openstudio.exe run --debug --workflow /path/to/workflow.osw
 </code></pre>
 
 <p>The <code>-m</code> or <code>--measures_only</code> switches run only the OpenStudio Model and EnergyPlus Measures but do not run the EnergyPlus simulation or OpenStudio Reporting Measures in an OSW file:</p>
-<pre><code>openstudio.exe measure --measures_only /path/to/workflow.osw
+<pre><code>openstudio.exe run --measures_only /path/to/workflow.osw
 </code></pre>
 
 <p>The <code>-p</code> or <code>--postprocess_only</code> switches do not run the OpenStudio Modelm EnergyPlus Measures, or EnergyPlus simulation in an OSW file.  Existing simulation results are loaded and only OpenStudio Reporting Measures are run, this is useful for generating new reports without re-running simulations:</p>
-<pre><code>openstudio.exe measure --postprocess_only /path/to/workflow.osw
+<pre><code>openstudio.exe run --postprocess_only /path/to/workflow.osw
 </code></pre>
 
 <h1 id="osw-structure">OSW Structure</h1>
