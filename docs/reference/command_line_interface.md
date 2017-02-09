@@ -76,25 +76,25 @@ openstudio.exe run -h
 The `-w` or `--workflow` switches run the complete simulation workflow as described in an OSW file:
 
 ```
-openstudio.exe measure --workflow /path/to/workflow.osw
+openstudio.exe run --workflow /path/to/workflow.osw
 ```
 
 The `--debug` switch can be used to include additional outputs for debugging failing workflows and does not clean up the run directory:
 
 ```
-openstudio.exe measure --debug --workflow /path/to/workflow.osw
+openstudio.exe run --debug --workflow /path/to/workflow.osw
 ```
 
 The `-m` or `--measures_only` switches run only the OpenStudio Model and EnergyPlus Measures but do not run the EnergyPlus simulation or OpenStudio Reporting Measures in an OSW file:
 
 ```
-openstudio.exe measure --measures_only /path/to/workflow.osw
+openstudio.exe run --measures_only /path/to/workflow.osw
 ```
 
 The `-p` or `--postprocess_only` switches do not run the OpenStudio Modelm EnergyPlus Measures, or EnergyPlus simulation in an OSW file.  Existing simulation results are loaded and only OpenStudio Reporting Measures are run, this is useful for generating new reports without re-running simulations:
 
 ```
-openstudio.exe measure --postprocess_only /path/to/workflow.osw
+openstudio.exe run --postprocess_only /path/to/workflow.osw
 ```
 
 # OSW Structure
