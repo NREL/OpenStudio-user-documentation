@@ -405,7 +405,7 @@ EnergyPlus measures may change the weather file by copying files on top of in.ep
 <pre><code>export ENERGYPLUS_EXE_PATH=/path/to/energyplus
 </code></pre>
 
-<p>The <code>RUBYLIB</code> environment variable can be used to configure the CLI to require Ruby files from locations on the user's disk, locations passed using the <code>--include</code> take precedence over the path found in this environment variable:</p>
+<p>The <code>RUBYLIB</code> environment variable can be used to configure the CLI to require Ruby files from locations on the user's disk. Locations passed using the <code>--include</code> switch take precedence over the paths found in this environment variable:</p>
 <p>Windows</p>
 <pre><code>set RUBYLIB=/home/git/project;/home/git/project/app/helpers
 </code></pre>
@@ -414,7 +414,16 @@ EnergyPlus measures may change the weather file by copying files on top of in.ep
 <pre><code>export RUBYLIB=/home/git/project:/home/git/project/app/helpers
 </code></pre>
 
-<p>The <code>GEM_HOME</code> environment variable can be used to configure the CLI to load gems from a location on the user's disk, the location passed using the <code>--gem_path</code> take precedence over the path found in this environment variable. <em>Loading external gems is not currently available in CLI</em>:</p>
+<p>The <code>GEM_PATH</code> environment variable can be used to configure the CLI to load gems from a location on the user's disk. Locations passed using the <code>--gem_path</code> switch take precedence over the paths found in this environment variable:</p>
+<p>Windows</p>
+<pre><code>set GEM_PATH=/home/gems1;/home/gems2
+</code></pre>
+
+<p>Unix</p>
+<pre><code>export GEM_PATH=/home/gems1:/home/gems2
+</code></pre>
+
+<p>The <code>GEM_HOME</code> environment variable can be used to configure the CLI to install gems to a location on the user's disk. The location passed using the <code>--gem_home</code> switch takes precedence over the path found in this environment variable (note that the <code>gem_install</code> command does not yet work):</p>
 <p>Windows</p>
 <pre><code>set GEM_HOME=/home/gems
 </code></pre>
@@ -423,6 +432,7 @@ EnergyPlus measures may change the weather file by copying files on top of in.ep
 <pre><code>export GEM_HOME=/home/gems
 </code></pre>
 
+<p>These same environment variables apply when requiring <code>openstudio.rb</code> from system ruby.  Note, that requiring <code>openstudio.rb</code> from system ruby does not bring in any of the default gems that are embedded inside the CLI (i.e. the <code>openstudio-standards</code> gem).  You must install these gems separately to ensure they are available when using system ruby.  The standard way to do this is with <a href="http://bundler.io/">Bundler</a>.  A Gemfile is included in the Ruby directory of the OpenStudio installation, this can be used as a reference when setting up your own Gemfile to ensure that gems are compatible with the version of OpenStudio.</p>
 
           <div class="footer">
   <p class="text-center"><a href="https://unmethours.com/questions/scope:all/sort:activity-desc/tags:openstudio/">Get Help</a> | <a href="https://www.openstudio.net/contact">Contact Us</a></p>
