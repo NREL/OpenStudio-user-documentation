@@ -177,7 +177,7 @@ Unix
 export ENERGYPLUS_EXE_PATH=/path/to/energyplus
 ```
 
-The `RUBYLIB` environment variable can be used to configure the CLI to require Ruby files from locations on the user's disk, locations passed using the `--include` take precedence over the path found in this environment variable:
+The `RUBYLIB` environment variable can be used to configure the CLI to require Ruby files from locations on the user's disk. Locations passed using the `--include` switch take precedence over the paths found in this environment variable:
 
 Windows
 ```
@@ -189,7 +189,19 @@ Unix
 export RUBYLIB=/home/git/project:/home/git/project/app/helpers
 ```
 
-The `GEM_HOME` environment variable can be used to configure the CLI to load gems from a location on the user's disk, the location passed using the `--gem_path` take precedence over the path found in this environment variable. *Loading external gems is not currently available in CLI*:
+The `GEM_PATH` environment variable can be used to configure the CLI to load gems from a location on the user's disk. Locations passed using the `--gem_path` switch take precedence over the paths found in this environment variable:
+
+Windows
+```
+set GEM_PATH=/home/gems1;/home/gems2
+```
+
+Unix
+```
+export GEM_PATH=/home/gems1:/home/gems2
+```
+
+The `GEM_HOME` environment variable can be used to configure the CLI to install gems to a location on the user's disk. The location passed using the `--gem_home` switch takes precedence over the path found in this environment variable (note that the `gem_install` command does not yet work):
 
 Windows
 ```
@@ -200,3 +212,6 @@ Unix
 ```
 export GEM_HOME=/home/gems
 ```
+
+These same environment variables apply when requiring `openstudio.rb` from system ruby.  Note, that requiring `openstudio.rb` from system ruby does not bring in any of the default gems that are embedded inside the CLI (i.e. the `openstudio-standards` gem).  You must install these gems separately to ensure they are available when using system ruby.  The standard way to do this is with [Bundler](http://bundler.io/).  A Gemfile is included in the Ruby directory of the OpenStudio installation, this can be used as a reference when setting up your own Gemfile to ensure that gems are compatible with the version of OpenStudio.
+
