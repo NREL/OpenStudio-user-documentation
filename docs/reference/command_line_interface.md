@@ -20,6 +20,18 @@ The `-I` or `--include` switches can be used to add additional directories to th
 openstudio.exe --include /path/to/add/ --include /another/path/to/add
 ```
 
+The `--gem_path` switch can be used to load gems from a location on the user's disk (this switch may be used more than once):
+
+```
+openstudio.exe --gem_path /home/gems1 --include /home/gems2
+```
+
+The `--gem_home` switch can be used to set the directory to install gems to (note that the `gem_install` command does not yet work):
+
+```
+openstudio.exe --gem_home /home/gems
+```
+
 The `--verbose` switch can be used to print additional information for debugging:
 
 ```
@@ -215,3 +227,14 @@ export GEM_HOME=/home/gems
 
 These same environment variables apply when requiring `openstudio.rb` from system ruby.  Note, that requiring `openstudio.rb` from system ruby does not bring in any of the default gems that are embedded inside the CLI (i.e. the `openstudio-standards` gem).  You must install these gems separately to ensure they are available when using system ruby.  The standard way to do this is with [Bundler](http://bundler.io/).  A Gemfile is included in the Ruby directory of the OpenStudio installation, this can be used as a reference when setting up your own Gemfile to ensure that gems are compatible with the version of OpenStudio.
 
+# Loading Custom Gems
+
+Developers commonly need to be able to override the version of a gem embedded in the OpenStudio CLI with one that they are working on.  Additionally, measure writers may wish to use gems that are not distributed with the OpenStudio CLI.  Neither of these use cases are an issue when using system ruby as the OpenStudio ruby bindings (i.e. `openstudio.rb`) do not have embedded gems, bundler can be used to specify gem versions in this case.  When using the CLI there are two ways to override an embedded gem or provide access to another gem.  The first is to use the `--include` switch to add the directory containing the primary gem file (e.g. the directory containing `openstudio-standards.rb`) to the ruby load path. The second is to install the gem to your system location, then use the `--gem_path` switch to include this location (e.g. `C:\ruby-2.2.4-x64-mingw32\lib\ruby\gems\2.2.0\`). Note that the gem path directory should have `specifications`, `gems`, and other subdirectories in it.  Also, note that when using this second approach, a system gem will only override the embedded gem if the version is equal or greater to the embedded gem.  It can be useful to use the `--verbose` and `-e` switches to print some information that can verify the correct version of the gem is being loaded:
+
+```
+openstudio --verbose -I \openstudio-standards\openstudio-standards\lib\ -e "require 'openstudio-standards'" -e "puts OpenstudioStandards::VERSION"
+```
+
+```
+openstudio --verbose --gem_path C:\ruby-2.2.4-x64-mingw32\lib\ruby\gems\2.2.0\ -e "require 'openstudio-standards'" -e "puts OpenstudioStandards::VERSION"
+```
