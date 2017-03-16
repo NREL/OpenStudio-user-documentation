@@ -175,7 +175,7 @@ Each step listed in the OSW file describes an OpenStudio Measure to apply.  Meas
 
 # Environment Variables
 
-The OpenStudio Command Line Interface can be configured with several environment variables.  In cases where a value can be configured with either a command line switch or an environment variable, the command line switch will take precedence.
+The OpenStudio Command Line Interface can be configured with several environment variables.  In cases where a value can be configured with either a command line switch or an environment variable, the command line switch will take precedence. Custom environment variables configurations do not impact local or remote PAT runs.
 
 The `ENERGYPLUS_EXE_PATH` environment variable can be used to configure the CLI to use a different version of the EnergyPlus engine than the one OpenStudio is installed with:
 
