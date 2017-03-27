@@ -83,7 +83,7 @@ PAT keeps track of four distinct measure locations:
 3. __Local__ - includes any BCL measures you may have already downloaded to your computer.
 4. __BCL (Online)__  - contains all publicly available measures located in the online BCL. To use add these to a project they must first be downloaded, which copies them to your local library.
 
-![Default View BCL Dialog](img/pat2/bcl_01.png)
+<img src="img/pat2/bcl_01.png" width="500">
 
 _Note: In rare instances, the BCL dialog may appear empty even when local content exists or the online BCL has been added to the filter.  This can happen when OpenStudio's "measure manager" process is not halted normally.  The issue is easily resolved by quitting PAT, and using your computer's task manager to look for an "openstudio" process.  Halting this process enables the BCL dialog to work normally._
 <br><br>
@@ -103,13 +103,13 @@ Once downloaded, PAT will continue to check to see if an updated version is avai
 
 Clicking the blue plus will add a measure from your local library or "MyMeasures" directory to your project.  Measures with a gray plus have not yet been downloaded from the BCL, and cannot be added.
 
-![Filtered View BCL Dialog](img/pat2/bcl_03.png)
+ <img src="img/pat2/bcl_03.png" width="500">
 
 *Above: Filtered View showing Online BCL OpenStudio Fenestration measures. The "Set Window to Wall Ratio" measure has been downloaded from the BCL but not yet added to the project.*
 <br><br>
 After adding a measure to your project the blue plus will change to a green check mark. 
 
-![Measure added to Project](img/pat2/bcl_04.png)
+<img src="img/pat2/bcl_04.png" width="500">
 <br><br>
 After closing the BCL dialog, measures are now loaded into the project.  In this example, two measures have been added.
 
@@ -199,9 +199,9 @@ The third default report is intended for use by modelers working with utility de
 <br><br>
 ___________________
 
-## View the Server
+## View OpenStudio Server
 
-The final tab provides a view into PAT's server, and will not be necessary for users performing manual analyses.  It is of greater importance when performing algorithmic analysis, and will be discussed later in this document.
+The final tab provides a view into PAT's OpenStudio server, and will not be necessary for users performing manual analyses.  It is of greater importance when performing algorithmic analysis, and will be discussed later in this document.
 
 ![EDAPT Export](img/pat2/server_01.png)
 <br><br>
@@ -305,7 +305,45 @@ Once configured, the user should press the start button next to the Cluster Stat
 
 ![Algorithm Setup](img/pat2/cloud_03.png)
 
-At this point, the server and worker provisioning process begins.  As the dialog states, this process takes many minutes.  Clicking on the View AWS Console button allows the user to monitor the process.
+At this point, the server and worker provisioning process begins.  As the dialog states, this process can take many minutes.  Clicking on the View AWS Console button allows the user to monitor the process.
 
 ![Algorithm Setup](img/pat2/cloud_04.png)
+
+Once the server is running, clicking the "Run Entire Workflow" button starts the analysis.  Progress can be monitored within PAT or via the OpenStudio server.  One notable difference between running in manual mode with local computing resources and on the server is that detailed simulations are not automatically downloaded.  These files can be quite large.  Clicking on the blue "OSM" or "Results" cloud next to a data point will download the OpenStudio model or completed data point zip file. The cloud buttons appear as green checkmarks when a download has occurred.  Data point files are lost when the server shuts down, so it is important to download results that may be of particular interest.
+
+![Algorithm Setup](img/pat2/cloud_05.png)
+
+
+## Exploring Algorithm Results with OpenStudio Server
+
+The OpenStudio Server tab is of much greater importance with algorithmic workflows.  This same content may also be accessed through any web browser by clinking PAT's "View Server" button in the run tab or manually directing a web browser to http://**yourserverurl**:8080.  The top level view of OpenStudio server provides a summary of completed or in-progress projects and analyses along with navigation options.
+ 
+![OpenStudio Server with Multiple Projects](img/pat2/server_01b.png)
+
+The top level of an analysis (a specific run of a project) provides a high level summary of the project, links to more detail about the analysis, and status updates for all data points that have been completed, queued for simulation, or are in process.  Important links on this page include:
+
+1. __Project JSON__ - The JSON link near the top left of this screen is the OpenStudio Analysis (OSA) JSON that PAT produces for the Server.  It is a complete definition of the analysis to be performed including SEED models, weather files, measures, arguments & variables, outputs, algorithms, etc.
+2. __Project Log__ - Immediately next to the Project JSON is a log file, which can be helpful in debugging failed analyses.
+3. __Downloads__ - These links download high level meta data and simulation results as CSV or R Data Frames for subsequent analysis.  These results include only analysis inputs and outputs that have been defined in PAT.  Detailed simulation results associated with individual data points must be downloaded in PAT or via individual data point web links.
+4. __Data points__ - The bottom of the analysis page includes a snapshot of all data points along with their status, run times, and data point-specific links including the data point JSON file (OSW) and the data point zip file.
+5. __Data and Visualizations__ - A number of useful project summaries and interactive visualization tools are built into OpenStudio server.  These are described in further detail below.
+
+![OpenStudio Server with Multiple Projects](img/pat2/server_02.png)
+
+The variables link near the top center of the analysis web page provides a concise summary of variables and arguments utilized by the analysis' algorithm.  While any applicable measures are summarized in an adjacent page, this section provides more detail about how data points have been generated.  In the example below, three building types form the core of the analysis.  A five level "Design of Experiments" with lighting power density reduction percentage and window to wall ratio variables complete the study space.  Other sampling methods (e.g. LHS) include thumbail graphics illustrating variable distributions.
+
+![OpenStudio Server with Multiple Projects](img/pat2/server_04.png)
+
+Parallel coordinate plots provide an interactive means of exploring large data sets and teasing out valuable insights.  OpenStudio enables the user to select inputs and outputs that have been pre-defined in PAT's measures and outputs tabs.  Checkboxes turn inputs on and off, and the individual plot axes can be re-ordered via drag and drop.  In this first example, LHS is used to sample the parameter space for lighting power density, window to wall ratio, and the facade on which windows are placed.  Energy Use Intensity (EUI) is selected as the output of interest.
+
+![OpenStudio Server with Multiple Projects](img/pat2/server_05.png)
+
+Input or output coordinate ranges may be selected using the mouse to filter out solutions of interest.  This can help identify design characteristics that meet certain design requirements or are highly sensitive.  Data points that fall within the filtered parameter space appear below the plot for convenient access and further exploration.
+
+![OpenStudio Server with Multiple Projects](img/pat2/server_06.png)
+
+
+
+
+
 
