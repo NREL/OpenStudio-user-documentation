@@ -1,5 +1,5 @@
 <h1>Parametric Analysis Tool 2.1.0 (PAT) Interface Guide</h1>
-OpenStudio's PAT allows you to quickly try out and compare manually specified combinations of measures, optimize designs, calibrate models, perform parametric sensitivity analysis, and much more.
+OpenStudio's PAT allows you to quickly try out and compare manually specified combinations of measures, optimize designs, calibrate models, perform parametric sensitivity analysis, and much more.  Manually specified combinations of measures may be run locally on your computer.  Algorithmic analyses (e.g. optimization, design of experiments, etc) can be run by connecting to a separately provisioned instance of the OpenStudio server.
 
 ___________________
 
@@ -35,7 +35,7 @@ ___________________
 
 PAT 2.1.0 functionality is broken down into six tabs along the left side of the window:
 
-1. Specify analysis mode (manual or algorithmic), seed models, weather files, measures, and measure optionsm.
+1. Specify analysis mode (manual or algorithmic), seed models, weather files, measures, and measure options.
 2. Manually create design alternatives _(Not used for algorithmic analysis)_
 3. Specify outputs for algorithm-based analysis _(Not used for manual analysis)_
 4. Run an analysis and manage the analysis server
@@ -56,7 +56,7 @@ Select your seed model, the model that will serve as the basis for creating desi
 ![Select Baseline Model and Weather File](img/pat2/measures_02.png)
 <br><br>
 
-Note: PAT 2.1.0 allows the user to specify multiple seed and weather files that may be used within a project.
+Note: PAT 2.1.0 allows the user to specify multiple seed and weather files that may all be used within a project.
 ___________________
 
 ## Add Measures and Create Measure Options
@@ -80,12 +80,12 @@ PAT keeps track of four distinct measure locations:
 
 1. __My Project__ - includes measures that have already been added to your current PAT project.
 2. __Measure Directory__ - shows measures you have stored in a user configurable "MyMeasures" directory on your computer.  A best practice is to only create or modify measures in your "MyMeasures" directory.
-3. __Local__ - includes any BCL measures you may have already downloaded to your computer.
+3. __Local __ - includes any BCL measures you may have already downloaded to your computer.
 4. __BCL (Online)__  - contains all publicly available measures located in the online BCL. To use add these to a project they must first be downloaded, which copies them to your local library.
 
 <img src="img/pat2/bcl_01.png" width="500">
 
-_Note: In rare instances, the BCL dialog may appear empty even when local content exists or the online BCL has been added to the filter.  This can happen when OpenStudio's "measure manager" process is not halted normally.  The issue is easily resolved by quitting PAT, and using your computer's task manager to look for an "openstudio" process.  Halting this process enables the BCL dialog to work normally._
+_Note: In rare instances, the BCL dialog may appear empty even when local content exists or the online BCL has been added to the filter.  This can happen when OpenStudio's "measure manager" process is not halted normally.  The issue is easily resolved by quitting PAT, and using your computer's task manager to look for an "openstudio" process.  Halting this process enables the BCL dialog to work normally again._
 <br><br>
 
 To download measures:
