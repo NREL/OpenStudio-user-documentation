@@ -247,7 +247,7 @@ _Above: A measure contains both continuous and discrete variables._
 
 ![Algorithm Setup](img/pat2/alg_06.png)
 
-_Above: The DOE Prototype Measure is applied to an empty seed model with three pivots: SmallOffice, MediumOffice, and LargeOffice.  Subsequent measures will be applied to each of these building types, perhaps creating an office-centric technology potential analysis._
+_Above: The DOE Prototype Measure is applied to an empty seed model with three pivots: SmallOffice, MediumOffice, and LargeOffice.  Subsequent measures will be applied to each of these building types, perhaps creating an office-centric technology potential analysis.  This project is available as the Office Study example [here](https://github.com/NREL/OpenStudio-PAT/tree/develop/sample_projects)._
 
 
 ## The Design Alternatives Tab in Algorithmic Mode
@@ -318,7 +318,7 @@ Once the server is running, clicking the "Run Entire Workflow" button starts the
 
 The OpenStudio Server tab is of much greater importance with algorithmic workflows.  This same content may also be accessed through any web browser by clinking PAT's "View Server" button in the run tab or manually directing a web browser to http://**yourserverurl**:8080.  The top level view of OpenStudio server provides a summary of completed or in-progress projects and analyses along with navigation options.
  
-![OpenStudio Server with Multiple Projects](img/pat2/server_01b.png)
+![OpenStudio Server Landing Page](img/pat2/server_01b.png)
 
 The top level of an analysis (a specific run of a project) provides a high level summary of the project, links to more detail about the analysis, and status updates for all data points that have been completed, queued for simulation, or are in process.  Important links on this page include:
 
@@ -326,24 +326,34 @@ The top level of an analysis (a specific run of a project) provides a high level
 2. __Project Log__ - Immediately next to the Project JSON is a log file, which can be helpful in debugging failed analyses.
 3. __Downloads__ - These links download high level meta data and simulation results as CSV or R Data Frames for subsequent analysis.  These results include only analysis inputs and outputs that have been defined in PAT.  Detailed simulation results associated with individual data points must be downloaded in PAT or via individual data point web links.
 4. __Data points__ - The bottom of the analysis page includes a snapshot of all data points along with their status, run times, and data point-specific links including the data point JSON file (OSW) and the data point zip file.
-5. __Data and Visualizations__ - A number of useful project summaries and interactive visualization tools are built into OpenStudio server.  These are described in further detail below.
+5. __Data and Visualizations__ - A number of useful project summaries and interactive visualization tools are built into OpenStudio server.  One of these, the parallel coordinate plot, is described in further detail below.
 
-![OpenStudio Server with Multiple Projects](img/pat2/server_02.png)
+![OpenStudio Server Analysis Summary](img/pat2/server_02.png)
 
 The variables link near the top center of the analysis web page provides a concise summary of variables and arguments utilized by the analysis' algorithm.  While any applicable measures are summarized in an adjacent page, this section provides more detail about how data points have been generated.  In the example below, three building types form the core of the analysis.  A five level "Design of Experiments" with lighting power density reduction percentage and window to wall ratio variables complete the study space.  Other sampling methods (e.g. LHS) include thumbail graphics illustrating variable distributions.
 
-![OpenStudio Server with Multiple Projects](img/pat2/server_04.png)
+![OpenStudio Server Variables Summary](img/pat2/server_04.png)
 
 Parallel coordinate plots provide an interactive means of exploring large data sets and teasing out valuable insights.  OpenStudio enables the user to select inputs and outputs that have been pre-defined in PAT's measures and outputs tabs.  Checkboxes turn inputs on and off, and the individual plot axes can be re-ordered via drag and drop.  In this first example, LHS is used to sample the parameter space for lighting power density, window to wall ratio, and the facade on which windows are placed.  Energy Use Intensity (EUI) is selected as the output of interest.
 
-![OpenStudio Server with Multiple Projects](img/pat2/server_05.png)
-
-Input or output coordinate ranges may be selected using the mouse to filter out solutions of interest.  This can help identify design characteristics that meet certain design requirements or are highly sensitive.  Data points that fall within the filtered parameter space appear below the plot for convenient access and further exploration.
-
-![OpenStudio Server with Multiple Projects](img/pat2/server_06.png)
+![OpenStudio Server Parallel Coordinate Plot](img/pat2/server_05.png)
 
 
+## Example Projects
 
+Several sample PAT projects may be found [here](https://github.com/NREL/OpenStudio-PAT/tree/develop/sample_projects).  Both the Office_Hvac and Office_Study projects are configured to run in manual model using local computing resources.  The remaining "SEB" projects pertain to NREL's Site Entrance Building (SEB), and demonstrate the various algorithms available for use in the cloud.  Several of the SEB projects are also notable as examples of performing sampling or optimization-based calibrations of a model using Actual Meteorlogic Year (AMY) and consumption data.
+The "AddMonthlyJSONUtilityData" measure is used to add electric and gas consumption data to the model.  The "CalibrationReportsEnhanced20" reporting measure is used to create analysis outputs and charts that describe the calibration's "goodness of fit."
 
+### A Model Calibration Example
 
+As a closing example, consider the SEB "PSO_2013" project.  This project utilizes the particle swarm algorithm to explore variations of the SEB seed model.  OpenStudio Server's parallel coordinate plot is a convenient means of interacting with the large number of solutions generated during the analysis.  Input or output coordinate ranges may be selected using the mouse to filter out solutions of interest - in this case, data points with low Coefficient of Variation of the Root Mean Squared Error (CVRMSE) and Net Mean Bias Error (NMBE) for both gas and electricity consumption.  Data points which fall within the filtered ranges (indicated in blue) are provided as links below the plot.
 
+![OpenStudio Server with Multiple Projects](img/pat2/pso_01.png)
+
+Clicking on one of these data points allows us to see the specific measure variable values that define the data point.  This page also allows convenient download of the specific OpenStudio Workflow (OSW) that generate the point, the resulting model, simulation results, and associated reports.
+
+![OpenStudio Server with Multiple Projects](img/pat2/pso_02.png)
+
+Output from the Enhanced Calibration Report for this data point is one of the available report links, and allows us to quickly visualize the performance of this particular model variant relative to the building's original measured consumption data.
+
+![OpenStudio Server with Multiple Projects](img/pat2/pso_03.png)
