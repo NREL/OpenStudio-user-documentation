@@ -2,7 +2,7 @@
 
 The OpenStudio Command Line Interface (CLI) is a self-contained executable which includes everything needed to apply OpenStudio Measures to an OpenStudio Model and run an EnergyPlus simulation.  The CLI is only avaiable in OpenStudio version 2.0 and higher. The CLI contains a full OpenStudio Ruby environment, the list of Ruby Gems available in each version of OpenStudio can be found [here](https://github.com/NREL/OpenStudio/wiki/OpenStudio-Version-Compatibility-Matrix).  
 
-This document provides an overview of the most important features of the CLI, it is not meant to be an exhaustive reference.  For an exhaustive list of features available in the CLI please refer to the command line output of the `--help` command.  For a complete list of the properties available in the OSW file format please refer to the [OSW JSON schema](https://raw.githubusercontent.com/NREL/OpenStudio-workflow-gem/osw/spec/schema/osw_output.json).  For a complete description of the WorkflowJSON class please refer to the [documentation](https://github.com/NREL/OpenStudio/tree/develop/openstudiocore/src/utilities/filetypes/WorkflowJSON.hpp).  
+This document provides an overview of the most important features of the CLI, it is not meant to be an exhaustive reference.  For an exhaustive list of features available in the CLI please refer to the command line output of the `--help` command.  For a complete list of the properties available in the OSW file format please refer to the [OSW JSON schema](https://raw.githubusercontent.com/NREL/OpenStudio-workflow-gem/develop/spec/schema/osw_output.json).  For a complete description of the WorkflowJSON class please refer to the [documentation](https://github.com/NREL/OpenStudio/tree/develop/openstudiocore/src/utilities/filetypes/WorkflowJSON.hpp).  
 
 # Command Overview
 
@@ -117,7 +117,7 @@ An example OSW project is included in the OpenStudio installer under './Examples
 
 /path/to/openstudio.exe run -w /path/to/compact.osw
 
-The OSW file format is described in JSON schema format [here](https://raw.githubusercontent.com/NREL/OpenStudio-workflow-gem/osw/spec/schema/osw_output.json).
+The OSW file format is described in JSON schema format [here](https://raw.githubusercontent.com/NREL/OpenStudio-workflow-gem/develop/spec/schema/osw_output.json).
 
 The OpenStudio API includes the class [WorkflowJSON](https://github.com/NREL/OpenStudio/tree/develop/openstudiocore/src/utilities/filetypes/WorkflowJSON.hpp) which is able read, modify, and write the OSW file format.  The WorkflowJSON class also includes features for finding measures and files associated with a simulation workflow.
 
