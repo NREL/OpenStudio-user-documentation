@@ -238,35 +238,7 @@
           <div class="bs-docs-sidebar hidden-print affix well" role="complementary">
   <ul class="nav">
   
-    <li class="main active"><a href="#openstudio-1140">OpenStudio 1.14.0</a>
-      <ul class="nav">
-        
-      </ul>
-    </li>
-  
-    <li class="main"><a href="#openstudio-1110">OpenStudio 1.11.0</a>
-      <ul class="nav">
-        
-        <li><a href="#some-of-the-more-noteworthy-new-features-and-bug-fixes-are-listed-below">Some of the more noteworthy new features and bug fixes are listed below:</a></li>
-        
-      </ul>
-    </li>
-  
-    <li class="main"><a href="#openstudio-1100">OpenStudio 1.10.0</a>
-      <ul class="nav">
-        
-        <li><a href="#some-of-the-more-noteworthy-new-features-and-bug-fixes-are-listed-below_1">Some of the more noteworthy new features and bug fixes are listed below:</a></li>
-        
-      </ul>
-    </li>
-  
-    <li class="main"><a href="#new-in-openstudio-190">New in OpenStudio 1.9.0</a>
-      <ul class="nav">
-        
-      </ul>
-    </li>
-  
-    <li class="main"><a href="#current-features">Current Features</a>
+    <li class="main active"><a href="#as-of-openstudio-version-210">As of OpenStudio Version 2.1.0</a>
       <ul class="nav">
         
         <li><a href="#building-geometry3d-cad">Building Geometry/3D CAD</a></li>
@@ -275,11 +247,13 @@
         
         <li><a href="#building-loads">Building Loads</a></li>
         
-        <li><a href="#grid-view-for-thermal-zones-and-space-types">Grid View for Thermal Zones and Space Types</a></li>
+        <li><a href="#grid-view-for-thermal-zones-space-types-spaces-design-days-and-refrigeration-cases">Grid View for Thermal Zones, Space Types, Spaces, Design Days, and Refrigeration Cases</a></li>
         
         <li><a href="#hvac">HVAC</a></li>
         
         <li><a href="#daylighting">Daylighting</a></li>
+        
+        <li><a href="#custom-controls">Custom Controls</a></li>
         
         <li><a href="#location-specific-information">Location-Specific Information</a></li>
         
@@ -330,157 +304,7 @@
           <h1>Current Features</h1>
 
 <p>OpenStudio is constantly being improved, with a less stable developer release available every 2 weeks and a stable major release quarterly (4 per year). The features that are available in the current major release are described below. To learn what is coming in the future, see the <a href="../roadmap">Planned Features</a> page.</p>
-<h2 id="openstudio-1140">OpenStudio 1.14.0</h2>
-<p>Within EnergyPlus, advanced building controls are typically implemented utilizing the EnergyManagementSystem (EMS) suite of objects. This involves defining Sensors and Actuators that interact with building parameters through Programs which are written in the EnergyPlus Runtime Language (ERL). With the creation and larger adoption of OpenStudio Measures, the desire to simulate advanced building and grid interaction related control strategies has only increased. To facilitate those efforts, the EMS objects have been wrapped in both the forward and reverse translators. The model objects are:</p>
-<ul>
-<li>EnergyManagementSystemActuator</li>
-<li>EnergyManagementSystemConstructionIndexVariable</li>
-<li>EnergyManagementSystemCurveOrTableIndexVariable</li>
-<li>EnergyManagementSystemGlobalVariable</li>
-<li>EnergyManagementSystemInternalVariable</li>
-<li>EnergyManagementSystemMeteredOutputVariable</li>
-<li>EnergyManagementSystemOutputVariable</li>
-<li>EnergyManagementSystemProgram</li>
-<li>EnergyManagementSystemProgramCallingManager</li>
-<li>EnergyManagementSystemSensor</li>
-<li>EnergyManagementSystemSubroutine</li>
-<li>EnergyManagementSystemTrendVariable</li>
-<li>OutputEnergyManagementSystem</li>
-</ul>
-<p>Currently the interface to include EMS into an OSM is strictly Measure based. Adding these Objects to the GUI in the OS Application is currently being scoped for the upcoming fiscal year, however it is funding dependent.</p>
-<p>In the OSM file, most EMS objects will attach directly to Model objects thru their Handles or UIDs. Upon EnergyPlus translation, those UIDs are replaced with Object names. While most Objects have restricted parameters, Programs and Subroutines can either be defined line by line thru the Measure API or all at once by defining a large string block.</p>
-<p>Also, all EMS objects reverse translate so if there are large legacy IDF models, the user can use this to at least get a start on what the new OSM would look like. One caveat is that when a referenced object exists that won’t reverse translate, OpenStudio will still translate the EMS object, but leave the referenced field blank and a warning message is thrown. The name of the object that didn’t translate is put in a comment above the EMS object so that the user can go find it in the IDF and manually figure out how to connect it up in the new OSM.</p>
-<p>In addition to the aforementioned EMS functionality, the following OpenStudio capability was implemented:</p>
-<ul>
-<li>Added BuildingUnit class for grouping Spaces into logical units</li>
-<li>Updated template OpenStudio Measures to work with OpenStudio 1.x and 2.x</li>
-<li>Added fuel type to OtherEquipment and CoilHeatingGas</li>
-<li>Enforce lowercase names in runner.registerValue</li>
-<li>Allow display name to be set instead of value for choice arguments</li>
-</ul>
-<h2 id="openstudio-1110">OpenStudio 1.11.0</h2>
-<h5 id="some-of-the-more-noteworthy-new-features-and-bug-fixes-are-listed-below">Some of the more noteworthy new features and bug fixes are listed below:</h5>
-<ul>
-<li>OpenStudio now supports EnergyPlus version 8.5.0</li>
-<li>OpenStudio now includes Radiance version 5.0.a.8 </li>
-<li>Added support for graphical dual duct system layout in the OpenStudio Application</li>
-<li>Added class PointLatLon for converting geographic coordinates to building coordinates</li>
-<li>Added version_modified element to BCL Measure XML</li>
-<li>Correct parsing of ISO 8601 formatted time strings</li>
-<li>Radiance measure now supports multiple (unlimited) glare sensors per space</li>
-<li>Construction inheritance is now displayed in the space tab</li>
-</ul>
-<h2 id="openstudio-1100">OpenStudio 1.10.0</h2>
-<h5 id="some-of-the-more-noteworthy-new-features-and-bug-fixes-are-listed-below_1">Some of the more noteworthy new features and bug fixes are listed below:</h5>
-<ul>
-<li>Updated plug-in to work with SketchUp 2016.  SketchUp autosave will no longer save the osm.  Surfaces referencing constructions with no layers are no longer shown as air walls in the plug-in.</li>
-<li>Fixed code in Date and Time classes that resulted in memory access violation crashes in Ruby bindings. </li>
-<li>Changed operation of ConstructionBase.getNetArea, see documentation for details.</li>
-<li>Deprecated field 'Source Zone Infiltration Treatment' from object ZoneAirMassFlowConservation, adding E+ 8.4 fields 'Infiltration Balancing Method' and 'Infiltration Balancing Zones'.</li>
-<li>The Radiance Daylighting Measure has the following additions:<ul>
-<li>Added support for electrochromic glazing (two-state)</li>
-<li>Renderings are generated for each primary daylighting control point and glare sensor found in the model</li>
-<li>Added ability to optionally generate "debug" images showing each window group octree</li>
-</ul>
-</li>
-<li>Made minor enhancements to standard OpenStudio simulation results. </li>
-<li>Added water to water heat pump component models, including HeatPumpWaterToWaterEquationFitCooling and HeatPumpWaterToWaterEquationFitHeating.</li>
-<li>Added capability to assign DesignSpecificationOutdoorAir object directly on VAV air terminals, including  AirTerminalSingleDuctVAVReheat and AirTerminalSingleDuctVAVNoReheat. This is an EnergyPlus feature that allows for more precise outdoor air control, but was previously not available in OpenStudio.</li>
-<li>Refined GridView elements in the OpenStudio Application to increase their performance.</li>
-<li>Extended OSGridController and SpacesLoadsGridView to show loads inherited from SpaceTypes, and more generally, inherited subrows.
-OpenStudio 1.10.0 includes several other minor features as well as many bug fixes. For a full list of changes included in OpenStudio 1.10.0, please see the <a href="http://github.com/NREL/OpenStudio/blob/v1.10.0/CHANGELOG.md">complete changelog</a>.</li>
-</ul>
-<h2 id="new-in-openstudio-190">New in OpenStudio 1.9.0</h2>
-<p>OpenStudio 1.9.0 adds a substantial number of new HVAC features. Among the new features are three entirely new categories of HVAC capability beyond the routine component additions. The first new category is a family of availability managers that allow for detailed control over the air system period of operation. With these new availability managers, it is possible to have detailed control over night cycling, night ventilation, optimum morning start, temperature-based on/off and more. The second new category of HVAC capability included in this release is another family of control related inputs known as plant operation schemes. With plant operation schemes, it is possible to control the sequencing of plant system supply components relative to one another while considering ambient conditions. Third, OpenStudio has added support for dual duct air based systems. These new features are available through the OpenStudio API and Measures; user interface controls will be added in a future release. All of these features are backwards compatible, meaning users now have access to detailed control inputs, but the established OpenStudio default control remains in place. Therefore, these new features can be utilized on an as-needed basis and existing models will continue to operate in the same way. Examples and tutorials of applying these new features will be available in the weeks following the release of OpenStudio 1.9.0.</p>
-<iframe width="640" height="360" src="http://www.youtube.com/embed/9uBcb3NBQ84" allowfullscreen></iframe>
-
-<p><em>Above: This video demonstrates the new Spaces tab and the redesigned Facilities tab.</em></p>
-<p>There are significant additions at the HVAC component level, including a large number of new coil types, Zone HVAC, and plant components. Of particular interest are a number of new variable speed DX coils, new zone mixing inputs, a new Zone HVAC model that accommodates natural ventilation, idealized plant components that allow a user defined constant temperature source on the supply side, and a user defined load on the demand. The full list of new input object types is included below. All of these are available in the OpenStudio API and Measures, and many of them are available in the graphical interface through drag and drop.</p>
-<ul>
-<li>ZoneCrossMixing </li>
-<li>ZoneMixing </li>
-<li>SolarCollectorPerformanceFlatPlate </li>
-<li>SolarCollectorFlatPlateWater </li>
-<li>SolarCollectorIntegralCollectorStorage </li>
-<li>SolarCollectorPerformanceIntegralCollectorStorage </li>
-<li>SolarCollectorFlatPlatePhotovoltaicThermal </li>
-<li>ZoneVentilationDesignFlowRate </li>
-<li>FluidCoolerTwoSpeed </li>
-<li>FluidCoolerSingleSpeed </li>
-<li>PipeOutdoor </li>
-<li>PipeIndoor </li>
-<li>Duct</li>
-<li>AvailabilityManagerHybridVentilation </li>
-<li>CoilSystemCoolingWaterHeatExchangerAssisted </li>
-<li>CoilSystemCoolingDXHeatExchangerAssisted </li>
-<li>PlantEquipmentOperationOutdoorDewpoint </li>
-<li>PlantEquipmentOperationOutdoorWetBulb</li>
-<li>TemperingValve </li>
-<li>ChillerAbsorption </li>
-<li>ChillerAbsorptionIndirect </li>
-<li>CoilCoolingDXTwoStageWithHumidityControlMode </li>
-<li>AirTerminalDualDuctVAV </li>
-<li>AvailabilityManagerOptimumStart </li>
-<li>AvailabilityManagerDifferentialThermostat </li>
-<li>ThermalStorageIceDetailed </li>
-<li>GroundHeatExchangerHorizontalTrench </li>
-<li>PlantEquipmentOperationOutdoorRelativeHumidity </li>
-<li>AvailabilityManagerNightVentilation </li>
-<li>PlantEquipmentOperationOutdoorDryBulbDifference</li>
-<li>PlantEquipmentOperationOutdoorDewpointDifference </li>
-<li>PlantEquipmentOperationOutdoorWetBulbDifference </li>
-<li>PlantEquipmentOperationOutdoorDryBulb </li>
-<li>HeaderedPumpsConstantSpeed </li>
-<li>HeaderedPumpsVariableSpeed </li>
-<li>WaterHeaterHeatPump </li>
-<li>CoilPerformanceDXCooling </li>
-<li>CoilWaterHeatingAirToWaterHeatPump </li>
-<li>CoilHeatingWaterToAirHeatPumpVariableSpeedEquationFit </li>
-<li>CoilHeatingDXVariableSpeed </li>
-<li>CoilCoolingWaterToAirHeatPumpVariableSpeedEquationFit </li>
-<li>SetpointManagerSingleZoneHumidityMaximum </li>
-<li>ThermalStorageChilledWaterStratified </li>
-<li>SetpointManagerColdest </li>
-<li>EvaporativeFluidCoolerTwoSpeed</li>
-<li>SetpointManagerMultiZoneCoolingAverage </li>
-<li>SetpointManagerMultiZoneHeatingAverage </li>
-<li>ZoneHVACDehumidifierDX </li>
-<li>ZoneHVACEnergyRecoveryVentilatorController </li>
-<li>ZoneHVACEnergyRecoveryVentilator </li>
-<li>CoilCoolingDXVariableSpeed </li>
-<li>CentralHeatPumpSystem </li>
-<li>SetpointManagerMultiZoneHumidityMaximum </li>
-<li>CoilHeatingDXMultiSpeed </li>
-<li>SetpointManagerFollowSystemNodeTemperature </li>
-<li>SetpointManagerSingleZoneOneStageCooling </li>
-<li>SetpointManagerSingleZoneOneStageHeating </li>
-<li>SetpointManagerMultiZoneMaximumHumidityAverage</li>
-<li>SetpointManagerMultiZoneMinimumHumidityAverage </li>
-<li>SetpointManagerReturnAirBypassFlow </li>
-<li>SetpointManagerFollowGroundTemperature </li>
-<li>ChillerHeaterPerformanceElectricEIR </li>
-<li>PlantComponentTemperatureSource </li>
-<li>ZoneHVACUnitVentilator </li>
-<li>WaterHeaterStratified </li>
-<li>ZoneHVACBaseboardRadiantConvectiveWater </li>
-<li>ZoneHVACBaseboardRadiantConvectiveElectric </li>
-<li>LoadProfilePlant</li>
-</ul>
-<p>There are a number of enhancements in areas beyond HVAC capability particularly to the OpenStudio application and the Measure ecosystem:
-The OpenStudio application has been enhanced with new grid views for the design day and facility interfaces. A spaces grid tab was also added.</p>
-<ul>
-<li>Users can now specify costs and ECMs on external models imported to PAT for export to EDAPT    * A new standard reporting Measure has been added</li>
-<li>Radiance functionality has been refactored as a Measure; as a result, the “select daylight simulation engine” radio buttons have been removed from the Run Tab. Users wishing to use Radiance for their daylight simulations must apply the “Radiance Daylighting Measure” from their measures library (under Electric Lighting / Electric Lighting Controls / Radiance Daylighting Measure) as an “Always Run Measure”. Support for shadecloth (e.g. Mechoshade) and daylight redirecting louvers (exemplified in this release with Lightlouver) have been added to the shade material types along with the existing venetian blind option. Daylight metrics reporting has been improved, and a fully automated 3-phase simulation workflow that supports multiple window groups is part of this new measure. As a measure, this also allows users to run Radiance-based daylighting simulations with PAT and OpenStudio Server.</li>
-<li>OpenStudio ships with select gems <a href="https://github.com/NREL/OpenStudio/wiki/OpenStudio- Version-Compatibility-Matrix#packaged-gems">(https://github.com/NREL/OpenStudio/wiki/OpenStudio- Version-Compatibility-Matrix#packaged-gems)</a></li>
-<li>Improvements have been made to EpwFile allow direct access to timeseries properties from the weather file"</li>
-<li>IFC import improvements were contributed by the BIMDataHub team at Penn State/CBEI"</li>
-<li>This release resolves a long-standing issue using OpenStudio with Honeybee: <a href="https://github.com/mostaphaRoudsari/Honeybee/issues/214">https://github.com/mostaphaRoudsari/Honeybee/issues/214</a>.</li>
-</ul>
-<p>OpenStudio 1.9.0 includes several other minor features as well as many bug fixes. For a full list of changes included in OpenStudio 1.9.0, please see the <a href="https://github.com/NREL/OpenStudio/blob/v1.9.0/CHANGELOG.md">complete changelog</a>.</p>
-<p>View the <a href="../roadmap">OpenStudio Roadmap</a> to see the release plan for future features.</p>
-<hr />
-<h2 id="current-features">Current Features</h2>
-<p>As of OpenStudio Version 1.9.0</p>
+<h2 id="as-of-openstudio-version-210">As of OpenStudio Version 2.1.0</h2>
 <h3 id="building-geometry3d-cad">Building Geometry/3D CAD</h3>
 <ul>
 <li>Quickly draw 3D building geometry using free plug-in for SketchUp</li>
@@ -490,6 +314,7 @@ The OpenStudio application has been enhanced with new grid views for the design 
 <li>Import geometry from gbXML files (from Revit, GreenBuildingStudio, Trace700, etc.)</li>
 <li>Import geometry from EnergyPlus files (IDF)</li>
 <li>Import model from SDD files (California Energy Commission)</li>
+<li>Import geometry from Industry Foundation Class files (IFC)</li>
 <li>Assign and visually inspect space types assignments</li>
 <li>Define thermal zones and add/remove spaces</li>
 <li>Assign and see building envelope constructions</li>
@@ -509,10 +334,9 @@ The OpenStudio application has been enhanced with new grid views for the design 
 <li>Built in library of space types (loads and associated schedules) for DOE reference buildings for all vintages (pre-1980, 1980-2004, and 2004) plus ASHRAE 189.1-2009, ASHRAE 90.1-2007, and ASHRAE 90.1-2010</li>
 <li>Can apply loads in one place (space type) and apply throughout the building</li>
 </ul>
-<h3 id="grid-view-for-thermal-zones-and-space-types">Grid View for Thermal Zones and Space Types</h3>
+<h3 id="grid-view-for-thermal-zones-space-types-spaces-design-days-and-refrigeration-cases">Grid View for Thermal Zones, Space Types, Spaces, Design Days, and Refrigeration Cases</h3>
 <ul>
-<li>Previously available for Refrigeration Walk Ins and Refrigeration Cases, grid-view (a grid-style interface providing detailed component views) has now been applied to the Space Types tab, as well as the Thermal Zones tab.</li>
-<li>Viewing and editing your thermal zones and space types in a grid view allows you to see all your thermal zones at once and compare settings.</li>
+<li>Viewing and editing your model in a grid view allows to see many objects at once and compare settings.</li>
 </ul>
 <p><img alt="Grid view example" src="../../img/features/grid_thumb.png" /></p>
 <h3 id="hvac">HVAC</h3>
@@ -525,31 +349,42 @@ The OpenStudio application has been enhanced with new grid views for the design 
 <ul>
 <li>Boilers (all fuels)</li>
 <li>District heating and cooling</li>
-<li>Evaporative fluid coolers</li>
+<li>Set-temperature heating/cooling source</li>
 <li>Single, two-speed, and variable-speed cooling towers</li>
-<li>Chillers (electric)</li>
-<li>Vertical ground heat exchanger (bore fields for ground-source heat pumps)</li>
+<li>Single and two-speed fluid coolers and evaporative fluid coolers</li>
+<li>Chillers (electric, absorption, indirect absorption)</li>
+<li>Vertical and horizontal ground heat exchanger (bore fields &amp; trenches for ground-source heat pumps)</li>
 <li>Bypass pipes</li>
-<li>Constant and variable speed pumps</li>
+<li>Constant and variable speed pumps, both individual and headered</li>
 <li>Fluid-to-fluid heat exchangers (for primary/secondary pumping and waterside economizers, etc.)</li>
 <li>Hot, Chilled, and Condenser Water System Controls</li>
 <li>Scheduled, OA reset, high and low with deadband, and follow OA setpoint controls</li>
+<li>Staging of equipment (based on load range, part-load, sequential, etc.)</li>
+<li>Solar hot water (with and without storage and integrated PV)</li>
+<li>Pipes (indoor heat loss, outdoor heat loss, or adiabatic)</li>
+<li>Load profile (model plant behavior with loads from a schedule)</li>
+<li>Ice and chilled water storage</li>
+<li>Water-to-water heat pumps</li>
 </ul>
 <h5 id="air-system-components">Air System Components</h5>
 <ul>
 <li>Supply and return plenums</li>
 <li>Unitary equipment</li>
+<li>Dual-duct systems</li>
 <li>Changeover bypass (VVT) systems</li>
 <li>Multi-stage unitary equipment (used with staged thermostats)</li>
 <li>Outdoor air intake with economizers (all types) and damper control</li>
-<li>Chilled water, one-speed DX and two-speed DX cooling coils</li>
+<li>Chilled water cooling coils</li>
+<li>One-speed, two-speed, multi-speed, and variable-speed DX cooling coils</li>
+<li>One-speed, multi-speed, and variable-speed DX heating coils (heat pumps)</li>
+<li>Water-to-air heat pumps</li>
 <li>Gas, electric, hot water, and DX (heat pump) heating and/or preheat coils</li>
 <li>Variable and Constant Speed Fans</li>
 <li>Steam humidifiers (electrically powered) used with zone humidistats</li>
 <li>Direct and indirect evaporative coolers</li>
 <li>Sensible and latent heat recovery</li>
 <li>VAV-Reheat and CAV-Reheat terminals (gas, electric, and hot water reheat coils)</li>
-<li>VAV no reheat terminals</li>
+<li>VAV terminals without reheat</li>
 <li>Series and parallel fan powered boxes with reheat (all fuel types)</li>
 <li>Diffusers</li>
 <li>Chilled beams (active and passive)</li>
@@ -561,10 +396,14 @@ The OpenStudio application has been enhanced with new grid views for the design 
 <li>Night-cycle controls (whole system and/or terminal fans)</li>
 <li>Scheduled, OA reset, SAT reset, and follow OA setpoint controls</li>
 <li>Single-zone VAV system control (one control zone, many slaves)</li>
+<li>Optimum start control</li>
 </ul>
 <h5 id="zone-level-heating-and-cooling-systems">Zone-level Heating and Cooling Systems</h5>
 <ul>
 <li>Unit heaters (all fuels)</li>
+<li>Unit ventilators</li>
+<li>Energy recovery ventilators</li>
+<li>Dehumidifiers</li>
 <li>Low temp radiant heating (electric, variable and constant flow water)</li>
 <li>Low temp radiant cooling (variable and constant flow water)</li>
 <li>PTAC (DX cooling + fan + all heating fuels)</li>
@@ -574,6 +413,7 @@ The OpenStudio application has been enhanced with new grid views for the design 
 <li>Four pipe fan coils (may be supplied via DOAS system)</li>
 <li>Electric and hot-water baseboards</li>
 <li>High temperature radiant heaters (gas and electric)</li>
+<li>Zone-to-zone transfer air (zone air mixing)</li>
 </ul>
 <h5 id="variable-refrigerant-flow-systems">Variable Refrigerant Flow Systems</h5>
 <ul>
@@ -594,7 +434,7 @@ The OpenStudio application has been enhanced with new grid views for the design 
 </ul>
 <h5 id="domestic-water-systems">Domestic Water Systems</h5>
 <ul>
-<li>Hot Water Heaters (all fuels)</li>
+<li>Hot Water Heaters (all fuels, including heat pump)</li>
 <li>Equipment that uses warm water (showers, faucets, etc.), can specify mixed water temp</li>
 <li>Equipment that uses cold water only</li>
 <li>Recirculation, no pump, or instantaneous water heaters</li>
@@ -605,9 +445,11 @@ The OpenStudio application has been enhanced with new grid views for the design 
 <li>Run daylighting analysis using Radiance, state-of-the-art ray-tracing daylight simulation engine without making a separate model</li>
 <li>Lights in the EnergyPlus model controlled based on daylight available per Radiance</li>
 </ul>
+<h3 id="custom-controls">Custom Controls</h3>
+<p>Within EnergyPlus, advanced controls that are not built-in can implemented utilizing the EnergyManagementSystem (EMS) suite of objects. This involves defining Sensors and Actuators that interact with building parameters through Programs which are written in the EnergyPlus Runtime Language (ERL), which is based on a common building-controls language. OpenStudio supports the creation of EMS programs.</p>
 <h3 id="location-specific-information">Location-Specific Information</h3>
 <ul>
-<li>Find typical <a href="http://apps1.eere.energy.gov/buildings/energyplus/weatherdata_about.cfm">weather data and ASHRAE design conditions</a> for most locations in the world</li>
+<li>Find typical <a href="https://energyplus.net/weather">weather data and ASHRAE design conditions</a> for most locations in the world</li>
 <li>Use actual weather data (AMY) from a variety of vendors/sources</li>
 </ul>
 <h3 id="economics">Economics</h3>
@@ -627,6 +469,7 @@ The OpenStudio application has been enhanced with new grid views for the design 
 <li>gbXML export (geometry, constructions, and thermal zones only)</li>
 <li>SDD import (simulation format - full model including HVAC)</li>
 <li>SDD export (input format - geometry, constructions, and thermal zones only)</li>
+<li>IFC import (geometry only)</li>
 </ul>
 <h3 id="analysis-of-existing-buildings">Analysis of Existing Buildings</h3>
 <ul>
