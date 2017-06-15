@@ -1,4 +1,4 @@
-#OpenStudio User Documentation
+# OpenStudio User Documentation
 
 
 This is the repo for OpenStudio user documentation.  
@@ -18,7 +18,6 @@ To force-install version 0.11.1 of MkDocs on Mac/Linux, run:
 
 ### Windows
 Getting mkdocs to work on Windows is very particular.  We recommend uninstalling python and deleting the install directory before following these steps.  If you don't, it probably won't work.  We tried many different ways to do this, and starting from scratch and following these steps is the only thing we could get to work.
-
 
 1. Install [Python 2.7.8](https://www.python.org/ftp/python/2.7.8/python-2.7.8.msi)
 2. Add `C:\Python27` and `C:\Python27\Scripts` to your PATH
