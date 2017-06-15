@@ -16,7 +16,7 @@ To force-install version 0.11.1 of MkDocs on Mac/Linux, run:
 	sudo pip install mkdocs==0.11.1
 ```
 
-###Windows
+### Windows
 Getting mkdocs to work on Windows is very particular.  We recommend uninstalling python and deleting the install directory before following these steps.  If you don't, it probably won't work.  We tried many different ways to do this, and starting from scratch and following these steps is the only thing we could get to work.
 
 
@@ -34,7 +34,7 @@ Getting mkdocs to work on Windows is very particular.  We recommend uninstalling
     ```
 
 
-##Run
+## Run
 Clone this repo locally.  In a terminal window, navigate to the repo directory, and type: 
 ```shell
 mkdocs serve
@@ -45,12 +45,12 @@ On Windows you can also double-click the start_mkdocs.bat file (assuming you hav
 This will start a server that will let you see what your changes will look like on the site.  Open a browser and go to http://127.0.0.1:8000/ to see your local site.
 
 
-##Adding and Editing Pages
+## Adding and Editing Pages
 Edit existing .md files using either markdown or html.  If you need to add a new image, place it in the `docs/img` directory.
 
 If you need to add a new page, first decide where it should go in the site structure.  The folders within the docs/ directory mostly correspond to the top nav.  Once you have decided where the page should go, add a reference to it in the  `mkdocs.yml`  file.
 
-##Deploying
+## Deploying
 
 When you are done making changes, test your deployment first and then commit back to the repo.  
 
