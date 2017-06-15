@@ -36,7 +36,7 @@ The file 'measure.rb' is the main measure program. It may contain the entire pro
 OpenStudio measures are instantiated by creating a class based on the OpenStudio **ModelUserScript** object:
 
 ```ruby
-class AddContinuousInsulationToWalls < OpenStudio::Ruleset::ModelUserScript
+class AddContinuousInsulationToWalls < OpenStudio::Measure::ModelMeasure
   ...
 end
 ```
@@ -45,6 +45,8 @@ end
 ```ruby
 AddContinuousInsulationToWalls.new.registerWithApplication
 ```
+
+Please note the original measure instantiantiation syntax, ```OpenStudio::Ruleset::ModelUserScript```, is deprecated. 
 
 Class naming convention shall follow [Ruby best practices](https://github.com/bbatsov/ruby-style-guide). 
 

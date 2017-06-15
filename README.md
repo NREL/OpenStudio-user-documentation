@@ -5,13 +5,15 @@ This is the repo for OpenStudio user documentation.
 
 The documentation is written in Markdown, and uses [MkDocs] (http://www.mkdocs.org/) to compile the markdown files into a static site.  The site is hosted on github-pages at: http://nrel.github.io/OpenStudio-user-documentation/.
 
-##Setup
-###Mac
-Install MkDocs by following the direction at [MkDocs](http://www.mkdocs.org).  You will need python.
+## Setup
+### Mac
+Install MkDocs by following the directions at [MkDocs](http://www.mkdocs.org); you will need python.
 
-To update your MkDocs version:
+We recommend using mkdocs version 0.11.1, as newer versions have caused issues with this doc site.
+
+To force-install version 0.11.1 of MkDocs on Mac/Linux, run:
 ```python
-	sudo pip install -U mkdocs
+	sudo pip install mkdocs==0.11.1
 ```
 
 ###Windows
