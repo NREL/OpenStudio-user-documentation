@@ -333,7 +333,7 @@
 <p>The file 'measure.rb' is the main measure program. It may contain the entire program or may rely on additional functionality defined in one or more resource files, located in the 'resources' directory. </p>
 <h2 id="initialization">Initialization</h2>
 <p>OpenStudio measures are instantiated by creating a class based on the OpenStudio <strong>ModelUserScript</strong> object:</p>
-<pre><code class="ruby">class AddContinuousInsulationToWalls &lt; OpenStudio::Ruleset::ModelUserScript
+<pre><code class="ruby">class AddContinuousInsulationToWalls &lt; OpenStudio::Measure::ModelMeasure
   ...
 end
 </code></pre>
@@ -342,6 +342,7 @@ end
 <pre><code class="ruby">AddContinuousInsulationToWalls.new.registerWithApplication
 </code></pre>
 
+<p>Please note the original measure instantiantiation syntax, <code>OpenStudio::Ruleset::ModelUserScript</code>, is deprecated. </p>
 <p>Class naming convention shall follow <a href="https://github.com/bbatsov/ruby-style-guide">Ruby best practices</a>. </p>
 <h2 id="measure-elements">Measure Elements</h2>
 <p>Every measure requires the following elements, defined as functions of the main program: </p>

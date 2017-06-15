@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    
+    <url>
+     <loc>/</loc>
+     <lastmod>2017-06-15</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+        
+    <url>
+     <loc>/getting_started/features/</loc>
+     <lastmod>2017-06-15</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/getting_started/roadmap/</loc>
+     <lastmod>2017-06-15</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/getting_started/getting_started/</loc>
+     <lastmod>2017-06-15</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/getting_started/quick_start_guides/</loc>
+     <lastmod>2017-06-15</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/getting_started/about_measures/</loc>
+     <lastmod>2017-06-15</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+        
+    <url>
+     <loc>/tutorials/creating_your_model/</loc>
+     <lastmod>2017-06-15</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/tutorials/running_your_simulation/</loc>
+     <lastmod>2017-06-15</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/tutorials/large_scale_analysis/</loc>
+     <lastmod>2017-06-15</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/tutorials/radiance_tutorial/</loc>
+     <lastmod>2017-06-15</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/tutorials/tutorial_bcl/</loc>
+     <lastmod>2017-06-15</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+        
+    <url>
+     <loc>/tutorials/utility_rate_tariffs/</loc>
+     <lastmod>2017-06-15</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/tutorials/life_cycle_costing_examples/</loc>
+     <lastmod>2017-06-15</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/tutorials/tutorial_cbecc_materials/</loc>
+     <lastmod>2017-06-15</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/tutorials/tutorial_glhepro/</loc>
+     <lastmod>2017-06-15</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/tutorials/tutorial_ifcimport/</loc>
+     <lastmod>2017-06-15</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/tutorials/tutorial_shadingcontrols/</loc>
+     <lastmod>2017-06-15</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/tutorials/tutorial_windowproperty_frameanddivider/</loc>
+     <lastmod>2017-06-15</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/tutorials/tutorial_virtual_pulse/</loc>
+     <lastmod>2017-06-15</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+        
+    <url>
+     <loc>/reference/openstudio_application_interface/</loc>
+     <lastmod>2017-06-15</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/reference/sketchup_plugin_interface/</loc>
+     <lastmod>2017-06-15</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/reference/command_line_interface/</loc>
+     <lastmod>2017-06-15</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/reference/parametric_studies/</loc>
+     <lastmod>2017-06-15</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/reference/parametric_analysis_tool_2/</loc>
+     <lastmod>2017-06-15</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/reference/model_objects/</loc>
+     <lastmod>2017-06-15</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/reference/measure_writing_guide/</loc>
+     <lastmod>2017-06-15</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/reference/measure_code_examples/</loc>
+     <lastmod>2017-06-15</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/reference/developing_measure_collections/</loc>
+     <lastmod>2017-06-15</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/reference/refguide_radiance/</loc>
+     <lastmod>2017-06-15</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/reference/openstudio_results_measure/</loc>
+     <lastmod>2017-06-15</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+        
+    <url>
+     <loc>/help/training/</loc>
+     <lastmod>2017-06-15</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/help/finding_model_data/</loc>
+     <lastmod>2017-06-15</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/help/best_practices/</loc>
+     <lastmod>2017-06-15</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/help/troubleshooting/</loc>
+     <lastmod>2017-06-15</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/help/faq/</loc>
+     <lastmod>2017-06-15</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/help/software_license/</loc>
+     <lastmod>2017-06-15</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+</urlset>
