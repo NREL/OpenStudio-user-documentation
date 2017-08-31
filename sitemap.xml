@@ -142,7 +142,13 @@
      <lastmod>2017-06-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
+
+    <url>
+     <loc>/reference/geometry_editor/</loc>
+     <lastmod>2017-06-15</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+
     <url>
      <loc>/reference/command_line_interface/</loc>
      <lastmod>2017-06-15</lastmod>
