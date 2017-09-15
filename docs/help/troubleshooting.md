@@ -93,6 +93,12 @@ If you want to investigate in more depth, download [Dependency Walker](http://ww
 
 _________________
 
+## Graphics Problems in OpenStudio Application
+Several users have reported graphics issues with the Geometry and Results tabs within the OpenStudio Application.  In many cases, adjusting power saving settings of the graphics cards has resolved these issues.  For computers with NVIDA graphics cards, you can access these settings via the NVIDIA Control Panel under “3D Settings”->”Manage 3D Settings”.  In this panel, make sure that “Preferred graphics processor” is set to “High-performance NVIDIA processor”.
+
+![Adjust NVIDIA Settings](img/help/nvidia_settings.png)
+_________________
+
 ## Unable to Communicate with Amazon Cloud from Command Prompt Using the "bundle" Command
 This issue is typically a communication error between you and RubyGems.org. A few things to check:
 

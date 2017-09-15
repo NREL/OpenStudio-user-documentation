@@ -43,6 +43,19 @@ Press the "+Story" button to create a new story.  This will automatically create
 
 ------
 
+## Image Import
+Existing floorplan images can be imported in to the OpenStudio Geometry Editor for reference when drawing.  At this time, only JPEG and PNG formats are supported; PDF, DXF, and other common formats may be supported in the future.  Floorplan images are associated with a particular story in the editor.  Navigate to the story of interest (usually the first floor) and change the object type above the navigator to "Image".  Press the "+Image" button and navigate to your image. 
+
+[![Image Import](img/geometry_editor/image_import.png "Image Import")](img/geometry_editor/image_import.png)
+
+Once the image is imported, activate the "Drag" tool.  This will allow you to move, resize, and rotate the image.
+
+[![Image Drag](img/geometry_editor/image_drag.png "Image Drag")](img/geometry_editor/image_drag.png)
+
+Once you have correctly sized and positioned you image, change the object type above the navigator to "Space" and generate space geometry on top of the image.
+
+------
+
 ## Bottom Panel
 The bottom panel provides access to specify and edit data associated with the floorplan such as space types, thermal zones, and constructions.  Objects of these types are imported from your OpenStudio Model each time you switch to the "Editor" sub tab.  You can select the type of object to display in this panel.  All objects of that type are displayed.  Press the "New" button to create new objects of that type.  For example, you can use this functionality to create new thermal zones.
 
@@ -78,3 +91,4 @@ Once your floorplan has been merged with the current OSM you will see new object
 [![Space Tab](img/geometry_editor/space-tab.png "Space Tab")](img/geometry_editor/space-tab.png)
 
 The intention of integrating the OpenStudio Geometry Editor with the OpenStudio Application is to demonstrate how geometry data may be moved seamlessly into the OpenStudio object model to support a variety of sophisticated workflows.  Thermal zones, space types, default construction sets, and building units are synchronized between the two interfaces intuitively and with little effort on the part of the user.  As with any new software feature, some rough edges are expected.  Please let us know of issues you find by sending email to [OpenStudio@nrel.gov](mailto:OpenStudio@nrel.gov).  If the OpenStudio Geometry Editor becomes unresponsive, please press the "Debug" button, navigate to the console, and cut/paste diagnostic messages that may help us identify and fix any issues. 
+
