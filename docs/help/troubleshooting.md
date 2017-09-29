@@ -93,6 +93,10 @@ If you want to investigate in more depth, download [Dependency Walker](http://ww
 
 _________________
 
+## OpenStudio Application and SketchUp Plug-in Crash
+Several users have reported an OpenStudio Application and SketchUp Plug-in crash occuring when saving or opening a file is related to the Dell Backup and Recovery software.  It appears that this program is [known to cause issues](http://en.community.dell.com/support-forums/software-os/f/3526/t/19634253) with Qt based applications (such as OpenStudio).  
+_________________
+
 ## Graphics Problems in OpenStudio Application
 Several users have reported graphics issues with the Geometry and Results tabs within the OpenStudio Application.  In many cases, adjusting power saving settings of the graphics cards has resolved these issues.  For computers with NVIDA graphics cards, you can access these settings via the NVIDIA Control Panel under “3D Settings”->”Manage 3D Settings”.  In this panel, make sure that “Preferred graphics processor” is set to “High-performance NVIDIA processor”.
 
