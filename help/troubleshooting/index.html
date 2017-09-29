@@ -272,6 +272,12 @@
       </ul>
     </li>
   
+    <li class="main"><a href="#openstudio-application-and-sketchup-plug-in-crash">OpenStudio Application and SketchUp Plug-in Crash</a>
+      <ul class="nav">
+        
+      </ul>
+    </li>
+  
     <li class="main"><a href="#graphics-problems-in-openstudio-application">Graphics Problems in OpenStudio Application</a>
       <ul class="nav">
         
@@ -376,6 +382,9 @@
 <p>If SketchUp crashes without the OpenStudio plugins installed then something else is wrong, contact the SketchUp support team for help. If SketchUp launches, try installing OpenStudio again. If SketchUp crashes on launch again, remove the OpenStudio files from the SketchUp plugin directories again. Open SketchUp, go to Window-&gt;Preferences-&gt;Extensions and disable the OpenStudio plugin. Re-install OpenStudio and relaunch SketchUp. Open the Ruby console by going to Window-&gt;Ruby Console and then go back to Window-&gt;Preferences-&gt;Extensions and enable the OpenStudio plugin, you may see useful output in the Ruby console. If you have other extensions installed, try disabling them and enabling the OpenStudio plugin.</p>
 <p>If none of the steps above work and you are on Windows, it is likely that there is a dynamic library being loaded from another application that is interfering with OpenStudio. If you just want to fix your problem, try copying the files libeay32.dll and ssleay32.dll from C:\Program Files (x86)\OpenStudio X.X.X\bin to C:\Program Files (x86)\SketchUp\SketchUp 2015, this will fix the problem 80% of the time.</p>
 <p>If you want to investigate in more depth, download <a href="http://www.dependencywalker.com/">Dependency Walker</a>. Extract the files and launch depends.exe. Navigate to File-&gt;Open and then browse to choose the SketchUp.exe under C:\Program Files (x86)\SketchUp\SketchUp 2015. This will examine all of the libraries loaded by SketchUp but not the libraries loaded by OpenStudio. Navigate to Profile-&gt;Start Profiling then press Ok in the dialog that pops up. This will launch SketchUp and attempt to load OpenStudio. Scroll down in the list of loaded libraries and look for the OpenStudio dlls. Expand the paths under the OpenStudio dlls and look for libraries that are being loaded from other locations. Often, some other program will install a different version of one of the libraries (usually libeay32.dll or ssleay32.dll) that OpenStudio uses. This other library will be in the path ahead of OpenStudio and will be loaded instead, this results in a hard crash of SketchUp. Correcting your path or copying the dlls from the OpenStudio bin directory into the SketchUp install directory will cause the correct dlls to be loaded when SketchUp starts.</p>
+<hr />
+<h2 id="openstudio-application-and-sketchup-plug-in-crash">OpenStudio Application and SketchUp Plug-in Crash</h2>
+<p>Several users have reported an OpenStudio Application and SketchUp Plug-in crash occuring when saving or opening a file is related to the Dell Backup and Recovery software.  It appears that this program is <a href="http://en.community.dell.com/support-forums/software-os/f/3526/t/19634253">known to cause issues</a> with Qt based applications (such as OpenStudio).  </p>
 <hr />
 <h2 id="graphics-problems-in-openstudio-application">Graphics Problems in OpenStudio Application</h2>
 <p>Several users have reported graphics issues with the Geometry and Results tabs within the OpenStudio Application.  In many cases, adjusting power saving settings of the graphics cards has resolved these issues.  For computers with NVIDA graphics cards, you can access these settings via the NVIDIA Control Panel under “3D Settings”-&gt;”Manage 3D Settings”.  In this panel, make sure that “Preferred graphics processor” is set to “High-performance NVIDIA processor”.</p>
