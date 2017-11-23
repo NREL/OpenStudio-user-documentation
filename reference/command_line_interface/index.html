@@ -298,7 +298,7 @@
 <h1 id="command-overview">Command Overview</h1>
 <p>The CLI is executed by calling the OpenStudio executable from the command line with a set of command line arguments.  Calling the CLI with no arguments (such as when double-clicking the executable) causes the CLI to print a help message and then exit.  Several switches which control program behavior may be passed immediately following the OpenStudio executable.  Switches often have both a short form and a long form for convienence. Multiple program level switches may be combined.  Program level switches include:</p>
 <p>The <code>-h</code> or <code>--help</code> switches print the help message:</p>
-<pre><code>openstudio.exe --include /path/to/add/ --include /another/path/to/add
+<pre><code>openstudio.exe --help
 </code></pre>
 
 <p>The <code>-I</code> or <code>--include</code> switches can be used to add additional directories to the Ruby $LOAD_PATH (this switch may be used more than once):</p>
@@ -355,11 +355,11 @@
 </code></pre>
 
 <p>The <code>-m</code> or <code>--measures_only</code> switches run only the OpenStudio Model and EnergyPlus Measures but do not run the EnergyPlus simulation or OpenStudio Reporting Measures in an OSW file:</p>
-<pre><code>openstudio.exe run --measures_only /path/to/workflow.osw
+<pre><code>openstudio.exe run --measures_only --workflow /path/to/workflow.osw
 </code></pre>
 
 <p>The <code>-p</code> or <code>--postprocess_only</code> switches do not run the OpenStudio Modelm EnergyPlus Measures, or EnergyPlus simulation in an OSW file.  Existing simulation results are loaded and only OpenStudio Reporting Measures are run, this is useful for generating new reports without re-running simulations:</p>
-<pre><code>openstudio.exe run --postprocess_only /path/to/workflow.osw
+<pre><code>openstudio.exe run --postprocess_only --workflow /path/to/workflow.osw
 </code></pre>
 
 <h1 id="osw-structure">OSW Structure</h1>
