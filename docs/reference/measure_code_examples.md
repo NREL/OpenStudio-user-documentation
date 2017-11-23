@@ -81,7 +81,7 @@ You can use the `*` (multiply), `/` (divide), and `^` (exponent) operators in th
   </tr>
   <tr>
     <td>Power</td>
-    <td>"ft*lb_f/s"</td>
+    <td>"ft\*lb_f/s"</td>
     <td>"W"</td>
   </tr>
   <tr>
@@ -96,18 +96,18 @@ You can use the `*` (multiply), `/` (divide), and `^` (exponent) operators in th
   </tr>
   <tr>
     <td>U-Factor</td>
-    <td>"Btu/ft^2*h*R"</td>
-    <td>"W/m^2*K"</td>
+    <td>"Btu/ft^2\*h\*R"</td>
+    <td>"W/m^2\*K"</td>
   </tr>
   <tr>
     <td>R-Value</td>
-    <td>"ft^2*h*R/Btu"</td>
-    <td>"m^2*K/W"</td>
+    <td>"ft^2\*h\*R/Btu"</td>
+    <td>"m^2\*K/W"</td>
   </tr>
   <tr>
     <td>Conductivity</td>
-    <td>"Btu/ft^2*h*R"</td>
-    <td>"W/m^2*K"</td>
+    <td>"Btu/ft^2\*h\*R"</td>
+    <td>"W/m^2\*K"</td>
   </tr>
   <tr>
     <td>Illuminance</td>
@@ -146,8 +146,8 @@ You can use the `*` (multiply), `/` (divide), and `^` (exponent) operators in th
   </tr>
   <tr>
     <td>Velocity</td>
-    <td>"mph"</td>
-    <td></td>
+    <td>"in/s", "ft/s", "mph"</td>
+    <td>"cm/s", "m/s"</td>
   </tr>
   <tr>
     <td>ElectricPotential</td>

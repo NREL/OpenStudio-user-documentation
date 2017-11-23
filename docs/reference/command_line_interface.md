@@ -11,7 +11,7 @@ The CLI is executed by calling the OpenStudio executable from the command line w
 The `-h` or `--help` switches print the help message:
 
 ```
-openstudio.exe --include /path/to/add/ --include /another/path/to/add
+openstudio.exe --help
 ```
 
 The `-I` or `--include` switches can be used to add additional directories to the Ruby $LOAD_PATH (this switch may be used more than once):
@@ -100,13 +100,13 @@ openstudio.exe run --debug --workflow /path/to/workflow.osw
 The `-m` or `--measures_only` switches run only the OpenStudio Model and EnergyPlus Measures but do not run the EnergyPlus simulation or OpenStudio Reporting Measures in an OSW file:
 
 ```
-openstudio.exe run --measures_only /path/to/workflow.osw
+openstudio.exe run --measures_only --workflow /path/to/workflow.osw
 ```
 
 The `-p` or `--postprocess_only` switches do not run the OpenStudio Modelm EnergyPlus Measures, or EnergyPlus simulation in an OSW file.  Existing simulation results are loaded and only OpenStudio Reporting Measures are run, this is useful for generating new reports without re-running simulations:
 
 ```
-openstudio.exe run --postprocess_only /path/to/workflow.osw
+openstudio.exe run --postprocess_only --workflow /path/to/workflow.osw
 ```
 
 # OSW Structure

@@ -85,7 +85,7 @@ On Mac these are:
 - /Users/<__your username__>/Library/Application Support/SketchUp 2015/SketchUp/Plugins
 - /Library/Application Support/SketchUp 2015/SketchUp/Plugins
 
-If SketchUp crashes without the OpenStudio plugins installed then something else is wrong, contact the SketchUp support team for help. If SketchUp launches, try installing OpenStudio again. If SketchUp crashes on launch again, remove the OpenStudio files from the SketchUp plugin directories again. Open SketchUp, go to Window->Preferences->Extensions and disable the OpenStudio plugin. Re-install OpenStudio and relaunch SketchUp. Open the Ruby console by going to Window->Ruby Console and then go back to Window->Preferences->Extensions and enable the OpenStudio plugin, you may see useful output in the Ruby console. If you have other extensions installed, try disabling them and enabling the OpenStudio plugin.
+If SketchUp crashes without the OpenStudio plugins installed then something else is wrong, contact the SketchUp support team for help. Check that your system meets the [SketchUp Hardware and Software Requirements](https://help.sketchup.com/en/article/36208). If SketchUp launches, try installing OpenStudio again. If SketchUp crashes on launch again, remove the OpenStudio files from the SketchUp plugin directories again. Open SketchUp, go to Window->Preferences->Extensions and disable the OpenStudio plugin. Re-install OpenStudio and relaunch SketchUp. Open the Ruby console by going to Window->Ruby Console and then go back to Window->Preferences->Extensions and enable the OpenStudio plugin, you may see useful output in the Ruby console. If you have other extensions installed, try disabling them and enabling the OpenStudio plugin.
 
 If none of the steps above work and you are on Windows, it is likely that there is a dynamic library being loaded from another application that is interfering with OpenStudio. If you just want to fix your problem, try copying the files libeay32.dll and ssleay32.dll from C:\Program Files (x86)\OpenStudio X.X.X\bin to C:\Program Files (x86)\SketchUp\SketchUp 2015, this will fix the problem 80% of the time.
 
@@ -101,6 +101,11 @@ _________________
 Several users have reported graphics issues with the Geometry and Results tabs within the OpenStudio Application.  In many cases, adjusting power saving settings of the graphics cards has resolved these issues.  For computers with NVIDA graphics cards, you can access these settings via the NVIDIA Control Panel under “3D Settings”->”Manage 3D Settings”.  In this panel, make sure that “Preferred graphics processor” is set to “High-performance NVIDIA processor”.
 
 ![Adjust NVIDIA Settings](img/help/nvidia_settings.png)
+
+Additionally, you may be able to find more information by running the OpenStudio Application from a command prompt and capturing the standard output in a file:
+
+`C:\openstudio-version\bin\OpenStudioApp.exe > out.txt 2>&1`
+
 _________________
 
 ## Unable to Communicate with Amazon Cloud from Command Prompt Using the "bundle" Command

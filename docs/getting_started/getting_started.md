@@ -2,23 +2,27 @@
 This page walks you through installing OpenStudio, the basics of the applications, and the basic workflow.
 
 ## Installation Instructions
-OpenStudio is supported on Windows 7 – Windows 10, OS X 10.9 – 10.10, and 64-bit Ubuntu 14.04.
-OpenStudio 1.10.0 supports EnergyPlus Release 8.4.0, which is bundled with the OpenStudio installer. It is no longer necessary to download and install EnergyPlus separately. However, an installer is available at [https://github.com/NREL/EnergyPlus/releases/tag/v8.4.0.](https://github.com/NREL/EnergyPlus/releases/tag/v8.4.0) Other builds of EnergyPlus 8.4 are not supported by OpenStudio 1.10.0.
-OpenStudio 1.10.0 supports Radiance 5.0.a.5, which is bundled with the OpenStudio installer. It is no longer necessary to download and install Radiance separately. However, an installer is available at [https://github.com/NREL/Radiance/releases/tag/5.0.a.5.](https://github.com/NREL/Radiance/releases/tag/5.0.a.5) Other builds of Radiance are not supported by OpenStudio 1.10.0.
+OpenStudio is supported on 64-bit versions of Windows 7 – Windows 10, OS X 10.9 – 10.10, and Ubuntu 14.04 and 16.04.
+OpenStudio supports the latest EnergyPlus release which is bundled with the OpenStudio installer. The [version compatibility matrix](https://github.com/NREL/OpenStudio/wiki/OpenStudio-Version-Compatibility-Matrix) lists specific versions of EnergyPlus and other dependencies for each version of OpenStudio.
 ###Installation Steps
 __Download and install SketchUp__
 
-1. The OpenStudio SketchUp Plug-in requires SketchUp 2016 (not available for Linux). The OpenStudio SketchUp Plug-in does not support older versions of SketchUp. SketchUp 2016 is available in 32 and 64-bit versions; the 32-bit version of OpenStudio on Windows will only work with the 32-bit version of SketchUp 2016, and the 64-bit version of OpenStudio will only work with the 64-bit version of [SketchUp 2016](http://www.sketchup.com/).
+1. The OpenStudio SketchUp Plug-in requires [SketchUp](https://www.sketchup.com/download/all) (not available for Linux). Check the [version compatibility matrix](https://github.com/NREL/OpenStudio/wiki/OpenStudio-Version-Compatibility-Matrix) for the particular version of SketchUp required.
 
 __Download and install OpenStudio__
 
 1. Login to the [OpenStudio website](https://www.openstudio.net/downloads). Create an account if you don't have one. EnergyPlus and OpenStudio now share a password.
 2. Click "Downloads" at the top of the page.
-3. Choose the installer that matches your operating system. The OpenStudio package contains the following tools:
-    - SketchUp Plug-in
+3. Choose the installer that matches your operating system. The OpenStudio package contains the following components:
     - OpenStudio Application
+    - EnergyPlus    
+    - SketchUp Plug-in
+    - DView
     - Parametric Analysis Tool(PAT)
-    - ResultsViewer
+    - Ruby API
+    - C# API 
+    - Command Line Interface
+    - Radiance    
 
 __Optional - Setup a Building Component Library (BCL) Account__
 BCL content can now be accessed from within the OpenStudio SketchUp Plug-in and from the standalone OpenStudio application. To take advantage of this integration, you will need to follow the steps outlined here to request a BCL key.
@@ -32,18 +36,18 @@ Enter the key through the OpenStudio SketchUp Plug-in under the menu `Plugins->O
 ![Key request dialog](img/bcl_key_request.png)
 
 __Optional - Install Ruby__
-If you plan to use the OpenStudio SDK Ruby bindings via command prompt on Windows, you must install Ruby. OS X already has Ruby installed.
+If you plan to use the OpenStudio Ruby bindings via command prompt, you must install Ruby. Check the [version compatibility matrix](https://github.com/NREL/OpenStudio/wiki/OpenStudio-Version-Compatibility-Matrix) to see which version of Ruby is compatible.
 
-1. Download the [Ruby 2.0.0](http://rubyinstaller.org/downloads/) installer.  If you have the Windows (x64) version of OpenStudio (Help>About>Compiler shows Visual Studio 12 2013 Win64), you'll need the x64 Ruby installer.  If you have the Windows (x32) version of OpenStudio, you'll need the non-x64 Ruby installer.
-2. Add `C:\Ruby200\bin` (or wherever you installed Ruby) to the PATH environment variable. [Detailed instructions](http://geekswithblogs.net/renso/archive/2009/10/21/how-to-set-the-windows-path-in-windows-7.aspx).
-3. Create a text file with the following text inside:
+1. Download the [Ruby](http://rubyinstaller.org/downloads/) installer.  If you have the Windows (x64) version of OpenStudio (Help>About>Compiler shows Visual Studio 12 2013 Win64), you'll need the x64 Ruby installer.  
+2. Add `C:\ruby-2.2.4-x64-mingw32\bin` (or wherever you installed Ruby) to the PATH environment variable. [Detailed instructions](http://geekswithblogs.net/renso/archive/2009/10/21/how-to-set-the-windows-path-in-windows-7.aspx).
+3. Create a text file with the following text inside (modify `C:\openstudio-2.3.0` based on where your version of OpenStudio is installed):
 
     ```
-    require 'C:\Program Files (x86)\OpenStudio 1.7.0\Ruby\openstudio.rb'
+    require 'C:\openstudio-2.3.0\Ruby\openstudio.rb'
     ```
 
-4. Save the file as `openstudio.rb` here: `C:\Ruby200\lib\ruby\site_ruby\openstudio.rb` (next to the `2.0.0` folder).
-5. Test your installation by opening a command prompt and typing: `irb` ENTER.  Then, type `require 'openstudio` ENTER.  If you see some QSslSocket messages and => true, it's working.
+4. Save the file as `openstudio.rb` to `C:\ruby-2.2.4-x64-mingw32\lib\ruby\site_ruby\openstudio.rb` (or wherever you installed Ruby).
+5. Test your installation by opening a command prompt and typing: `irb` ENTER.  Then, type `RUBY_VERSION` ENTER.  Ensure that the Ruby correct version is shown.  Then, type `require 'openstudio'` ENTER.  If you see `=> true`, it's working.
 
 ## Workflow Overview
 After installing OpenStudio you will have the SketchUp Plug-in, OpenStudio Application, Parametric Analysis Tool (PAT) and ResultsViewer. The typical OpenStudio workflow is shown in the diagram below.
