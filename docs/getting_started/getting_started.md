@@ -18,12 +18,22 @@ __Download and install OpenStudio__
     - EnergyPlus    
     - SketchUp Plug-in
     - DView
-    - Parametric Analysis Tool(PAT)
+    - Parametric Analysis Tool (PAT)
     - Ruby API
     - C# API 
     - Command Line Interface
     - Radiance    
 
+__Optional - Command Line Installation__
+
+The OpenStudio installer is built using the [Qt Installer Framework](https://doc.qt.io/qtinstallerframework/index.html).  Installation of OpenStudio packages can be automated by passing the path to a customizable script to the installer using the `--script` argument:
+
+    ```
+    OpenStudio-2.3.0.cf58ee1e38-Windows.exe --script install.qs
+    ```
+
+An [example installation script](https://raw.githubusercontent.com/NREL/OpenStudio/develop/install.qs) can be modified to support custom installation.
+    
 __Optional - Setup a Building Component Library (BCL) Account__
 BCL content can now be accessed from within the OpenStudio SketchUp Plug-in and from the standalone OpenStudio application. To take advantage of this integration, you will need to follow the steps outlined here to request a BCL key.
 
