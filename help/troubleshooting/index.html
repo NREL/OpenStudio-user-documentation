@@ -150,7 +150,7 @@
               </li>
             
               <li>
-                <a href="../../reference/geometry_editor">OpenStudio Geometry Editor</a>
+                <a href="../../reference/geometry_editor">FloorspaceJS</a>
               </li>
             
               <li>
@@ -242,31 +242,19 @@
           <div class="bs-docs-sidebar hidden-print affix well" role="complementary">
   <ul class="nav">
   
-    <li class="main active"><a href="#openstudio-plug-in-does-not-load-when-sketchup-starts">OpenStudio Plug-in does not load when SketchUp starts</a>
+    <li class="main active"><a href="#openstudio-sketchup-plug-in-does-not-load">OpenStudio SketchUp Plug-in Does Not Load</a>
       <ul class="nav">
         
       </ul>
     </li>
   
-    <li class="main"><a href="#model-will-not-open-in-sketchup-plug-in">Model Will Not Open in SketchUp Plug-in</a>
+    <li class="main"><a href="#model-will-not-open-in-openstudio-sketchup-plug-in">Model Will Not Open in OpenStudio SketchUp Plug-in</a>
       <ul class="nav">
         
       </ul>
     </li>
   
-    <li class="main"><a href="#model-will-not-run">Model Will Not Run</a>
-      <ul class="nav">
-        
-      </ul>
-    </li>
-  
-    <li class="main"><a href="#orphan-objects-and-unused-resources">Orphan Objects and Unused Resources</a>
-      <ul class="nav">
-        
-      </ul>
-    </li>
-  
-    <li class="main"><a href="#sketchup-crashes-on-launch">SketchUp crashes on launch</a>
+    <li class="main"><a href="#sketchup-crashes-on-launch">SketchUp Crashes on Launch</a>
       <ul class="nav">
         
       </ul>
@@ -279,6 +267,12 @@
     </li>
   
     <li class="main"><a href="#graphics-problems-in-openstudio-application">Graphics Problems in OpenStudio Application</a>
+      <ul class="nav">
+        
+      </ul>
+    </li>
+  
+    <li class="main"><a href="#orphan-objects-and-unused-resources">Orphan Objects and Unused Resources</a>
       <ul class="nav">
         
       </ul>
@@ -319,46 +313,50 @@
 
 <p>This page is a collection of troubleshooting advice that helps users deal with common issues.</p>
 <hr />
-<h2 id="openstudio-plug-in-does-not-load-when-sketchup-starts">OpenStudio Plug-in does not load when SketchUp starts</h2>
-<p>Ensure that the architecture of your installation of SketchUp (32 or 64 bit) matches the architecture of OpenStudio.  Try opening the Window-&gt;Preferences-&gt;Extensions window in SketchUp, enable the OpenStudio plug-in if it is listed.  If OpenStudio is not listed you may have to manually install it (this is the case if you are using a different version of SketchUp than the OpenStudio installer targets).  To install OpenStudio manually please copy the files in:</p>
-<pre><code>C:\Program Files (x86)\OpenStudio %VERSION%\Ruby\Plugins
-</code></pre>
-<p>or </p>
-<pre><code>C:\Program Files\OpenStudio %VERSION%\Ruby\Plugins
+<h2 id="openstudio-sketchup-plug-in-does-not-load">OpenStudio SketchUp Plug-in Does Not Load</h2>
+<p>Ensure that your version of SketchUp is compatible with your version of OpenStudio as listed in <a href="https://github.com/NREL/OpenStudio/wiki/OpenStudio-Version-Compatibility-Matrix">this matrix</a>.  Try opening the "Window-&gt;Preferences-&gt;Extensions" window in SketchUp, enable the OpenStudio SketchUp Plug-in if it is listed.  If the OpenStudio SketchUp Plug-in is not listed you may have to manually install it (this is the case if you are using a different version of SketchUp than the OpenStudio installer targets).  </p>
+<p>To install the OpenStudio SketchUp Plug-in manually on Windows please copy the files in:</p>
+<pre><code>C:\openstudio-%VERSION%\SketchUpPlugin\plugin\
 </code></pre>
 <p>to:</p>
-<pre><code>C:\Users\%YOURUSERNAME%\AppData\Roaming\SketchUp\SketchUp %VERSION%\SketchUp\Plugins
+<pre><code>C:\Users\%YOURUSERNAME%\AppData\Roaming\SketchUp\SketchUp %VERSION%\SketchUp\Plugins\
 </code></pre>
 <p>where %YOURUSERNAME% is replaced by your user name and %VERSION% is the version of the software you are using.</p>
+<p>To install the OpenStudio SketchUp Plug-in manually on macOS please copy the files in:</p>
+<pre><code>/Applications/OpenStudio-%VERSION%/SketchUpPlugin/plugin/
+</code></pre>
+<p>to:</p>
+<pre><code>~/Library/Application Support/SketchUp %VERSION%/SketchUp/Plugins/
+</code></pre>
+<p>where %VERSION% is the version of the software you are using.</p>
 <hr />
-<h2 id="model-will-not-open-in-sketchup-plug-in">Model Will Not Open in SketchUp Plug-in</h2>
-<p>If you have an OSM file that will not open, or opens incorrectly in the SketchUp Plug-in then running the user script linked in this thread can help identify the problem objects and create a new diagnostic copy of your file. This script creates a report identifying problem objects, and saves a new copy of your file leaving the original untouched. This script is installed with 0.6.2 or later, but you can manually download this file and use it with 0.6.0 or later. Some reasons you may need to run this script include:</p>
-<ul>
-<li>Trying to open an OSM file created from an outdated beta version of OpenStudio</li>
-<li>Through some form of editing, conflicting objects exist in the model that prevent it from opening correctly</li>
-<li>Hand-editing of the file results in invalid objects or objects missing necessary data</li>
-<li>Other forms of file corruption</li>
-</ul>
-<p>Whatever the cause, this should help identify and fix the problems. You may have to do some repair or cleanup work on the resulting file, as some objects may be deleted.</p>
-<p>To install user scripts, drop them in the following subdirectory of your OpenStudio installation and re-start SketchUp. Currently you can't nest them deeper than the user_scripts folder. They must be loose files in that directory for the OpenStudio SketchUp Plug-in to add them to the me</p>
-<p>To install user scripts, drop them in the following subdirectory of your OpenStudio installation and re-start SketchUp. You cannot currently nest them deeper than the user_scripts folder. They must be loose files in that directory for the OpenStudio SketchUp Plug-in to add them to the menu.</p>
-<p><strong>OpenStudio 1.5.0\Ruby\openstudio\sketchup_plugin\user_scripts</strong></p>
-<p>To run the script, go to the "User Scripts" menu under the SketchUp Plugins menu, "Plugins / OpenStudio" menu and choose "OSM Diagnostic Script".</p>
-<p>Right click on the link below and save to your computer vs. opening in web browser:
-<a href="../../img/scripts/OSM_Diagnostic_Script.rb">OSM_Diagonstic_Script.rb</a></p>
+<h2 id="model-will-not-open-in-openstudio-sketchup-plug-in">Model Will Not Open in OpenStudio SketchUp Plug-in</h2>
+<p>If you have an OSM file that will not open, or opens incorrectly in the SketchUp Plug-in then running the OSM diagnostic user script can help identify the problem objects and create a new diagnostic copy of your file. This script creates a report identifying problem objects, and saves a new copy of your file leaving the original untouched. To run the script, go to the "Extensions-&gt;OpenStudio User Scripts-&gt;Reports" menu and choose "OSM Diagnostic Scrip</p>
 <hr />
-<h2 id="model-will-not-run">Model Will Not Run</h2>
-<p>Some of the reasons simulation errors occur are:</p>
+<h2 id="sketchup-crashes-on-launch">SketchUp Crashes on Launch</h2>
+<p>The first thing to do is to remove SketchUp and install it again. To do this, run the SketchUp uninstaller. Also check that all OpenStudio plug-ins are removed from the SketchUp plugin directories. On Windows these directories are:</p>
 <ul>
-<li>EnergyPlus is not installed. You must have EnergyPlus installed to run a simulation.</li>
-<li>The version of EnergyPlus you are using is not compatible with the version of OpenStudio you are using. Check under the menu Preferences/Scan for tools to see what version of EnergyPlus you are using.</li>
-<li>If the weather file has not been set, the simulation will fail.</li>
-<li>Design days or sizing are required if you are simulating a full HVAC system instead of using idea air loads.</li>
+<li>C:\Users\%YOURUSERNAME%\AppData\Roaming\SketchUp\SketchUp %VERSION%\SketchUp\Plugins</li>
+<li>C:\ProgramData\SketchUp\SketchUp %VERSION%\SketchUp\Plugins</li>
+<li>C:\Program Files\SketchUp\SketchUp %VERSION%\SketchUp\Plugins</li>
 </ul>
-<p>If you are in the OpenStudio application, the image below shows you how to get access to the "eplusout.err" file that lists the EnergyPlus errors. You can view it with a text editor.</p>
-<p><img alt="OpenStudio Errors" src="../../img/help/os_errors.png" /></p>
-<p>If you are in PAT, you should be able to expand the view in the run tab to see errors and warnings at any stage. If errors do not show up in the run tab, there may be an issue with the weather or DDY files. See the image below.</p>
-<p><img alt="PAT Errors" src="../../img/help/pat_errors.png" /></p>
+<p>On Mac these are:</p>
+<ul>
+<li>~/Library/Application Support/SketchUp %VERSION%/SketchUp/Plugins/</li>
+<li>/Library/Application Support/SketchUp %VERSION%/SketchUp/Plugins</li>
+</ul>
+<p>If SketchUp crashes without the OpenStudio SketchUp Plug-in installed then something else is wrong, contact the SketchUp support team for help. Check that your system meets the <a href="https://help.sketchup.com/en/article/36208">SketchUp Hardware and Software Requirements</a>. If SketchUp launches, try installing OpenStudio again. If SketchUp crashes on launch again, remove the OpenStudio files from the SketchUp plugin directories again. Open SketchUp, go to "Window-&gt;Preferences-&gt;Extensions" and disable the OpenStudio SketchUp Plug-in. Re-install OpenStudio and relaunch SketchUp. Open the Ruby console by going to "Window-&gt;Ruby Console" and then go back to "Window-&gt;Preferences-&gt;Extensions" and enable the OpenStudio SketchUp Plug-in, you may see useful output in the Ruby console. If you have other extensions installed, try disabling them and enabling the OpenStudio SketchUp Plug-in.</p>
+<p>If none of the steps above work and you are on Windows, it is likely that there is a dynamic library being loaded from another application that is interfering with OpenStudio. If you just want to fix your problem, try copying the files libeay32.dll and ssleay32.dll from <code>C:\openstudio-%VERSION%\bin</code> to <code>C:\Program Files \SketchUp\SketchUp %VERSION%</code>, this will fix the problem 80% of the time.</p>
+<p>If you want to investigate in more depth, download <a href="http://www.dependencywalker.com/">Dependency Walker</a>. Extract the files and launch depends.exe. Navigate to "File-&gt;Open" and then browse to choose the SketchUp.exe under <code>C:\Program Files \SketchUp\SketchUp %VERSION%</code>. This will examine all of the libraries loaded by SketchUp but not the libraries loaded by OpenStudio. Navigate to "Profile-&gt;Start Profiling" then press Ok in the dialog that pops up. This will launch SketchUp and attempt to load OpenStudio. Scroll down in the list of loaded libraries and look for the OpenStudio dlls. Expand the paths under the OpenStudio dlls and look for libraries that are being loaded from other locations. Often, some other program will install a different version of one of the libraries (usually libeay32.dll or ssleay32.dll) that OpenStudio uses. This other library will be in the path ahead of OpenStudio and will be loaded instead, this results in a hard crash of SketchUp. Correcting your path or copying the dlls from the OpenStudio bin directory into the SketchUp install directory will cause the correct dlls to be loaded when SketchUp starts.</p>
+<hr />
+<h2 id="openstudio-application-and-sketchup-plug-in-crash">OpenStudio Application and SketchUp Plug-in Crash</h2>
+<p>Several users have reported an OpenStudio Application and OpenStudio SketchUp Plug-in crash occurring when saving or opening a file is related to the Dell Backup and Recovery software.  It appears that this program is <a href="http://en.community.dell.com/support-forums/software-os/f/3526/t/19634253">known to cause issues</a> with Qt based applications (such as OpenStudio).  </p>
+<hr />
+<h2 id="graphics-problems-in-openstudio-application">Graphics Problems in OpenStudio Application</h2>
+<p>Several users have reported graphics issues with the Geometry and Results tabs within the OpenStudio Application.  In many cases, adjusting power saving settings of the graphics cards has resolved these issues.  For computers with NVIDA graphics cards, you can access these settings via the NVIDIA Control Panel under “3D Settings-&gt;Manage 3D Settings”.  In this panel, make sure that “Preferred graphics processor” is set to “High-performance NVIDIA processor”.</p>
+<p><img alt="Adjust NVIDIA Settings" src="../../img/help/nvidia_settings.png" /></p>
+<p>Additionally, you may be able to find more information by running the OpenStudio Application from a command prompt and capturing the standard output in a file:</p>
+<p><code>C:\openstudio-%VERSION%\bin\OpenStudioApp.exe &gt; out.txt 2&gt;&amp;1</code></p>
 <hr />
 <h2 id="orphan-objects-and-unused-resources">Orphan Objects and Unused Resources</h2>
 <p>At times some objects in OpenStudio that should have a parent, such as surfaces and internal load instances, may become detached from their parent. Possibly the parent is deleted but for some reason the child is not. These often are not visible in the GUI, and while it is possible to fix remove these orphans with a text editor it isn't ideal. To provide a better workflow for this we created a measure <a href="https://bcl.nrel.gov/node/82267">Remove Orphan Objects and Unused Resources</a> that can be run either using Apply Measure Now or at run time. If you see an EnergyPlus error about an object you don't think you have in your model, you may try running this to clean up the model. Additionally this measure also provides checkboxes that allow you to remove unused resources. While unused resources can be cleaned up in the GUI, the measure provides a robust and quick way to do this. Over time we will increase the functionality of the orphan cleanup as well as purging of unused resources. </p>
@@ -366,31 +364,6 @@
 <p><img alt="Remove Orphan Objects and Unused Resources - Arguments" src="../../img/help/orphan_purge_argview.png" /></p>
 <p>Below is a screenshot of the log after running the measure. The log will list each section being checked, so as the functionality is expanded you will know what object types are being checked for for orphan.</p>
 <p><img alt="Remove Orphan Objects and Unused Resources - Output" src="../../img/help/orphan_purge_outputview.png" /></p>
-<hr />
-<h2 id="sketchup-crashes-on-launch">SketchUp crashes on launch</h2>
-<p>The first thing to do is to remove SketchUp and install it again. To do this, run the SketchUp uninstaller. Also check that all OpenStudio plugins are removed from the SketchUp plugin directories. On Windows these directories are:</p>
-<ul>
-<li>C:\Users\&lt;<strong>your username</strong>&gt;\AppData\Roaming\SketchUp\SketchUp 2015\SketchUp\Plugins</li>
-<li>C:\ProgramData\SketchUp\SketchUp 2015\SketchUp\Plugins</li>
-<li>C:\Program Files (x86)\SketchUp\SketchUp 2015\SketchUp\Plugins</li>
-</ul>
-<p>On Mac these are:</p>
-<ul>
-<li>/Users/&lt;<strong>your username</strong>&gt;/Library/Application Support/SketchUp 2015/SketchUp/Plugins</li>
-<li>/Library/Application Support/SketchUp 2015/SketchUp/Plugins</li>
-</ul>
-<p>If SketchUp crashes without the OpenStudio plugins installed then something else is wrong, contact the SketchUp support team for help. Check that your system meets the <a href="https://help.sketchup.com/en/article/36208">SketchUp Hardware and Software Requirements</a>. If SketchUp launches, try installing OpenStudio again. If SketchUp crashes on launch again, remove the OpenStudio files from the SketchUp plugin directories again. Open SketchUp, go to Window-&gt;Preferences-&gt;Extensions and disable the OpenStudio plugin. Re-install OpenStudio and relaunch SketchUp. Open the Ruby console by going to Window-&gt;Ruby Console and then go back to Window-&gt;Preferences-&gt;Extensions and enable the OpenStudio plugin, you may see useful output in the Ruby console. If you have other extensions installed, try disabling them and enabling the OpenStudio plugin.</p>
-<p>If none of the steps above work and you are on Windows, it is likely that there is a dynamic library being loaded from another application that is interfering with OpenStudio. If you just want to fix your problem, try copying the files libeay32.dll and ssleay32.dll from C:\Program Files (x86)\OpenStudio X.X.X\bin to C:\Program Files (x86)\SketchUp\SketchUp 2015, this will fix the problem 80% of the time.</p>
-<p>If you want to investigate in more depth, download <a href="http://www.dependencywalker.com/">Dependency Walker</a>. Extract the files and launch depends.exe. Navigate to File-&gt;Open and then browse to choose the SketchUp.exe under C:\Program Files (x86)\SketchUp\SketchUp 2015. This will examine all of the libraries loaded by SketchUp but not the libraries loaded by OpenStudio. Navigate to Profile-&gt;Start Profiling then press Ok in the dialog that pops up. This will launch SketchUp and attempt to load OpenStudio. Scroll down in the list of loaded libraries and look for the OpenStudio dlls. Expand the paths under the OpenStudio dlls and look for libraries that are being loaded from other locations. Often, some other program will install a different version of one of the libraries (usually libeay32.dll or ssleay32.dll) that OpenStudio uses. This other library will be in the path ahead of OpenStudio and will be loaded instead, this results in a hard crash of SketchUp. Correcting your path or copying the dlls from the OpenStudio bin directory into the SketchUp install directory will cause the correct dlls to be loaded when SketchUp starts.</p>
-<hr />
-<h2 id="openstudio-application-and-sketchup-plug-in-crash">OpenStudio Application and SketchUp Plug-in Crash</h2>
-<p>Several users have reported an OpenStudio Application and SketchUp Plug-in crash occuring when saving or opening a file is related to the Dell Backup and Recovery software.  It appears that this program is <a href="http://en.community.dell.com/support-forums/software-os/f/3526/t/19634253">known to cause issues</a> with Qt based applications (such as OpenStudio).  </p>
-<hr />
-<h2 id="graphics-problems-in-openstudio-application">Graphics Problems in OpenStudio Application</h2>
-<p>Several users have reported graphics issues with the Geometry and Results tabs within the OpenStudio Application.  In many cases, adjusting power saving settings of the graphics cards has resolved these issues.  For computers with NVIDA graphics cards, you can access these settings via the NVIDIA Control Panel under “3D Settings”-&gt;”Manage 3D Settings”.  In this panel, make sure that “Preferred graphics processor” is set to “High-performance NVIDIA processor”.</p>
-<p><img alt="Adjust NVIDIA Settings" src="../../img/help/nvidia_settings.png" /></p>
-<p>Additionally, you may be able to find more information by running the OpenStudio Application from a command prompt and capturing the standard output in a file:</p>
-<p><code>C:\openstudio-version\bin\OpenStudioApp.exe &gt; out.txt 2&gt;&amp;1</code></p>
 <hr />
 <h2 id="unable-to-communicate-with-amazon-cloud-from-command-prompt-using-the-bundle-command">Unable to Communicate with Amazon Cloud from Command Prompt Using the "bundle" Command</h2>
 <p>This issue is typically a communication error between you and RubyGems.org. A few things to check:</p>
@@ -405,12 +378,8 @@
 <li>Can we set the proxy to be machine wide, instead of just on the web browsers?</li>
 </ol>
 <hr />
-<!--## OpenStudio Crashes-->
-
-<!--#Results Look Wrong## Under Heated and Cooled Hours-->
-
 <h2 id="energy-modeling-forum">Energy Modeling Forum</h2>
-<p>Post your questions to the forum below for energy modeling information.</p>
+<p>Post your questions to the forum below for general and OpenStudio specific energy modeling information.</p>
 <p><a class="btn btn-primary" role="button" href="https://unmethours.com/questions/scope:all/sort:activity-desc/tags:openstudio/">Unmet Hours</a></p>
 <hr />
 <h2 id="submit-a-bug">Submit a Bug</h2>

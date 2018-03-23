@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>OpenStudio Geometry Editor - OpenStudio<sup>&reg;</sup> User Docs</title>
+    <title>FloorspaceJS - OpenStudio<sup>&reg;</sup> User Docs</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -150,7 +150,7 @@
               </li>
             
               <li class="active">
-                <a href=".">OpenStudio Geometry Editor</a>
+                <a href=".">FloorspaceJS</a>
               </li>
             
               <li>
@@ -242,32 +242,14 @@
           <div class="bs-docs-sidebar hidden-print affix well" role="complementary">
   <ul class="nav">
   
-    <li class="main active"><a href="#getting-started">Getting Started</a>
+    <li class="main active"><a href="#floorspacejs">FloorspaceJS</a>
       <ul class="nav">
         
-      </ul>
-    </li>
-  
-    <li class="main"><a href="#drawing-spaces">Drawing Spaces</a>
-      <ul class="nav">
+        <li><a href="#getting-started">Getting Started</a></li>
         
-      </ul>
-    </li>
-  
-    <li class="main"><a href="#image-import">Image Import</a>
-      <ul class="nav">
+        <li><a href="#using-floorspacejs">Using FloorspaceJS</a></li>
         
-      </ul>
-    </li>
-  
-    <li class="main"><a href="#bottom-panel">Bottom Panel</a>
-      <ul class="nav">
-        
-      </ul>
-    </li>
-  
-    <li class="main"><a href="#preview-and-merge">Preview and Merge</a>
-      <ul class="nav">
+        <li><a href="#preview-and-merge">Preview and Merge</a></li>
         
       </ul>
     </li>
@@ -279,46 +261,16 @@
 </div>
         </div>
         <div class="col-md-9" role="main">
-          <h1>OpenStudio Geometry Editor</h1>
-
-<p>The <a href="https://github.com/NREL/openstudio-geometry-editor">OpenStudio Geometry Editor</a> is a new, open source software module that developers can leverage to produce building energy modeling UIs that include geometry creation.  The OpenStudio Geometry Editor is meant to cover simple building geometry use cases only.  More complex building geometry is best developed in a full featured CAD tool and exported to gbXML for building energy modeling.  The OpenStudio Geometry Editor is implemented in JavaScript with minimal dependencies, allowing it to be integrated into a wide range of applications.  The OpenStudio Geometry Editor reads and writes a custom <a href="https://raw.githubusercontent.com/NREL/openstudio-geometry-editor/develop/schema/geometry_schema.json">floorplan.json</a> JSON file format.  New methods have been added to the OpenStudio SDK, which can translate this file format to OSM.  Additionally, new methods have been added to the SDK, which allows two OpenStudio Models to be merged.  These new methods are demonstrated by integrating the Geometry Editor directly within the OpenStudio Application.  The OpenStudio Geometry Editor and integration within the OpenStudio Application are experimental, and are not recommended for production workflows.  However, we invite users to try these software components out and provide feedback to help us make them better for use by third party developers.</p>
+          <h1 id="floorspacejs"><img alt="" src="../../img/favicon-32x32.png" /> <a href="https://github.com/NREL/floorspace.js">FloorspaceJS</a></h1>
+<p>The OpenStudio Application has integrated the FloorspaceJS web-based geometry editor for simplified entry of 2D floor plans.  More information about FloorspaceJS, including a tutorial on its use, can be found at the <a href="https://github.com/NREL/floorspace.js">FloorspaceJS project site</a>.</p>
+<p><a href="https://github.com/NREL/floorspace.js">FloorspaceJS</a> is an open source software module that developers can leverage for geometry creation.  FloorspaceJS is meant to cover simple building geometry use cases only.  More complex building geometry is best developed in a full featured CAD tool and exported to gbXML for building energy modeling.  FloorspaceJS reads and writes a custom <a href="https://raw.githubusercontent.com/NREL/floorspace.js/develop/schema/geometry_schema.json">floorplan.json</a> JSON file format.  New methods have been added to the OpenStudio SDK, which can translate this file format to ThreeJS JSON as well as to OSM.  Additionally, new methods have been added to the SDK, which allows two OpenStudio Models to be merged.  These functionalities are demonstrated by integrating FloorspaceJS directly within the OpenStudio Application.  </p>
 <hr />
 <h2 id="getting-started">Getting Started</h2>
-<p>To try the OpenStudio Geometry Editor within the OpenStudio Application, first navigate to the "Geometry" vertical tab and then to the "Editor" sub tab.  At this time, OpenStudio Geometry Editor cannot be used on previously created OpenStudio Models with existing geometry (either developed in the OpenStudio SketchUp plug-in, imported through gbXML, or procedurally generated from scripts like the DOE Prototype Measure) as these models do not include the requisite floorplan.json file used by the editor.  For models with no existing geometry a new floorplan may be created by pressing the "New" button next to the "Floorplan" dialog box.  Existing OpenStudio Models that include a floorplan.json model may be edited.</p>
+<p>To try FloorspaceJS within the OpenStudio Application, first navigate to the "Geometry" vertical tab and then to the "Editor" sub tab.  At this time, FloorspaceJS cannot be used on OpenStudio Models with existing geometry (either developed in the OpenStudio SketchUp plug-in, imported through gbXML, or procedurally generated from scripts like the DOE Prototype Measure) as these models do not include the requisite floorplan.json file used by the editor.  For models with no existing geometry a new floorplan may be created by pressing the "New" button next to the "Floorplan" dialog box.  Existing OpenStudio Models that include a floorplan.json model may be edited.</p>
 <p><a href="../../img/geometry_editor/start_screen.png"><img alt="Start Screen" src="../../img/geometry_editor/start_screen.png" title="Start Screen" /></a></p>
-<p>After pressing the "New" button, you will be prompted to open an existing floorplan file, create a new floorplan file, or create a new floorplan file with a map background.  The last option is useful for geolocating and tracing existing building geometry from satellite imagery.  In this example we will choose to use the map background for reference.  </p>
-<p><a href="../../img/geometry_editor/initial_dialog.png"><img alt="Initial Dialog" src="../../img/geometry_editor/initial_dialog.png" title="Initial Dialog" /></a></p>
-<p>When using a map background, you will be taken to the location specified in your OpenStudio Model as a starting point.  Navigate on the map to the actual place you want to locate your building using the "Search for a location" box and map navigation controls. Once you have selected where you want to place your building, use the cross hair tool to select your building's origin.  You may wish to rotate your view (press alt + shift) to align your building with the x, y axes in the editor.  Press the "Done" button to place your building and set the rotation.  Note that building placement is currently a one time operation that cannot be changed once the building is located.</p>
-<p><a href="../../img/geometry_editor/rotate1.png"><img alt="Rotate 1" src="../../img/geometry_editor/rotate1.png" title="Rotate 1" /></a></p>
-<p><a href="../../img/geometry_editor/rotate2.png"><img alt="Rotate 2" src="../../img/geometry_editor/rotate2.png" title="Rotate 2" /></a></p>
 <hr />
-<h2 id="drawing-spaces">Drawing Spaces</h2>
-<p>The navigator in the upper left corner of the editor is used to select the current story and space for the drawing area.  The geometry for the current story is shown, the geometry for the previous story can be toggled on and off using the "Story Below" check box.  A grid can also be toggled on and off for reference when drawing.  The grid spacing may be customized as well.  Note that the units selected for drawing are set based on the OpenStudio Application's units preferences at the time the floorplan is created.  Currently, the floorplan units selection may not be changed after the initial setting.  At this stage of the OpenStudio Geometry Editor development, we are testing two drawing modes.  "Strict Grid" only allows drawing operations on the grid, "Edges Too" is more general and allows the user to snap drawing tools to the nearest existing edges when drawing.  We invite users to try both modes and provide feedback.  To add geometry to the current space, select either the "Rectangle" or "Polygon" tool.</p>
-<p><a href="../../img/geometry_editor/space1.png"><img alt="Space 1" src="../../img/geometry_editor/space1.png" title="Space 1" /></a></p>
-<p>Once you have drawn geometry for a space, you can extend it by drawing an additional rectangle or polygon, which overlaps the existing space geometry.  This allows the creation of more complex space boundaries.  Use the "Eraser" tool to completely erase or to create cutouts within a space. Note that you cannot add new geometry for a space that does not intersect existing space geometry.  Additionally, you cannot use the eraser tool to divide a single space geometry into two or more separate pieces. </p>
-<p><a href="../../img/geometry_editor/space1-2.png"><img alt="Space 1-2" src="../../img/geometry_editor/space1-2.png" title="Space 1-2" /></a></p>
-<p>To create geometry for additional spaces, first create the new space by using the "+Space" button in the navigator.  Then, with the new space selected, draw the new space geometry.  If new space geometry overlaps existing geometry in another space, then the new geometry will be created and existing geometry in the other space will be reduced.  Geometry for multiple spaces cannot overlap.  </p>
-<p><a href="../../img/geometry_editor/space2.png"><img alt="Space 2" src="../../img/geometry_editor/space2.png" title="Space 2" /></a></p>
-<p>Continue in this way to create all of the spaces for the current story.</p>
-<p><a href="../../img/geometry_editor/all_spaces.png"><img alt="All Spaces" src="../../img/geometry_editor/all_spaces.png" title="All Spaces" /></a></p>
-<p>Press the "+Story" button to create a new story.  This will automatically create a new space for the second story that you can begin to define geometry for.</p>
-<p><a href="../../img/geometry_editor/story2.png"><img alt="Story 2" src="../../img/geometry_editor/story2.png" title="Story 2" /></a></p>
-<hr />
-<h2 id="image-import">Image Import</h2>
-<p>Existing floorplan images can be imported in to the OpenStudio Geometry Editor for reference when drawing.  At this time, only JPEG and PNG formats are supported; PDF, DXF, and other common formats may be supported in the future.  Floorplan images are associated with a particular story in the editor.  Navigate to the story of interest (usually the first floor) and change the object type above the navigator to "Image".  Press the "+Image" button and navigate to your image. </p>
-<p><a href="../../img/geometry_editor/image_import.png"><img alt="Image Import" src="../../img/geometry_editor/image_import.png" title="Image Import" /></a></p>
-<p>Once the image is imported, activate the "Drag" tool.  This will allow you to move, resize, and rotate the image.</p>
-<p><a href="../../img/geometry_editor/image_drag.png"><img alt="Image Drag" src="../../img/geometry_editor/image_drag.png" title="Image Drag" /></a></p>
-<p>Once you have correctly sized and positioned you image, change the object type above the navigator to "Space" and generate space geometry on top of the image.</p>
-<hr />
-<h2 id="bottom-panel">Bottom Panel</h2>
-<p>The bottom panel provides access to specify and edit data associated with the floorplan such as space types, thermal zones, and constructions.  Objects of these types are imported from your OpenStudio Model each time you switch to the "Editor" sub tab.  You can select the type of object to display in this panel.  All objects of that type are displayed.  Press the "New" button to create new objects of that type.  For example, you can use this functionality to create new thermal zones.</p>
-<p><a href="../../img/geometry_editor/thermal_zone-1.png"><img alt="Thermal Zone 1" src="../../img/geometry_editor/thermal_zone-1.png" title="Thermal Zone 1" /></a></p>
-<p><a href="../../img/geometry_editor/thermal_zone-2.png"><img alt="Thermal Zone 2" src="../../img/geometry_editor/thermal_zone-2.png" title="Thermal Zone 2" /></a></p>
-<p>You can assign thermal zones and other properties to spaces by selecting the "Space" object type and making selections in the thermal zone field for each space.</p>
-<p><a href="../../img/geometry_editor/all_spaces.png"><img alt="All Spaces" src="../../img/geometry_editor/all_spaces.png" title="All Spaces" /></a></p>
-<p>You can also set properties for stories such as "Floor to Ceiling Height".  Setting "Below Floor Plenum Height" or "Above Ceiling Plenum Height" to non-zero values will result in plenum geometry creation.</p>
-<p><a href="../../img/geometry_editor/story2-1.png"><img alt="Story 2-1" src="../../img/geometry_editor/story2-1.png" title="Story 2-1" /></a></p>
+<h2 id="using-floorspacejs">Using FloorspaceJS</h2>
+<p>A detailed tutorial on FloorspaceJS usage is available at the <a href="https://github.com/NREL/floorspace.js">FloorspaceJS project site</a>.</p>
 <hr />
 <h2 id="preview-and-merge">Preview and Merge</h2>
 <p>At any time, you can preview your floorplan in 3D by pressing the "Preview" button.  </p>
@@ -329,7 +281,7 @@
 <p>Once your floorplan has been merged with the current OSM you will see new objects associated with your floorplan throughout the rest of the OpenStudio Application.</p>
 <p><a href="../../img/geometry_editor/post-merge.png"><img alt="Post Merge" src="../../img/geometry_editor/post-merge.png" title="Post Merge" /></a></p>
 <p><a href="../../img/geometry_editor/space-tab.png"><img alt="Space Tab" src="../../img/geometry_editor/space-tab.png" title="Space Tab" /></a></p>
-<p>The intention of integrating the OpenStudio Geometry Editor with the OpenStudio Application is to demonstrate how geometry data may be moved seamlessly into the OpenStudio object model to support a variety of sophisticated workflows.  Thermal zones, space types, default construction sets, and building units are synchronized between the two interfaces intuitively and with little effort on the part of the user.  As with any new software feature, some rough edges are expected.  Please let us know of issues you find by sending email to <a href="mailto:OpenStudio@nrel.gov">OpenStudio@nrel.gov</a>.  If the OpenStudio Geometry Editor becomes unresponsive, please press the "Debug" button, navigate to the console, and cut/paste diagnostic messages that may help us identify and fix any issues. </p>
+<p>The intention of integrating FloorspaceJS with the OpenStudio Application is to demonstrate how geometry data may be merged seamlessly into the OpenStudio Model to support a variety of sophisticated workflows.  Thermal zones, space types, default construction sets, and building units are synchronized between the two interfaces intuitively and with little effort on the part of the user.  As with any new software feature, some rough edges are expected.  Please let us know of issues you find by sending email to <a href="mailto:OpenStudio@nrel.gov">OpenStudio@nrel.gov</a>.  If FloorspaceJS becomes unresponsive, please press the "Debug" button, navigate to the console, and cut/paste diagnostic messages that may help us identify and fix any issues. </p>
 
           <div class="footer">
   <p class="text-center"><a href="https://unmethours.com/questions/scope:all/sort:activity-desc/tags:openstudio/">Get Help</a> | <a href="https://www.openstudio.net/contact">Contact Us</a></p>
