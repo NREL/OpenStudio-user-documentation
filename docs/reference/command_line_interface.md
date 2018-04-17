@@ -258,6 +258,12 @@ bundle install
 bundle update
 ```
 
+To run a Ruby script with the Ruby gems specified in your Gemfile, call `bundle exec` before invoking Ruby in the same directory as your Gemfile:
+
+```
+bundle update ruby my_script.rb
+```
+
 If you update your Gemfile simply do:
 
 ```
