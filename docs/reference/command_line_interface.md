@@ -238,3 +238,34 @@ openstudio --verbose -I \openstudio-standards\openstudio-standards\lib\ -e "requ
 ```
 openstudio --verbose --gem_path C:\ruby-2.2.4-x64-mingw32\lib\ruby\gems\2.2.0\ -e "require 'openstudio-standards'" -e "puts OpenstudioStandards::VERSION"
 ```
+
+# Using the Ruby bindings instead
+
+The OpenStudio CLI is suggested for most users.  However, there are some cases where the OpenStudio Ruby bindings can be used directly.  The OpenStudio CLI has a Ruby interpreter built directly into it.  To use the OpenStudio Ruby bindings you must install a Ruby interpreter manually, the version of Ruby installed must match the version the OpenStudio Ruby bindings were built against as described in the [OpenStudio Version Compatibility Matrix](https://github.com/NREL/OpenStudio/wiki/OpenStudio-Version-Compatibility-Matrix). Compatible Ruby versions can be downloaded (for Windows)[https://rubyinstaller.org/downloads/archives/] and (for Mac)[http://rvm.io/]. Ruby can be installed on Ubunutu using `apt-get install ruby2.2`.
+
+*Ruby gems with native MinGW extensions (the default on Windows) are not compatible with the OpenStudio CLI which is built against the MSWin Ruby runtime.  These gems can only be used with the OpenStudio Ruby bindings using the MinGW Ruby runtime.*
+
+When using the OpenStudio CLI, the OpenStudio Ruby bindings and a number of other Ruby Gems are automatically loaded when the CLI is invoked.  When using the OpenStudio Ruby bindings these dependencies must be manually configured and explicitly loaded with require statements.  The best way to do manage your Ruby gems is with a [Gemfile](http://bundler.io/gemfile.html) and [Bundler](http://bundler.io/).  A Gemfile specifies the versions of Ruby gems to use when running your application.  The Bundler gem is used to install and manage these gems, it can also be used to invoke Ruby with the correct path to all gems.  To install Bundler, first install Ruby, make sure the correct version of Ruby is in your path, then:
+
+```
+gem install bundler
+```
+
+Next, write a Gemfile that specifies all dependencies for your application.  Gemfiles corresponding to the dependencies for OpenStudio releases may be found in the [OpenStudio Version Compatibility Matrix](https://github.com/NREL/OpenStudio/wiki/OpenStudio-Version-Compatibility-Matrix) and used as a starting point.  Note, you may want to relax or remove the Bundler gem dependency if you are using a different version of Bundler.  Place your Gemfile in a directory specific to your application and run:
+
+```
+bundle install
+bundle update
+```
+
+If you update your Gemfile simply do:
+
+```
+bundle update
+```
+
+Now you can run any Ruby script with the OpenStudio Ruby bindings and other Ruby gems of your choice.  Note that the OpenStudio Ruby bindings are not packaged as a Ruby gem so the version of the OpenStudio Ruby bindings is not specified in the Gemfile.  Instead, the version of the OpenStudio Ruby bindings loaded can be controlled using the `-I` Ruby command line option.  You may use the `openstudio_cli.rb` Ruby script with all of the same command line options as the OpenStudio CLI described above.
+
+```
+bundle exec ruby -I c:\openstudio-2.4.0\Ruby\ c:\openstudio-2.4.0\Ruby\openstudio_cli.rb run -w in.osw
+```
