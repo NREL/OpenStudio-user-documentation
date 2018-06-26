@@ -51,13 +51,13 @@ The `-h` switch prints help specific to the `measure` subcommand:
 openstudio.exe measure -h
 ```
 
-The `-t` or `--update_all` switches process all measures in a given directory and updates their measure.xml files if updates to their content are detected.  Information about the measures is printed to standard out in JSON format:
+The `-t` or `--update_all` switches process all measures in a given directory and updates their measure.xml files if updates to their content are detected.  If present, each measure's README.md.erb file will be configured and saved to a README.md file. Information about the measures is printed to standard out in JSON format:
 
 ```
 openstudio.exe measure --update_all /path/to/measures/
 ```
 
-The `-u` or `--update` switches process a single measure in a given directory and updates its measure.xml file if updates to the content are detected. Information about the measure is printed to standard out in JSON format:
+The `-u` or `--update` switches process a single measure in a given directory and updates its measure.xml file if updates to the content are detected. If present, the measure's README.md.erb file will be configured and saved to a README.md file. Information about the measure is printed to standard out in JSON format:
 
 ```
 openstudio.exe measure --update /path/to/measure/
@@ -74,6 +74,13 @@ or for an EnergyPlus Measure:
 ```
 openstudio.exe measure --compute_arguments /path/to/model.idf /path/to/measure/
 ```
+
+The `-r` or `--run_tests` will find all measures the given directory, run their associated tests, and save results to a dashboard under a `test_results` directory in the measure directory:
+
+```
+openstudio.exe measure --run_tests /path/to/measure_dir/
+```
+
 
 # Run Subcommand
  
@@ -229,7 +236,7 @@ These same environment variables apply when requiring `openstudio.rb` from syste
 
 # Loading Custom Gems
 
-Developers commonly need to be able to override the version of a gem embedded in the OpenStudio CLI with one that they are working on.  Additionally, measure writers may wish to use gems that are not distributed with the OpenStudio CLI.  Neither of these use cases are an issue when using system ruby as the OpenStudio ruby bindings (i.e. `openstudio.rb`) do not have embedded gems, bundler can be used to specify gem versions in this case.  When using the CLI there are two ways to override an embedded gem or provide access to another gem.  The first is to use the `--include` switch to add the directory containing the primary gem file (e.g. the directory containing `openstudio-standards.rb`) to the ruby load path. The second is to install the gem to your system location, then use the `--gem_path` switch to include this location (e.g. `C:\ruby-2.2.4-x64-mingw32\lib\ruby\gems\2.2.0\`). Note that the gem path directory should have `specifications`, `gems`, and other subdirectories in it.  Also, note that when using this second approach, a system gem will only override the embedded gem if the version is equal or greater to the embedded gem.  It can be useful to use the `--verbose` and `-e` switches to print some information that can verify the correct version of the gem is being loaded:
+Developers commonly need to be able to override the version of a gem embedded in the OpenStudio CLI with one that they are working on.  Additionally, measure writers may wish to use gems that are not distributed with the OpenStudio CLI.  Neither of these use cases are an issue when using system ruby as the OpenStudio ruby bindings (i.e. `openstudio.rb`) do not have embedded gems, bundler can be used to specify gem versions in this case.  When using the CLI there are two ways to override an embedded gem or provide access to another gem.  The first is to use the `--include` switch to add the directory containing the primary gem file (e.g. the directory containing `openstudio-standards.rb`) to the ruby load path. The second is to install the gem to your system location, then use the `--gem_path` switch to include this location (e.g. `C:\ruby-2.2.4-x64-mingw32\lib\ruby\gems\2.2.0\`). Note that the gem path directory should have `specifications`, `gems`, and other subdirectories in it.  Also, note that when using this second approach, a system gem will only override the embedded gem if the version is equal or greater to the embedded gem and the major version is the same.  It can be useful to use the `--verbose` and `-e` switches to print some information that can verify the correct version of the gem is being loaded:
 
 ```
 openstudio --verbose -I \openstudio-standards\openstudio-standards\lib\ -e "require 'openstudio-standards'" -e "puts OpenstudioStandards::VERSION"
