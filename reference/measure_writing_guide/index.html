@@ -253,7 +253,7 @@
     <li class="main"><a href="#writing-measures">Writing Measures</a>
       <ul class="nav">
         
-        <li><a href="#file-structure">File Structure</a></li>
+        <li><a href="#measure-file-structure">Measure File Structure</a></li>
         
         <li><a href="#measure-program-file-measurerb">Measure Program File - measure.rb</a></li>
         
@@ -328,9 +328,19 @@
 <p>For simple (short) measures, a text editor is all that is necessary. More extensive measures and resource files may benefit from the use of a proper IDE such as <a href="https://www.jetbrains.com/ruby/">RubyMine</a>.</p>
 <p>We cannot stress enough the importance of version control and backup. The OpenStudio dev team relies on Git for version control, and <a href="https://github.com/">GitHub</a> for hosting all code repositories.</p>
 <h1 id="writing-measures">Writing Measures</h1>
-<h2 id="file-structure">File Structure</h2>
-<p>Every OpenStudio measure is comprised of a program and metadata, and optionally includes additional resources (e.g. libraries, helper functions) and tests. These are all contained in a single directory, generally named after the measure itself. A typical measure directory structure is as follows:</p>
+<h2 id="measure-file-structure">Measure File Structure</h2>
+<p>Every OpenStudio measure is comprised of a main program (measure.rb) and metadata (measure.xml).  Each OpenStudio Measure can optionally include additional resources (e.g. libraries, helper functions), documentation, and tests. These are all contained in a single directory, generally named after the measure itself. A typical measure directory structure is as follows:</p>
 <p><img alt="guide image" src="../../img/measure-writing-guide/1.png" /></p>
+<ul>
+<li>measure.rb (required) - Main Ruby script that defines the measure, more details below.</li>
+<li>measure.xml (required) - XML file, schema available <a href="https://github.com/NREL/bcl-gem/tree/develop/schemas/v3">here</a>, that describes the measure for other applications.  OpenStudio automatically updates the XML file when measure changes are detected. Each measure.xml file <strong>MUST</strong> have a universally unique identifier (uid), this is automatically generated when creating or copying a measure using OpenStudio or can also be generated <a href="https://www.uuidgenerator.net/version4">here</a>.</li>
+<li>LICENSE.md (optional) - Provides a license for others to use, reproduce, distribute, or create derivative works from your work, <a href="https://choosealicense.com/">choose a license here</a></li>
+<li>README.md (optional) - Provide documentation for your measure in <a href="https://www.markdownguide.org/">Markdown</a> format.</li>
+<li>README.md.erb (optional) - If given, this file is configured by <a href="http://www.stuartellis.name/articles/erb/">ERB</a> to generate the README.md with information from the measure.rb when updating a measure. </li>
+<li>docs (optional directory) - Folder that can be used to store images or other content, can be linked to by README.md.</li>
+<li>resources (optional directory) - Folder that can be used to store additional Ruby code used by your measure.</li>
+<li>tests (optional directory) - Folder that can be used to store <a href="https://rubygems.org/gems/minitest/">minitest</a> unit tests which ensure your measure is working right.</li>
+</ul>
 <!--- DLM: we need a link to how to create, copy, and update measures in the app and PAT-->
 
 <h2 id="measure-program-file-measurerb">Measure Program File - measure.rb</h2>
