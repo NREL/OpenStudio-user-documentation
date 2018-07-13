@@ -22,10 +22,19 @@ We cannot stress enough the importance of version control and backup. The OpenSt
 
 # Writing Measures
  
-## File Structure
-Every OpenStudio measure is comprised of a program and metadata, and optionally includes additional resources (e.g. libraries, helper functions) and tests. These are all contained in a single directory, generally named after the measure itself. A typical measure directory structure is as follows:
+## Measure File Structure
+Every OpenStudio measure is comprised of a main program (measure.rb) and metadata (measure.xml).  Each OpenStudio Measure can optionally include additional resources (e.g. libraries, helper functions), documentation, and tests. These are all contained in a single directory, generally named after the measure itself. A typical measure directory structure is as follows:
 
 ![guide image](img/measure-writing-guide/1.png)
+
+- measure.rb (required) - Main Ruby script that defines the measure, more details below.
+- measure.xml (required) - XML file, schema available [here](https://github.com/NREL/bcl-gem/tree/develop/schemas/v3), that describes the measure for other applications.  OpenStudio automatically updates the XML file when measure changes are detected. Each measure.xml file **MUST** have a universally unique identifier (uid), this is automatically generated when creating or copying a measure using OpenStudio or can also be generated [here](https://www.uuidgenerator.net/version4).
+- LICENSE.md (optional) - Provides a license for others to use, reproduce, distribute, or create derivative works from your work, [choose a license here](https://choosealicense.com/)
+- README.md (optional) - Provide documentation for your measure in [Markdown](https://www.markdownguide.org/) format.
+- README.md.erb (optional) - If given, this file is configured by [ERB](http://www.stuartellis.name/articles/erb/) to generate the README.md with information from the measure.rb when updating a measure. 
+- docs (optional directory) - Folder that can be used to store images or other content, can be linked to by README.md.
+- resources (optional directory) - Folder that can be used to store additional Ruby code used by your measure.
+- tests (optional directory) - Folder that can be used to store [minitest](https://rubygems.org/gems/minitest/) unit tests which ensure your measure is working right.
 
 <!--- DLM: we need a link to how to create, copy, and update measures in the app and PAT-->
 
