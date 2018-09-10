@@ -9,7 +9,7 @@ Big Ladder Software is dedicated to providing software and services for the buil
 
 Big Ladder offers in-person public and private (in-house) training workshops for OpenStudio and EnergyPlus. The Big Ladder team has trained scores of new users in the intricacies of energy modeling software in workshops at US and international locations. The company also offers hourly support services by phone and email. Support includes advising on best practices for modeling, helping with writing OpenStudio “measures”, helping with the implementation of difficult HVAC systems or controls, debugging stubborn errors, checking models for correctness and quality assurance, and assistance with auxiliary software tools. As part of the EnergyPlus Development Team, Big Ladder provides deep insight into the simulation engine "under the hood" of OpenStudio.
 
-### [The Energy Simulation Academy](http://energy-models.com) - Milwaukee, WI
+### [The Energy Simulation Academy](https://simulate.energy/) - Milwaukee, WI
 ####Contact: [Bob Fassbender](mailto:bob@energy-models.com)
 The Energy Simulation Academy (TESA) was founded in 2010 with the single goal of creating high quality energy simulations through widely accessible education. The company provides training and consulting services for OpenStudio /EnergyPlus, TRACE 700, and eQUEST. Trainees include architects, engineers, design firms and consultants throughout the world.
 
