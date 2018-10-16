@@ -290,6 +290,12 @@
       </ul>
     </li>
   
+    <li class="main"><a href="#loading-custom-gems-with-bundler-in-the-cli">Loading Custom Gems with Bundler in the CLI</a>
+      <ul class="nav">
+        
+      </ul>
+    </li>
+  
   </ul>
   <div class="home-btn">
     <a class="btn btn-default" role="button" href="https://www.openstudio.net">Back to OpenStudio<sup>&reg;</sup></a>
@@ -368,7 +374,7 @@
 <pre><code>openstudio.exe run --measures_only --workflow /path/to/workflow.osw
 </code></pre>
 
-<p>The <code>-p</code> or <code>--postprocess_only</code> switches do not run the OpenStudio Modelm EnergyPlus Measures, or EnergyPlus simulation in an OSW file.  Existing simulation results are loaded and only OpenStudio Reporting Measures are run, this is useful for generating new reports without re-running simulations:</p>
+<p>The <code>-p</code> or <code>--postprocess_only</code> switches do not run the OpenStudio Model or EnergyPlus Measures, or EnergyPlus simulation in an OSW file.  Existing simulation results are loaded and only OpenStudio Reporting Measures are run, this is useful for generating new reports without re-running simulations:</p>
 <pre><code>openstudio.exe run --postprocess_only --workflow /path/to/workflow.osw
 </code></pre>
 
@@ -491,6 +497,23 @@ bundle update
 
 <p>Now you can run any Ruby script with the OpenStudio Ruby bindings and other Ruby gems of your choice.  Note that the OpenStudio Ruby bindings are not packaged as a Ruby gem so the version of the OpenStudio Ruby bindings is not specified in the Gemfile.  Instead, the version of the OpenStudio Ruby bindings loaded can be controlled using the <code>-I</code> Ruby command line option.  You may use the <code>openstudio_cli.rb</code> Ruby script with all of the same command line options as the OpenStudio CLI described above.</p>
 <pre><code>bundle exec ruby -I c:\openstudio-2.4.0\Ruby\ c:\openstudio-2.4.0\Ruby\openstudio_cli.rb run -w in.osw
+</code></pre>
+
+<h1 id="loading-custom-gems-with-bundler-in-the-cli">Loading Custom Gems with Bundler in the CLI</h1>
+<p>As of OpenStudio 2.7.0, the CLI can load a pre-made gem bundle made with Bundler.  As with the Ruby bindings, a Ruby interpreter must be installed manually along with the Bundler gem.  Once this is done, a bundle can be made by executing the following in a directory with your Gemfile:</p>
+<pre><code>bundle install --path /path/to/gem/bundle
+</code></pre>
+
+<p>The <code>--path</code> argument above tells Bundler where to store your bundled gems.  On Windows, it may also be required to run the following command to install a list of gems compatible with the OpenStudio CLI:</p>
+<pre><code>bundle lock --add_platform ruby
+</code></pre>
+
+<p><em>Ruby gems with native MinGW extensions (the default on Windows) are not compatible with the OpenStudio CLI which is built against the MSWin Ruby runtime.  These gems can only be used with the OpenStudio Ruby bindings using the MinGW Ruby runtime.</em></p>
+<p>Once these steps are complete, you can execute the OpenStudio CLI with the following command line switches (both switches below must be present when using pre-made gem bundles in the CLI):</p>
+<p>The <code>--bundle</code> switch is used to point the OpenStudio CLI to your Gemfile, the <code>BUNDLE_GEMFILE</code> environment variable may also be set but is overridden by the command line switch.  </p>
+<p>The <code>--bundle_path</code> switch is used to point the OpenStudio CLI to your premade bundle, the <code>BUNDLE_PATH</code> environment variable may also be set but is overridden by the command line switch.  </p>
+<p>For example, the following commands would run the workflow in <code>in.osw</code> using the pre-made gem bundle at <code>/path/to/gem/bundle</code> described by the Gemfile at <code>./Gemfile</code>:</p>
+<pre><code>openstudio.exe --bundle ./Gemfile --bundle_path /path/to/gem/bundle run -w /path/to/in.osw
 </code></pre>
 
 
