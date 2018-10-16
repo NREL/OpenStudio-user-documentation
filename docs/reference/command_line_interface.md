@@ -110,7 +110,7 @@ The `-m` or `--measures_only` switches run only the OpenStudio Model and EnergyP
 openstudio.exe run --measures_only --workflow /path/to/workflow.osw
 ```
 
-The `-p` or `--postprocess_only` switches do not run the OpenStudio Modelm EnergyPlus Measures, or EnergyPlus simulation in an OSW file.  Existing simulation results are loaded and only OpenStudio Reporting Measures are run, this is useful for generating new reports without re-running simulations:
+The `-p` or `--postprocess_only` switches do not run the OpenStudio Model or EnergyPlus Measures, or EnergyPlus simulation in an OSW file.  Existing simulation results are loaded and only OpenStudio Reporting Measures are run, this is useful for generating new reports without re-running simulations:
 
 ```
 openstudio.exe run --postprocess_only --workflow /path/to/workflow.osw
@@ -281,4 +281,32 @@ Now you can run any Ruby script with the OpenStudio Ruby bindings and other Ruby
 
 ```
 bundle exec ruby -I c:\openstudio-2.4.0\Ruby\ c:\openstudio-2.4.0\Ruby\openstudio_cli.rb run -w in.osw
+```
+
+# Loading Custom Gems with Bundler in the CLI
+
+As of OpenStudio 2.7.0, the CLI can load a pre-made gem bundle made with Bundler.  As with the Ruby bindings, a Ruby interpreter must be installed manually along with the Bundler gem.  Once this is done, a bundle can be made by executing the following in a directory with your Gemfile:
+
+```
+bundle install --path /path/to/gem/bundle
+```
+
+The `--path` argument above tells Bundler where to store your bundled gems.  On Windows, it may also be required to run the following command to install a list of gems compatible with the OpenStudio CLI:
+
+```
+bundle lock --add_platform ruby
+```
+
+*Ruby gems with native MinGW extensions (the default on Windows) are not compatible with the OpenStudio CLI which is built against the MSWin Ruby runtime.  These gems can only be used with the OpenStudio Ruby bindings using the MinGW Ruby runtime.*
+
+Once these steps are complete, you can execute the OpenStudio CLI with the following command line switches (both switches below must be present when using pre-made gem bundles in the CLI):
+
+The `--bundle` switch is used to point the OpenStudio CLI to your Gemfile, the `BUNDLE_GEMFILE` environment variable may also be set but is overridden by the command line switch.  
+
+The `--bundle_path` switch is used to point the OpenStudio CLI to your premade bundle, the `BUNDLE_PATH` environment variable may also be set but is overridden by the command line switch.  
+
+For example, the following commands would run the workflow in `in.osw` using the pre-made gem bundle at `/path/to/gem/bundle` described by the Gemfile at `./Gemfile`:
+
+```
+openstudio.exe --bundle ./Gemfile --bundle_path /path/to/gem/bundle run -w /path/to/in.osw
 ```
