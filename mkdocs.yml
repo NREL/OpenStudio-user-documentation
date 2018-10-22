@@ -22,6 +22,7 @@ pages:
 - [tutorials/tutorial_cbecc_materials.md, Advanced Tutorials, CBECC Materials and Constructions]
 - [tutorials/tutorial_glhepro.md, Advanced Tutorials, Vertical Ground Heat Exchanger sizing with GLHEPro]
 - [tutorials/tutorial_ifcimport.md, Advanced Tutorials, BIMserver Import IFC]
+- [tutorials/tutorial_gbxmlimport.md, Advanced Tutorials, Import gbXML]
 - [tutorials/tutorial_shadingcontrols.md, Advanced Tutorials, Shading Controls]
 - [tutorials/tutorial_windowproperty_frameanddivider.md, Advanced Tutorials, Window Property Frame and Divider]
 - [tutorials/tutorial_virtual_pulse.md, Advanced Tutorials, VirtualPULSE]
