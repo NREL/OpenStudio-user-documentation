@@ -13,7 +13,7 @@ We recommend using mkdocs version 0.11.1, as newer versions have caused issues w
 
 To force-install version 0.11.1 of MkDocs on Mac/Linux, run:
 ```python
-	sudo pip install mkdocs==0.11.1
+pip install -r requirements.txt
 ```
 
 ### Windows
