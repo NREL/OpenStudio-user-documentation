@@ -60,8 +60,10 @@ Several users have reported graphics issues with the Geometry and Results tabs w
 
 Additionally, you may be able to find more information by running the OpenStudio Application from a command prompt and capturing the standard output in a file:
 
-`set OPENSTUDIO_APPLICATION_DEBUG=1`
-`C:\openstudio-%VERSION%\bin\OpenStudioApp.exe > out.txt 2>&1`
+```
+set OPENSTUDIO_APPLICATION_DEBUG=1
+C:\openstudio-%VERSION%\bin\OpenStudioApp.exe > out.txt 2>&1
+```
 _________________
 
 ## Orphan Objects and Unused Resources
