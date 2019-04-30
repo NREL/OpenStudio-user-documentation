@@ -7,7 +7,7 @@ OpenStudio supports the latest EnergyPlus release which is bundled with the Open
 ###Installation Steps
 __Download and install SketchUp__
 
-1. The OpenStudio SketchUp Plug-in requires [SketchUp](https://www.sketchup.com/download/all) (not available for Linux). Check the [version compatibility matrix](https://github.com/NREL/OpenStudio/wiki/OpenStudio-Version-Compatibility-Matrix) for the particular version of SketchUp required.
+1. The OpenStudio SketchUp Plug-in requires [SketchUp](https://help.sketchup.com/en/downloading-older-versions) (not available for Linux). Check the [version compatibility matrix](https://github.com/NREL/OpenStudio/wiki/OpenStudio-Version-Compatibility-Matrix) for the particular version of SketchUp required.
 
 __Download and install OpenStudio__
 
