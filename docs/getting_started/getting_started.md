@@ -3,8 +3,8 @@ This page walks you through installing OpenStudio, the basics of the application
 
 ## Installation Instructions
 OpenStudio is supported on 64-bit versions of Windows 7 – Windows 10, OS X 10.9 – 10.10, and Ubuntu 14.04 and 16.04.
-OpenStudio supports the latest EnergyPlus release which is bundled with the OpenStudio installer. The [version compatibility matrix](https://github.com/NREL/OpenStudio/wiki/OpenStudio-Version-Compatibility-Matrix) lists specific versions of EnergyPlus and other dependencies for each version of OpenStudio.
-###Installation Steps
+OpenStudio supports the latest EnergyPlus release which is bundled with the OpenStudio installer. The [version compatibility matrix](https://github.com/NREL/OpenStudio/wiki/OpenStudio-Version-Compatibility-Matrix) lists specific versions of EnergyPlus and other dependencies for each version of OpenStudio.
+###Installation Steps
 __Download and install SketchUp__
 
 1. The OpenStudio SketchUp Plug-in requires [SketchUp](https://www.sketchup.com/download/all) (not available for Linux). Check the [version compatibility matrix](https://github.com/NREL/OpenStudio/wiki/OpenStudio-Version-Compatibility-Matrix) for the particular version of SketchUp required.
@@ -28,9 +28,9 @@ __Optional - Command Line Installation__
 
 The OpenStudio installer is built using the [Qt Installer Framework](https://doc.qt.io/qtinstallerframework/index.html).  Installation of OpenStudio packages can be automated by passing the path to a customizable script to the installer using the `--script` argument:
 
-    ```
-    OpenStudio-2.3.0.cf58ee1e38-Windows.exe --script install.qs
-    ```
+```
+OpenStudio-2.3.0.cf58ee1e38-Windows.exe --script install.qs
+```
 
 An [example installation script](https://raw.githubusercontent.com/NREL/OpenStudio/develop/install.qs) can be modified to support custom installation.
     
