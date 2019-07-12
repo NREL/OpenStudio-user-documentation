@@ -19,6 +19,13 @@ Through [TESA](https://simulate.energy/) and [Energy-models.com](http://energy-m
 ####Contact: [Chris Balbach](mailto:cbalbach@psdconsulting.com)
 Performance Systems Development (PSD) is a 15 year old technology enabled consulting firm that provides training, consulting, software enabled solution design, and implementation support to utilities, efficiency program implementers, energy service professionals, and building portfolio owners. PSD's clients include some of the largest utilities and efficiency program implementers in country. PSD staff have deep subject matter expertise, offer industry leadership and support key efficiency enabling standards in building science, energy simulation, measurement& verification, evaluation and energy efficiency data management. PSD is highly regarded for efficiency industry professional workforce development and delivers third party certification training on a range of topics. PSD's program implementation team supports market transforming efficiency program design and cost effective implementation and are responsible for industry changing program models that leverage market investments and drive investment in building performance.
 
+### [VILANDCO](http://vilandco.vn/) - Vietnam & South East Asia
+####Contact: [Nguyen Trung Kien](mailto:kien@vilandco.com)
+
+The Viet Land Investment Consulting and Construction Joint-Stock Company (VILANDCO JSC) was established in 2007. The company aims to ensure harmony between humans and the natural environment in any project they undertake. VILANDCO is currently a Gold member of the [Vietnam Green Building Council (VGBC)](https://vgbc.vn/en/). The company’s main services are Green Building design & consulting with projects for office buildings, schools, commercial centers, factories, etc.
+From 2015, VILANDCO has delivered training for DesignBuilder, OpenStudio®, and EnergyPlus™. Trainees include architects, engineers, design firms and consultants in Vietnam and South East Asia countries. The company also provides consulting services in building performance simulation such as energy modeling, daylighting & CFD (wind, natural ventilation, thermal comfort analysis, etc.) to support design firms optimize their design’s performance from concept to detailed design stage.
+
+
 ## Universities
 
 ### [The City College of New York](http://www.ccny.cuny.edu/sustainability/) - New York, NY
