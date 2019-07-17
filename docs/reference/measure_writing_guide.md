@@ -450,6 +450,59 @@ The inputs needed by the method:
 
 ![inputs](img/measure-writing-guide/11.png)
 
+
+#### The Missing Methods
+
+There are a variety of crucial Ruby methods missing from the C++ SDK documentation.  This can be very confusing to new OpenStudio Measure writers.  However, these missing methods follow a few simple patterns that begin to make sense after a little while.  OpenStudio uses a program called [SWIG](http://www.swig.org/) to convert the C++ code to Ruby for use in OpenStudio Measures.  There are a few SWIG templates which are used to add Ruby methods to the OpenStudio Model and each OpenStudio ModelObject.  These templates can be found in the [OpenStudio source code](https://github.com/NREL/OpenStudio/blob/develop/openstudiocore/src/model/Model_Common_Include.i).  Interested readers can dig further into the OpenStudio SWIG files (with `.i` extensions) to see how they work.
+
+There are two types of SWIG templates, one for unique ModelObjects and another for non-unique ModelObjects.  Each OpenStudio Model can have only 0 or 1 unique ModelObjects of each type. Each OpenStudio Model can have 0 to many non-unique ModelObjects of each type.  The unique ModelObjects are:
+
+* `AirflowNetworkSimulationControl`
+* `Building`
+* `ClimateZones`
+* `ConvergenceLimits`
+* `ExternalInterface`
+* `Facility`
+* `HeatBalanceAlgorithm`
+* `InsideSurfaceConvectionAlgorithm`
+* `LifeCycleCostParameters`
+* `LightingSimulationControl`
+* `OutputControlReportingTolerances`
+* `OutputEnergyManagementSystem`
+* `OutsideSurfaceConvectionAlgorithm`
+* `RadianceParameters`
+* `RunPeriod`
+* `RunPeriodControlDaylightSavingTime`
+* `ShadowCalculation`
+* `SimulationControl`
+* `Site`
+* `SizingParameters`
+* `Timestep`
+* `Version`
+* `WeatherFile`
+* `YearDescription`
+* `ZoneAirContaminantBalance`
+* `ZoneAirHeatBalanceAlgorithm`
+* `ZoneAirMassFlowConservation`
+* `ZoneCapacitanceMultiplierResearchSpecial`
+
+The objects and methods are defined for each unique ModelObject (replacing `ModelObjectClass` with the name of the ModelObject, e.g. `Building`):
+
+* A class named `OptionalModelObjectClass`, e.g. `OptionalBuilding`.  This class derives from `boost::optional` and has the methods `is_initialized`, `empty?`, and `get`.  See the section ["OpenStudio Measures and the boost::optional Type"](#openstudio-measures-and-the-boostoptional-type) for more information. 
+* A method on `ModelObject` named `to_ModelObjectClass`, e.g. `model_object.to_Building`, which attempts to cast the object to the type `ModelObjectClass`. Returns an `OptionalModelObjectClass`, e.g. `OptionalBuilding`.
+* A method on `Model` named `getOptionalModelObjectClass`, e.g. `model.getOptionalBuilding`, which gets the unique ModelObject of that type if it exists. Returns an `OptionalModelObjectClass`, e.g. `OptionalBuilding`.
+* A method on `Model` named `getModelObjectClass`, e.g. `model.getBuilding`, which gets the unique ModelObject of that type if it exists, otherwise creates and returns one. Returns a `ModelObject`, e.g. `Building`. Note that unique ModelObjects do not have public constructors, they are created by calling this method on the OpenStudio Model.
+
+All non-unique ModelObjects (the majority of ModelObjects) have the following objects and methods defined (replacing `ModelObjectClass` with the name of the ModelObject, e.g. `ThermalZone`):
+
+* A class named `OptionalModelObjectClass`, e.g. `OptionalThermalZone`.  This class derives from `boost::optional` and has the methods `is_initialized`, `empty?`, and `get`.  See the section ["OpenStudio Measures and the boost::optional Type"](#openstudio-measures-and-the-boostoptional-type) for more information. 
+* A class named `ModelObjectClassVector`, e.g. `ThermalZoneVector`.  This class derives from `std::vector` and has the methods from the Ruby `Enumerable` mixin.  Unlike a Ruby `Array`, only objects of `ModelObjectClass` can be stored in a `ModelObjectClassVector`.
+* A method on `ModelObject` named `to_ModelObjectClass`, e.g. `model_object.to_ThermalZone`, which attempts to cast the ModelObject to the type `ModelObjectClass`. Returns an `OptionalModelObjectClass`, e.g. `OptionalThermalZone`.
+* A method on `Model` named `getModelObjectClass(handle)`, e.g. `model.getThermalZone(handle)`, which gets the ModelObject of that type by handle if it exists. Returns an `OptionalModelObjectClass`, e.g. `OptionalThermalZone`.
+* A method on `Model` named `getModelObjectClassByName(name)`, e.g. `model.getThermalZoneByName(name)`, which gets the ModelObject of that type by name if it exists. Returns an `OptionalModelObjectClass`, e.g. `OptionalThermalZone`.
+* A method on `Model` named `getModelObjectClasss`, e.g. `model.getThermalZones`, which gets all ModelObjects of that type. Returns a `ModelObjectClassVector`, e.g. `ThermalZoneVector`.  Notice the extra `s` that is added automatically to this method causing some odd names, e.g. `model.getLightss`.
+* A method on `Model` named `getModelObjectClasssByName(name, exact_match)`, e.g. `model.getThermalZonesByName(name, exact_match)`, which gets all ModelObjects of that type matching `name`.  If `exact_match` is false, then partial matches are returned. Returns a `ModelObjectClassVector`, e.g. `ThermalZoneVector`.  Notice the extra `s` that is added automatically to this method causing some odd names, e.g. `model.getLightssByName(name, exact_match)`.
+   
 ### Using the Documentation for the Example Measure
 With an understanding of how to read the documentation, the example measure continues.
 
