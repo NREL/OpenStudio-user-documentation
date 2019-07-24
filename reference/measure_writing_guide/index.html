@@ -705,7 +705,7 @@ end
 <li><code>ZoneAirMassFlowConservation</code></li>
 <li><code>ZoneCapacitanceMultiplierResearchSpecial</code></li>
 </ul>
-<p>The following objects and methods are defined for each unique ModelObject (replacing <code>ModelObjectClass</code> with the name of the ModelObject, e.g. <code>Building</code>):</p>
+<p>The objects and methods are defined for each unique ModelObject (replacing <code>ModelObjectClass</code> with the name of the ModelObject, e.g. <code>Building</code>):</p>
 <ul>
 <li>A class named <code>OptionalModelObjectClass</code>, e.g. <code>OptionalBuilding</code>.  This class derives from <code>boost::optional</code> and has the methods <code>is_initialized</code>, <code>empty?</code>, and <code>get</code>.  See the section <a href="#openstudio-measures-and-the-boostoptional-type">"OpenStudio Measures and the boost::optional Type"</a> for more information. </li>
 <li>A method on <code>ModelObject</code> named <code>to_ModelObjectClass</code>, e.g. <code>model_object.to_Building</code>, which attempts to cast the object to the type <code>ModelObjectClass</code>. Returns an <code>OptionalModelObjectClass</code>, e.g. <code>OptionalBuilding</code>.</li>
