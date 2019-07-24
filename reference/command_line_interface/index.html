@@ -300,6 +300,12 @@
       </ul>
     </li>
   
+    <li class="main"><a href="#calling-the-cli-from-a-separate-ruby-application-with-its-own-gemfile">Calling the CLI from a separate Ruby application with its own Gemfile</a>
+      <ul class="nav">
+        
+      </ul>
+    </li>
+  
   </ul>
   <div class="home-btn">
     <a class="btn btn-default" role="button" href="https://www.openstudio.net">Back to OpenStudio<sup>&reg;</sup></a>
@@ -516,8 +522,40 @@ bundle update
 <p>Once these steps are complete, you can execute the OpenStudio CLI with the following command line switches (both switches below must be present when using pre-made gem bundles in the CLI):</p>
 <p>The <code>--bundle</code> switch is used to point the OpenStudio CLI to your Gemfile, the <code>BUNDLE_GEMFILE</code> environment variable may also be set but is overridden by the command line switch.  </p>
 <p>The <code>--bundle_path</code> switch is used to point the OpenStudio CLI to your premade bundle, the <code>BUNDLE_PATH</code> environment variable may also be set but is overridden by the command line switch.  </p>
-<p>For example, the following commands would run the workflow in <code>in.osw</code> using the pre-made gem bundle at <code>/path/to/gem/bundle</code> described by the Gemfile at <code>./Gemfile</code>:</p>
-<pre><code>openstudio.exe --bundle ./Gemfile --bundle_path /path/to/gem/bundle run -w /path/to/in.osw
+<p>The <code>--bundle_without</code> switch is used to tell the OpenStudio CLI not to load gems in specific groups, the <code>BUNDLE_WITHOUT</code> environment variable may also be set but is overridden by the command line switch.  The argument to this switch is a space separated list of groups for bundler to exclude. Surround multiple groups with quotes like <code>"test development"</code>.</p>
+<p>For example, the following commands would run the workflow in <code>in.osw</code> using the pre-made gem bundle at <code>/path/to/gem/bundle</code> described by the Gemfile at <code>./Gemfile</code> without the groups <code>test</code> and <code>development</code>:</p>
+<pre><code>openstudio.exe --bundle ./Gemfile --bundle_path /path/to/gem/bundle --bundle_without &quot;test development&quot; run -w /path/to/in.osw
+</code></pre>
+
+<h1 id="calling-the-cli-from-a-separate-ruby-application-with-its-own-gemfile">Calling the CLI from a separate Ruby application with its own Gemfile</h1>
+<p>In some cases, the OpenStudio CLI may be called from a separate Ruby application with its own Gemfile.  For example, the OpenStudio Server is a Ruby on Rails application.  The <a href="https://github.com/NREL/OpenStudio-server/blob/develop/server/Gemfile">OpenStudio Server Gemfile</a> includes Ruby gems that OpenStudio Server needs for talking with clients over http, communicating with the database, and other tasks.  </p>
+<p>The OpenStudio Server is invoked using a call to <code>bundle exec</code>, this call <a href="https://bundler.io/man/bundle-exec.1.html#ENVIRONMENT-MODIFICATIONS">modifies environment variables</a> in the OpenStudio Server process.  This includes setting the <code>BUNDLE_GEMFILE</code> and <code>BUNDLE_PATH</code> environment variables.  If the CLI is invoked in this environment, it will read these environment variables and think that it is being requested to load these gems.  </p>
+<p>If this is not desired, the user can use the command line switches to point to a separate bundle for the CLI.  If the user wants the CLI to run without loading a premade bundle, they must clear these environment variables in the child process that the CLI is launched in.  The <a href="https://github.com/NREL/openstudio-extension-gem/blob/develop/lib/openstudio/extension/runner.rb">OpenStudio::Extension::Runner::get_clean_env</a> method returns a hash which will clear these environment variables when passed to Ruby's <a href="https://www.rubydoc.info/stdlib/core/Process.spawn">Process::spawn</a> or <a href="https://docs.ruby-lang.org/en/2.0.0/Open3.html">Open3</a> methods to launch the CLI in a child process.  </p>
+<p>For example, to run an OSW in a clean environment (the <code>--verbose</code> flag can be useful when diagnosing these issues):</p>
+<pre><code>def get_clean_env
+  # blank out bundler and gem path modifications, will be re-setup by new call
+  new_env = {}
+  new_env['BUNDLER_ORIG_MANPATH'] = nil
+  new_env['BUNDLER_ORIG_PATH'] = nil
+  new_env['BUNDLER_VERSION'] = nil
+  new_env['BUNDLE_BIN_PATH'] = nil
+  new_env['RUBYLIB'] = nil
+  new_env['RUBYOPT'] = nil
+  new_env['GEM_PATH'] = nil
+  new_env['GEM_HOME'] = nil
+  new_env['BUNDLE_GEMFILE'] = nil
+  new_env['BUNDLE_PATH'] = nil
+  new_env['BUNDLE_WITHOUT'] = nil
+
+  return new_env
+end
+
+cli = OpenStudio.getOpenStudioCLI
+
+command = &quot;#{cli} --verbose run -w '#{osw_path}'&quot;
+
+stdout_str, stderr_str, status = Open3.capture3(get_clean_env, command)
+
 </code></pre>
 
 

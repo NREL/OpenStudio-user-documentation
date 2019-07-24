@@ -672,6 +672,56 @@ end
 <p><img alt="description" src="../../img/measure-writing-guide/10.png" /></p>
 <p>The inputs needed by the method:</p>
 <p><img alt="inputs" src="../../img/measure-writing-guide/11.png" /></p>
+<h4 id="the-missing-methods">The Missing Methods</h4>
+<p>There are a variety of crucial Ruby methods missing from the C++ SDK documentation.  This can be very confusing to new OpenStudio Measure writers.  However, these missing methods follow a few simple patterns that begin to make sense after a little while.  OpenStudio uses a program called <a href="http://www.swig.org/">SWIG</a> to convert the C++ code to Ruby for use in OpenStudio Measures.  There are a few SWIG templates which are used to add Ruby methods to the OpenStudio Model and each OpenStudio ModelObject.  These templates can be found in the <a href="https://github.com/NREL/OpenStudio/blob/develop/openstudiocore/src/model/Model_Common_Include.i">OpenStudio source code</a>.  Interested readers can dig further into the OpenStudio SWIG files (with <code>.i</code> extensions) to see how they work.</p>
+<p>There are two types of SWIG templates, one for unique ModelObjects and another for non-unique ModelObjects.  Each OpenStudio Model can have only 0 or 1 unique ModelObjects of each type. Each OpenStudio Model can have 0 to many non-unique ModelObjects of each type.  The unique ModelObjects are:</p>
+<ul>
+<li><code>AirflowNetworkSimulationControl</code></li>
+<li><code>Building</code></li>
+<li><code>ClimateZones</code></li>
+<li><code>ConvergenceLimits</code></li>
+<li><code>ExternalInterface</code></li>
+<li><code>Facility</code></li>
+<li><code>HeatBalanceAlgorithm</code></li>
+<li><code>InsideSurfaceConvectionAlgorithm</code></li>
+<li><code>LifeCycleCostParameters</code></li>
+<li><code>LightingSimulationControl</code></li>
+<li><code>OutputControlReportingTolerances</code></li>
+<li><code>OutputEnergyManagementSystem</code></li>
+<li><code>OutsideSurfaceConvectionAlgorithm</code></li>
+<li><code>RadianceParameters</code></li>
+<li><code>RunPeriod</code></li>
+<li><code>RunPeriodControlDaylightSavingTime</code></li>
+<li><code>ShadowCalculation</code></li>
+<li><code>SimulationControl</code></li>
+<li><code>Site</code></li>
+<li><code>SizingParameters</code></li>
+<li><code>Timestep</code></li>
+<li><code>Version</code></li>
+<li><code>WeatherFile</code></li>
+<li><code>YearDescription</code></li>
+<li><code>ZoneAirContaminantBalance</code></li>
+<li><code>ZoneAirHeatBalanceAlgorithm</code></li>
+<li><code>ZoneAirMassFlowConservation</code></li>
+<li><code>ZoneCapacitanceMultiplierResearchSpecial</code></li>
+</ul>
+<p>The following objects and methods are defined for each unique ModelObject (replacing <code>ModelObjectClass</code> with the name of the ModelObject, e.g. <code>Building</code>):</p>
+<ul>
+<li>A class named <code>OptionalModelObjectClass</code>, e.g. <code>OptionalBuilding</code>.  This class derives from <code>boost::optional</code> and has the methods <code>is_initialized</code>, <code>empty?</code>, and <code>get</code>.  See the section <a href="#openstudio-measures-and-the-boostoptional-type">"OpenStudio Measures and the boost::optional Type"</a> for more information. </li>
+<li>A method on <code>ModelObject</code> named <code>to_ModelObjectClass</code>, e.g. <code>model_object.to_Building</code>, which attempts to cast the object to the type <code>ModelObjectClass</code>. Returns an <code>OptionalModelObjectClass</code>, e.g. <code>OptionalBuilding</code>.</li>
+<li>A method on <code>Model</code> named <code>getOptionalModelObjectClass</code>, e.g. <code>model.getOptionalBuilding</code>, which gets the unique ModelObject of that type if it exists. Returns an <code>OptionalModelObjectClass</code>, e.g. <code>OptionalBuilding</code>.</li>
+<li>A method on <code>Model</code> named <code>getModelObjectClass</code>, e.g. <code>model.getBuilding</code>, which gets the unique ModelObject of that type if it exists, otherwise creates and returns one. Returns a <code>ModelObject</code>, e.g. <code>Building</code>. Note that unique ModelObjects do not have public constructors, they are created by calling this method on the OpenStudio Model.</li>
+</ul>
+<p>All non-unique ModelObjects (the majority of ModelObjects) have the following objects and methods defined (replacing <code>ModelObjectClass</code> with the name of the ModelObject, e.g. <code>ThermalZone</code>):</p>
+<ul>
+<li>A class named <code>OptionalModelObjectClass</code>, e.g. <code>OptionalThermalZone</code>.  This class derives from <code>boost::optional</code> and has the methods <code>is_initialized</code>, <code>empty?</code>, and <code>get</code>.  See the section <a href="#openstudio-measures-and-the-boostoptional-type">"OpenStudio Measures and the boost::optional Type"</a> for more information. </li>
+<li>A class named <code>ModelObjectClassVector</code>, e.g. <code>ThermalZoneVector</code>.  This class derives from <code>std::vector</code> and has the methods from the Ruby <code>Enumerable</code> mixin.  Unlike a Ruby <code>Array</code>, only objects of <code>ModelObjectClass</code> can be stored in a <code>ModelObjectClassVector</code>.</li>
+<li>A method on <code>ModelObject</code> named <code>to_ModelObjectClass</code>, e.g. <code>model_object.to_ThermalZone</code>, which attempts to cast the ModelObject to the type <code>ModelObjectClass</code>. Returns an <code>OptionalModelObjectClass</code>, e.g. <code>OptionalThermalZone</code>.</li>
+<li>A method on <code>Model</code> named <code>getModelObjectClass(handle)</code>, e.g. <code>model.getThermalZone(handle)</code>, which gets the ModelObject of that type by handle if it exists. Returns an <code>OptionalModelObjectClass</code>, e.g. <code>OptionalThermalZone</code>.</li>
+<li>A method on <code>Model</code> named <code>getModelObjectClassByName(name)</code>, e.g. <code>model.getThermalZoneByName(name)</code>, which gets the ModelObject of that type by name if it exists. Returns an <code>OptionalModelObjectClass</code>, e.g. <code>OptionalThermalZone</code>.</li>
+<li>A method on <code>Model</code> named <code>getModelObjectClasss</code>, e.g. <code>model.getThermalZones</code>, which gets all ModelObjects of that type. Returns a <code>ModelObjectClassVector</code>, e.g. <code>ThermalZoneVector</code>.  Notice the extra <code>s</code> that is added automatically to this method causing some odd names, e.g. <code>model.getLightss</code>.</li>
+<li>A method on <code>Model</code> named <code>getModelObjectClasssByName(name, exact_match)</code>, e.g. <code>model.getThermalZonesByName(name, exact_match)</code>, which gets all ModelObjects of that type matching <code>name</code>.  If <code>exact_match</code> is false, then partial matches are returned. Returns a <code>ModelObjectClassVector</code>, e.g. <code>ThermalZoneVector</code>.  Notice the extra <code>s</code> that is added automatically to this method causing some odd names, e.g. <code>model.getLightssByName(name, exact_match)</code>.</li>
+</ul>
 <h3 id="using-the-documentation-for-the-example-measure">Using the Documentation for the Example Measure</h3>
 <p>With an understanding of how to read the documentation, the example measure continues.</p>
 <p>The first step is to find the SpaceType named "Enclosed Office". Looping through all the spaces in the model, we can use the <code>.name</code> method to get the name of each space. Note that while <code>.name</code> returns an <code>OptionalString</code>, OpenStudio assigns names to all model objects, so there is no need to check if the name is empty before using it (a rare exception to the rule of testing all Optional types for <code>!empty</code>). Using the <code>.match</code> method, we test if the SpaceType's name matches the value we are looking for:</p>
