@@ -17,21 +17,8 @@ pip install -r requirements.txt
 ```
 
 ### Windows
-Getting mkdocs to work on Windows is very particular.  We recommend uninstalling python and deleting the install directory before following these steps.  If you don't, it probably won't work.  We tried many different ways to do this, and starting from scratch and following these steps is the only thing we could get to work.
-
-1. Install [Python 2.7.8](https://www.python.org/ftp/python/2.7.8/python-2.7.8.msi)
-2. Add `C:\Python27` and `C:\Python27\Scripts` to your PATH
-3. Download [Pip](https://bootstrap.pypa.io/get-pip.py)
-4. Open a command prompt where you saved Pip (get-pip.py) and run: `python get-pip.py`
-5. Download [mkdocs v0.11.1 source code](https://github.com/tomchristie/mkdocs/archive/0.11.1.zip)
-6. Extract mkdocs source code
-7. Open a command prompt where you extracted mkdocs and run: `python setup.py install`
-8. Open `C:\Python27\Lib\site-packages\mkdocs-0.11.1-py2.7.egg\mkdocs\gh_deploy.py` and modify line 13 to contain the following:
-
-    ```python
-    subprocess.check_call(['python', 'C:/Python27/Scripts/ghp-import', '-p', config['site_dir']])
-    ```
-
+1. Install [Python 3.8](https://www.python.org/ftp/python/3.8.0/python-3.8.0.exe) with the option to `Add Python 3.8 to PATH`
+2. Open a command prompt in the source directory and run: `pip install -r requirements.txt`
 
 ## Run
 Clone this repo locally.  In a terminal window, navigate to the repo directory, and type:
