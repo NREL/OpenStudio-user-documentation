@@ -319,16 +319,16 @@
         <div class="col-md-9" role="main">
           <h1>OpenStudio Measure Writer's Reference Guide</h1>
 
-<p>This OpenStudio Measure Writer's Reference Guide is an in-depth resource regarding the authoring, testing, and distribution of OpenStudio Measures. The primary purposes of an OpenStudio measure are to: inspect, and optionally make some change/addition to, an OpenStudio model; validate model input; and report model input and output. </p>
-<p>Where applicable, the reader is directed to other resources, such as the <a href="https://openstudio-sdk-documentation.s3.amazonaws.com/index.html">OpenStudio SDK documentation</a>, and many of the other references found at the <a href="http://nrel.github.io/OpenStudio-user-documentation/">OpenStudio Documentation Home</a>. </p>
+<p>This OpenStudio Measure Writer's Reference Guide is an in-depth resource regarding the authoring, testing, and distribution of OpenStudio Measures. The primary purposes of an OpenStudio measure are to: inspect, and optionally make some change/addition to, an OpenStudio model; validate model input; and report model input and output.</p>
+<p>Where applicable, the reader is directed to other resources, such as the <a href="https://openstudio-sdk-documentation.s3.amazonaws.com/index.html">OpenStudio SDK documentation</a>, and many of the other references found at the <a href="http://nrel.github.io/OpenStudio-user-documentation/">OpenStudio Documentation Home</a>.</p>
 <h1 id="introduction">Introduction</h1>
-<p>In its most basic form, an OpenStudio measure (henceforth referred to as a "measure") is a program (or 'script', or 'macro', if you like) that can access and leverage the OpenStudio model and API to create or make changes to a building energy model, as defined by an OpenStudio model (.osm). Typically, a measure modifies an existing .osm in order to implement a given <em>energy conservation measure</em> (ECM). For example, a measure might change the insulation rating of the exterior walls, change the window-to-wall ratio of a specific facade, or modify operational or occupancy schedules. Measures may also generate reports on the input and output of a given energy model; as such, these are referred to as <em>reporting measures</em>. </p>
-<p>Measures may be linked together in a workflow in order to implement complex ECMs, or to repeatably implement ECMs across building types or climate zones; measures can even generate entire -- code-compliant and climate-zone specific -- building models soley from user inputs. </p>
+<p>In its most basic form, an OpenStudio measure (henceforth referred to as a "measure") is a program (or 'script', or 'macro', if you like) that can access and leverage the OpenStudio model and API to create or make changes to a building energy model, as defined by an OpenStudio model (.osm). Typically, a measure modifies an existing .osm in order to implement a given <em>energy conservation measure</em> (ECM). For example, a measure might change the insulation rating of the exterior walls, change the window-to-wall ratio of a specific facade, or modify operational or occupancy schedules. Measures may also generate reports on the input and output of a given energy model; as such, these are referred to as <em>reporting measures</em>.</p>
+<p>Measures may be linked together in a workflow in order to implement complex ECMs, or to repeatably implement ECMs across building types or climate zones; measures can even generate entire -- code-compliant and climate-zone specific -- building models soley from user inputs.</p>
 <p>Measures are written in Ruby, which allows the measure author to access OpenStudio directly as well as through the SketchUp plugin. Measures can be created from scratch, but existing measures may also be used as a starting basis (recommended).</p>
 <!--- RPG: Recommend a "workflow" section here.-->
 
 <h2 id="best-practices">Best Practices</h2>
-<p>For general Ruby coding and style advice (formatting, variable names, etc.), we recommend following the guidance of the <a href="https://github.com/bbatsov/ruby-style-guide">Ruby Style Guide</a>. </p>
+<p>For general Ruby coding and style advice (formatting, variable names, etc.), we recommend following the guidance of the <a href="https://github.com/bbatsov/ruby-style-guide">Ruby Style Guide</a>.</p>
 <p>For simple (short) measures, a text editor is all that is necessary. More extensive measures and resource files may benefit from the use of a proper IDE such as <a href="https://www.jetbrains.com/ruby/">RubyMine</a>.</p>
 <p>We cannot stress enough the importance of version control and backup. The OpenStudio dev team relies on Git for version control, and <a href="https://github.com/">GitHub</a> for hosting all code repositories.</p>
 <h1 id="writing-measures">Writing Measures</h1>
@@ -340,7 +340,7 @@
 <li>measure.xml (required) - XML file, schema available <a href="https://github.com/NREL/bcl-gem/tree/develop/schemas/v3">here</a>, that describes the measure for other applications.  OpenStudio automatically updates the XML file when measure changes are detected. Each measure.xml file <strong>MUST</strong> have a universally unique identifier (uid), this is automatically generated when creating or copying a measure using OpenStudio or can also be generated <a href="https://www.uuidgenerator.net/version4">here</a>.</li>
 <li>LICENSE.md (optional) - Provides a license for others to use, reproduce, distribute, or create derivative works from your work, <a href="https://choosealicense.com/">choose a license here</a></li>
 <li>README.md (optional) - Provide documentation for your measure in <a href="https://www.markdownguide.org/">Markdown</a> format.</li>
-<li>README.md.erb (optional) - If given, this file is configured by <a href="http://www.stuartellis.name/articles/erb/">ERB</a> to generate the README.md with information from the measure.rb when updating a measure. </li>
+<li>README.md.erb (optional) - If given, this file is configured by <a href="http://www.stuartellis.name/articles/erb/">ERB</a> to generate the README.md with information from the measure.rb when updating a measure.</li>
 <li>docs (optional directory) - Folder that can be used to store images or other content, can be linked to by README.md.</li>
 <li>resources (optional directory) - Folder that can be used to store additional Ruby code used by your measure.</li>
 <li>tests (optional directory) - Folder that can be used to store <a href="https://rubygems.org/gems/minitest/">minitest</a> unit tests which ensure your measure is working right.</li>
@@ -348,7 +348,7 @@
 <!--- DLM: we need a link to how to create, copy, and update measures in the app and PAT-->
 
 <h2 id="measure-program-file-measurerb">Measure Program File - measure.rb</h2>
-<p>The file 'measure.rb' is the main measure program. It may contain the entire program or may rely on additional functionality defined in one or more resource files, located in the 'resources' directory. </p>
+<p>The file 'measure.rb' is the main measure program. It may contain the entire program or may rely on additional functionality defined in one or more resource files, located in the 'resources' directory.</p>
 <h2 id="initialization">Initialization</h2>
 <p>OpenStudio measures are instantiated by creating a class based on the OpenStudio <strong>ModelUserScript</strong> object:</p>
 <pre><code class="ruby">class AddContinuousInsulationToWalls &lt; OpenStudio::Measure::ModelMeasure
@@ -360,10 +360,10 @@ end
 <pre><code class="ruby">AddContinuousInsulationToWalls.new.registerWithApplication
 </code></pre>
 
-<p>Please note the original measure instantiantiation syntax, <code>OpenStudio::Ruleset::ModelUserScript</code>, is deprecated. </p>
-<p>Class naming convention shall follow <a href="https://github.com/bbatsov/ruby-style-guide">Ruby best practices</a>. </p>
+<p>Please note the original measure instantiantiation syntax, <code>OpenStudio::Ruleset::ModelUserScript</code>, is deprecated.</p>
+<p>Class naming convention shall follow <a href="https://github.com/bbatsov/ruby-style-guide">Ruby best practices</a>.</p>
 <h2 id="measure-elements">Measure Elements</h2>
-<p>Every measure requires the following elements, defined as functions of the main program: </p>
+<p>Every measure requires the following elements, defined as functions of the main program:</p>
 <ul>
 <li>name</li>
 <li>description</li>
@@ -415,7 +415,7 @@ end
 </code></pre>
 
 <h3 id="modeler-description">Modeler Description</h3>
-<p>The modeler description is intended for the energy modeler using the measure. It should explain the measure's intent, and include any requirements about how the baseline model must be set up, major assumptions made by the measure, and relevant citations or references to applicable modeling resources. The energy modeler should be able to read this description and understand the changes the measure make to the model and why. </p>
+<p>The modeler description is intended for the energy modeler using the measure. It should explain the measure's intent, and include any requirements about how the baseline model must be set up, major assumptions made by the measure, and relevant citations or references to applicable modeling resources. The energy modeler should be able to read this description and understand the changes the measure make to the model and why.</p>
 <p>TIP: This description could be used in automatically generated reports, e.g. in an appendix describing the modeling approach of each measure considered for an energy savings study.</p>
 <p><strong>Usage:</strong></p>
 <pre><code class="ruby">def modeler_description
@@ -481,7 +481,7 @@ end
 <h2 id="log-messages">Log Messages</h2>
 <p>Log messages may be directed to the GUI, the command line interface, and/or to log streams. The OpenStudio GUI supports three log levels: <strong>Info</strong>, <strong>Warning</strong>, and <strong>Error</strong>.</p>
 <h3 id="info-runnerregisterinfo">Info (runner.registerInfo)</h3>
-<p>Info messages just that, informative in nature. Generally used for passing status or non-failure events to the user, info messages do not cause the measure to fail or stop running. In the "Add Continuous Insulation to Walls" measure example, a successful application of the measure would affect a number of surfaces in the model; the number of surfaces affected could be communicated to the user via an info message. </p>
+<p>Info messages just that, informative in nature. Generally used for passing status or non-failure events to the user, info messages do not cause the measure to fail or stop running. In the "Add Continuous Insulation to Walls" measure example, a successful application of the measure would affect a number of surfaces in the model; the number of surfaces affected could be communicated to the user via an info message.</p>
 <pre><code class="ruby">runner.registerInfo(&quot;Added insulation to #{num_surfaces} surfaces.&quot;)
 </code></pre>
 
@@ -507,7 +507,7 @@ end
 </code></pre>
 
 <h3 id="final-condition-runnerregisterfinalcondition">Final Condition (runner.registerFinalCondition)</h3>
-<p>The final condition gives the user an "after" snapshot of the model with respect to what the measure changed. Reporting the final condition is optional, but is good practice. </p>
+<p>The final condition gives the user an "after" snapshot of the model with respect to what the measure changed. Reporting the final condition is optional, but is good practice.</p>
 <p>Reporting the initial and final conditions is optional, but is recommended practice. These messages together can be used in reporting measures to explain the specific changes the a measure made to a model.</p>
 <pre><code class="ruby">runner.registerFinalCondition(&quot;Model currently has #{num_flrs} floors&quot;)
 </code></pre>
@@ -596,7 +596,7 @@ end
     if space.thermalZone.empty?
       new_thermal_zone = OpenStudio::Model::ThermalZone.new(model)
       space.setThermalZone(new_thermal_zone)
-      runner.registerInfo(&quot;Space #{space.name} did not have a thermal zone; 
+      runner.registerInfo(&quot;Space #{space.name} did not have a thermal zone;
       a new thermal zone was created and assigned.&quot;)
     end
   end
@@ -604,13 +604,13 @@ end
 </code></pre>
 
 <p>While not intended as a Ruby programming tutorial, let's break down the preceding code snippet, as it uses some fundamental elements of the OpenStudio API:</p>
-<p><code>spaces = model.getSpaces</code> retrieves all the spaces in the model, and stores them in an array called <code>spaces</code>. Measure authors can use this syntax to retrieve a vector of many objects from a model (e.g., <code>.getThermalZones</code>, <code>.getSpaces</code>, etc.). </p>
-<p>The next line starts an iterator on spaces. Within this loop, the next command checks to see if the space has a thermal zone assigned (<code>.thermalZone.empty?</code>). If there is no thermal zone assigned, a new one is created (<code>new_thermal_zone = OpenStudio::Model::ThermalZone.new(model)</code>), and assigned (<code>space.setThermalZone(new_thermal_zone)</code>). </p>
+<p><code>spaces = model.getSpaces</code> retrieves all the spaces in the model, and stores them in an array called <code>spaces</code>. Measure authors can use this syntax to retrieve a vector of many objects from a model (e.g., <code>.getThermalZones</code>, <code>.getSpaces</code>, etc.).</p>
+<p>The next line starts an iterator on spaces. Within this loop, the next command checks to see if the space has a thermal zone assigned (<code>.thermalZone.empty?</code>). If there is no thermal zone assigned, a new one is created (<code>new_thermal_zone = OpenStudio::Model::ThermalZone.new(model)</code>), and assigned (<code>space.setThermalZone(new_thermal_zone)</code>).</p>
 <h3 id="openstudio-measures-and-the-boostoptional-type">OpenStudio Measures and the <code>boost::optional</code> Type</h3>
-<p>OpenStudio leverages the <a href="http://www.boost.org/">Boost libraries</a> quite a bit, making repeated use of the <code>boost::optional</code> type. In Ruby, this type requires a slightly different approach to accessing object classes and their methods than typical. In short, calling <code>.get</code> on an <em>empty</em> <code>boost::optional</code> object will cause the program to crash, so one must make a precautionary inspection of several objects (the OpenStudio <code>Space</code> is but one) prior to attempting to use their methods. </p>
+<p>OpenStudio leverages the <a href="http://www.boost.org/">Boost libraries</a> quite a bit, making repeated use of the <code>boost::optional</code> type. In Ruby, this type requires a slightly different approach to accessing object classes and their methods than typical. In short, calling <code>.get</code> on an <em>empty</em> <code>boost::optional</code> object will cause the program to crash, so one must make a precautionary inspection of several objects (the OpenStudio <code>Space</code> is but one) prior to attempting to use their methods.</p>
 <p>In the online <a href="https://openstudio-sdk-documentation.s3.amazonaws.com/cpp/OpenStudio-1.11.0-doc/model/html/classopenstudio_1_1model_1_1_space.html">documentation</a> for the <code>Space</code> class, the method <code>.thermalZone</code> is defined as:</p>
 <p><code>boost::optional&lt; ThermalZone &gt; thermalZone () const</code></p>
-<p>Calling <code>space.thermalZone</code> returns a <code>boost::optional&lt; ThermalZone &gt;</code> not a <code>ThermalZone</code>. To determine whether the <strong>optional</strong> points to an <strong>actual</strong> <code>ThermalZone</code> you must use the <code>.empty?</code> method. If the result is empty, it does not point to an actual "ThermalZone" and cannot be used. </p>
+<p>Calling <code>space.thermalZone</code> returns a <code>boost::optional&lt; ThermalZone &gt;</code> not a <code>ThermalZone</code>. To determine whether the <strong>optional</strong> points to an <strong>actual</strong> <code>ThermalZone</code> you must use the <code>.empty?</code> method. If the result is empty, it does not point to an actual "ThermalZone" and cannot be used.</p>
 <p>If the example: <code>if space.thermalZone.empty?</code> evaluates "true", the space has no thermal zone. Again, calling <code>.get</code> on this empty object <strong>would crash a measure</strong>. Conversely, if <code>if "space.thermalZone.empty?</code> were false, then the program could leverage all the object's methods:</p>
 <pre><code class="ruby">if not space.thermalZone.empty?
   thermal_zone = space.thermalZone.get
@@ -661,13 +661,15 @@ end
 
 <p>The type of object returned by the method:</p>
 <p><img alt="type of object" src="../../img/measure-writing-guide/9.png" /></p>
-<p>Method Return Types:
-<em> bool = true/false
-</em> double = a number
-<em> std::string = text
-</em> void = does not return anything
-<em> std::vector&lt;&gt; = vector of the type objects inside the carets (&lt;&gt;)
-</em> boost::optional&lt;&gt; = an "optional"; may either be empty or point to an actual object of the type inside the &lt;&gt; </p>
+<p>Method Return Types:</p>
+<ul>
+<li>bool = true/false</li>
+<li>double = a number</li>
+<li>std::string = text</li>
+<li>void = does not return anything</li>
+<li>std::vector&lt;&gt; = vector of the type objects inside the carets (&lt;&gt;)</li>
+<li>boost::optional&lt;&gt; = an "optional"; may either be empty or point to an actual object of the type inside the &lt;&gt;</li>
+</ul>
 <p>The written description of the method:</p>
 <p><img alt="description" src="../../img/measure-writing-guide/10.png" /></p>
 <p>The inputs needed by the method:</p>
@@ -707,14 +709,14 @@ end
 </ul>
 <p>The objects and methods are defined for each unique ModelObject (replacing <code>ModelObjectClass</code> with the name of the ModelObject, e.g. <code>Building</code>):</p>
 <ul>
-<li>A class named <code>OptionalModelObjectClass</code>, e.g. <code>OptionalBuilding</code>.  This class derives from <code>boost::optional</code> and has the methods <code>is_initialized</code>, <code>empty?</code>, and <code>get</code>.  See the section <a href="#openstudio-measures-and-the-boostoptional-type">"OpenStudio Measures and the boost::optional Type"</a> for more information. </li>
+<li>A class named <code>OptionalModelObjectClass</code>, e.g. <code>OptionalBuilding</code>.  This class derives from <code>boost::optional</code> and has the methods <code>is_initialized</code>, <code>empty?</code>, and <code>get</code>.  See the section <a href="#openstudio-measures-and-the-boostoptional-type">"OpenStudio Measures and the boost::optional Type"</a> for more information.</li>
 <li>A method on <code>ModelObject</code> named <code>to_ModelObjectClass</code>, e.g. <code>model_object.to_Building</code>, which attempts to cast the object to the type <code>ModelObjectClass</code>. Returns an <code>OptionalModelObjectClass</code>, e.g. <code>OptionalBuilding</code>.</li>
 <li>A method on <code>Model</code> named <code>getOptionalModelObjectClass</code>, e.g. <code>model.getOptionalBuilding</code>, which gets the unique ModelObject of that type if it exists. Returns an <code>OptionalModelObjectClass</code>, e.g. <code>OptionalBuilding</code>.</li>
 <li>A method on <code>Model</code> named <code>getModelObjectClass</code>, e.g. <code>model.getBuilding</code>, which gets the unique ModelObject of that type if it exists, otherwise creates and returns one. Returns a <code>ModelObject</code>, e.g. <code>Building</code>. Note that unique ModelObjects do not have public constructors, they are created by calling this method on the OpenStudio Model.</li>
 </ul>
 <p>All non-unique ModelObjects (the majority of ModelObjects) have the following objects and methods defined (replacing <code>ModelObjectClass</code> with the name of the ModelObject, e.g. <code>ThermalZone</code>):</p>
 <ul>
-<li>A class named <code>OptionalModelObjectClass</code>, e.g. <code>OptionalThermalZone</code>.  This class derives from <code>boost::optional</code> and has the methods <code>is_initialized</code>, <code>empty?</code>, and <code>get</code>.  See the section <a href="#openstudio-measures-and-the-boostoptional-type">"OpenStudio Measures and the boost::optional Type"</a> for more information. </li>
+<li>A class named <code>OptionalModelObjectClass</code>, e.g. <code>OptionalThermalZone</code>.  This class derives from <code>boost::optional</code> and has the methods <code>is_initialized</code>, <code>empty?</code>, and <code>get</code>.  See the section <a href="#openstudio-measures-and-the-boostoptional-type">"OpenStudio Measures and the boost::optional Type"</a> for more information.</li>
 <li>A class named <code>ModelObjectClassVector</code>, e.g. <code>ThermalZoneVector</code>.  This class derives from <code>std::vector</code> and has the methods from the Ruby <code>Enumerable</code> mixin.  Unlike a Ruby <code>Array</code>, only objects of <code>ModelObjectClass</code> can be stored in a <code>ModelObjectClassVector</code>.</li>
 <li>A method on <code>ModelObject</code> named <code>to_ModelObjectClass</code>, e.g. <code>model_object.to_ThermalZone</code>, which attempts to cast the ModelObject to the type <code>ModelObjectClass</code>. Returns an <code>OptionalModelObjectClass</code>, e.g. <code>OptionalThermalZone</code>.</li>
 <li>A method on <code>Model</code> named <code>getModelObjectClass(handle)</code>, e.g. <code>model.getThermalZone(handle)</code>, which gets the ModelObject of that type by handle if it exists. Returns an <code>OptionalModelObjectClass</code>, e.g. <code>OptionalThermalZone</code>.</li>
@@ -949,7 +951,7 @@ ReplaceLightsInSpaceTypeWithLPD.new.registerWithApplication
 </code></pre>
 
 <h1 id="measure-testing">Measure Testing</h1>
-<p>As the measure writing community has grown, and the Building Component Library is open to all measure writers (and consumers), we believe <strong>testing</strong> should be an integral element of the measure authoring process. A continuous integration (CI) system for the OpenStudio Measures on the BCL is in development, and we are now recommending all measures submitted to the BCL include a series of functional and unit tests, for integration with the CI system. </p>
+<p>As the measure writing community has grown, and the Building Component Library is open to all measure writers (and consumers), we believe <strong>testing</strong> should be an integral element of the measure authoring process. A continuous integration (CI) system for the OpenStudio Measures on the BCL is in development, and we are now recommending all measures submitted to the BCL include a series of functional and unit tests, for integration with the CI system.</p>
 <p>Software testing is a means to code quality assurance and output validation, and allow the author to test their work:</p>
 <ul>
 <li>against various versions of Ruby</li>
@@ -963,7 +965,7 @@ ReplaceLightsInSpaceTypeWithLPD.new.registerWithApplication
 <h2 id="measure-test-components">Measure Test Components</h2>
 <p>The following sections discuss the elements of a typical measure test file.</p>
 <h3 id="require-statements">Require statements</h3>
-<p>The default test that is automatically created when you make a new measure will contain the Ruby Classes and Modules necessary for all measures to function (you may include others here, that your code requires): </p>
+<p>The default test that is automatically created when you make a new measure will contain the Ruby Classes and Modules necessary for all measures to function (you may include others here, that your code requires):</p>
 <pre><code class="ruby">require 'openstudio'
 require 'openstudio/ruleset/ShowRunnerOutput'
 require 'minitest/autorun'
@@ -1048,7 +1050,7 @@ require 'fileutils'
 </code></pre>
 
 <h3 id="model-and-workspace-creation-loading">Model and Workspace Creation, Loading</h3>
-<p>Every measure needs a <code>model</code> or <code>workspace</code> (and results, in the case of a reporting measure) upon which to (inter)act. Measures can create source OSMs (and IDFs), or load existing ones. </p>
+<p>Every measure needs a <code>model</code> or <code>workspace</code> (and results, in the case of a reporting measure) upon which to (inter)act. Measures can create source OSMs (and IDFs), or load existing ones.</p>
 <p><strong>Create New Model</strong>
 The OpenStudio Model Class provides a method (<code>.new</code>)to create an empty model (.OSM):</p>
 <pre><code class="ruby">    # make an empty model
@@ -1056,7 +1058,7 @@ The OpenStudio Model Class provides a method (<code>.new</code>)to create an emp
 </code></pre>
 
 <p><strong>Load Existing Model</strong>
-The code below shows how to load an existing model. This is useful when the author wishes to test some specific model objects or configuration; a pre-existing model may be included in the resources of a given test. Note in this example, we use <code>assert</code> to test if the model exists (i.e., the <code>load</code> was successful), prior to using the <code>get</code> method on it. </p>
+The code below shows how to load an existing model. This is useful when the author wishes to test some specific model objects or configuration; a pre-existing model may be included in the resources of a given test. Note in this example, we use <code>assert</code> to test if the model exists (i.e., the <code>load</code> was successful), prior to using the <code>get</code> method on it.</p>
 <pre><code class="ruby">    # load the test model
     translator = OpenStudio::OSVersion::VersionTranslator.new
     path = OpenStudio::Path.new(File.dirname(__FILE__) + &quot;/my_test_model_test_input.osm&quot;)
@@ -1065,7 +1067,7 @@ The code below shows how to load an existing model. This is useful when the auth
     model = model.get
 </code></pre>
 
-<p><strong>Create New Workspace, Blank IDF</strong> </p>
+<p><strong>Create New Workspace, Blank IDF</strong></p>
 <pre><code class="ruby">    # make an empty workspace
     workspace = OpenStudio::Workspace.new(&quot;Draft&quot;.to_StrictnessLevel, &quot;EnergyPlus&quot;.to_IddFileType)
 </code></pre>
@@ -1128,14 +1130,14 @@ i.e., load an OSM and forward translate it to IDF:</p>
 </code></pre>
 
 <h3 id="run-the-measure">Run the Measure</h3>
-<p>Here, we run the OpenStudio measure from the test. 
+<p>Here, we run the OpenStudio measure from the test.
 <strong>Note:</strong> (For EnergyPlus measures, replace <code>model</code> with <code>workspace</code>; reporting measures do not require a model argument at all, just <code>runner</code> and <code>argument_map</code> are passed to the method.)</p>
 <pre><code class="ruby">    measure.run(model, runner, argument_map)
     result = runner.result
 </code></pre>
 
 <h3 id="show-log-messages">Show Log Messages</h3>
-<p>You may print log messages to the console: </p>
+<p>You may print log messages to the console:</p>
 <pre><code class="ruby">show_output(result)
 </code></pre>
 
@@ -1158,7 +1160,7 @@ assert_equal(1, model.getSpaces.size - num_spaces_seed)
 </code></pre>
 
 <h3 id="saving-output-models">Saving Output Models</h3>
-<p>Saving the measure output model is not required, but can be useful for debugging the measure workflow itself, either during the initial authoring, or later feature expansion of a given measure. </p>
+<p>Saving the measure output model is not required, but can be useful for debugging the measure workflow itself, either during the initial authoring, or later feature expansion of a given measure.</p>
 <p>The example below will save the output model in a subdirectory of the test directory tree.  This "test" directory should be excluded from version control so that it is not distributed with the measure and tests.</p>
 <pre><code class="ruby">#save the model to test output directory
 output_file_path = OpenStudio::Path.new(File.dirname(__FILE__) + &quot;/output/my_test_model_test_a_output.osm&quot;)
@@ -1296,8 +1298,8 @@ end
 <h2 id="running-tests">Running Tests</h2>
 <h3 id="system-configuration">System Configuration</h3>
 <p><strong>MacOS/Linux</strong>
-Generally speaking, no additional configuration is required for MacOS and Linux operating systems; Ruby is usually already installed, and if OpenStudio is installed, Ruby is configured to locate it. </p>
-<p><strong>Windows</strong> 
+Generally speaking, no additional configuration is required for MacOS and Linux operating systems; Ruby is usually already installed, and if OpenStudio is installed, Ruby is configured to locate it.</p>
+<p><strong>Windows</strong>
 The system's Ruby environment variables must be configured to either:</p>
 <ul>
 <li>point to the version of ruby that OpenStudio installed, or, if there is another version or ruby installed on the system:</li>
@@ -1342,8 +1344,8 @@ The system's Ruby environment variables must be configured to either:</p>
 <p>NREL is in the process of developing an automated testing and continuous integration (CI) framework for the OpenStudio Measures contained on the BCL, and will include details on how to integrate your own measures with this test framework, here.</p>
 <h1 id="advanced-topics">Advanced Topics</h1>
 <h2 id="energyplus-measures">EnergyPlus Measures</h2>
-<p>Measures typically operate on an OpenStudio model, via the OpenStudio Model API, thus granting measure authors access to the entirety of the OpenStudio Model. However, as the OpenStudio model does not yet include the entirety of the EnergyPlus Data Model, we offer the <strong>EnergyPlus Measure</strong> as a means to access the full EnergyPlus IDD. </p>
-<p>EnergyPlus measures give measure authors the ability to continue a programmatic modeling workflow throughout the BEM process, but EnergyPlus measures operate on an IDF; as such, they are intended to be run <em>after</em> the OSM has been translated from OpenStudio to EnergyPlus. </p>
+<p>Measures typically operate on an OpenStudio model, via the OpenStudio Model API, thus granting measure authors access to the entirety of the OpenStudio Model. However, as the OpenStudio model does not yet include the entirety of the EnergyPlus Data Model, we offer the <strong>EnergyPlus Measure</strong> as a means to access the full EnergyPlus IDD.</p>
+<p>EnergyPlus measures give measure authors the ability to continue a programmatic modeling workflow throughout the BEM process, but EnergyPlus measures operate on an IDF; as such, they are intended to be run <em>after</em> the OSM has been translated from OpenStudio to EnergyPlus.</p>
 <p>Below are some specific code differences between EnergyPlus measures and OpenStudio measures:</p>
 <p>Classes must reference <code>Workspace</code> versus <code>Model</code>, as shown in the following examples:</p>
 <h5 id="initialization_1">Initialization:</h5>
@@ -1384,7 +1386,7 @@ The system's Ruby environment variables must be configured to either:</p>
 <pre><code class="ruby">  # array to hold new IDF objects
   string_objects = []
 
-  # create sorted (.sort) list of unique (.uniq) constructions from all 
+  # create sorted (.sort) list of unique (.uniq) constructions from all
   # constructions in model, adding ComponentCost:LineItem for each
 
   used_constructions_names.sort.uniq.each do |used_construction_name|
@@ -1485,7 +1487,7 @@ class ConstructionTakeOff &lt; OpenStudio::Ruleset::WorkspaceUserScript
     #array to hold new IDF objects
     string_objects = []
 
-    # create sorted (.sort) list of unique (.uniq) constructions from all 
+    # create sorted (.sort) list of unique (.uniq) constructions from all
     # constructions in model, adding ComponentCost:LineItem for each
 
       #IDF object text for ComponentCost:LineItem
@@ -1673,21 +1675,20 @@ units_preference = runner.unitsPreference
 <h3 id="name-description-and-modeler-description-enhancements">Name, Description, and Modeler Description Enhancements</h3>
 <p>Prior to OpenStudio 2.0 the name, description, and modeler description methods each returned a string. OpenStudio 2.0 adds support for a hash to be returned, where the key defines the language and the value a string. To support the new functionality, the runner is now passed into these methods. The description method is unique in that a modeler can alter it. The language of the altered description won't be tracked.</p>
 <p>Below is an example of the name method. The same approach would be followed for description and modeler description.</p>
-<pre><code class="ruby">  # human readable name (is this good time to change method to display_name?)
+<pre><code>  # human readable name (is this good time to change method to display_name?)
   def name (runner)
     display_name_hash = {}
-    display_name_hash[:en] = &quot;Set Insulation Thickness To User Specified Value.&quot;
-    display_name_hash[:fr] = &quot;Réglez l'épaisseur d'isolation Pour l'utilisateur spécifié Valeur.&quot;
-    display_name_hash[:es] = &quot;Establecer el grosor del aislamiento a un valor específico del usuario.&quot;
+    display_name_hash[:en] = "Set Insulation Thickness To User Specified Value."
+    display_name_hash[:fr] = "R&eacute;glez l'&eacute;paisseur d'isolation Pour l'utilisateur sp&eacute;cifi&eacute; Valeur."
+    display_name_hash[:es] = "Establecer el grosor del aislamiento a un valor espec&iacute;fico del usuario."
 
     return display_name_hash
-  end
-</code></pre>
+  end</code></pre>
 
 <h3 id="arguments-method-enhancements">Arguments Method Enhancements</h3>
 <p>Methods to set an argument's display name, default, and description have been enhanced to accept the an input for preferred language. Methods to set an argument's default value and units have been enhanced to accept an input for for the preferred unit system. Arguments that don't take a double, integer, or take an argument that is unitless, don't have to address unit preference.</p>
 <p>Below is an example arguments method that supports English, French, and Spanish as languages, and SI and IP units.</p>
-<pre><code class="ruby">  # define the arguments that the user will input
+<pre><code>  # define the arguments that the user will input
   def arguments (model,runner)
     args = OpenStudio::Ruleset::OSArgumentVector.new
 
@@ -1701,7 +1702,7 @@ units_preference = runner.unitsPreference
     # set langauge specific argument display name
     display_name_hash = {}
     display_name_hash[:en] = 'Insulation Thickness'
-    display_name_hash[:fr] = 'Épaisseur d'isolation'
+    display_name_hash[:fr] = '&Eacute;paisseur d\'isolation'
     display_name_hash[:es] = 'Espesor de aislamiento'
     # args for setDisplayName (string hash, unit pref from GUI, fallback language)
     insl_thckn.setDisplayName(display_name_hash,units_preference,'en')
@@ -1709,31 +1710,29 @@ units_preference = runner.unitsPreference
     # set langauge specific argument description
     display_description_hash = {}
     display_description_hash[:en] = 'Enter the resulting thickness for the insulation material, not a delta from the starting thickness.'
-    display_description_hash[:fr] = 'Entrer l'épaisseur résultante du matériau d'isolation et non pas un delta de l'épaisseur de départ.'
+    display_description_hash[:fr] = 'Entrer l\'&eacute;paisseur r&eacute;sultante du mat&eacute;riau d\'isolation et non pas un delta de l\'&eacute;paisseur de d&eacute;part.'
     display_description_hash[:es] = 'Introduzca el espesor resultante para el material de aislamiento , no un delta a partir del espesor de partida.'
     # args for setDescription (string hash, unit pref from GUI, fallback language)
-    insl_thckn.setDescription(display_description_hash,units_preference,'en')  
+    insl_thckn.setDescription(display_description_hash,units_preference,'en')
 
     # set units for argument
-    # if units_preference is &quot;IP&quot; then GUI should show 1.5 (in)
-    # if units_preference is &quot;SI&quot; then GUI shoudl show 0.0381 (m)
+    # if units_preference is "IP" then GUI should show 1.5 (in)
+    # if units_preference is "SI" then GUI shoudl show 0.0381 (m)
     # if GUI is in IP and user types 6 (in) the stored value in OSW will be 0.1524 (m)
-    insl_thckn.setUnits(&quot;m&quot;)
-    insl_thckn.setUnitsIp(&quot;in&quot;) # optional, set if don't want to use default mapping  
+    insl_thckn.setUnits("m")
+    insl_thckn.setUnitsIp("in") # optional, set if don't want to use default mapping
     insl_thckn.setDefaultValue(0.0381) # tied to setUnits, assumed to be SI value
 
     # add to vector of arguments
-    args &lt;&lt; insl_thckn
+    args << insl_thckn
 
     return args
-  end # end the arguments method
-
-</code></pre>
+  end # end the arguments method</code></pre>
 
 <h3 id="run-method-enhancements">Run Method Enhancements</h3>
 <p>The value and units for arguments can be retrieved in the run section. Generally units should stay in SI, unless a log message or register value needs IP. In that case, conversion should be done just for the message(s).</p>
 <p>Below is an example run method that manipulates and reports values related to a user argument</p>
-<pre><code class="ruby">  # define what happens when the measure is run
+<pre><code>  # define what happens when the measure is run
   def run(model, runner, user_arguments)
     super(model, runner, user_arguments)
 
@@ -1743,9 +1742,9 @@ units_preference = runner.unitsPreference
     end
 
     # assign the user inputs to variables
-    insl_thckn_si = runner.getDoubleArgumentValue(&quot;insl_thckn&quot;, user_arguments)
-    insl_thckn_units_si = runner.getDoubleArgumentUnits(&quot;insl_thckn&quot;, user_arguments) # runner.getDoubleArgumentsUnits isn't currently a valid method
-    insl_thckn_units_ip = runner.getDoubleArgumentUnitsIp(&quot;insl_thckn&quot;, user_arguments) # runner.getDoubleArgumentsUnitsIp isn't currently a valid method
+    insl_thckn_si = runner.getDoubleArgumentValue("insl_thckn", user_arguments)
+    insl_thckn_units_si = runner.getDoubleArgumentUnits("insl_thckn", user_arguments) # runner.getDoubleArgumentsUnits isn't currently a valid method
+    insl_thckn_units_ip = runner.getDoubleArgumentUnitsIp("insl_thckn", user_arguments) # runner.getDoubleArgumentsUnitsIp isn't currently a valid method
 
     # get internationalization preferences
     language_preference = runner.languagePreference
@@ -1755,7 +1754,7 @@ units_preference = runner.unitsPreference
     some_material.setThickness(insl_thckn_si)
 
     # get display value and units for thickness
-    if units_preference == &quot;SI&quot;
+    if units_preference == "SI"
         thickness_value_pref_units = some_material.thickness # if insl_thckn_units_si isn't same as unit for that field still need to convert e.g. OpenStudio::convert(value,'m',cm')
         thickness_display_units = insl_thckn_units_si
         num_decimals = 2 # bettter to specify significant digits in message vs unit specific rounding values?
@@ -1768,11 +1767,11 @@ units_preference = runner.unitsPreference
     # report back the user the thickness from the material
     case language_preference
     when 'fr'
-        runner.registerInfo(&quot;L'épaisseur résultante de #{some_material.name} était de #{thickness_value_pref_units.round(num_decimals)} (#{thickness_display_units).&quot;)
+        runner.registerInfo("L'&eacute;paisseur r&eacute;sultante de #{some_material.name} &eacute;tait de #{thickness_value_pref_units.round(num_decimals)} (#{thickness_display_units).")
     when 'es'
-        runner.registerInfo(&quot;El espesor resultante de #{some_material.name} fue #{thickness_value_pref_units.round(num_decimals)} (#{thickness_display_units).&quot;)
+        runner.registerInfo("El espesor resultante de #{some_material.name} fue #{thickness_value_pref_units.round(num_decimals)} (#{thickness_display_units).")
     else
-        runner.registerInfo(&quot;The Resulting thickness of #{some_material.name} was #{thickness_value_pref_units.round(num_decimals)} (#{thickness_display_units).&quot;)
+        runner.registerInfo("The Resulting thickness of #{some_material.name} was #{thickness_value_pref_units.round(num_decimals)} (#{thickness_display_units).")
     end
 
     # Similar approach as above would be used on initial condition, final condition, warning, error messages. runner.registerValue is a little different
@@ -1782,16 +1781,15 @@ units_preference = runner.unitsPreference
     # also note that registerValue isn't rounded like registerInfo and other messages are
     case language_preference
     when 'fr'
-        runner.registerValue('some_material_thickness',&quot;Essai Epaisseur du matériau&quot;,thickness_value_pref_units,thickness_display_units)   
+        runner.registerValue('some_material_thickness',"Essai Epaisseur du mat&eacute;riau",thickness_value_pref_units,thickness_display_units)
     when 'es'
-        runner.registerValue('some_material_thickness',&quot;Material de Ensayo Espesor&quot;,thickness_value_pref_units,thickness_display_units)   
+        runner.registerValue('some_material_thickness',"Material de Ensayo Espesor",thickness_value_pref_units,thickness_display_units)
     else
-        runner.registerValue('some_material_thickness',&quot;Test Material Thickness&quot;,thickness_value_pref_units,thickness_display_units)   
-    end    
+        runner.registerValue('some_material_thickness',"Test Material Thickness",thickness_value_pref_units,thickness_display_units)
+    end
 
     return true
-  end
-</code></pre>
+  end</code></pre>
 
 <h1 id="additional-references">Additional References</h1>
 <p><a href="http://nrel.github.io/OpenStudio-user-documentation/">OpenStudio Documentation Home</a>
