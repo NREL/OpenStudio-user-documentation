@@ -36,7 +36,7 @@ Drawing a floor plan in SketchUp and extruding up from floor plan using the "The
 
 Creating geometry from photographs is another option. To learn more about it watch the [photo matching tutorial playlist on YouTube](http://youtu.be/6IPZIrpl5vs?list=PL8CC6E4D9908F17BF).
 
-<iframe width="640" height="360" src="http://www.youtube.com/embed/wzzY_W2WELo?start=44&end=129" allowfullscreen></iframe>
+<iframe width="640" height="360" src="https://www.youtube.com/embed/wzzY_W2WELo?start=44&end=129" allowfullscreen></iframe>
 
 *Above: This video shows you how to create your building envelope. It uses the OpenStudio SketchUp Plug-in.*
 
@@ -49,7 +49,7 @@ There are many ways to add windows to the building envelope.
 
 - Use the "Project Loose Geometry" tool for adding window.
 
-<iframe width="640" height="360" src="http://www.youtube.com/embed/wzzY_W2WELo?start=129&end=171" allowfullscreen></iframe>
+<iframe width="640" height="360" src="https://www.youtube.com/embed/wzzY_W2WELo?start=129&end=171" allowfullscreen></iframe>
 
 *Above: This video shows how to create windows using the "Project Loose Geometry" tool.*
 
@@ -103,7 +103,7 @@ Add overhangs by:
 
 - Using a script to automatically add overhangs.
 
-<iframe width="640" height="360" src="http://www.youtube.com/embed/wzzY_W2WELo?start=295&end=360" allowfullscreen></iframe>
+<iframe width="640" height="360" src="https://www.youtube.com/embed/wzzY_W2WELo?start=295&end=360" allowfullscreen></iframe>
 
 *Above: This video shows you how search for specific surfaces and use a script to add overhangs to those surfaces.*
 
@@ -119,7 +119,7 @@ To assign schedules, add loads, add HVAC systems, and more, open your model in t
 ------
 
 ## Site
-Under site you can add the weather file, import design days, and set the year. 
+Under site you can add the weather file, import design days, and set the year.
 
 You can set the day of the week the simulation should start or select a calendar year. Use a calendar year if you are going to calibrate the model with utility bills.
 
@@ -164,7 +164,7 @@ The lower profile view is a navigation for when you are zoomed to 15-minute or 1
 
 *Above: An annotated screenshot of the schedules editing interface. Click image for a large view of the image.*
 
-<iframe width="640" height="360" src="http://www.youtube.com/embed/PCcxruCaZO0?start=210&end=788" allowfullscreen></iframe>
+<iframe width="640" height="360" src="https://www.youtube.com/embed/PCcxruCaZO0?start=210&end=788" allowfullscreen></iframe>
 
 *Above: This video demonstrates how you can inspect, alter, and apply resource objects in an older version of the  OpenStudio Application.*
 
@@ -189,7 +189,7 @@ Construction sets do not have to be complete sets. For example, you can have a c
 
 *Above: This screenshot shows an example of a construction set added from the library.*
 
-<iframe width="640" height="360" src="http://www.youtube.com/embed/8KdVvBds_30" allowfullscreen></iframe>
+<iframe width="640" height="360" src="https://www.youtube.com/embed/8KdVvBds_30" allowfullscreen></iframe>
 
 *Above: This video shows you how to obtain construction and material objects from the Building Component Library and load them into your current model.*
 
@@ -213,7 +213,7 @@ There are various classes of material objects. When you add a new material, firs
 
 Different types of material will have different data fields available.
 
-Materials also have "Measure Tags" as optional inputs. These tags can be used by measures or they can be used for [exporting a file for a Title 24 Compliance tool.](tutorial_cbecc_materials.md) 
+Materials also have "Measure Tags" as optional inputs. These tags can be used by measures or they can be used for [exporting a file for a Title 24 Compliance tool.](tutorial_cbecc_materials.md)
 
 ![Materials Tab](img/create_model/materials.png)
 
@@ -224,7 +224,7 @@ Tutorials
 
 - Inspecting and Adjusting Construction Sets
 - Adding and Removing Materials from a Construction
- 
+
 Resources
 
 - Types of Constructions
@@ -258,7 +258,7 @@ assigned to a construction object.
 
 Water Use Equipment is also unique in that it takes schedules, and is not part of a space type. Water Use Equipment is applied in the HVAC Systems Tab.
 
-<iframe width="640" height="360" src="http://www.youtube.com/embed/PCcxruCaZO0?start=106&end=209" allowfullscreen></iframe>
+<iframe width="640" height="360" src="https://www.youtube.com/embed/PCcxruCaZO0?start=106&end=209" allowfullscreen></iframe>
 
 *Above: This video demonstrates how you can inspect, alter, and apply resource objects in the OpenStudio Application.*
 
@@ -296,7 +296,7 @@ The space types tab in the OpenStudio application is organized into a grid view.
 
 ### Editing Multiple Items
 You are now able to check rows and then select an item you want to apply to those rows. When you hit the "Apply to Selected" the yellow selected item will be copied to the checked rows.
- 
+
 [![Space Types Multiedit](img/create_model/space_types_multiedit.png "Click to view")](img/create_model/space_types_multiedit.png)
 
 *Above: You can apply settings from one space to other using the "Apply to Selected" button at the top of the columns.*
@@ -328,7 +328,7 @@ The space types define loads such as lighting or electric equipment as simple ar
 ### Measure Tags
 Measure tags are used by scripts we call measures. Measure tags identify intended use of space types and constructions for School and office AEDG measures. If you are not using measures you will not need to complete these.
 
-<iframe width="640" height="360" src="http://www.youtube.com/embed/uxpIcEbxPbw" allowfullscreen></iframe>
+<iframe width="640" height="360" src="https://www.youtube.com/embed/uxpIcEbxPbw" allowfullscreen></iframe>
 
 *Above: This video shows how to use measure tags.*
 
@@ -338,7 +338,7 @@ Use the checkbox at the top of each column to select items that you want to have
 ### Working with Space Types in the SketchUp Plug-in
 The video below shows how to work with space types in the Plug-in.
 
-<iframe width="640" height="360" src="http://www.youtube.com/embed/8LTexVna_vw?end=234" allowfullscreen></iframe>
+<iframe width="640" height="360" src="https://www.youtube.com/embed/8LTexVna_vw?end=234" allowfullscreen></iframe>
 
 *Above: This video shows you how to assign space types and download space types from the Building Component Library (BCL). It uses the OpenStudio SketchUp Plug-in.*
 
@@ -355,12 +355,12 @@ Measures are scripts that can quickly alter your model or create different repor
 
 ------
 
-## Using the Facility Tab 
+## Using the Facility Tab
 The Facility tab includes settings for your building, stories, shading, and exterior equipment. It used to be a tree view, but this did not allow the user to view more than one item at a time. You can view the Building object. This contains top level construction, schedule, or space type assignments, and sets the rotation for the building.
 
 To view and edit the spaces in your model, use the Spaces tab below the Facility tab on the left.
 
-<iframe width="640" height="360" src="http://www.youtube.com/embed/9uBcb3NBQ84" allowfullscreen></iframe>
+<iframe width="640" height="360" src="https://www.youtube.com/embed/9uBcb3NBQ84" allowfullscreen></iframe>
 
 *Above: This video demonstrates the new Spaces tab and the redesigned Facilities and Site tab.*
 
@@ -377,14 +377,14 @@ To view and edit the spaces in your model, use the Spaces tab below the Facility
 ## Spaces
 The new spaces view lets you edit the spaces and view the surfaces and sub-surfaces in those spaces. The Story, Thermal Zone, and Space Type filters can help you find a particular space to edit.
 
-Some items are not editable in the OpenStudio application and have to be edited in the SketchUp Plug-in. Use the horizontal tabs to inspect and edit space attributes. 
+Some items are not editable in the OpenStudio application and have to be edited in the SketchUp Plug-in. Use the horizontal tabs to inspect and edit space attributes.
 
-* Properties
-* Loads
-* Surfaces
-* Subsurfaces
-* Interior Partitions
-* Shading
+- Properties
+- Loads
+- Surfaces
+- Subsurfaces
+- Interior Partitions
+- Shading
 
 Each horizontal tab may have sub-buttons that hold additional settings.
 
@@ -407,7 +407,7 @@ OpenStudio's thermal zones parallels the EnergyPlus zone. A thermal zone represe
 
 Setting up thermal zones in the SketchUp Plug-in is shown below.
 
-<iframe width="640" height="360" src="http://www.youtube.com/embed/8LTexVna_vw?start=240&end=438" allowfullscreen></iframe>
+<iframe width="640" height="360" src="https://www.youtube.com/embed/8LTexVna_vw?start=240&end=438" allowfullscreen></iframe>
 
 *Above: This video shows you how to assign space types and download space types from the Building Component Library (BCL). It uses the OpenStudio SketchUp Plug-in.*
 
@@ -522,7 +522,7 @@ Shared plenums will be colored the same and will match the color selected for th
 
 *Above: Click image to view a larger version.*
 
-<iframe width="640" height="360" src="http://www.youtube.com/embed/n_u3WT2tX1Y" allowfullscreen></iframe>
+<iframe width="640" height="360" src="https://www.youtube.com/embed/n_u3WT2tX1Y" allowfullscreen></iframe>
 
 *Above: This video demonstrates how to create the geometry for and then hook up supply and return air plenums.*
 
@@ -557,7 +557,7 @@ The equipment can be anything that uses water, hot or cold. The definition conta
 
 Click the water main, sewer, or makeup water to go back to the water mains editor. If you have a plant loop associated with the water use connection the "Loop" button will take you to the loop.
 
-<iframe width="640" height="360" src="http://www.youtube.com/embed/jUJhi6YH51E?end=486" allowfullscreen></iframe>
+<iframe width="640" height="360" src="https://www.youtube.com/embed/jUJhi6YH51E?end=486" allowfullscreen></iframe>
 
 *Above: This video shows you how create models using service hot water. This includes water heaters, water use connections, water use equipment, and other associated objects.*
 
@@ -596,11 +596,11 @@ Create your own custom view of this information by checking the box on the right
 
 *Above: Click image to view a larger version.*
 
-<iframe width="640" height="360" src="http://www.youtube.com/embed/iHTDiHif2_U" allowfullscreen></iframe>
+<iframe width="640" height="360" src="https://www.youtube.com/embed/iHTDiHif2_U" allowfullscreen></iframe>
 
 *Above: This video demonstrates the new refrigeration features added to OpenStudio 1.2.0. These feature will be expanded in future releases.*
 
-<iframe width="640" height="360" src="http://www.youtube.com/embed/NRo9k0Rjfw8?start=57&end=166" allowfullscreen></iframe>
+<iframe width="640" height="360" src="https://www.youtube.com/embed/NRo9k0Rjfw8?start=57&end=166" allowfullscreen></iframe>
 
 *Above: The video above provides an introduction to the grid view provide for refrigeration.*
 
@@ -627,7 +627,7 @@ Set the terminal settings by selecting the terminal and editing in the "Edit" ta
 
 More than one terminal can connect with the same zone. Just drag the zone to the drop area again to add another connection.
 
-<iframe width="640" height="360" src="http://www.youtube.com/embed/NRo9k0Rjfw8?start=170&end=242" allowfullscreen></iframe>
+<iframe width="640" height="360" src="https://www.youtube.com/embed/NRo9k0Rjfw8?start=170&end=242" allowfullscreen></iframe>
 
 *Above: This video provides a brief overview of the VRF interface.*
 
@@ -650,7 +650,7 @@ Now in addition to manually creating and editing your model, you can apply measu
 
 The video below demonstrates the use of this feature.
 
-<iframe width="640" height="360" src="http://www.youtube.com/embed/9-saA4x07eQ?end=579" allowfullscreen></iframe>
+<iframe width="640" height="360" src="https://www.youtube.com/embed/9-saA4x07eQ?end=579" allowfullscreen></iframe>
 
 *Above: Use the Apply Measure Now function.*
 

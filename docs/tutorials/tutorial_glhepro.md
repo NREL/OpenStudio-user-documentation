@@ -53,7 +53,7 @@ This tutorial explains how to size a vertical ground heat exchanger with OpenStu
 2. Go to the Results tab and select the report called "Export Loads to GLHEPro" in the dropdown
 
     ![Export Goals](img/glhepro/glhepro8.png)
-    
+
     This report explains the next steps for importing the loads into GLHEPro. It also shows the hourly load for the district heating and district cooling objects. Important Note: the hourly graph only shows up if you are using OpenStudio 1.4.1 or higher (or if you are using OpenStudio 1.4.0 built with Ruby 2.0). Even if the hourly graph doesn't show up, the loads have still been exported for GLHEPro, you just don't get to visualize them.
 
 3. Find the GLHEPro .gt1 file. In a file browser, navigate to the run directory for your model, for example: `C:\GLHEPro\gshp_model\run\6-UserScript-0\mergedjob-0`

@@ -2,7 +2,7 @@
 This page walks you through installing OpenStudio, the basics of the applications, and the basic workflow.
 
 ## Installation Instructions
-OpenStudio is supported on 64-bit versions of Windows 7 – Windows 10, OS X 10.9 – 10.10, and Ubuntu 14.04 and 16.04.
+OpenStudio is supported on 64-bit versions of Windows 7 &ndash; Windows 10, OS X 10.9 &ndash; 10.10, and Ubuntu 14.04 and 16.04.
 OpenStudio supports the latest EnergyPlus release which is bundled with the OpenStudio installer. The [version compatibility matrix](https://github.com/NREL/OpenStudio/wiki/OpenStudio-Version-Compatibility-Matrix) lists specific versions of EnergyPlus and other dependencies for each version of OpenStudio.
 ###Installation Steps
 __Download and install SketchUp__
@@ -15,14 +15,14 @@ __Download and install OpenStudio__
 2. Click "Downloads" at the top of the page.
 3. Choose the installer that matches your operating system. The OpenStudio package contains the following components:
     - OpenStudio Application
-    - EnergyPlus    
+    - EnergyPlus
     - SketchUp Plug-in
     - DView
     - Parametric Analysis Tool (PAT)
     - Ruby API
-    - C# API 
+    - C# API
     - Command Line Interface
-    - Radiance    
+    - Radiance
 
 __Optional - Command Line Installation__
 
@@ -33,7 +33,7 @@ OpenStudio-2.3.0.cf58ee1e38-Windows.exe --script install.qs
 ```
 
 An [example installation script](https://raw.githubusercontent.com/NREL/OpenStudio/develop/install.qs) can be modified to support custom installation.
-    
+
 __Optional - Setup a Building Component Library (BCL) Account__
 BCL content can now be accessed from within the OpenStudio SketchUp Plug-in and from the standalone OpenStudio application. To take advantage of this integration, you will need to follow the steps outlined here to request a BCL key.
 
@@ -48,7 +48,7 @@ Enter the key through the OpenStudio SketchUp Plug-in under the menu `Plugins->O
 __Optional - Install Ruby__
 If you plan to use the OpenStudio Ruby bindings via command prompt, you must install Ruby. Check the [version compatibility matrix](https://github.com/NREL/OpenStudio/wiki/OpenStudio-Version-Compatibility-Matrix) to see which version of Ruby is compatible.
 
-1. Download the [Ruby](http://rubyinstaller.org/downloads/) installer.  If you have the Windows (x64) version of OpenStudio (Help>About>Compiler shows Visual Studio 12 2013 Win64), you'll need the x64 Ruby installer.  
+1. Download the [Ruby](http://rubyinstaller.org/downloads/) installer.  If you have the Windows (x64) version of OpenStudio (Help>About>Compiler shows Visual Studio 12 2013 Win64), you'll need the x64 Ruby installer.
 2. Add `C:\ruby-2.2.4-x64-mingw32\bin` (or wherever you installed Ruby) to the PATH environment variable. [Detailed instructions](http://geekswithblogs.net/renso/archive/2009/10/21/how-to-set-the-windows-path-in-windows-7.aspx).
 3. Create a text file with the following text inside (modify `C:\openstudio-2.3.0` based on where your version of OpenStudio is installed):
 
@@ -98,60 +98,60 @@ Vintages:
 Climate Zones: 1 - 8
 
 ![Climate Zone Map](img/create_model/climate_zones.png)
- 
+
 
 ### SketchUp Plug-in - Building Envelope
 For additional information on the SketchUp Plug-in interface, go to the [OpenStudio SketchUp Plug-in Interface Guide](../reference/sketchup_plugin_interface.md) section.
 
-<iframe width="640" height="360" src="http://www.youtube.com/embed/wzzY_W2WELo?start=44&end=129" allowfullscreen></iframe>
+<iframe width="640" height="360" src="https://www.youtube.com/embed/wzzY_W2WELo?start=44&end=129" allowfullscreen></iframe>
 
 *Above: This video shows you how to create your building envelope. It uses the OpenStudio SketchUp Plug-in.*
 
 ### SketchUp Plug-in - Space Types and Thermal Zones
-<iframe width="640" height="360" src="http://www.youtube.com/embed/8LTexVna_vw" allowfullscreen></iframe>
+<iframe width="640" height="360" src="https://www.youtube.com/embed/8LTexVna_vw" allowfullscreen></iframe>
 
 *Above: This video shows you how to assign space types, thermal zones, and thermostats to the spaces in your model. It uses the OpenStudio SketchUp Plug-in.*
 
 ### Site, Facility, and Basic Run
-<iframe width="640" height="360" src="http://www.youtube.com/embed/tgeepiBltJI" allowfullscreen></iframe>
+<iframe width="640" height="360" src="https://www.youtube.com/embed/tgeepiBltJI" allowfullscreen></iframe>
 
 *Above: This video goes into the OpenStudio application, adds weather data, shows the outline view in the facility tab, and runs a simulation with ideal air loads.*
 
-<iframe width="640" height="360" src="http://www.youtube.com/embed/9uBcb3NBQ84" allowfullscreen></iframe>
+<iframe width="640" height="360" src="https://www.youtube.com/embed/9uBcb3NBQ84" allowfullscreen></iframe>
 
 *Above: Version 1.9.0: This video demonstrates the new Spaces tab and the redesigned Facilities and Site tab.*
 
 ### Space Types, Internal Loads, and Schedules
-<iframe width="640" height="360" src="http://www.youtube.com/embed/PCcxruCaZO0" allowfullscreen></iframe>
+<iframe width="640" height="360" src="https://www.youtube.com/embed/PCcxruCaZO0" allowfullscreen></iframe>
 
 *Above: This video demonstrates how you can inspect, alter, and apply resource objects in OpenStudio.*
 
 ### Constructions, Materials, and the Building Component Library (BCL)
-<iframe width="640" height="360" src="http://www.youtube.com/embed/8KdVvBds_30" allowfullscreen></iframe>
+<iframe width="640" height="360" src="https://www.youtube.com/embed/8KdVvBds_30" allowfullscreen></iframe>
 
 *Above: This video shows you how to obtain construction and material objects from the Building Component Library and load them into your current model.*
 
 ### HVAC - Zone Equipment, Air Loops, and Plant Loops
-<iframe width="640" height="360" src="http://www.youtube.com/embed/DKLnZaNoRX0" allowfullscreen></iframe>
+<iframe width="640" height="360" src="https://www.youtube.com/embed/DKLnZaNoRX0" allowfullscreen></iframe>
 
 *Above: This video shows you how to add HVAC systems. It introduces the variable and scripts tabs and runs a simulation with the resulting model.*
 
 ### Service Hot Water
-<iframe width="640" height="360" src="http://www.youtube.com/embed/jUJhi6YH51E" allowfullscreen></iframe>
+<iframe width="640" height="360" src="https://www.youtube.com/embed/jUJhi6YH51E" allowfullscreen></iframe>
 
 *Above: This video shows you how create models using service hot water. This includes water heaters, water use connections, water use equipment, and other associated objects.*
 
 <!--
 ## Introductory Tutorial
-* Choosing a Template
-* Modeling the Building Envelope
-* Assigning Building Activity
-* Assigning Thermal Zones
-* Assign Thermostats
-* Saving the OSM model from the SketchUp Plugin
-* Moving from the Plugin to the OpenStudio Application
-* Adding Weather and Design Day Files
-* Adding a Mechanical System
-* Running a Simulation
-* Viewing Simulation Results
+- Choosing a Template
+- Modeling the Building Envelope
+- Assigning Building Activity
+- Assigning Thermal Zones
+- Assign Thermostats
+- Saving the OSM model from the SketchUp Plugin
+- Moving from the Plugin to the OpenStudio Application
+- Adding Weather and Design Day Files
+- Adding a Mechanical System
+- Running a Simulation
+- Viewing Simulation Results
 -->

@@ -1,7 +1,7 @@
 # OpenStudio User Documentation
 
 
-This is the repo for OpenStudio user documentation.  
+This is the repo for OpenStudio user documentation.
 
 The documentation is written in Markdown, and uses [MkDocs] (http://www.mkdocs.org/) to compile the markdown files into a static site.  The site is hosted on github-pages at: http://nrel.github.io/OpenStudio-user-documentation/.
 
@@ -34,7 +34,7 @@ Getting mkdocs to work on Windows is very particular.  We recommend uninstalling
 
 
 ## Run
-Clone this repo locally.  In a terminal window, navigate to the repo directory, and type: 
+Clone this repo locally.  In a terminal window, navigate to the repo directory, and type:
 ```shell
 mkdocs serve
 ```
@@ -47,11 +47,11 @@ This will start a server that will let you see what your changes will look like 
 ## Adding and Editing Pages
 Edit existing .md files using either markdown or html.  If you need to add a new image, place it in the `docs/img` directory.
 
-If you need to add a new page, first decide where it should go in the site structure.  The folders within the docs/ directory mostly correspond to the top nav.  Once you have decided where the page should go, add a reference to it in the  `mkdocs.yml`  file.
+If you need to add a new page, first decide where it should go in the site structure.  The folders within the docs/ directory mostly correspond to the top nav.  Once you have decided where the page should go, add a reference to it in the `mkdocs.yml` file.
 
 ## Deploying
 
-When you are done making changes, test your deployment first and then commit back to the repo.  
+When you are done making changes, test your deployment first and then commit back to the repo.
 
 To test, first delete the site directory if it already exists, and then build the site and open index.html
 ```shell

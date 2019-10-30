@@ -3,7 +3,7 @@
 
 ## VirtualPULSE Workflow Video
 
-<iframe width="640" height="360" src="http://www.youtube.com/embed/RqwpFyCUO18" allowfullscreen></iframe>
+<iframe width="640" height="360" src="https://www.youtube.com/embed/RqwpFyCUO18" allowfullscreen></iframe>
 
 *Above: This video made by the Building Science Group and University of Maryland, walks you through the virtualPULSE web based workflow.*
 

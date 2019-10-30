@@ -12,12 +12,12 @@ When you launch PAT you have the option to create a new project or open an exist
 
 To create a new project :
 
-* Click the "Make New Project" button.
-* Type the name for the project, and click "Continue."  _Note that project names should not include spaces._
+- Click the "Make New Project" button.
+- Type the name for the project, and click "Continue."  _Note that project names should not include spaces._
 
 ![Make New Project](img/pat2/launch_02.png)
 
-* Browse to the directory where you want the project saved, and click the "Open" button.  _PAT will create a new directory for your project at this location._
+- Browse to the directory where you want the project saved, and click the "Open" button.  _PAT will create a new directory for your project at this location._
 
 ![Select Project Directory](img/pat2/launch_03.png)
 <br><br>
@@ -44,7 +44,7 @@ PAT 2.1.0 functionality is broken down into six tabs along the left side of the 
 
 In general, a PAT workflow moves through the six vertical tabs from top to bottom.  PAT allows the user to specify design alternatives manually or automate the process using a selection of algorithms - e.g. sampling, optimization, etc.  The analysis mode is selected at the top of tab one, and dictates whether tabs two or three are used along with the types of computing resources (local or cloud) that can be selected on tab four.  The video below shows the creation of a new project and walks through the workflow to create and run a **manual** analysis.
 
-<iframe width="640" height="360" src="http://www.youtube.com/embed/a3lg7UbE6JU" allowfullscreen></iframe>
+<iframe width="640" height="360" src="https://www.youtube.com/embed/a3lg7UbE6JU" allowfullscreen></iframe>
 
 *Above: PAT 2.0.0 introduction video for manual analysis mode*
 <br><br>
@@ -96,7 +96,7 @@ To download measures:
 
 When the symbol changes from a black download arrow to the green document symbol the measure has been downloaded and added to your local library.  Clicking the green document symbol will create a copy of the measure in your "MyMeasures" directory.  This is useful when creating variations of existing measures.
 
-Once downloaded, PAT will continue to check to see if an updated version is available in the BCL.  Available updates will be indicated with a symbol in the 
+Once downloaded, PAT will continue to check to see if an updated version is available in the BCL.  Available updates will be indicated with a symbol in the
 "updates" column.  Simply click the symbol to download the latest version to your local library.
 
 ### Add Measures to the Project
@@ -107,7 +107,7 @@ Clicking the blue plus will add a measure from your local library or "MyMeasures
 
 *Above: Filtered View showing Online BCL OpenStudio Fenestration measures. The "Set Window to Wall Ratio" measure has been downloaded from the BCL but not yet added to the project.*
 <br><br>
-After adding a measure to your project the blue plus will change to a green check mark. 
+After adding a measure to your project the blue plus will change to a green check mark.
 
 <img src="img/pat2/bcl_04.png" width="500">
 <br><br>
@@ -115,7 +115,7 @@ After closing the BCL dialog, measures are now loaded into the project.  In this
 
 ![Measures Tab With Measures Loaded](img/pat2/measures_03.png)
 
-**The ordering of measures in PAT matters.**  Measures run from top to bottom in the user interface, and they may be reordered using the up or down arrows at the right.  The "x," also at the right, may be used to delete a measure from the project. 
+**The ordering of measures in PAT matters.** Measures run from top to bottom in the user interface, and they may be reordered using the up or down arrows at the right.  The "x," also at the right, may be used to delete a measure from the project.
 
 Note that each measure also has an arrow just to its left.  This arrow is used to expand and collapse the measure, allowing the user to specify variables, arguments, and more.
 <br><br>
@@ -170,13 +170,13 @@ PAT 2.1.0 configures a "mini server" on your computer to perform local analysis.
 Clicking the Run Entire Workflow button starts an analysis.
 
 ![Run Tab mid run](img/pat2/run_02.png)
- 
+
 As simulation results are completed, PAT's status will update to appraise you of progress.  Changing tabs during active simulation is prevented to avoid accidentally altering an analysis mid-run.
- 
+
 ![Run Tab complete](img/pat2/run_03.png)
- 
+
 Completed design alternatives may be expanded to view measure or simulation log messages. The OpenStudio standard report, EnergyPlus output, results from any other reporting measure options may be viewed by clicking the graph symbol and selecting the report of interest.
- 
+
 ![Run Tab post run](img/pat2/run_04.png)
 <br><br>
 ___________________
@@ -185,7 +185,7 @@ ___________________
 
 PAT 2.1.0 includes three built-in reports that help the user compare design alternatives.
 
-The default summary table compares consumption, demand, and economic metrics for all of the design alternatives. A selection field near the top of the table allows the user to specify which of the alternatives is to be used as the datum for performance comparison.  Analysis results shown in subsequent rows are relative to the datum's modeled values. 
+The default summary table compares consumption, demand, and economic metrics for all of the design alternatives. A selection field near the top of the table allows the user to specify which of the alternatives is to be used as the datum for performance comparison.  Analysis results shown in subsequent rows are relative to the datum's modeled values.
 
 ![Summary Table](img/pat2/results_01.png)
 <br><br>
@@ -239,7 +239,7 @@ Algorithmic mode significantly alters the measure section of tab one.  The conce
 1. **Argument** - Fixes the quanity as a static value for the analysis.
 2. **Continuous** - Assigns a continuous probability density function to a variable.  Available distributions include uniform, triangular, normal, and log normal.
 3. **Discrete** - Allows the user to specify a specific set of distinct values with associated weights.
-4. **Pivot** - Forces the entire analysis to be performed against each specified value.  _e.g. An analysis problem with 25 samples and 3 pivots would create a total of 75 data points._ 
+4. **Pivot** - Forces the entire analysis to be performed against each specified value.  _e.g. An analysis problem with 25 samples and 3 pivots would create a total of 75 data points._
 
 ![Algorithm Setup](img/pat2/alg_04.png)
 
@@ -317,7 +317,7 @@ Once the server is running, clicking the "Run Entire Workflow" button starts the
 ## Exploring Algorithm Results with OpenStudio Server
 
 The OpenStudio Server tab is of much greater importance with algorithmic workflows.  This same content may also be accessed through any web browser by clinking PAT's "View Server" button in the run tab or manually directing a web browser to http://**yourserverurl**:8080.  The top level view of OpenStudio server provides a summary of completed or in-progress projects and analyses along with navigation options.
- 
+
 ![OpenStudio Server Landing Page](img/pat2/server_01b.png)
 
 The top level of an analysis (a specific run of a project) provides a high level summary of the project, links to more detail about the analysis, and status updates for all data points that have been completed, queued for simulation, or are in process.  Important links on this page include:

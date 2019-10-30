@@ -1,8 +1,8 @@
 <h1>OpenStudio Command Line Interface</h1>
 
-The OpenStudio Command Line Interface (CLI) is a self-contained executable which includes everything needed to apply OpenStudio Measures to an OpenStudio Model and run an EnergyPlus simulation.  The CLI is only avaiable in OpenStudio version 2.0 and higher. The CLI contains a full OpenStudio Ruby environment, the list of Ruby Gems available in each version of OpenStudio can be found [here](https://github.com/NREL/OpenStudio/wiki/OpenStudio-Version-Compatibility-Matrix).  
+The OpenStudio Command Line Interface (CLI) is a self-contained executable which includes everything needed to apply OpenStudio Measures to an OpenStudio Model and run an EnergyPlus simulation.  The CLI is only avaiable in OpenStudio version 2.0 and higher. The CLI contains a full OpenStudio Ruby environment, the list of Ruby Gems available in each version of OpenStudio can be found [here](https://github.com/NREL/OpenStudio/wiki/OpenStudio-Version-Compatibility-Matrix).
 
-This document provides an overview of the most important features of the CLI, it is not meant to be an exhaustive reference.  For an exhaustive list of features available in the CLI please refer to the command line output of the `--help` command.  For a complete list of the properties available in the OSW file format please refer to the [OSW JSON schema](https://raw.githubusercontent.com/NREL/OpenStudio-workflow-gem/develop/spec/schema/osw_output.json).  For a complete description of the WorkflowJSON class please refer to the [documentation](https://github.com/NREL/OpenStudio/tree/develop/openstudiocore/src/utilities/filetypes/WorkflowJSON.hpp).  
+This document provides an overview of the most important features of the CLI, it is not meant to be an exhaustive reference.  For an exhaustive list of features available in the CLI please refer to the command line output of the `--help` command.  For a complete list of the properties available in the OSW file format please refer to the [OSW JSON schema](https://raw.githubusercontent.com/NREL/OpenStudio-workflow-gem/develop/spec/schema/osw_output.json).  For a complete description of the WorkflowJSON class please refer to the [documentation](https://github.com/NREL/OpenStudio/tree/develop/openstudiocore/src/utilities/filetypes/WorkflowJSON.hpp).
 
 # Command Overview
 
@@ -43,7 +43,7 @@ Program level switches (if any) are followed by a subcommand which directs the p
 
 # Measure Subcommand
 
-The `measure` subcommand is used to query OpenStudio Measures on disk.  The following arguments may be passed to the `measure` subcommand. 
+The `measure` subcommand is used to query OpenStudio Measures on disk.  The following arguments may be passed to the `measure` subcommand.
 
 The `-h` switch prints help specific to the `measure` subcommand:
 
@@ -83,7 +83,7 @@ openstudio.exe measure --run_tests /path/to/measure_dir/
 
 
 # Run Subcommand
- 
+
 The `run` subcommand is used to load an OpenStudio Model, apply a series of OpenStudio Model Measures, translate to EnergyPlus IDF, apply a series of OpenStudio EnergyPlus Measures, run an EnergyPlus simulation on the resulting model, and finally apply a series of OpenStudio Reporting Measures. The OpenStudio Workflow (OSW) file format is used to describe which OpenStudio Measures to apply to the model and what arguments to pass to each measure.  The OSW format is explained in the following section.
 
 The `-h` switch prints help specific to the `run` subcommand:
@@ -301,9 +301,9 @@ bundle lock --add_platform ruby
 
 Once these steps are complete, you can execute the OpenStudio CLI with the following command line switches (both switches below must be present when using pre-made gem bundles in the CLI):
 
-The `--bundle` switch is used to point the OpenStudio CLI to your Gemfile, the `BUNDLE_GEMFILE` environment variable may also be set but is overridden by the command line switch.  
+The `--bundle` switch is used to point the OpenStudio CLI to your Gemfile, the `BUNDLE_GEMFILE` environment variable may also be set but is overridden by the command line switch.
 
-The `--bundle_path` switch is used to point the OpenStudio CLI to your premade bundle, the `BUNDLE_PATH` environment variable may also be set but is overridden by the command line switch.  
+The `--bundle_path` switch is used to point the OpenStudio CLI to your premade bundle, the `BUNDLE_PATH` environment variable may also be set but is overridden by the command line switch.
 
 The `--bundle_without` switch is used to tell the OpenStudio CLI not to load gems in specific groups, the `BUNDLE_WITHOUT` environment variable may also be set but is overridden by the command line switch.  The argument to this switch is a space separated list of groups for bundler to exclude. Surround multiple groups with quotes like `"test development"`.
 
@@ -315,7 +315,7 @@ openstudio.exe --bundle ./Gemfile --bundle_path /path/to/gem/bundle --bundle_wit
 
 # Calling the CLI from a separate Ruby application with its own Gemfile
 
-In some cases, the OpenStudio CLI may be called from a separate Ruby application with its own Gemfile.  For example, the OpenStudio Server is a Ruby on Rails application.  The [OpenStudio Server Gemfile](https://github.com/NREL/OpenStudio-server/blob/develop/server/Gemfile) includes Ruby gems that OpenStudio Server needs for talking with clients over http, communicating with the database, and other tasks. 
+In some cases, the OpenStudio CLI may be called from a separate Ruby application with its own Gemfile.  For example, the OpenStudio Server is a Ruby on Rails application.  The [OpenStudio Server Gemfile](https://github.com/NREL/OpenStudio-server/blob/develop/server/Gemfile) includes Ruby gems that OpenStudio Server needs for talking with clients over http, communicating with the database, and other tasks.
 
 The OpenStudio Server is invoked using a call to `bundle exec`, this call [modifies environment variables](https://bundler.io/man/bundle-exec.1.html#ENVIRONMENT-MODIFICATIONS) in the OpenStudio Server process.  This includes setting the `BUNDLE_GEMFILE` and `BUNDLE_PATH` environment variables.  If the CLI is invoked in this environment, it will read these environment variables and think that it is being requested to load these gems.
 

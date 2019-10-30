@@ -35,7 +35,7 @@ To run your simulation hit the green run button. Select the daylighting engine y
 ## Looking at Results
 Standard OpenStudio results are provided with your run. If you add in utility bills you can also view a calibration report. The links on the left side of the report will take you through the sections.
 
-<iframe width="640" height="360" src="http://www.youtube.com/embed/PlrWE3ugcdE" allowfullscreen></iframe>
+<iframe width="640" height="360" src="https://www.youtube.com/embed/PlrWE3ugcdE" allowfullscreen></iframe>
 
 *Above: This video demonstrates the 1.9.0 Release with the Reporting Measure.*
 

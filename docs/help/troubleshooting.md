@@ -3,7 +3,7 @@ This page is a collection of troubleshooting advice that helps users deal with c
 _________________
 
 ## OpenStudio SketchUp Plug-in Does Not Load
-Ensure that your version of SketchUp is compatible with your version of OpenStudio as listed in [this matrix](https://github.com/NREL/OpenStudio/wiki/OpenStudio-Version-Compatibility-Matrix).  Try opening the "Window->Preferences->Extensions" window in SketchUp, enable the OpenStudio SketchUp Plug-in if it is listed.  If the OpenStudio SketchUp Plug-in is not listed you may have to manually install it (this is the case if you are using a different version of SketchUp than the OpenStudio installer targets).  
+Ensure that your version of SketchUp is compatible with your version of OpenStudio as listed in [this matrix](https://github.com/NREL/OpenStudio/wiki/OpenStudio-Version-Compatibility-Matrix).  Try opening the "Window->Preferences->Extensions" window in SketchUp, enable the OpenStudio SketchUp Plug-in if it is listed.  If the OpenStudio SketchUp Plug-in is not listed you may have to manually install it (this is the case if you are using a different version of SketchUp than the OpenStudio installer targets).
 
 To install the OpenStudio SketchUp Plug-in manually on Windows please copy the files in:
 
@@ -50,11 +50,11 @@ If you want to investigate in more depth, download [Dependency Walker](http://ww
 _________________
 
 ## OpenStudio Application and SketchUp Plug-in Crash
-Several users have reported an OpenStudio Application and OpenStudio SketchUp Plug-in crash occurring when saving or opening a file is related to the Dell Backup and Recovery software.  It appears that this program is [known to cause issues](http://en.community.dell.com/support-forums/software-os/f/3526/t/19634253) with Qt based applications (such as OpenStudio).  
+Several users have reported an OpenStudio Application and OpenStudio SketchUp Plug-in crash occurring when saving or opening a file is related to the Dell Backup and Recovery software.  It appears that this program is [known to cause issues](http://en.community.dell.com/support-forums/software-os/f/3526/t/19634253) with Qt based applications (such as OpenStudio).
 _________________
 
 ## Graphics Problems in OpenStudio Application
-Several users have reported graphics issues with the Geometry and Results tabs within the OpenStudio Application.  In many cases, adjusting power saving settings of the graphics cards has resolved these issues.  For computers with NVIDA graphics cards, you can access these settings via the NVIDIA Control Panel under “3D Settings->Manage 3D Settings”.  In this panel, make sure that “Preferred graphics processor” is set to “High-performance NVIDIA processor”.
+Several users have reported graphics issues with the Geometry and Results tabs within the OpenStudio Application.  In many cases, adjusting power saving settings of the graphics cards has resolved these issues.  For computers with NVIDA graphics cards, you can access these settings via the NVIDIA Control Panel under "3D Settings->Manage 3D Settings".  In this panel, make sure that "Preferred graphics processor" is set to "High-performance NVIDIA processor".
 
 ![Adjust NVIDIA Settings](img/help/nvidia_settings.png)
 
@@ -67,9 +67,9 @@ C:\openstudio-%VERSION%\bin\OpenStudioApp.exe > out.txt 2>&1
 _________________
 
 ## Orphan Objects and Unused Resources
-At times some objects in OpenStudio that should have a parent, such as surfaces and internal load instances, may become detached from their parent. Possibly the parent is deleted but for some reason the child is not. These often are not visible in the GUI, and while it is possible to fix remove these orphans with a text editor it isn't ideal. To provide a better workflow for this we created a measure [Remove Orphan Objects and Unused Resources](https://bcl.nrel.gov/node/82267) that can be run either using Apply Measure Now or at run time. If you see an EnergyPlus error about an object you don't think you have in your model, you may try running this to clean up the model. Additionally this measure also provides checkboxes that allow you to remove unused resources. While unused resources can be cleaned up in the GUI, the measure provides a robust and quick way to do this. Over time we will increase the functionality of the orphan cleanup as well as purging of unused resources. 
+At times some objects in OpenStudio that should have a parent, such as surfaces and internal load instances, may become detached from their parent. Possibly the parent is deleted but for some reason the child is not. These often are not visible in the GUI, and while it is possible to fix remove these orphans with a text editor it isn't ideal. To provide a better workflow for this we created a measure [Remove Orphan Objects and Unused Resources](https://bcl.nrel.gov/node/82267) that can be run either using Apply Measure Now or at run time. If you see an EnergyPlus error about an object you don't think you have in your model, you may try running this to clean up the model. Additionally this measure also provides checkboxes that allow you to remove unused resources. While unused resources can be cleaned up in the GUI, the measure provides a robust and quick way to do this. Over time we will increase the functionality of the orphan cleanup as well as purging of unused resources.
 
-Below is a screenshot of what the measure looks like in the apply measure now window. By default the remove unused objects boxes are un-checked. You will always get the remove orphan functionality. 
+Below is a screenshot of what the measure looks like in the apply measure now window. By default the remove unused objects boxes are un-checked. You will always get the remove orphan functionality.
 
 ![Remove Orphan Objects and Unused Resources - Arguments](img/help/orphan_purge_argview.png)
 

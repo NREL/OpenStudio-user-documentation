@@ -2,7 +2,7 @@
 This tutorial explains how to use the OS:WindowProperty:FrameAndDivider object to study the impact of window frame and divider materials as well as the impact of sill and outside reveal surfaces. The OS:WindowProperty:FrameAndDivider object closely follows the EnergyPlus [WindowProperty:FrameAndDivider](http://bigladdersoftware.com/epx/docs/8-2/input-output-reference/page-011.html#windowpropertyframeanddivider
 ) object with only one difference.  The OpenStudio object includes one additional field, Outside Reveal Depth, which the EnergyPlus object does not.  During translation from OpenStudio to EnergyPlus, OS:SubSurface vertices are offset by this amount in order to model the additional shading provided by the outside reveal surface.
 
-## Create Window Property Frame and Divider 
+## Create Window Property Frame and Divider
 Window Property Frame and Divider objects can be created using the object inspector in the OpenStudio SketchUp plug-in. The inspector can also be used to edit any properties of the Window Property Frame and Divider object.
 
 ![Add Window Property Frame and Divider](img/windowproperty_frameanddivider/windowproperty_frameanddivider1.jpg)

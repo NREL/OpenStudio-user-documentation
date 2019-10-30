@@ -6,7 +6,7 @@ In order to apply energy codes to a SDD model, CBECC-Com requires information th
 
 [![Material Measure Tags](img/cbecc_materials_constructions/cbecc_materials_material1.jpg "Click to view larger version.")](img/cbecc_materials_constructions/cbecc_materials_material1.jpg)
 
-The Composite material standards category behaves slightly differently.  For this category, you are prompted to specify framing material, configuration, depth, size, and cavity insulation for your composite layer.  CBECC-Com uses these properties to model your composite material, there is no standards identifier for composite materials.  
+The Composite material standards category behaves slightly differently.  For this category, you are prompted to specify framing material, configuration, depth, size, and cavity insulation for your composite layer.  CBECC-Com uses these properties to model your composite material, there is no standards identifier for composite materials.
 
 [![Composite Material Measure Tags](img/cbecc_materials_constructions/cbecc_materials_material2.jpg "Click to view larger version.")](img/cbecc_materials_constructions/cbecc_materials_material2.jpg)
 

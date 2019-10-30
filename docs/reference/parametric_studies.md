@@ -29,7 +29,7 @@ To create a project use the menu item `File->New Project`
 
 *Above: The dialog takes you to a window to save your new project.*
 
-<iframe width="640" height="360" src="http://www.youtube.com/embed/3rmElK_OB28?end=107" allowfullscreen></iframe>
+<iframe width="640" height="360" src="https://www.youtube.com/embed/3rmElK_OB28?end=107" allowfullscreen></iframe>
 
 *Above: The video above shows the creation of a new project and gives a short introduction to the interface.*
 
@@ -65,7 +65,7 @@ The measures are applied to the model in order from top to bottom. You can reord
 
 Check out the [Measure Writing Guide](../reference/measure_writing_guide.md) and start writing your own custom measures.
 
-<iframe width="640" height="360" src="http://www.youtube.com/embed/3rmElK_OB28?start=112&end=273" allowfullscreen></iframe>
+<iframe width="640" height="360" src="https://www.youtube.com/embed/3rmElK_OB28?start=112&end=273" allowfullscreen></iframe>
 
 *Above: Adding measures to your project and editing the parameters*
 
@@ -123,7 +123,7 @@ The Modeler Description is meant to assist the energy modeler. It should explain
 ___________________
 
 ## Select Measures and Create Design Alternatives
-<iframe width="640" height="360" src="http://www.youtube.com/embed/4g5nJzDoh58?end=116" allowfullscreen></iframe>
+<iframe width="640" height="360" src="https://www.youtube.com/embed/4g5nJzDoh58?end=116" allowfullscreen></iframe>
 
 *Above: This video shows you how to create design alternatives in an OpenStudio Parametric Analysis Tool Project.*
 
@@ -140,14 +140,14 @@ You must select the design alternatives you want to run before hitting the run b
 
 *Above: Screenshot of the "Run" tab with design alternatives selected.*
 
-<iframe width="640" height="360" src="http://www.youtube.com/embed/4g5nJzDoh58?start=117&end=273" allowfullscreen></iframe>
+<iframe width="640" height="360" src="https://www.youtube.com/embed/4g5nJzDoh58?start=117&end=273" allowfullscreen></iframe>
 
 *Above: Running your simulations.*
 
 ___________________
 
 ## Create and View Reports
-<iframe width="640" height="360" src="http://www.youtube.com/embed/9WgUhiJ785I" allowfullscreen></iframe>
+<iframe width="640" height="360" src="https://www.youtube.com/embed/9WgUhiJ785I" allowfullscreen></iframe>
 
 *Above: This video shows the simulation results of a parametric analysis and then shows you how to inspect a specific design alternative in the SketchUp Plugin.*
 
@@ -187,7 +187,7 @@ __Review Amazon pricing at [http://aws.amazon.com/ec2/pricing/](http://aws.amazo
 
 *Above: Fill out the first screen and agree to terms before continuing to the second screen.*
 
-<iframe width="640" height="360" src="http://www.youtube.com/embed/0llNfGNe5x0" allowfullscreen></iframe>
+<iframe width="640" height="360" src="https://www.youtube.com/embed/0llNfGNe5x0" allowfullscreen></iframe>
 
 *Above: The video above demonstrates running simulations on the cloud.*
 

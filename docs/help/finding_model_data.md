@@ -4,7 +4,7 @@ Good inputs are critical to getting good results from energy modeling. This page
 ## OpenStudio Building Type Templates
 The New OpenStudio Model From Template tool is represented by this icon in the toolbar: ![New OpenStudio Model](img/plugin_reference_guide/os_new.png "New OpenStudio Model"). Templates contain data for constructions, loads, and schedules for four vintages across all U.S. climate zones. Templates do not contain any geometry.
 
-<iframe width="640" height="360" src="http://www.youtube.com/embed/wzzY_W2WELo?end=43" allowfullscreen></iframe>
+<iframe width="640" height="360" src="https://www.youtube.com/embed/wzzY_W2WELo?end=43" allowfullscreen></iframe>
 
 *Above: This video shows you how to choose a template before setting up your model.*
 

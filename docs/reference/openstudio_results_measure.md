@@ -3,7 +3,7 @@
 ## Measure Overview
 In OpenStudio 1.8.1 and later this measure replaces the monthly end use overview as the default measure on any simulation. You don't have to add it to your workflow, it just runs. This measure creates high level tables and charts pulling both from model inputs and EnergyPlus results, all data is in IP units. It has building level information as well as detail on space types, thermal zones, HVAC systems, envelope characteristics, and economics. Click the heading above a chart to view a table of the chart data. If you have OpenStudio 1.7.5 or later, you can also download a copy of this from the [BCL](https://bcl.nrel.gov/node/82918), however offline viewing of charts within the OpenStudio Application requires 1.8.1 or later. If you are viewing the report through a web browser you won't see charts if you are offline, but you will still see tables. While the report generally uses high level model data or tabular results, a few sections do request hourly or monthly time-series data. This applies to the HVAC Load Profiles and Zone Conditions sections.
 
-<iframe width="640" height="360" src="http://www.youtube.com/embed/PlrWE3ugcdE" allowfullscreen></iframe>
+<iframe width="640" height="360" src="https://www.youtube.com/embed/PlrWE3ugcdE" allowfullscreen></iframe>
 
 *Above: This video demonstrates the 1.9.0 Release with the Reporting Measure.*
 
