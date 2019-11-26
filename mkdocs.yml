@@ -16,6 +16,7 @@ pages:
 - [tutorials/large_scale_analysis.md, Essential Tutorials, Large Scale Analysis]
 - [tutorials/radiance_tutorial.md, Essential Tutorials, Radiance and OpenStudio]
 - [tutorials/tutorial_bcl.md, Essential Tutorials, Building Component Library]
+- [tutorials/tutorial_datetime.md, Essential Tutorials, Date and Time in OpenStudio]
 
 - [tutorials/utility_rate_tariffs.md, Advanced Tutorials, Utiity Rate Tariffs]
 - [tutorials/life_cycle_costing_examples.md, Advanced Tutorials, Life Cycle Cost Analysis]
