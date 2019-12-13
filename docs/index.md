@@ -17,14 +17,9 @@
     <div class="col-sm-6 col-md-4">
       <div class="thumbnail"> <img src="img/model_thumb.png" alt="Openstudio Model Image">
         <div class="caption">
-          <h3>References &amp; Tutorials</h3>
-          <p>Interface guides give detailed overviews of the OpenStudio applications.</p>
-          <p><a href="reference/sketchup_plugin_interface.md" class="btn btn-primary" role="button">SketchUp Plug-in</a></p>
-          <p><a href="reference/openstudio_application_interface.md" class="btn btn-primary" role="button">OpenStudio Application</a></p>
-          <p>Tutorials cover essential workflows as well as advanced topics.</p>
-          <p><a href="tutorials/creating_your_model.md" class="btn btn-primary" role="button">Creating Your Model</a></p>
-          <p><a href="tutorials/running_your_simulation.md" class="btn btn-primary" role="button">Running Your Simulation</a></p>
-          <p><a href="tutorials/radiance_tutorial.md" class="btn btn-primary" role="button">Radiance &amp; OpenStudio</a></p>
+          <h3>References</h3>
+          <p>The OpenStudio SDK only supports the Command Line Interface for running measure based workflows quickly and easily. If you are looking for a GUI to generate OpenStudio models and workflows you may consider the OpenStudio Application. More information about the Application is available <a href="https://www.openstudio.net/new-future-for-openstudio-application" >here.</a></p>
+          <p><a href="reference/command_line_interface.md" class="btn btn-primary" role="button">Command Line Interface</a></p>
         </div>
       </div>
     </div>
@@ -36,8 +31,6 @@
           <p><a href="getting_started/about_measures.md" class="btn btn-primary" role="button">About Measures</a></p>
           <p>Can't find the measures you want, or need to customize an existing measure? The Measure Writing Guide will help you get started.</p>
           <p><a href="reference/measure_writing_guide.md" class="btn btn-primary" role="button">Measure Writing Guide</a></p>
-          <p>Want to script your entire workflow?  The OpenStudio Command Line Interface can run your measure based workflow quickly and easily.</p>
-          <p><a href="reference/command_line_interface.md" class="btn btn-primary" role="button">Command Line Interface</a></p>
         </div>
       </div>
     </div>
