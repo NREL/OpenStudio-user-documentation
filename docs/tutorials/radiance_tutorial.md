@@ -15,7 +15,7 @@ Using the SketchUp Plugin tools, create the following elements:
 
 - Building Shading Objects - to represent overhangs, fins, parapets
 - Site Shading Objects - to represent other buildings, trees, ground
-- [Interior Partition Surfaces](../reference/sketchup_plugin_interface#NewInteriorPartitionSurfaceGroup) - can be used to define furniture, cubicle walls, & other relevant structures, in addition to refining the interior space geometry (e.g. adding columns, ceiling coffers, soffits)
+- Interior Partition Surfaces - can be used to define furniture, cubicle walls, & other relevant structures, in addition to refining the interior space geometry (e.g. adding columns, ceiling coffers, soffits)
 
 ###2. Define Materials (SketchUp Plug-in or OpenStudio Application)
 It is recommended to review the materials of your model constructions to ensure the photometric properties, e.g., visible light transmittance, transmittance model (specular or diffuse), and visible light reflectance, are correct.
