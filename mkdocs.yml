@@ -27,7 +27,6 @@ pages:
 - [tutorials/tutorial_windowproperty_frameanddivider.md, Advanced Tutorials, Window Property Frame and Divider]
 - [tutorials/tutorial_virtual_pulse.md, Advanced Tutorials, VirtualPULSE]
 
-- [reference/openstudio_application_interface.md, Reference, OpenStudio Application Interface Guide]
 - [reference/sketchup_plugin_interface.md, Reference, SketchUp Plug-in Interface Guide]
 - [reference/geometry_editor.md, Reference, FloorspaceJS]
 - [reference/command_line_interface.md, Reference, Command Line Interface]

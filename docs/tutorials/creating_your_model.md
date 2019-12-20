@@ -132,7 +132,7 @@ The tab can also be used to configure and turn daylight savings time on and off.
 ------
 
 ## Schedules
-To create and edit schedules in the OpenStudio application go to the schedules tab. Check out the [OpenStudio Application Interface Guide](../reference/openstudio_application_interface.md) for an overview of the interface.
+To create and edit schedules in the OpenStudio application go to the schedules tab.
 
 ------
 
