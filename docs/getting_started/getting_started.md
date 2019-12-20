@@ -1,4 +1,4 @@
-<h1>Installation and Introductory Tutorial</h1>
+<h1>Installation</h1>
 This page walks you through installing OpenStudio and the basic workflow.
 
 ## Installation Instructions
@@ -26,7 +26,12 @@ OpenStudio-3.0.0-pre1+5cfb36386f-Windows.exe --script install.qs
 
 An [example installation script](https://raw.githubusercontent.com/NREL/OpenStudio/develop/install.qs) can be modified to support custom installation.
 
+__Optional - Install PAT__
+
+Instructions coming soon.
+
 __Optional - Setup a Building Component Library (BCL) Account__
+
 BCL content can now be accessed from within the OpenStudio SketchUp Plug-in and from the standalone OpenStudio application. To take advantage of this integration, you will need to follow the steps outlined here to request a BCL key.
 
 1. Login to [Building Component Library (BCL)](https://bcl.nrel.gov/). Create an account if you don't have one. Follow the instructions from the email sent to you upon registration and then login.
@@ -66,84 +71,3 @@ The [OpenStudio Quick Start Guide (PDF)](img/pdfs/openstudio_interface_quickstar
 ## Quick Start Guide to the Parametric Analysis Tool (PAT)
 The [Parametric Analysis Tool Quick Start Guide (PDF)](img/pdfs/PAT-Quick_Start_Guide.pdf) and the [Parametric Analysis Tool Interface Guide](../reference/parametric_studies.md) provide an introduction to the interface and workflow for creating multiple design alternatives from a seed model.
 
-## Introductory Tutorial
-The tutorial below was created before the grid view was added to the Space Types and Thermal Zones tabs. Grid view allows you to view and edit more than one space type or thermal zone at a time. Go to the [OpenStudio Application Interface Guide](../reference/openstudio_application_interface.md) to learn more about grid view.
-
-### Selecting a Template for Constructions in SketchUp using the OpenStudio Plug-in
-Templates contain data for constructions, loads, and schedules for 6 vintages across all U.S. climate zones. Templates do not contain any geometry. Load templates by using the menu under __Extentions/OpenStudio User Scripts/On-Demand Template Generators/Space Type and Construction Set Wizard__. Then select your type of building, vintage, and climate zone from the dialog. You can also get standard space types for that template by choosing "true" on the dialog. Space types can define internal loads, schedule sets, and construction sets. It can take a few minutes to load.
-
-![New OpenStudio Model From Template Dialog](img/menu_template.png)
-
-*Above: Load a new template using the menu.*
-
-![New OpenStudio Model From Template Dialog](img/from_template.png)
-
-Vintages:
-
-- DOE Ref Pre-1980
-- DOE Ref 1980-2004
-- DOE Ref 2004
-- 90.1-2010
-- 189.1-2009
-- 90.1-2007
-
-Climate Zones: 1 - 8
-
-![Climate Zone Map](img/create_model/climate_zones.png)
-
-
-### SketchUp Plug-in - Building Envelope
-For additional information on the SketchUp Plug-in interface, go to the [OpenStudio SketchUp Plug-in Interface Guide](../reference/sketchup_plugin_interface.md) section.
-
-<iframe width="640" height="360" src="https://www.youtube.com/embed/wzzY_W2WELo?start=44&end=129" allowfullscreen></iframe>
-
-*Above: This video shows you how to create your building envelope. It uses the OpenStudio SketchUp Plug-in.*
-
-### SketchUp Plug-in - Space Types and Thermal Zones
-<iframe width="640" height="360" src="https://www.youtube.com/embed/8LTexVna_vw" allowfullscreen></iframe>
-
-*Above: This video shows you how to assign space types, thermal zones, and thermostats to the spaces in your model. It uses the OpenStudio SketchUp Plug-in.*
-
-### Site, Facility, and Basic Run
-<iframe width="640" height="360" src="https://www.youtube.com/embed/tgeepiBltJI" allowfullscreen></iframe>
-
-*Above: This video goes into the OpenStudio application, adds weather data, shows the outline view in the facility tab, and runs a simulation with ideal air loads.*
-
-<iframe width="640" height="360" src="https://www.youtube.com/embed/9uBcb3NBQ84" allowfullscreen></iframe>
-
-*Above: Version 1.9.0: This video demonstrates the new Spaces tab and the redesigned Facilities and Site tab.*
-
-### Space Types, Internal Loads, and Schedules
-<iframe width="640" height="360" src="https://www.youtube.com/embed/PCcxruCaZO0" allowfullscreen></iframe>
-
-*Above: This video demonstrates how you can inspect, alter, and apply resource objects in OpenStudio.*
-
-### Constructions, Materials, and the Building Component Library (BCL)
-<iframe width="640" height="360" src="https://www.youtube.com/embed/8KdVvBds_30" allowfullscreen></iframe>
-
-*Above: This video shows you how to obtain construction and material objects from the Building Component Library and load them into your current model.*
-
-### HVAC - Zone Equipment, Air Loops, and Plant Loops
-<iframe width="640" height="360" src="https://www.youtube.com/embed/DKLnZaNoRX0" allowfullscreen></iframe>
-
-*Above: This video shows you how to add HVAC systems. It introduces the variable and scripts tabs and runs a simulation with the resulting model.*
-
-### Service Hot Water
-<iframe width="640" height="360" src="https://www.youtube.com/embed/jUJhi6YH51E" allowfullscreen></iframe>
-
-*Above: This video shows you how create models using service hot water. This includes water heaters, water use connections, water use equipment, and other associated objects.*
-
-<!--
-## Introductory Tutorial
-- Choosing a Template
-- Modeling the Building Envelope
-- Assigning Building Activity
-- Assigning Thermal Zones
-- Assign Thermostats
-- Saving the OSM model from the SketchUp Plugin
-- Moving from the Plugin to the OpenStudio Application
-- Adding Weather and Design Day Files
-- Adding a Mechanical System
-- Running a Simulation
-- Viewing Simulation Results
--->
