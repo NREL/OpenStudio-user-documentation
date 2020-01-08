@@ -7,6 +7,10 @@
         <div class="caption">
           <h3>Getting Started</h3>
           <p>This section provides installation instructions, introductory tutorials, and information to get you up and running.</p>
+          <p><a href="getting_started/getting_started.md" class="btn btn-primary" role="button">Installation &amp; Tutorial</a></p>
+          <p>Review the list of features and building elements that can be modeled.</p>
+          <p><a href="getting_started/features.md" class="btn btn-primary" role="button">Current Features</a></p>
+          <p><a href="getting_started/roadmap.md" class="btn btn-primary" role="button">Planned Features</a></p>
         </div>
       </div>
     </div>
