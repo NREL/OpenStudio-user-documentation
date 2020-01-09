@@ -12,7 +12,7 @@ The [OpenStudio Quick Start Guide](img/pdfs/openstudio_interface_quickstart.pdf)
 ## Overview
 The tabs on the left that move vertically are ordered in a suggested workflow.
 
-[![Overview](img/os_interface/overview.png "Click to view")](img/os_interface/overview.png)
+[![Overview](img/os_interface/overview.jpg "Click to view")](img/os_interface/overview.png)
 
 *Above: Overview of the OpenStudio Application Interface.*
 
@@ -24,11 +24,11 @@ Sub-tabs are designed to move from more general categories on the left to more s
 ------
 
 ## Right Panel
-The right panel provides access to items in the library or in your model, as well as the ability to edit some of these items.
+The right panel provides access to items in the library or in your model, and allows you to edit some of these items.
 
 - __"My Model"__ displays items that are part of your model already.
 
-- __"Library"__ includes components and measures that come with the application or are downloaded from the Building Component Library (BCL)
+- __"Library"__ includes components and measures that come with the application or are downloaded from the Building Component Library (BCL).
 
 - __"Edit"__ allows you to select certain components and edit the settings for that component. It is used in the HVAC tab to edit component settings, assign thermal zones to loops, and to add plenums.
 
@@ -54,13 +54,13 @@ The right panel provides access to items in the library or in your model, as wel
 ------
 
 ## Adding Objects from the Library
-To add items from the library, select the "Library" tab on the right panel and find the item you want to add to the model. Select that item and drag and drop it in into the correct drop zone. Drop zones are surrounded by a dotted line and are programmed to only accept items that will work for that field.
+To add items from the library, select the "Library" tab on the right panel and find the item you want to add to the model. Select that item and drag and drop it into the correct drop zone. Drop zones are surrounded by a dotted line and are programmed to only accept items that will work for that field.
 
 ![Drag-and-drop Constructions](img/os_interface/drag_drop.png)
 
 *Above: Drag-and-drop items from the library to the drop zones in the model.*
 
-![Drag-and-drop Service Hot Water](img/os_interface/drag_drop_water.png)
+![Drag-and-drop Service Hot Water](img/os_interface/drag_drop_vrf.png)
 
 *Above: Drag-and-drop example on the HVAC service hot water.*
 
@@ -77,9 +77,9 @@ Earlier releases have included a grid view for the refrigeration section in the 
 
 *View this video to see multi-edit in action.*
 
-Drag components and schedules into the grid view. Most items on the grid can be inspected in the right panel "Edit" tab, except schedules. To edit or view schedules go to the schedules tab.
+Drag components and schedules into the grid view. Most items on the grid can be inspected in the right panel "Edit" tab, except schedules. To edit or view schedules, go to the schedules tab.
 
-A yellow highlight indicates the item you have selected in the grid. When you start editing the item in the "Edit" tab the highlight will disappear indicating that the focus is now on editing the item. Use the delete in the "Edit" panel to remove a component from the grid.
+A yellow highlight indicates the item you have selected in the grid. When you start editing the item in the "Edit" tab the highlight will disappear, indicating that the focus is now on editing the item. Use the delete in the "Edit" panel to remove a component from the grid.
 
 Click the shaded portion of a column header if you want to view that column in the "Custom" category.
 
@@ -93,12 +93,12 @@ You can use the Multi-edit feature on individual columns (as shown below) or on 
 
 [![Grid Image](img/os_interface/loads_filter_small.png "Click to view")](img/os_interface/loads_filter.png)
 
-*Above: Above: Hit the "Loads" button to edit and view loads by space type. Click on the name of a component and select the  "Edit" panel on the right to inspect and edit that item.*
+*Above: Hit the "Loads" button to edit and view loads by space type. Click on the name of a component and select the  "Edit" panel on the right to inspect and edit that item.*
 
 ------
 
 ## File Menu
-If you launch the OpenStudio application from the SketchUp Plug-in, your open file will automatically open in the application. But to save the file or open a new file, select file open from the menu.
+If you launch the OpenStudio application from the SketchUp Plug-in, your open file will automatically open in the application. To save the file or open a new file, select file open from the menu.
 
 When you save an OSM model in the OpenStudio Application or the SketchUp Plug-in a folder is saved next to the OSM file. This folder contains external resources such as the weather file, scripts, and simulation results.
 

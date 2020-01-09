@@ -20,10 +20,10 @@ OpenStudio is constantly being improved, with a less stable developer release av
 
 ### Building Constructions and Materials
 
-- Specify default materials for each type of surface and subsurface (ext walls, windows, floors, etc.) in building
+- Specify default materials for each type of surface and subsurface (exterior walls, windows, floors, etc.) in building
 - Specify detailed or simple window properties
 - Specify and attach screens, shades, and blinds to windows
-- Specify and create daylight redirection devices (lovers and films)
+- Specify and create daylight redirection devices (louvers and films)
 - Specify and create vegetated roofs
 - Specify and create air walls
 - Specify and create constructions appropriate for hydronic radiant heating and cooling constructions
@@ -33,13 +33,13 @@ OpenStudio is constantly being improved, with a less stable developer release av
 ### Building Loads
 
 - Specify people, lights, plug loads, gas loads (cooking, etc.), steam loads, internal mass, water using equipment, ventilation requirements, and infiltration
-- Can input loads per-area or add actual quantities to accommodate schematic and detailed design
+- Can input loads per area or add actual quantities to accommodate schematic and detailed design
 - Built in library of space types (loads and associated schedules) for DOE reference buildings for all vintages (pre-1980, 1980-2004), ASHRAE standard prototype buildings (189.1-2009, 90.1-2004, 90.1-2007, 90.1-2010, 90.1-2013), and DEER building types (pre-1975, 1985, 1996, 2003, 2007, 2011, 2014, 2015, 2017)
 - Can apply loads in one place (space type) and apply throughout the building
 
 ### Grid View for Thermal Zones, Space Types, Spaces, Design Days, and Refrigeration Cases
 
-- Viewing and editing your model in a grid view allows to see many objects at once and compare settings.
+- Viewing and editing your model in a grid view allows you to see many objects at once and compare settings.
 
 ![Grid view example](img/features/grid_thumb.png)
 
@@ -48,22 +48,22 @@ OpenStudio is constantly being improved, with a less stable developer release av
 - Graphical representation of HVAC systems, zones, and their connections
 - Drag-and-drop components onto diagram and click to edit
 - HVAC system templates for ASHRAE Appendix G system types
-- Graphical support for creating customized 'single-duct' or 'dual-duct' Air systems or Plants
+- Graphical support for creating customized 'single-duct' or 'dual-duct' air systems or plants
 
 ##### Hot, Chilled, and Condenser Water Systems
 
-- Hot Water Boilers (all fuels)
+- Hot water boilers (all fuels)
 - District heating and cooling
 - Set-temperature heating/cooling source
 - Single, two-speed, and variable-speed cooling towers
 - Single and two-speed fluid coolers and evaporative fluid coolers
-- Chillers (electric, absorption, indirect absorption and central heat pump)
+- Chillers (electric, absorption, indirect absorption, and central heat pump)
 - Vertical and horizontal ground heat exchanger (bore fields & trenches for ground-source heat pumps)
 - Water-to-water heat pumps
 - Bypass pipes
 - Constant and variable speed pumps, both individual and headered
 - Fluid-to-fluid heat exchangers (for primary/secondary pumping and waterside economizers, etc.)
-- Hot, Chilled, and Condenser Water System Controls
+- Hot, chilled, and condenser water system controls
 - Staging of equipment (based on load range, part-load, sequential, etc.)
 - Solar hot water (with and without storage and integrated PV)
 - Pipes (indoor heat loss, outdoor heat loss, or adiabatic)
@@ -72,9 +72,9 @@ OpenStudio is constantly being improved, with a less stable developer release av
 
 ##### Air System Components
 
-- Constant Speed and Variable Speed Supply, Return and Exhaust Fans
+- Constant speed and variable speed supply, return and exhaust fans
 - Supply and return plenums
-- Packaged Unitary equipment
+- Packaged unitary equipment
 - Dual-duct CV and VAV systems, including customization
 - Changeover bypass (VVT) systems
 - Multi-stage unitary equipment (used with staged thermostats)
@@ -91,38 +91,38 @@ OpenStudio is constantly being improved, with a less stable developer release av
 - VAV terminals without reheat
 - Series and parallel fan powered boxes with reheat (all fuel types)
 - Diffusers
-- Two-pipe and Four-pipe Chilled beams (active and passive)
+- Two-pipe and four-pipe chilled beams (active and passive)
 - Four-pipe induction terminals
 
 ##### Air System Controls
 
-- Controls for All Air Systems: 
-	- Air System Availability Manager controls
+- Controls for all air systems: 
+	- Air aystem availability manager controls
 		- Scheduled on/off
 		- Hybrid ventilation controls 
 		- Night ventilation controls 
 		- Hybrid ventilation controls
 		- Night-cycle controls (whole system and/or terminal fans)
-		- Optimum Start controls
+		- Optimum start controls
 		- Differential thermostat
 		- High temperature turn on/off
 		- Low temperature turn on/off
-	- Outdoor and Supply Air Temperature/Humidity Controls
-		- Scheduled Supply Air Temp 
-		- Supply Air Temp reset based on OA 
-		- Supply Air Temp follow OA Temp
-		- Supply Air Humidity Minimum / Maximum with deadband 
+	- Outdoor and supply air temperature/humidity controls
+		- Scheduled supply air temp 
+		- Supply air temp reset based on OA 
+		- Supply air temp follow OA Temp
+		- Supply air humidity minimum / maximum with deadband 
 	- Demand-controlled ventilation controls	
-- Controls for Single and Multizone VAV Air Systems: 
-	- Scheduled Supply Air Temp 
-	- Supply Air Temp reset based on OA
-	- Supply Air Temp reset based on Zone Temps (Warmest)
-	- Supply Air Flow reset based on Zone Temps (Warmest)
-	- Supply Air Humidity Minimum / Maximum (critical zone or average of zones)
-	- Single-zone VAV Reheat (one control zone, many slaves)
+- Controls for single and multizone VAV air systems: 
+	- Scheduled supply air temp 
+	- Supply air temp reset based on OA
+	- Supply air temp reset based on zone temp (warmest)
+	- Supply air flow reset based on zone temp (warmest)
+	- Supply air humidity minimum/maximum (critical zone or average of zones)
+	- Single-zone VAV heat (one control zone, many slaves)
 		- Heating only
 		- Cooling only
-		- Both Heating and Cooling 
+		- Both heating and cooling 
 
 ##### Zone-level Heating and Cooling Systems
 
@@ -130,7 +130,7 @@ OpenStudio is constantly being improved, with a less stable developer release av
 - Unit ventilators
 - Energy recovery ventilators
 - Dehumidifiers
-- Low temp radiant heating (electric, variable and constant flow water)
+- Low temp radiant heating (electric, variable, and constant flow water)
 - Low temp radiant cooling (variable and constant flow water)
 - PTAC (DX cooling + fan + all heating fuels)
 - PTHP (DX heating/cooling + fan + + electric backup heat)
@@ -145,16 +145,16 @@ OpenStudio is constantly being improved, with a less stable developer release av
 ##### Variable Refrigerant Flow Systems
 
 - Condenser plus zone-level terminals
-- Heat Recovery add/or Heat Pump VRF
-- Air-cooled, Evaporatively-cooled or Water-cooled condensing units
+- Heat recovery add/or heat pump VRF
+- Air-cooled, evaporatively-cooled or water-cooled condensing units
 - Piping correction factors account for performance degradation estimates
-- Load, Zone or Scheduled Thermostat Priorities
+- Load, zone or scheduled thermostat priorities
 
 ##### Commercial Refrigeration
 
-- DX Refrigeration Systems
-- Cascading DX Refrigeration Systems
-- Fluid-filled DX Secondary Refrigeration Systems
+- DX refrigeration systems
+- Cascading DX refrigeration systems
+- Fluid-filled DX secondary refrigeration systems
 - Cases
 - Walk-in freezers
 - Compressors
@@ -165,13 +165,13 @@ OpenStudio is constantly being improved, with a less stable developer release av
 
 ##### Domestic Water Systems
 
-- Hot Water Heaters 
-	- Tank Type /  Tankless Water Heaters (all fuels) 
+- Hot water heaters 
+	- Tank type/tankless water heaters (all fuels) 
 	- Heat Pump Water Heaters
 	- Stratified tank Water Heaters
-	- Storage Tank fed from Boiler(s) / Heat Exchanger
-- Solar Hot Water (Flat Plate or Integral Collectors) for pre-heating 
-- Constant Speed and/or Variable Speed Recirculation / Booster pumps
+	- Storage Tank fed from Boiler(s)/heat exchanger
+- Solar hot water (flat plate or integral collectors) for pre-heating 
+- Constant speed and/or variable speed recirculation/booster pumps
 - Equipment that uses warm water (showers, faucets, etc.), can specify mixed water temp
 - Equipment that uses cold water only
 
@@ -183,7 +183,7 @@ OpenStudio is constantly being improved, with a less stable developer release av
 - Insert illuminance map for visualizing daylight analysis using the Sketchup plugin
 - Use built-in OpenStudio Measure to run daylighting analysis using Radiance, state-of-the-art ray-tracing daylight simulation engine without making a separate model
 - Configure daylight analysis parameters used by radiance simulation
-- Lights in the EnergyPlus model controlled based on daylight available per Radiance
+- Lights in the EnergyPlus model controlled based on daylight available per radiance
 
 ### Custom Controls
 Within EnergyPlus, advanced controls that are not built-in can be implemented utilizing the [EnergyManagementSystem (EMS)](https://energyplus.net/sites/all/modules/custom/nrel_custom/pdfs/pdfs_v9.2.0/EMSApplicationGuide.pdf) suite of objects. This involves defining Sensors and Actuators that interact with building parameters through Programs which are written in the EnergyPlus Runtime Language (ERL), which is based on a common building-controls language. OpenStudio supports the creation of EMS programs.
@@ -192,7 +192,7 @@ Within EnergyPlus, advanced controls that are not built-in can be implemented ut
 
 - Find typical [weather data and ASHRAE design conditions](https://energyplus.net/weather) for most locations in the world
 - Use actual weather data (AMY) from a variety of vendors/sources
-- Store ASHRAE/CEC Climate Zone to trigger calculations within Measures
+- Store ASHRAE/CEC climate zone to trigger calculations within Measures
 
 ### Economics
 
@@ -212,7 +212,7 @@ Within EnergyPlus, advanced controls that are not built-in can be implemented ut
 - SDD export (input format - geometry, constructions, and thermal zones only)
 - IFC import (geometry only)
 - Import resources (materials, constructions, loads, spacetypes) from .osm file
-- Import surfaces, sub surfaces, spaces, and thermal zones from eQuest models using a [Measure](https://github.com/canmet-energy/btap/tree/master/measures_development/btap_equest_converter)
+- Import surfaces, subsurfaces, spaces, and thermal zones from eQuest models using a [Measure](https://github.com/canmet-energy/btap/tree/master/measures_development/btap_equest_converter)
 
 ### Analysis of Existing Buildings
 
@@ -237,13 +237,13 @@ Within EnergyPlus, advanced controls that are not built-in can be implemented ut
 - Perform complex ECMs, like full HVAC replacement, easily
 - Quickly access online and local libraries of measures from drag-and-drop interface
 - Edit user inputs to control how Measure modifies the model
-- Creates meaningful results, ready for inclusion in reports to design team, building owners, etc.
+- Create meaningful results, ready for inclusion in reports to design team, building owners, etc.
 
 ### QAQC
 
 - Measures can be used to check for common modeling errors
-- Users don't have to understand to use; gives expert review to junior modelers more cheaply
-- Automate key checks for Utility Regulators to keep up quality
+- Users don't have to understand to use; gives expert review to junior modelers more inexpensively
+- Automate key checks for utility regulators to keep up quality
 - Lower time spent by reviewers on mundane checks; frees time to focus on real issues
 - Users can modify [Generic QAQC Measure](https://bcl.nrel.gov/node/83673) to create custom checks
 
@@ -257,8 +257,8 @@ Within EnergyPlus, advanced controls that are not built-in can be implemented ut
 ### Cloud Computing Using [PAT](https://github.com/NREL/OpenStudio-PAT/releases)
 
 - Any user with an Amazon account can run simulations on cloud with 1 click
-- Very cheap vs. engineer's time (16 simulations in parallel for ~$2.00/hr)
-- Can run up to 300 simulation in parallel (costs scale in 16-processor increments)
+- Very affordable vs. engineer's time (16 simulations in parallel for ~$2.00/hr)
+- Can run up to 300 simulations in parallel (costs scale in 16-processor increments)
 - Enables small firms to access cloud computing without upfront hardware costs
 
 ### Share Modeling Best-Practices
@@ -266,7 +266,7 @@ Within EnergyPlus, advanced controls that are not built-in can be implemented ut
 - Online database called BCL (Building Component Library) can be used to share Measures
 - BCL can be used to share building components
 - Instantaneous world-wide distribution and updating of content
-- Allows Utilities to ensure uniformity and best-practices across many EC firms
+- Allows utilities to ensure uniformity and best-practices across many energy consulting firms
 
 ### Documentation
 
