@@ -77,11 +77,11 @@ Earlier releases have included a grid view for the refrigeration section in the 
 
 *View this video to see multi-edit in action.*
 
-Drag components and schedules into the grid view. Most items on the grid can be inspected in the right panel "Edit" tab, except schedules. A yellow highlight indicates the item you have selected in the grid. When you start editing the item in the "Edit" tab the highlight will disappear indicating that the focus is now on editing the item.
+Drag components and schedules into the grid view. Most items on the grid can be inspected in the right panel "Edit" tab, except schedules. To edit or view schedules go to the schedules tab.
 
-Select the check box in the top of the column if you want to view that column in the "Custom" category.
+A yellow highlight indicates the item you have selected in the grid. When you start editing the item in the "Edit" tab the highlight will disappear indicating that the focus is now on editing the item. Use the delete in the "Edit" panel to remove a component from the grid.
 
-Drag components and schedules into the grid view. Most items on the grid can be inspected in the right panel "Edit" tab, except schedules. To edit or view schedules go to the schedules tab. Use the delete in the "Edit" panel to remove a component from the grid.
+Click the shaded portion of a column header if you want to view that column in the "Custom" category.
 
 Click on the color box on the "General" button to change the rendering color of the space type. This will change the rendering color in the SketchUp Plug-in as well.
 
@@ -115,7 +115,7 @@ The Units menu lets you switch between SI and IP units. This affects both input 
 
 The SketchUp Plug-in has access to this as well under `Plugins->OpenStudio->Preferences`.
 
-Scan for Tools will look for Radiance, Ruby, and EnergyPlus installations. If you install those applications prior to installing OpenStudio this shouldn't be necessary.
+Change Default Libraries allows one to restore default libraries. This feature complements the Load Library feature within the File Menu. Loading several libraries could increase the duration to boot the OpenStudio application. To reduce this duration, restore default libraries. 
 
 ![Preferences Menu](img/os_interface/prefer_menu.png)
 

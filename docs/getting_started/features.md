@@ -22,14 +22,19 @@ OpenStudio is constantly being improved, with a less stable developer release av
 
 - Specify default materials for each type of surface and subsurface (ext walls, windows, floors, etc.) in building
 - Specify detailed or simple window properties
-- Built-in library of building constructions (walls, windows, doors, floors, etc.) for all DOE reference building types and vintages (pre-1980, 1980-2004, and 2004) plus ASHRAE 189.1-2009, ASHRAE 90.1-2007, and ASHRAE 90.1-2010
-- Online library of building materials and their modeling properties from ASHRAE Handbook
+- Specify and attach screens, shades, and blinds to windows
+- Specify and create daylight redirection devices (lovers and films)
+- Specify and create vegetated roofs
+- Specify and create air walls
+- Specify and create constructions appropriate for hydronic radiant heating and cooling constructions
+- Built-in library of building constructions (walls, windows, doors, floors, etc.) for all DOE reference building types and vintages (pre-1980, 1980-2004), ASHRAE standard prototype buildings (189.1-2009, 90.1-2004, 90.1-2007, 90.1-2010, 90.1-2013), and DEER building types (pre-1975, 1985, 1996, 2003, 2007, 2011, 2014, 2015, 2017)
+- [Online library](https://bcl.nrel.gov/nrel/types/component) of building materials and their modeling properties from ASHRAE Handbook
 
 ### Building Loads
 
 - Specify people, lights, plug loads, gas loads (cooking, etc.), steam loads, internal mass, water using equipment, ventilation requirements, and infiltration
 - Can input loads per-area or add actual quantities to accommodate schematic and detailed design
-- Built in library of space types (loads and associated schedules) for DOE reference buildings for all vintages (pre-1980, 1980-2004, and 2004) plus ASHRAE 189.1-2009, ASHRAE 90.1-2007, and ASHRAE 90.1-2010
+- Built in library of space types (loads and associated schedules) for DOE reference buildings for all vintages (pre-1980, 1980-2004), ASHRAE standard prototype buildings (189.1-2009, 90.1-2004, 90.1-2007, 90.1-2010, 90.1-2013), and DEER building types (pre-1975, 1985, 1996, 2003, 2007, 2011, 2014, 2015, 2017)
 - Can apply loads in one place (space type) and apply throughout the building
 
 ### Grid View for Thermal Zones, Space Types, Spaces, Design Days, and Refrigeration Cases
@@ -43,59 +48,81 @@ OpenStudio is constantly being improved, with a less stable developer release av
 - Graphical representation of HVAC systems, zones, and their connections
 - Drag-and-drop components onto diagram and click to edit
 - HVAC system templates for ASHRAE Appendix G system types
+- Graphical support for creating customized 'single-duct' or 'dual-duct' Air systems or Plants
 
 ##### Hot, Chilled, and Condenser Water Systems
 
-- Boilers (all fuels)
+- Hot Water Boilers (all fuels)
 - District heating and cooling
 - Set-temperature heating/cooling source
 - Single, two-speed, and variable-speed cooling towers
 - Single and two-speed fluid coolers and evaporative fluid coolers
-- Chillers (electric, absorption, indirect absorption)
+- Chillers (electric, absorption, indirect absorption and central heat pump)
 - Vertical and horizontal ground heat exchanger (bore fields & trenches for ground-source heat pumps)
+- Water-to-water heat pumps
 - Bypass pipes
 - Constant and variable speed pumps, both individual and headered
 - Fluid-to-fluid heat exchangers (for primary/secondary pumping and waterside economizers, etc.)
 - Hot, Chilled, and Condenser Water System Controls
-- Scheduled, OA reset, high and low with deadband, and follow OA setpoint controls
 - Staging of equipment (based on load range, part-load, sequential, etc.)
 - Solar hot water (with and without storage and integrated PV)
 - Pipes (indoor heat loss, outdoor heat loss, or adiabatic)
 - Load profile (model plant behavior with loads from a schedule)
 - Ice and chilled water storage
-- Water-to-water heat pumps
 
 ##### Air System Components
 
+- Constant Speed and Variable Speed Supply, Return and Exhaust Fans
 - Supply and return plenums
-- Unitary equipment
-- Dual-duct systems
+- Packaged Unitary equipment
+- Dual-duct CV and VAV systems, including customization
 - Changeover bypass (VVT) systems
 - Multi-stage unitary equipment (used with staged thermostats)
 - Outdoor air intake with economizers (all types) and damper control
 - Chilled water cooling coils
-- One-speed, two-speed, multi-speed, and variable-speed DX cooling coils
+- One-speed, two-speed, multi-speed, and variable-speed DX cooling coils, including humidity controls
 - One-speed, multi-speed, and variable-speed DX heating coils (heat pumps)
 - Water-to-air heat pumps
-- Gas, electric, hot water, and DX (heat pump) heating and/or preheat coils
-- Variable and Constant Speed Fans
+- Gas, electric, hot water and DX (heat pump) heating and/or preheat coils
 - Steam humidifiers (electrically powered) used with zone humidistats
 - Direct and indirect evaporative coolers
-- Sensible and latent heat recovery
+- Sensible and latent heat recovery 
 - VAV-Reheat and CAV-Reheat terminals (gas, electric, and hot water reheat coils)
 - VAV terminals without reheat
 - Series and parallel fan powered boxes with reheat (all fuel types)
 - Diffusers
-- Chilled beams (active and passive)
+- Two-pipe and Four-pipe Chilled beams (active and passive)
 - Four-pipe induction terminals
 
 ##### Air System Controls
 
-- Demand-controlled ventilation
-- Night-cycle controls (whole system and/or terminal fans)
-- Scheduled, OA reset, SAT reset, and follow OA setpoint controls
-- Single-zone VAV system control (one control zone, many slaves)
-- Optimum start control
+- Controls for All Air Systems: 
+	- Air System Availability Manager controls
+		- Scheduled on/off
+		- Hybrid ventilation controls 
+		- Night ventilation controls 
+		- Hybrid ventilation controls
+		- Night-cycle controls (whole system and/or terminal fans)
+		- Optimum Start controls
+		- Differential thermostat
+		- High temperature turn on/off
+		- Low temperature turn on/off
+	- Outdoor and Supply Air Temperature/Humidity Controls
+		- Scheduled Supply Air Temp 
+		- Supply Air Temp reset based on OA 
+		- Supply Air Temp follow OA Temp
+		- Supply Air Humidity Minimum / Maximum with deadband 
+	- Demand-controlled ventilation controls	
+- Controls for Single and Multizone VAV Air Systems: 
+	- Scheduled Supply Air Temp 
+	- Supply Air Temp reset based on OA
+	- Supply Air Temp reset based on Zone Temps (Warmest)
+	- Supply Air Flow reset based on Zone Temps (Warmest)
+	- Supply Air Humidity Minimum / Maximum (critical zone or average of zones)
+	- Single-zone VAV Reheat (one control zone, many slaves)
+		- Heating only
+		- Cooling only
+		- Both Heating and Cooling 
 
 ##### Zone-level Heating and Cooling Systems
 
@@ -106,6 +133,7 @@ OpenStudio is constantly being improved, with a less stable developer release av
 - Low temp radiant heating (electric, variable and constant flow water)
 - Low temp radiant cooling (variable and constant flow water)
 - PTAC (DX cooling + fan + all heating fuels)
+- PTHP (DX heating/cooling + fan + + electric backup heat)
 - Water-source heat pump
 - Air-source heat pump
 - Exhaust fans
@@ -117,6 +145,10 @@ OpenStudio is constantly being improved, with a less stable developer release av
 ##### Variable Refrigerant Flow Systems
 
 - Condenser plus zone-level terminals
+- Heat Recovery add/or Heat Pump VRF
+- Air-cooled, Evaporatively-cooled or Water-cooled condensing units
+- Piping correction factors account for performance degradation estimates
+- Load, Zone or Scheduled Thermostat Priorities
 
 ##### Commercial Refrigeration
 
@@ -133,33 +165,42 @@ OpenStudio is constantly being improved, with a less stable developer release av
 
 ##### Domestic Water Systems
 
-- Hot Water Heaters (all fuels, including heat pump)
+- Hot Water Heaters 
+	- Tank Type /  Tankless Water Heaters (all fuels) 
+	- Heat Pump Water Heaters
+	- Stratified tank Water Heaters
+	- Storage Tank fed from Boiler(s) / Heat Exchanger
+- Solar Hot Water (Flat Plate or Integral Collectors) for pre-heating 
+- Constant Speed and/or Variable Speed Recirculation / Booster pumps
 - Equipment that uses warm water (showers, faucets, etc.), can specify mixed water temp
 - Equipment that uses cold water only
-- Recirculation, no pump, or instantaneous water heaters
 
 ### Daylighting
 
-- Add daylighting control points via the SketchUp plugin
-- Run daylighting analysis using Radiance, state-of-the-art ray-tracing daylight simulation engine without making a separate model
+- Add daylighting control points via the SketchUp plugin or OpenStudio
+- Create interior partitions and glare sensors for modeling daylight analysis with improved accuracy, using the Sketchup Plugin
+- Create and configure window shading controls for modeling daylight analysis using the Sketchup plugin
+- Insert illuminance map for visualizing daylight analysis using the Sketchup plugin
+- Use built-in OpenStudio Measure to run daylighting analysis using Radiance, state-of-the-art ray-tracing daylight simulation engine without making a separate model
+- Configure daylight analysis parameters used by radiance simulation
 - Lights in the EnergyPlus model controlled based on daylight available per Radiance
 
 ### Custom Controls
-Within EnergyPlus, advanced controls that are not built-in can implemented utilizing the EnergyManagementSystem (EMS) suite of objects. This involves defining Sensors and Actuators that interact with building parameters through Programs which are written in the EnergyPlus Runtime Language (ERL), which is based on a common building-controls language. OpenStudio supports the creation of EMS programs.
+Within EnergyPlus, advanced controls that are not built-in can be implemented utilizing the [EnergyManagementSystem (EMS)](https://energyplus.net/sites/all/modules/custom/nrel_custom/pdfs/pdfs_v9.2.0/EMSApplicationGuide.pdf) suite of objects. This involves defining Sensors and Actuators that interact with building parameters through Programs which are written in the EnergyPlus Runtime Language (ERL), which is based on a common building-controls language. OpenStudio supports the creation of EMS programs.
 
 ### Location-Specific Information
 
 - Find typical [weather data and ASHRAE design conditions](https://energyplus.net/weather) for most locations in the world
 - Use actual weather data (AMY) from a variety of vendors/sources
+- Store ASHRAE/CEC Climate Zone to trigger calculations within Measures
 
 ### Economics
 
 - Full lifecycle costing (NIST Handbook 135 compliant) including built-in EIA fuel escalation rates and inflation
 - Adjustable analysis period length
-- Capital, recurring O&M, salvage, and replacement costs
+- Add capital, recurring O&M, salvage, and replacement costs to model using Measures
 - Lifecycle is adjustable per-cost (IE windows can last longer than lamps)
-- Utility rates can include time-of-use, demand charges, ratchets, seasonal values, etc.
-- Utility rates for Xcel Energy CO pre-made; users pick from list
+- Add utility rates (which include time-of-use, demand charges, ratchets, seasonal values, etc.) to model using Measures
 
 ### Import and Export Options
 
@@ -170,6 +211,8 @@ Within EnergyPlus, advanced controls that are not built-in can implemented utili
 - SDD import (simulation format - full model including HVAC)
 - SDD export (input format - geometry, constructions, and thermal zones only)
 - IFC import (geometry only)
+- Import resources (materials, constructions, loads, spacetypes) from .osm file
+- Import surfaces, sub surfaces, spaces, and thermal zones from eQuest models using a [Measure](https://github.com/canmet-energy/btap/tree/master/measures_development/btap_equest_converter)
 
 ### Analysis of Existing Buildings
 
@@ -180,16 +223,16 @@ Within EnergyPlus, advanced controls that are not built-in can implemented utili
 
 ### Libraries
 
-- Space types (people, lights, equipment, ventilation, infiltration, schedules) for DOE reference buildings for all vintages (pre-1980, 1980-2004, and 2004), ASHRAE 189.1-2009, ASHRAE 90.1-2007, and ASHRAE 90.1-2010
-- Building constructions (walls, windows, doors, floors, etc.) for DOE reference buildings for all vintages (pre-1980, 1980-2004, and 2004), ASHRAE 189.1-2009, ASHRAE 90.1-2007, and ASHRAE 90.1-2010
+- Space types (people, lights, equipment, ventilation, infiltration, schedules) for DOE reference buildings for all vintages (pre-1980, 1980-2004, and 2004), ASHRAE standard prototype buildings (189.1-2009, 90.1-2004, 90.1-2007, 90.1-2010, 90.1-2013), and DEER building types (pre-1975, 1985, 1996, 2003, 2007, 2011, 2014, 2015, 2017)
+- Building constructions (walls, windows, doors, floors, etc.) for DOE reference buildings for all vintages (pre-1980, 1980-2004, and 2004), ASHRAE standard prototype buildings (189.1-2009, 90.1-2004, 90.1-2007, 90.1-2010, 90.1-2013), and DEER building types (pre-1975, 1985, 1996, 2003, 2007, 2011, 2014, 2015, 2017)
 - Extensive online library of building materials from ASHRAE Handbook of Fundamentals
 - Extensive online library of weather files and design day conditions
 
-### Parametric Analysis
+### Parametric Analysis Using [PAT](https://github.com/NREL/OpenStudio-PAT/releases)
 
-- OpenStudio Measures provide reliable and repeatable mechanism to apply ECMs to models
+- OpenStudio Measures provide reliable and repeatable mechanism to apply transforms to models
 - Eliminates ambiguity and user error; all rules encapsulated in Measure itself
-- More than 130 Measures available online and always growing
+- More than 316 Measures available [online](bcl.nrel.gov) and always growing
 - Write Measure once and apply to many projects
 - Perform complex ECMs, like full HVAC replacement, easily
 - Quickly access online and local libraries of measures from drag-and-drop interface
@@ -202,15 +245,16 @@ Within EnergyPlus, advanced controls that are not built-in can implemented utili
 - Users don't have to understand to use; gives expert review to junior modelers more cheaply
 - Automate key checks for Utility Regulators to keep up quality
 - Lower time spent by reviewers on mundane checks; frees time to focus on real issues
+- Users can modify [Generic QAQC Measure](https://bcl.nrel.gov/node/83673) to create custom checks
 
 ### Reporting
 
 - Measures can be used to create custom reports in HTML format (view in any web browser)
 - Allows users to quickly visualize and summarize data for different audiences
 - Reports are shareable via email
-- Reports can be simple or highly interactive
+- Reports can be simple or highly interactive using standard JavaScript Libraries
 
-### Cloud Computing
+### Cloud Computing Using [PAT](https://github.com/NREL/OpenStudio-PAT/releases)
 
 - Any user with an Amazon account can run simulations on cloud with 1 click
 - Very cheap vs. engineer's time (16 simulations in parallel for ~$2.00/hr)
@@ -232,40 +276,3 @@ Within EnergyPlus, advanced controls that are not built-in can implemented utili
 - Lifecycle costing guide
 - Documentation of all modeling commands (SDK) online, updated bi-weekly
 
-## Applications
-
-The following applications are included in the OpenStudio installation:
-
-### SketchUp Plug-in
-
-- Select a template containing building space types and constructions as a starting point
-- Trace a 2D footprint and extrude into 3D geometry
-- Draw new or edit existing building geometry in 3D
-- Use Measures to quickly build up the model
-- Add site shading
-- Assign building activity and thermal zones
-- Add daylighting objects
-
-### OpenStudio Application
-
-- Add loads, schedules, space types, thermal zones, mechanical systems and more
-- Create HVAC systems using a visual drag-and-drop interface
-- Add refrigeration systems using a layout visual view and a grid view
-- Add variable refrigerant flow systems using a layout visual view and a grid view
-- Change the model programmatically using the _Apply Measure Now_ feature
-- Run a simulation
-- View high level simulation results and detailed simulation output
-- Use reporting measures to create new/custom summary reports
-
-### ResultsViewer
-
-- View the detailed timeseries simulation results
-- Create interactive line graphs and heat maps
-
-### Parametric Analysis Tool (PAT)
-
-- Select a baseline model to serve as the starting point for a parametric analysis
-- Drag in Measures and set their input values
-- Select combinations of Measures to run
-- Run the simulations locally or on the cloud
-- View a high-level comparison of the simulation results or dig into the detailed reports
