@@ -1,7 +1,7 @@
 <h1>Current Features</h1>
 OpenStudio is constantly being improved, with a less stable developer release available every 2 weeks and a stable major release quarterly (4 per year). The features that are available in the current major release are described below. To learn what is coming in the future, see the [Planned Features](../getting_started/roadmap.md) page.
 
-##As of OpenStudio Version 2.1.0
+## As of OpenStudio Version 3.0.0
 
 ### Building Geometry/3D CAD
 
@@ -133,7 +133,7 @@ OpenStudio is constantly being improved, with a less stable developer release av
 - Low temp radiant heating (electric, variable, and constant flow water)
 - Low temp radiant cooling (variable and constant flow water)
 - PTAC (DX cooling + fan + all heating fuels)
-- PTHP (DX heating/cooling + fan + + electric backup heat)
+- PTHP (DX heating/cooling + fan + electric backup heat)
 - Water-source heat pump
 - Air-source heat pump
 - Exhaust fans

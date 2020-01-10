@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Vertical Ground Heat Exchanger sizing with GLHEPro - OpenStudio<sup>&reg;</sup> User Docs</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    
+    <link href="../../css/bootstrap-3.3.0.min.css" rel="stylesheet">
+    <link href="../../css/font-awesome-4.2.0.min.css" rel="stylesheet">
+    <link href="../../css/prettify-1.0.css" rel="stylesheet">
+    <link href="../../css/base.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+  <nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../.."><img alt="" src="../../img/OS_32x32.png"> OpenStudio<sup>&reg;</sup> User Docs</a>
+      </div>
+      <div class="navbar-collapse collapse">
+        <!-- Main navigation -->
+        <ul class="nav navbar-nav">
+        
+          
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">Getting Started <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+            
+              <li>
+                <a href="../../getting_started/features">Current Features</a>
+              </li>
+            
+              <li>
+                <a href="../../getting_started/roadmap">Planned Features</a>
+              </li>
+            
+              <li>
+                <a href="../../getting_started/getting_started">Installation and Introductory Tutorial</a>
+              </li>
+            
+              <li>
+                <a href="../../getting_started/quick_start_guides">Quick Start Guides</a>
+              </li>
+            
+              <li>
+                <a href="../../getting_started/about_measures">About Measures</a>
+              </li>
+            
+            </ul>
+          </li>
+          
+        
+          
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">Essential Tutorials <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+            
+              <li>
+                <a href="../creating_your_model">Creating Your Model</a>
+              </li>
+            
+              <li>
+                <a href="../running_your_simulation">Running Simulations & Viewing Results</a>
+              </li>
+            
+              <li>
+                <a href="../large_scale_analysis">Large Scale Analysis</a>
+              </li>
+            
+              <li>
+                <a href="../radiance_tutorial">Radiance and OpenStudio</a>
+              </li>
+            
+              <li>
+                <a href="../tutorial_bcl">Building Component Library</a>
+              </li>
+            
+            </ul>
+          </li>
+          
+        
+          
+          <li class="dropdown active">
+            <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">Advanced Tutorials <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+            
+              <li>
+                <a href="../utility_rate_tariffs">Utiity Rate Tariffs</a>
+              </li>
+            
+              <li>
+                <a href="../life_cycle_costing_examples">Life Cycle Cost Analysis</a>
+              </li>
+            
+              <li>
+                <a href="../tutorial_cbecc_materials">CBECC Materials and Constructions</a>
+              </li>
+            
+              <li class="active">
+                <a href=".">Vertical Ground Heat Exchanger sizing with GLHEPro</a>
+              </li>
+            
+              <li>
+                <a href="../tutorial_ifcimport">BIMserver Import IFC</a>
+              </li>
+            
+              <li>
+                <a href="../tutorial_gbxmlimport">Import gbXML</a>
+              </li>
+            
+              <li>
+                <a href="../tutorial_shadingcontrols">Shading Controls</a>
+              </li>
+            
+              <li>
+                <a href="../tutorial_windowproperty_frameanddivider">Window Property Frame and Divider</a>
+              </li>
+            
+              <li>
+                <a href="../tutorial_virtual_pulse">VirtualPULSE</a>
+              </li>
+            
+            </ul>
+          </li>
+          
+        
+          
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">Reference <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+            
+              <li>
+                <a href="../../reference/openstudio_application_interface">OpenStudio Application Interface Guide</a>
+              </li>
+            
+              <li>
+                <a href="../../reference/sketchup_plugin_interface">SketchUp Plug-in Interface Guide</a>
+              </li>
+            
+              <li>
+                <a href="../../reference/geometry_editor">FloorspaceJS</a>
+              </li>
+            
+              <li>
+                <a href="../../reference/command_line_interface">Command Line Interface</a>
+              </li>
+            
+              <li>
+                <a href="../../reference/parametric_studies">Parametric Analysis Tool (PAT) Interface Guide</a>
+              </li>
+            
+              <li>
+                <a href="../../reference/parametric_analysis_tool_2">Parametric Analysis Tool Version 2 (PAT) Interface Guide</a>
+              </li>
+            
+              <li>
+                <a href="../../reference/model_objects">OpenStudio Model Objects Overview</a>
+              </li>
+            
+              <li>
+                <a href="../../reference/measure_writing_guide">Measure Writer's Reference Guide</a>
+              </li>
+            
+              <li>
+                <a href="../../reference/measure_code_examples">Measure Code Examples</a>
+              </li>
+            
+              <li>
+                <a href="../../reference/developing_measure_collections">Developing Measure Collections</a>
+              </li>
+            
+              <li>
+                <a href="../../reference/refguide_radiance">OpenStudio-Radiance Reference Guide</a>
+              </li>
+            
+              <li>
+                <a href="../../reference/openstudio_results_measure">OpenStudio Results Measure</a>
+              </li>
+            
+            </ul>
+          </li>
+          
+        
+          
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">Help <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+            
+              <li>
+                <a href="../../help/training">Find Training</a>
+              </li>
+            
+              <li>
+                <a href="../../help/finding_model_data">Finding Model Data</a>
+              </li>
+            
+              <li>
+                <a href="../../help/best_practices">Modeling Best Practices</a>
+              </li>
+            
+              <li>
+                <a href="../../help/troubleshooting">Troubleshooting</a>
+              </li>
+            
+              <li>
+                <a href="../../help/faq">FAQ</a>
+              </li>
+            
+              <li>
+                <a href="../../help/software_license">Software License</a>
+              </li>
+            
+            </ul>
+          </li>
+          
+        
+        </ul>
+
+        <!-- Search, Navigation and Repo links -->
+        <ul class="nav navbar-nav navbar-right">
+        
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <div class="bs-docs-sidebar hidden-print affix well" role="complementary">
+  <ul class="nav">
+  
+    <li class="main active"><a href="#setting-up-the-initial-model">Setting up the initial model</a>
+      <ul class="nav">
+        
+      </ul>
+    </li>
+  
+    <li class="main"><a href="#adding-measure-to-export-loads-for-glhepro">Adding Measure to export loads for GLHEPro</a>
+      <ul class="nav">
+        
+      </ul>
+    </li>
+  
+    <li class="main"><a href="#run-the-simulation-and-import-loads-into-glhepro">Run the simulation and import loads into GLHEPro</a>
+      <ul class="nav">
+        
+      </ul>
+    </li>
+  
+    <li class="main"><a href="#run-glhepro-to-size-bore-field">Run GLHEPro to size bore field</a>
+      <ul class="nav">
+        
+      </ul>
+    </li>
+  
+    <li class="main"><a href="#import-bore-field-sizing-information-and-g-function-into-openstudio">Import bore field sizing information and G Function into OpenStudio</a>
+      <ul class="nav">
+        
+      </ul>
+    </li>
+  
+  </ul>
+  <div class="home-btn">
+    <a class="btn btn-default" role="button" href="https://www.openstudio.net">Back to OpenStudio<sup>&reg;</sup></a>
+  </div>
+</div>
+        </div>
+        <div class="col-md-9" role="main">
+          <h1>Vertical Ground Heat Exchanger sizing with GLHEPro</h1>
+
+<p>This tutorial explains how to size a vertical ground heat exchanger with OpenStudio and an external program called GLHEPro. First, you make a model with water-to-water heat pumps and use district heating and district cooling objects to determine the loads on the heat-pump loop. You run this model and use a Measure to export these loads in a format that GLHEPro will accept. Then you run GLHEPro and use another Measure to bring the G-Function from GLHEPro back into your model, replacing the district heating and district cooling objects on the loop.</p>
+<h2 id="setting-up-the-initial-model">Setting up the initial model</h2>
+<ol>
+<li>
+<p>Create a model with water-source heat pumps (WSHPs) in each zone you want to condition. WSHPs are Zone HVAC Equipment found on the ThermalZones tab.</p>
+<p><img alt="Thermal Zones Tab" src="../../img/glhepro/glhepro1.png" /></p>
+</li>
+<li>
+<p>Create a plant loop with a pump, a district heating plant and a district cooling plant on one branch, and a bypass pipe on a separate branch. This loop will be the heat source/heat sink for the WSHPs.</p>
+<p><img alt="Plant Loop" src="../../img/glhepro/glhepro2.png" /></p>
+</li>
+<li>
+<p>Set up the heating and cooling setpoint for the Heat Pump Loop. The district heating and cooling objects will run to keep the water in the heat pump loop between these bounds. The loads on the district heating and district cooling objects will represent the capacity needed in the GSHX.</p>
+<ul>
+<li>Put a SetpointManager:Scheduled onto the outlet of the district cooling object. Edit the temperature schedule of that setpoint manager to be the desired max temperature of the GSHX water (95F, for example). Make sure to edit both the default days and the design day schedules.</li>
+<li>Put a SetpointManager:Scheduled onto the outlet of the district heating object. Edit the temperature schedule of that setpoint manager to be the desired min temperature of the GSHX water (55F, for example). Make sure to edit both the default days and the design day schedules.</li>
+<li>Put a SetpointManager:Scheduled onto the supply outlet node of the loop. Edit the temperature schedule of that setpoint manager to be the desired max temperature of the GSHX water (95F, for example). You can pick the same schedule used for the district cooling object's setpoint manager.</li>
+</ul>
+<p><img alt="Plant SetPoints" src="../../img/glhepro/glhepro3.png" /></p>
+</li>
+<li>
+<p>Set the sizing parameters of the Heat Pump Loop</p>
+<ul>
+<li>The loop type should be "Condenser."</li>
+<li>The loop design outlet temp should be the desired max of the GSHX water (95F here).</li>
+<li>The loop design temperature difference should be reasonable for a GSHX (9 delta-F here).</li>
+</ul>
+<p><img alt="Plant SetPoints" src="../../img/glhepro/glhepro4.png" /></p>
+</li>
+<li>
+<p>Connect the heating and cooling coils for each WSHP to the Heat Pump Loop.</p>
+<ol>
+<li>Click on the Thermal Zones tab</li>
+<li>Click on the WSHP</li>
+<li>Click the chain link icons in the upper right</li>
+<li>Check the box to select the Heat Pump Loop.</li>
+</ol>
+<p><img alt="Connecting to the Heat Pump Loop" src="../../img/glhepro/glhepro16.png" /></p>
+</li>
+</ol>
+<h2 id="adding-measure-to-export-loads-for-glhepro">Adding Measure to export loads for GLHEPro</h2>
+<ol>
+<li>
+<p>On the Measures tab, click "Find Measures on BCL"</p>
+<p><img alt="BCL Button" src="../../img/glhepro/glhepro6.png" /></p>
+</li>
+<li>
+<p>Search for "GLHEPro"</p>
+</li>
+<li>Download the following 3 Measures:<ul>
+<li>"GLHEPro Setup Export Loads for Ground Heat Exchanger Sizing"</li>
+<li>"GLHEPro Export Loads for Ground Heat Exchanger Sizing"</li>
+<li>"GLHEProGFunctionImport"</li>
+</ul>
+</li>
+<li>On the Measures tab, drag 2 of the 3 Measures into the model:<ul>
+<li>"GLHEPro Setup Export Loads for Ground Heat Exchanger Sizing" as OS Measure</li>
+<li>
+<p>"GLHEPro Export Loads for Ground Heat Exchanger Sizing" as Reporting Measure</p>
+<p><img alt="BCL Button" src="../../img/glhepro/glhepro7.png" /></p>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="run-the-simulation-and-import-loads-into-glhepro">Run the simulation and import loads into GLHEPro</h2>
+<ol>
+<li>Go to the Run tab &gt; Run &gt; wait for simulation to finish</li>
+<li>
+<p>Go to the Results tab and select the report called "Export Loads to GLHEPro" in the dropdown</p>
+<p><img alt="Export Goals" src="../../img/glhepro/glhepro8.png" /></p>
+<p>This report explains the next steps for importing the loads into GLHEPro. It also shows the hourly load for the district heating and district cooling objects. Important Note: the hourly graph only shows up if you are using OpenStudio 1.4.1 or higher (or if you are using OpenStudio 1.4.0 built with Ruby 2.0). Even if the hourly graph doesn't show up, the loads have still been exported for GLHEPro, you just don't get to visualize them.</p>
+</li>
+<li>
+<p>Find the GLHEPro .gt1 file. In a file browser, navigate to the run directory for your model, for example: <code>C:\GLHEPro\gshp_model\run\6-UserScript-0\mergedjob-0</code></p>
+<p>You should see the files below:</p>
+<ul>
+<li>The *.gt1 files are the monthly loads for GLHEPro import.</li>
+<li>The *.csv files are the hourly loads (same as seen in graph).</li>
+<li>The report.html is the same report seen in the OS Application.</li>
+</ul>
+</li>
+<li>
+<p>Open GLHEPro, which can be downloaded (not free) from here: <a href="http://www.hvac.okstate.edu/glhepro/">http://www.hvac.okstate.edu/glhepro/</a></p>
+</li>
+<li>In the top menu, click Loads &gt; Read Heat Pump Loads and select the "Monthly Loads.gt1" file.</li>
+<li>
+<p>Double-check that these numbers make sense, then click OK.</p>
+<p><img alt="Check Numbers" src="../../img/glhepro/glhepro10.png" /></p>
+</li>
+</ol>
+<h2 id="run-glhepro-to-size-bore-field">Run GLHEPro to size bore field</h2>
+<ol>
+<li>Fill in the GLHEPro inputs. See GLHEPro manual for more information.</li>
+<li>In the top menu, click Action &gt; Perform Sizing to size the loop.</li>
+<li>In the top menu, click Action &gt; G Function Creator.</li>
+<li>
+<p>Fill out the inputs as desired, then click "Select G-func Print Format" and check "Print EnergyPlus IDF File.</p>
+<p><img alt="Bore Field" src="../../img/glhepro/glhepro11.png" /></p>
+</li>
+<li>
+<p>Select a place on your computer and save the IDF file.</p>
+</li>
+</ol>
+<h2 id="import-bore-field-sizing-information-and-g-function-into-openstudio">Import bore field sizing information and G Function into OpenStudio</h2>
+<ol>
+<li>Return to your OpenStudio model.</li>
+<li>Save a copy in case you want to change loads and re-size GSHX later.</li>
+<li>In the top menu, click Components &amp; Measures &gt; Apply Measure Now</li>
+<li>Under HVAC &gt; Whole System, find "GLHEPro GFunction Import"</li>
+<li>
+<p>Click this Measure and fill in the inputs: path to GFunction.IDF, heat pump loop.</p>
+<p><img alt="Measures" src="../../img/glhepro/glhepro12.png" /></p>
+</li>
+<li>
+<p>Click Apply Measure. You should see information about district heating and district cooling objects being removed from the heat pump loop, and information about a GLHX being added. If so, click Accept Changes.</p>
+<p><img alt="Apply Measure" src="../../img/glhepro/glhepro13.png" /></p>
+</li>
+<li>
+<p>On the HVAC tab, inspect the changes. You should see a GSHX in place of the district heating and district cooling objects.</p>
+<p><img alt="HVAC View" src="../../img/glhepro/glhepro14.png" /></p>
+</li>
+<li>
+<p>Re-run your simulation. If you get lots of warnings/errors about the plant loop temperatures being too cold or too hot, your bore field wasn't sized correctly. Go back into GLHEPro, correct any mistakes, then try again. Also, if you changed your loads significantly, you'll need to re-run the model with district heating and district cooling and repeat the GLHEPro process.</p>
+</li>
+</ol>
+
+          <div class="footer">
+  <p class="text-center"><a href="https://unmethours.com/questions/scope:all/sort:activity-desc/tags:openstudio/">Get Help</a> | <a href="https://www.openstudio.net/contact">Contact Us</a></p>
+  <p class="text-center"><a href="https://www.openstudio.net">OpenStudio</a><sup>&reg;</sup> is developed in collaboration by NREL, ANL, LBNL, ORNL, and PNNL.</p>
+  <p class="text-center">OpenStudio<sup>&reg;</sup> is a registered trademark of the Alliance for Sustainable Energy, LLC.</p>
+  <p class="text-center"><a href="http://www.nrel.gov">NREL</a> is a National Laboratory of the U.S. Department of Energy, Office of Energy Efficiency and Renewable Energy, operated by the Alliance for Sustainable Energy, LLC.</p>
+  <p class="text-center"><a href="#">Back to Top</a></p>
+</div>
+        </div>
+      </div>
+    </div>
+    
+
+    <script src="../../js/jquery-2.1.1.min.js"></script>
+    <script src="../../js/bootstrap-3.3.0.min.js"></script>
+    <script src="../../js/bootstrap-hover-dropdown-2.0.11.min.js"></script>
+    <script src="../../js/prettify-1.0.min.js"></script>
+    <script src="../../js/base.js"></script>
+  </body>
+</html>

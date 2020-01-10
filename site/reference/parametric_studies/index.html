@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Parametric Analysis Tool (PAT) Interface Guide - OpenStudio<sup>&reg;</sup> User Docs</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    
+    <link href="../../css/bootstrap-3.3.0.min.css" rel="stylesheet">
+    <link href="../../css/font-awesome-4.2.0.min.css" rel="stylesheet">
+    <link href="../../css/prettify-1.0.css" rel="stylesheet">
+    <link href="../../css/base.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+  <nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../.."><img alt="" src="../../img/OS_32x32.png"> OpenStudio<sup>&reg;</sup> User Docs</a>
+      </div>
+      <div class="navbar-collapse collapse">
+        <!-- Main navigation -->
+        <ul class="nav navbar-nav">
+        
+          
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">Getting Started <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+            
+              <li>
+                <a href="../../getting_started/features">Current Features</a>
+              </li>
+            
+              <li>
+                <a href="../../getting_started/roadmap">Planned Features</a>
+              </li>
+            
+              <li>
+                <a href="../../getting_started/getting_started">Installation and Introductory Tutorial</a>
+              </li>
+            
+              <li>
+                <a href="../../getting_started/quick_start_guides">Quick Start Guides</a>
+              </li>
+            
+              <li>
+                <a href="../../getting_started/about_measures">About Measures</a>
+              </li>
+            
+            </ul>
+          </li>
+          
+        
+          
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">Essential Tutorials <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+            
+              <li>
+                <a href="../../tutorials/creating_your_model">Creating Your Model</a>
+              </li>
+            
+              <li>
+                <a href="../../tutorials/running_your_simulation">Running Simulations & Viewing Results</a>
+              </li>
+            
+              <li>
+                <a href="../../tutorials/large_scale_analysis">Large Scale Analysis</a>
+              </li>
+            
+              <li>
+                <a href="../../tutorials/radiance_tutorial">Radiance and OpenStudio</a>
+              </li>
+            
+              <li>
+                <a href="../../tutorials/tutorial_bcl">Building Component Library</a>
+              </li>
+            
+            </ul>
+          </li>
+          
+        
+          
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">Advanced Tutorials <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+            
+              <li>
+                <a href="../../tutorials/utility_rate_tariffs">Utiity Rate Tariffs</a>
+              </li>
+            
+              <li>
+                <a href="../../tutorials/life_cycle_costing_examples">Life Cycle Cost Analysis</a>
+              </li>
+            
+              <li>
+                <a href="../../tutorials/tutorial_cbecc_materials">CBECC Materials and Constructions</a>
+              </li>
+            
+              <li>
+                <a href="../../tutorials/tutorial_glhepro">Vertical Ground Heat Exchanger sizing with GLHEPro</a>
+              </li>
+            
+              <li>
+                <a href="../../tutorials/tutorial_ifcimport">BIMserver Import IFC</a>
+              </li>
+            
+              <li>
+                <a href="../../tutorials/tutorial_gbxmlimport">Import gbXML</a>
+              </li>
+            
+              <li>
+                <a href="../../tutorials/tutorial_shadingcontrols">Shading Controls</a>
+              </li>
+            
+              <li>
+                <a href="../../tutorials/tutorial_windowproperty_frameanddivider">Window Property Frame and Divider</a>
+              </li>
+            
+              <li>
+                <a href="../../tutorials/tutorial_virtual_pulse">VirtualPULSE</a>
+              </li>
+            
+            </ul>
+          </li>
+          
+        
+          
+          <li class="dropdown active">
+            <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">Reference <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+            
+              <li>
+                <a href="../openstudio_application_interface">OpenStudio Application Interface Guide</a>
+              </li>
+            
+              <li>
+                <a href="../sketchup_plugin_interface">SketchUp Plug-in Interface Guide</a>
+              </li>
+            
+              <li>
+                <a href="../geometry_editor">FloorspaceJS</a>
+              </li>
+            
+              <li>
+                <a href="../command_line_interface">Command Line Interface</a>
+              </li>
+            
+              <li class="active">
+                <a href=".">Parametric Analysis Tool (PAT) Interface Guide</a>
+              </li>
+            
+              <li>
+                <a href="../parametric_analysis_tool_2">Parametric Analysis Tool Version 2 (PAT) Interface Guide</a>
+              </li>
+            
+              <li>
+                <a href="../model_objects">OpenStudio Model Objects Overview</a>
+              </li>
+            
+              <li>
+                <a href="../measure_writing_guide">Measure Writer's Reference Guide</a>
+              </li>
+            
+              <li>
+                <a href="../measure_code_examples">Measure Code Examples</a>
+              </li>
+            
+              <li>
+                <a href="../developing_measure_collections">Developing Measure Collections</a>
+              </li>
+            
+              <li>
+                <a href="../refguide_radiance">OpenStudio-Radiance Reference Guide</a>
+              </li>
+            
+              <li>
+                <a href="../openstudio_results_measure">OpenStudio Results Measure</a>
+              </li>
+            
+            </ul>
+          </li>
+          
+        
+          
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">Help <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+            
+              <li>
+                <a href="../../help/training">Find Training</a>
+              </li>
+            
+              <li>
+                <a href="../../help/finding_model_data">Finding Model Data</a>
+              </li>
+            
+              <li>
+                <a href="../../help/best_practices">Modeling Best Practices</a>
+              </li>
+            
+              <li>
+                <a href="../../help/troubleshooting">Troubleshooting</a>
+              </li>
+            
+              <li>
+                <a href="../../help/faq">FAQ</a>
+              </li>
+            
+              <li>
+                <a href="../../help/software_license">Software License</a>
+              </li>
+            
+            </ul>
+          </li>
+          
+        
+        </ul>
+
+        <!-- Search, Navigation and Repo links -->
+        <ul class="nav navbar-nav navbar-right">
+        
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <div class="bs-docs-sidebar hidden-print affix well" role="complementary">
+  <ul class="nav">
+  
+    <li class="main active"><a href="#creating-a-project">Creating a Project</a>
+      <ul class="nav">
+        
+      </ul>
+    </li>
+  
+    <li class="main"><a href="#loading-a-baseline-model">Loading a Baseline Model</a>
+      <ul class="nav">
+        
+      </ul>
+    </li>
+  
+    <li class="main"><a href="#organize-and-edit-measures-for-project">Organize and Edit Measures for Project</a>
+      <ul class="nav">
+        
+        <li><a href="#defining-measures">Defining Measures</a></li>
+        
+        <li><a href="#downloading-measures-from-the-building-component-library">Downloading Measures from the Building Component Library</a></li>
+        
+        <li><a href="#duplicating-and-creating-new-measures">Duplicating and Creating New Measures</a></li>
+        
+      </ul>
+    </li>
+  
+    <li class="main"><a href="#select-measures-and-create-design-alternatives">Select Measures and Create Design Alternatives</a>
+      <ul class="nav">
+        
+      </ul>
+    </li>
+  
+    <li class="main"><a href="#run-simulations">Run Simulations</a>
+      <ul class="nav">
+        
+      </ul>
+    </li>
+  
+    <li class="main"><a href="#create-and-view-reports">Create and View Reports</a>
+      <ul class="nav">
+        
+      </ul>
+    </li>
+  
+    <li class="main"><a href="#running-on-the-cloud">Running on the Cloud</a>
+      <ul class="nav">
+        
+        <li><a href="#openstudio-cloud-management-console">OpenStudio Cloud Management Console</a></li>
+        
+      </ul>
+    </li>
+  
+    <li class="main"><a href="#viewing-results">Viewing Results</a>
+      <ul class="nav">
+        
+      </ul>
+    </li>
+  
+    <li class="main"><a href="#publications">Publications</a>
+      <ul class="nav">
+        
+      </ul>
+    </li>
+  
+  </ul>
+  <div class="home-btn">
+    <a class="btn btn-default" role="button" href="https://www.openstudio.net">Back to OpenStudio<sup>&reg;</sup></a>
+  </div>
+</div>
+        </div>
+        <div class="col-md-9" role="main">
+          <h1>Parametric Analysis Tool (PAT) Interface Guide</h1>
+
+<p>PAT removes the need to hand edit each model to try out different architectures, energy efficiency measures, and mechanical systems. PAT applies scripts to your baseline model and lets you quickly compare many alternatives. OpenStudio has developed a workflow that allows energy modelers to create and run a customized parametric analysis using commercially available cloud computing services. This workflow will enable anyone to perform powerful parametric studies in a reasonable time for a relatively low cost.</p>
+<hr />
+<h2 id="creating-a-project">Creating a Project</h2>
+<p>The <a href="../../img/pdfs/PAT-Quick_Start_Guide.pdf">Parametric Analysis Tool Quick Start Guide (PDF)</a> provides an introduction to the interface and workflow for creating multiple design alternatives from a seed model.</p>
+<p>When you first open PAT you will see the screen below. It shows the workflow:</p>
+<ol>
+<li>Organize and edit measures for project</li>
+<li>Select measures and create design alternatives</li>
+<li>Run simulations</li>
+<li>Create and view reports</li>
+</ol>
+<p><img alt="PAT Opening Screen" src="../../img/pat/opening_screen.png" /></p>
+<p><em>Above: This is the opening screen for PAT. It gives you an overview of the workflow.</em></p>
+<p>You can move through the four vertical tabs on the left navigation by working in order from top to bottom.</p>
+<p>To create a project use the menu item <code>File-&gt;New Project</code></p>
+<p><img alt="File Menu" src="../../img/pat/file_open.png" /></p>
+<p><em>Above: The file menu provides new, open, save as, and other functionality.</em></p>
+<p><img alt="New Project Dialog" src="../../img/pat/file_open2.png" /></p>
+<p><em>Above: The dialog takes you to a window to save your new project.</em></p>
+<iframe width="640" height="360" src="https://www.youtube.com/embed/3rmElK_OB28?end=107" allowfullscreen></iframe>
+
+<p><em>Above: The video above shows the creation of a new project and gives a short introduction to the interface.</em></p>
+<hr />
+<h2 id="loading-a-baseline-model">Loading a Baseline Model</h2>
+<p>Select your baseline model by hitting the browse button or typing in a path to your baseline OSM (OpenStudio Model) file. The weather file must be set on the baseline model before assigning it as the baseline in PAT.</p>
+<p><img alt="Select Baseline Model Dialog" src="../../img/pat/baseline.png" /></p>
+<p><em>Above: The dialog takes you to a window to save your new project.</em></p>
+<hr />
+<h2 id="organize-and-edit-measures-for-project">Organize and Edit Measures for Project</h2>
+<p>To add measures to your project, drag measures from the library to the central panel.</p>
+<p>If you want to learn more about measures, check out the <a href="../../getting_started/about_measures">About Measures</a> section.</p>
+<p>There are three types of measures:</p>
+<ol>
+<li><strong>OpenStudio measures</strong> are run on the OSM model before it is converted to an IDF.</li>
+<li><strong>EnergyPlus measures</strong> can be run on the IDF file before it is handed to EnergyPlus.</li>
+<li><strong>Reporting measures</strong> produce reports to chart results, provide quality assurance, and quality control on models.</li>
+</ol>
+<p>Drag measures from the library onto a drop zone in the middle panel. You must choose the right type of measure and the way you want it applied. Choose the <strong>Always Run Measures</strong> if you want the measure to run on every design alternative. Or, choose a <strong>Measure Group</strong> for measures you do not want to run on every model. Usually, measure groups contain one type of measure with different parameters, because only one measure from a measure group can be applied to each design alternative.</p>
+<p>The measures are applied to the model in order from top to bottom. You can reorder measure groups and always apply measures by using the gray arrows on the right.</p>
+<p><img alt="Measure Examples" src="../../img/pat/measure_groups.png" /></p>
+<p><em>Above: The "Set Window to Wall Ratio by Facade Group 1" contains 3 versions of the same measure with different parameter settings. The next section will show how to set measure parameters.</em></p>
+<p>Check out the <a href="../measure_writing_guide">Measure Writing Guide</a> and start writing your own custom measures.</p>
+<iframe width="640" height="360" src="https://www.youtube.com/embed/3rmElK_OB28?start=112&end=273" allowfullscreen></iframe>
+
+<p><em>Above: Adding measures to your project and editing the parameters</em></p>
+<h3 id="defining-measures">Defining Measures</h3>
+<p>You can edit the measure parameters and names by selecting the measure in the central panel. The measure will be highlighted with orange and the right panel will go to the "Edit" tab.</p>
+<p><img alt="Editing Measure Parameters" src="../../img/pat/measure_parameters.png" /></p>
+<p><em>Above: Select a measure in the central panel and view the fields available for editing in the "Edit" panel on the right.</em></p>
+<p><img alt="Required Field Warning" src="../../img/pat/warning.png" /></p>
+<p><em>Above: A warning icon will be next to the measure if a required field is empty. Go to the "Edit" tab on the right panel and look for the red text.</em></p>
+<h3 id="downloading-measures-from-the-building-component-library">Downloading Measures from the Building Component Library</h3>
+<p>Before you can download measures from BCL, you will need an API key. Follow the instructions in the <a href="../../../../getting_started/getting_started/#installation-instructions">Getting Started section</a> to get your key.</p>
+<p>From the "Measures" menu and "Find Measures" along the top or the "Find Measures on BCL" button at the bottom of the "Library" you can access the BCL.</p>
+<p>The "Sync Project Measures with Library" will updated any older measures in your project to the latest versions.</p>
+<p><img alt="Measures Menu" src="../../img/pat/measures_menu.png" title="Measures Menu" /></p>
+<p><em>Above: One of the ways to access the BCL measures is through the menu.</em></p>
+<p>Search for specific measures or browse through the categories.</p>
+<p>The "Check All" button can be used to select all the measures on a page view. If you already have a measure in your library the check box will be grayed out and checked.</p>
+<p><img alt="Online BCL Dialog" src="../../img/pat/bcl_window.png" /></p>
+<p><em>Above: Browse categories or search for measures to download.</em></p>
+<p>You can also search and browse measures on the <a href="https://bcl.nrel.gov/">Building Component Library site.</a></p>
+<h3 id="duplicating-and-creating-new-measures">Duplicating and Creating New Measures</h3>
+<p>If you cannot find the measure you need, you can duplicate a measure and adjust it or you can write a custom measure. Learn more about writing measures in the <a href="../measure_writing_guide">Measure Writing Guide</a></p>
+<p><img alt="Measures Buttons" src="../../img/pat/measure_buttons.png" /></p>
+<p><em>Above: Create your own measures with the features provided on the bottom of the right panel.</em></p>
+<p>Hit the "New Measure" icon to open a dialog to create your own measure. Write a descriptive title, more detailed descriptions, and select the measure type and taxonomy.</p>
+<p>Duplicating a measure opens up a similar dialog, but the name of the measure will have "copy" added at the end.</p>
+<p>The <a href="../measure_writing_guide">Measure Writing Guide</a> will guide you through this process and provide best practices.</p>
+<p><img alt="New Measure Dialog" src="../../img/pat/pat_new_measure.png" /></p>
+<p><em>Above: The dialog for creating your new measure is shown above.</em></p>
+<p>The Modeler Description is meant to assist the energy modeler. It should explain in some detail how the measure manipulates the model and, where appropriate, what model objects are being added or altered. It should offer any special guidance that the measure writer wants to communicate to people using the measure.</p>
+<hr />
+<h2 id="select-measures-and-create-design-alternatives">Select Measures and Create Design Alternatives</h2>
+<p><iframe width="640" height="360" src="https://www.youtube.com/embed/4g5nJzDoh58?end=116" allowfullscreen></iframe></p>
+<p><em>Above: This video shows you how to create design alternatives in an OpenStudio Parametric Analysis Tool Project.</em></p>
+<hr />
+<h2 id="run-simulations">Run Simulations</h2>
+<p>Select the design alternative you want to run. Selected alternatives turn the yellow-orange. Hit the run button to start the simulations.</p>
+<p>If you want to run a daylighting analysis with Radiance, select that option here.</p>
+<p>You must select the design alternatives you want to run before hitting the run buttons. Selected items have an orange highlight.</p>
+<p><img alt="Run Simulations Tab" src="../../img/pat/run_tab.png" /></p>
+<p><em>Above: Screenshot of the "Run" tab with design alternatives selected.</em></p>
+<iframe width="640" height="360" src="https://www.youtube.com/embed/4g5nJzDoh58?start=117&end=273" allowfullscreen></iframe>
+
+<p><em>Above: Running your simulations.</em></p>
+<hr />
+<h2 id="create-and-view-reports">Create and View Reports</h2>
+<p><iframe width="640" height="360" src="https://www.youtube.com/embed/9WgUhiJ785I" allowfullscreen></iframe></p>
+<p><em>Above: This video shows the simulation results of a parametric analysis and then shows you how to inspect a specific design alternative in the SketchUp Plugin.</em></p>
+<hr />
+<!--
+## Making Changes After an Analysis
+
+___________________
+-->
+
+<h2 id="running-on-the-cloud">Running on the Cloud</h2>
+<p>There are a few things to do before you click the "Turn on Cloud" button. First, fill out the Cloud Settings dialogs from the Cloud menu, run your baseline model locally, and then make sure you have selected all of the design alternatives that you want to run. Choosing "Select All" will select all jobs that have not already been run locally, or on a previous cloud session.</p>
+<p>Select your baseline model, then run locally before you start the cloud to confirm that it is valid and will run properly. To do this you can deselect all other design alternatives, and then select the baseline only.</p>
+<p><img alt="Cloud Menu" src="../../img/pat/cloud_settings_menu.png" /></p>
+<p><em>Above: Get to the Cloud Settings at any time from the "Cloud" menu.</em></p>
+<p>Add information on your Amazon EC2 account and agree to the terms on the first screen. Get an Amazon EC2 account and learn more about using Amazon cloud at <a href="http://www.aws.amazon.com">aws.amazon.com</a>. Use the AWS Console to monitor your account charges. <strong>Not monitoring your account carefully can result in unexpected charges.</strong></p>
+<p>Currently only Amazon EC2 is available through PAT.</p>
+<p><img alt="Cloud Settings 1" src="../../img/pat/cloud_settings1.png" /></p>
+<p><em>Above: Fill out the first screen and agree to terms before continuing to the second screen.</em></p>
+<p>On the second screen of the "Cloud Settings" dialog, confirm that you have chosen the desired server, worker, and number of workers.</p>
+<p>As soon as you hit the "Turn on Cloud" button you will start incurring charges, and the smallest increment is one hour. If you have to cancel and re-start it you will be charged again.</p>
+<p><strong>Review Amazon pricing at <a href="http://aws.amazon.com/ec2/pricing/">http://aws.amazon.com/ec2/pricing/</a>.</strong></p>
+<p><img alt="Cloud Settings 2" src="../../img/pat/cloud_settings2.png" /></p>
+<p><em>Above: Fill out the first screen and agree to terms before continuing to the second screen.</em></p>
+<iframe width="640" height="360" src="https://www.youtube.com/embed/0llNfGNe5x0" allowfullscreen></iframe>
+
+<p><em>Above: The video above demonstrates running simulations on the cloud.</em></p>
+<p>The "Monitor Use" dialog under the Cloud menu will show you how many instances you have in your current project as well as other projects. If your "Total Instances Running" is more than 0, and you don't know why, you can go to the EC2 Console website to terminate them. The "Estimated EC2 Charges" value is directly from Amazon, but may be up to 24 hours delayed. As a result you won't see this change on the fly as you are working on a project, you will typically see it the next day.</p>
+<p><img alt="Monitor Cloud Use Dialog" src="../../img/pat/monitor_use.png" title="Cloud Monitor" /></p>
+<p><em>Above: Open this dialog from the "Cloud" menu.</em></p>
+<p>The "Turn on the Cloud" button has several states to let you know the status of the cloud.</p>
+<p><img alt="Cloud Buttons States" src="../../img/pat/cloud_buttons.png" /></p>
+<p><em>Above: The states of the cloud button are shown.</em></p>
+<p>You can download standard or detailed results from your runs. If you want detailed results, click on the download button in the table. You can choose to download all of the results in detail but it may be a large download.</p>
+<p><img alt="Download Detailed Results Icons" src="../../img/pat/download_results.png" /></p>
+<p><em>Above: The states of the cloud download button are shown.</em></p>
+<p>While your project is running on the cloud, you can choose the design alternative and select "Download Detailed Results for Selected File" button if you want more detailed data on some of the options.</p>
+<p><strong>Quitting PAT while the cloud is on will not close the EC2 instances. If you Launch PAT again but open a different project it may look like the cloud is off, but that is only relevant for that current project.</strong></p>
+<p>To properly end the cloud session in PAT, re-open the PAT project (if you have closed it) and then click the button to stop the cloud. For a few minutes you will see "Stopping Cloud."</p>
+<p><strong>Once you stop the cloud you will no longer be able to download detailed simulation results.</strong> If this happens and you want to get one, you can always run that job locally. It is generally not recommended to download detailed results for all design alternatives, as that will use a lot of hard drive space and network bandwidth.</p>
+<p><strong>It is always a good idea to go to the EC2 website to confirm that the instances have shut down. To view your EC2 web console, click the "Manage all Projects with AWS Console" in the "Monitor Use" dialog or "AWS Management Console" in the "Cloud Settings" dialog. It will take you to this address <a href="http://aws.amazon.com/console/">http://aws.amazon.com/console/</a>.  Click "Sign in to the AWS Console"</strong></p>
+<p><img alt="AWS Console" src="../../img/pat/aws.png" /></p>
+<p><em>Above: Check your status on AWS and terminate sessions if you have problems in PAT.</em></p>
+<h3 id="openstudio-cloud-management-console">OpenStudio Cloud Management Console</h3>
+<p>While your runs are completing on the cloud and after they are finished, you can explore your results with the OpenStudio Cloud Management Console.</p>
+<p><img alt="OpenStudio Server Console" src="../../img/pat/os_console1.png" /></p>
+<p><em>Above: This pie chart shows the progress of the runs. Select "View Analysis" to explore results.</em></p>
+<p><img alt="OpenStudio Server Analysis" src="../../img/pat/os_console2.png" /></p>
+<p><em>Above: The red boxes added to the screenshot above shows where you can select charts and download results in different formats:</em></p>
+<ul>
+<li>List of Measures</li>
+<li>List of Variables</li>
+<li>View Parallel Coordinates Plot</li>
+<li>View Scatter Plot</li>
+<li>View XY Plot</li>
+<li>Interactive XY Plot</li>
+<li>Download CSV</li>
+<li>Download R Data Frame</li>
+<li>Debug Log</li>
+</ul>
+<h2 id="viewing-results">Viewing Results</h2>
+<p>You can open individual design alternative reports (.html files) in your browser. EnergyPlus and standard and calibration OpenStudio reports can be found by right clicking on a design alternative, on the Results tab, and selecting the results you want to view.</p>
+<p><img alt="Open Report Context Menu" src="../../img/pat/download_results_during.png" /></p>
+<p><em>Above: Right click on design alternative to get these options. If your model includes calibration reports, the calibration button at the top of the results will display those in a table format in the application.</em></p>
+<h2 id="publications">Publications</h2>
+<p><a href="http://www.aceee.org/files/proceedings/2014/data/papers/4-588.pdf">A Parametric Analysis Tool for Building Energy Design Workflows: Application to a Utility Design Assistance Incentive Program (PDF)</a></p>
+
+          <div class="footer">
+  <p class="text-center"><a href="https://unmethours.com/questions/scope:all/sort:activity-desc/tags:openstudio/">Get Help</a> | <a href="https://www.openstudio.net/contact">Contact Us</a></p>
+  <p class="text-center"><a href="https://www.openstudio.net">OpenStudio</a><sup>&reg;</sup> is developed in collaboration by NREL, ANL, LBNL, ORNL, and PNNL.</p>
+  <p class="text-center">OpenStudio<sup>&reg;</sup> is a registered trademark of the Alliance for Sustainable Energy, LLC.</p>
+  <p class="text-center"><a href="http://www.nrel.gov">NREL</a> is a National Laboratory of the U.S. Department of Energy, Office of Energy Efficiency and Renewable Energy, operated by the Alliance for Sustainable Energy, LLC.</p>
+  <p class="text-center"><a href="#">Back to Top</a></p>
+</div>
+        </div>
+      </div>
+    </div>
+    
+
+    <script src="../../js/jquery-2.1.1.min.js"></script>
+    <script src="../../js/bootstrap-3.3.0.min.js"></script>
+    <script src="../../js/bootstrap-hover-dropdown-2.0.11.min.js"></script>
+    <script src="../../js/prettify-1.0.min.js"></script>
+    <script src="../../js/base.js"></script>
+  </body>
+</html>

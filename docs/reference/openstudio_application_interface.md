@@ -12,7 +12,7 @@ The [OpenStudio Quick Start Guide](img/pdfs/openstudio_interface_quickstart.pdf)
 ## Overview
 The tabs on the left that move vertically are ordered in a suggested workflow.
 
-[![Overview](img/os_interface/overview.jpg "Click to view")](img/os_interface/overview.png)
+[![Overview](img/os_interface/overview.png "Click to view")](img/os_interface/overview.png)
 
 *Above: Overview of the OpenStudio Application Interface.*
 
@@ -32,7 +32,7 @@ The right panel provides access to items in the library or in your model, and al
 
 - __"Edit"__ allows you to select certain components and edit the settings for that component. It is used in the HVAC tab to edit component settings, assign thermal zones to loops, and to add plenums.
 
-![Edit Tab](img/os_interface/edit_tab.png)
+[![Edit Tab](img/os_interface/edit_tab.png "Click to view")](img/os_interface/edit_tab.png)
 
 *Above: Edit settings on some objects in the edit panel.*
 
@@ -41,7 +41,7 @@ The right panel provides access to items in the library or in your model, and al
 ## Left Panel Bottom
 ![Add](img/os_interface/add.png) Add New Item allows the user to add a new component to the interface. Sometimes the type of item added depends on the selection in the left panel.
 
-![Add Example](img/os_interface/add_example.png)
+[![Add Example](img/os_interface/add_example.png "Click to view")](img/os_interface/add_example.png)
 
 *Above: On the "Utility Bill" sub-tab, select the type of bill you want to add before hitting the add button.*
 
@@ -56,11 +56,11 @@ The right panel provides access to items in the library or in your model, and al
 ## Adding Objects from the Library
 To add items from the library, select the "Library" tab on the right panel and find the item you want to add to the model. Select that item and drag and drop it into the correct drop zone. Drop zones are surrounded by a dotted line and are programmed to only accept items that will work for that field.
 
-![Drag-and-drop Constructions](img/os_interface/drag_drop.png)
+[![Drag-and-drop Constructions](img/os_interface/drag_drop.png "Click to view")](img/os_interface/drag_drop.png)
 
 *Above: Drag-and-drop items from the library to the drop zones in the model.*
 
-![Drag-and-drop Service Hot Water](img/os_interface/drag_drop_vrf.png)
+[![Drag-and-drop Service Hot Water](img/os_interface/drag_drop_vrf.png "Click to view")](img/os_interface/drag_drop_vrf.png)
 
 *Above: Drag-and-drop example on the HVAC service hot water.*
 
@@ -104,7 +104,7 @@ When you save an OSM model in the OpenStudio Application or the SketchUp Plug-in
 
 Load Library is also a very important feature. This allows you to load building component libraries for specific building types. These libraries are the same as those used in the SketchUp Plug-in templates.
 
-![File Menu](img/os_interface/file_menu.png "File Menu")
+[![File Menu](img/os_interface/file_menu.png "File Menu" "Click to view")](img/os_interface/file_menu.png)
 
 *Above: The file menu contains the new, open, revert, save, import, and export functions.*
 
@@ -117,14 +117,14 @@ The SketchUp Plug-in has access to this as well under `Plugins->OpenStudio->Pref
 
 Change Default Libraries allows one to restore default libraries. This feature complements the Load Library feature within the File Menu. Loading several libraries could increase the duration to boot the OpenStudio application. To reduce this duration, restore default libraries. 
 
-![Preferences Menu](img/os_interface/prefer_menu.png)
+[![Preferences Menu](img/os_interface/prefer_menu.png "Click to view")](img/os_interface/prefer_menu.png)
 
 *Above: The preferences menu contains the units, measure directory, and tool location options.*
 
 ------
 
 ## Components & Measures Menu
-![Components & Measures Menu](img/os_interface/measures_components_menu.png)
+[![Components & Measures Menu](img/os_interface/measures_components_menu.png "Click to view")](img/os_interface/measures_components_menu.png)
 
 *Above: This menu item allows you to run one measure on you model.*
 
@@ -135,7 +135,7 @@ This will open a dialog that allows you to choose a measure from the library to 
 
 Once you select a measure you may edit the measure inputs on the right side of the dialog. Hit apply measure to start.
 
-![Apply Measure Now](img/os_interface/apply_measure_now.png)
+[![Apply Measure Now](img/os_interface/apply_measure_now.png "Click to view")](img/os_interface/apply_measure_now.png)
 
 *Above: This menu item allows you to run one measure on your model.*
 
@@ -144,6 +144,6 @@ The BCL window gives you access to an online repository of building energy model
 
 The first time you open this window you will be prompted for an API key, unless you have already used BCL functionality in the SketchUp Plug-in. [Instructions for finding your API Key](../getting_started/getting_started.md#connecting-with-the-building-component-library) are in the "Getting Started" section.
 
-![BCL Window](img/os_interface/bcl_window.png)
+[![BCL Window](img/os_interface/bcl_window.png "Click to view")](img/os_interface/bcl_window.png)
 
 *Above: This window gives you access to the online BCL to download measures or components.*
