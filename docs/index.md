@@ -18,7 +18,7 @@
       <div class="thumbnail"> <img src="img/model_thumb.png" alt="Openstudio Model Image">
         <div class="caption">
           <h3>References</h3>
-          <p>The OpenStudio SDK only supports the Command Line Interface for running measure based workflows quickly and easily. If you are looking for a GUI to generate OpenStudio models and workflows you may consider the OpenStudio Application. More information about the Application is available <a href="https://www.openstudio.net/new-future-for-openstudio-application" >here.</a></p>
+          <p>The OpenStudio SDK only supports the Command Line Interface for running measure based workflows quickly and easily. If you are looking for a GUI to generate OpenStudio models and workflows, you may consider the OpenStudio Application. More information about the Application is available <a href="https://www.openstudio.net/new-future-for-openstudio-application" >here.</a></p>
           <p><a href="reference/command_line_interface.md" class="btn btn-primary" role="button">Command Line Interface</a></p>
         </div>
       </div>
@@ -71,7 +71,7 @@
           <h3>Help &amp; Additional Resources</h3>
           <p>Find professional training for OpenStudio.</p>
           <p><a href="help/training.md" class="btn btn-primary" role="button">Training, Support, &amp; Consulting</a></p>
-           <p>Check out Unmet Hours, to post a question or search for answers to your energy modeling questions.</p>
+           <p>Check out Unmet Hours to post a question or search for answers to your energy modeling questions.</p>
           <p><a href="https://unmethours.com/questions/scope:all/sort:activity-desc/tags:openstudio/" class="btn btn-primary" role="button">OpenStudio on Unmet Hours</a></p>
           <p>Check out this advanced application of OpenStudio for fault detection:</p>
           <p><a href="https://github.com/NREL/OpenStudio-fault-models" class="btn btn-primary" role="button">Fault Detection Measures </a>
