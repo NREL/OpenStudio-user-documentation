@@ -5,7 +5,7 @@ OpenStudio is constantly being improved, with a less stable developer release av
 
 ### Building Geometry/3D CAD
 
-- Quickly draw 3D building geometry using free plug-in for SketchUp
+- Quickly draw 3D building geometry using free plugin for SketchUp
 - Building envelope, shading on windows, shading from other buildings, etc.
 - Draw detailed shapes, trace floor plans, or a combination
 - Use wizard to create standard shapes (H, L, E, Courtyard, Rectangle)
@@ -167,9 +167,9 @@ OpenStudio is constantly being improved, with a less stable developer release av
 
 - Hot water heaters 
 	- Tank type/tankless water heaters (all fuels) 
-	- Heat Pump Water Heaters
-	- Stratified tank Water Heaters
-	- Storage Tank fed from Boiler(s)/heat exchanger
+	- Heat pump water heaters
+	- Stratified tank water heaters
+	- Storage tank fed from boiler(s)/heat exchanger
 - Solar hot water (flat plate or integral collectors) for pre-heating 
 - Constant speed and/or variable speed recirculation/booster pumps
 - Equipment that uses warm water (showers, faucets, etc.), can specify mixed water temp
