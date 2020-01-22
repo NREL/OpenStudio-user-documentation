@@ -169,7 +169,7 @@ OpenStudio is constantly being improved, with a less stable developer release av
 	- Tank type/tankless water heaters (all fuels) 
 	- Heat pump water heaters
 	- Stratified tank water heaters
-	- Storage tank fed from boiler(s)/heat exchanger
+	- Storage tank fed from boiler(s)/heat exchanger(s)
 - Solar hot water (flat plate or integral collectors) for pre-heating 
 - Constant speed and/or variable speed recirculation/booster pumps
 - Equipment that uses warm water (showers, faucets, etc.), can specify mixed water temp
