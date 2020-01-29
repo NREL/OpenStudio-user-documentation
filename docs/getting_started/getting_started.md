@@ -3,7 +3,8 @@ This page walks you through installing OpenStudio, the basics of the application
 
 ## Installation Instructions
 OpenStudio is supported on 64-bit versions of Windows 7 &ndash; Windows 10, OS X 10.12 &ndash; 10.14, and Ubuntu 18.04.
-OpenStudio supports the latest EnergyPlus release which is bundled with the OpenStudio installer. The [version compatibility matrix](https://github.com/NREL/OpenStudio/wiki/OpenStudio-Version-Compatibility-Matrix) lists specific versions of EnergyPlus and other dependencies for each version of OpenStudio.
+OpenStudio supports the latest EnergyPlus release which is bundled with the OpenStudio installer. The [version compatibility matrix](https://github.com/NREL/OpenStudio/wiki/OpenStudio-Version-Compatibility-Matrix) lists specific versions of EnergyPlus and other dependencies for each version of OpenStudio. 
+
 ###Installation Steps
 __Download and install OpenStudio__
 
@@ -36,7 +37,7 @@ Enter the key through the OpenStudio SketchUp Plugin under the menu `Extensions-
 
 __Optional - Install Parametric Analysis Tool (PAT)__  
 
-1. Download the latest release of PAT [here](https://github.com/NREL/OpenStudio-PAT/releases)
+1. Download the latest release of PAT [here](https://github.com/NREL/OpenStudio-PAT/releases) (not available for Linux).
 
 ## Workflow Overview
 The typical OpenStudio workflow is shown in the diagram below.
