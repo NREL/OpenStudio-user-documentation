@@ -61,14 +61,6 @@
       <div class="thumbnail">
         <div class="caption">
           <h3>Using Third Party Tools</h3>
-          <p> Set materials and constructions so they can be properly imported into CBECC-Com.</p>
-          <p><a href="tutorials/tutorial_cbecc_materials/" class="btn btn-primary" role="button">CBECC-Com Tutorial</a></p>
-          <p>Import an IFC file into OpenStudio using BIMserver. </p>
-          <p><a href="tutorials/tutorial_ifcimport.md" class="btn btn-primary" role="button">Import IFC Tutorial</a></p>
-          <p>Size a vertical ground heat exchanger with OpenStudio and GLHEPro.</p>
-          <p><a href="tutorials/tutorial_glhepro.md" class="btn btn-primary" role="button">GLHEPro Tutorial</a></p>
-          <p>Create OpenStudio models using the web based VirtualPULSE tool.</p>
-          <p><a href="tutorials/tutorial_virtual_pulse.md" class="btn btn-primary" role="button">VirtualPULSE Tutorial</a></p>
         </div>
       </div>
     </div>
@@ -83,12 +75,8 @@
           <p>Check out this advanced application of OpenStudio for fault detection:</p>
           <p><a href="https://github.com/NREL/OpenStudio-fault-models" class="btn btn-primary" role="button">Fault Detection Measures </a>
           <p>Additional help topics.</p>
-          <p><a href="help/finding_model_data.md" class="btn btn-primary" role="button">Finding Model Data</a></p>
           <p><a href="help/best_practices.md" class="btn btn-primary" role="button">Best Practices</a></p>
           <p><a href="help/troubleshooting.md" class="btn btn-primary" role="button">Troubleshooting</a></p>
-          <p><a href="help/faq.md" class="btn btn-primary" role="button">FAQ</a></p>
-          <p>More training videos are available on our YouTube page.</p>
-          <p><a href="https://www.youtube.com/channel/UC5NGj39XfJkhYUfCtKr-r_w/questions/" class="btn btn-primary" role="button">YouTube Videos</a></p>
         </div>
       </div>
     </div>
