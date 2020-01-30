@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Planned Features - OpenStudio<sup>&reg;</sup> User Docs</title>
+    <title>Measure Code Examples - OpenStudio<sup>&reg;</sup> User Docs</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -38,24 +38,24 @@
         <ul class="nav navbar-nav">
         
           
-          <li class="dropdown active">
+          <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">Getting Started <span class="caret"></span></a>
             <ul class="dropdown-menu" role="menu">
             
               <li>
-                <a href="../features">Current Features</a>
-              </li>
-            
-              <li class="active">
-                <a href=".">Planned Features</a>
+                <a href="../../getting_started/features">Current Features</a>
               </li>
             
               <li>
-                <a href="../getting_started">Installation and Introductory Tutorial</a>
+                <a href="../../getting_started/roadmap">Planned Features</a>
               </li>
             
               <li>
-                <a href="../about_measures">About Measures</a>
+                <a href="../../getting_started/getting_started">Installation and Introductory Tutorial</a>
+              </li>
+            
+              <li>
+                <a href="../../getting_started/about_measures">About Measures</a>
               </li>
             
             </ul>
@@ -121,52 +121,52 @@
           
         
           
-          <li class="dropdown">
+          <li class="dropdown active">
             <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">Reference <span class="caret"></span></a>
             <ul class="dropdown-menu" role="menu">
             
               <li>
-                <a href="../../reference/openstudio_application_interface">OpenStudio Application Interface Guide</a>
+                <a href="../openstudio_application_interface">OpenStudio Application Interface Guide</a>
               </li>
             
               <li>
-                <a href="../../reference/sketchup_plugin_interface">SketchUp Plug-in Interface Guide</a>
+                <a href="../sketchup_plugin_interface">SketchUp Plug-in Interface Guide</a>
               </li>
             
               <li>
-                <a href="../../reference/geometry_editor">FloorspaceJS</a>
+                <a href="../geometry_editor">FloorspaceJS</a>
               </li>
             
               <li>
-                <a href="../../reference/command_line_interface">Command Line Interface</a>
+                <a href="../command_line_interface">Command Line Interface</a>
               </li>
             
               <li>
-                <a href="../../reference/parametric_analysis_tool_2">Parametric Analysis Tool Version 2 (PAT) Interface Guide</a>
+                <a href="../parametric_analysis_tool_2">Parametric Analysis Tool Version 2 (PAT) Interface Guide</a>
               </li>
             
               <li>
-                <a href="../../reference/model_objects">OpenStudio Model Objects Overview</a>
+                <a href="../model_objects">OpenStudio Model Objects Overview</a>
               </li>
             
               <li>
-                <a href="../../reference/measure_writing_guide">Measure Writer's Reference Guide</a>
+                <a href="../measure_writing_guide">Measure Writer's Reference Guide</a>
+              </li>
+            
+              <li class="active">
+                <a href=".">Measure Code Examples</a>
               </li>
             
               <li>
-                <a href="../../reference/measure_code_examples">Measure Code Examples</a>
+                <a href="../developing_measure_collections">Developing Measure Collections</a>
               </li>
             
               <li>
-                <a href="../../reference/developing_measure_collections">Developing Measure Collections</a>
+                <a href="../refguide_radiance">OpenStudio-Radiance Reference Guide</a>
               </li>
             
               <li>
-                <a href="../../reference/refguide_radiance">OpenStudio-Radiance Reference Guide</a>
-              </li>
-            
-              <li>
-                <a href="../../reference/openstudio_results_measure">OpenStudio Results Measure</a>
+                <a href="../openstudio_results_measure">OpenStudio Results Measure</a>
               </li>
             
             </ul>
@@ -214,32 +214,10 @@
           <div class="bs-docs-sidebar hidden-print affix well" role="complementary">
   <ul class="nav">
   
-    <li class="main active"><a href="#openstudio-290-october-2019">OpenStudio 2.9.0 (October 2019)</a>
+    <li class="main active"><a href="#unit-conversion">Unit Conversion</a>
       <ul class="nav">
         
-      </ul>
-    </li>
-  
-    <li class="main"><a href="#openstudio-300-prerelease-november-2019">OpenStudio 3.0.0-prerelease (November 2019)</a>
-      <ul class="nav">
-        
-      </ul>
-    </li>
-  
-    <li class="main"><a href="#openstudio-29x-april-2020">OpenStudio 2.9.x (April 2020)</a>
-      <ul class="nav">
-        
-      </ul>
-    </li>
-  
-    <li class="main"><a href="#openstudio-300-april-2020">OpenStudio 3.0.0 (April 2020)</a>
-      <ul class="nav">
-        
-      </ul>
-    </li>
-  
-    <li class="main"><a href="#openstudio-310-october-2020">OpenStudio 3.1.0 (October 2020)</a>
-      <ul class="nav">
+        <li><a href="#available-units">Available units</a></li>
         
       </ul>
     </li>
@@ -251,56 +229,162 @@
 </div>
         </div>
         <div class="col-md-9" role="main">
-          <h1>Planned Features</h1>
+          <h1>Measure Code Examples</h1>
 
-<p>The OpenStudio team's primary focus for FY19 (October 2018 &ndash; September 2019) is on separation of the OpenStudio Application from the core OpenStudio project.  Details around the separation of the OpenStudio Application from the core OpenStudio project are available at: <a href="https://www.openstudio.net/new-future-for-openstudio-application">https://www.openstudio.net/new-future-for-openstudio-application</a>.</p>
-<p>Additional areas of planned FY19 development:</p>
-<ul>
-<li>Bug fixes, new features, testing, documentation, and release support</li>
-<li>Addition of new Commercial Prototype Models in OpenStudio Standards (developed by LBNL and ORNL)</li>
-<li>Alignment of OpenStudio Standards with ASHRAE 90.1 (performed by PNNL)</li>
-<li>Advanced Occupant Modeling for Commercial Buildings (developed by LBNL)</li>
-</ul>
-<h2 id="openstudio-290-october-2019">OpenStudio 2.9.0 (October 2019)</h2>
-<ul>
-<li>EnergyPlus 9.2 Support</li>
-<li>Bug fixes and new features</li>
-<li>New prototypes added to OpenStudio Standards</li>
-</ul>
-<h2 id="openstudio-300-prerelease-november-2019">OpenStudio 3.0.0-prerelease (November 2019)</h2>
-<ul>
-<li>All updates, bug fixes, and new features in OpenStudio 2.9.0</li>
-<li>Updated development dependencies and supported platforms</li>
-<li>Separate SDK and App installers available:<ul>
-<li>OpenStudio installer:<ul>
-<li>EnergyPlus and Radiance engines</li>
-<li>Ruby and C# SDK bindings</li>
-<li>OpenStudio Command Line Interface</li>
-</ul>
-</li>
-<li>OpenStudio Application and SketchUp Plug-in installer</li>
-<li>Parametric Analysis Tool installer</li>
-<li>DView installer</li>
-</ul>
-</li>
-</ul>
-<p>Anticipated FY20 development:</p>
-<h2 id="openstudio-29x-april-2020">OpenStudio 2.9.x (April 2020)</h2>
-<ul>
-<li>Support of 2.9.x (bug fixes for OpenStudio Application and CLI)</li>
-<li>Bug fixes and new features</li>
-</ul>
-<h2 id="openstudio-300-april-2020">OpenStudio 3.0.0 (April 2020)</h2>
-<ul>
-<li>All updates, bug fixes, and new features in OpenStudio 2.9.x</li>
-<li>EnergyPlus 9.3 Support</li>
-<li>OpenStudio 3.x becomes primary distribution</li>
-</ul>
-<h2 id="openstudio-310-october-2020">OpenStudio 3.1.0 (October 2020)</h2>
-<ul>
-<li>EnergyPlus 9.4 Support</li>
-<li>Bug fixes and new features</li>
-</ul>
+<p>This page provides example Ruby code for doing various common tasks. It is intended as a supplement to the full <a href="https://s3.amazonaws.com/openstudio-sdk-documentation/index.html">OpenStudio SDK documentation</a>. The examples are not complete Measures for the sake of clarity.</p>
+<h2 id="unit-conversion">Unit Conversion</h2>
+<p>OpenStudio has a built-in unit conversion method:</p>
+<pre><code class="ruby">OpenStudio.convert()
+</code></pre>
+
+<p>This method will convert a value from the first unit to the second unit, as specified by two strings. The conversion can be from IP to SI, SI to IP, IP to another IP unit, or SI to another SI unit. Any to-from units that are valid conversions will result in an initialized Optional::Double (see [this] for an explanation of optional doubles).</p>
+<pre><code class="ruby"># Convert the value 212 from Fahrenheit to Celsius
+val_in_celsius = OpenStudio.convert(val_in_fahrenheit,&quot;F&quot;,&quot;C&quot;)
+
+# Check that the conversion worked, then get the value
+if val_in_celsius.is_initialized
+  val_in_celsius = val_in_celsius.get
+end
+</code></pre>
+
+<pre><code class="ruby"># Or, if you know the unit conversion is valid, here's the short version
+val_in_celsius = OpenStudio.convert(val_in_fahrenheit,&quot;F&quot;,&quot;C&quot;).get
+</code></pre>
+
+<p>You can use the <code>*</code> (multiply), <code>/</code> (divide), and <code>^</code> (exponent) operators in the unit strings to combine basic units like <code>"ft"</code> and <code>"min"</code> into compound units like <code>"ft^3/min"</code>.</p>
+<h3 id="available-units">Available units</h3>
+<p><table class="table table-striped">
+  <tr>
+    <th>Unit Type</th>
+    <th>IP</th>
+    <th>SI</th>
+  </tr>
+  <tr>
+    <td>Temperature</td>
+    <td>"F"</td>
+    <td>"C"</td>
+  </tr>
+  <tr>
+    <td>DeltaTemperature</td>
+    <td>"R"</td>
+    <td>"K"</td>
+  </tr>
+  <tr>
+    <td>Length</td>
+    <td>"in", "ft", "mi"</td>
+    <td>"m"</td>
+  </tr>
+  <tr>
+    <td>People</td>
+    <td>"person"</td>
+    <td>"person"</td>
+  </tr>
+  <tr>
+    <td>Time</td>
+    <td>"s", "min", "h", "hr", "day"</td>
+    <td>"s", "min", "h", "hr", "day"</td>
+  </tr>
+  <tr>
+    <td>Mass</td>
+    <td>"lb_m", "ton"</td>
+    <td>"kg"</td>
+  </tr>
+  <tr>
+    <td>Area</td>
+    <td>"in^2", "ft^2"</td>
+    <td>"m^2"</td>
+  </tr>
+  <tr>
+    <td>Volume</td>
+    <td>"in^3", "ft^3"</td>
+    <td>"m^3", "L"</td>
+  </tr>
+  <tr>
+    <td>Force</td>
+    <td>"lb_f"</td>
+    <td>"N"</td>
+  </tr>
+  <tr>
+    <td>Power</td>
+    <td>"ft*lb_f/s"</td>
+    <td>"W"</td>
+  </tr>
+  <tr>
+    <td>Pressure</td>
+    <td>"inH_{2}O", "ftH_{2}O", "inHg"</td>
+    <td>"Pa"</td>
+  </tr>
+  <tr>
+    <td>FlowRate</td>
+    <td>"cfm", "ft^3/min", "gal/min", "gpd", "gal/day"</td>
+    <td>"m^3/hr", "m^3/s", "L/hr", "L/s", "L/min", "L/day"</td>
+  </tr>
+  <tr>
+    <td>U-Factor</td>
+    <td>"Btu/ft^2*h*R"</td>
+    <td>"W/m^2*K"</td>
+  </tr>
+  <tr>
+    <td>R-Value</td>
+    <td>"ft^2*h*R/Btu"</td>
+    <td>"m^2*K/W"</td>
+  </tr>
+  <tr>
+    <td>Conductivity</td>
+    <td>"Btu/ft^2*h*R"</td>
+    <td>"W/m^2*K"</td>
+  </tr>
+  <tr>
+    <td>Illuminance</td>
+    <td>"fc"</td>
+    <td>"lux"</td>
+  </tr>
+  <tr>
+    <td>LuminousFlux</td>
+    <td></td>
+    <td>"lm"</td>
+  </tr>
+  <tr>
+    <td>Angles</td>
+    <td>"deg"</td>
+    <td>"rad"</td>
+  </tr>
+  <tr>
+    <td>Energy</td>
+    <td>"Btu", "kBtu", "ft*lb_f"</td>
+    <td>"J", "GJ"</td>
+  </tr>
+  <tr>
+    <td>RotationalSpeed</td>
+    <td>"rpm"</td>
+    <td>"rpm"</td>
+  </tr>
+  <tr>
+    <td>Cycles</td>
+    <td>"cycle"</td>
+    <td>"cycle"</td>
+  </tr>
+  <tr>
+    <td>Frequency</td>
+    <td>"Hz"</td>
+    <td>"Hz"</td>
+  </tr>
+  <tr>
+    <td>Velocity</td>
+    <td>"in/s", "ft/s", "mph"</td>
+    <td>"cm/s", "m/s"</td>
+  </tr>
+  <tr>
+    <td>ElectricPotential</td>
+    <td>"V"</td>
+    <td>"V"</td>
+  </tr>
+  <tr>
+    <td>ElectricResistance</td>
+    <td>"ohm"</td>
+    <td>"ohm"</td>
+  </tr>
+</table></p>
 
           <div class="footer">
   <p class="text-center"><a href="https://unmethours.com/questions/scope:all/sort:activity-desc/tags:openstudio/">Get Help</a> | <a href="https://www.openstudio.net/contact">Contact Us</a></p>

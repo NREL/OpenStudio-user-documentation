@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Planned Features - OpenStudio<sup>&reg;</sup> User Docs</title>
+    <title>Large Scale Analysis - OpenStudio<sup>&reg;</sup> User Docs</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -38,24 +38,24 @@
         <ul class="nav navbar-nav">
         
           
-          <li class="dropdown active">
+          <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">Getting Started <span class="caret"></span></a>
             <ul class="dropdown-menu" role="menu">
             
               <li>
-                <a href="../features">Current Features</a>
-              </li>
-            
-              <li class="active">
-                <a href=".">Planned Features</a>
+                <a href="../../getting_started/features">Current Features</a>
               </li>
             
               <li>
-                <a href="../getting_started">Installation and Introductory Tutorial</a>
+                <a href="../../getting_started/roadmap">Planned Features</a>
               </li>
             
               <li>
-                <a href="../about_measures">About Measures</a>
+                <a href="../../getting_started/getting_started">Installation and Introductory Tutorial</a>
+              </li>
+            
+              <li>
+                <a href="../../getting_started/about_measures">About Measures</a>
               </li>
             
             </ul>
@@ -63,28 +63,28 @@
           
         
           
-          <li class="dropdown">
+          <li class="dropdown active">
             <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">Essential Tutorials <span class="caret"></span></a>
             <ul class="dropdown-menu" role="menu">
             
               <li>
-                <a href="../../tutorials/creating_your_model">Creating Your Model</a>
+                <a href="../creating_your_model">Creating Your Model</a>
               </li>
             
               <li>
-                <a href="../../tutorials/running_your_simulation">Running Simulations & Viewing Results</a>
+                <a href="../running_your_simulation">Running Simulations & Viewing Results</a>
+              </li>
+            
+              <li class="active">
+                <a href=".">Large Scale Analysis</a>
               </li>
             
               <li>
-                <a href="../../tutorials/large_scale_analysis">Large Scale Analysis</a>
+                <a href="../radiance_tutorial">Radiance and OpenStudio</a>
               </li>
             
               <li>
-                <a href="../../tutorials/radiance_tutorial">Radiance and OpenStudio</a>
-              </li>
-            
-              <li>
-                <a href="../../tutorials/tutorial_bcl">Building Component Library</a>
+                <a href="../tutorial_bcl">Building Component Library</a>
               </li>
             
             </ul>
@@ -97,23 +97,23 @@
             <ul class="dropdown-menu" role="menu">
             
               <li>
-                <a href="../../tutorials/utility_rate_tariffs">Utiity Rate Tariffs</a>
+                <a href="../utility_rate_tariffs">Utiity Rate Tariffs</a>
               </li>
             
               <li>
-                <a href="../../tutorials/life_cycle_costing_examples">Life Cycle Cost Analysis</a>
+                <a href="../life_cycle_costing_examples">Life Cycle Cost Analysis</a>
               </li>
             
               <li>
-                <a href="../../tutorials/tutorial_gbxmlimport">Import gbXML</a>
+                <a href="../tutorial_gbxmlimport">Import gbXML</a>
               </li>
             
               <li>
-                <a href="../../tutorials/tutorial_shadingcontrols">Shading Controls</a>
+                <a href="../tutorial_shadingcontrols">Shading Controls</a>
               </li>
             
               <li>
-                <a href="../../tutorials/tutorial_windowproperty_frameanddivider">Window Property Frame and Divider</a>
+                <a href="../tutorial_windowproperty_frameanddivider">Window Property Frame and Divider</a>
               </li>
             
             </ul>
@@ -214,31 +214,45 @@
           <div class="bs-docs-sidebar hidden-print affix well" role="complementary">
   <ul class="nav">
   
-    <li class="main active"><a href="#openstudio-290-october-2019">OpenStudio 2.9.0 (October 2019)</a>
+    <li class="main active"><a href="#the-workflow">The Workflow</a>
       <ul class="nav">
         
       </ul>
     </li>
   
-    <li class="main"><a href="#openstudio-300-prerelease-november-2019">OpenStudio 3.0.0-prerelease (November 2019)</a>
+    <li class="main"><a href="#starting-openstudios-cloud">Starting OpenStudio's Cloud</a>
       <ul class="nav">
         
       </ul>
     </li>
   
-    <li class="main"><a href="#openstudio-29x-april-2020">OpenStudio 2.9.x (April 2020)</a>
+    <li class="main"><a href="#export-spreadsheet">Export Spreadsheet</a>
       <ul class="nav">
         
       </ul>
     </li>
   
-    <li class="main"><a href="#openstudio-300-april-2020">OpenStudio 3.0.0 (April 2020)</a>
+    <li class="main"><a href="#edit-the-template-spreadsheet">Edit the Template Spreadsheet</a>
       <ul class="nav">
         
       </ul>
     </li>
   
-    <li class="main"><a href="#openstudio-310-october-2020">OpenStudio 3.1.0 (October 2020)</a>
+    <li class="main"><a href="#running-openstudios-cloud">Running OpenStudio's Cloud</a>
+      <ul class="nav">
+        
+        <li><a href="#buildings-specific-chef-cookbooks">Buildings Specific Chef Cookbooks</a></li>
+        
+      </ul>
+    </li>
+  
+    <li class="main"><a href="#server-architecture">Server Architecture</a>
+      <ul class="nav">
+        
+      </ul>
+    </li>
+  
+    <li class="main"><a href="#publications">Publications</a>
       <ul class="nav">
         
       </ul>
@@ -251,56 +265,67 @@
 </div>
         </div>
         <div class="col-md-9" role="main">
-          <h1>Planned Features</h1>
+          <h1>Large Scale Analysis</h1>
 
-<p>The OpenStudio team's primary focus for FY19 (October 2018 &ndash; September 2019) is on separation of the OpenStudio Application from the core OpenStudio project.  Details around the separation of the OpenStudio Application from the core OpenStudio project are available at: <a href="https://www.openstudio.net/new-future-for-openstudio-application">https://www.openstudio.net/new-future-for-openstudio-application</a>.</p>
-<p>Additional areas of planned FY19 development:</p>
-<ul>
-<li>Bug fixes, new features, testing, documentation, and release support</li>
-<li>Addition of new Commercial Prototype Models in OpenStudio Standards (developed by LBNL and ORNL)</li>
-<li>Alignment of OpenStudio Standards with ASHRAE 90.1 (performed by PNNL)</li>
-<li>Advanced Occupant Modeling for Commercial Buildings (developed by LBNL)</li>
-</ul>
-<h2 id="openstudio-290-october-2019">OpenStudio 2.9.0 (October 2019)</h2>
-<ul>
-<li>EnergyPlus 9.2 Support</li>
-<li>Bug fixes and new features</li>
-<li>New prototypes added to OpenStudio Standards</li>
-</ul>
-<h2 id="openstudio-300-prerelease-november-2019">OpenStudio 3.0.0-prerelease (November 2019)</h2>
-<ul>
-<li>All updates, bug fixes, and new features in OpenStudio 2.9.0</li>
-<li>Updated development dependencies and supported platforms</li>
-<li>Separate SDK and App installers available:<ul>
-<li>OpenStudio installer:<ul>
-<li>EnergyPlus and Radiance engines</li>
-<li>Ruby and C# SDK bindings</li>
-<li>OpenStudio Command Line Interface</li>
+<p>Although building energy modeling has been common for many years, large-scale analyses have more recently become achievable for more users with access to affordable and vast computing power in the cloud. Recently, the OpenStudio Parametric Analysis Tool was enhanced, allowing users to launch their own cloud resources to run a large number of simulations.</p>
+<p>The Parametric Analysis Tool (PAT) now exports a spreadsheet format compatible with the OpenStudio-analysis-spreadsheet project for running large parametric analyses using cloud resources.</p>
+<p>Go to the <a href="https://github.com/NREL/OpenStudio-analysis-spreadsheet">GitHub repository</a> for information and code for the analysis spreadsheet. There are instructions and examples on the GitHub site.</p>
+<h2 id="the-workflow">The Workflow</h2>
+<ol>
+<li>Build your baseline model with the OpenStudio Application</li>
+<li>Manipulate the Model with measures</li>
+<li>Run basic parametrics via PAT</li>
+<li>Export a spreadsheet view from PAT</li>
+<li>Fill in ranges, distributions, defaults, algorithms, objective functions</li>
+<li>Large Analyses via OpenStudio-Server</li>
+<li>Start Cluster</li>
+<li>Upload Data:<ul>
+<li>Measures</li>
+<li>Variables</li>
+<li>Seed Model</li>
+<li>Weather Data</li>
 </ul>
 </li>
-<li>OpenStudio Application and SketchUp Plug-in installer</li>
-<li>Parametric Analysis Tool installer</li>
-<li>DView installer</li>
-</ul>
-</li>
-</ul>
-<p>Anticipated FY20 development:</p>
-<h2 id="openstudio-29x-april-2020">OpenStudio 2.9.x (April 2020)</h2>
-<ul>
-<li>Support of 2.9.x (bug fixes for OpenStudio Application and CLI)</li>
-<li>Bug fixes and new features</li>
-</ul>
-<h2 id="openstudio-300-april-2020">OpenStudio 3.0.0 (April 2020)</h2>
-<ul>
-<li>All updates, bug fixes, and new features in OpenStudio 2.9.x</li>
-<li>EnergyPlus 9.3 Support</li>
-<li>OpenStudio 3.x becomes primary distribution</li>
-</ul>
-<h2 id="openstudio-310-october-2020">OpenStudio 3.1.0 (October 2020)</h2>
-<ul>
-<li>EnergyPlus 9.4 Support</li>
-<li>Bug fixes and new features</li>
-</ul>
+<li>Simulation Executive Runs Analysis</li>
+<li>Browse Results and Download Files</li>
+<li>Everything has a JSON-based API to access data programmatically</li>
+<li>Download results in CSV or R dataframe</li>
+</ol>
+<hr />
+<p><img alt="Analysis Workflow" src="../../img/large_scale/cloud_run_process_diagram.png" /></p>
+<hr />
+<h2 id="starting-openstudios-cloud">Starting OpenStudio's Cloud</h2>
+<pre><code class="bash">gem install bundler
+git clone https://github.com/NREL/OpenStudio-analysis-spreadsheet.git
+bundle install
+</code></pre>
+
+<h2 id="export-spreadsheet">Export Spreadsheet</h2>
+<p>Select the measures you want to use in the analysis and export a spreadsheet by selecting that option under the File menu.
+<img alt="Export Analysis Spreadsheet Menu" src="../../img/large_scale/export_spreadsheet.png" /></p>
+<h2 id="edit-the-template-spreadsheet">Edit the Template Spreadsheet</h2>
+<p>After exporting the spreadsheet from PAT, open the spreadsheet in Excel to edit fields.</p>
+<p><a href="../../img/large_scale/spreadsheet.png"><img alt="Spreadsheet View" src="../../img/large_scale/spreadsheet.png" title="Click to view" /></a></p>
+<p><em>Above: Click to see a larger screenshot of the spreadsheet.</em></p>
+<h2 id="running-openstudios-cloud">Running OpenStudio's Cloud</h2>
+<pre><code class="bash">rake run
+</code></pre>
+
+<hr />
+<h3 id="buildings-specific-chef-cookbooks">Buildings Specific Chef Cookbooks</h3>
+<p>Provisioning ensures that the appropriate tools are ready on the server, that there are consistent images across platforms, and makes it easier to test and deploy.</p>
+<p>The OpenStudio Server uses Chef to help automate the workflow. <a href="https://docs.getchef.com/chef_overview.html">Chef Documentation</a></p>
+<p>OpenStudio - <a href="https://github.com/NREL-cookbooks/openstudio">https://github.com/NREL-cookbooks/openstudio</a></p>
+<p>EnergyPlus - <a href="https://github.com/NREL-cookbooks/energyplus">https://github.com/NREL-cookbooks/energyplus</a></p>
+<p>Radiance - <a href="https://github.com/NREL-cookbooks/radiance">https://github.com/NREL-cookbooks/radiance</a></p>
+<p>R - <a href="https://github.com/NREL-cookbooks/cookbook-r">https://github.com/NREL-cookbooks/cookbook-r</a></p>
+<hr />
+<h2 id="server-architecture">Server Architecture</h2>
+<p><img alt="Analysis Architecture" src="../../img/large_scale/architecture.png" /></p>
+<hr />
+<h2 id="publications">Publications</h2>
+<p><a href="../../img/pdfs/graphical-tool-cloud-based.pdf">A GRAPHICAL TOOL FOR CLOUD-BASED BUILDING ENERGY SIMULATION (PDF)</a></p>
+<p><a href="../../img/pdfs/scaling-building-energy-modeling.pdf">SCALING BUILDING ENERGY MODELING HORIZONTALLY IN THE CLOUD WITH OPENSTUDIO (PDF).</a></p>
 
           <div class="footer">
   <p class="text-center"><a href="https://unmethours.com/questions/scope:all/sort:activity-desc/tags:openstudio/">Get Help</a> | <a href="https://www.openstudio.net/contact">Contact Us</a></p>

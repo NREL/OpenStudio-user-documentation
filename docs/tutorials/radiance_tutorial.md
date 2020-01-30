@@ -52,7 +52,7 @@ Optionally to these spaces, add:
 
 The Radiance daylighting results will inform the electric lighting load schedules and will be automatically used in the EnergyPlus model
 
-###6. Review Results (Results Viewer, Excel, et al.)
+###6. Review Results (Excel, et al.)
 The results of the Radiance/EnergyPlus simulation are stored in a few locations:
 
 - **radout.sql** - this file contains all the Radiance-computed daylighting information, as well as the exterior daylight data from the weather file, for reference. Its data can be reviewed with the Results Viewer application.

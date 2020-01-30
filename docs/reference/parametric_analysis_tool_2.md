@@ -1,4 +1,4 @@
-<h1>Parametric Analysis Tool 2.1.0 (PAT) Interface Guide</h1>
+<h1>Parametric Analysis Tool 2.x (PAT) Interface Guide</h1>
 OpenStudio's PAT allows you to quickly try out and compare manually specified combinations of measures, optimize designs, calibrate models, perform parametric sensitivity analysis, and much more.  Manually specified combinations of measures may be run locally on your computer.  Algorithmic analyses (e.g. optimization, design of experiments, etc) can be run by connecting to a separately provisioned instance of the OpenStudio server.
 
 ___________________
@@ -33,7 +33,7 @@ ___________________
 
 ## Interface Overview
 
-PAT 2.1.0 functionality is broken down into six tabs along the left side of the window:
+PAT 2.x functionality is broken down into six tabs along the left side of the window:
 
 1. Specify analysis mode (manual or algorithmic), seed models, weather files, measures, and measure options.
 2. Manually create design alternatives _(Not used for algorithmic analysis)_
@@ -56,7 +56,7 @@ Select your seed model, the model that will serve as the basis for creating desi
 ![Select Baseline Model and Weather File](img/pat2/measures_02.png)
 <br><br>
 
-Note: PAT 2.1.0 allows the user to specify multiple seed and weather files that may all be used within a project.
+Note: PAT 2.x allows the user to specify multiple seed and weather files that may all be used within a project.
 ___________________
 
 ## Add Measures and Create Measure Options
@@ -163,7 +163,7 @@ ___________________
 
 ## Running an Analysis Locally
 
-PAT 2.1.0 configures a "mini server" on your computer to perform local analysis.  This is essentially the same server that is used to run large-scale cloud analyses, enabling projects to scale and migrate between computing systems easily.  The local server begins to start up as soon as you launch PAT, and is usually ready to perform analysis within a minute.  This is indicated by a server status green checkmark at the top of the screen.
+PAT 2.x configures a "mini server" on your computer to perform local analysis.  This is essentially the same server that is used to run large-scale cloud analyses, enabling projects to scale and migrate between computing systems easily.  The local server begins to start up as soon as you launch PAT, and is usually ready to perform analysis within a minute.  This is indicated by a server status green checkmark at the top of the screen.
 
 ![Run Tab pre run](img/pat2/run_01.png)
 
@@ -183,7 +183,7 @@ ___________________
 
 ## View Analysis Reports
 
-PAT 2.1.0 includes three built-in reports that help the user compare design alternatives.
+PAT 2.x includes three built-in reports that help the user compare design alternatives.
 
 The default summary table compares consumption, demand, and economic metrics for all of the design alternatives. A selection field near the top of the table allows the user to specify which of the alternatives is to be used as the datum for performance comparison.  Analysis results shown in subsequent rows are relative to the datum's modeled values.
 
@@ -224,7 +224,7 @@ ___________________
 
 ## Setting Up an Algorithm with the Measures Tab
 
-PAT 2.1.0 has also been designed to enable large-scale exploration of design spaces using a range of sampling, optimization, and machine learning algorithms.  Switching from "Manual" to "Algorithmic" in the Analysis selection field of tab one alters PAT's interface and functionality in a number of ways.
+PAT 2.x has also been designed to enable large-scale exploration of design spaces using a range of sampling, optimization, and machine learning algorithms.  Switching from "Manual" to "Algorithmic" in the Analysis selection field of tab one alters PAT's interface and functionality in a number of ways.
 
 The first distinction is the addition of "sampling method" as a selection field near the top of tab one.  This field includes a number of methods.
 
@@ -281,7 +281,7 @@ Selected outputs appear in the outputs tab along with additional fields.
 
 ## The Run Tab in Algorithmic Mode
 
-The size of algorithm-based analysis problems generally exceeds the computational capability of a personal computer.  PAT 2.1.0 has been designed to run these sorts of analysis in the cloud or on dedicated servers.  While PAT's "mini-server" still launches in the background, the application does not currently support simulation using local computing resources.
+The size of algorithm-based analysis problems generally exceeds the computational capability of a personal computer.  PAT 2.x has been designed to run these sorts of analysis in the cloud or on dedicated servers.  While PAT's "mini-server" still launches in the background, the application does not currently support simulation using local computing resources.
 
 ![Algorithm Setup](img/pat2/cloud_01.png)
 

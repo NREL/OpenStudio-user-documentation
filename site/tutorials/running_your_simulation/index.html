@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Planned Features - OpenStudio<sup>&reg;</sup> User Docs</title>
+    <title>Running Simulations & Viewing Results - OpenStudio<sup>&reg;</sup> User Docs</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -38,24 +38,24 @@
         <ul class="nav navbar-nav">
         
           
-          <li class="dropdown active">
+          <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">Getting Started <span class="caret"></span></a>
             <ul class="dropdown-menu" role="menu">
             
               <li>
-                <a href="../features">Current Features</a>
-              </li>
-            
-              <li class="active">
-                <a href=".">Planned Features</a>
+                <a href="../../getting_started/features">Current Features</a>
               </li>
             
               <li>
-                <a href="../getting_started">Installation and Introductory Tutorial</a>
+                <a href="../../getting_started/roadmap">Planned Features</a>
               </li>
             
               <li>
-                <a href="../about_measures">About Measures</a>
+                <a href="../../getting_started/getting_started">Installation and Introductory Tutorial</a>
+              </li>
+            
+              <li>
+                <a href="../../getting_started/about_measures">About Measures</a>
               </li>
             
             </ul>
@@ -63,28 +63,28 @@
           
         
           
-          <li class="dropdown">
+          <li class="dropdown active">
             <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">Essential Tutorials <span class="caret"></span></a>
             <ul class="dropdown-menu" role="menu">
             
               <li>
-                <a href="../../tutorials/creating_your_model">Creating Your Model</a>
+                <a href="../creating_your_model">Creating Your Model</a>
+              </li>
+            
+              <li class="active">
+                <a href=".">Running Simulations & Viewing Results</a>
               </li>
             
               <li>
-                <a href="../../tutorials/running_your_simulation">Running Simulations & Viewing Results</a>
+                <a href="../large_scale_analysis">Large Scale Analysis</a>
               </li>
             
               <li>
-                <a href="../../tutorials/large_scale_analysis">Large Scale Analysis</a>
+                <a href="../radiance_tutorial">Radiance and OpenStudio</a>
               </li>
             
               <li>
-                <a href="../../tutorials/radiance_tutorial">Radiance and OpenStudio</a>
-              </li>
-            
-              <li>
-                <a href="../../tutorials/tutorial_bcl">Building Component Library</a>
+                <a href="../tutorial_bcl">Building Component Library</a>
               </li>
             
             </ul>
@@ -97,23 +97,23 @@
             <ul class="dropdown-menu" role="menu">
             
               <li>
-                <a href="../../tutorials/utility_rate_tariffs">Utiity Rate Tariffs</a>
+                <a href="../utility_rate_tariffs">Utiity Rate Tariffs</a>
               </li>
             
               <li>
-                <a href="../../tutorials/life_cycle_costing_examples">Life Cycle Cost Analysis</a>
+                <a href="../life_cycle_costing_examples">Life Cycle Cost Analysis</a>
               </li>
             
               <li>
-                <a href="../../tutorials/tutorial_gbxmlimport">Import gbXML</a>
+                <a href="../tutorial_gbxmlimport">Import gbXML</a>
               </li>
             
               <li>
-                <a href="../../tutorials/tutorial_shadingcontrols">Shading Controls</a>
+                <a href="../tutorial_shadingcontrols">Shading Controls</a>
               </li>
             
               <li>
-                <a href="../../tutorials/tutorial_windowproperty_frameanddivider">Window Property Frame and Divider</a>
+                <a href="../tutorial_windowproperty_frameanddivider">Window Property Frame and Divider</a>
               </li>
             
             </ul>
@@ -214,31 +214,31 @@
           <div class="bs-docs-sidebar hidden-print affix well" role="complementary">
   <ul class="nav">
   
-    <li class="main active"><a href="#openstudio-290-october-2019">OpenStudio 2.9.0 (October 2019)</a>
+    <li class="main active"><a href="#weather-file-and-design-days">Weather File and Design Days</a>
       <ul class="nav">
         
       </ul>
     </li>
   
-    <li class="main"><a href="#openstudio-300-prerelease-november-2019">OpenStudio 3.0.0-prerelease (November 2019)</a>
+    <li class="main"><a href="#requesting-output-variables">Requesting Output Variables</a>
       <ul class="nav">
         
       </ul>
     </li>
   
-    <li class="main"><a href="#openstudio-29x-april-2020">OpenStudio 2.9.x (April 2020)</a>
+    <li class="main"><a href="#running-a-simulation">Running a Simulation</a>
       <ul class="nav">
         
       </ul>
     </li>
   
-    <li class="main"><a href="#openstudio-300-april-2020">OpenStudio 3.0.0 (April 2020)</a>
+    <li class="main"><a href="#looking-at-results">Looking at Results</a>
       <ul class="nav">
         
       </ul>
     </li>
   
-    <li class="main"><a href="#openstudio-310-october-2020">OpenStudio 3.1.0 (October 2020)</a>
+    <li class="main"><a href="#using-data-viewer">Using Data Viewer</a>
       <ul class="nav">
         
       </ul>
@@ -251,56 +251,38 @@
 </div>
         </div>
         <div class="col-md-9" role="main">
-          <h1>Planned Features</h1>
+          <h1>Running Simulations & Viewing Results</h1>
 
-<p>The OpenStudio team's primary focus for FY19 (October 2018 &ndash; September 2019) is on separation of the OpenStudio Application from the core OpenStudio project.  Details around the separation of the OpenStudio Application from the core OpenStudio project are available at: <a href="https://www.openstudio.net/new-future-for-openstudio-application">https://www.openstudio.net/new-future-for-openstudio-application</a>.</p>
-<p>Additional areas of planned FY19 development:</p>
-<ul>
-<li>Bug fixes, new features, testing, documentation, and release support</li>
-<li>Addition of new Commercial Prototype Models in OpenStudio Standards (developed by LBNL and ORNL)</li>
-<li>Alignment of OpenStudio Standards with ASHRAE 90.1 (performed by PNNL)</li>
-<li>Advanced Occupant Modeling for Commercial Buildings (developed by LBNL)</li>
-</ul>
-<h2 id="openstudio-290-october-2019">OpenStudio 2.9.0 (October 2019)</h2>
-<ul>
-<li>EnergyPlus 9.2 Support</li>
-<li>Bug fixes and new features</li>
-<li>New prototypes added to OpenStudio Standards</li>
-</ul>
-<h2 id="openstudio-300-prerelease-november-2019">OpenStudio 3.0.0-prerelease (November 2019)</h2>
-<ul>
-<li>All updates, bug fixes, and new features in OpenStudio 2.9.0</li>
-<li>Updated development dependencies and supported platforms</li>
-<li>Separate SDK and App installers available:<ul>
-<li>OpenStudio installer:<ul>
-<li>EnergyPlus and Radiance engines</li>
-<li>Ruby and C# SDK bindings</li>
-<li>OpenStudio Command Line Interface</li>
-</ul>
-</li>
-<li>OpenStudio Application and SketchUp Plug-in installer</li>
-<li>Parametric Analysis Tool installer</li>
-<li>DView installer</li>
-</ul>
-</li>
-</ul>
-<p>Anticipated FY20 development:</p>
-<h2 id="openstudio-29x-april-2020">OpenStudio 2.9.x (April 2020)</h2>
-<ul>
-<li>Support of 2.9.x (bug fixes for OpenStudio Application and CLI)</li>
-<li>Bug fixes and new features</li>
-</ul>
-<h2 id="openstudio-300-april-2020">OpenStudio 3.0.0 (April 2020)</h2>
-<ul>
-<li>All updates, bug fixes, and new features in OpenStudio 2.9.x</li>
-<li>EnergyPlus 9.3 Support</li>
-<li>OpenStudio 3.x becomes primary distribution</li>
-</ul>
-<h2 id="openstudio-310-october-2020">OpenStudio 3.1.0 (October 2020)</h2>
-<ul>
-<li>EnergyPlus 9.4 Support</li>
-<li>Bug fixes and new features</li>
-</ul>
+<p>These guides provide a handy reference to the features of the applications that are installed with OpenStudio.</p>
+<h2 id="weather-file-and-design-days">Weather File and Design Days</h2>
+<p>Add weather files in the OpenStudio application under the Site tab (first vertical tab) on the left and the "Weather File &amp; Design Days" sub-tab across the top. You can <a href="https://www.energyplus.net/weather">download weather files</a> on the EnergyPlus site.</p>
+<p><a href="../../img/run/weather_ddy.png"><img alt="Open DDY File Dialog" src="../../img/run/weather_ddy.png" title="Click to view" /></a></p>
+<p><em>Above: Screenshot of browsing for design day file.</em></p>
+<h2 id="requesting-output-variables">Requesting Output Variables</h2>
+<p>To select an output variable turn the toggle button to show a blue on. Then set the detail level you want from the drop down menu.</p>
+<p><a href="../../img/run/output_variables.png"><img alt="Output Variables Tab" src="../../img/run/output_variables.png" title="Click to view" /></a></p>
+<p><em>Above: Screenshot of selecting output variables.</em></p>
+<p>You can also choose variables to collect data on by using the "Add Output Variable" measure after downloading it from the <a href="../../reference/openstudio_application_interface#find-measures-and-find-components">BCL</a>.</p>
+<p><a href="../../img/run/variables_measure.png"><img alt="Measures Tab" src="../../img/run/variables_measure.png" title="Click to view" /></a></p>
+<p><em>Above: Screenshot of the variable measure being added to a project. Just type in the variable you want to collect. This will return the variable's value for all associated objects within the model. To get the variable's value for a specific object, enter the full name of this object.</em></p>
+<h2 id="running-a-simulation">Running a Simulation</h2>
+<p>To run your simulation click the green run button. </p>
+<p><a href="../../img/run/run.png"><img alt="Run Simulation Tab" src="../../img/run/run.png" title="Click to view" /></a></p>
+<p><em>Above: The progress bar displays the status of the run.</em></p>
+<h2 id="looking-at-results">Looking at Results</h2>
+<p>Standard OpenStudio results are provided with your run. Learn more about the OpenStudio Standard Results Measure in our <a href="../../reference/openstudio_results_measure">References Section</a>.</p>
+<iframe width="640" height="360" src="https://www.youtube.com/embed/PlrWE3ugcdE" allowfullscreen></iframe>
+
+<p><em>Above: This video demonstrates the 1.9.0 Release with the Reporting Measure.</em></p>
+<p><a href="../../img/run/os_results.png"><img alt="Results Summary Tab" src="../../img/run/os_results.png" title="Click to view" /></a></p>
+<p><em>Above: This screenshot shows and example of the standard OpenStudio results.</em></p>
+<p><a href="../../img/run/reports2.png"><img alt="Results 2 Summary Tab" src="../../img/run/reports2.png" title="Click to view" /></a></p>
+<p><em>Above: This is another chart available in the standard OpenStudio results.</em></p>
+<p>You can also use measures to add additional reports. For instance, you can download the calibration report measure from the <a href="../../reference/openstudio_application_interface#find-measures-and-find-components">BCL</a>. This measure allows you to view simulation results that are associated with any added utility bills. Another option available for adding additional reports is the generation of custom reports. These are created by writing your own measures. Downloaded or created reporting measures are applied within the OpenStudio Measures tab.</p>
+<p><a href="../../img/run/calibration_report.png"><img alt="Calibration Report" src="../../img/run/calibration_report.png" title="Click to view" /></a></p>
+<p><em>Above: The calibration report compares utility bills with the model.</em></p>
+<h2 id="using-data-viewer">Using Data Viewer</h2>
+<p>Data Viewer (DView) displays time series results, which are produced from EnergyPlus report variable requests. It reads the SQLite database of the EnergyPlus engine and presents the time series data using line plots and heat maps. Furthermore, additional graphical/tabular formats can be harnessed to visualize simulation variables that are independent of time. <a href="https://github.com/NREL/wex/wiki/DView">Learn more about DView using guides created by researchers at the National Renewable Energy Laboratory</a>.</p>
 
           <div class="footer">
   <p class="text-center"><a href="https://unmethours.com/questions/scope:all/sort:activity-desc/tags:openstudio/">Get Help</a> | <a href="https://www.openstudio.net/contact">Contact Us</a></p>

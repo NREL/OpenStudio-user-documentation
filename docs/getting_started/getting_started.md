@@ -48,7 +48,7 @@ The typical OpenStudio workflow is shown in the diagram below.
 
 Data Viewer is used to view simulation results. The section within documentation for Running Simulation & Viewing Results has information on using [Data Viewer](../tutorials/running_your_simulation/#using-data-viewer).
 
-The [Parametric Analysis Tool Interface Guide](../reference/parametric_studies.md) provides an introduction to the interface and workflow for creating multiple design alternatives from a seed model.
+The [Parametric Analysis Tool Interface Guide](../reference/parametric_analysis_tool_2.md) provides an introduction to the interface and workflow for creating multiple design alternatives from a seed model.
 
 ## Introductory Tutorial
 The tutorial below was created before the grid view was added to the Space Types and Thermal Zones tabs. Grid view allows you to view and edit more than one space type or thermal zone at a time. Go to the [OpenStudio Application Interface Guide](../reference/openstudio_application_interface.md) to learn more about grid view.

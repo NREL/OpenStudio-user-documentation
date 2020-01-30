@@ -5,4 +5,4 @@ These guides provide a handy reference to the features of the applications that 
 
 ### [Quick Start Guide to the Parametric Analysis Tool (PDF)](img/pdfs/PAT-Quick_Start_Guide.pdf)
 
-In addition, the Reference section of the site has guides for the [OpenStudio Application Interface](../reference/openstudio_application_interface.md) and [the PAT interface.](../reference/parametric_studies.md)
+In addition, the Reference section of the site has guides for the [OpenStudio Application Interface](../reference/openstudio_application_interface.md) and [the PAT interface.](../reference/parametric_analysis_tool_2.md)

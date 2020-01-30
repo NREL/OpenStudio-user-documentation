@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Planned Features - OpenStudio<sup>&reg;</sup> User Docs</title>
+    <title>FloorspaceJS - OpenStudio<sup>&reg;</sup> User Docs</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -38,24 +38,24 @@
         <ul class="nav navbar-nav">
         
           
-          <li class="dropdown active">
+          <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">Getting Started <span class="caret"></span></a>
             <ul class="dropdown-menu" role="menu">
             
               <li>
-                <a href="../features">Current Features</a>
-              </li>
-            
-              <li class="active">
-                <a href=".">Planned Features</a>
+                <a href="../../getting_started/features">Current Features</a>
               </li>
             
               <li>
-                <a href="../getting_started">Installation and Introductory Tutorial</a>
+                <a href="../../getting_started/roadmap">Planned Features</a>
               </li>
             
               <li>
-                <a href="../about_measures">About Measures</a>
+                <a href="../../getting_started/getting_started">Installation and Introductory Tutorial</a>
+              </li>
+            
+              <li>
+                <a href="../../getting_started/about_measures">About Measures</a>
               </li>
             
             </ul>
@@ -121,52 +121,52 @@
           
         
           
-          <li class="dropdown">
+          <li class="dropdown active">
             <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">Reference <span class="caret"></span></a>
             <ul class="dropdown-menu" role="menu">
             
               <li>
-                <a href="../../reference/openstudio_application_interface">OpenStudio Application Interface Guide</a>
+                <a href="../openstudio_application_interface">OpenStudio Application Interface Guide</a>
               </li>
             
               <li>
-                <a href="../../reference/sketchup_plugin_interface">SketchUp Plug-in Interface Guide</a>
+                <a href="../sketchup_plugin_interface">SketchUp Plug-in Interface Guide</a>
+              </li>
+            
+              <li class="active">
+                <a href=".">FloorspaceJS</a>
               </li>
             
               <li>
-                <a href="../../reference/geometry_editor">FloorspaceJS</a>
+                <a href="../command_line_interface">Command Line Interface</a>
               </li>
             
               <li>
-                <a href="../../reference/command_line_interface">Command Line Interface</a>
+                <a href="../parametric_analysis_tool_2">Parametric Analysis Tool Version 2 (PAT) Interface Guide</a>
               </li>
             
               <li>
-                <a href="../../reference/parametric_analysis_tool_2">Parametric Analysis Tool Version 2 (PAT) Interface Guide</a>
+                <a href="../model_objects">OpenStudio Model Objects Overview</a>
               </li>
             
               <li>
-                <a href="../../reference/model_objects">OpenStudio Model Objects Overview</a>
+                <a href="../measure_writing_guide">Measure Writer's Reference Guide</a>
               </li>
             
               <li>
-                <a href="../../reference/measure_writing_guide">Measure Writer's Reference Guide</a>
+                <a href="../measure_code_examples">Measure Code Examples</a>
               </li>
             
               <li>
-                <a href="../../reference/measure_code_examples">Measure Code Examples</a>
+                <a href="../developing_measure_collections">Developing Measure Collections</a>
               </li>
             
               <li>
-                <a href="../../reference/developing_measure_collections">Developing Measure Collections</a>
+                <a href="../refguide_radiance">OpenStudio-Radiance Reference Guide</a>
               </li>
             
               <li>
-                <a href="../../reference/refguide_radiance">OpenStudio-Radiance Reference Guide</a>
-              </li>
-            
-              <li>
-                <a href="../../reference/openstudio_results_measure">OpenStudio Results Measure</a>
+                <a href="../openstudio_results_measure">OpenStudio Results Measure</a>
               </li>
             
             </ul>
@@ -214,32 +214,14 @@
           <div class="bs-docs-sidebar hidden-print affix well" role="complementary">
   <ul class="nav">
   
-    <li class="main active"><a href="#openstudio-290-october-2019">OpenStudio 2.9.0 (October 2019)</a>
+    <li class="main active"><a href="#floorspacejs">FloorspaceJS</a>
       <ul class="nav">
         
-      </ul>
-    </li>
-  
-    <li class="main"><a href="#openstudio-300-prerelease-november-2019">OpenStudio 3.0.0-prerelease (November 2019)</a>
-      <ul class="nav">
+        <li><a href="#getting-started">Getting Started</a></li>
         
-      </ul>
-    </li>
-  
-    <li class="main"><a href="#openstudio-29x-april-2020">OpenStudio 2.9.x (April 2020)</a>
-      <ul class="nav">
+        <li><a href="#using-floorspacejs">Using FloorspaceJS</a></li>
         
-      </ul>
-    </li>
-  
-    <li class="main"><a href="#openstudio-300-april-2020">OpenStudio 3.0.0 (April 2020)</a>
-      <ul class="nav">
-        
-      </ul>
-    </li>
-  
-    <li class="main"><a href="#openstudio-310-october-2020">OpenStudio 3.1.0 (October 2020)</a>
-      <ul class="nav">
+        <li><a href="#preview-and-merge">Preview and Merge</a></li>
         
       </ul>
     </li>
@@ -251,56 +233,27 @@
 </div>
         </div>
         <div class="col-md-9" role="main">
-          <h1>Planned Features</h1>
-
-<p>The OpenStudio team's primary focus for FY19 (October 2018 &ndash; September 2019) is on separation of the OpenStudio Application from the core OpenStudio project.  Details around the separation of the OpenStudio Application from the core OpenStudio project are available at: <a href="https://www.openstudio.net/new-future-for-openstudio-application">https://www.openstudio.net/new-future-for-openstudio-application</a>.</p>
-<p>Additional areas of planned FY19 development:</p>
-<ul>
-<li>Bug fixes, new features, testing, documentation, and release support</li>
-<li>Addition of new Commercial Prototype Models in OpenStudio Standards (developed by LBNL and ORNL)</li>
-<li>Alignment of OpenStudio Standards with ASHRAE 90.1 (performed by PNNL)</li>
-<li>Advanced Occupant Modeling for Commercial Buildings (developed by LBNL)</li>
-</ul>
-<h2 id="openstudio-290-october-2019">OpenStudio 2.9.0 (October 2019)</h2>
-<ul>
-<li>EnergyPlus 9.2 Support</li>
-<li>Bug fixes and new features</li>
-<li>New prototypes added to OpenStudio Standards</li>
-</ul>
-<h2 id="openstudio-300-prerelease-november-2019">OpenStudio 3.0.0-prerelease (November 2019)</h2>
-<ul>
-<li>All updates, bug fixes, and new features in OpenStudio 2.9.0</li>
-<li>Updated development dependencies and supported platforms</li>
-<li>Separate SDK and App installers available:<ul>
-<li>OpenStudio installer:<ul>
-<li>EnergyPlus and Radiance engines</li>
-<li>Ruby and C# SDK bindings</li>
-<li>OpenStudio Command Line Interface</li>
-</ul>
-</li>
-<li>OpenStudio Application and SketchUp Plug-in installer</li>
-<li>Parametric Analysis Tool installer</li>
-<li>DView installer</li>
-</ul>
-</li>
-</ul>
-<p>Anticipated FY20 development:</p>
-<h2 id="openstudio-29x-april-2020">OpenStudio 2.9.x (April 2020)</h2>
-<ul>
-<li>Support of 2.9.x (bug fixes for OpenStudio Application and CLI)</li>
-<li>Bug fixes and new features</li>
-</ul>
-<h2 id="openstudio-300-april-2020">OpenStudio 3.0.0 (April 2020)</h2>
-<ul>
-<li>All updates, bug fixes, and new features in OpenStudio 2.9.x</li>
-<li>EnergyPlus 9.3 Support</li>
-<li>OpenStudio 3.x becomes primary distribution</li>
-</ul>
-<h2 id="openstudio-310-october-2020">OpenStudio 3.1.0 (October 2020)</h2>
-<ul>
-<li>EnergyPlus 9.4 Support</li>
-<li>Bug fixes and new features</li>
-</ul>
+          <h1 id="floorspacejs"><img alt="" src="../../img/favicon-32x32.png" /> <a href="https://github.com/NREL/floorspace.js">FloorspaceJS</a></h1>
+<p>The OpenStudio Application has integrated the FloorspaceJS web-based geometry editor for simplified entry of 2D floor plans.  More information about FloorspaceJS, including a tutorial on its use, can be found at the <a href="https://github.com/NREL/floorspace.js">FloorspaceJS project site</a>.</p>
+<p><a href="https://github.com/NREL/floorspace.js">FloorspaceJS</a> is an open source software module that developers can leverage for geometry creation.  FloorspaceJS is meant to cover simple building geometry use cases only.  More complex building geometry is best developed in a full featured CAD tool and exported to gbXML for building energy modeling.  FloorspaceJS reads and writes a custom <a href="https://raw.githubusercontent.com/NREL/floorspace.js/develop/schema/geometry_schema.json">floorplan.json</a> JSON file format.  New methods have been added to the OpenStudio SDK, which can translate this file format to ThreeJS JSON as well as to OSM.  Additionally, new methods have been added to the SDK, which allows two OpenStudio Models to be merged.  These functionalities are demonstrated by integrating FloorspaceJS directly within the OpenStudio Application.</p>
+<hr />
+<h2 id="getting-started">Getting Started</h2>
+<p>To try FloorspaceJS within the OpenStudio Application, first navigate to the "Geometry" vertical tab and then to the "Editor" sub tab.  At this time, FloorspaceJS cannot be used on OpenStudio Models with existing geometry (either developed in the OpenStudio SketchUp plug-in, imported through gbXML, or procedurally generated from scripts like the DOE Prototype Measure) as these models do not include the requisite floorplan.json file used by the editor.  For models with no existing geometry a new floorplan may be created by pressing the "New" button next to the "Floorplan" dialog box.  Existing OpenStudio Models that include a floorplan.json model may be edited.</p>
+<p><a href="../../img/geometry_editor/start_screen.png"><img alt="Start Screen" src="../../img/geometry_editor/start_screen.png" title="Start Screen" /></a></p>
+<hr />
+<h2 id="using-floorspacejs">Using FloorspaceJS</h2>
+<p>A detailed tutorial on FloorspaceJS usage is available at the <a href="https://github.com/NREL/floorspace.js">FloorspaceJS project site</a>.</p>
+<hr />
+<h2 id="preview-and-merge">Preview and Merge</h2>
+<p>At any time, you can preview your floorplan in 3D by pressing the "Preview" button.</p>
+<p><a href="../../img/geometry_editor/preview1.png"><img alt="Preview 1" src="../../img/geometry_editor/preview1.png" title="Preview 1" /></a></p>
+<p><a href="../../img/geometry_editor/preview2.png"><img alt="Preview 2" src="../../img/geometry_editor/preview2.png" title="Preview 2" /></a></p>
+<p>Your OpenStudio Model is not altered until you press the "Merge" button.  Performing a merge translates your floorplan to a new OpenStudio Model that is merged them with your current OpenStudio Model.  Any geometry in your current OSM will be replaced by new geometry from the floorplan OSM.  However, non-geometry objects such as HVAC in your current OSM will be preserved.</p>
+<p><a href="../../img/geometry_editor/merge.png"><img alt="Merge" src="../../img/geometry_editor/merge.png" title="Merge" /></a></p>
+<p>Once your floorplan has been merged with the current OSM you will see new objects associated with your floorplan throughout the rest of the OpenStudio Application.</p>
+<p><a href="../../img/geometry_editor/post-merge.png"><img alt="Post Merge" src="../../img/geometry_editor/post-merge.png" title="Post Merge" /></a></p>
+<p><a href="../../img/geometry_editor/space-tab.png"><img alt="Space Tab" src="../../img/geometry_editor/space-tab.png" title="Space Tab" /></a></p>
+<p>The intention of integrating FloorspaceJS with the OpenStudio Application is to demonstrate how geometry data may be merged seamlessly into the OpenStudio Model to support a variety of sophisticated workflows.  Thermal zones, space types, default construction sets, and building units are synchronized between the two interfaces intuitively and with little effort on the part of the user.  As with any new software feature, some rough edges are expected.  Please let us know of issues you find by sending email to <a href="mailto:OpenStudio@nrel.gov">OpenStudio@nrel.gov</a>.  If FloorspaceJS becomes unresponsive, please press the "Debug" button, navigate to the console, and cut/paste diagnostic messages that may help us identify and fix any issues.</p>
 
           <div class="footer">
   <p class="text-center"><a href="https://unmethours.com/questions/scope:all/sort:activity-desc/tags:openstudio/">Get Help</a> | <a href="https://www.openstudio.net/contact">Contact Us</a></p>
