@@ -263,7 +263,7 @@ Within EnergyPlus, advanced controls that are not built-in can be implemented ut
 
 ### Share Modeling Best-Practices
 
-- Online database called BCL (Building Component Library) can be used to share Measures
+- Online database called [BCL](bcl.nrel.gov) (Building Component Library) can be used to share Measures
 - BCL can be used to share building components
 - Instantaneous world-wide distribution and updating of content
 - Allows utilities to ensure uniformity and best-practices across many energy consulting firms

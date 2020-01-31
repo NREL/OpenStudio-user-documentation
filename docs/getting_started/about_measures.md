@@ -46,15 +46,7 @@ The Measures tab allows you to browse measures and add them to the workflow for 
 *Above: Measures Tab in OpenStudio Application.*
 
 ### Parametric Analysis Tool
-In the Parametric Analysis Tool (PAT), you first drag all the measures you will use into your project and edit them to have the desired inputs. On the second tab, you create the design alternatives using the measures you set up on the first tab.
-
-![Easy to Use Drag-and-Drop](img/measures/draganddrop.png)
-
-*Above: Measures can be added by dragging and dropping them into your project in both the OpenStudio Application and in PAT.*
-
-![Edit Measure Inputs](img/measures/set_inputs.png)
-
-*Above: Edit the measure inputs by selecting the measure and going to the right panel "Edit" tab.*
+The [Parametric Analysis Tool Interface Guide](../reference/parametric_analysis_tool_2/#add-measures-and-create-measure-options) details the functionality available for measures within PAT. It also highlights best practices for working with measures in PAT. 
 
 ### Command Line
 Measures can be run from a command line using a custom user script. The .rb file in the test directory of a measure is an example of this use case.
@@ -65,7 +57,7 @@ _________________
 ### Building Component Library (BCL)
 You can find measures by going directly to the [BCL site](https://bcl.nrel.gov/) and searching or browsing for measures.
 
-Measures can be downloaded directly from BCL through the OpenStudio Application and the ParametricAnalysisTool.
+Measures can be downloaded directly from [BCL](../reference/openstudio_application_interface.md#find-measures-and-find-components) through the OpenStudio Application and the ParametricAnalysisTool.
 
 ### Locally Shared Measures
 Under the "Preferences" menu you can set a local measure path using the "Change My Measures Directory" menu option. This allows you to set a local or network directory for measures to show in the OpenStudio Application and Parametric Analysis Tool. This is in addition to any BCL measures you already have downloaded. They local measures will have say "My" in front of them vs. "BCL".
