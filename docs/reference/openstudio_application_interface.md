@@ -69,7 +69,7 @@ To add items from the library, select the "Library" tab on the right panel and f
 ## Grid View and Multi-edit: Thermal Zones, Space Types, and Refrigeration
 Earlier releases have included a grid view for the refrigeration section in the HVAC tab. Now you can edit thermal zones and space types in a grid view. This makes it easier to view all your zones and space types at once and compare settings. By selecting the buttons across the top you can select the fields you would like to see and edit.
 
-[![Grid Image](img/os_interface/grid_view_multi1_small.png "Click to view")](img/os_interface/grid_view_multi1.png)
+[![Grid Image](img/os_interface/grid_view_multi1_small.png "Click to view")](img/os_interface/grid_view_multi1_small.png)
 
 *Above: The grid view provides a spreadsheet style layout. Click on the image to view a larger version.*
 
@@ -87,11 +87,11 @@ Click on the color box on the "General" button to change the rendering color of 
 
 You can use the Multi-edit feature on individual columns (as shown below) or on whole rows by selecting a row or rows and hitting the "2X" button on the bottom left to duplicate those rows.
 
-[![Grid Image](img/os_interface/multi-edit-steps-small.png "Click to view")](img/os_interface/multi-edit-steps.png)
+[![Grid Image](img/os_interface/multi-edit-steps-small.png "Click to view")](img/os_interface/multi-edit-steps-small.png)
 
 *Above: The steps for using the multi-edit function are shown above.*
 
-[![Grid Image](img/os_interface/loads_filter_small.png "Click to view")](img/os_interface/loads_filter.png)
+[![Grid Image](img/os_interface/loads_filter_small.png "Click to view")](img/os_interface/loads_filter_small.png)
 
 *Above: Hit the "Loads" button to edit and view loads by space type. Click on the name of a component and select the  "Edit" panel on the right to inspect and edit that item.*
 

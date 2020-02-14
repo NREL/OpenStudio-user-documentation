@@ -143,7 +143,7 @@ A schedule set can be applied to an entire building, a story, a space type, or a
 
 This sub-tab has two kinds of drop zones. You can drop schedule sets from My Model or Library into the bottom of the left pane, or you can drop individual schedules into the drop zones in the main body.
 
-![Schedule Sets Tab](img/create_model/schedule_sets.png)
+[![Schedule Sets Tab](img/create_model/schedule_sets.png "Click to view")](img/create_model/schedule_sets.png)
 
 *Above: Create and edit schedule sets.*
 
@@ -185,7 +185,7 @@ A Construction Set object is structured very much like the Schedule Set. It can 
 
 Construction sets do not have to be complete sets. For example, you can have a construction set assigned to a story that has only an exterior wall. For the rest of the surface types, constructions will be inherited from the building object.
 
-![Construction Sets Tab](img/create_model/construct_sets.png)
+[![Construction Sets Tab](img/create_model/construct_set.png "Click to view")](img/create_model/construct_set.png)
 
 *Above: This screenshot shows an example of a construction set added from the library.*
 
@@ -200,7 +200,7 @@ The Constructions sub-tab lists construction objects that are in your model. You
 
 A construction consists of one or more material layers. You can add materials by dragging them from My Model or the Library to the drop zone. You can only add new materials to the bottom which represents the inside of the wall. You can delete any material by clicking the `x` next to the name.
 
-![Constructions Tab](img/create_model/constructions.png)
+[![Constructions Tab](img/create_model/constructions.png "Click to view")](img/create_model/constructions.png)
 
 *Above: Edit and create constructions on this tab.*
 
@@ -215,7 +215,7 @@ Different types of material will have different data fields available.
 
 Materials also have "Measure Tags" as optional inputs that are used by measures.
 
-![Materials Tab](img/create_model/materials.png)
+[![Materials Tab](img/create_model/materials.png "Click to view")](img/create_model/materials.png)
 
 *Above: Edit and create materials on this tab.*
 
@@ -239,7 +239,7 @@ The Loads tab allows you to create and edit load definitions for the internal lo
 
 Once you add a loads definition, it will be available to use from the "My Model" tab on the right panel. On the Space Type tab you can assign loads to a space type or directly to a space in the Facility tab, except for Water Use Equipment.
 
-![Load Definitions](img/create_model/load_def.png)
+[![Load Definitions](img/create_model/load_def.png "Click to view")](img/create_model/load_def.png)
 
 The types of loads that can be added in this tab follow:
 
@@ -282,7 +282,7 @@ Water Use Equipment is also unique in that it takes schedules, and is not part o
 ------
 
 ## Space Types
-Space types can define internal loads, schedule sets, and construction sets.cSpace types define specific spaces or groups of specific spaces in your model. The spaces inherit all objects of the space type. If you redefine a space type, or an underlying object, it will affect all spaces using that space type.
+Space types define specific spaces or groups of specific spaces in your model. Space types can define internal loads, schedule sets, and construction sets. The spaces inherit all objects of the space type. If you redefine a space type, or an underlying object, it will affect all spaces using that space type.
 
 The space types tab in the OpenStudio application is organized into a grid view. You can look through all your space types and edit the settings.
 
@@ -305,7 +305,7 @@ You are now able to check rows and then select an item you want to apply to thos
 #### Rendering Color
 This feature can be adjusted in the SketchUp Plug-in as well and the color selected will be used in the other application as well.
 
-![Rendering Color Dialog](img/create_model/space_types_render.png)
+[![Rendering Color Dialog](img/create_model/space_types_render.png "Click to view")](img/create_model/space_types_render.png)
 
 #### Default Construction and Schedule
 You can assign constructions and schedules to each space type that will be used whenever that space type is used in the model.
@@ -321,7 +321,7 @@ If you select the "Loads" button in the Space Type tab, you will see a drop zone
 
 [![Schedules Editor Tab](img/create_model/space_types_loads.png "Click to view")](img/create_model/space_types_loads.png)
 
-*Above: Hit the "Loads" button to edit and view loads by space type. Click on the name of a component and select the "Edit" panel on the right to inspect, edit, or delete that item. You can edit the load definition in the example shown above.*
+*Above: Hit the "Loads" button to edit and view loads by space type. Click on the name of a component to inspect it, or delete the item, within the "Edit" panel on the right.*
 
 The space types define loads such as lighting or electric equipment as simple area weighted power densities (e.g., W/ft2). However, you can add loads in several possible ways. For example, a space type could contain multiple types of lighting. You might define one lighting load for general lighting using a W/ft2 and then add another lighting load for decorative lighting using another watts per square foot.
 
@@ -356,7 +356,7 @@ Measures are scripts that can quickly alter your model or create different repor
 ------
 
 ## Using the Facility Tab
-The Facility tab includes settings for your building, stories, shading, and exterior equipment. It used to be a tree view, but this did not allow the user to view more than one item at a time. You can view the Building object. This contains top level construction, schedule, or space type assignments, and sets the rotation for the building.
+The Facility tab includes settings for your building, stories, shading, and exterior equipment. The Building Sub-tab contains top level (default) construction, schedule, or space type assignments, and sets the rotation of the building. Settings that customize each story, shading, and exterior equipment can edited within the remaining tabs.
 
 To view and edit the spaces in your model, use the Spaces tab below the Facility tab on the left.
 
@@ -364,18 +364,18 @@ To view and edit the spaces in your model, use the Spaces tab below the Facility
 
 *Above: This video demonstrates the new Spaces tab and the redesigned Facilities and Site tab.*
 
-![Facility Tab](img/create_model/facility.png)
+[![Facility Tab](img/create_model/facility.png "Click to view")](img/create_model/facility.png)
 
 *Above: A screenshot of the facilities tab with the building sub-tab selected.*
 
-![Annotated Facility Tab](img/create_model/facility_strories.png)
+[![Annotated Facility Tab](img/create_model/facility_stories.png "Click to view")](img/create_model/facility_stories.png)
 
 *Above: this screenshot shows the contents of the stories tab. You can add and edit story settings here.*
 
 ------
 
 ## Spaces
-The new spaces view lets you edit the spaces and view the surfaces and sub-surfaces in those spaces. The Story, Thermal Zone, and Space Type filters can help you find a particular space to edit.
+The Spaces tab lets you edit the spaces, and view the surfaces and sub-surfaces within those spaces. The Story, Thermal Zone, and Space Type filters can help you find a particular space to edit.
 
 Some items are not editable in the OpenStudio application and have to be edited in the SketchUp Plug-in. Use the horizontal tabs to inspect and edit space attributes.
 
@@ -413,13 +413,13 @@ Setting up thermal zones in the SketchUp Plug-in is shown below.
 
 A thermostat must be defined before running an EnergyPlus simulations with connected HVAC systems. Zone equipment, thermostat, and humidistat settings can be viewed and edited on this tab. Click on the name of and item and you can inspect it in the "Edit" panel on the right.
 
-![Thermal View](img/create_model/thermal_grid.png)
+[![Thermal View](img/create_model/thermal_grid.png "Click to view")](img/create_model/thermal_grid.png)
 
 *Above: Screenshot of the OpenStudio application thermal view with "HVAC" selected.*
 
 Select the "Cooling Sizing Parameters" or "Heating Sizing Parameters" to edit those by thermal zone.
 
-![Thermal Zone Sizing Parameters](img/create_model/heat_sizing.png)
+[![Thermal Zone Sizing Parameters](img/create_model/heat_sizing.png "Click to view")](img/create_model/heat_sizing.png)
 
 *Above: Screenshot of the OpenStudio application thermal view with "Heating Sizing Parameters" selected.*
 
@@ -434,7 +434,7 @@ Hit the green plus button to add a loop.
 
 *Above: Add an HVAC system to your model.*
 
-When adding a template loop, there are four images within the icon. From left to right they represent the type of cooling, heating, fan, and terminal unit, in the template. The example below has cold and hot water, a variable speed fan, and a hot water reheat terminal unit.
+When adding a template loop, there are images within the icon. For instance, a Packaged Rooftop VAV with Reheat has four images. From left to right they represent the type of cooling, heating, fan, and terminal unit, in the template. The example below has cold and hot water, a variable speed fan, and a hot water reheat terminal unit.
 
 ![System Template Icons](img/create_model/system_templates.png)
 
@@ -446,25 +446,25 @@ OpenStudio names HVAC systems and components to match EnergyPlus. So if you are 
 
 *Above: Annotated view of the HVAC interface.*
 
-![Add Thermal Zone](img/create_model/add_thermal_zones.png)
+[![Add Thermal Zone](img/create_model/add_thermal_zones.png "Click to view")](img/create_model/add_thermal_zones.png)
 
 *Above: Another way to add thermal zones, besides dragging them from the "My Model, is to select the splitter or mixer and check the boxes on the right panel.*
 
-![Edit Component](img/create_model/component_edit.png)
+[![Edit Component](img/create_model/component_edit.png "Click to view")](img/create_model/component_edit.png)
 
 *Above: Select a component and edit it on the "Edit" tab on the right panel. Some components like the one above will have icons under the "Edit" panel. The gear icons will let you edit the component's settings.*
 
-![Adjust Connections](img/create_model/connections.png)
+[![Adjust Connections](img/create_model/connections.png "Click to view")](img/create_model/connections.png)
 
 *Above: Select a component and adjust the connections, by hitting the link icon on the "Edit" tab on the right panel.*
 
-![Adjust Controller on Component](img/create_model/hvac_controller.png)
+[![Adjust Controller on Component](img/create_model/hvac_controller.png "Click to view")](img/create_model/hvac_controller.png)
 
 *Above: Select a component and adjust the controller, by hitting the dial icon on the "Edit" tab on the right panel.*
 
-The __control view__ is only available for the air loops. With an air loop selected in "Layout" view you can switched to "Control" view. In this view you can edit the time of operation, night cycle, supply air temperature, and mechanical ventilation.
+The __control view__ is only available for the air loops. With an air loop selected in "Layout" view you can switch to "Control" view. In this view you can edit the time of operation, night cycle, supply air temperature, mechanical ventilation, and any availability managers that are dragged and dropped from the Library.
 
-![Air Loop Control View](img/create_model/hvac_control.png)
+[![Air Loop Control View](img/create_model/hvac_control.png "Click to view")](img/create_model/hvac_control.png)
 
 *Above: Control view only available for air loops.*
 
@@ -486,9 +486,9 @@ You can click on the chiller to drill down further to the condenser loop. Or you
 ### Condenser Loop
 In the condenser loop the chiller that had been a supply side object on the cold water loop is now a demand object.
 
-The supply side has a pump and a cooling tower. As with the cold water loop the adiabatic pipes are a necessary part of the loop.
+The supply side has a pump and a cooling tower. As with the cold water loop, the adiabatic pipes are a necessary part of the loop.
 
-You can click on the chiller to drill to go back to the cold water loop.
+You can click on the chiller to go back to the cold water loop.
 
 [![Condenser Water Loop](img/create_model/condenser_water.png "Click to view")](img/create_model/condenser_water.png)
 
@@ -514,7 +514,7 @@ To add supply and return plenum zones:
 
 1. Access the plenum editor by selecting the zone on the layout view.
 2. Select the "Edit" tab on the right panel and click on the  plenum icon on the blue bar.
-3. Choose a plenum from the drop down list or create a new plenum zone but selecting the green add button. The zones available to be plenums will be selectable in a dialog. Create new zones for plenums in the Thermal Zones tab on the left.
+3. Choose a plenum from the drop down list or create a new plenum zone by selecting the green add button. The zones available to be plenums will be selectable in a dialog. Create new zones for plenums in the Thermal Zones tab on the left.
 
 Shared plenums will be colored the same and will match the color selected for the plenum zone on the Thermal Zones tab.
 
@@ -566,7 +566,7 @@ Click the water main, sewer, or makeup water to go back to the water mains edito
 ## Refrigeration
 The refrigeration system interface can be accessed by selecting refrigeration from the drop down menu.
 
-To add a refrigeration system select one from the library and add drag it to the drop zone.
+To add a refrigeration system, select one from the library and drag it to the drop zone.
 
 Click on the zoom button by the name of the refrigeration system to go to a view of that system, add components from the library.
 
@@ -574,13 +574,13 @@ Click on the zoom button by the name of the refrigeration system to go to a view
 
 *Above: Add refrigeration systems to your model under the HVAC tab. Click image to view a larger version.*
 
-This zoomed in view provides the layout view of one refrigeration rack. You may add cases by dragging them on to the "Drag and Drop Cases" drop zone.
+This zoomed in view provides the layout view of one refrigeration rack. You may add refrigeration cases by dragging them on to the "Drag and Drop Cases" drop zone.
 
 Drop zones are provided to accommodate systems with a mechanical sub-cooler and a Suction Line Heat Exchanger (SLHX).
 
-The small arrow at the bottom of the refrigeration case summary will open and expanded view of cases. Each case can be selected and edited in the Edit panel on the right.
+The small arrow at the bottom of the refrigeration case summary will open an expanded view of cases. Each case can be selected and edited in the Edit panel on the right.
 
-Cascade systems can be added by dragging the from "My Model" or the "Library."
+Cascade systems can be added by dragging them from "My Model" or the "Library."
 
 [![Refrigeration System](img/create_model/refrig_2_large.png "Click to view")](img/create_model/refrig_2_large.png)
 
@@ -590,11 +590,9 @@ An alternate view of the refrigeration systems is provided by the grid view. The
 
 There are two major divisions, one for Display Cases and another for Walk-ins. Under each division a drop box is available to add new cases. There are also buttons to move through the case settings and enter the data on each case.
 
-Create your own custom view of this information by checking the box on the right of the column header. Checked columns will show up under the Custom button.
+Click the shaded portion of any column headers that you want to view that column in the "Custom" category. Navigate to the created view by clicking the Custom button. 
 
-[![Refrigeration Grid View](img/create_model/refrig_grid_large.png "Click to view")](img/create_model/refrig_grid_large.png)
-
-*Above: Click image to view a larger version.*
+No provision was made to delete a case or walk in within the grid view. To delete a case or walk in, assign it to a rack, then delete it from the layout view. 
 
 <iframe width="640" height="360" src="https://www.youtube.com/embed/iHTDiHif2_U" allowfullscreen></iframe>
 
@@ -603,8 +601,6 @@ Create your own custom view of this information by checking the box on the right
 <iframe width="640" height="360" src="https://www.youtube.com/embed/NRo9k0Rjfw8?start=57&end=166" allowfullscreen></iframe>
 
 *Above: The video above provides an introduction to the grid view provide for refrigeration.*
-
-In the initial release of the grid view, no provision was made to delete a case or walk in; they must be must be assigned to a rack, and deleted from the layout view. This functionality omission will be corrected in the next OpenStudio release.
 
 ------
 
@@ -634,7 +630,7 @@ More than one terminal can connect with the same zone. Just drag the zone to the
 ------
 
 ## Apply Measure Now
-Now in addition to manually creating and editing your model, you can apply measures to your model live in the application. This allows you to customize your experience to your desired workflow. Measures can manipulate any part of the model and can also be used as a diagnostic tool.
+In addition to manually creating and editing your model, you can apply measures to your model live in the application. This allows you to customize your experience to your desired workflow. Measures can manipulate any part of the model and can also be used as a diagnostic tool.
 
 ![Apply Measure Now Menu](img/create_model/apply_now.png)
 
@@ -667,13 +663,13 @@ There are three types of measures:
 2. __EnergyPlus Measures__ can be run on the IDF file before it is handed to EnergyPlus.
 3. __Reporting Measures__ produce reports to chart results, provide quality assurance, and quality control on models.
 
-![Measures Tab](img/create_model/measures.png)
+[![Measures Tab](img/create_model/measures.png "Click to view")](img/create_model/measures.png)
 
 *Above: Select measures from the library and drag them into the correct drop zone.*
 
 By selecting the measure and selecting the right "Edit" tab, inputs for the measure can be entered and adjusted.
 
-![Measures Tab Fields](img/create_model/measures1.png)
+[![Measures Tab Fields](img/create_model/measures1.png "Click to view")](img/create_model/measures1.png)
 
 *Above: Select a measure and edit the fields in the right panel.*
 
@@ -682,9 +678,9 @@ By selecting the measure and selecting the right "Edit" tab, inputs for the meas
 ## Lifecycle Costs
 The most basic parameters needed for a life cycle cost analysis are the analysis period length and the discount rate. A longer analysis period accumulates more energy cost savings than a shorter period; giving energy conservation measures a better pay back relative to their initial costs. A higher discount rate devalues future energy cost savings relative to money spent on capital improvements in the present; giving energy conservation measures a lower pay back relative to their initial costs. This tab allows users to set these parameters on their baseline model.
 
-With measures, downloaded from BCL,  life cycle costs for different design alternatives can be calculated
+With measures downloaded from the BCL,  life cycle costs for different design alternatives can be calculated.
 
-![Measures Tab Costs](img/create_model/lifecycle_costs.png)
+[![Measures Tab Costs](img/create_model/lifecycle_costs.png "Click to view")](img/create_model/lifecycle_costs.png)
 
 *Above: Add costs to measures to calculate and compare different options. This can also be done in the Parametric Analysis Tool.*
 
@@ -702,6 +698,6 @@ First, you must __select a weather file__ and __a year__ before you can enter th
 
 To calibrate to the ASHRAE 14-2002 or FEMP standard the file must contain all utility data for one year and real weather data. Check the guidelines for additional requirements.
 
-![Utility Bills Tab](img/create_model/utility_bills.png)
+[![Utility Bills Tab](img/create_model/utility_bills.png "Click to view")](img/create_model/utility_bills.png)
 
 *Above: A screenshot of the Site Utility Bills sub-tab.*
