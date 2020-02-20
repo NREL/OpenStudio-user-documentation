@@ -11,7 +11,6 @@ pages:
 - [getting_started/quick_start_guides.md, Getting Started, Quick Start Guides]
 - [getting_started/about_measures.md, Getting Started, About Measures]
 
-- [tutorials/running_your_simulation.md, Essential Tutorials, Running Simulations & Viewing Results]
 - [tutorials/large_scale_analysis.md, Essential Tutorials, Large Scale Analysis]
 - [tutorials/radiance_tutorial.md, Essential Tutorials, Radiance and OpenStudio]
 - [tutorials/tutorial_bcl.md, Essential Tutorials, Building Component Library]
