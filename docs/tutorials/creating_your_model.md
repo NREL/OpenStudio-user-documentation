@@ -375,9 +375,7 @@ To view and edit the spaces in your model, use the Spaces tab below the Facility
 ------
 
 ## Spaces
-The Spaces tab lets you edit the spaces, and view the surfaces and sub-surfaces within those spaces. The Story, Thermal Zone, and Space Type filters can help you find a particular space to edit.
-
-Some items are not editable in the OpenStudio application and have to be edited in the SketchUp Plug-in. Use the horizontal tabs to inspect and edit space attributes.
+The Spaces tab lets you edit the spaces, and view the surfaces and sub-surfaces within those spaces. Use the horizontal tabs to inspect and edit space attributes.
 
 - Properties
 - Loads
@@ -386,7 +384,10 @@ Some items are not editable in the OpenStudio application and have to be edited 
 - Interior Partitions
 - Shading
 
-Each horizontal tab may have sub-buttons that hold additional settings.
+Each horizontal tab may have sub-buttons that hold additional settings. The available filters on each tab can help you find a particular space to edit.
+
+Some items are not editable within the Spaces tab. These items are within the Subsurfaces, Interior Partitions, and Shading tabs. These items have to be edited in the SketchUp Plug-in, Geometry tab, or using a measure. 
+
 
 [![Spaces Properties](img/create_model/spaces_properties.png "Click to view")](img/create_model/spaces_properties.png)
 
