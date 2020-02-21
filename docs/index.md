@@ -53,21 +53,6 @@
     <div class="col-md-4">
       <div class="thumbnail">
         <div class="caption">
-          <h3>Using Third Party Tools</h3>
-          <p> Set materials and constructions so they can be properly imported into CBECC-Com.</p>
-          <p><a href="tutorials/tutorial_cbecc_materials/" class="btn btn-primary" role="button">CBECC-Com Tutorial</a></p>
-          <p>Import an IFC file into OpenStudio using BIMserver. </p>
-          <p><a href="tutorials/tutorial_ifcimport.md" class="btn btn-primary" role="button">Import IFC Tutorial</a></p>
-          <p>Size a vertical ground heat exchanger with OpenStudio and GLHEPro.</p>
-          <p><a href="tutorials/tutorial_glhepro.md" class="btn btn-primary" role="button">GLHEPro Tutorial</a></p>
-          <p>Create OpenStudio models using the web based VirtualPULSE tool.</p>
-          <p><a href="tutorials/tutorial_virtual_pulse.md" class="btn btn-primary" role="button">VirtualPULSE Tutorial</a></p>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="thumbnail">
-        <div class="caption">
           <h3>Help &amp; Additional Resources</h3>
           <p>Find professional training for OpenStudio.</p>
           <p><a href="help/training.md" class="btn btn-primary" role="button">Training, Support, &amp; Consulting</a></p>
