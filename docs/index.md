@@ -61,7 +61,6 @@
           <p>Check out this advanced application of OpenStudio for fault detection:</p>
           <p><a href="https://github.com/NREL/OpenStudio-fault-models" class="btn btn-primary" role="button">Fault Detection Measures </a>
           <p>Additional help topics.</p>
-          <p><a href="help/finding_model_data.md" class="btn btn-primary" role="button">Finding Model Data</a></p>
           <p><a href="help/best_practices.md" class="btn btn-primary" role="button">Best Practices</a></p>
           <p><a href="help/troubleshooting.md" class="btn btn-primary" role="button">Troubleshooting</a></p>
           <p><a href="help/faq.md" class="btn btn-primary" role="button">FAQ</a></p>
