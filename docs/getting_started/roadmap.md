@@ -1,5 +1,5 @@
 <h1>Planned Features</h1>
-The OpenStudio team's primary focus for FY19 (October 2018 &ndash; September 2019) is on separation of the OpenStudio Application from the core OpenStudio project.  Details around the separation of the OpenStudio Application from the core OpenStudio project are available at: [https://www.openstudio.net/new-future-for-openstudio-application](https://www.openstudio.net/new-future-for-openstudio-application).
+The OpenStudio SDK team's primary focus for FY19 (October 2018 &ndash; September 2019) is on separation of the OpenStudio Application from the OpenStudio SDK.  Details around the separation of the OpenStudio Application from the OpenStudio SDK are available at: [https://www.openstudio.net/new-future-for-openstudio-application](https://www.openstudio.net/new-future-for-openstudio-application).
 
 __Additional areas of planned FY20 development:__
 
@@ -10,10 +10,10 @@ __Additional areas of planned FY20 development:__
 
 ## OpenStudio 3.0.0 (April 2020)
 
-- All updates, bug fixes, and new features in OpenStudio 2.9.x
+- All updates, bug fixes, and new features in OpenStudio SDK 2.9.x
 - Updated development dependencies and supported platforms
 - Separate SDK and App installers available:
-    - OpenStudio installer:
+    - OpenStudio SDK installer:
         - EnergyPlus and Radiance engines
         - Ruby and C# SDK bindings
         - OpenStudio Command Line Interface
@@ -21,9 +21,9 @@ __Additional areas of planned FY20 development:__
     - Parametric Analysis Tool installer
     - DView installer
 - EnergyPlus 9.3 Support
-- OpenStudio 3.x becomes primary distribution
+- OpenStudio SDK 3.x becomes primary distribution
 
-## OpenStudio 3.1.0 (October 2020)
+## OpenStudio SDK 3.1.0 (October 2020)
 
 - EnergyPlus 9.4 Support
 - Bug fixes and new features

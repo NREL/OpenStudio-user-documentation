@@ -3,16 +3,16 @@ This page walks you through installing OpenStudio and the basic workflow.
 
 ## Installation Instructions
 
-OpenStudio is supported on 64-bit versions of Windows 7 &ndash; Windows 10, OS X 10.9 &ndash; 10.10, and Ubuntu 16.04.
-OpenStudio supports the latest EnergyPlus release which is bundled with the OpenStudio installer. The [version compatibility matrix](https://github.com/NREL/OpenStudio/wiki/OpenStudio-Version-Compatibility-Matrix) lists specific versions of EnergyPlus and other dependencies for each version of OpenStudio.
+OpenStudio SDK is supported on 64-bit versions of Windows 7 &ndash; Windows 10, OS X 10.9 &ndash; 10.10, and Ubuntu 16.04.
+OpenStudio SDK supports the latest EnergyPlus release which is bundled with the OpenStudio SDK installer. The [version compatibility matrix](https://github.com/NREL/OpenStudio/wiki/OpenStudio-Version-Compatibility-Matrix) lists specific versions of EnergyPlus and other dependencies for each version of OpenStudio SDK.
 
 ### Installation Steps
 
-__Download and install OpenStudio__
+__Download and install OpenStudio SDK__
 
-1. Login to the [OpenStudio website](https://www.openstudio.net/downloads). Create an account if you don't have one. EnergyPlus and OpenStudio now share a password.
+1. Login to the [OpenStudio SDK website](https://www.openstudio.net/downloads). Create an account if you don't have one. EnergyPlus and OpenStudio SDK now share a password.
 2. Click "Downloads" at the top of the page.
-3. Choose the installer that matches your operating system. The OpenStudio package contains the following components:
+3. Choose the installer that matches your operating system. The OpenStudio SDK package contains the following components:
     - EnergyPlus
     - Ruby API
     - C# API
@@ -21,7 +21,7 @@ __Download and install OpenStudio__
 
 __Optional - Command Line Installation__
 
-The OpenStudio installer is built using the [Qt Installer Framework](https://doc.qt.io/qtinstallerframework/index.html).  Installation of OpenStudio packages can be automated by passing the path to a customizable script to the installer using the `--script` argument:
+The OpenStudio SDK installer is built using the [Qt Installer Framework](https://doc.qt.io/qtinstallerframework/index.html).  Installation of OpenStudio SDK packages can be automated by passing the path to a customizable script to the installer using the `--script` argument:
 
 ```
 OpenStudio-3.0.0-pre1+5cfb36386f-Windows.exe --script install.qs
@@ -35,7 +35,7 @@ Instructions coming soon.
 
 __Optional - Setup a Building Component Library (BCL) Account__
 
-The BCL contains many useful measures that can be incorporated into OpenStudio workflows or Parametric Analsysis Tool (PAT) projects. To access the content you will need to create an account:
+The BCL contains many useful measures that can be incorporated into OpenStudio SDK workflows or Parametric Analsysis Tool (PAT) projects. To access the content you will need to create an account:
 
 - Navigate to [Building Component Library (BCL)](https://bcl.nrel.gov/). Create an account if you don't have one. Follow the instructions from the email sent to you upon registration and then login.
 
@@ -43,14 +43,14 @@ BCL content can also be accessed from within PAT. To take advantage of this inte
 
 1. Login to [Building Component Library (BCL)](https://bcl.nrel.gov/).
 2. Click on the `My Dashboard` near the top right of the website.
-3. Copy the text after `API v1.1 key`: then paste the key into the PAT. __You only need to configure the key in one place and it will be used globally throughout the OpenStudio tools.__ Additionally, this key will be maintained when you install updates to OpenStudio.
+3. Copy the text after `API v1.1 key`: then paste the key into the PAT. __You only need to configure the key in one place and it will be used globally throughout the OpenStudio SDK tools.__ Additionally, this key will be maintained when you install updates to OpenStudio SDK.
 
 __Optional - Install Ruby__
-If you plan to use the OpenStudio Ruby bindings via command prompt, you must install Ruby. Check the [version compatibility matrix](https://github.com/NREL/OpenStudio/wiki/OpenStudio-Version-Compatibility-Matrix) to see which version of Ruby is compatible.
+If you plan to use the OpenStudio SDK Ruby bindings via command prompt, you must install Ruby. Check the [version compatibility matrix](https://github.com/NREL/OpenStudio/wiki/OpenStudio-Version-Compatibility-Matrix) to see which version of Ruby is compatible.
 
-1. Download the [Ruby](http://rubyinstaller.org/downloads/) installer.  If you have the Windows (x64) version of OpenStudio (Help>About>Compiler shows Visual Studio 12 2013 Win64), you'll need the x64 Ruby installer.
+1. Download the [Ruby](http://rubyinstaller.org/downloads/) installer.  If you have the Windows (x64) version of OpenStudio SDK (Help>About>Compiler shows Visual Studio 12 2013 Win64), you'll need the x64 Ruby installer.
 2. Add `C:\ruby-2.2.4-x64-mingw32\bin` (or wherever you installed Ruby) to the PATH environment variable. [Detailed instructions](http://geekswithblogs.net/renso/archive/2009/10/21/how-to-set-the-windows-path-in-windows-7.aspx).
-3. Create a text file with the following text inside (modify `C:\openstudio-2.3.0` based on where your version of OpenStudio is installed):
+3. Create a text file with the following text inside (modify `C:\openstudio-2.3.0` based on where your version of OpenStudio SDK is installed):
 
     ```
     require 'C:\openstudio-2.3.0\Ruby\openstudio.rb'

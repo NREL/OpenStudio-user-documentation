@@ -1,5 +1,5 @@
-<h1>Welcome to OpenStudio<sup>&reg;</sup> User Documentation</h1>
-<p>This is OpenStudio's user documentation. A brief summary of the content of the site is below. Use the buttons or the horizontal navigation above to learn more about the OpenStudio suite of applications.</p>
+<h1>Welcome to OpenStudio<sup>&reg;</sup> SDK User Documentation</h1>
+<p>This is OpenStudio SDK's user documentation. A brief summary of the content of the site is below. Use the buttons or the horizontal navigation above to learn more about the OpenStudio SDK suite of applications.</p>
 <div class="container-fluid">
   <div class="row">
     <div class="col-sm-6 col-md-4">
@@ -58,7 +58,7 @@
           <p><a href="help/training.md" class="btn btn-primary" role="button">Training, Support, &amp; Consulting</a></p>
            <p>Check out Unmet Hours to post a question or search for answers to your energy modeling questions.</p>
           <p><a href="https://unmethours.com/questions/scope:all/sort:activity-desc/tags:openstudio/" class="btn btn-primary" role="button">OpenStudio on Unmet Hours</a></p>
-          <p>Check out this advanced application of OpenStudio for fault detection:</p>
+          <p>Check out this advanced application of OpenStudio measures for fault detection:</p>
           <p><a href="https://github.com/NREL/OpenStudio-fault-models" class="btn btn-primary" role="button">Fault Detection Measures </a>
           <p>Additional help topics.</p>
           <p><a href="help/best_practices.md" class="btn btn-primary" role="button">Best Practices</a></p>
