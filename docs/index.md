@@ -62,12 +62,6 @@
           <p><a href="https://github.com/NREL/OpenStudio-fault-models" class="btn btn-primary" role="button">Fault Detection Measures </a>
           <p>Additional help topics.</p>
           <p><a href="help/best_practices.md" class="btn btn-primary" role="button">Best Practices</a></p>
-          <p><a href="help/troubleshooting.md" class="btn btn-primary" role="button">Troubleshooting</a></p>
-          <p><a href="help/faq.md" class="btn btn-primary" role="button">FAQ</a></p>
-          <p>More training videos are available on our YouTube page.</p>
-          <p><a href="https://www.youtube.com/channel/UC5NGj39XfJkhYUfCtKr-r_w/questions/" class="btn btn-primary" role="button">YouTube Videos</a></p>
-          <p>The OpenStudio Repository on GitHub</p>
-          <p><a href="http://github.com/NREL/OpenStudio" class="btn btn-primary" role="button">OpenStudio on GitHub</a></p>
         </div>
       </div>
     </div>
