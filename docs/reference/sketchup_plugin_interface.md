@@ -160,7 +160,7 @@ You can use the New Space tool to create a new OpenStudio space. Activate the to
 - Select the object by name from SketchUp's Outliner window and then double-click or right-click and choose "Edit Group"
 - You can set up a keyboard shortcut that will take you into the selected group. A tutorial will be added to the documentation that shows you how to add your own shortcuts or load some preconfigured OpenStudio shortcuts
 
-Once you are inside a space, you can draw surfaces. You can also add shading groups, interior partition groups, daylighting control points, luminance maps, and luminaire objects. An alternate method to make new spaces is to copy and paste a space.
+Once you are inside a space, you can draw surfaces. You can also add shading groups, interior partition groups, daylighting control points, luminance maps, and luminaire objects. An alternate method to make new spaces is to copy and paste existing spaces.
 
 ![New Space Inspect](img/plugin_reference_guide/width_inspector_space.png)
 
@@ -187,7 +187,7 @@ The New Shading Surface Group tool is used to create a new EnergyPlus shading gr
 - Select the object by name from SketchUp's Outliner window and then double-click or right-click and choose "Edit Group"
 - You can set up a keyboard shortcut that will take you into the selected group. A tutorial will be added to the documentation that shows you how to add your own shortcuts or load some preconfigured OpenStudio shortcuts
 
-You can create shading surface groups within or outside a space. Once you enter into a shading surface group, you can draw shading surfaces. An alternate method to make new shading groups is to copy and paste a group.
+You can create shading surface groups within or outside a space. Once you enter into a shading surface group, you can draw shading surfaces. An alternate method to make new shading groups is to copy and paste existing groups.
 
 ![Shading Surface Group](img/plugin_reference_guide/width_Inspector_ShadingGroup.png)
 
@@ -207,7 +207,7 @@ The New Interior Partition Surface Group tool is used to create a new OpenStudio
 - Select the object by name from SketchUp's Outliner window and then double-click or right-click and choose "Edit Group"
 - You can set up a keyboard shortcut that will take you into the selected group. A tutorial will be added to the documentation that shows you how to add your own shortcuts or load some preconfigured OpenStudio shortcuts
 
-You can create interior partition groups within a space only. Once you enter into an interior partition group, you can draw interior partition surfaces. An alternate method to make new interior partition groups is to copy and paste a group. Interior partition surfaces are not used as heat transfer surfaces, but they still have an associated construction. This construction, along with the surface area, is used to create internal mass that is used to run simulations and create objects for IDF export. In the future, interior partition surfaces and their constructions will be used by other processes.
+You can create interior partition groups within a space only. Once you enter into an interior partition group, you can draw interior partition surfaces. An alternate method to make new interior partition groups is to copy and paste existing groups. Interior partition surfaces are not used as heat transfer surfaces, but they still have an associated construction. This construction, along with the surface area, is used to create internal mass that is used to run simulations and create objects for IDF export. In the future, interior partition surfaces and their constructions will be used by other processes.
 
 ![Interior Partition Surface Group](img/plugin_reference_guide/width_Inspector_PartitionGroup.png)
 
@@ -223,9 +223,9 @@ You can create interior partition groups within a space only. Once you enter int
 </td>
 <td>
 #### New Daylighting Control Object
-The New Daylighting Control Object tool creates a new OpenStudio Daylighting Control object. This consists of a single sensor, which by default will be placed 30 inches above the surface you click on. You can move the object with the SketchUp Move tool or via the Object Inspector, and you can set many attributes that feed information to EnergyPlus and Radiance. The Glare Calculation Azimuth Angle of View Direction also changes the appearance of the object in OpenStudio. To report data from the sensors in EnergyPlus, you also need to include light objects in your model. Most space types in the template files already include a light object.
+The New Daylighting Control Object tool creates a new OpenStudio Daylighting Control object. This consists of a single sensor, which by default will be placed 30 inches above the surface you click on. You can move the object with the SketchUp Move tool or via the OpenStudio Inspector, and you can set many attributes that feed information to EnergyPlus and [Radiance Daylighting Measure](https://bcl.nrel.gov/node/84189). The Glare Calculation Azimuth Angle of View Direction also changes the appearance of the object in OpenStudio. To report data from the sensors in EnergyPlus, you also need to include light objects in your model. Most space types in the template files already include a light object.
 
-You can create a Daylighting Control object from within a space, or you can copy and paste one from ne space to another.
+You can create a Daylighting Control object from within a space, or you can copy and paste one from one space to another.
 
 ![Daylighting Control Objects](img/plugin_reference_guide/width_SU_DaylightingControlObjects.png)
 
@@ -247,7 +247,7 @@ To associate a daylighting control object with a thermal zone, select the desire
 </td>
 <td>
 #### New Illuminance Map
-The New Illuminance Map tool creates a new OpenStudio Illuminance Map object. This consists of a rectangle with a grid representing map data points. By default it will be placed 30 inches above the surface you click on. You can move and resize the Illuminance Map with the SketchUp Move and Scale Tool and through the Object Inspector. To obtain data reported for the map in EnergyPlus, you also need to include a Daylighting Controls Object and lights. Most space types in the template files already include a light object.
+The New Illuminance Map tool creates a new OpenStudio Illuminance Map object. This consists of a rectangle with a grid representing map data points. By default it will be placed 30 inches above the surface you click on. You can move and resize the Illuminance Map with the SketchUp Move and Scale Tool and through the OpenStudio Inspector. To obtain data reported for the map in EnergyPlus, you also need to include a Daylighting Controls Object and lights. Most space types in the template files already include a light object.
 
 You can create an illuminance map from  within a space, or you can copy and paste the map into a different space. You can have multiple illuminance maps in a space.
 
@@ -293,7 +293,7 @@ When a luminaire is placed it must refer to an OS:Luminaire:Definition object to
 </td>
 <td>
 #### New Glare Sensor
-The New Glare Sensor Object tool is a new addition to OpenStudio 0.9.0. It creates a new OpenStudio Glare Sensor that supports Radiance simulations. Unlike the Illuminance Map and Daylighting Control Point, the Glare Sensor has no connection to a Thermal Zone. The default placement of the sensor is 30 inches above the surface you click on. You can move the object with the SketchUp move tool or through the Object Inspector, and you can set many attributes that feed information to Radiance.
+The New Glare Sensor creates a new OpenStudio Glare Sensor that supports [Radiance Daylighting Measure](https://bcl.nrel.gov/node/84189) simulations. Unlike the Illuminance Map and Daylighting Control Point, the Glare Sensor has no connection to a Thermal Zone. The default placement of the sensor is 30 inches above the surface you click on. You can move the object with the SketchUp move tool or through the OpenStudio Inspector, and you can set many attributes that feed information to Radiance.
 
 You can create a Glare Sensor object from within a space, or you can copy and paste one into a different space.
 
@@ -319,7 +319,7 @@ The Surface Matching tool is used to automatically set outside boundary conditio
 </td>
 <td>
 #### Set Space Attributes
-The Space Attributes Tool can be used to set attributes for one or more selected spaces in your OpenStudio model. The first four pull-down menus (Space Type, Building Story, Construction Set, and Thermal Zone) set attributes of the selected space objects. The last two pull-down menus set attributes in the thermal zone associated with the selected spaces. Most of the menus allow you to choose from a list populated by the appropriate model objects or one of the following options: No Change, Clear Field, or Make a new Object. The exception is the ideal air loads, which has a "no change" option, or yes/no. The Thermostat menu is similar to the others, but does not offer the option to create a new thermostat. You can create a new thermostat from the inspector.
+The Space Attributes Tool can be used to set attributes for one or more selected spaces in your OpenStudio model. The first four pull-down menus (Space Type, Building Story, Construction Set, and Thermal Zone) set attributes of the selected space objects. The last two pull-down menus set attributes in the thermal zone associated with the selected spaces. Most of the menus allow you to choose from a list populated by the appropriate model objects or one of the following options: No Change, Clear Field, or Make a new Object. The exception is the ideal air loads, which has a "no change" option, or yes/no. The Thermostat menu is similar to the others, but does not offer the option to create a new thermostat.
 
 ![Space Attributes Dialog](img/plugin_reference_guide/SU_SpaceAttributes_a.png)
 
@@ -357,7 +357,7 @@ The following image shows the resulting model after using the Space Diagram Tool
 </td>
 <td>
 #### Project Loose Geometry
-The Project Loose Geometry Tool allows you to use the native SketchUp tools to draw loose geometry onto surfaces of your building envelope. When you are ready to project these surfaces into the spaces of your model, you can open this tool and run it across all loose geometry or the selected loose geometry. Although this is often used to create fenestration, it can also be used to split a base surface into two base surfaces. For example, you can create a line 3 feet above the ground representing a change in construction from concrete block to brick. The advantage of this tool--versus the traditional method of entering and drawing within a space--is that you can quickly create surfaces across many spaces without having to ever enter those spaces.
+The Project Loose Geometry Tool allows you to use the native SketchUp tools to draw loose geometry onto surfaces of your building envelope. When you are ready to project these surfaces into the spaces of your model, you can open this tool and run it across all loose geometry or the selected loose geometry. Although this is often used to create fenestration, it can also be used to split a base surface into two base surfaces. The advantage of this tool--versus the traditional method of entering and drawing within a space--is that you can quickly create surfaces across many spaces without having to ever enter those spaces.
 
 If some of the surfaces you have selected are not in the same plane as a building surface, they will be ignored.
 
