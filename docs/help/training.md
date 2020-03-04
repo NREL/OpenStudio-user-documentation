@@ -44,6 +44,3 @@ At the graduate level, the [Building System Engineering group](http://www.colora
 
 Training in OpenStudio and EnergyPlus is provided in the context of graduate classes on building energy simulation and sustainable building design.
 
-### [The University of Texas at Tyler](http://www.uttyler.edu/me/) - Tyler, TX
-####Contact: [Nelson Fumo, Ph.D.](mailto:nfumo@uttyler.edu)
-The University of Texas at Tyler Department of Mechanical Engineering provides engineering education needed for the development of a professional career in a variety of industrial and business operations, from large corporations and government organizations to small consulting firms. OpenStudio is taught in the technical elective course Introduction to Building Energy Simulation.
