@@ -23,7 +23,7 @@ This tool closes your current OpenStudio model and creates a new one. On a Mac i
 <td>![Open OpenStudio Model Icon](img/plugin_reference_guide/OSOpen-24_0.png)</td>
 <td>
 #### Open OpenStudio Model
-Use this feature to close your current OpenStudio model and open an OpenStudio file (.osm). It does not close your current SketchUp file, but loads a different OpenStudio model into it. OpenStudio 0.6.0 introduced an updated OSM format. It will not open OSM files created with OpenStudio 0.4.4 or earlier, and may not open some files created with OpenStudio 0.5.0.</td>
+Use this feature to close your current OpenStudio model and open an OpenStudio file (.osm). It does not close your current SketchUp file, but loads a different OpenStudio model into it.</td>
 </tr>
 <tr>
 <td>![Save OpenStudio Model Icon](img/plugin_reference_guide/OSSave-24_0.png)</td>
@@ -55,7 +55,7 @@ Content types that can be imported from an IDF file:
 - Constructions (including materials)
 - Schedules
 
-You can access these features under the Plugins/OpenStudio menu or the `File->Import` menu. *Space Loads* are unique to an OSM, so they cannot be imported from an IDF file.
+You can access these features under the Extensions/OpenStudio menu or the `File->Import` menu. *Space Loads* are unique to an OSM, so they cannot be imported from an IDF file.
 
 ![Import Dialog](img/plugin_reference_guide/OpenStudioImportMenu_0.png)
 
@@ -92,16 +92,17 @@ The Import OpenStudio Model tool can also be used to import additional content i
 <td>
 #### Export OpenStudio Model
 This tool prompts you for a new filename for your saved file. As you continue to work, you alter your original file instead of the exported file.
+
+![Export Dialog](img/plugin_reference_guide/OpenStudioExportMenu_0.png)
+
+*Above: Export menu available through Extensions menu*
 </td>
+</tr>
 <tr>
 <td></td>
 <td>
-#### Importing gbXML Files
-There is no toolbar icon to use for importing gbXML (Green Building XML) files; this functionality is available through the `Plugins->OpenStudio->Import->Import gbXML Model` menu item only. If you import a gbXML model, your current OSM model is closed and a new one is created from your gbXML. When you import a gbXML model and then save the model, you will be prompted to save it as an OSM file. Currently, there is no export of gbXML from OpenStudio.
-
-![Import gbXML Option](img/plugin_reference_guide/width_gbxml-menu.png)
-
-*Above: Import dialog allows you to import gbXML files.*
+#### Import gbXML File
+There is no toolbar icon to use for importing gbXML (Green Building XML) files; this functionality is available through the `Extensions->OpenStudio->Import->Import gbXML Model` menu item only. If you import a gbXML model, your current OSM model is closed and a new one is created from your gbXML. When you import a gbXML model and then save the model, you will be prompted to save it as an OSM file.
 
 The following gbXML element types are imported from gbXML to the OpenStudio Model:
 
@@ -116,10 +117,15 @@ The following gbXML element types are imported from gbXML to the OpenStudio Mode
 - Surface
 - SubSurface
 
-![Import gbXML Example](img/plugin_reference_guide/width_gbxml-import.png)
-
-*Above: Screenshot of Import gbXML Model result*
 </td>
+</tr>
+<tr>
+<td></td>
+<td>
+#### Export gbXML File
+This functionality is available through the `Extensions->OpenStudio->Export->Export gbXML Model` menu item. Some information may be lost when exporting to a gbXML. This is because the OSM file format supports some object types that XMLs do not.
+</td>
+</tr>
 <tr>
 <td></td>
 <td>
@@ -129,13 +135,8 @@ When an IDF file is imported into the SketchUp Plug-in, a translation between En
 ![Export Untranslated IDF](img/plugin_reference_guide/width_untranslatedidf-importdialog.png)
 
 *Above: User Prompt on EnergyPlus IDF Import*
-
-To save untranslated EnergyPlus IDF objects, select the menu item "Plugins->OpenStudio->Export->Export Untranslated EnergyPlus Idf".
-
-![Export Untranslated Example](img/plugin_reference_guide/width_untranslatedidf-export.png "Export Untranslated IDF")
-
-*Above: Export menu available through Plugins menu*
 </td>
+</tr>
 </tbody>
 </table>
 ## Modeling Tools
@@ -153,26 +154,30 @@ Tools in this set create new zones, groups, and geometry.
 </td>
 <td>
 #### New Space
-You can use the New Space tool to create a new OpenStudio space. Activate the tool and then click where you want your zone origin to be. An OpenStudio space is a top-level object in your SketchUp workspace. If you want to draw in the space, you first need to enter into the space through one of the following methods:
+You can use the New Space tool to create a new OpenStudio space. Activate the tool and then click where you want your zone origin to be. An OpenStudio space is a top-level object in your SketchUp workspace. If you want to draw in the space, you first need to select the space, then enter it. There are two methods to select a space:
 
-- Double-click on the space while it is selected (this may be difficult if other model objects get in the way)
-- While the space is selected, right-click and choose "Edit Group" from the contextual menu (You can also go to the edit menu under "group" or "solid group")
-- Select the object by name from SketchUp's Outliner window and then double-click or right-click and choose "Edit Group"
-- You can set up a keyboard shortcut that will take you into the selected group. A tutorial will be added to the documentation that shows you how to add your own shortcuts or load some preconfigured OpenStudio shortcuts
+1. Click on the space. This may be difficult when other objects get in the way. 
+2. Find and click on the space within SketchUp's Outliner Window. This option is suitable when option 1 is not. 
 
-Once you are inside a space, you can draw surfaces. You can also add shading groups, interior partition groups, daylighting control points, luminance maps, and luminaire objects. An alternate method to make new spaces is to copy and paste existing spaces.
+Now that the space has been selected, a user can enter the space before drawing surfaces. The three methods to enter a selected space are:
+
+1. Double-click on the space, or double-click on the space within SketchUp's Outliner Window. 
+2. Right-click on the space, or right-click on the space within SketchUp's Outliner Window. From the resulting contextual menu, click "Edit Group".
+3. Click the Edit menu. Under this menu, choose "Group", or "Solid Group". Then click "Edit Group".
+
+While inside a space, beside drawing spaces, you can add objects. Shading groups, interior partition groups, daylighting control points, and luminance maps can be added to a space. An alternate method to make new spaces is to copy and paste existing spaces. After creating a space and adding any objects, you can edit them using the [OpenStudio Inspector](#openstudio-inspector).
+
+![Selected Space and SketchUp's Outliner Window](img/plugin_reference_guide/outliner_window_selected_space.png)
+
+*Above: Screenshot of Selected Space and SketchUp's Outliner Window*
+
+![Entered Space and SketchUp's Outliner Window](img/plugin_reference_guide/outliner_window_entered_space.png)
+
+*Above: Screenshot of Entered Space and SketchUp's Outliner Window*
 
 ![New Space Inspect](img/plugin_reference_guide/width_inspector_space.png)
 
 *Above: Screenshot of OpenStudio Inspector with an OpenStudio space selected*
-
-![Surface Inspect](img/plugin_reference_guide/width_inspector_surface.png)
-
-*Above: Screenshot of OpenStudio Inspector with an OpenStudio surface selected*
-
-![Sub-Surface Inspect](img/plugin_reference_guide/width_inspector_subsurface.png)
-
-*Above: Screenshot of OpenStudio Inspector with an OpenStudio subsurface selected*
 </td>
 </tr>
 <tr>
@@ -180,42 +185,38 @@ Once you are inside a space, you can draw surfaces. You can also add shading gro
 </td>
 <td>
 #### New Shading Surface Group
-The New Shading Surface Group tool is used to create a new EnergyPlus shading group. Activate the tool and then click where you want your shading group origin to be. An EnergyPlus shading group can be a top-level object in your SketchUp workspace, or it can be placed within a space. If you want to draw in the group, you first need to enter into the group through one of the following methods:
+The New Shading Surface Group tool is used to create a new EnergyPlus shading group. Activate the tool and then click where you want your shading group origin to be. An EnergyPlus shading group can be a top-level object in your SketchUp workspace, or it can be placed within a space. If you want to draw in the group, you first need to select the group, then enter it. There are two methods to select a group:
 
-- Double-click on the space while it is selected (this may be difficult if other model objects get in the way)
-- While the space is selected, right-click and choose "Edit Group" from the contextual menu (You can also go to the edit menu under "group" or "solid group")
-- Select the object by name from SketchUp's Outliner window and then double-click or right-click and choose "Edit Group"
-- You can set up a keyboard shortcut that will take you into the selected group. A tutorial will be added to the documentation that shows you how to add your own shortcuts or load some preconfigured OpenStudio shortcuts
+1. Click on the group. This may be difficult when other objects get in the way. 
+2. Find and click on the group within SketchUp's Outliner Window. This option is suitable when option 1 is not. 
+
+Now that the group has been selected, a user can enter the group before drawing surfaces. The three methods to enter a selected group are:
+
+1. Double-click on the group, or double-click on the group within SketchUp's Outliner Window. 
+2. Right-click on the group, or right-click on the group within SketchUp's Outliner Window. From the resulting contextual menu, click "Edit Group".
+3. Click the Edit menu. Under this menu, choose "Group", or "Solid Group". Then click "Edit Group".
 
 You can create shading surface groups within or outside a space. Once you enter into a shading surface group, you can draw shading surfaces. An alternate method to make new shading groups is to copy and paste existing groups.
 
-![Shading Surface Group](img/plugin_reference_guide/width_Inspector_ShadingGroup.png)
-
-*Above: Screenshot of OpenStudio Inspector with an OpenStudio subsurface selected*
 </td>
 </tr>
 <tr>
 <td>![New Interior Partition Surface Group Icon](img/plugin_reference_guide/NewPartition-24.png)
 </td>
 <td>
+#### New Interior Partition Surface Group
+The New Interior Partition Surface Group tool is used to create a new OpenStudio Interior Partition Group. Activate the tool and then click where you want your interior partition group origin to be. If you want to draw in the group, you first need to select the group, then enter it. There are two methods to select a group:
 
-#### New Interior Partition Surface Group <a id="NewInteriorPartitionSurfaceGroup"></a>
-The New Interior Partition Surface Group tool is used to create a new OpenStudio Interior Partition Group. Activate the tool and then click where you want your interior partition group origin to be. If you want to draw in the group, you first need to enter into the group through one of the following methods:
+1. Click on the group. This may be difficult when other objects get in the way. 
+2. Find and click on the group within SketchUp's Outliner Window. This option is suitable when option 1 is not. 
 
-- Double-click on the space while it is selected (this may be difficult if other model objects get in the way)
-- While the space is selected, right-click and choose "Edit Group" from the contextual menu (You can also go to the edit menu under "group" or "solid group")
-- Select the object by name from SketchUp's Outliner window and then double-click or right-click and choose "Edit Group"
-- You can set up a keyboard shortcut that will take you into the selected group. A tutorial will be added to the documentation that shows you how to add your own shortcuts or load some preconfigured OpenStudio shortcuts
+Now that the group has been selected, a user can enter the group before drawing surfaces. The three methods to enter a selected group are:
 
-You can create interior partition groups within a space only. Once you enter into an interior partition group, you can draw interior partition surfaces. An alternate method to make new interior partition groups is to copy and paste existing groups. Interior partition surfaces are not used as heat transfer surfaces, but they still have an associated construction. This construction, along with the surface area, is used to create internal mass that is used to run simulations and create objects for IDF export. In the future, interior partition surfaces and their constructions will be used by other processes.
+1. Double-click on the group, or double-click on the group within SketchUp's Outliner Window. 
+2. Right-click on the group, or right-click on the group within SketchUp's Outliner Window. From the resulting contextual menu, click "Edit Group".
+3. Click the Edit menu. Under this menu, choose "Group", or "Solid Group". Then click "Edit Group".
 
-![Interior Partition Surface Group](img/plugin_reference_guide/width_Inspector_PartitionGroup.png)
-
-*Screenshot of OpenStudio Inspector With an Interior Partition Group Selected*
-
-![Interior Partition Surface](img/plugin_reference_guide/width_Inspector_PartitionSurface.png)
-
-*Screenshot of OpenStudio Inspector With an Interior Partition Surface Selected*
+You can create interior partition groups within a space only. Once you enter into an interior partition group, you can draw interior partition surfaces. An alternate method to make new interior partition groups is to copy and paste existing groups. Interior partition surfaces are not used as heat transfer surfaces, but they still have an associated construction. This construction, along with the surface area, is used to create internal mass that is used to run simulations and create objects for IDF export.
 </td>
 </tr>
 <tr>
@@ -264,28 +265,6 @@ To associate an illuminance map with a thermal zone, select the desired thermal 
 ![OpenStudio Inspector With a Thermal Zone Selected](img/plugin_reference_guide/width_Inspector_thermal_zone.png)
 
 *Above: Screenshot of OpenStudio Inspector With a Thermal Zone Selected*
-</td>
-</tr>
-<tr>
-<td>![New Luminaire Icon](img/plugin_reference_guide/NewLuminaire-24.png)
-</td>
-<td>
-#### New Luminaire Tool
-The New Luminaire tool creates a new OpenStudio Luminaire object. This object is used to represent a single lighting fixture; power used by this object is represented in EnergyPlus and this object will eventually be used in electric lighting simulations using Radiance. The object is represented by a rectangle with a red triangle on top. The shorter edge of the red triangle goes from the center of the rectangle to the edge in the positive x direction; the longer edge goes out in the positive y direction.
-
-![Luminaire Object Screenshot](img/plugin_reference_guide/width_luminaire-component.png)
-
-*Above: Detail of Luminaire Object*
-
-![Luminaire Within A Space](img/plugin_reference_guide/width_luminaire-placed.png)
-
-*Above: Luminaire placed within Space in model*
-
-When a luminaire is placed it must refer to an OS:Luminaire:Definition object to define its power usage and photometric description. If no luminaire definition objects exist when the luminaire is placed, a new one will be created. If one or more luminaire definition objects exist, a dialog will prompt you to select a definition to use or to make a new one.
-
-![Luminaire Dialog](img/plugin_reference_guide/luminaire-dialog.png)
-
-*Above: Luminaire Definition Prompt*
 </td>
 </tr>
 <tr>
@@ -389,15 +368,13 @@ Tools in this set are generally for viewing model attributes, however some editi
 <td>![OpenStudio Inspector Icon](img/plugin_reference_guide/Inspector-24.png)</td>
 <td>
 #### OpenStudio Inspector
-The OpenStudio Inspector displays information about your currently open OpenStudio model. This replaces the Object Information Window found in older versions.
-
-The Inspector Window is divided into three main areas:
+The OpenStudio Inspector displays information about your currently open OpenStudio model. The Inspector Window is divided into three main areas:
 
 1. The top left is the "Select Type" pane. This has a partial list of OpenStudio object types and identifies how many objects of a specific type are in your model.
 2. The bottom left pane is the "Select Object" pane. If you select a "Type" in the type pane, a list of objects of that type will be displayed in the "Select Object" pane. The objects listed in the "Select Object" pane have a number to indicate how many objects in the model refer to this object. Below the list are several buttons. The plus button to create a new object of this type, a copy button to copy the selected object, a minus button to delete the selected object, and a purge button to purge unused objects of this type. For some object types, one or more of these buttons may be disabled.
 3. The third and last pane of the Inspector is the "Edit Object" pane at the right. This displays the fields for the currently selected object in the "Select Object" pane. Some fields accept a string; others are edited via a pull-down list. For some object types, some fields may be hidden from the Inspector or locked from editing. This is by design.
 
-OpenStudio 0.9.0 adds a render mode aware inspector. If you are in a render by class or render by boundary condition and use the SketchUp select tool to select a space, the OpenStudio space will be selected in the Inspector. If, however, you are in render by space type, thermal zone, or story mode, a space type, thermal zone, or story will be selected in the Inspector. This is assuming that the space is an assigned space type, thermal zone, or story. The construction render mode is similar, but you need to select a surface versus a space to select a construction object in the Inspector. Currently, if you select a thermal zone, space type, or construction object in the Inspector, it will not make a selection in the SketchUp model that correlates to this object.
+The OpenStudio Inspector is render mode aware. If you are in a render by class or render by boundary condition and use the SketchUp select tool to select a space, the OpenStudio space will be selected in the Inspector. If, however, you are in render by space type, thermal zone, or story mode, a space type, thermal zone, or story will be selected in the Inspector. This is assuming that the space is an assigned space type, thermal zone, or story. The construction render mode is similar, but you need to select a surface versus a space to select a construction object in the Inspector. Currently, if you select a thermal zone, space type, or construction object in the Inspector, it will not make a selection in the SketchUp model that correlates to this object.
 
 The Inspector cannot select multiple objects at once. So if you select multiple spaces or surfaces in SketchUp, only one will be active in the Inspector. Similarly, you cannot use the Inspector to batch change the attributes for multiple objects at once.
 
@@ -416,11 +393,11 @@ Screenshots of the OpenStudio Inspector with other object types selected are sho
 #### Surface Search
 The OpenStudio Surface Search Tool enables you to search your model for surfaces with specific attributes. You can select the search results and visually isolate them by hiding all other surfaces. When you are finished, click "Unhide All" on the Surface Search Dialog to unhide the rest of the surfaces. Before searching on a large IDF, close SketchUp's Outliner Window to expedite the surface searching. While surfaces are hidden you can also use SketchUp's built-in "View Hidden Geometry" to quickly view all hidden surfaces.
 
-New to the Surface Search Tool with OpenStudio 0.5 and later is the ability to search based on Surface Orientation. You can set both "from" and "to" to a single value if you want to find surfaces that face a specific direction, or you can set unique values to show surfaces within a range of angles. The "Exclude Horizontal Surfaces" is generally intended to be used along with Surface Orientation search to hide surfaces with no azimuth. There are also check boxes to limit search results to non-convex surfaces or to surfaces with more than a set number of vertices. Once your search is complete, the resulting surfaces are selected in SketchUp. You can use this selection for other operations or scripts.
+You can also search based on Surface Orientation. To do this, set both "from" and "to" to a single value if you want to find surfaces that face a specific direction, or you can set unique values to show surfaces within a range of angles. The "Exclude Horizontal Surfaces" is generally intended to be used along with Surface Orientation search to hide surfaces with no azimuth. There are also check boxes to limit search results to non-convex surfaces or to surfaces with more than a set number of vertices. Once your search is complete, the resulting surfaces are selected in SketchUp. You can use this selection for other operations or scripts.
 
 ![Surface Search Dialog](img/plugin_reference_guide/SU_SurfaceSearch.png)
 
-*Above: Screenshot of Surface Search Dialog - OpenStudio 0.6.0*
+*Above: Screenshot of Surface Search Dialog*
 </td>
 </tr>
 <tr>
@@ -449,7 +426,7 @@ The same data are displayed while in Render by Boundary Condition mode
 
 ("Ctrl" Modifier Key)
 
-![Information Tool in Render by Surface Type Mode Showing Material Data](img/plugin_reference_guide/width_SU_Info_Type_shift-const.png)
+![Information Tool in Render by Surface Type Mode Showing Material Data](img/plugin_reference_guide/width_SU_Info_Type_shift-material.png)
 
 *Above: Screenshot of Information Tool in Render by Surface Type Mode Showing Material Data*
 
@@ -480,18 +457,6 @@ The same data are displayed while in Render by Boundary Condition mode
 ![Information Tool in Render by Thermal Zone Mode Showing Thermal Zone Data](img/plugin_reference_guide/width_SU_Info_ThermalZone.png)
 
 *Above: Screenshot of Information Tool in Render by Thermal Zone Mode Showing Thermal Zone Data*
-
-(No Modifier Key)
-
-![Information Tool in Render by Story Mode Showing Building Story Data](img/plugin_reference_guide/width_SU_Info_story.png)
-
-*Above: Screenshot of Information Tool in Render by Story Mode Showing Building Story Data*
-
-(No Modifier Key)
-
-![Information Tool in Render by Data Mode Showing Time Series Simulation Results Data](img/plugin_reference_guide/width_SU_Info_data.png)
-
-*Above: Screenshot of Information Tool in Render by Data Mode Showing Time Series Simulation Results Data. These data will change as you adjust the time of day or time of year. This example shows exterior surface temperature, but it can be any zone or surface variable that has been requested as part of your simulation.*
 </td>
 </tr>
 <tr>
@@ -563,7 +528,7 @@ The Inspector Window is divided into three main areas:
 - Shading surfaces and interior partitions can have constructions assigned. If they do have constructions, they will be rendered just as space surfaces are.
 - Construction properties of a surface can be applied directly to a surface, or they can be inherited from other objects (space, space type, story, or building). The first time you click the render by construction button, it shows hard assigned and inherited constructions. If you click it again, it shows only hard assigned constructions. Other surfaces do not have a render color. Clicking the render button again returns you to the default mode where hard assigned and inherited constructions are shown.
 
-As a note, this is not a render by material mode, so two constructions that have the same outside material, will have unique render colors. However, in this render mode you can set render color using either the SketchUp paint bucket or the Inspector. To use the Inspector, select the construction object and set the RGB values. These color settings are part of the OpenStudio model and will be maintained the next time you open the model.
+As a note, this is not a render by material mode. Hence, two constructions that have the same outside material will have unique render colors. However, in this render mode you can set render color using either the SketchUp paint bucket or the Inspector. To use the Inspector, select the construction object and set the RGB values. These color settings are part of the OpenStudio model and will be maintained the next time you open the model.
 
 ![Model in Render by Construction Mode](img/plugin_reference_guide/width_SU_info_construction.png)
 
@@ -662,21 +627,21 @@ This takes you to the online help for the OpenStudio SketchUp Plug-in, where you
 ##  Additional OpenStudio Plug-in Tools
 
 #### About OpenStudio
-For information on the SketchUp Plug-in version go to `Plugins->OpenStudio->About OpenStudio`.
+For information on the SketchUp Plug-in version go to `Extensions->OpenStudio->About OpenStudio`.
 
 ![About Dialog](img/plugin_reference_guide/about_plugin.png)
 
 *Above: Screenshot of SketchUp showing the about dialog path and window*
 
 #### Preferences
-For information on the SketchUp Plug-in version go to `Plugins->OpenStudio->Preferences`.
+For information on the SketchUp Plug-in version go to `Extensions->OpenStudio->Preferences`.
 
 ![Preferences Dialog](img/plugin_reference_guide/preferences.png)
 
 *Above: The Preferences dialog enables you to set options related to updates, new thermal zone creation, user scripts, text editor, template OSM files, and the EnergyPlus engine.*
 
 #### Check for Update
-Check to see if you are using the most current release of the OpenStudio SketchUp Plugin by going to `Plugins->OpenStudio->Check For Update`.
+Check to see if you are using the most current release of the OpenStudio SketchUp Plugin by going to `Extensions->OpenStudio->Check For Update`.
 
 ![Update Dialog](img/plugin_reference_guide/updates.png)
 
@@ -726,17 +691,6 @@ This activates SketchUp's native face style setting to render all surfaces trans
 ![Active X-Ray Rendering](img/plugin_reference_guide/width_ss_xray.png)
 
 *Above: Screenshot of model with X-ray Rendering active*
-</td>
-</tr>
-<tr>
-<td>![Shadow Settings Icon](img/plugin_reference_guide/SUShadows-24x24.png)</td>
-<td>
-#### Shadow Settings
-This opens SketchUp's native Shadow Settings window. The Shadow Settings window does a few things. First, it can turn SketchUp's shadow display on and off. It can also alter how shadows are rendered. Most important to OpenStudio users is that it can set the time of day and time of year for the current display. SketchUp uses this along with the model's geo-location to set the shadow orientation and length. OpenStudio leverages this data to inform time-series render modes. Currently, this includes the Render by Data render mode which displays post simulation results from an external SQL file. Moving the date or time slider will alter the surface or zone variable values rendered to the model.
-
-![Shadow Settings Dialog](img/plugin_reference_guide/Shadow_Settings.png)
-
-*Above: Screenshot of SketchUp Shadow Setting Window*
 </td>
 </tr>
 </tbody>
