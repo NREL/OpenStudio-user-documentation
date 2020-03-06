@@ -32,7 +32,7 @@ _________________
 
 ## How Do You Use Measures?
 ### Apply Measure Now
-The "Apply Measure Now" dialog, which can be found under the "Components & Measures" menu in the OpenStudio Application, applies a measure to your current model. It is similar to using the user scripts in the OpenStudio SketchUp Plugin, in that it alters the currently open model. Apply Measures Now is only applicable for OpenStudio measures, vs. EnergyPlus or Reporting. You need to save your model before using this tool, you have two levels of inspection available to you. First you can cancel out of the measure after inspecting the logs reported by it. If you accept the measure, then your model is updated but not yet saved. After inspecting the model if you don't like the changes that were made you can revert to the previously saved model.
+The "Apply Measure Now" dialog, which can be found under the "Components & Measures" menu in the OpenStudio Application, applies a measure to your current model. It is similar to using the user scripts in the OpenStudio SketchUp Plugin, in that it alters the currently open model. Apply Measures Now is only applicable for OpenStudio Measures, vs. EnergyPlus or Reporting. You need to save your model before using this tool, you have two levels of inspection available to you. First you can cancel out of the measure after inspecting the logs reported by it. If you accept the measure, then your model is updated but not yet saved. After inspecting the model if you don't like the changes that were made you can revert to the previously saved model.
 
 ![Apply Measure Now](img/measures/apply_measure_now.png)
 

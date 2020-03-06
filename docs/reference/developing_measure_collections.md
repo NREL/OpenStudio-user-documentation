@@ -48,9 +48,8 @@ Having a version control system like Git or SVN is very useful for managing the 
 
 Workflow testing shouldn't begin after all the code is written, it should be up and running as soon as possible. Each measure already has its own unit test, but _workflow testing_ can provide a complete test of all of the measures used, in their intended combinations. Below are few options for workflow testing.
 
-- Use the "Measures" section of the OpenStudio application. (This isn't recommended because measure reporting in the OpenStudio application isn't as accessible as it is in PAT)
+- Use the "Measures" section of the OpenStudio Application. (This isn't recommended because measure reporting in the OpenStudio Application isn't as accessible as it is in PAT)
 - Use PAT with only "Always Run" Measures (this will produce only a single model and simulation. This is ok, but having multiple Paths for argument values is ideal
 - Use PAT with a combination of "Always Run" and "Measure Group" measures. This will allow you to test more scenarios.
-- Use the OpenStudio Analysis spreadsheet [described here](https://github.com/NREL/OpenStudio-analysis-spreadsheet). You can export a PAT project to the spreadsheet as a starting point.
-- The OpenStudio developers are working on a scripted workflow testing solution that allows many tests to be run without having to trigger simulations. This is very useful for times when you want to inspect the model or the measure logging to see if it looks like it should. Because this is text based it is more manageable in version control than OpenStudio projects or Excel spreadsheets. When this is ready for use we will link to it from this documentation.
+- The OpenStudio SDK developers are working on a scripted workflow testing solution that allows many tests to be run without having to trigger simulations. This is very useful for times when you want to inspect the model or the measure logging to see if it looks like it should. Because this is text based it is more manageable in version control than OpenStudio SDK projects or Excel spreadsheets. When this is ready for use we will link to it from this documentation.
 

@@ -54,11 +54,11 @@
       <div class="thumbnail">
         <div class="caption">
           <h3>Help &amp; Additional Resources</h3>
-          <p>Find professional training for OpenStudio.</p>
+          <p>Find professional training for OpenStudio SDK.</p>
           <p><a href="help/training.md" class="btn btn-primary" role="button">Training, Support, &amp; Consulting</a></p>
            <p>Check out Unmet Hours to post a question or search for answers to your energy modeling questions.</p>
-          <p><a href="https://unmethours.com/questions/scope:all/sort:activity-desc/tags:openstudio/" class="btn btn-primary" role="button">OpenStudio on Unmet Hours</a></p>
-          <p>Check out this advanced application of OpenStudio measures for fault detection:</p>
+          <p><a href="https://unmethours.com/questions/scope:all/sort:activity-desc/tags:openstudio/" class="btn btn-primary" role="button">OpenStudio SDK on Unmet Hours</a></p>
+          <p>Check out this advanced application of OpenStudio Measures for fault detection:</p>
           <p><a href="https://github.com/NREL/OpenStudio-fault-models" class="btn btn-primary" role="button">Fault Detection Measures </a>
           <p>Additional help topics.</p>
           <p><a href="help/best_practices.md" class="btn btn-primary" role="button">Best Practices</a></p>
