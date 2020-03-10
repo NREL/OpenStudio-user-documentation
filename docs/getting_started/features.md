@@ -5,10 +5,6 @@ OpenStudio is constantly being improved, with a less stable developer release av
 
 ### Building Geometry/3D CAD
 
-- Quickly draw 3D building geometry using free plugin for SketchUp
-- Building envelope, shading on windows, shading from other buildings, etc.
-- Draw detailed shapes, trace floor plans, or a combination
-- Use wizard to create standard shapes (H, L, E, Courtyard, Rectangle)
 - Import geometry from gbXML files (from Revit, GreenBuildingStudio, Trace700, etc.)
 - Import geometry from EnergyPlus files (IDF)
 - Import model from SDD files (California Energy Commission)
@@ -16,7 +12,24 @@ OpenStudio is constantly being improved, with a less stable developer release av
 - Assign and visually inspect space types assignments
 - Define thermal zones and add/remove spaces
 - Assign and see building envelope constructions
+
+#### FloorspceJS
+
+- Draw 2D building geometry (that will be extruded to 3D) using the built-in FloorspaceJS interface
+- Trace images of floor plans, or maps 
+- Building envelope, shading on windows, shading from other buildings, etc.
+- Assign constructions, space types, thermal zones
 - Add daylighting sensors
+
+#### Sketchup Plugin
+
+- Draw 3D building geometry using free plugin for SketchUp
+- Building envelope, shading on windows, shading from other buildings, etc.
+- Draw detailed shapes, trace floor plans, or a combination
+- Use wizard to create standard shapes (H, L, E, Courtyard, Rectangle)
+- Add daylighting sensors
+
+
 
 ### Building Constructions and Materials
 
