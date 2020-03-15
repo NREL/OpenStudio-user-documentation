@@ -1,7 +1,7 @@
 <h1>Current Features</h1>
-OpenStudio is constantly being improved, with a less stable developer release available every 2 weeks and a stable major release quarterly (4 per year). The features that are available in the current major release are described below. To learn what is coming in the future, see the [Planned Features](../getting_started/roadmap.md) page.
+OpenStudio Application is constantly being improved, with a less stable developer release available every 2 weeks and a stable major release quarterly (4 per year). The features that are available in the current major release are described below. To learn what is coming in the future, see the [Planned Features](../getting_started/roadmap.md) page.
 
-## As of OpenStudio Version 3.0.0
+## As of OpenStudio Application Version 1.0.0
 
 ### Building Geometry/3D CAD
 
@@ -41,7 +41,7 @@ OpenStudio is constantly being improved, with a less stable developer release av
 
 - Viewing and editing your model in a grid view allows you to see many objects at once and compare settings.
 
-![Grid view example](img/features/grid_thumb.png)
+[![Grid view example](img/features/grid_thumb.png)](img/features/grid_thumb.png)
 
 ### HVAC
 
@@ -177,16 +177,16 @@ OpenStudio is constantly being improved, with a less stable developer release av
 
 ### Daylighting
 
-- Add daylighting control points via the SketchUp plugin or OpenStudio
+- Add daylighting control points via the SketchUp plugin or OpenStudio Application
 - Create interior partitions and glare sensors for modeling daylight analysis with improved accuracy, using the Sketchup Plugin
 - Create and configure window shading controls for modeling daylight analysis using the Sketchup plugin
 - Insert illuminance map for visualizing daylight analysis using the Sketchup plugin
-- Use built-in OpenStudio Measure to run daylighting analysis using Radiance, state-of-the-art ray-tracing daylight simulation engine without making a separate model
+- Use built-in OpenStudio Application Measure to run daylighting analysis using Radiance, state-of-the-art ray-tracing daylight simulation engine without making a separate model
 - Configure daylight analysis parameters used by radiance simulation
 - Lights in the EnergyPlus model controlled based on daylight available per radiance
 
 ### Custom Controls
-Within EnergyPlus, advanced controls that are not built-in can be implemented utilizing the [EnergyManagementSystem (EMS)](https://energyplus.net/sites/all/modules/custom/nrel_custom/pdfs/pdfs_v9.2.0/EMSApplicationGuide.pdf) suite of objects. This involves defining Sensors and Actuators that interact with building parameters through Programs which are written in the EnergyPlus Runtime Language (ERL), which is based on a common building-controls language. OpenStudio supports the creation of EMS programs.
+Within EnergyPlus, advanced controls that are not built-in can be implemented utilizing the [EnergyManagementSystem (EMS)](https://energyplus.net/sites/all/modules/custom/nrel_custom/pdfs/pdfs_v9.2.0/EMSApplicationGuide.pdf) suite of objects. This involves defining Sensors and Actuators that interact with building parameters through Programs which are written in the EnergyPlus Runtime Language (ERL), which is based on a common building-controls language. OpenStudio Application supports the creation of EMS programs.
 
 ### Location-Specific Information
 
@@ -230,7 +230,7 @@ Within EnergyPlus, advanced controls that are not built-in can be implemented ut
 
 ### Parametric Analysis Using [PAT](https://github.com/NREL/OpenStudio-PAT/releases)
 
-- OpenStudio Measures provide reliable and repeatable mechanism to apply transforms to models
+- OpenStudio Application Measures provide reliable and repeatable mechanism to apply transforms to models
 - Eliminates ambiguity and user error; all rules encapsulated in Measure itself
 - More than 316 Measures available [online](bcl.nrel.gov) and always growing
 - Write Measure once and apply to many projects
@@ -270,8 +270,6 @@ Within EnergyPlus, advanced controls that are not built-in can be implemented ut
 
 ### Documentation
 
-- More than 100 YouTube video tutorials
-- Interactive PDFs describing each Application
 - Measure writing guide
 - Lifecycle costing guide
 - Documentation of all modeling commands (SDK) online, updated bi-weekly

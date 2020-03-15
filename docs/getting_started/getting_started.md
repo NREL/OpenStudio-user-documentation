@@ -1,15 +1,15 @@
 <h1>Installation and Introductory Tutorial</h1>
-This page walks you through installing OpenStudio, the basics of the applications, and the basic workflow.
+This page walks you through installing the OpenStudio Application, the basics of its suite of applications, and the fundamental workflow.
 
 ## Installation Instructions
-OpenStudio is supported on 64-bit versions of Windows 7 &ndash; Windows 10, OS X 10.12 &ndash; 10.14, and Ubuntu 18.04.
-OpenStudio supports the latest EnergyPlus release which is bundled with the OpenStudio installer. The [version compatibility matrix](https://github.com/NREL/OpenStudio/wiki/OpenStudio-Version-Compatibility-Matrix) lists specific versions of EnergyPlus and other dependencies for each version of OpenStudio. 
+OpenStudio Application is supported on 64-bit versions of Windows 7 &ndash; Windows 10, OS X 10.12 &ndash; 10.14, and Ubuntu 18.04.
+OpenStudio Application supports the latest EnergyPlus release which is bundled with the OpenStudio Application installer. The [version compatibility matrix](https://github.com/NREL/OpenStudio/wiki/OpenStudio-Version-Compatibility-Matrix) lists specific versions of EnergyPlus and other dependencies for each version of OpenStudio Application. 
 
 ###Installation Steps
-__Download and install OpenStudio__
+__Download and install OpenStudio Application__
 
-1. Download the latest release of OpenStudio [here](https://github.com/NREL/OpenStudioApplication/releases).
-2. Choose the installer that matches your operating system. The OpenStudio package contains the following components:
+1. Download the latest release of OpenStudio Application [here](https://github.com/NREL/OpenStudioApplication/releases).
+2. Choose the installer that matches your operating system. The OpenStudio Application package contains the following components:
     - OpenStudio Application
     - EnergyPlus
     - Ruby API
@@ -25,11 +25,11 @@ __Download and install SketchUp__
 
 __Optional - Setup a Building Component Library (BCL) Account__  
 
-BCL content can now be accessed from within the OpenStudio SketchUp Plugin and from the standalone OpenStudio application. To take advantage of this integration, you will need to follow the steps outlined here to request a BCL key.
+BCL content can now be accessed from within the OpenStudio SketchUp Plugin and from the standalone OpenStudio Application. To take advantage of this integration, you will need to follow the steps outlined here to request a BCL key.
 
 1. Login to [Building Component Library (BCL)](https://bcl.nrel.gov/). Create an account if you don't have one. Follow the instructions from the email sent to you upon registration and then login.
 2. Click on the `My Dashboard` near the top right of the website.
-3. Copy the text after `API v1.1 key`: then paste the key into the OpenStudio application, or the SketchUp Plugin. __You only need to configure the key in one place and it will be used globally throughout the OpenStudio tools.__ Additionally, this key will be maintained when you install updates to OpenStudio.
+3. Copy the text after `API v1.1 key`: then paste the key into the OpenStudio Application, or the SketchUp Plugin. __You only need to configure the key in one place and it will be used globally throughout the OpenStudio Application tools.__ Additionally, this key will be maintained when you install updates to the OpenStudio Application.
 
 Enter the key through the OpenStudio SketchUp Plugin under the menu `Extensions->OpenStudio User Scripts->Building Component Library->Setup BCL Key` and click `OK`. __Or__ register the key through the OpenStudio Application under the menu `Components & Measures->Find Components`. If a key is not already registered, it will prompt you for one.
 
@@ -40,7 +40,7 @@ __Optional - Install Parametric Analysis Tool (PAT)__
 1. Download the latest release of PAT [here](https://github.com/NREL/OpenStudio-PAT/releases) (not available for Linux).
 
 ## Workflow Overview
-The typical OpenStudio workflow is shown in the diagram below.
+The typical OpenStudio Application workflow is shown in the diagram below.
 
 [![Workflow Diagram](img/workflow_diagram.png "Click to view")](img/workflow_diagram.png)
 
@@ -53,7 +53,7 @@ The [Parametric Analysis Tool Interface Guide](../reference/parametric_analysis_
 ## Introductory Tutorial
 The tutorial below was created before the grid view was added to the Space Types and Thermal Zones tabs. Grid view allows you to view and edit more than one space type or thermal zone at a time. Go to the [OpenStudio Application Interface Guide](../reference/openstudio_application_interface.md) to learn more about grid view.
 
-### Selecting a Template for Constructions in SketchUp using the OpenStudio Plugin
+### Selecting a Template for Constructions in SketchUp using the OpenStudio Application Plugin
 Templates contain data for constructions, loads, and schedules for 6 vintages across all U.S. climate zones. Templates do not contain any geometry. Load templates by using the menu under __Extentions/OpenStudio User Scripts/On-Demand Template Generators/Space Type and Construction Set Wizard__. Then select your type of building, vintage, and climate zone from the dialog. You can also get standard space types for that template by choosing "true" on the dialog. Space types can define internal loads, schedule sets, and construction sets. It can take a few minutes to load.
 
 ![New OpenStudio Model From Template Dialog](img/menu_template.png)
@@ -78,17 +78,17 @@ For additional information on the SketchUp Plugin interface, go to the [OpenStud
 
 <iframe width="640" height="360" src="https://www.youtube.com/embed/wzzY_W2WELo?start=44&end=129" allowfullscreen></iframe>
 
-*Above: This video shows you how to create your building envelope. It uses the OpenStudio SketchUp Plugin.*
+*Above: This video shows you how to create your building envelope. It uses the OpenStudio Application SketchUp Plugin.*
 
 ### SketchUp Plugin - Space Types and Thermal Zones
 <iframe width="640" height="360" src="https://www.youtube.com/embed/8LTexVna_vw" allowfullscreen></iframe>
 
-*Above: This video shows you how to assign space types, thermal zones, and thermostats to the spaces in your model. It uses the OpenStudio SketchUp Plugin.*
+*Above: This video shows you how to assign space types, thermal zones, and thermostats to the spaces in your model. It uses the OpenStudio Application SketchUp Plugin.*
 
 ### Site, Facility, and Basic Run
 <iframe width="640" height="360" src="https://www.youtube.com/embed/tgeepiBltJI" allowfullscreen></iframe>
 
-*Above: This video goes into the OpenStudio application, adds weather data, shows the outline view in the facility tab, and runs a simulation with ideal air loads.*
+*Above: This video goes into the OpenStudio Application, adds weather data, shows the outline view in the facility tab, and runs a simulation with ideal air loads.*
 
 <iframe width="640" height="360" src="https://www.youtube.com/embed/9uBcb3NBQ84" allowfullscreen></iframe>
 

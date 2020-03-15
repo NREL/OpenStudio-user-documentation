@@ -1,5 +1,5 @@
 <h1>Running Simulations & Viewing Results</h1>
-These guides provide a handy reference to the features of the applications that are installed with OpenStudio.
+These guides provide a handy reference to the features of the applications that are installed with the OpenStudio Application.
 
 ## Weather File and Design Days
 Add weather files in the OpenStudio application under the Site tab (first vertical tab) on the left and the "Weather File & Design Days" sub-tab across the top. You can [download weather files](https://www.energyplus.net/weather) on the EnergyPlus site.
@@ -29,21 +29,17 @@ To run your simulation click the green run button.
 *Above: The progress bar displays the status of the run.*
 
 ## Looking at Results
-Standard OpenStudio results are provided with your run. Learn more about the OpenStudio Standard Results Measure in our [References Section](../reference/openstudio_results_measure.md).
-
-<iframe width="640" height="360" src="https://www.youtube.com/embed/PlrWE3ugcdE" allowfullscreen></iframe>
-
-*Above: This video demonstrates the 1.9.0 Release with the Reporting Measure.*
+Standard OpenStudio Results are provided with your run. Learn more about the OpenStudio Standard Results Measure in our [References Section](../reference/openstudio_results_measure.md).
 
 [![Results Summary Tab](img/run/os_results.png "Click to view")](img/run/os_results.png)
 
-*Above: This screenshot shows and example of the standard OpenStudio results.*
+*Above: This screenshot shows an example of the standard OpenStudio Results.*
 
 [![Results 2 Summary Tab](img/run/reports2.png "Click to view")](img/run/reports2.png)
 
-*Above: This is another chart available in the standard OpenStudio results.*
+*Above: This is another chart available in the standard OpenStudio Results.*
 
-You can also use measures to add additional reports. For instance, you can download the calibration report measure from the [BCL](../reference/openstudio_application_interface.md#find-measures-and-find-components). This measure allows you to view simulation results that are associated with any added utility bills. Another option available for adding additional reports is the generation of custom reports. These are created by writing your own measures. Downloaded or created reporting measures are applied within the OpenStudio Measures tab.
+You can also use measures to add additional reports. For instance, you can download the calibration report measure from the [BCL](../reference/openstudio_application_interface.md#find-measures-and-find-components). This measure allows you to view simulation results that are associated with any added utility bills. Another option available for adding additional reports is the generation of custom reports. These are created by writing your own measures. Downloaded or created reporting measures are applied within the OpenStudio Application Measures tab.
 
 [![Calibration Report](img/run/calibration_report.png "Click to view")](img/run/calibration_report.png)
 

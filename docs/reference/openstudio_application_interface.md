@@ -1,11 +1,4 @@
 <h1>OpenStudio Application Interface Guide</h1>
-This section contains an overview of the OpenStudio Application.
-
-The [OpenStudio Quick Start Guide](img/pdfs/openstudio_interface_quickstart.pdf) provides an introduction to the interface for the Plug-in and the OpenStudio application. It also provides guidance on the basic workflow.
-
-<iframe width="640" height="360" src="https://www.youtube.com/embed/9uBcb3NBQ84" allowfullscreen></iframe>
-
-*Above: This video demonstrates the new Spaces tab and the redesigned Facilities and Site tab from version 1.9.0.*
 
 ------
 
@@ -73,10 +66,6 @@ Earlier releases have included a grid view for the refrigeration section in the 
 
 *Above: The grid view provides a spreadsheet style layout. Click on the image to view a larger version.*
 
-<iframe width="640" height="360" src="https://www.youtube.com/embed/LnOUfiMajD0?rel=0&start=0&end=340&autoplay=0" frameborder="0" allowfullscreen></iframe>
-
-*View this video to see multi-edit in action.*
-
 Drag components and schedules into the grid view. Most items on the grid can be inspected in the right panel "Edit" tab, except schedules. To edit or view schedules, go to the schedules tab.
 
 A yellow highlight indicates the item you have selected in the grid. When you start editing the item in the "Edit" tab the highlight will disappear, indicating that the focus is now on editing the item. Use the delete in the "Edit" panel to remove a component from the grid.
@@ -98,7 +87,7 @@ You can use the Multi-edit feature on individual columns (as shown below) or on 
 ------
 
 ## File Menu
-If you launch the OpenStudio application from the SketchUp Plug-in, your open file will automatically open in the application. To save the file or open a new file, select file open from the menu.
+If you launch the OpenStudio Application from the SketchUp Plug-in, your open file will automatically open in the application. To save the file or open a new file, select file open from the menu.
 
 When you save an OSM model in the OpenStudio Application or the SketchUp Plug-in a folder is saved next to the OSM file. This folder contains external resources such as the weather file, scripts, and simulation results.
 
@@ -115,7 +104,7 @@ The Units menu lets you switch between SI and IP units. This affects both input 
 
 The SketchUp Plug-in has access to this as well under `Plugins->OpenStudio->Preferences`.
 
-Change Default Libraries allows one to restore default libraries. This feature complements the Load Library feature within the File Menu. Loading several libraries could increase the duration to boot the OpenStudio application. To reduce this duration, restore default libraries. 
+Change Default Libraries allows one to restore default libraries. This feature complements the Load Library feature within the File Menu. Loading several libraries could increase the duration to boot the OpenStudio Application. To reduce this duration, restore default libraries. 
 
 [![Preferences Menu](img/os_interface/prefer_menu.png "Click to view")](img/os_interface/prefer_menu.png)
 
@@ -140,7 +129,7 @@ Once you select a measure you may edit the measure inputs on the right side of t
 *Above: This menu item allows you to run one measure on your model.*
 
 ### Find Measures and Find Components
-The BCL window gives you access to an online repository of building energy modeling data called the Building Component Library. Although you can access the BCL website on its own, OpenStudio has integrated access to the BCL from within the application. You can access this through the "Components & Measures" menu.
+The BCL window gives you access to an online repository of building energy modeling data called the Building Component Library. Although you can access the BCL website on its own, OpenStudio Application has integrated access to the BCL. You can access this through the "Components & Measures" menu.
 
 The first time you open this window you will be prompted for an API key, unless you have already used BCL functionality in the SketchUp Plug-in. [Instructions for finding your API Key](../getting_started/getting_started.md#connecting-with-the-building-component-library) are in the "Getting Started" section.
 
