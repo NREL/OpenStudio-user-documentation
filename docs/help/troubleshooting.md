@@ -3,7 +3,7 @@ This page is a collection of troubleshooting advice that helps users deal with c
 _________________
 
 ## OpenStudio SketchUp Plug-in Does Not Load
-Ensure that your version of SketchUp is compatible with your version of the OpenStudio Application as listed in [this matrix](https://github.com/NREL/OpenStudio/wiki/OpenStudio-Version-Compatibility-Matrix).  Try opening the "Window->Preferences->Extensions" window in SketchUp, enable the OpenStudio SketchUp Plug-in if it is listed.  If the OpenStudio SketchUp Plug-in is not listed you may have to manually install it (this is the case if you are using a different version of SketchUp than the OpenStudio Installer targets).
+For the OpenStudio Application 1.0.0, ensure that your are working with SketchUp Pro 2019. Try opening the "Window->Preferences->Extensions" window in SketchUp, enable the OpenStudio SketchUp Plug-in if it is listed.  If the OpenStudio SketchUp Plug-in is not listed you may have to manually install it (this is the case if you are using a different version of SketchUp than the OpenStudio Installer targets).
 
 To install the OpenStudio SketchUp Plug-in manually on Windows please copy the files in:
 
@@ -42,11 +42,11 @@ On Mac these are:
 - ~/Library/Application Support/SketchUp %VERSION%/SketchUp/Plugins/
 - /Library/Application Support/SketchUp %VERSION%/SketchUp/Plugins
 
-If SketchUp crashes without the OpenStudio SketchUp Plug-in installed then something else is wrong, contact the SketchUp support team for help. Check that your system meets the [SketchUp Hardware and Software Requirements](https://help.sketchup.com/en/article/36208). If SketchUp launches, try installing OpenStudio again. If SketchUp crashes on launch again, remove the OpenStudio files from the SketchUp plugin directories again. Open SketchUp, go to "Window->Preferences->Extensions" and disable the OpenStudio SketchUp Plug-in. Re-install OpenStudio and relaunch SketchUp. Open the Ruby console by going to "Window->Ruby Console" and then go back to "Window->Preferences->Extensions" and enable the OpenStudio SketchUp Plug-in, you may see useful output in the Ruby console. If you have other extensions installed, try disabling them and enabling the OpenStudio SketchUp Plug-in.
+If SketchUp crashes without the OpenStudio SketchUp Plug-in installed then something else is wrong, contact the SketchUp support team for help. Check that your system meets the [SketchUp Hardware and Software Requirements](https://help.sketchup.com/en/article/36208). If SketchUp launches, try installing OpenStudio Plugin again. If SketchUp crashes on launch again, remove the OpenStudio Plugin files from the SketchUp plugin directories again. Open SketchUp, go to "Window->Preferences->Extensions" and disable the OpenStudio SketchUp Plug-in. Re-install OpenStudio Plugin and relaunch SketchUp. Open the Ruby console by going to "Window->Ruby Console" and then go back to "Window->Preferences->Extensions" and enable the OpenStudio SketchUp Plug-in, you may see useful output in the Ruby console. If you have other extensions installed, try disabling them and enabling the OpenStudio SketchUp Plug-in.
 
-If none of the steps above work and you are on Windows, it is likely that there is a dynamic library being loaded from another application that is interfering with OpenStudio. If you just want to fix your problem, try copying the files libeay32.dll and ssleay32.dll from `C:\openstudio-%VERSION%\bin` to `C:\Program Files \SketchUp\SketchUp %VERSION%`, this will fix the problem 80% of the time.
+If none of the steps above work and you are on Windows, it is likely that there is a dynamic library being loaded from another application that is interfering with the OpenStudio Application. If you just want to fix your problem, try copying the files libeay32.dll and ssleay32.dll from `C:\openstudio-%VERSION%\bin` to `C:\Program Files \SketchUp\SketchUp %VERSION%`, this will fix the problem 80% of the time.
 
-If you want to investigate in more depth, download [Dependency Walker](http://www.dependencywalker.com/). Extract the files and launch depends.exe. Navigate to "File->Open" and then browse to choose the SketchUp.exe under `C:\Program Files \SketchUp\SketchUp %VERSION%`. This will examine all of the libraries loaded by SketchUp but not the libraries loaded by the OpenStudio Plug-in. Navigate to "Profile->Start Profiling" then press Ok in the dialog that pops up. This will launch SketchUp and attempt to load OpenStudio. Scroll down in the list of loaded libraries and look for the OpenStudio dlls. Expand the paths under the OpenStudio dlls and look for libraries that are being loaded from other locations. Often, some other program will install a different version of one of the libraries (usually libeay32.dll or ssleay32.dll) that OpenStudio uses. This other library will be in the path ahead of OpenStudio and will be loaded instead, this results in a hard crash of SketchUp. Correcting your path or copying the dlls from the OpenStudio bin directory into the SketchUp install directory will cause the correct dlls to be loaded when SketchUp starts.
+If you want to investigate in more depth, download [Dependency Walker](http://www.dependencywalker.com/). Extract the files and launch depends.exe. Navigate to "File->Open" and then browse to choose the SketchUp.exe under `C:\Program Files \SketchUp\SketchUp %VERSION%`. This will examine all of the libraries loaded by SketchUp but not the libraries loaded by the OpenStudio Plugin. Navigate to "Profile->Start Profiling" then press Ok in the dialog that pops up. This will launch SketchUp and attempt to load the OpenStudio PLugin. Scroll down in the list of loaded libraries and look for the OpenStudio dlls. Expand the paths under the OpenStudio dlls and look for libraries that are being loaded from other locations. Often, some other program will install a different version of one of the libraries (usually libeay32.dll or ssleay32.dll) that OpenStudio uses. This other library will be in the path ahead of OpenStudio and will be loaded instead, this results in a hard crash of SketchUp. Correcting your path or copying the dlls from the OpenStudio bin directory into the SketchUp install directory will cause the correct dlls to be loaded when SketchUp starts.
 _________________
 
 ## OpenStudio Application and SketchUp Plug-in Crash
@@ -78,20 +78,6 @@ Below is a screenshot of the log after running the measure. The log will list ea
 ![Remove Orphan Objects and Unused Resources - Output](img/help/orphan_purge_outputview.png)
 _________________
 
-## Unable to Communicate with Amazon Cloud from Command Prompt Using the "bundle" Command
-This issue is typically a communication error between you and RubyGems.org. A few things to check:
-
-1. Are you behind a proxy? If so, then check if the proxy is applied system wide or just for your web browsers. It is typically easiest to open up your favorite browser and check the settings.
-2. Are there any website restrictions at your location? If so, then it is possible that your IT department is blocking access. Note that RubyGems is only the first hurdle, you will also need access to AWS (meaning Amazon).
-
-If you think that the above is happening, then it is best to talk to your IT department and explain the situation. The general explanation for the "situation" is that you are trying to run a large number of simulations using Amazon Web Services. Some good questions may be:
-
-1. How can I access the internet through a command line (or terminal) using our company's proxy?
-2. When I ping aws.amazon.com, it times out; is there something that may be restricting access to the site?
-3. Can we set the proxy to be machine wide, instead of just on the web browsers?
-
-_________________
-
 ## Energy Modeling Forum
 Post your questions to the forum below for general and OpenStudio specific energy modeling information.
 
@@ -101,7 +87,9 @@ _________________
 ## Submit a Bug
 Please let us know if you find a bug in the OpenStudio software.
 
-<a class="btn btn-primary" role="button" href="https://github.com/NREL/OpenStudio/blob/develop/CONTRIBUTING.md">Submit a Bug</a>
+<a class="btn btn-primary" role="button" href="https://github.com/NREL/OpenStudioApplication/issues">Submit an OpenStudio Application Bug</a>
+
+<a class="btn btn-primary" role="button" href="https://github.com/NREL/openstudio-sketchup-plugin/issues">Submit an OpenStudio SketchUp Plugin Bug</a>
 
 _________________
 

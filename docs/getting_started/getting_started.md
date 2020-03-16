@@ -3,7 +3,7 @@ This page walks you through installing the OpenStudio Application, the basics of
 
 ## Installation Instructions
 OpenStudio Application is supported on 64-bit versions of Windows 7 &ndash; Windows 10, OS X 10.12 &ndash; 10.14, and Ubuntu 18.04.
-OpenStudio Application supports the latest EnergyPlus release which is bundled with the OpenStudio Application installer. The [version compatibility matrix](https://github.com/NREL/OpenStudio/wiki/OpenStudio-Version-Compatibility-Matrix) lists specific versions of EnergyPlus and other dependencies for each version of OpenStudio Application. 
+OpenStudio Application supports the latest EnergyPlus release which is bundled with the OpenStudio Application installer. The dependencies for the OpenStudio Application 1.0.0 include EnergyPlus 9.3.0, Radiance 5.0.a.12, SketchUp 2019 Pro, and Ruby 2.5.5.
 
 ###Installation Steps
 __Download and install OpenStudio Application__

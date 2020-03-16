@@ -1,10 +1,8 @@
 <h1>Radiance and OpenStudio Application</h1>
-This tutorial explains how to use [Radiance](http://www.radiance-online.org/) to simulate the daylight ingress in your OpenStudio Model, allowing for higher fidelity simulations of daylighting-related energy efficiency measures.
-
-For OpenStudio Application, the Radiance simulation option has been refactored (moved) to a measure, eliminating the "daylight simulation engine" selection radio buttons from the app, and modifying the workflow slightly. We've also added support for more shading options, including daylight redirecting louvers.
+This tutorial explains how to use [Radiance](http://www.radiance-online.org/) to simulate the daylight ingress in your OpenStudio Model, allowing for higher fidelity simulations of daylighting-related energy efficiency measures. For the OpenStudio Application, the Radiance simulation option has been refactored (moved) to a [measure](https://bcl.nrel.gov/node/84189).
 
 ## Workflow
-This workflow uses the OpenStudio Application (and the plug-in) to perform a [climate-based daylight simulation](http://climate-based-daylighting.com/doku.php?id=academic:climate-based-daylight-modelling), using Radiance as the lighting simulation engine (in lieu of EnergyPlus' daylight simulation options). For implementation details, and caveats, refer to the OpenStudio-Radiance Reference Guide.
+This workflow uses the OpenStudio Application (and the plug-in) to perform a [climate-based daylight simulation](http://climate-based-daylighting.com/doku.php?id=academic:climate-based-daylight-modelling), using Radiance as the lighting simulation engine (in lieu of EnergyPlus' daylight simulation options).
 
 The process for using Radiance for daylighting analysis in the OpenStudio Application is not dissimilar from using EnergyPlus. The basic steps are as follows, with the required applications in parentheses:
 ### 1. Create (or Import) Building Geometry, Define Thermal Zones & Spaces (SketchUp Plug-in)

@@ -1,5 +1,5 @@
 <h1>Current Features</h1>
-OpenStudio Application is constantly being improved, with a less stable developer release available every 2 weeks and a stable major release quarterly (4 per year). The features that are available in the current major release are described below. To learn what is coming in the future, see the [Planned Features](../getting_started/roadmap.md) page.
+The OpenStudio Application uses the [OpenStudio SDK Version 3.0.0](https://openstudio-sdk-documentation.s3.amazonaws.com/index.html). The features that are available in the current major release are described below. To learn what is coming in the future, see the [Planned Features](../getting_started/roadmap.md) page.
 
 ## As of OpenStudio Application Version 1.0.0
 
@@ -272,5 +272,5 @@ Within EnergyPlus, advanced controls that are not built-in can be implemented ut
 
 - Measure writing guide
 - Lifecycle costing guide
-- Documentation of all modeling commands (SDK) online, updated bi-weekly
+- Documentation of all modeling commands [(SDK) online](https://openstudio-sdk-documentation.s3.amazonaws.com/index.html)
 
