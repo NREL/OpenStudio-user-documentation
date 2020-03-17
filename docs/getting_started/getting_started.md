@@ -56,6 +56,7 @@ The [Parametric Analysis Tool Interface Guide](../reference/parametric_analysis_
 The tutorial below was created before the grid view was added to the Space Types and Thermal Zones tabs. Grid view allows you to view and edit more than one space type or thermal zone at a time. Go to the [OpenStudio Application Interface Guide](../reference/openstudio_application_interface.md) to learn more about grid view.
 
 ### Selecting a Library for Constructions, Loads, and Schedules
+
 Libraries that are included with the OpenStudio Application contain data for constructions, loads, and schedules for 6 vintages across all U.S. climate zones. They also contain data for 9 vintages specific to DEER. The Libraries do not contain any geometry. Load libraries by using the menu under __File/Load Library__. Then select your vintage from the default file set. The Library data is organized such that you can access specific Constructions and Loads or you can apply Construction Sets and Space Types that contain whole packages of subsequent dependent characteristics. For example a Library Space Type contains several specific Loads and associated Schedules for that space type, all of whhich become part of your model if you add the Space Type to your model. You can also load previously generated models as Libraries through the __File/Load Library__ menu by navigating to any OSM file from the browser window that pops up. It can take a few minutes to load. 
 
 ![New OpenStudio Model From Template Dialog](img/menu_libraries.png)
@@ -75,7 +76,6 @@ Vintages:
 Climate Zones: 1 - 8
 
 ![Climate Zone Map](img/create_model/climate_zones.png)
-
 
 ### SketchUp Plugin - Building Envelope
 For additional information on the SketchUp Plugin interface, go to the [OpenStudio SketchUp Plugin Interface Guide](../reference/sketchup_plugin_interface.md) section.

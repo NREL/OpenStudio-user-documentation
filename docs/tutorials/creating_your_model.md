@@ -6,24 +6,23 @@ The building envelope is created using the SketchUp OpenStudio Plug-in. Refer to
 
 ------
 
-### Choosing a template
-Templates contain data for constructions, loads, and schedules for 6 vintages across all U.S. climate zones. Templates do not contain any geometry. Load templates by using the menu under __Extentions/OpenStudio User Scripts/On-Demand Template Generators/Space Type and Construction Set Wizard__. Then select your type of building, vintage, and climate zone from the dialog. You can also get standard space types for that template by choosing "true" on the dialog. Space types can define internal loads, schedule sets, and construction sets.
+### Choosing a Library
 
+Libraries that are included with the OpenStudio Application contain data for constructions, loads, and schedules for 6 vintages across all U.S. climate zones. They also contain data for 9 vintages specific to DEER. The Libraries do not contain any geometry. Load libraries by using the menu under __File/Load Library__. Then select your vintage from the default file set. The Library data is organized such that you can access specific Constructions and Loads or you can apply Construction Sets and Space Types that contain whole packages of subsequent dependent characteristics. For example a Library Space Type contains several specific Loads and associated Schedules for that space type, all of whhich become part of your model if you add the Space Type to your model. You can also load previously generated models as Libraries through the __File/Load Library__ menu by navigating to any OSM file from the browser window that pops up. It can take a few minutes to load. 
 
-![New OpenStudio Model From Template Dialog](img/menu_template.png)
+![New OpenStudio Model From Template Dialog](img/menu_libraries.png)
 
-*Above: Load a new template using the menu.*
+*Above: Load a new Library using the menu.*
 
-![New OpenStudio Model From Template Dialog](img/from_template.png)
+It is a good practice to regularly clear the Libraries that load when the OpenStudio Application opens by using the menu under __Preferences/Change Default Libraries__ and selecting __Restore Defaults__. If the OpenStudio Application is loading several Libraries it will slow down significantly.
+
+![New OpenStudio Model From Template Dialog](img/default_libraries.png)
 
 Vintages:
 
-- DOE Ref Pre-1980
-- DOE Ref 1980-2004
-- DOE Ref 2004
-- 90.1-2010
-- 189.1-2009
-- 90.1-2007
+- DOE reference (Pre-1980, 1980-2004)
+- ASHRAE standard (189.1-2009, 90.1-2004, 90.1-2007, 90.1-2010, 90.1-2013)
+- DEER (pre-1975, 1985, 1996, 2003, 2007, 2011, 2014, 2015, 2017)
 
 Climate Zones: 1 - 8
 
