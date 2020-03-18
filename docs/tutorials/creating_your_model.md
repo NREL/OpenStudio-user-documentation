@@ -2,118 +2,7 @@
 After completing the [Introductory Tutorial](../getting_started/getting_started.md#introductory-tutorial), you can find additional information on using OpenStudio by topic below.
 
 ## Envelope
-The building envelope is created using the SketchUp OpenStudio Plug-in. Refer to the [OpenStudio SketchUp Plug-in Interface Guide](../reference/sketchup_plugin_interface.md) to learn more about the interface and toolbars for the plug-in.
-
-------
-
-### Choosing a Library
-
-Libraries that are included with the OpenStudio Application contain data for constructions, loads, and schedules for 6 vintages across all U.S. climate zones. They also contain data for 9 vintages specific to DEER. The Libraries do not contain any geometry. Load libraries by using the menu under __File/Load Library__. Then select your vintage from the default file set. The Library data is organized such that you can access specific Constructions and Loads or you can apply Construction Sets and Space Types that contain whole packages of subsequent dependent characteristics. For example a Library Space Type contains several specific Loads and associated Schedules for that space type, all of whhich become part of your model if you add the Space Type to your model. You can also load previously generated models as Libraries through the __File/Load Library__ menu by navigating to any OSM file from the browser window that pops up. It can take a few minutes to load. 
-
-![New OpenStudio Model From Template Dialog](img/menu_libraries.png)
-
-*Above: Load a new Library using the menu.*
-
-It is a good practice to regularly clear the Libraries that load when the OpenStudio Application opens by using the menu under __Preferences/Change Default Libraries__ and selecting __Restore Defaults__. If the OpenStudio Application is loading several Libraries it will slow down significantly.
-
-![New OpenStudio Model From Template Dialog](img/default_libraries.png)
-
-Vintages:
-
-- DOE reference (Pre-1980, 1980-2004)
-- ASHRAE standard (189.1-2009, 90.1-2004, 90.1-2007, 90.1-2010, 90.1-2013)
-- DEER (pre-1975, 1985, 1996, 2003, 2007, 2011, 2014, 2015, 2017)
-
-Climate Zones: 1 - 8
-
-![Climate Zone Map](img/create_model/climate_zones.png)
-
-------
-
-### Creating and Customizing the Envelope
-Drawing a floor plan in SketchUp and extruding up from floor plan using the "The Space Diagram" tool(![New Space Diagram Icon](img/plugin_reference_guide/extrude.png)) is one way to create your envelope. The video below demonstrates this workflow.
-
-Creating geometry from photographs is another option. To learn more about it watch the [photo matching tutorial playlist on YouTube](http://youtu.be/6IPZIrpl5vs?list=PL8CC6E4D9908F17BF).
-
-<iframe width="640" height="360" src="https://www.youtube.com/embed/wzzY_W2WELo?start=44&end=129" allowfullscreen></iframe>
-
-*Above: This video shows you how to create your building envelope. It uses the OpenStudio SketchUp Plug-in.*
-
-After defining the building envelope, you use the Surface Matching tool to set the boundary conditions. These will allow thermal connections between spaces and will inform OpenStudio about what construction to apply.
-
-------
-
-### Fenestration
-There are many ways to add windows to the building envelope.
-
-- Use the "Project Loose Geometry" tool for adding window.
-
-<iframe width="640" height="360" src="https://www.youtube.com/embed/wzzY_W2WELo?start=129&end=171" allowfullscreen></iframe>
-
-*Above: This video shows how to create windows using the "Project Loose Geometry" tool.*
-
-- Set a window to wall ratio, for the whole building or for space type, by selecting all or just a space and going to `Plugins->OpenStudio User Scripts->Add or Alter Model Elements->Set Window to Wall Ratio` and edit or use defaults. This script will remove all existing windows.
-
-![User Script Menu](img/create_model/plugin_window_to_wall_1.png)
-
-*Above: Menu for setting the window to wall ratio using an OpenStudio script.*
-
-![Window-to-Wall Ratio Dialog](img/create_model/plugin_window_to_wall_2.png)
-
-*Above: Dialog for setting the window to wall ratio.*
-
-------
-
-### Defining Conditions for Heat Transfer Through Surfaces
-- Choose the "Render by Boundary Condition" (![Render by Boundary Condition Icon](img/plugin_reference_guide/render_boundary.png)) setting.
-- Check your model to make sure the boundary settings are correct. *Blue* indicates exterior surfaces, *green* indicates interior walls, and *brown* indicates floors. You can use the SketchUp "Section Plane" tool to view a cross section of the model and see interior surfaces.
-- If you have *green* surfaces on the outside of the model, use the Surface Matching (![Surface Matching Tool Icon](img/plugin_reference_guide/SurfaceMatchingSelected-24.png)) tool to open up the dialog and hit "Intersect the
-Entire Model." This will not work if you are inside a single space when you run it.
-- Then select "Match the Entire Model" to correct the model.
-
-![Surface Matching](img/create_model/surface_matching.png)
-
-*Above: Surface Matching window shown.*
-
-<!--
-### Air Walls
-
-------
-
-### Interior Partition Groups
--->
-
-------
-
-### Site Shading
-To create a shading group use the "New Shading Group" (![New Shading Surface Group](img/plugin_reference_guide/NewShading-24.png "New Shading Shading")). The new group looks like a transparent purple box. Double click on box to enter the group and draw the shading surface.
-
-![Surface Shading Group](img/create_model/shading_group.png "Surface Shading Group")
-
-*Above: Surface Matching dialog shown.*
-
-Add overhangs by:
-
-- Drawing the shading surface using the SketchUp drawing tools or use a script to add.
-
-![Shading](img/create_model/draw_shading.png "Draw Shading Surface")
-
-*Above: Shading can be drawn on using photo matching.*
-
-- Using a script to automatically add overhangs.
-
-<iframe width="640" height="360" src="https://www.youtube.com/embed/wzzY_W2WELo?start=295&end=360" allowfullscreen></iframe>
-
-*Above: This video shows you how search for specific surfaces and use a script to add overhangs to those surfaces.*
-
-<!-- ### Building Rotation -->
-
-## OpenStudio Application
-To assign schedules, add loads, add HVAC systems, and more, open your model in the OpenStudio application. Open your model directly from the SketchUp Plug-in by hitting the OpenStudio icon on the toolbar or by opening a file from the OpenStudio application.
-
-![Open Model In OpenStudio Application](img/create_model/open_app.png)
-
-*Above: Select the OpenStudio icon to open the file and edit it in the OpenStudio application.*
+The building envelope is created using the either the integrated FloorspaceJS interface or the SketchUp OpenStudio Plug-in. Refer to the [FloorspaceJS Interface Guide](../reference/geometry_editor.md) or the [OpenStudio SketchUp Plug-in Interface Guide](../reference/sketchup_plugin_interface.md) to learn more about the available interfaces and for creating OpenStudio geometry.
 
 ------
 
@@ -131,9 +20,6 @@ The tab can also be used to configure and turn daylight savings time on and off.
 ------
 
 ## Schedules
-To create and edit schedules in the OpenStudio application go to the schedules tab. Check out the [OpenStudio Application Interface Guide](../reference/openstudio_application_interface.md) for an overview of the interface.
-
-------
 
 ### Inspecting and Adjusting Schedule Sets
 A Schedule Set is a collection of schedules for building activities or elements.
