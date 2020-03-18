@@ -77,46 +77,12 @@ Climate Zones: 1 - 8
 
 ![Climate Zone Map](img/create_model/climate_zones.png)
 
+### FloorspaceJS - Building Envelope
+
+For additional information on the integrated FloorspaceJS interface, go to the [FloorspaceJS Interface Guide](../reference/geometry_editor.md)
+
 ### SketchUp Plugin - Building Envelope
-For additional information on the SketchUp Plugin interface, go to the [OpenStudio SketchUp Plugin Interface Guide](../reference/sketchup_plugin_interface.md) section.
-
-<iframe width="640" height="360" src="https://www.youtube.com/embed/wzzY_W2WELo?start=44&end=129" allowfullscreen></iframe>
-
-*Above: This video shows you how to create your building envelope. It uses the OpenStudio SketchUp Plugin.*
-
-### SketchUp Plugin - Space Types and Thermal Zones
-<iframe width="640" height="360" src="https://www.youtube.com/embed/8LTexVna_vw" allowfullscreen></iframe>
-
-*Above: This video shows you how to assign space types, thermal zones, and thermostats to the spaces in your model. It uses the OpenStudio SketchUp Plugin.*
-
-### Site, Facility, and Basic Run
-<iframe width="640" height="360" src="https://www.youtube.com/embed/tgeepiBltJI" allowfullscreen></iframe>
-
-*Above: This video goes into the OpenStudio application, adds weather data, shows the outline view in the facility tab, and runs a simulation with ideal air loads.*
-
-<iframe width="640" height="360" src="https://www.youtube.com/embed/9uBcb3NBQ84" allowfullscreen></iframe>
-
-*Above: Version 1.9.0: This video demonstrates the new Spaces tab and the redesigned Facilities and Site tab.*
-
-### Space Types, Internal Loads, and Schedules
-<iframe width="640" height="360" src="https://www.youtube.com/embed/PCcxruCaZO0" allowfullscreen></iframe>
-
-*Above: This video demonstrates how you can inspect, alter, and apply resource objects in OpenStudio.*
-
-### Constructions, Materials, and the Building Component Library (BCL)
-<iframe width="640" height="360" src="https://www.youtube.com/embed/8KdVvBds_30" allowfullscreen></iframe>
-
-*Above: This video shows you how to obtain construction and material objects from the Building Component Library and load them into your current model.*
-
-### HVAC - Zone Equipment, Air Loops, and Plant Loops
-<iframe width="640" height="360" src="https://www.youtube.com/embed/DKLnZaNoRX0" allowfullscreen></iframe>
-
-*Above: This video shows you how to add HVAC systems. It introduces the variable and scripts tabs and runs a simulation with the resulting model.*
-
-### Service Hot Water
-<iframe width="640" height="360" src="https://www.youtube.com/embed/jUJhi6YH51E" allowfullscreen></iframe>
-
-*Above: This video shows you how create models using service hot water. This includes water heaters, water use connections, water use equipment, and other associated objects.*
+For additional information on the SketchUp Plugin interface, go to the [OpenStudio SketchUp Plugin Interface Guide](../reference/sketchup_plugin_interface.md).
 
 <!--
 ## Introductory Tutorial
