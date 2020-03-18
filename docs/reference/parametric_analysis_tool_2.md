@@ -44,10 +44,6 @@ PAT 2.1.0 functionality is broken down into six tabs along the left side of the 
 
 In general, a PAT workflow moves through the six vertical tabs from top to bottom.  PAT allows the user to specify design alternatives manually or automate the process using a selection of algorithms - e.g. sampling, optimization, etc.  The analysis mode is selected at the top of tab one, and dictates whether tabs two or three are used along with the types of computing resources (local or cloud) that can be selected on tab four.  The video below shows the creation of a new project and walks through the workflow to create and run a **manual** analysis.
 
-<iframe width="640" height="360" src="https://www.youtube.com/embed/a3lg7UbE6JU" allowfullscreen></iframe>
-
-*Above: PAT 2.0.0 introduction video for manual analysis mode*
-<br><br>
 ___________________
 
 ## Load a Seed Model and Weather File
