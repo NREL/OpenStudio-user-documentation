@@ -136,6 +136,16 @@ Within EnergyPlus, advanced controls that are not built-in can implemented utili
 - Utility rates can include time-of-use, demand charges, ratchets, seasonal values, etc.
 - Utility rates for Xcel Energy CO pre-made; users pick from list
 
+### Import and Export Options
+
+- IDF import (geometry, constructions, loads, thermal zones, and schedules only)
+- IDF export (full model including HVAC)
+- gbXML import (geometry, constructions, thermal zones, and schedules only)
+- gbXML export (geometry, constructions, and thermal zones only)
+- SDD import (simulation format - full model including HVAC)
+- SDD export (input format - geometry, constructions, and thermal zones only)
+- IFC import (geometry only)
+
 ### Analysis of Existing Buildings
 
 - Enter utility bills for all fuel types in building
@@ -199,12 +209,12 @@ Within EnergyPlus, advanced controls that are not built-in can implemented utili
 
 The following applications are available to work with the OpenStudio SDK installation:
 
-### ResultsViewer
+### [Data Viewer](https://github.com/NREL/wex/wiki/DView)
 
 - View the detailed timeseries simulation results
 - Create interactive line graphs and heat maps
 
-### Parametric Analysis Tool (PAT)
+### [Parametric Analysis Tool (PAT)](../reference/parametric_analysis_tool_2.md)
 
 - Select a baseline model to serve as the starting point for a parametric analysis
 - Drag in Measures and set their input values
