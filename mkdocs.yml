@@ -13,7 +13,6 @@ pages:
 - [tutorials/tutorial_bcl.md, Tutorials, Building Component Library]
 - [tutorials/utility_rate_tariffs.md, Tutorials, Utiity Rate Tariffs]
 - [tutorials/life_cycle_costing_examples.md, Tutorials, Life Cycle Cost Analysis]
-- [tutorials/tutorial_gbxmlimport.md, Tutorials, Import gbXML]
 
 - [reference/geometry_editor.md, Reference, FloorspaceJS]
 - [reference/command_line_interface.md, Reference, Command Line Interface]
