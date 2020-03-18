@@ -1,15 +1,11 @@
 <h1>OpenStudio Results Measure</h1>
 
 ## Measure Overview
-In OpenStudio 1.8.1 and later this measure replaces the monthly end use overview as the default measure on any simulation. You don't have to add it to your workflow, it just runs. This measure creates high level tables and charts pulling both from model inputs and EnergyPlus results, all data is in IP units. It has building level information as well as detail on space types, thermal zones, HVAC systems, envelope characteristics, and economics. Click the heading above a chart to view a table of the chart data. If you have OpenStudio 1.7.5 or later, you can also download a copy of this from the [BCL](https://bcl.nrel.gov/node/82918), however offline viewing of charts within the OpenStudio Application requires 1.8.1 or later. If you are viewing the report through a web browser you won't see charts if you are offline, but you will still see tables. While the report generally uses high level model data or tabular results, a few sections do request hourly or monthly time-series data. This applies to the HVAC Load Profiles and Zone Conditions sections.
-
-<iframe width="640" height="360" src="https://www.youtube.com/embed/PlrWE3ugcdE" allowfullscreen></iframe>
-
-*Above: This video demonstrates the 1.9.0 Release with the Reporting Measure.*
+This measure creates high level tables and charts pulling both from model inputs and EnergyPlus results, all data is in IP units. It has building level information as well as detail on space types, thermal zones, HVAC systems, envelope characteristics, and economics. Click the heading above a chart to view a table of the chart data. You can download a copy of this from the [BCL](https://bcl.nrel.gov/node/82918). If you are viewing the report through a web browser you won't see charts if you are offline, but you will still see tables. While the report generally uses high level model data or tabular results, a few sections do request hourly or monthly time-series data. This applies to the HVAC Load Profiles and Zone Conditions sections.
 
 The report is broken down into 21 sections which can be navigated using the table of contents at the left side of the report. If the table of contents and the main body of the report start to overlap with each other,  increase the width of your application or web browser window. Each section has one or moore tables or charts. Be default where there is a chart, table data is hidden, but you can expand it by clicking on the blue title above the chart that says "view table". If there is no data for a section, the header for the section will still show but you will see a message that says "No Data to Show for ...". For some tables or charts within a section the table may be hidden if there isn't any content. This is true for example for Renewable Energy Source Summary in  Model Summary, Fuel Tables in  Monthly Overview, and Thermal Zones in Zone Equipment Detail.
 
-As this measure develops more data may be added to specific sections and new sections may be added, but we don't want this to be an all purpose measure. It is meant to provide general data that you would typically want on any simulation. If you want to trouble shoot specific aspects of your model or have use case or specific reporting requirements, you can add additional reporting measures to the workflow. As described in the "Developing Your Own Reporting Measures" section below, we hope both internally and externally to see the same framework and charting libraries used as much as possible. This will provide a more consistent experience for users and measure writers.
+As this measure develops more data may be added to specific sections and new sections may be added, but we don't want this to be an all purpose measure. It is meant to provide general data that you would typically want on any simulation. If you want to trouble shoot specific aspects of your model or have use case or specific reporting requirements, you can add additional reporting measures to the workflow. As described in the [Developing Your Own Reporting Measures](../reference/openstudio_results_measure/#developing-your-own-reporting-measures) section below, we hope both internally and externally to see the same framework and charting libraries used as much as possible. This will provide a more consistent experience for users and measure writers.
 
 The rest of this section describes the specific sections of the current version of the measure.
 
@@ -154,14 +150,14 @@ This section has two tables. The lists total and net values for both site and so
 *Above: Site and Source Summary section.*
 
 ## Schedule Overview
-This section provides a small chart for each schedule used in the model. This looks very much like what you can see in the Schedule Tab of the OpenStudio application except that all of the possible day profiles for a schedule are overlaid on each other. Rules are listed by their priority with a description for the days of teh week and dates of the year they are applicable. The colors for the default profile adn rules match what is used in the application. You can expand the table for this section to see the use count for each schedule.
+This section provides a small chart for each schedule used in the model. All of the possible day profiles for a schedule are overlaid on each other. Rules are listed by their priority with a description for the days of teh week and dates of the year they are applicable. The colors for the default profile adn rules match what is used in the application. You can expand the table for this section to see the use count for each schedule.
 
 ![Schedule Overview charts](img/openstudio_results/schedule_overview.png)
 
 *Above: Schedule Overview charts.*
 
 ## Measure Arguments
-If you are running this report in OpenStudio 8.1 or later all sections are automatically shown. If you add it to the workflow then user arguments will become visible. For this measure there is a check box for each section to determine if you want to generate that section or not. You could use this to create a streamline report with only the sections are are interested visible. If you disable sections that request time-series data, then those output variables wont' be requested, resulting in a smaller SQL file. Since most sections in this report only request tabular data, it won't affect much, but for other future reports this coudl be more useful. The Zone Conditions section requests hourly zone temperature and humidity values and the HVAC Load Profiles section requests monthly outdoor air dry bulb temperatures.
+For this measure there is a check box for each section to determine if you want to generate that section or not. You could use this to create a streamline report with only the sections are are interested visible. If you disable sections that request time-series data, then those output variables won't be requested, resulting in a smaller SQL file. Since most sections in this report only request tabular data, it won't affect much, but for other future reports this could be more useful. The Zone Conditions section requests hourly zone temperature and humidity values and the HVAC Load Profiles section requests monthly outdoor air dry bulb temperatures.
 
 ![View of Arguments in OpenStudio Results measure](img/openstudio_results/measure_args.png)
 
@@ -270,9 +266,5 @@ Once you have defined your need to tell the measure to use the new section metho
 ```
 
 Adding that line of code will not only add the new section to the arguments for the measure, but will also call the method in the run method of the measure to gather the data and generate an HTML table. If you don't want to extend the os_lib_reporting.rb file, you can create your own version that functions in the same way, but only has code for sections you are using. You just need to modify this line at the top of the "measure.rb" file to point to your library ```require "#{File.dirname(__FILE__)}/resources/os_lib_reporting"```. Below is a screenshot of the resting Tasty Treats section. If you want to change the title in the HTML file it is in this code in the "report.html.erb" file in the "resources" directory ```<title>OpenStudio Results</title>```.
-
-![Example section with two tables](img/openstudio_results/example_section.png)
-
-*Above: Example section with two tables.*
 
 You can write completely custom measure reports that don't look anything like this, and use different html and charting technologies. This framework is just provided as a way to make reports where all you want to worry about is how to get the data you want to see, and not how to generate the HTML code.
