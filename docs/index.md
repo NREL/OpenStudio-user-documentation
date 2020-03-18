@@ -11,45 +11,26 @@
           <p>Review the list of features and building elements that can be modeled.</p>
           <p><a href="getting_started/features.md" class="btn btn-primary" role="button">Current Features</a></p>
           <p><a href="getting_started/roadmap.md" class="btn btn-primary" role="button">Planned Features</a></p>
+          <p>Learn what measures are, how to use them for various use cases, and where to find them.</p>
+          <p><a href="getting_started/about_measures.md" class="btn btn-primary" role="button">About Measures</a></p>
         </div>
       </div>
     </div>
     <div class="col-sm-6 col-md-4">
-      <div class="thumbnail"> <img src="img/model_thumb.png" alt="Openstudio Model Image">
+      <div class="thumbnail"> <img src="img/os_thumb.png" alt="OpenStudio Logo">
         <div class="caption">
           <h3>References</h3>
           <p>The OpenStudio SDK only supports the Command Line Interface for running measure based workflows quickly and easily. If you are looking for a GUI to generate OpenStudio models and workflows, you may consider the OpenStudio Application. More information about the Application is available <a href="https://www.openstudio.net/new-future-for-openstudio-application" >here.</a></p>
           <p><a href="reference/command_line_interface.md" class="btn btn-primary" role="button">Command Line Interface</a></p>
-        </div>
-      </div>
-    </div>
-    <div class="col-sm-6 col-md-4">
-      <div class="thumbnail"> <img src="img/measures_thumb.png" alt="Daylighting Measure Example">
-        <div class="caption">
-          <h3>Speed Up Your Workflow With Measures</h3>
-          <p>Learn what measures are, how to use them for various use cases, and where to find them.</p>
-          <p><a href="getting_started/about_measures.md" class="btn btn-primary" role="button">About Measures</a></p>
           <p>Can't find the measures you want, or need to customize an existing measure? The Measure Writing Guide will help you get started.</p>
           <p><a href="reference/measure_writing_guide.md" class="btn btn-primary" role="button">Measure Writing Guide</a></p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-md-4">
-      <div class="thumbnail"> <img src="img/comparative_thumb.png" alt="Analysis Charts">
-        <div class="caption">
-          <h3>Comparative Analysis</h3>
           <p>Learn how to create design alternatives as part of a parametric study using the OpenStudio Parametric Analysis Tool (PAT). Run simulations locally and on the cloud.</p>
           <p><a href="reference/parametric_analysis_tool_2.md" class="btn btn-primary" role="button">Parametric Analysis Tool</a></p>
         </div>
       </div>
     </div>
-    <div class="col-md-4">
-      <div class="thumbnail">
+    <div class="col-sm-6 col-md-4">
+      <div class="thumbnail"> <img src="img/os_thumb.png" alt="OpenStudio Logo">
         <div class="caption">
           <h3>Help &amp; Additional Resources</h3>
           <p>Find professional training for OpenStudio SDK.</p>
