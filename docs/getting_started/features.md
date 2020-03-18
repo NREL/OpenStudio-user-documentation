@@ -5,10 +5,6 @@ The OpenStudio Application uses the [OpenStudio SDK Version 3.0.0](https://opens
 
 ### Building Geometry/3D CAD
 
-- Quickly draw 3D building geometry using free plugin for SketchUp
-- Building envelope, shading on windows, shading from other buildings, etc.
-- Draw detailed shapes, trace floor plans, or a combination
-- Use wizard to create standard shapes (H, L, E, Courtyard, Rectangle)
 - Import geometry from gbXML files (from Revit, GreenBuildingStudio, Trace700, etc.)
 - Import geometry from EnergyPlus files (IDF)
 - Import model from SDD files (California Energy Commission)
@@ -16,6 +12,21 @@ The OpenStudio Application uses the [OpenStudio SDK Version 3.0.0](https://opens
 - Assign and visually inspect space types assignments
 - Define thermal zones and add/remove spaces
 - Assign and see building envelope constructions
+
+#### FloorspceJS
+
+- Draw 2D building geometry (that will be extruded to 3D) using the built-in FloorspaceJS interface
+- Trace images of floor plans, or maps 
+- Building envelope, shading on windows, shading from other buildings, etc.
+- Assign constructions, space types, thermal zones
+- Add daylighting sensors
+
+#### Sketchup Plugin
+
+- Draw 3D building geometry using free plugin for SketchUp
+- Building envelope, shading on windows, shading from other buildings, etc.
+- Draw detailed shapes, trace floor plans, or a combination
+- Use wizard to create standard shapes (H, L, E, Courtyard, Rectangle)
 - Add daylighting sensors
 
 ### Building Constructions and Materials
@@ -267,10 +278,4 @@ Within EnergyPlus, advanced controls that are not built-in can be implemented ut
 - BCL can be used to share building components
 - Instantaneous world-wide distribution and updating of content
 - Allows utilities to ensure uniformity and best-practices across many energy consulting firms
-
-### Documentation
-
-- Measure writing guide
-- Lifecycle costing guide
-- Documentation of all modeling commands [(SDK) online](https://openstudio-sdk-documentation.s3.amazonaws.com/index.html)
 

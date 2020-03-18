@@ -398,7 +398,7 @@ The HVAC Systems tab is used to create, inspect, and edit air and plant loops. T
 
 Hit the green plus button to add a loop.
 
-[![Add HVAC System Dialog](img/create_model/add_hvac.png)]img/create_model/add_hvac.png)
+[![Add HVAC System Dialog](img/create_model/add_hvac.png)](img/create_model/add_hvac.png)
 
 *Above: Add an HVAC system to your model.*
 
