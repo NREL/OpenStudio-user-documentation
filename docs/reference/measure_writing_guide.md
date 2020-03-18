@@ -381,17 +381,6 @@ This next example illustrates the process of going from an idea for a measure th
 #### The Task
 *"Write a measure that will remove all lights objects currently in the "Enclosed Office" space type and replace them with new lights objects that have a lighting power density (LPD) of 10 W/m2."*
 
-#### Figuring Out the Modeling Approach
-The first thing to do is understand how the measure would be modeled in OpenStudio, and make a list of the objects involved. The easiest way to do this is to open the OpenStudio Application and look through the GUI. In this case, we'll start on the "Space Types" tab.
-
-![guide image2](img/measure-writing-guide/2.png)
-
-On this tab, first click on the first object (in the left column) is "Space Type."  Inside the Space Type, next to the lights icon, the term "Definition" appears. The name of this particular definition is "ASHRAE_90.1-2004_Office_LPD."  To learn more about this definition, go to the "Loads" tab.
-
-![Guide image3](img/measure-writing-guide/3.png)
-
-On the left side under the "Loads" tab is a category called "Lights Definitions."  Under this category is the definition "ASHRAE_90.1-2004_Office_LPD" that was referenced on the "Space Types" tab. One field is titled "Energy Per Space Floor Area" with units of "W/ft2."  Although the GUIs may show IP units, the methods of the OpenStudio model are all written in SI units.
-
 #### The Task, in OpenStudio Terms
 *"Find the ```SpaceType``` called "```Enclosed Office```". Replace any ```LightsDefinitions``` referenced by ```Lights``` in this ```SpaceType``` with a new ```LightsDefinition```, where "Energy Per Space Floor Area" = 10 W/m2.*"
 
