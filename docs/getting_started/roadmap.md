@@ -8,7 +8,7 @@ __Additional areas of planned FY20 development:__
 - Alignment of OpenStudio Standards with ASHRAE 90.1 (performed by PNNL)
 - Advanced Occupant Modeling for Commercial Buildings (developed by LBNL)
 
-## OpenStudio 3.0.0 (April 2020)
+## OpenStudio SDK 3.0.0 (April 2020)
 
 - All updates, bug fixes, and new features in OpenStudio SDK 2.9.x
 - Updated development dependencies and supported platforms
