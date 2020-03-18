@@ -61,4 +61,4 @@ If you plan to use the OpenStudio SDK Ruby bindings via command prompt, you must
 
 ## Quick Start Guide to the Parametric Analysis Tool (PAT)
 
-The [Parametric Analysis Tool Quick Start Guide (PDF)](img/pdfs/PAT-Quick_Start_Guide.pdf) and the [Parametric Analysis Tool Interface Guide](../reference/parametric_studies.md) provide an introduction to the interface and workflow for creating multiple design alternatives from a seed model.
+The [Parametric Analysis Tool Quick Start Guide (PDF)](img/pdfs/PAT-Quick_Start_Guide.pdf) and the [Parametric Analysis Tool Interface Guide](../reference/parametric_analysis_tool_2.md) provide an introduction to the interface and workflow for creating multiple design alternatives from a seed model.

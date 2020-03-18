@@ -44,7 +44,7 @@
         <div class="caption">
           <h3>Comparative Analysis</h3>
           <p>Learn how to create design alternatives as part of a parametric study using the OpenStudio Parametric Analysis Tool (PAT). Run simulations locally and on the cloud.</p>
-          <p><a href="reference/parametric_studies.md" class="btn btn-primary" role="button">Parametric Analysis Tool</a></p>
+          <p><a href="reference/parametric_analysis_tool_2.md" class="btn btn-primary" role="button">Parametric Analysis Tool</a></p>
           <p>Move beyond PAT by running large scale analyses on the cloud.</p>
           <p><a href="tutorials/large_scale_analysis.md" class="btn btn-primary" role="button">Large Scale Analysis</a></p>
         </div>
