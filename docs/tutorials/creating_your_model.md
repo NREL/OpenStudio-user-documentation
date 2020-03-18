@@ -48,11 +48,6 @@ The lower profile view is a navigation for when you are zoomed to 15-minute or 1
 [![Schedules Editor Tab](img/create_model/schedules.png "Click to view")](img/create_model/schedules.png)
 
 *Above: An annotated screenshot of the schedules editing interface. Click image for a large view of the image.*
-
-<iframe width="640" height="360" src="https://www.youtube.com/embed/PCcxruCaZO0?start=210&end=788" allowfullscreen></iframe>
-
-*Above: This video demonstrates how you can inspect, alter, and apply resource objects in an older version of the  OpenStudio Application.*
-
 <!--
 - Assigning Schedules and Schedule Sets
 - Other Types of Schedules
@@ -73,10 +68,6 @@ Construction sets do not have to be complete sets. For example, you can have a c
 [![Construction Sets Tab](img/create_model/construct_set.png "Click to view")](img/create_model/construct_set.png)
 
 *Above: This screenshot shows an example of a construction set added from the library.*
-
-<iframe width="640" height="360" src="https://www.youtube.com/embed/8KdVvBds_30" allowfullscreen></iframe>
-
-*Above: This video shows you how to obtain construction and material objects from the Building Component Library and load them into your current model.*
 
 ------
 
@@ -103,7 +94,6 @@ Materials also have "Measure Tags" as optional inputs that are used by measures.
 [![Materials Tab](img/create_model/materials.png "Click to view")](img/create_model/materials.png)
 
 *Above: Edit and create materials on this tab.*
-
 <!--
 Tutorials
 
@@ -142,11 +132,6 @@ Internal mass is different from the other loads in that it does not use fuel; ra
 assigned to a construction object.
 
 Water Use Equipment is also unique in that it takes schedules, and is not part of a space type. Water Use Equipment is applied in the HVAC Systems Tab.
-
-<iframe width="640" height="360" src="https://www.youtube.com/embed/PCcxruCaZO0?start=106&end=209" allowfullscreen></iframe>
-
-*Above: This video demonstrates how you can inspect, alter, and apply resource objects in the OpenStudio Application.*
-
 <!--
 #### Tutorials
 - Adjusting Internal Loads
@@ -213,19 +198,11 @@ The space types define loads such as lighting or electric equipment as simple ar
 ### Measure Tags
 Measure tags are used by scripts we call measures. Measure tags identify intended use of space types and constructions for School and office AEDG measures. If you are not using measures you will not need to complete these.
 
-<iframe width="640" height="360" src="https://www.youtube.com/embed/uxpIcEbxPbw" allowfullscreen></iframe>
-
-*Above: This video shows how to use measure tags.*
-
 ### Custom
 Use the checkbox at the top of each column to select items that you want to have be part of the custom view in the grid. This allows you to compare important settings side-by-side.
 
 ### Working with Space Types in the SketchUp Plug-in
 The video below shows how to work with space types in the Plug-in.
-
-<iframe width="640" height="360" src="https://www.youtube.com/embed/8LTexVna_vw?end=234" allowfullscreen></iframe>
-
-*Above: This video shows you how to assign space types and download space types from the Building Component Library (BCL). It uses the OpenStudio SketchUp Plug-in.*
 
 ------
 
@@ -244,10 +221,6 @@ Measures are scripts that can quickly alter your model or create different repor
 The Facility tab includes settings for your building, stories, shading, and exterior equipment. The Building Sub-tab contains top level (default) construction, schedule, or space type assignments, and sets the rotation of the building. Settings that customize each story, shading, and exterior equipment can edited within the remaining tabs.
 
 To view and edit the spaces in your model, use the Spaces tab below the Facility tab on the left.
-
-<iframe width="640" height="360" src="https://www.youtube.com/embed/9uBcb3NBQ84" allowfullscreen></iframe>
-
-*Above: This video demonstrates the new Spaces tab and the redesigned Facilities and Site tab.*
 
 [![Facility Tab](img/create_model/facility.png "Click to view")](img/create_model/facility.png)
 
@@ -292,10 +265,6 @@ Some items are not editable within the Spaces tab. These items are within the Su
 OpenStudio's thermal zones parallels the EnergyPlus zone. A thermal zone represents an isothermal volume of air that may have only one thermostat. The OpenStudio thermal zone forms the connection point between the air conditioned space and the  HVAC equipment. Thermal zones can contain one or more spaces. An OpenStudio space contains 3 dimensional geometry and thermal loads. When OpenStudio performs an EnergyPlus simulation, the space objects associated with each thermal zone are geometrically combined, the space loads are averaged, and the ventilation rates from each space are added together.
 
 Setting up thermal zones in the SketchUp Plug-in is shown below.
-
-<iframe width="640" height="360" src="https://www.youtube.com/embed/8LTexVna_vw?start=240&end=438" allowfullscreen></iframe>
-
-*Above: This video shows you how to assign space types and download space types from the Building Component Library (BCL). It uses the OpenStudio SketchUp Plug-in.*
 
 A thermostat must be defined before running an EnergyPlus simulations with connected HVAC systems. Zone equipment, thermostat, and humidistat settings can be viewed and edited on this tab. Click on the name of and item and you can inspect it in the "Edit" panel on the right.
 
@@ -408,10 +377,6 @@ Shared plenums will be colored the same and will match the color selected for th
 
 *Above: Click image to view a larger version.*
 
-<iframe width="640" height="360" src="https://www.youtube.com/embed/n_u3WT2tX1Y" allowfullscreen></iframe>
-
-*Above: This video demonstrates how to create the geometry for and then hook up supply and return air plenums.*
-
 ------
 
 <!--
@@ -442,10 +407,6 @@ Optionally you can associate the equipment with a space. There is no direct ener
 The equipment can be anything that uses water, hot or cold. The definition contains a peak flow rate and a target temperature schedule. Hot and cold water will mix to reach the target temperature at the fixture.
 
 Click the water main, sewer, or makeup water to go back to the water mains editor. If you have a plant loop associated with the water use connection the "Loop" button will take you to the loop.
-
-<iframe width="640" height="360" src="https://www.youtube.com/embed/jUJhi6YH51E?end=486" allowfullscreen></iframe>
-
-*Above: This video shows you how create models using service hot water. This includes water heaters, water use connections, water use equipment, and other associated objects.*
 
 ------
 
@@ -480,14 +441,6 @@ Click the shaded portion of any column headers that you want to view that column
 
 No provision was made to delete a case or walk in within the grid view. To delete a case or walk in, assign it to a rack, then delete it from the layout view. 
 
-<iframe width="640" height="360" src="https://www.youtube.com/embed/iHTDiHif2_U" allowfullscreen></iframe>
-
-*Above: This video demonstrates the new refrigeration features added to OpenStudio 1.2.0. These feature will be expanded in future releases.*
-
-<iframe width="640" height="360" src="https://www.youtube.com/embed/NRo9k0Rjfw8?start=57&end=166" allowfullscreen></iframe>
-
-*Above: The video above provides an introduction to the grid view provide for refrigeration.*
-
 ------
 
 ## VRF Systems
@@ -509,10 +462,6 @@ Set the terminal settings by selecting the terminal and editing in the "Edit" ta
 
 More than one terminal can connect with the same zone. Just drag the zone to the drop area again to add another connection.
 
-<iframe width="640" height="360" src="https://www.youtube.com/embed/NRo9k0Rjfw8?start=170&end=242" allowfullscreen></iframe>
-
-*Above: This video provides a brief overview of the VRF interface.*
-
 ------
 
 ## Apply Measure Now
@@ -531,10 +480,6 @@ In addition to manually creating and editing your model, you can apply measures 
 *Above: Accept or cancel.*
 
 The video below demonstrates the use of this feature.
-
-<iframe width="640" height="360" src="https://www.youtube.com/embed/9-saA4x07eQ?end=579" allowfullscreen></iframe>
-
-*Above: Use the Apply Measure Now function.*
 
 ------
 
