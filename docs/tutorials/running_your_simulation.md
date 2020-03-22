@@ -2,7 +2,7 @@
 These guides provide a handy reference to the features of the applications that are installed with the OpenStudio Application.
 
 ## Weather File and Design Days
-Add weather files in the OpenStudio application under the Site tab (first vertical tab) on the left and the "Weather File & Design Days" sub-tab across the top. You can [download weather files](https://www.energyplus.net/weather) on the EnergyPlus site.
+Add weather files in the OpenStudio application under the Site tab (first vertical tab) on the left and the Weather File & Design Days sub-tab across the top. You can [download weather files](https://www.energyplus.net/weather) on the EnergyPlus site.
 
 [![Open DDY File Dialog](img/run/weather_ddy.png "Click to view")](img/run/weather_ddy.png)
 
@@ -15,21 +15,21 @@ To select an output variable turn the toggle button to show a blue on. Then set 
 
 *Above: Screenshot of selecting output variables.*
 
-You can also choose variables to collect data on by using the "Add Output Variable" measure after downloading it from the [BCL](../reference/openstudio_application_interface.md#find-measures-and-find-components).
+You can also choose variables to collect data on by using the Add Output Variable measure after downloading it from the [BCL](../reference/openstudio_application_interface.md#find-measures-and-find-components).
 
 [![Measures Tab](img/run/variables_measure.png "Click to view")](img/run/variables_measure.png)
 
 *Above: Screenshot of the variable measure being added to a project. Just type in the variable you want to collect. This will return the variable's value for all associated objects within the model. To get the variable's value for a specific object, enter the full name of this object.*
 
 ## Running a Simulation
-To run your simulation click the green run button. 
+To run your simulation click the green Run button. 
 
 [![Run Simulation Tab](img/run/run.png "Click to view")](img/run/run.png)
 
 *Above: The progress bar displays the status of the run.*
 
 ## Looking at Results
-Standard OpenStudio Results are provided with your run. Learn more about the OpenStudio Standard Results Measure in our [References Section](../reference/openstudio_results_measure.md).
+Standard OpenStudio Results are provided with your run. Learn more about the OpenStudio Standard Results measure in our [References Section](../reference/openstudio_results_measure.md).
 
 [![Results Summary Tab](img/run/os_results.png "Click to view")](img/run/os_results.png)
 

@@ -12,7 +12,7 @@ The File->Import method creates a new OpenStudio Model from the imported content
 2. Engineer converts gbXML to OpenStudio Model and assigns schedules, loads, and HVAC equipment
 3. Architect sends Engineer an updated gbXML file with new building geometry
 
-In this example, the Engineer does not want to discard all the work they did in step 2 and repeat it all over again with the new building geometry.  Instead, the Engineer would like to merge new geometry from the updated gbXML file with their current OpenStudio Model.  The geometry editor tab in the OpenStudio Application supports this iterative workflow.  The example below demonstrates this process with gbXML, the geometry editor tab also supports importing and merging geometry data from IDF and other OSM files.
+In this example, the Engineer does not want to discard all the work they did in step 2 and repeat it all over again with the new building geometry.  Instead, the Engineer would like to merge new geometry from the updated gbXML file with their current OpenStudio Model.  The  Editor tab in the OpenStudio Application supports this iterative workflow.  The example below demonstrates this process with gbXML, the geometry editor tab also supports importing and merging geometry data from Input Data Files and other OpenStudio Model files.
 
 ## Import and Merge gbXML
 

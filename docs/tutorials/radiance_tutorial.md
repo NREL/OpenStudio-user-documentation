@@ -2,7 +2,7 @@
 This tutorial explains how to use [Radiance](http://www.radiance-online.org/) to simulate the daylight ingress in your OpenStudio Model, allowing for higher fidelity simulations of daylighting-related energy efficiency measures. For the OpenStudio Application, the Radiance simulation option has been refactored (moved) to a [measure](https://bcl.nrel.gov/node/84189).
 
 ## Workflow
-This workflow uses the OpenStudio Application (and the plug-in) to perform a [climate-based daylight simulation](http://climate-based-daylighting.com/doku.php?id=academic:climate-based-daylight-modelling), using Radiance as the lighting simulation engine (in lieu of EnergyPlus' daylight simulation options).
+This workflow uses the OpenStudio Application (and the Plug-in) to perform a [climate-based daylight simulation](http://climate-based-daylighting.com/doku.php?id=academic:climate-based-daylight-modelling), using Radiance as the lighting simulation engine (in lieu of EnergyPlus' daylight simulation options).
 
 The process for using Radiance for daylighting analysis in the OpenStudio Application is not dissimilar from using EnergyPlus. The basic steps are as follows, with the required applications in parentheses:
 ### 1. Create (or Import) Building Geometry, Define Thermal Zones & Spaces (SketchUp Plug-in)
@@ -37,16 +37,16 @@ Optionally to these spaces, add:
 
 ###4. Configure Daylighting Elements (SketchUp Plugin)
 
-- Associate Space with Thermal Zone(s)
-- Assign primary Illuminance Map to daylit Thermal Zone(s)
-- Assign primary Daylighting Control Point to Thermal Zone
+- Associate space with thermal zone(s)
+- Assign primary illuminance map to daylit thermal zone(s)
+- Assign primary daylighting control point to thermal zone
 - Thermal zone load percentages to daylighting controls
 
 ###5. Run Simulation (OpenStudio Application)
-- Attach a weather file (Site Tab)
-- Select Radiance simulation parameters (Simulation Settings Tab)
-- Add the "Radiance Daylighting Measure" to the model's workflow (Measures Tab)
-- Run the analysis (Run Tab (_duh_))
+- Attach a weather file (Site tab)
+- Select Radiance simulation parameters (Simulation Settings tab)
+- Add the "Radiance Daylighting Measure" to the model's workflow (Measures tab)
+- Run the analysis (Run Simulation tab)
 
 The Radiance daylighting results will inform the electric lighting load schedules and will be automatically used in the EnergyPlus model
 

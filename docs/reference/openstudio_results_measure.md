@@ -81,7 +81,7 @@ This section has a single table that last all exterior lights objects in the mod
 The water use equipment table lists all water use equipment objects in the model. This comes from the model, so it doesn't provide consumption but it does identify the service water heating loop, the load definition, the space the equipment is in, along with the peak flow rate, flow rate schedule, and the target temperature range. In a number of places in this reporting measure where an object refers to a temperature schedule or schedules, a range of values is listed vs. the name of the schedules. This allows for quick validation of reasonable values.
 
 ## HVAC Load Profiles
-This measures overlays monthly heating and cooling demand, that we saw earlier in the Monthly Overview section with the monthly average outdoor dry bulb temperature. This is the first section in the measure that requires time series output, although in this case just the monthly values for one variable (dry bulb temperature).
+This measure overlays monthly heating and cooling demand, that we saw earlier in the Monthly Overview section with the monthly average outdoor dry bulb temperature. This is the first section in the measure that requires time series output, although in this case just the monthly values for one variable (dry bulb temperature).
 
 [![HVAC Load Profiles chart](img/openstudio_results/hvac_load_profiles.png)](img/openstudio_results/hvac_load_profiles.png)
 
@@ -150,21 +150,21 @@ This section has two tables. The lists total and net values for both site and so
 *Above: Site and Source Summary section.*
 
 ## Schedule Overview
-This section provides a small chart for each schedule used in the model. This looks very much like what you can see in the Schedule Tab of the OpenStudio Application except that all of the possible day profiles for a schedule are overlaid on each other. Rules are listed by their priority with a description for the days of teh week and dates of the year they are applicable. The colors for the default profile adn rules match what is used in the application. You can expand the table for this section to see the use count for each schedule.
+This section provides a small chart for each schedule used in the model. This looks very much like what you can see in the Schedule tab of the OpenStudio Application except that all of the possible day profiles for a schedule are overlaid on each other. Rules are listed by their priority with a description for the days of teh week and dates of the year they are applicable. The colors for the default profile adn rules match what is used in the application. You can expand the table for this section to see the use count for each schedule.
 
 [![Schedule Overview charts](img/openstudio_results/schedule_overview.png)](img/openstudio_results/schedule_overview.png)
 
 *Above: Schedule Overview charts.*
 
 ## Measure Arguments
-For this Measure, there is a check box for each section to determine if you want to generate that section or not. You could use this to create a streamline report with only the sections are are interested visible. If you disable sections that request time-series data, then those output variables wont' be requested, resulting in a smaller SQL file. Since most sections in this report only request tabular data, it won't affect much, but for other future reports this coudl be more useful. The Zone Conditions section requests hourly zone temperature and humidity values and the HVAC Load Profiles section requests monthly outdoor air dry bulb temperatures.
+For this measure, there is a check box for each section to determine if you want to generate that section or not. You could use this to create a streamline report with only the sections are are interested visible. If you disable sections that request time-series data, then those output variables wont' be requested, resulting in a smaller SQL file. Since most sections in this report only request tabular data, it won't affect much, but for other future reports this coudl be more useful. The Zone Conditions section requests hourly zone temperature and humidity values and the HVAC Load Profiles section requests monthly outdoor air dry bulb temperatures.
 
 [![View of Arguments in OpenStudio Results measure](img/openstudio_results/measure_args.png)](img/openstudio_results/measure_args.png)
 
-*Above: View of Arguments in OpenStudio Results Measure.*
+*Above: View of Arguments in OpenStudio Results measure.*
 
 ## Developing Your Own Reporting Measures
-This measure was created to fill a need in providing easy access to more detailed model and simulation results data, but it serves another role as well. It was created in a way that was very easy to use as a template for custom user reports. We setup a framework and added support for a variety of chart types. The only coding required to make your own custom report is to provide the data. While we have a separate [Measure Writing Guide](http://nrel.github.io/OpenStudio-user-documentation/reference/measure_writing_guide/) in our documentation, it seemed fitting to explain here how you would add your own tables and charts to this report, or to create a new clean report.
+This measure was created to fill a need in providing easy access to more detailed model and simulation results data, but it serves another role as well. It was created in a way that was very easy to use as a template for custom user reports. We setup a framework and added support for a variety of chart types. The only coding required to make your own custom report is to provide the data. While there is a [Measure Writing Guide](http://nrel.github.io/OpenStudio-user-documentation/reference/measure_writing_guide/) within the OpenStudio Software Development Kit (SDK) documentation, it seemed fitting to explain here how you would add your own tables and charts to this report, or to create a new clean report.
 
 The first step is to gather the data you want in a table or chart. This could be simulation results, model inputs, or even just hard coded table as in this example. It could also be read in from a text file. In the "resources" folder of the measure this is a file named "os_lib_reporting.rb". Most of the methods (start with "def OsLib_Reporting.my_method") in this file do one of two things. They define a section used in the report or they define a table that is used by one of the sections. The code below shows two sample methods with hard coded table data about tasty treats. You can copy and modify these methods to show what you want. The section description and all of the table data can be in one method, or if it is easier to break things up you can have a method for each table, and then call it from the method that makes the section. in this case.  ```template_tables << OsLib_Reporting.template_table(model,sqlFile,runner) ``` adds in a table defined elsewhere. The code for a sample section method and table method are shown below.
 

@@ -1,12 +1,12 @@
 <h1>Current Features</h1>
-The OpenStudio Application uses the [OpenStudio SDK Version 3.0.0](https://openstudio-sdk-documentation.s3.amazonaws.com/index.html). The features that are available in the current major release are described below. To learn what is coming in the future, see the [Planned Features](../getting_started/roadmap.md) page.
+The OpenStudio Application uses the [OpenStudio SDK Version 3.0.0](https://openstudio-sdk-documentation.s3.amazonaws.com/index.html). The features that are available in the current major release are described below. To learn about the future of this software, see the [Planned Features](../getting_started/roadmap.md) page.
 
 ## As of OpenStudio Application Version 1.0.0
 
 ### Building Geometry/3D CAD
 
 - Import geometry from gbXML files (from Revit, GreenBuildingStudio, Trace700, etc.)
-- Import geometry from EnergyPlus files (IDF)
+- Import geometry from EnergyPlus input Data Files (IDF)
 - Import model from SDD files (California Energy Commission)
 - Import geometry from Industry Foundation Class files (IFC)
 - Assign and visually inspect space types assignments
@@ -23,7 +23,7 @@ The OpenStudio Application uses the [OpenStudio SDK Version 3.0.0](https://opens
 
 #### Sketchup Plugin
 
-- Draw 3D building geometry using free plugin for SketchUp
+- Draw 3D building geometry using OpenStudio Plugin for SketchUp
 - Building envelope, shading on windows, shading from other buildings, etc.
 - Draw detailed shapes, trace floor plans, or a combination
 - Use wizard to create standard shapes (H, L, E, Courtyard, Rectangle)
@@ -192,9 +192,9 @@ The OpenStudio Application uses the [OpenStudio SDK Version 3.0.0](https://opens
 - Create interior partitions and glare sensors for modeling daylight analysis with improved accuracy, using the Sketchup Plugin
 - Create and configure window shading controls for modeling daylight analysis using the Sketchup plugin
 - Insert illuminance map for visualizing daylight analysis using the Sketchup plugin
-- Use built-in OpenStudio Application Measure to run daylighting analysis using Radiance, state-of-the-art ray-tracing daylight simulation engine without making a separate model
+- Use built-in OpenStudio measure to run daylighting analysis using Radiance, state-of-the-art ray-tracing daylight simulation engine without making a separate model
 - Configure daylight analysis parameters used by radiance simulation
-- Lights in the EnergyPlus model controlled based on daylight available per radiance
+- Lights in the EnergyPlus Model controlled based on daylight available per radiance
 
 ### Custom Controls
 Within EnergyPlus, advanced controls that are not built-in can be implemented utilizing the [EnergyManagementSystem (EMS)](https://energyplus.net/sites/all/modules/custom/nrel_custom/pdfs/pdfs_v9.2.0/EMSApplicationGuide.pdf) suite of objects. This involves defining Sensors and Actuators that interact with building parameters through Programs which are written in the EnergyPlus Runtime Language (ERL), which is based on a common building-controls language. OpenStudio Application supports the creation of EMS programs.
@@ -203,15 +203,15 @@ Within EnergyPlus, advanced controls that are not built-in can be implemented ut
 
 - Find typical [weather data and ASHRAE design conditions](https://energyplus.net/weather) for most locations in the world
 - Use actual weather data (AMY) from a variety of vendors/sources
-- Store ASHRAE/CEC climate zone to trigger calculations within Measures
+- Store ASHRAE/CEC climate zone to trigger calculations within measures
 
 ### Economics
 
 - Full lifecycle costing (NIST Handbook 135 compliant) including built-in EIA fuel escalation rates and inflation
 - Adjustable analysis period length
-- Add capital, recurring O&M, salvage, and replacement costs to model using Measures
+- Add capital, recurring O&M, salvage, and replacement costs to model using measures
 - Lifecycle is adjustable per-cost (IE windows can last longer than lamps)
-- Add utility rates (which include time-of-use, demand charges, ratchets, seasonal values, etc.) to model using Measures
+- Add utility rates (which include time-of-use, demand charges, ratchets, seasonal values, etc.) to model using measures
 
 ### Import and Export Options
 
@@ -241,13 +241,13 @@ Within EnergyPlus, advanced controls that are not built-in can be implemented ut
 
 ### Parametric Analysis Using [PAT](https://github.com/NREL/OpenStudio-PAT/releases)
 
-- OpenStudio Application Measures provide reliable and repeatable mechanism to apply transforms to models
-- Eliminates ambiguity and user error; all rules encapsulated in Measure itself
-- More than 316 Measures available [online](bcl.nrel.gov) and always growing
-- Write Measure once and apply to many projects
+- OpenStudio Measures provide reliable and repeatable mechanism to apply transforms to models
+- Eliminates ambiguity and user error; all rules encapsulated in measure itself
+- More than 316 measures available [online](bcl.nrel.gov) and always growing
+- Write measure once and apply to many projects
 - Perform complex ECMs, like full HVAC replacement, easily
 - Quickly access online and local libraries of measures from drag-and-drop interface
-- Edit user inputs to control how Measure modifies the model
+- Edit user inputs to control how measure modifies the model
 - Create meaningful results, ready for inclusion in reports to design team, building owners, etc.
 
 ### QAQC
@@ -274,7 +274,7 @@ Within EnergyPlus, advanced controls that are not built-in can be implemented ut
 
 ### Share Modeling Best-Practices
 
-- Online database called [BCL](bcl.nrel.gov) (Building Component Library) can be used to share Measures
+- Online database called [BCL](bcl.nrel.gov) (Building Component Library) can be used to share measures
 - BCL can be used to share building components
 - Instantaneous world-wide distribution and updating of content
 - Allows utilities to ensure uniformity and best-practices across many energy consulting firms

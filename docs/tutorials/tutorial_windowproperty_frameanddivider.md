@@ -7,8 +7,8 @@ Window Property Frame and Divider objects can be created using the object inspec
 
 [![Add Window Property Frame and Divider](img/windowproperty_frameanddivider/windowproperty_frameanddivider1.jpg)](img/windowproperty_frameanddivider/windowproperty_frameanddivider1.jpg)
 
-### Importing IDF files from the WINDOW program
-IDF files exported from [WINDOW](http://windows.lbl.gov/software/window/window.html) containing Window Property Frame and Divider objects can be imported using the OpenStudio SketchUp plug-in via Extensions>OpenStudio>Import>Import EnergyPlus Idf Constructions.  WINDOW exports two IDF files, a *_Avg.idf and a *_Spec.idf file. Only the *_Avg.idf file may be imported as the MaterialProperty:GlazingSpectralData object in the *_Spec.idf file is not yet supported by the OpenStudio Application.
+### Importing Input Data Files (IDF) from the WINDOW program
+IDFs exported from [WINDOW](http://windows.lbl.gov/software/window/window.html) containing Window Property Frame and Divider objects can be imported using the OpenStudio SketchUp plug-in via Extensions>OpenStudio>Import>Import EnergyPlus Idf Constructions.  WINDOW exports two IDF files, a *_Avg.idf and a *_Spec.idf file. Only the *_Avg.idf file may be imported as the MaterialProperty:GlazingSpectralData object in the *_Spec.idf file is not yet supported by the OpenStudio Application.
 
 [![Import Window Property Frame and Divider](img/windowproperty_frameanddivider/windowproperty_frameanddivider2.jpg)](img/windowproperty_frameanddivider/windowproperty_frameanddivider2.jpg)
 
@@ -17,7 +17,7 @@ Once you have a Window Property Frame and Divider object in your model, you can 
 
 [![Set Window Property Frame and Divider](img/windowproperty_frameanddivider/windowproperty_frameanddivider3.jpg)](img/windowproperty_frameanddivider/windowproperty_frameanddivider3.jpg)
 
-The Window Property Frame and Divider object can also be applied to all valid sub surfaces in the current selection using the OpenStudio User Script "Set Window Property Frame and Divider" under "Alter or Add Model Elements.
+The Window Property Frame and Divider object can also be applied to all valid sub surfaces in the current selection using the OpenStudio User Script "Set Window Property Frame and Divider" under "Alter or Add Model Elements".
 
 [![Add Window Property Frame and Divider Script](img/windowproperty_frameanddivider/windowproperty_frameanddivider4.jpg)](img/windowproperty_frameanddivider/windowproperty_frameanddivider4.jpg)
 

@@ -57,7 +57,7 @@ The tutorial below was created before the grid view was added to the Space Types
 
 ### Selecting a Library for Constructions, Loads, and Schedules
 
-Libraries that are included with the OpenStudio Application contain data for constructions, loads, and schedules for 6 vintages across all U.S. climate zones. They also contain data for 9 vintages specific to DEER. The Libraries do not contain any geometry. Load libraries by using the menu under __File/Load Library__. Then select your vintage from the default file set. The Library data is organized such that you can access specific Constructions and Loads or you can apply Construction Sets and Space Types that contain whole packages of subsequent dependent characteristics. For example a Library Space Type contains several specific Loads and associated Schedules for that space type, all of whhich become part of your model if you add the Space Type to your model. You can also load previously generated models as Libraries through the __File/Load Library__ menu by navigating to any OSM file from the browser window that pops up. It can take a few minutes to load. 
+Libraries that are included with the OpenStudio Application contain data for constructions, loads, and schedules for 6 vintages across all U.S. climate zones. They also contain data for 9 vintages specific to DEER. The Libraries do not contain any geometry. Load libraries by using the menu under __File/Load Library__. Then select your vintage from the default file set. The Library data is organized such that you can access specific constructions and loads, or you can apply construction sets and space types that contain whole packages of subsequent dependent characteristics. For example a Library Space Type contains several specific loads and associated schedules for that space type, all of which become part of your model if you add the Space Type to your model. You can also load previously generated models as Libraries through the __File/Load Library__ menu by navigating to any OpenStudio Model file from the browser window that pops up. It can take a few minutes to load. 
 
 ![New OpenStudio Model From Template Dialog](img/menu_libraries.png)
 
@@ -92,7 +92,7 @@ For additional information on the SketchUp Plugin interface, go to the [OpenStud
 - Assigning Building Activity
 - Assigning Thermal Zones
 - Assign Thermostats
-- Saving the OSM model from the SketchUp Plugin
+- Saving the OpenStudio Model from the SketchUp Plugin
 - Moving from the Plugin to the OpenStudio Application
 - Adding Weather and Design Day Files
 - Adding a Mechanical System
