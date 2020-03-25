@@ -10,10 +10,9 @@ pages:
 - [getting_started/getting_started.md, Getting Started, Installation and Introductory Tutorial]
 - [getting_started/about_measures.md, Getting Started, About Measures]
 
-- [tutorials/tutorial_bcl.md, Tutorials, Building Component Library]
-- [tutorials/utility_rate_tariffs.md, Tutorials, Utiity Rate Tariffs]
-- [tutorials/life_cycle_costing_examples.md, Tutorials, Life Cycle Cost Analysis]
 
+- [reference/tutorial_bcl.md, Reference, Building Component Library]
+- [reference/life_cycle_costing_examples.md, Reference, Life Cycle Cost Analysis]
 - [reference/geometry_editor.md, Reference, FloorspaceJS]
 - [reference/command_line_interface.md, Reference, Command Line Interface]
 - [reference/parametric_analysis_tool_2.md, Reference, Parametric Analysis Tool Version 2 (PAT) Interface Guide]

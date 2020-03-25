@@ -1,5 +1,5 @@
 <h1>Current Features</h1>
-OpenStudio SDK is constantly being improved, with a less stable developer release available every 2 weeks and a stable major release quarterly (4 per year). The features that are available in the current major release are described below. To learn what is coming in the future, see the [Planned Features](../getting_started/roadmap.md) page.
+OpenStudio SDK is constantly being improved, with a less stable developer release available every 2 weeks and a stable major release twice per year. The features that are available in the current major release are described below. To learn what is coming in the future, see the [Planned Features](../getting_started/roadmap.md) page.
 
 ## As of OpenStudio SDK Version 3.0.0
 
