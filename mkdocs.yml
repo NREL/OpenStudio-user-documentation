@@ -11,17 +11,17 @@ pages:
 - [getting_started/about_measures.md, Getting Started, About Measures]
 
 
-- [reference/tutorial_bcl.md, Reference, Building Component Library]
-- [reference/life_cycle_costing_examples.md, Reference, Life Cycle Cost Analysis]
-- [reference/geometry_editor.md, Reference, FloorspaceJS]
-- [reference/command_line_interface.md, Reference, Command Line Interface]
-- [reference/parametric_analysis_tool_2.md, Reference, Parametric Analysis Tool (PAT) Interface Guide]
 - [reference/model_objects.md, Reference, OpenStudio Model Objects Overview]
+- [reference/command_line_interface.md, Reference, Command Line Interface]
+- [reference/tutorial_bcl.md, Reference, Building Component Library]
+- [reference/parametric_analysis_tool_2.md, Reference, Parametric Analysis Tool (PAT) Interface Guide]
+- [reference/openstudio_results_measure.md, Reference, OpenStudio Results Measure]
 - [reference/measure_writing_guide.md, Reference, Measure Writer's Reference Guide]
 - [reference/measure_code_examples.md, Reference, Measure Code Examples]
 - [reference/developing_measure_collections.md, Reference, Developing Measure Collections]
+- [reference/geometry_editor.md, Reference, FloorspaceJS]
+- [reference/life_cycle_costing_examples.md, Reference, Life Cycle Cost Analysis]
 - [reference/refguide_radiance.md, Reference, OpenStudio-Radiance Reference Guide]
-- [reference/openstudio_results_measure.md, Reference, OpenStudio Results Measure]
 
 - [help/best_practices.md, Help, Modeling Best Practices]
 - [help/training.md, Help, Find Training]
