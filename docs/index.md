@@ -43,7 +43,6 @@
           <p><a href="https://github.com/NREL/OpenStudio-fault-models" class="btn btn-primary" role="button">Fault Detection Measures </a>
           <p>Additional help topics.</p>
           <p><a href="help/best_practices.md" class="btn btn-primary" role="button">Best Practices</a></p>
-          <p><a href="help/finding_model_data.md" class="btn btn-primary" role="button">Finding Model Data</a></p>
         </div>
       </div>
     </div>
