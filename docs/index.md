@@ -33,6 +33,10 @@
       <div class="thumbnail"> <img src="img/os_thumb.png" alt="OpenStudio Logo">
         <div class="caption">
           <h3>Help &amp; Additional Resources</h3>
+          <p>The OpenStudio SDK Repository on GitHub</p>
+          <p><a href="http://github.com/NREL/OpenStudio" class="btn btn-primary" role="button">OpenStudio SDK on GitHub</a></p>
+          <p>General modeling guidance.</p>
+          <p><a href="help/best_practices.md" class="btn btn-primary" role="button">Best Practices</a></p>
           <p>Find professional training for OpenStudio SDK.</p>
           <p><a href="help/training.md" class="btn btn-primary" role="button">Training, Support, &amp; Consulting</a></p>
            <p>Check out Unmet Hours to post a question or search for answers to your energy modeling questions.</p>
