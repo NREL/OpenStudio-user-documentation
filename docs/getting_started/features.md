@@ -1,7 +1,7 @@
 <h1>Current Features</h1>
 OpenStudio is constantly being improved, with a less stable developer release available every 2 weeks and a stable major release quarterly (4 per year). The features that are available in the current major release are described below. To learn what is coming in the future, see the [Planned Features](../getting_started/roadmap.md) page.
 
-## As of OpenStudio Version 3.0.0
+## As of OpenStudio Application Version 1.0.0
 
 ### Building Geometry/3D CAD
 
@@ -29,7 +29,74 @@ OpenStudio is constantly being improved, with a less stable developer release av
 - Use wizard to create standard shapes (H, L, E, Courtyard, Rectangle)
 - Add daylighting sensors
 
+#### Building Geometry Tool Matrix
 
+The following table is intended to provide users with some guidance around which of the primary geometry tools may be best suited to a given modeling scenario. In general, if the model will suffice with relatively simple geometry elements and doesn't require the use of external 3D drawing files or imported geometry from other models, then FloorspaceJS is typically quicker and creates simpler elements that run faster. If there is a need to represent more complicated 3D shapes or work with thrid party drawing and model files, then the SketchUp Plugin may be needed. Also keep in mind that geoetry created in FloorspaceJS can be brought into SketchUp (as an OSM file), but FloorspaceJS will not recognize geometry from any other source. So in some cases it may make sense to begin simpler forms in FloorspaceJS and transition to SketchUp for later, more detailed representations.
+
+<table class="table table-striped", style="width:60%; margin: 15px 0 5px 25px">
+  <tr>
+    <th>Feature</th>
+    <th style="text-align: center">FloorspaceJS</th>
+    <th style="text-align: center">SketchUp Plugin</th>
+  </tr>
+  <tr>
+    <td>Trace 2D Floorplans</td>
+    <td style="text-align: center">X</td>
+    <td style="text-align: center">X</td>
+  </tr>
+  <tr>
+    <td>Assign Thermal Zones, Space Types, Construction Sets</td>
+    <td style="text-align: center; vertical-align: middle">X</td>
+    <td style="text-align: center; vertical-align: middle">X</td>
+  </tr>
+  <tr>
+    <td>Add Windows and Doors</td>
+    <td style="text-align: center">X</td>
+    <td style="text-align: center">X</td>
+  </tr>
+  <tr>
+    <td>Add Daylight Controls</td>
+    <td style="text-align: center">X</td>
+    <td style="text-align: center">X</td>
+  </tr>
+  <tr>
+    <td>Building and Window Shading</td>
+    <td style="text-align: center">X</td>
+    <td style="text-align: center">X</td>
+  </tr>
+  <tr>
+    <td>Smooth Transitions Between OS App and Geometry Editor</td>
+    <td style="text-align: center; vertical-align: middle">X</td>
+    <td style="text-align: center; vertical-align: middle">+</td>
+  </tr>
+  <tr>
+    <td>Draw Complex 3D Shapes</td>
+    <td style="text-align: center"> </td>
+    <td style="text-align: center">X</td>
+  </tr>
+  <tr>
+    <td>Import IDF, gbXML, OSM, SDD</td>
+    <td style="text-align: center"> </td>
+    <td style="text-align: center">X</td>
+  </tr>
+  <tr>
+    <td>Leverage 3rd Party CAD Files</td>
+    <td style="text-align: center"> </td>
+    <td style="text-align: center">X</td>
+  </tr>
+  <tr>
+    <td>Add Detailed Daylighting Analysis Elements</td>
+    <td style="text-align: center; vertical-align: middle"> </td>
+    <td style="text-align: center; vertical-align: middle">X</td>
+  </tr>
+  <tr>
+    <td>Pugin-specific OS Measures</td>
+    <td style="text-align: center"> </td>
+    <td style="text-align: center">X</td>
+  </tr>
+</table>
+
+*+ The User may move back and forth between the OS App and the SketchUp Plugin, but is more likely to generate model errors in the process unless they are careful.*
 
 ### Building Constructions and Materials
 
