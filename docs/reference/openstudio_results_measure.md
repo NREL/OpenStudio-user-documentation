@@ -1,7 +1,7 @@
 <h1>OpenStudio Results Measure</h1>
 
 ## Measure Overview
-This measure creates high level tables and charts pulling both from model inputs and EnergyPlus results, all data is in IP units. It has building level information as well as detail on space types, thermal zones, HVAC systems, envelope characteristics, and economics. Click the heading above a chart to view a table of the chart data. You can download a copy of this from the [BCL](https://bcl.nrel.gov/node/82918). If you are viewing the report through a web browser you won't see charts if you are offline, but you will still see tables. While the report generally uses high level model data or tabular results, a few sections do request hourly or monthly time-series data. This applies to the HVAC Load Profiles and Zone Conditions sections.
+This measure creates high level tables and charts pulling both from model inputs and EnergyPlus results, all data is in IP units. It has building level information as well as detail on space types, thermal zones, HVAC systems, envelope characteristics, and economics. Click the heading above a chart to view a table of the chart data. You can download a copy of this from the [BCL](https://bcl.nrel.gov/node/82918). While the report generally uses high level model data or tabular results, a few sections do request hourly or monthly time-series data. This applies to the HVAC Load Profiles and Zone Conditions sections.
 
 The report is broken down into 21 sections which can be navigated using the table of contents at the left side of the report. If the table of contents and the main body of the report start to overlap with each other,  increase the width of your application or web browser window. Each section has one or moore tables or charts. Be default where there is a chart, table data is hidden, but you can expand it by clicking on the blue title above the chart that says "view table". If there is no data for a section, the header for the section will still show but you will see a message that says "No Data to Show for ...". For some tables or charts within a section the table may be hidden if there isn't any content. This is true for example for Renewable Energy Source Summary in  Model Summary, Fuel Tables in  Monthly Overview, and Thermal Zones in Zone Equipment Detail.
 
@@ -17,7 +17,7 @@ This section provides quick access to high level information about your model su
 *Above: First few tables in Model Summary section.*
 
 ## Annual Overview
-This section consists of a number of pie charts that break down annual consumption by end use, fuel or both. The chart legend is sorted for largest (top) to smallest (bottom) and only shows end uses or fuels which ar used in the model. The end use and fuel color keys are consistent with charts in other sections of the report. As is typical in chart throughout the report, hovering over chart elements provides additional information.
+This section consists of a number of pie charts that break down annual consumption by end use, fuel or both. The chart legend is sorted for largest (top) to smallest (bottom) and only shows end uses or fuels which are used in the model. The end use and fuel color keys are consistent with charts in other sections of the report. As is typical in charts throughout the report, hovering over chart elements provides additional information.
 
 ![First few charts in Annual Summary section](img/openstudio_results/annual_overview.png)
 
@@ -31,7 +31,7 @@ This section is most like what the previous default report looked like. It has c
 *Above: Monthly Electricity Consumption table.*
 
 ## Utility Bills/Rates
-This section includes a table showing average utility rate by fuel as well as a table that shows process and total energy costs by fuel. Note that on both tables the "Other" row includes water; as a result when you have added a cost to watter as a fuel the average rate value and units don't make sense for the "Other" row. They can be ignored.
+This section includes a table showing average utility rate by fuel as well as a table that shows process and total energy costs by fuel. Note that on the Energy Cost Summary table the "Other" row includes water. To get an accurate total water cost the model would need to include Water Use Equipment that are representative of both hot and cold water use. Traditionally many energy models only include hot water use. Therefore, the user should be cautious about using water costs without inspecting the OSM file and and measures applied through the OSW file to know whether cold water use is included in the model.
 
 ![Utility Bills/Rates tables](img/openstudio_results/utility_bills_rates.png)
 
@@ -57,18 +57,22 @@ These tables provide detail on internal loads for each of the space types used i
 Note that loads assigned directly to a space don't show anywhere in this section. This would occur for all loads in a space when there is no space type assigned, and can also occur when a space type is assigned to a space, but the space also has additional loads assigned to it, beyond what it inherits from the space type.
 
 ## Interior Lighting Summary
-This section contains one table that lists all lighting instances in the model by thermal zone. This comes from EnergyPlus post simulation. As a result we can include "Actual Load Hours/Week" and "Consumption". Actual load horus per week account for reductions due to daylight controls. Additional information such as schedule name and return air fraction are included. This can be a very long table on a large model. For convince you can click the blue heading to collapse a table, but you can also use teh left navigation to skip past it.
+This section contains one table that lists all lighting instances in the model by thermal zone. This comes from EnergyPlus post simulation. As a result we can include "Actual Load Hours/Week" and "Consumption". Actual load horus per week account for reductions due to daylight controls. Additional information such as schedule name and return air fraction are included. This can be a very long table on a large model. For convenience you can click the blue heading to collapse a table, but you can also use teh left navigation to skip past it.
 
 ![Interior Lighting Summary table](img/openstudio_results/lighting_summary.png)
 
 *Above: Interior Lighting Summary table.*
 
 ## Plug Loads Summary
-The Plug Loads summary section is similar to Interior Lighting Summary in that it lists all plug loads, however it only shows the instance name and the consumption. There are separate tables for electric equipment and gas equipment, if both types of loads exist in the model.
+The Plug Loads summary section is similar to Interior Lighting Summary in that it lists all plug loads. There are two sets of tables, the Plug Load Consumption tables that display annual plug load consumption by thermal zone, and the Space-level Plug Loads that display the space-level Equipment Definitions. There are separate tables for electric equipment and gas equipment, if both types of loads exist in the model.
 
 ![Above: Plug Loads Summary table](img/openstudio_results/plug_loads_summary.png)
 
-*Above: Plug Loads Summary table.*
+*Above: Electric Plug Load Consumption table.*
+
+![Above: Plug Loads Summary table](img/openstudio_results/plug_loads_space.png)
+
+*Above: Space-level Electric Plug Loads table.*
 
 ## Exterior Lighting
 This section has a single table that last all exterior lights objects in the model along with their power and consumption. As this comes from the EnergyPlus results consumption accounts for schedules adjusted for an astronomical clock.
@@ -94,7 +98,7 @@ The zone conditions section has two tables. Both tables list all of the zones in
 
 *Above: Zone Conditions - Temperature table.*
 
-The second table shows relative humidity in 5% bins, along with mean relative humidity for each zone. In both cases the table cells are color coded to make it easier to quickly can over. Cells with under 500 hours are not colored. Cells with more than 500 hours are yellow. More than 1000 hours - orange. More than 200 hours - red.
+The second table shows relative humidity in 5% bins, along with mean relative humidity for each zone. In both cases the table cells are color coded to make it easier to quickly can over. Cells with under 500 hours are not colored. Cells with more than 500 hours are yellow. More than 1000 hours - orange. More than 2000 hours - red.
 
 ![Zone Conditions - Humidity Table](img/openstudio_results/zone_conditions_rh.png)
 
@@ -150,18 +154,18 @@ This section has two tables. The lists total and net values for both site and so
 *Above: Site and Source Summary section.*
 
 ## Schedule Overview
-This section provides a small chart for each schedule used in the model. All of the possible day profiles for a schedule are overlaid on each other. Rules are listed by their priority with a description for the days of teh week and dates of the year they are applicable. The colors for the default profile adn rules match what is used in the application. You can expand the table for this section to see the use count for each schedule.
+This section provides a small chart for each schedule used in the model. All of the possible day profiles for a schedule are overlaid on each other. Rules are listed by their priority with a description for the days of the week and dates of the year they are applicable. The colors for the default profile and rules match what is used in the application. You can expand the table for this section to see the use count for each schedule.
 
 ![Schedule Overview charts](img/openstudio_results/schedule_overview.png)
 
 *Above: Schedule Overview charts.*
 
 ## Measure Arguments
-For this measure there is a check box for each section to determine if you want to generate that section or not. You could use this to create a streamline report with only the sections are are interested visible. If you disable sections that request time-series data, then those output variables won't be requested, resulting in a smaller SQL file. Since most sections in this report only request tabular data, it won't affect much, but for other future reports this could be more useful. The Zone Conditions section requests hourly zone temperature and humidity values and the HVAC Load Profiles section requests monthly outdoor air dry bulb temperatures.
+For this measure there is a Boolean argument for each section to determine if you want to generate that section or not. There is also a String argument that allows the user to choose IP or SI units. You could use this to create a streamline report with only the sections you are interested visible. If you disable sections that request time-series data, then those output variables won't be requested, resulting in a smaller SQL file. Since most sections in this report only request tabular data, it won't affect much, but for other future reports this could be more useful. The Zone Conditions section requests hourly zone temperature and humidity values and the HVAC Load Profiles section requests monthly outdoor air dry bulb temperatures.
 
 ![View of Arguments in OpenStudio Results measure](img/openstudio_results/measure_args.png)
 
-*Above: View of Arguments in OpenStudio Results measure.*
+*Above: View of Arguments in OpenStudio Results measure as they appear in the OSW file.*
 
 ## Developing Your Own Reporting Measures
 This measure was created to fill a need in providing easy access to more detailed model and simulation results data, but it serves another role as well. It was created in a way that was very easy to use as a template for custom user reports. We setup a framework and added support for a variety of chart types. The only coding required to make your own custom report is to provide the data. While we have a separate [Measure Writing Guide](http://nrel.github.io/OpenStudio-user-documentation/reference/measure_writing_guide/) in our documentation, it seemed fitting to explain here how you would add your own tables and charts to this report, or to create a new clean report.
