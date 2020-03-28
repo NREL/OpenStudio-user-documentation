@@ -2,7 +2,7 @@
 After completing the [Introductory Tutorial](../getting_started/getting_started.md#introductory-tutorial), you can find additional information on using the OpenStudio Application by topic below.
 
 ## Envelope
-The building envelope is created using the either the integrated FloorspaceJS interface or the SketchUp OpenStudio Plug-in. Refer to the [FloorspaceJS Interface Guide](../reference/geometry_editor.md) or the [OpenStudio SketchUp Plug-in Interface Guide](../reference/sketchup_plugin_interface.md) to learn more about the available interfaces and for creating OpenStudio geometry.
+The building envelope is created using the either the integrated FloorspaceJS interface or the SketchUp OpenStudio Plug-in. Refer to the [FloorspaceJS Interface Guide](../reference/geometry_editor.md) or the [OpenStudio SketchUp Plug-in Interface Guide](../reference/sketchup_plugin_interface.md) to learn more about the available interfaces and for creating OpenStudio geometry. Some information about the different capabilities of these geometry tools is also available on the [Current Features](../getting_started/features/#building-geometry3d-cad) page.
 
 ------
 
