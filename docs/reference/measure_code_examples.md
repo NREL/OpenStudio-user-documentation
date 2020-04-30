@@ -2,7 +2,7 @@
 This page provides example Ruby code for doing various common tasks. It is intended as a supplement to the full [OpenStudio SDK documentation](https://s3.amazonaws.com/openstudio-sdk-documentation/index.html). The examples are not complete Measures for the sake of clarity.
 
 ## Unit Conversion
-OpenStudio has a built-in unit conversion method:
+OpenStudio SDK has a built-in unit conversion method:
 
 ```ruby
 OpenStudio.convert()

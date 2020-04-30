@@ -1,7 +1,7 @@
-# OpenStudio User Documentation
+# OpenStudio SDK User Documentation
 
 
-This is the repo for OpenStudio user documentation.
+This is the repo for OpenStudio SDK user documentation.
 
 The documentation is written in Markdown, and uses [MkDocs] (http://www.mkdocs.org/) to compile the markdown files into a static site.  The site is hosted on github-pages at: http://nrel.github.io/OpenStudio-user-documentation/.
 

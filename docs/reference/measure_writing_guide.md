@@ -1,14 +1,14 @@
 <h1>OpenStudio Measure Writer's Reference Guide</h1>
-This OpenStudio Measure Writer's Reference Guide is an in-depth resource regarding the authoring, testing, and distribution of OpenStudio Measures. The primary purposes of an OpenStudio measure are to: inspect, and optionally make some change/addition to, an OpenStudio model; validate model input; and report model input and output.
+This OpenStudio Measure Writer's Reference Guide is an in-depth resource regarding the authoring, testing, and distribution of OpenStudio Measures. The primary purposes of an OpenStudio Measure are to: inspect, and optionally make some change/addition to, an OpenStudio Model; validate model input; and report model input and output.
 
 Where applicable, the reader is directed to other resources, such as the [OpenStudio SDK documentation](https://openstudio-sdk-documentation.s3.amazonaws.com/index.html), and many of the other references found at the [OpenStudio Documentation Home](http://nrel.github.io/OpenStudio-user-documentation/).
 
 # Introduction
-In its most basic form, an OpenStudio measure (henceforth referred to as a "measure") is a program (or 'script', or 'macro', if you like) that can access and leverage the OpenStudio model and API to create or make changes to a building energy model, as defined by an OpenStudio model (.osm). Typically, a measure modifies an existing .osm in order to implement a given *energy conservation measure* (ECM). For example, a measure might change the insulation rating of the exterior walls, change the window-to-wall ratio of a specific facade, or modify operational or occupancy schedules. Measures may also generate reports on the input and output of a given energy model; as such, these are referred to as _reporting measures_.
+In its most basic form, an OpenStudio Measure (henceforth referred to as a "measure") is a program (or 'script', or 'macro', if you like) that can access and leverage the OpenStudio Model and API to create or make changes to a building energy model, as defined by an OpenStudio Model (.osm). Typically, a measure modifies an existing .osm in order to implement a given *energy conservation measure* (ECM). For example, a measure might change the insulation rating of the exterior walls, change the window-to-wall ratio of a specific facade, or modify operational or occupancy schedules. Measures may also generate reports on the input and output of a given energy model; as such, these are referred to as _reporting measures_.
 
 Measures may be linked together in a workflow in order to implement complex ECMs, or to repeatably implement ECMs across building types or climate zones; measures can even generate entire -- code-compliant and climate-zone specific -- building models soley from user inputs.
 
-Measures are written in Ruby, which allows the measure author to access OpenStudio directly as well as through the SketchUp plugin. Measures can be created from scratch, but existing measures may also be used as a starting basis (recommended).
+Measures are written in Ruby, which allows the measure author to access OpenStudio SDK directly as well as through the SketchUp plugin. Measures can be created from scratch, but existing measures may also be used as a starting basis (recommended).
 
 <!--- RPG: Recommend a "workflow" section here.-->
 
@@ -18,17 +18,17 @@ For general Ruby coding and style advice (formatting, variable names, etc.), we 
 
 For simple (short) measures, a text editor is all that is necessary. More extensive measures and resource files may benefit from the use of a proper IDE such as [RubyMine](https://www.jetbrains.com/ruby/).
 
-We cannot stress enough the importance of version control and backup. The OpenStudio dev team relies on Git for version control, and [GitHub](https://github.com/) for hosting all code repositories.
+We cannot stress enough the importance of version control and backup. The OpenStudio SDK dev team relies on Git for version control, and [GitHub](https://github.com/) for hosting all code repositories.
 
 # Writing Measures
 
 ## Measure File Structure
-Every OpenStudio measure is comprised of a main program (measure.rb) and metadata (measure.xml).  Each OpenStudio Measure can optionally include additional resources (e.g. libraries, helper functions), documentation, and tests. These are all contained in a single directory, generally named after the measure itself. A typical measure directory structure is as follows:
+Every OpenStudio Measure is comprised of a main program (measure.rb) and metadata (measure.xml).  Each OpenStudio Measure can optionally include additional resources (e.g. libraries, helper functions), documentation, and tests. These are all contained in a single directory, generally named after the measure itself. A typical measure directory structure is as follows:
 
 ![guide image](img/measure-writing-guide/1.png)
 
 - measure.rb (required) - Main Ruby script that defines the measure, more details below.
-- measure.xml (required) - XML file, schema available [here](https://github.com/NREL/bcl-gem/tree/develop/schemas/v3), that describes the measure for other applications.  OpenStudio automatically updates the XML file when measure changes are detected. Each measure.xml file **MUST** have a universally unique identifier (uid), this is automatically generated when creating or copying a measure using OpenStudio or can also be generated [here](https://www.uuidgenerator.net/version4).
+- measure.xml (required) - XML file, schema available [here](https://github.com/NREL/bcl-gem/tree/develop/schemas/v3), that describes the measure for other applications.  OpenStudio SDK automatically updates the XML file when measure changes are detected. Each measure.xml file **MUST** have a universally unique identifier (uid), this is automatically generated when creating or copying a measure using the OpenStudio Application or can also be generated [here](https://www.uuidgenerator.net/version4).
 - LICENSE.md (optional) - Provides a license for others to use, reproduce, distribute, or create derivative works from your work, [choose a license here](https://choosealicense.com/)
 - README.md (optional) - Provide documentation for your measure in [Markdown](https://www.markdownguide.org/) format.
 - README.md.erb (optional) - If given, this file is configured by [ERB](http://www.stuartellis.name/articles/erb/) to generate the README.md with information from the measure.rb when updating a measure.
@@ -42,7 +42,7 @@ Every OpenStudio measure is comprised of a main program (measure.rb) and metadat
 The file 'measure.rb' is the main measure program. It may contain the entire program or may rely on additional functionality defined in one or more resource files, located in the 'resources' directory.
 
 ## Initialization
-OpenStudio measures are instantiated by creating a class based on the OpenStudio **ModelUserScript** object:
+OpenStudio Measures are instantiated by creating a class based on the OpenStudio **ModelUserScript** object:
 
 ```ruby
 class AddContinuousInsulationToWalls < OpenStudio::Measure::ModelMeasure
@@ -112,7 +112,7 @@ end
 ```
 
 ### Arguments
-Measure arguments define which -- if any -- input parameters the user may set before running the measure. In our example measure "Add Continuous Insulation to Walls", the thickness of the insulation, and the R-value per inch of thickness, are the user-definable arguments. The measure arguments make a general meaure, specific. Further, these arguments become the variables in a parametric analysis that are passed to PAT, or the OpenStudio Analysis Spreadsheet.
+Measure arguments define which -- if any -- input parameters the user may set before running the measure. In our example measure "Add Continuous Insulation to Walls", the thickness of the insulation, and the R-value per inch of thickness, are the user-definable arguments. The measure arguments make a general meaure, specific. Further, these arguments become the variables in a parametric analysis that are passed to PAT.
 
 **Usage:**
 
@@ -380,17 +380,6 @@ This next example illustrates the process of going from an idea for a measure th
 
 #### The Task
 *"Write a measure that will remove all lights objects currently in the "Enclosed Office" space type and replace them with new lights objects that have a lighting power density (LPD) of 10 W/m2."*
-
-#### Figuring Out the Modeling Approach
-The first thing to do is understand how the measure would be modeled in OpenStudio, and make a list of the objects involved. The easiest way to do this is to open the OpenStudio Application and look through the GUI. In this case, we'll start on the "Space Types" tab.
-
-![guide image2](img/measure-writing-guide/2.png)
-
-On this tab, first click on the first object (in the left column) is "Space Type."  Inside the Space Type, next to the lights icon, the term "Definition" appears. The name of this particular definition is "ASHRAE_90.1-2004_Office_LPD."  To learn more about this definition, go to the "Loads" tab.
-
-![Guide image3](img/measure-writing-guide/3.png)
-
-On the left side under the "Loads" tab is a category called "Lights Definitions."  Under this category is the definition "ASHRAE_90.1-2004_Office_LPD" that was referenced on the "Space Types" tab. One field is titled "Energy Per Space Floor Area" with units of "W/ft2."  Although the GUIs may show IP units, the methods of the OpenStudio model are all written in SI units.
 
 #### The Task, in OpenStudio Terms
 *"Find the ```SpaceType``` called "```Enclosed Office```". Replace any ```LightsDefinitions``` referenced by ```Lights``` in this ```SpaceType``` with a new ```LightsDefinition```, where "Energy Per Space Floor Area" = 10 W/m2.*"

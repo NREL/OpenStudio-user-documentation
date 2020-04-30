@@ -1,12 +1,12 @@
 <h1>OpenStudio Command Line Interface</h1>
 
-The OpenStudio Command Line Interface (CLI) is a self-contained executable which includes everything needed to apply OpenStudio Measures to an OpenStudio Model and run an EnergyPlus simulation.  The CLI is only avaiable in OpenStudio version 2.0 and higher. The CLI contains a full OpenStudio Ruby environment, the list of Ruby Gems available in each version of OpenStudio can be found [here](https://github.com/NREL/OpenStudio/wiki/OpenStudio-Version-Compatibility-Matrix).
+The OpenStudio Command Line Interface (CLI) is a self-contained executable which includes everything needed to apply OpenStudio Measures to an OpenStudio Model and run an EnergyPlus simulation.  The CLI is only avaiable in OpenStudio SDK version 2.0 and higher. The CLI contains a full OpenStudio Ruby environment, the list of Ruby Gems available in each version of OpenStudio SDK can be found [here](https://github.com/NREL/OpenStudio/wiki/OpenStudio-Version-Compatibility-Matrix).
 
 This document provides an overview of the most important features of the CLI, it is not meant to be an exhaustive reference.  For an exhaustive list of features available in the CLI please refer to the command line output of the `--help` command.  For a complete list of the properties available in the OSW file format please refer to the [OSW JSON schema](https://raw.githubusercontent.com/NREL/OpenStudio-workflow-gem/develop/spec/schema/osw_output.json).  For a complete description of the WorkflowJSON class please refer to the [documentation](https://github.com/NREL/OpenStudio/tree/develop/openstudiocore/src/utilities/filetypes/WorkflowJSON.hpp).
 
 # Command Overview
 
-The CLI is executed by calling the OpenStudio executable from the command line with a set of command line arguments.  Calling the CLI with no arguments (such as when double-clicking the executable) causes the CLI to print a help message and then exit.  Several switches which control program behavior may be passed immediately following the OpenStudio executable.  Switches often have both a short form and a long form for convienence. Multiple program level switches may be combined.  Program level switches include:
+The CLI is executed by calling the OpenStudio SDK executable from the command line with a set of command line arguments.  Calling the CLI with no arguments (such as when double-clicking the executable) causes the CLI to print a help message and then exit.  Several switches which control program behavior may be passed immediately following the OpenStudio SDK executable.  Switches often have both a short form and a long form for convienence. Multiple program level switches may be combined.  Program level switches include:
 
 The `-h` or `--help` switches print the help message:
 
@@ -84,7 +84,7 @@ openstudio.exe measure --run_tests /path/to/measure_dir/
 
 # Run Subcommand
 
-The `run` subcommand is used to load an OpenStudio Model, apply a series of OpenStudio Model Measures, translate to EnergyPlus IDF, apply a series of OpenStudio EnergyPlus Measures, run an EnergyPlus simulation on the resulting model, and finally apply a series of OpenStudio Reporting Measures. The OpenStudio Workflow (OSW) file format is used to describe which OpenStudio Measures to apply to the model and what arguments to pass to each measure.  The OSW format is explained in the following section.
+The `run` subcommand is used to load an OpenStudio Model, apply a series of OpenStudio Measures, translate to EnergyPlus IDF, apply a series of OpenStudio EnergyPlus Measures, run an EnergyPlus simulation on the resulting model, and finally apply a series of OpenStudio Reporting Measures. The OpenStudio Workflow (OSW) file format is used to describe which OpenStudio Measures to apply to the model and what arguments to pass to each measure.  The OSW format is explained in the following section.
 
 The `-h` switch prints help specific to the `run` subcommand:
 
@@ -120,7 +120,7 @@ openstudio.exe run --postprocess_only --workflow /path/to/workflow.osw
 
 The OpenStudio Workflow (OSW) format is a JSON file format that describes a simulation workflow.  In an OpenStudio Workflow, a seed OpenStudio Model is loaded.  OpenStudio Model Measures are applied to the seed model.  After these measures, the OpenStudio Model is translated to EnergyPlus IDF format.  Once in EnergyPlus IDF format, OpenStudio EnergyPlus Measures are applied.  After these measures, the EnergyPlus simulation is executed.  Once the EnergyPlus simulation is complete, OpenStudio Reporting Measures are applied which generate reports.  An error at any point in the workflow will halt the workflow.  Once the workflow is completed (successfully or unsuccessfully) an output OSW file is written which contains output related to running the workflow.
 
-An example OSW project is included in the OpenStudio installer under './Examples/compact_osw'. To run this example, copy it to a user writable location and then:
+An example OSW project is included in the OpenStudio SDK installer under './Examples/compact_osw'. To run this example, copy it to a user writable location and then:
 
 /path/to/openstudio.exe run -w /path/to/compact.osw
 
@@ -232,11 +232,11 @@ Unix
 export GEM_HOME=/home/gems
 ```
 
-These same environment variables apply when requiring `openstudio.rb` from system ruby.  Note, that requiring `openstudio.rb` from system ruby does not bring in any of the default gems that are embedded inside the CLI (i.e. the `openstudio-standards` gem).  You must install these gems separately to ensure they are available when using system ruby.  The standard way to do this is with [Bundler](http://bundler.io/).  A Gemfile is included in the Ruby directory of the OpenStudio installation, this can be used as a reference when setting up your own Gemfile to ensure that gems are compatible with the version of OpenStudio.
+These same environment variables apply when requiring `openstudio.rb` from system ruby.  Note, that requiring `openstudio.rb` from system ruby does not bring in any of the default gems that are embedded inside the CLI (i.e. the `openstudio-standards` gem).  You must install these gems separately to ensure they are available when using system ruby.  The standard way to do this is with [Bundler](http://bundler.io/).  A Gemfile is included in the Ruby directory of the OpenStudio SDK installation, this can be used as a reference when setting up your own Gemfile to ensure that gems are compatible with the version of OpenStudio SDK.
 
 # Loading Custom Gems
 
-Developers commonly need to be able to override the version of a gem embedded in the OpenStudio CLI with one that they are working on.  Additionally, measure writers may wish to use gems that are not distributed with the OpenStudio CLI.  Neither of these use cases are an issue when using system ruby as the OpenStudio ruby bindings (i.e. `openstudio.rb`) do not have embedded gems, bundler can be used to specify gem versions in this case.  When using the CLI there are two ways to override an embedded gem or provide access to another gem.  The first is to use the `--include` switch to add the directory containing the primary gem file (e.g. the directory containing `openstudio-standards.rb`) to the ruby load path. The second is to install the gem to your system location, then use the `--gem_path` switch to include this location (e.g. `C:\ruby-2.2.4-x64-mingw32\lib\ruby\gems\2.2.0\`). Note that the gem path directory should have `specifications`, `gems`, and other subdirectories in it.  Also, note that when using this second approach, a system gem will only override the embedded gem if the version is equal or greater to the embedded gem and the major version is the same.  It can be useful to use the `--verbose` and `-e` switches to print some information that can verify the correct version of the gem is being loaded:
+Developers commonly need to be able to override the version of a gem embedded in the OpenStudio CLI with one that they are working on.  Additionally, measure writers may wish to use gems that are not distributed with the OpenStudio CLI.  Neither of these use cases are an issue when using system ruby as the OpenStudio SDK ruby bindings (i.e. `openstudio.rb`) do not have embedded gems, bundler can be used to specify gem versions in this case.  When using the CLI there are two ways to override an embedded gem or provide access to another gem.  The first is to use the `--include` switch to add the directory containing the primary gem file (e.g. the directory containing `openstudio-standards.rb`) to the ruby load path. The second is to install the gem to your system location, then use the `--gem_path` switch to include this location (e.g. `C:\ruby-2.2.4-x64-mingw32\lib\ruby\gems\2.2.0\`). Note that the gem path directory should have `specifications`, `gems`, and other subdirectories in it.  Also, note that when using this second approach, a system gem will only override the embedded gem if the version is equal or greater to the embedded gem and the major version is the same.  It can be useful to use the `--verbose` and `-e` switches to print some information that can verify the correct version of the gem is being loaded:
 
 ```
 openstudio --verbose -I \openstudio-standards\openstudio-standards\lib\ -e "require 'openstudio-standards'" -e "puts OpenstudioStandards::VERSION"
@@ -258,7 +258,7 @@ When using the OpenStudio CLI, the OpenStudio Ruby bindings and a number of othe
 gem install bundler
 ```
 
-Next, write a Gemfile that specifies all dependencies for your application.  Gemfiles corresponding to the dependencies for OpenStudio releases may be found in the [OpenStudio Version Compatibility Matrix](https://github.com/NREL/OpenStudio/wiki/OpenStudio-Version-Compatibility-Matrix) and used as a starting point.  Note, you may want to relax or remove the Bundler gem dependency if you are using a different version of Bundler.  Place your Gemfile in a directory specific to your application and run:
+Next, write a Gemfile that specifies all dependencies for your application.  Gemfiles corresponding to the dependencies for OpenStudio SDK releases may be found in the [OpenStudio Version Compatibility Matrix](https://github.com/NREL/OpenStudio/wiki/OpenStudio-Version-Compatibility-Matrix) and used as a starting point.  Note, you may want to relax or remove the Bundler gem dependency if you are using a different version of Bundler.  Place your Gemfile in a directory specific to your application and run:
 
 ```
 bundle install
@@ -285,7 +285,7 @@ bundle exec ruby -I c:\openstudio-2.4.0\Ruby\ c:\openstudio-2.4.0\Ruby\openstudi
 
 # Loading Custom Gems with Bundler in the CLI
 
-As of OpenStudio 2.7.0, the CLI can load a pre-made gem bundle made with Bundler.  As with the Ruby bindings, a Ruby interpreter must be installed manually along with the Bundler gem.  Once this is done, a bundle can be made by executing the following in a directory with your Gemfile:
+As of OpenStudio SDK 2.7.0, the CLI can load a pre-made gem bundle made with Bundler.  As with the Ruby bindings, a Ruby interpreter must be installed manually along with the Bundler gem.  Once this is done, a bundle can be made by executing the following in a directory with your Gemfile:
 
 ```
 bundle install --path /path/to/gem/bundle

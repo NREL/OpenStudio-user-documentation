@@ -1,22 +1,7 @@
 <h1>Current Features</h1>
-OpenStudio is constantly being improved, with a less stable developer release available every 2 weeks and a stable major release quarterly (4 per year). The features that are available in the current major release are described below. To learn what is coming in the future, see the [Planned Features](../getting_started/roadmap.md) page.
+OpenStudio SDK is constantly being improved, with a less stable developer release available every 2 weeks and a stable major release twice per year. The features that are available in the current major release are described below. To learn what is coming in the future, see the [Planned Features](../getting_started/roadmap.md) page.
 
-##As of OpenStudio Version 2.1.0
-
-### Building Geometry/3D CAD
-
-- Quickly draw 3D building geometry using free plug-in for SketchUp
-- Building envelope, shading on windows, shading from other buildings, etc.
-- Draw detailed shapes, trace floor plans, or a combination
-- Use wizard to create standard shapes (H, L, E, Courtyard, Rectangle)
-- Import geometry from gbXML files (from Revit, GreenBuildingStudio, Trace700, etc.)
-- Import geometry from EnergyPlus files (IDF)
-- Import model from SDD files (California Energy Commission)
-- Import geometry from Industry Foundation Class files (IFC)
-- Assign and visually inspect space types assignments
-- Define thermal zones and add/remove spaces
-- Assign and see building envelope constructions
-- Add daylighting sensors
+## As of OpenStudio SDK Version 3.0.0
 
 ### Building Constructions and Materials
 
@@ -32,19 +17,9 @@ OpenStudio is constantly being improved, with a less stable developer release av
 - Built in library of space types (loads and associated schedules) for DOE reference buildings for all vintages (pre-1980, 1980-2004, and 2004) plus ASHRAE 189.1-2009, ASHRAE 90.1-2007, and ASHRAE 90.1-2010
 - Can apply loads in one place (space type) and apply throughout the building
 
-### Grid View for Thermal Zones, Space Types, Spaces, Design Days, and Refrigeration Cases
-
-- Viewing and editing your model in a grid view allows to see many objects at once and compare settings.
-
-![Grid view example](img/features/grid_thumb.png)
-
 ### HVAC
 
-- Graphical representation of HVAC systems, zones, and their connections
-- Drag-and-drop components onto diagram and click to edit
-- HVAC system templates for ASHRAE Appendix G system types
-
-##### Hot, Chilled, and Condenser Water Systems
+##### __Hot, Chilled, and Condenser Water Systems__
 
 - Boilers (all fuels)
 - District heating and cooling
@@ -65,7 +40,7 @@ OpenStudio is constantly being improved, with a less stable developer release av
 - Ice and chilled water storage
 - Water-to-water heat pumps
 
-##### Air System Components
+##### __Air System Components__
 
 - Supply and return plenums
 - Unitary equipment
@@ -89,7 +64,7 @@ OpenStudio is constantly being improved, with a less stable developer release av
 - Chilled beams (active and passive)
 - Four-pipe induction terminals
 
-##### Air System Controls
+##### __Air System Controls__
 
 - Demand-controlled ventilation
 - Night-cycle controls (whole system and/or terminal fans)
@@ -97,7 +72,7 @@ OpenStudio is constantly being improved, with a less stable developer release av
 - Single-zone VAV system control (one control zone, many slaves)
 - Optimum start control
 
-##### Zone-level Heating and Cooling Systems
+##### __Zone-level Heating and Cooling Systems__
 
 - Unit heaters (all fuels)
 - Unit ventilators
@@ -114,11 +89,11 @@ OpenStudio is constantly being improved, with a less stable developer release av
 - High temperature radiant heaters (gas and electric)
 - Zone-to-zone transfer air (zone air mixing)
 
-##### Variable Refrigerant Flow Systems
+##### __Variable Refrigerant Flow Systems__
 
 - Condenser plus zone-level terminals
 
-##### Commercial Refrigeration
+##### __Commercial Refrigeration__
 
 - DX Refrigeration Systems
 - Cascading DX Refrigeration Systems
@@ -131,7 +106,7 @@ OpenStudio is constantly being improved, with a less stable developer release av
 - Heat-recovery to domestic hot water systems (desuperheater)
 - Heat-recovery to unitary air systems (desuperheater)
 
-##### Domestic Water Systems
+##### _Domestic Water Systems_
 
 - Hot Water Heaters (all fuels, including heat pump)
 - Equipment that uses warm water (showers, faucets, etc.), can specify mixed water temp
@@ -140,12 +115,12 @@ OpenStudio is constantly being improved, with a less stable developer release av
 
 ### Daylighting
 
-- Add daylighting control points via the SketchUp plugin
 - Run daylighting analysis using Radiance, state-of-the-art ray-tracing daylight simulation engine without making a separate model
 - Lights in the EnergyPlus model controlled based on daylight available per Radiance
 
 ### Custom Controls
-Within EnergyPlus, advanced controls that are not built-in can implemented utilizing the EnergyManagementSystem (EMS) suite of objects. This involves defining Sensors and Actuators that interact with building parameters through Programs which are written in the EnergyPlus Runtime Language (ERL), which is based on a common building-controls language. OpenStudio supports the creation of EMS programs.
+
+Within EnergyPlus, advanced controls that are not built-in can implemented utilizing the EnergyManagementSystem (EMS) suite of objects. This involves defining Sensors and Actuators that interact with building parameters through Programs which are written in the EnergyPlus Runtime Language (ERL), which is based on a common building-controls language. OpenStudio SDK supports the creation of EMS programs.
 
 ### Location-Specific Information
 
@@ -192,9 +167,8 @@ Within EnergyPlus, advanced controls that are not built-in can implemented utili
 - More than 130 Measures available online and always growing
 - Write Measure once and apply to many projects
 - Perform complex ECMs, like full HVAC replacement, easily
-- Quickly access online and local libraries of measures from drag-and-drop interface
 - Edit user inputs to control how Measure modifies the model
-- Creates meaningful results, ready for inclusion in reports to design team, building owners, etc.
+- Creates meaningful results, ready for inclusion in reports to clients.
 
 ### QAQC
 
@@ -226,7 +200,6 @@ Within EnergyPlus, advanced controls that are not built-in can implemented utili
 
 ### Documentation
 
-- More than 100 YouTube video tutorials
 - Interactive PDFs describing each Application
 - Measure writing guide
 - Lifecycle costing guide
@@ -234,35 +207,14 @@ Within EnergyPlus, advanced controls that are not built-in can implemented utili
 
 ## Applications
 
-The following applications are included in the OpenStudio installation:
+The following applications are available to work with the OpenStudio SDK installation:
 
-### SketchUp Plug-in
-
-- Select a template containing building space types and constructions as a starting point
-- Trace a 2D footprint and extrude into 3D geometry
-- Draw new or edit existing building geometry in 3D
-- Use Measures to quickly build up the model
-- Add site shading
-- Assign building activity and thermal zones
-- Add daylighting objects
-
-### OpenStudio Application
-
-- Add loads, schedules, space types, thermal zones, mechanical systems and more
-- Create HVAC systems using a visual drag-and-drop interface
-- Add refrigeration systems using a layout visual view and a grid view
-- Add variable refrigerant flow systems using a layout visual view and a grid view
-- Change the model programmatically using the _Apply Measure Now_ feature
-- Run a simulation
-- View high level simulation results and detailed simulation output
-- Use reporting measures to create new/custom summary reports
-
-### ResultsViewer
+### [Data Viewer](https://github.com/NREL/wex/wiki/DView)
 
 - View the detailed timeseries simulation results
 - Create interactive line graphs and heat maps
 
-### Parametric Analysis Tool (PAT)
+### [Parametric Analysis Tool (PAT)](../reference/parametric_analysis_tool_2.md)
 
 - Select a baseline model to serve as the starting point for a parametric analysis
 - Drag in Measures and set their input values
