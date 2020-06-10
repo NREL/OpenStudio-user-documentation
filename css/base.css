@@ -18,7 +18,11 @@ div.col-md-3 {
 }
 
 .home-btn {
-    padding: 0 20px 10px;
+    padding: 50px 20px 10px;
+}
+.home-btn-2 {
+    padding: 10px 20px 10px;
+    font-size: 85%;
 }
 
 .container p img {
