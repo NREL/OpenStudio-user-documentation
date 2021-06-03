@@ -1553,6 +1553,38 @@ An attribute named 'rotation' will automatically be added to the measure's outpu
   </tr>
 </table>
 
+### Outputting a HTML (or other) file
+
+You can create any file in the current working directory named `report*.*` and it will be copied over to the `reports/` directory via the openstudio-workflow gem.
+The name of the resulting file is computed from the measure class name and the filename.
+
+If your measure class name is `ReportingMeasureName`:
+
+```ruby
+
+class ReportingMeasureName < OpenStudio::Measure::ReportingMeasure
+
+  [...]
+
+  def run(runner, user_arguments)
+    super(runner, user_arguments)
+
+    # Outputs to: reports/reporting_measure_name_report_one.html
+    File.open('./report_one.html', 'w') do |file|
+      # Write file
+    end
+
+    # Outputs to: reports/reporting_measure_name_qa_qc.csv
+    File.open('./qa_qc.csv', 'w') do |file|
+      # Write file
+    end
+  end
+end
+
+FooBar.new.registerWithApplication
+```
+
+
 ## Measure Internationalization
 This section describes how to use the new measure internationalization features of OpenStudio 2.0.0. The new functionality allows measure developers to build in support for multiple languages and multiple unit systems. Existing measures will continue to work without any  modification. Measure developers who don't want 'internationalized' measures can continue to write them as described in the "Writing Measures" section earlier on this page.
 
@@ -1574,7 +1606,8 @@ Prior to OpenStudio 2.0 the name, description, and modeler description methods e
 
 Below is an example of the name method. The same approach would be followed for description and modeler description.
 
-<pre><code>  # human readable name (is this good time to change method to display_name?)
+```ruby
+  # human readable name (is this good time to change method to display_name?)
   def name (runner)
     display_name_hash = {}
     display_name_hash[:en] = "Set Insulation Thickness To User Specified Value."
@@ -1582,7 +1615,8 @@ Below is an example of the name method. The same approach would be followed for 
     display_name_hash[:es] = "Establecer el grosor del aislamiento a un valor espec&iacute;fico del usuario."
 
     return display_name_hash
-  end</code></pre>
+  end
+```
 
 ### Arguments Method Enhancements
 Methods to set an argument's display name, default, and description have been enhanced to accept the an input for preferred language. Methods to set an argument's default value and units have been enhanced to accept an input for for the preferred unit system. Arguments that don't take a double, integer, or take an argument that is unitless, don't have to address unit preference.
@@ -1590,7 +1624,7 @@ Methods to set an argument's display name, default, and description have been en
 Below is an example arguments method that supports English, French, and Spanish as languages, and SI and IP units.
 
 <pre><code>  # define the arguments that the user will input
-  def arguments (model,runner)
+  def arguments (model, runner)
     args = OpenStudio::Ruleset::OSArgumentVector.new
 
     # get internationalization preferences
@@ -1693,6 +1727,134 @@ Below is an example run method that manipulates and reports values related to a 
 
     return true
   end</code></pre>
+
+## Using files and using ExternalFile in a measure
+
+It is sometimes needed to create support files in the process of running the measure. This section describes how path handling works in the context of a measure.
+
+When running a measure, the current working directory is something like './run/000_measure_class_name/' (this is the output that `File.realpath('./')` will give you).
+None of the files created in this directory will actually be copied over, unless it is the special case described in the section 'Reporting Measures' > 'Outputting an HTML (or other file)'.
+
+### Measure resource files
+
+#### Where to place them
+Resource files for a measure should be placed in the `resources/` subfolder like the Measure File Structure section indicates to do with additional ruby code.
+Note that nested levels are not accepted, meaning that given the below tree, anything in `resources/subfolder` is not valid: `anotherschedulefile.csv` will not be copied over with the measure.
+
+```
+├── measure.rb
+├── measure.xml
+├── resources
+│   ├── schedulefile.csv
+    │   ├── subfolder
+    │   │   ├── anotherschedulefile.csv
+```
+
+#### How to access them inside a measure
+
+You can locate your measure resources by using a relative path to the `measure.rb` you are running by using `File.join(File.dirname(__FILE__), 'schedulefile.csv')`
+
+#### How to use an ExternalFile inside a measure
+
+The constructor for `ExternalFile` will automatically copy the file at the path you provide to the first element in `WorkflowJSON::filePaths[0]`. When running a measure, the openstudio-workflow gem prepends the `generated_files` subdirectory.
+
+```ruby
+class CreateScheduleFile < OpenStudio::Measure::ModelMeasure
+
+  [...]
+
+  def run(model, runner, user_arguments)
+
+    # Locate the resource file (this resolves to something like './measures/resources/schedulefile.csv')
+    csv_in_path = File.join(File.dirname(__FILE__), 'schedulefile.csv')
+
+    # Instantiate an External File: this will automatically copy to first path in WorkflowJSON: `runner.workflow.filePaths[0]`, typically './generated_files/'
+    externalFile_ = OpenStudio::Model::ExternalFile::getExternalFile(model, csv_in_path)
+    if (!externalFile_)
+      runner.registerError("Failed to instantiate an External File")
+      return false
+    end
+
+    column = 1
+    rowsToSkip = 1
+    scheduleFile = OpenStudio::Model::ScheduleFile.new(externalFile_.get(), column, rowsToSkip)
+    scheduleFile.setName("ExampleScheduleFile")
+
+    return true
+end
+```
+
+#### How to output any other file
+
+To output any file you may need that isn't an `ExternalFile`, you should rely on two things, in order of preferences:
+* `runner.workflow.filePaths[0]`: this will typically resolve to `./generated_files`
+* `runner.workflow.absoluteRootDir`: this will resolve to '.'
+
+`.` is the location defined as the `root` key inside the `workflow.osw`, or if not specified the location of the `workflow.osw` itself.
+
+```ruby
+class CreateScheduleFile < OpenStudio::Measure::ModelMeasure
+
+  [...]
+
+  def run(model, runner, user_arguments)
+
+    # Locate the resource file (this resolves to something like './measures/resources/schedulefile.csv')
+    csv_in_path = File.join(File.dirname(__FILE__), 'schedulefile.csv')
+
+    # Canonical way: write to the ./generated_files directory
+    out_file = File.join(runner.workflow.filePaths[0].to_s, 'myfile.csv')
+    File.open(out_file, 'w') do |f|
+      f << "Hello"
+    end
+
+    # Prefer the above, but one valid use case would be to output to the reports/ folder
+    # (this is a *ModelMeasure*, you cannot just name it './report.html'
+    # and have it copied automatically like described above in Reporting measure section)
+
+    # either /tmp/osmodel-1622719126-1/ApplyMeasureNow
+    # or ./<model_companion_dir>/
+    rootDir = runner.workflow.absoluteRootDir.to_s
+
+    html_out_path = 'report.html'
+    if (File.basename(rootDir) == 'ApplyMeasureNow')
+      html_out_path = File.absolute_path(
+        File.join(rootDir, '..', 'resources', 'reports', html_out_path))
+    else
+      html_out_path = File.absolute_path(
+        File.join(rootDir, 'reports', html_out_path))
+    end
+    outDir = File.dirname(html_out_path)
+    if !File.exists?(outDir)
+      FileUtils.mkdir_p(outDir)
+    end
+    File.open(html_out_path, 'w') do |f|
+      f << "<html><head><title>My Custom Report that works with Apply Now!</title></head><body><h1>Hello World!</h1></body></html>"
+    end
+
+    # Note A: this will typically output to something like ./run/000_measure_class_name/myfile.csv
+    out_file3 = './myfile3.csv'
+    File.open(out_file, 'w') do |f|
+      f << "Hello"
+    end
+    return true
+end
+```
+
+Regarding Note A in the above code, note that this is added to the `WorkflowStepResult` `step_files` entry (WorkflowJSON: root > "steps" [] > "result" > "step_files", see [Workflow JSON schema](https://github.com/NREL/OpenStudio-workflow-gem/blob/e569f910be364d33c3ddb1a655570c85f1b24bfa/spec/schema/osw_output.json#L251))
+
+It possible to capture the path to the stepFiles from a previous step inside a measure like the following:
+
+```ruby
+    if runner.workflow.currentStepIndex() > 0
+      previousStep = runner.workflow.workflowSteps[runner.workflow.currentStepIndex() - 1]
+      if previousStep.result
+        previousStepResult = previousStep.result.get
+        runner.registerWarning("previousStepResult.stepFiles=#{previousStepResult.stepFiles.map{|p| p.to_s}}")
+      end
+    end
+```
+
 
 # Additional References
 [OpenStudio Documentation Home](http://nrel.github.io/OpenStudio-user-documentation/)
