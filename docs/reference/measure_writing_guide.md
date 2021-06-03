@@ -42,7 +42,7 @@ Every OpenStudio Measure is comprised of a main program (measure.rb) and metadat
 The file 'measure.rb' is the main measure program. It may contain the entire program or may rely on additional functionality defined in one or more resource files, located in the 'resources' directory.
 
 ## Initialization
-OpenStudio Measures are instantiated by creating a class based on the OpenStudio **ModelUserScript** object:
+OpenStudio Measures are instantiated by creating a class based on the OpenStudio **OSMeasure** class: one of `ModelMeasure`, `EnergyPlusMeasure` or `ReportingMeasure`:
 
 ```ruby
 class AddContinuousInsulationToWalls < OpenStudio::Measure::ModelMeasure
@@ -55,7 +55,13 @@ end
 AddContinuousInsulationToWalls.new.registerWithApplication
 ```
 
-Please note the original measure instantiantiation syntax, ```OpenStudio::Ruleset::ModelUserScript```, is deprecated.
+Please note the original namespace in versions of OpenStudio < 2.X `OpenStudio::Ruleset` is deprecated and replaced with `OpenStudio::Measure`.
+Measure classes prior to 2.X are also deprecated:
+
+| < 2.X (Deprecated)                       | >= 2.X                            |
+|------------------------------------------|-----------------------------------|
+| OpenStudio::Ruleset::ModelUserScript     | OpenStudio::Measure::ModelMeasure |
+| OpenStudio::Ruleset::WorkspaceUserScript | OpenStudio::Measure::ModelMeasure |
 
 Class naming convention shall follow [Ruby best practices](https://github.com/bbatsov/ruby-style-guide).
 
@@ -120,8 +126,8 @@ We define a user argument vector and create a single argument for insulation thi
 
 ```ruby
 def arguments(model)
-    args = OpenStudio::Ruleset::OSArgumentVector.new
-    insl_thckn = OpenStudio::Ruleset::makeDoubleArgument('insl_thckn',true)
+    args = OpenStudio::Measure::OSArgumentVector.new
+    insl_thckn = OpenStudio::Measure::makeDoubleArgument('insl_thckn',true)
     insl_thckn.setDisplayName('Insulation Thickness (in)')
     insl_thckn.setDefaultValue(1.5)
     args << insl_thckn
@@ -138,25 +144,25 @@ Valid argument types are as follows:
 **Double** - any real number e.g. 1.0, -1.5, 50.5
 
 ```ruby
-v1 = OpenStudio::Ruleset::OSArgument::makeDoubleArgument('v1', false)
+v1 = OpenStudio::Measure::OSArgument::makeDoubleArgument('v1', false)
 ```
 
 **Integer** - any whole number e.g. 1, -2, 51
 
 ```ruby
-v2 = OpenStudio::Ruleset::OSArgument::makeIntegerArgument('v2', false)
+v2 = OpenStudio::Measure::OSArgument::makeIntegerArgument('v2', false)
 ```
 
 **Boolean (Bool)** - logical (true/false) choice option
 
 ```ruby
-v3 = OpenStudio::Ruleset::OSArgument::makeBoolArgument('v3', false)
+v3 = OpenStudio::Measure::OSArgument::makeBoolArgument('v3', false)
 ```
 
 **String** - for accepting text input
 
 ```ruby
-v4 = OpenStudio::Ruleset::OSArgument::makeStringArgument('v4', false)
+v4 = OpenStudio::Measure::OSArgument::makeStringArgument('v4', false)
 ```
 
 **Choice** - a vector of list options. For the choice argument, the measure author creates the options and passes them to the argument, e.g.:
@@ -165,13 +171,13 @@ v4 = OpenStudio::Ruleset::OSArgument::makeStringArgument('v4', false)
 chs = OpenStudio::StringVector.new
 chs << "Option 1"
 chs << "Option 2"
-v5 = OpenStudio::Ruleset::OSArgument::makeChoiceArgument('v5', chs, true)
+v5 = OpenStudio::Measure::OSArgument::makeChoiceArgument('v5', chs, true)
 ```
 
 Possible values for the choice arguments may also be extracted from the model. For example, the following would give the user a choice of any zones in the model, sorted by zone name.
 
 ```ruby
-v6 = OpenStudio::Ruleset::makeChoiceArgumentOfWorkspaceObjects
+v6 = OpenStudio::Measure::makeChoiceArgumentOfWorkspaceObjects
           ("v6","OS_Thermal_Zone".to_IddObjectType,model,true)
 ```
 
@@ -573,7 +579,7 @@ The following example is a complete measure.rb file, including all the pieces de
 
 ```ruby
 #start the measure
-class ReplaceLightsInSpaceTypeWithLPD < OpenStudio::Ruleset::ModelUserScript
+class ReplaceLightsInSpaceTypeWithLPD < OpenStudio::Measure::ModelMeasure
 
   #define the name that a user will see
   def name
@@ -582,15 +588,15 @@ class ReplaceLightsInSpaceTypeWithLPD < OpenStudio::Ruleset::ModelUserScript
 
   #define the arguments that the user will input
   def arguments(model)
-    args = OpenStudio::Ruleset::OSArgumentVector.new
+    args = OpenStudio::Measure::OSArgumentVector.new
 
     #make an argument for space type name
-    stn = OpenStudio::Ruleset::OSArgument::makeStringArgument('stn',true)
+    stn = OpenStudio::Measure::OSArgument::makeStringArgument('stn',true)
     stn.setDisplayName('Space Type Name')
     args << stn
 
     #make an argument for LPD
-    lpd = OpenStudio::Ruleset::OSArgument::makeDoubleArgument('lpd',true)
+    lpd = OpenStudio::Measure::OSArgument::makeDoubleArgument('lpd',true)
     lpd.setDisplayName('Lighting Power Density (W/m^2)')
     lpd.setDefaultValue(1.0)
     args << lpd
@@ -855,7 +861,7 @@ This will look pretty much the same for all measures and tests. The main change 
     measure = MyMeasure.new
 
     # create an instance of a runner
-    runner = OpenStudio::Ruleset::OSRunner.new
+    runner = OpenStudio::Measure::OSRunner.new(OpenStudio::WorkflowJSON.new())
 ```
 
 ### Model and Workspace Creation, Loading
@@ -921,7 +927,7 @@ Get the arguments:
 ```ruby
     # get arguments
     arguments = measure.arguments(model)
-    argument_map = OpenStudio::Ruleset.convertOSArgumentVectorToMap(arguments)
+    argument_map = OpenStudio::Measure.convertOSArgumentVectorToMap(arguments)
 ```
 **Note:** In the case of a model measure, we pass ```model``` to the ```.arguments``` method; for an EnergyPlus measure we pass in the ```workspace```. The reporting measure does not require an argument here.
 
@@ -1042,14 +1048,15 @@ class NewMeasureTest < MiniTest::Unit::TestCase
     measure = NewMeasure.new
 
     # create an instance of a runner
-    runner = OpenStudio::Ruleset::OSRunner.new
+    osw = OpenStudio::WorkflowJSON.new
+    runner = OpenStudio::Measure::OSRunner.new(osw)
 
     # make an empty model
     model = OpenStudio::Model::Model.new
 
     # get arguments
     arguments = measure.arguments(model)
-    argument_map = OpenStudio::Ruleset.convertOSArgumentVectorToMap(arguments)
+    argument_map = OpenStudio::Measure.convertOSArgumentVectorToMap(arguments)
 
     # create hash of argument values
     args_hash = {}
@@ -1083,7 +1090,7 @@ class NewMeasureTest < MiniTest::Unit::TestCase
     measure = NewMeasure.new
 
     # create an instance of a runner
-    runner = OpenStudio::Ruleset::OSRunner.new
+    runner = OpenStudio::Measure::OSRunner.new
 
     # load the test model
     translator = OpenStudio::OSVersion::VersionTranslator.new
@@ -1097,7 +1104,7 @@ class NewMeasureTest < MiniTest::Unit::TestCase
 
     # get arguments
     arguments = measure.arguments(model)
-    argument_map = OpenStudio::Ruleset.convertOSArgumentVectorToMap(arguments)
+    argument_map = OpenStudio::Measure.convertOSArgumentVectorToMap(arguments)
 
     # create hash of argument values.
     # If the argument has a default that you want to use, you don't need it in the hash
@@ -1215,7 +1222,7 @@ Classes must reference ```Workspace``` versus ```Model```, as shown in the follo
 #####Initialization:
 
 ```ruby
-class ConstructionTakeOff < OpenStudio::Ruleset::WorkspaceUserScript
+class ConstructionTakeOff < OpenStudio::Measure::EnergyPlusMeasure
 ```
 
 #####Method arguments:
@@ -1312,7 +1319,7 @@ The following script creates a ComponentCost:LineItem object for each constructi
 
 ```ruby
 #start the measure
-class ConstructionTakeOff < OpenStudio::Ruleset::WorkspaceUserScript
+class ConstructionTakeOff < OpenStudio::Measure::EnergyPlusMeasure
 
   #define the name that a user will see
   def name
@@ -1327,7 +1334,7 @@ class ConstructionTakeOff < OpenStudio::Ruleset::WorkspaceUserScript
     chs = OpenStudio::StringVector.new
     chs << "Inch-Pound"
     chs << "SI Units"
-    table_units = OpenStudio::Ruleset::OSArgument::makeChoiceArgument("table_units",chs)
+    table_units = OpenStudio::Measure::OSArgument::makeChoiceArgument("table_units",chs)
     table_units.setDisplayName("Choose Units for EnergyPlus Output HTML")
     table_units.setDefaultValue("Inch-Pound")
     args << table_units
@@ -1466,6 +1473,12 @@ Duplicate requests are ignored; in the case of unique objects, the requests are 
   end
 ```
 
+### Reporting Measure arguments Method
+
+```ruby
+def arguments(model = nil)
+```
+
 ### Reporting Measure Run Method
 As mentioned, Reporting Measures are run after the simulation is complete. However, access to the last model or workspace is very useful for extracting information about the simulation. For this reason, Reporting Measures allow access to a read only copy of the last OpenStudio Model generated in the simulation workflow as well as the last EnergyPlus Workspace simulated by EnergyPlus. Additionally, the EnergyPlus SqlFile containing tabular and timeseries simulation results is available along with the EpwFile (weather file) that was used in the simulation. These objects may be accessed from the ```runner``` as shown below:
 
@@ -1525,7 +1538,7 @@ The ```key``` and ```units``` parameters must be strings; the value passed to re
 By default, all measure arguments are automatically output in machine readable format. For example, if a measure takes an argument named 'rotation':
 
 ```ruby
-relative_building_rotation = OpenStudio::Ruleset::OSArgument.makeDoubleArgument('rotation', true)
+relative_building_rotation = OpenStudio::Measure::OSArgument.makeDoubleArgument('rotation', true)
 ```
 
 An attribute named 'rotation' will automatically be added to the measure's output, with the value passed in by the user. Measure writers may output any attributes they wish. If a measure outputs multiple attributes with the same name, preceding definitions are clobbered (i.e. the last attribute reported by that name will be preserved). Measure writers are encouraged to use terms that are present in the BCL taxonomy (and the upcoming [DEnCity](http://dencity.org) API) to allow applications to understand attribute names. Additionally, special modifiers can be added to attribute names which will imply additional relationships between attributes. These special attribute modifiers are documented below, using the ```rotation``` attribute:
@@ -1625,14 +1638,14 @@ Below is an example arguments method that supports English, French, and Spanish 
 
 <pre><code>  # define the arguments that the user will input
   def arguments (model, runner)
-    args = OpenStudio::Ruleset::OSArgumentVector.new
+    args = OpenStudio::Measure::OSArgumentVector.new
 
     # get internationalization preferences
     language_preference = runner.languagePreference
     units_preference = runner.unitsPreference # not currently used here, does GUI handle this?
 
     # make an argument
-    insl_thckn = OpenStudio::Ruleset::makeDoubleArgument('insl_thckn',true)
+    insl_thckn = OpenStudio::Measure::makeDoubleArgument('insl_thckn',true)
 
     # set langauge specific argument display name
     display_name_hash = {}
