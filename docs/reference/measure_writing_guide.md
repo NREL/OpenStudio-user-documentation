@@ -42,7 +42,7 @@ Every OpenStudio Measure is comprised of a main program (measure.rb) and metadat
 The file 'measure.rb' is the main measure program. It may contain the entire program or may rely on additional functionality defined in one or more resource files, located in the 'resources' directory.
 
 ## Initialization
-OpenStudio Measures are instantiated by creating a class based on the OpenStudio **ModelUserScript** object:
+OpenStudio Measures are instantiated by creating a class based on the OpenStudio **OSMeasure** class: one of `ModelMeasure`, `EnergyPlusMeasure` or `ReportingMeasure`:
 
 ```ruby
 class AddContinuousInsulationToWalls < OpenStudio::Measure::ModelMeasure
@@ -55,7 +55,13 @@ end
 AddContinuousInsulationToWalls.new.registerWithApplication
 ```
 
-Please note the original measure instantiantiation syntax, ```OpenStudio::Ruleset::ModelUserScript```, is deprecated.
+Please note the original namespace in versions of OpenStudio < 2.X `OpenStudio::Ruleset` is deprecated and replaced with `OpenStudio::Measure`.
+Measure classes prior to 2.X are also deprecated:
+
+| < 2.X (Deprecated)                       | >= 2.X                            |
+|------------------------------------------|-----------------------------------|
+| OpenStudio::Ruleset::ModelUserScript     | OpenStudio::Measure::ModelMeasure |
+| OpenStudio::Ruleset::WorkspaceUserScript | OpenStudio::Measure::ModelMeasure |
 
 Class naming convention shall follow [Ruby best practices](https://github.com/bbatsov/ruby-style-guide).
 
@@ -120,8 +126,8 @@ We define a user argument vector and create a single argument for insulation thi
 
 ```ruby
 def arguments(model)
-    args = OpenStudio::Ruleset::OSArgumentVector.new
-    insl_thckn = OpenStudio::Ruleset::makeDoubleArgument('insl_thckn',true)
+    args = OpenStudio::Measure::OSArgumentVector.new
+    insl_thckn = OpenStudio::Measure::makeDoubleArgument('insl_thckn',true)
     insl_thckn.setDisplayName('Insulation Thickness (in)')
     insl_thckn.setDefaultValue(1.5)
     args << insl_thckn
@@ -138,25 +144,25 @@ Valid argument types are as follows:
 **Double** - any real number e.g. 1.0, -1.5, 50.5
 
 ```ruby
-v1 = OpenStudio::Ruleset::OSArgument::makeDoubleArgument('v1', false)
+v1 = OpenStudio::Measure::OSArgument::makeDoubleArgument('v1', false)
 ```
 
 **Integer** - any whole number e.g. 1, -2, 51
 
 ```ruby
-v2 = OpenStudio::Ruleset::OSArgument::makeIntegerArgument('v2', false)
+v2 = OpenStudio::Measure::OSArgument::makeIntegerArgument('v2', false)
 ```
 
 **Boolean (Bool)** - logical (true/false) choice option
 
 ```ruby
-v3 = OpenStudio::Ruleset::OSArgument::makeBoolArgument('v3', false)
+v3 = OpenStudio::Measure::OSArgument::makeBoolArgument('v3', false)
 ```
 
 **String** - for accepting text input
 
 ```ruby
-v4 = OpenStudio::Ruleset::OSArgument::makeStringArgument('v4', false)
+v4 = OpenStudio::Measure::OSArgument::makeStringArgument('v4', false)
 ```
 
 **Choice** - a vector of list options. For the choice argument, the measure author creates the options and passes them to the argument, e.g.:
@@ -165,13 +171,13 @@ v4 = OpenStudio::Ruleset::OSArgument::makeStringArgument('v4', false)
 chs = OpenStudio::StringVector.new
 chs << "Option 1"
 chs << "Option 2"
-v5 = OpenStudio::Ruleset::OSArgument::makeChoiceArgument('v5', chs, true)
+v5 = OpenStudio::Measure::OSArgument::makeChoiceArgument('v5', chs, true)
 ```
 
 Possible values for the choice arguments may also be extracted from the model. For example, the following would give the user a choice of any zones in the model, sorted by zone name.
 
 ```ruby
-v6 = OpenStudio::Ruleset::makeChoiceArgumentOfWorkspaceObjects
+v6 = OpenStudio::Measure::makeChoiceArgumentOfWorkspaceObjects
           ("v6","OS_Thermal_Zone".to_IddObjectType,model,true)
 ```
 
@@ -573,7 +579,7 @@ The following example is a complete measure.rb file, including all the pieces de
 
 ```ruby
 #start the measure
-class ReplaceLightsInSpaceTypeWithLPD < OpenStudio::Ruleset::ModelUserScript
+class ReplaceLightsInSpaceTypeWithLPD < OpenStudio::Measure::ModelMeasure
 
   #define the name that a user will see
   def name
@@ -582,15 +588,15 @@ class ReplaceLightsInSpaceTypeWithLPD < OpenStudio::Ruleset::ModelUserScript
 
   #define the arguments that the user will input
   def arguments(model)
-    args = OpenStudio::Ruleset::OSArgumentVector.new
+    args = OpenStudio::Measure::OSArgumentVector.new
 
     #make an argument for space type name
-    stn = OpenStudio::Ruleset::OSArgument::makeStringArgument('stn',true)
+    stn = OpenStudio::Measure::OSArgument::makeStringArgument('stn',true)
     stn.setDisplayName('Space Type Name')
     args << stn
 
     #make an argument for LPD
-    lpd = OpenStudio::Ruleset::OSArgument::makeDoubleArgument('lpd',true)
+    lpd = OpenStudio::Measure::OSArgument::makeDoubleArgument('lpd',true)
     lpd.setDisplayName('Lighting Power Density (W/m^2)')
     lpd.setDefaultValue(1.0)
     args << lpd
@@ -855,7 +861,7 @@ This will look pretty much the same for all measures and tests. The main change 
     measure = MyMeasure.new
 
     # create an instance of a runner
-    runner = OpenStudio::Ruleset::OSRunner.new
+    runner = OpenStudio::Measure::OSRunner.new(OpenStudio::WorkflowJSON.new())
 ```
 
 ### Model and Workspace Creation, Loading
@@ -921,7 +927,7 @@ Get the arguments:
 ```ruby
     # get arguments
     arguments = measure.arguments(model)
-    argument_map = OpenStudio::Ruleset.convertOSArgumentVectorToMap(arguments)
+    argument_map = OpenStudio::Measure.convertOSArgumentVectorToMap(arguments)
 ```
 **Note:** In the case of a model measure, we pass ```model``` to the ```.arguments``` method; for an EnergyPlus measure we pass in the ```workspace```. The reporting measure does not require an argument here.
 
@@ -1042,14 +1048,15 @@ class NewMeasureTest < MiniTest::Unit::TestCase
     measure = NewMeasure.new
 
     # create an instance of a runner
-    runner = OpenStudio::Ruleset::OSRunner.new
+    osw = OpenStudio::WorkflowJSON.new
+    runner = OpenStudio::Measure::OSRunner.new(osw)
 
     # make an empty model
     model = OpenStudio::Model::Model.new
 
     # get arguments
     arguments = measure.arguments(model)
-    argument_map = OpenStudio::Ruleset.convertOSArgumentVectorToMap(arguments)
+    argument_map = OpenStudio::Measure.convertOSArgumentVectorToMap(arguments)
 
     # create hash of argument values
     args_hash = {}
@@ -1083,7 +1090,7 @@ class NewMeasureTest < MiniTest::Unit::TestCase
     measure = NewMeasure.new
 
     # create an instance of a runner
-    runner = OpenStudio::Ruleset::OSRunner.new
+    runner = OpenStudio::Measure::OSRunner.new
 
     # load the test model
     translator = OpenStudio::OSVersion::VersionTranslator.new
@@ -1097,7 +1104,7 @@ class NewMeasureTest < MiniTest::Unit::TestCase
 
     # get arguments
     arguments = measure.arguments(model)
-    argument_map = OpenStudio::Ruleset.convertOSArgumentVectorToMap(arguments)
+    argument_map = OpenStudio::Measure.convertOSArgumentVectorToMap(arguments)
 
     # create hash of argument values.
     # If the argument has a default that you want to use, you don't need it in the hash
@@ -1215,7 +1222,7 @@ Classes must reference ```Workspace``` versus ```Model```, as shown in the follo
 #####Initialization:
 
 ```ruby
-class ConstructionTakeOff < OpenStudio::Ruleset::WorkspaceUserScript
+class ConstructionTakeOff < OpenStudio::Measure::EnergyPlusMeasure
 ```
 
 #####Method arguments:
@@ -1312,7 +1319,7 @@ The following script creates a ComponentCost:LineItem object for each constructi
 
 ```ruby
 #start the measure
-class ConstructionTakeOff < OpenStudio::Ruleset::WorkspaceUserScript
+class ConstructionTakeOff < OpenStudio::Measure::EnergyPlusMeasure
 
   #define the name that a user will see
   def name
@@ -1327,7 +1334,7 @@ class ConstructionTakeOff < OpenStudio::Ruleset::WorkspaceUserScript
     chs = OpenStudio::StringVector.new
     chs << "Inch-Pound"
     chs << "SI Units"
-    table_units = OpenStudio::Ruleset::OSArgument::makeChoiceArgument("table_units",chs)
+    table_units = OpenStudio::Measure::OSArgument::makeChoiceArgument("table_units",chs)
     table_units.setDisplayName("Choose Units for EnergyPlus Output HTML")
     table_units.setDefaultValue("Inch-Pound")
     args << table_units
@@ -1466,6 +1473,12 @@ Duplicate requests are ignored; in the case of unique objects, the requests are 
   end
 ```
 
+### Reporting Measure arguments Method
+
+```ruby
+def arguments(model = nil)
+```
+
 ### Reporting Measure Run Method
 As mentioned, Reporting Measures are run after the simulation is complete. However, access to the last model or workspace is very useful for extracting information about the simulation. For this reason, Reporting Measures allow access to a read only copy of the last OpenStudio Model generated in the simulation workflow as well as the last EnergyPlus Workspace simulated by EnergyPlus. Additionally, the EnergyPlus SqlFile containing tabular and timeseries simulation results is available along with the EpwFile (weather file) that was used in the simulation. These objects may be accessed from the ```runner``` as shown below:
 
@@ -1525,7 +1538,7 @@ The ```key``` and ```units``` parameters must be strings; the value passed to re
 By default, all measure arguments are automatically output in machine readable format. For example, if a measure takes an argument named 'rotation':
 
 ```ruby
-relative_building_rotation = OpenStudio::Ruleset::OSArgument.makeDoubleArgument('rotation', true)
+relative_building_rotation = OpenStudio::Measure::OSArgument.makeDoubleArgument('rotation', true)
 ```
 
 An attribute named 'rotation' will automatically be added to the measure's output, with the value passed in by the user. Measure writers may output any attributes they wish. If a measure outputs multiple attributes with the same name, preceding definitions are clobbered (i.e. the last attribute reported by that name will be preserved). Measure writers are encouraged to use terms that are present in the BCL taxonomy (and the upcoming [DEnCity](http://dencity.org) API) to allow applications to understand attribute names. Additionally, special modifiers can be added to attribute names which will imply additional relationships between attributes. These special attribute modifiers are documented below, using the ```rotation``` attribute:
@@ -1553,6 +1566,38 @@ An attribute named 'rotation' will automatically be added to the measure's outpu
   </tr>
 </table>
 
+### Outputting a HTML (or other) file
+
+You can create any file in the current working directory named `report*.*` and it will be copied over to the `reports/` directory via the openstudio-workflow gem.
+The name of the resulting file is computed from the measure class name and the filename.
+
+If your measure class name is `ReportingMeasureName`:
+
+```ruby
+
+class ReportingMeasureName < OpenStudio::Measure::ReportingMeasure
+
+  [...]
+
+  def run(runner, user_arguments)
+    super(runner, user_arguments)
+
+    # Outputs to: reports/reporting_measure_name_report_one.html
+    File.open('./report_one.html', 'w') do |file|
+      # Write file
+    end
+
+    # Outputs to: reports/reporting_measure_name_qa_qc.csv
+    File.open('./qa_qc.csv', 'w') do |file|
+      # Write file
+    end
+  end
+end
+
+FooBar.new.registerWithApplication
+```
+
+
 ## Measure Internationalization
 This section describes how to use the new measure internationalization features of OpenStudio 2.0.0. The new functionality allows measure developers to build in support for multiple languages and multiple unit systems. Existing measures will continue to work without any  modification. Measure developers who don't want 'internationalized' measures can continue to write them as described in the "Writing Measures" section earlier on this page.
 
@@ -1574,7 +1619,8 @@ Prior to OpenStudio 2.0 the name, description, and modeler description methods e
 
 Below is an example of the name method. The same approach would be followed for description and modeler description.
 
-<pre><code>  # human readable name (is this good time to change method to display_name?)
+```ruby
+  # human readable name (is this good time to change method to display_name?)
   def name (runner)
     display_name_hash = {}
     display_name_hash[:en] = "Set Insulation Thickness To User Specified Value."
@@ -1582,7 +1628,8 @@ Below is an example of the name method. The same approach would be followed for 
     display_name_hash[:es] = "Establecer el grosor del aislamiento a un valor espec&iacute;fico del usuario."
 
     return display_name_hash
-  end</code></pre>
+  end
+```
 
 ### Arguments Method Enhancements
 Methods to set an argument's display name, default, and description have been enhanced to accept the an input for preferred language. Methods to set an argument's default value and units have been enhanced to accept an input for for the preferred unit system. Arguments that don't take a double, integer, or take an argument that is unitless, don't have to address unit preference.
@@ -1590,15 +1637,15 @@ Methods to set an argument's display name, default, and description have been en
 Below is an example arguments method that supports English, French, and Spanish as languages, and SI and IP units.
 
 <pre><code>  # define the arguments that the user will input
-  def arguments (model,runner)
-    args = OpenStudio::Ruleset::OSArgumentVector.new
+  def arguments (model, runner)
+    args = OpenStudio::Measure::OSArgumentVector.new
 
     # get internationalization preferences
     language_preference = runner.languagePreference
     units_preference = runner.unitsPreference # not currently used here, does GUI handle this?
 
     # make an argument
-    insl_thckn = OpenStudio::Ruleset::makeDoubleArgument('insl_thckn',true)
+    insl_thckn = OpenStudio::Measure::makeDoubleArgument('insl_thckn',true)
 
     # set langauge specific argument display name
     display_name_hash = {}
@@ -1693,6 +1740,134 @@ Below is an example run method that manipulates and reports values related to a 
 
     return true
   end</code></pre>
+
+## Using files and using ExternalFile in a measure
+
+It is sometimes needed to create support files in the process of running the measure. This section describes how path handling works in the context of a measure.
+
+When running a measure, the current working directory is something like './run/000_measure_class_name/' (this is the output that `File.realpath('./')` will give you).
+None of the files created in this directory will actually be copied over, unless it is the special case described in the section 'Reporting Measures' > 'Outputting an HTML (or other file)'.
+
+### Measure resource files
+
+#### Where to place them
+Resource files for a measure should be placed in the `resources/` subfolder like the Measure File Structure section indicates to do with additional ruby code.
+Note that nested levels are not accepted, meaning that given the below tree, anything in `resources/subfolder` is not valid: `anotherschedulefile.csv` will not be copied over with the measure.
+
+```
+├── measure.rb
+├── measure.xml
+├── resources
+│   ├── schedulefile.csv
+    │   ├── subfolder
+    │   │   ├── anotherschedulefile.csv
+```
+
+#### How to access them inside a measure
+
+You can locate your measure resources by using a relative path to the `measure.rb` you are running by using `File.join(File.dirname(__FILE__), 'schedulefile.csv')`
+
+#### How to use an ExternalFile inside a measure
+
+The constructor for `ExternalFile` will automatically copy the file at the path you provide to the first element in `WorkflowJSON::filePaths[0]`. When running a measure, the openstudio-workflow gem prepends the `generated_files` subdirectory.
+
+```ruby
+class CreateScheduleFile < OpenStudio::Measure::ModelMeasure
+
+  [...]
+
+  def run(model, runner, user_arguments)
+
+    # Locate the resource file (this resolves to something like './measures/resources/schedulefile.csv')
+    csv_in_path = File.join(File.dirname(__FILE__), 'schedulefile.csv')
+
+    # Instantiate an External File: this will automatically copy to first path in WorkflowJSON: `runner.workflow.filePaths[0]`, typically './generated_files/'
+    externalFile_ = OpenStudio::Model::ExternalFile::getExternalFile(model, csv_in_path)
+    if (!externalFile_)
+      runner.registerError("Failed to instantiate an External File")
+      return false
+    end
+
+    column = 1
+    rowsToSkip = 1
+    scheduleFile = OpenStudio::Model::ScheduleFile.new(externalFile_.get(), column, rowsToSkip)
+    scheduleFile.setName("ExampleScheduleFile")
+
+    return true
+end
+```
+
+#### How to output any other file
+
+To output any file you may need that isn't an `ExternalFile`, you should rely on two things, in order of preferences:
+* `runner.workflow.filePaths[0]`: this will typically resolve to `./generated_files`
+* `runner.workflow.absoluteRootDir`: this will resolve to '.'
+
+`.` is the location defined as the `root` key inside the `workflow.osw`, or if not specified the location of the `workflow.osw` itself.
+
+```ruby
+class CreateScheduleFile < OpenStudio::Measure::ModelMeasure
+
+  [...]
+
+  def run(model, runner, user_arguments)
+
+    # Locate the resource file (this resolves to something like './measures/resources/schedulefile.csv')
+    csv_in_path = File.join(File.dirname(__FILE__), 'schedulefile.csv')
+
+    # Canonical way: write to the ./generated_files directory
+    out_file = File.join(runner.workflow.filePaths[0].to_s, 'myfile.csv')
+    File.open(out_file, 'w') do |f|
+      f << "Hello"
+    end
+
+    # Prefer the above, but one valid use case would be to output to the reports/ folder
+    # (this is a *ModelMeasure*, you cannot just name it './report.html'
+    # and have it copied automatically like described above in Reporting measure section)
+
+    # either /tmp/osmodel-1622719126-1/ApplyMeasureNow
+    # or ./<model_companion_dir>/
+    rootDir = runner.workflow.absoluteRootDir.to_s
+
+    html_out_path = 'report.html'
+    if (File.basename(rootDir) == 'ApplyMeasureNow')
+      html_out_path = File.absolute_path(
+        File.join(rootDir, '..', 'resources', 'reports', html_out_path))
+    else
+      html_out_path = File.absolute_path(
+        File.join(rootDir, 'reports', html_out_path))
+    end
+    outDir = File.dirname(html_out_path)
+    if !File.exists?(outDir)
+      FileUtils.mkdir_p(outDir)
+    end
+    File.open(html_out_path, 'w') do |f|
+      f << "<html><head><title>My Custom Report that works with Apply Now!</title></head><body><h1>Hello World!</h1></body></html>"
+    end
+
+    # Note A: this will typically output to something like ./run/000_measure_class_name/myfile.csv
+    out_file3 = './myfile3.csv'
+    File.open(out_file, 'w') do |f|
+      f << "Hello"
+    end
+    return true
+end
+```
+
+Regarding Note A in the above code, note that this is added to the `WorkflowStepResult` `step_files` entry (WorkflowJSON: root > "steps" [] > "result" > "step_files", see [Workflow JSON schema](https://github.com/NREL/OpenStudio-workflow-gem/blob/e569f910be364d33c3ddb1a655570c85f1b24bfa/spec/schema/osw_output.json#L251))
+
+It possible to capture the path to the stepFiles from a previous step inside a measure like the following:
+
+```ruby
+    if runner.workflow.currentStepIndex() > 0
+      previousStep = runner.workflow.workflowSteps[runner.workflow.currentStepIndex() - 1]
+      if previousStep.result
+        previousStepResult = previousStep.result.get
+        runner.registerWarning("previousStepResult.stepFiles=#{previousStepResult.stepFiles.map{|p| p.to_s}}")
+      end
+    end
+```
+
 
 # Additional References
 [OpenStudio Documentation Home](http://nrel.github.io/OpenStudio-user-documentation/)
