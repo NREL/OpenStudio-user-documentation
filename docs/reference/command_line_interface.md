@@ -196,12 +196,16 @@ Unix
 export ENERGYPLUS_EXE_PATH=/path/to/energyplus
 ```
 
+*The usage of the ruby specific ENVs below (RUBYLIB, GEM_PATH & GEM_HOME) are DEPRECATED in SDK versions 3.2.0 and will be removed in versons >= 3.3.0. For using custom ruby gems, please refer to the section below titled [Loading Custom Gems](#Loading-Custom-Gems) as this will the offical suppoorted way of using custom ruby gems with OpenStudio CLI.*
+
+
 The `RUBYLIB` environment variable can be used to configure the CLI to require Ruby files from locations on the user's disk. Locations passed using the `--include` switch take precedence over the paths found in this environment variable:
 
 Windows
 ```
 set RUBYLIB=/home/git/project;/home/git/project/app/helpers
 ```
+
 
 Unix
 ```
@@ -236,19 +240,19 @@ These same environment variables apply when requiring `openstudio.rb` from syste
 
 # Loading Custom Gems
 
-Developers commonly need to be able to override the version of a gem embedded in the OpenStudio CLI with one that they are working on.  Additionally, measure writers may wish to use gems that are not distributed with the OpenStudio CLI.  Neither of these use cases are an issue when using system ruby as the OpenStudio SDK ruby bindings (i.e. `openstudio.rb`) do not have embedded gems, bundler can be used to specify gem versions in this case.  When using the CLI there are two ways to override an embedded gem or provide access to another gem.  The first is to use the `--include` switch to add the directory containing the primary gem file (e.g. the directory containing `openstudio-standards.rb`) to the ruby load path. The second is to install the gem to your system location, then use the `--gem_path` switch to include this location (e.g. `C:\ruby-2.2.4-x64-mingw32\lib\ruby\gems\2.2.0\`). Note that the gem path directory should have `specifications`, `gems`, and other subdirectories in it.  Also, note that when using this second approach, a system gem will only override the embedded gem if the version is equal or greater to the embedded gem and the major version is the same.  It can be useful to use the `--verbose` and `-e` switches to print some information that can verify the correct version of the gem is being loaded:
+Developers commonly need to be able to override the version of a gem embedded in the OpenStudio CLI with one that they are working on.  Additionally, measure writers may wish to use gems that are not distributed with the OpenStudio CLI.  Neither of these use cases are an issue when using system ruby as the OpenStudio SDK ruby bindings (i.e. `openstudio.rb`) do not have embedded gems, bundler can be used to specify gem versions in this case.  When using the CLI there are two ways to override an embedded gem or provide access to another gem.  The first is to use the `--include` switch to add the directory containing the primary gem file (e.g. the directory containing `openstudio-standards.rb`) to the ruby load path. The second is to install the gem to your system location, then use the `--gem_path` switch to include this location (e.g. `C:\ruby-2.7.2-x64-mingw32\lib\ruby\gems\2.7.0\`). Note that the gem path directory should have `specifications`, `gems`, and other subdirectories in it.  Also, note that when using this second approach, a system gem will only override the embedded gem if the version is equal or greater to the embedded gem and the major version is the same.  It can be useful to use the `--verbose` and `-e` switches to print some information that can verify the correct version of the gem is being loaded:
 
 ```
 openstudio --verbose -I \openstudio-standards\openstudio-standards\lib\ -e "require 'openstudio-standards'" -e "puts OpenstudioStandards::VERSION"
 ```
 
 ```
-openstudio --verbose --gem_path C:\ruby-2.2.4-x64-mingw32\lib\ruby\gems\2.2.0\ -e "require 'openstudio-standards'" -e "puts OpenstudioStandards::VERSION"
+openstudio --verbose --gem_path C:\ruby-2.7.2-x64-mingw32\lib\ruby\gems\2.7.0\ -e "require 'openstudio-standards'" -e "puts OpenstudioStandards::VERSION"
 ```
 
 # Using the Ruby bindings instead
 
-The OpenStudio CLI is suggested for most users.  However, there are some cases where the OpenStudio Ruby bindings can be used directly.  The OpenStudio CLI has a Ruby interpreter built directly into it.  To use the OpenStudio Ruby bindings you must install a Ruby interpreter manually, the version of Ruby installed must match the version the OpenStudio Ruby bindings were built against as described in the [OpenStudio Version Compatibility Matrix](https://github.com/NREL/OpenStudio/wiki/OpenStudio-Version-Compatibility-Matrix). Compatible Ruby versions can be downloaded (for Windows)[https://rubyinstaller.org/downloads/archives/] and (for Mac)[http://rvm.io/]. Ruby can be installed on Ubunutu using `apt-get install ruby2.2`.
+The OpenStudio CLI is suggested for most users.  However, there are some cases where the OpenStudio Ruby bindings can be used directly.  The OpenStudio CLI has a Ruby interpreter built directly into it.  To use the OpenStudio Ruby bindings you must install a Ruby interpreter manually, the version of Ruby installed must match the version the OpenStudio Ruby bindings were built against as described in the [OpenStudio Version Compatibility Matrix](https://github.com/NREL/OpenStudio/wiki/OpenStudio-SDK-Version-Compatibility-Matrix). Compatible Ruby versions can be downloaded (for Windows)[https://rubyinstaller.org/downloads/archives/] and (for Mac)[http://rvm.io/]. Ruby 2.7.0 can be installed on Ubunutu 20.04 using `apt-get install ruby`.
 
 *Ruby gems with native MinGW extensions (the default on Windows) are not compatible with the OpenStudio CLI which is built against the MSWin Ruby runtime.  These gems can only be used with the OpenStudio Ruby bindings using the MinGW Ruby runtime.*
 
@@ -280,7 +284,7 @@ bundle update
 Now you can run any Ruby script with the OpenStudio Ruby bindings and other Ruby gems of your choice.  Note that the OpenStudio Ruby bindings are not packaged as a Ruby gem so the version of the OpenStudio Ruby bindings is not specified in the Gemfile.  Instead, the version of the OpenStudio Ruby bindings loaded can be controlled using the `-I` Ruby command line option.  You may use the `openstudio_cli.rb` Ruby script with all of the same command line options as the OpenStudio CLI described above.
 
 ```
-bundle exec ruby -I c:\openstudio-2.4.0\Ruby\ c:\openstudio-2.4.0\Ruby\openstudio_cli.rb run -w in.osw
+bundle exec ruby -I c:\openstudio-3.2.0\Ruby\ c:\openstudio-3.2.0\Ruby\openstudio_cli.rb run -w in.osw
 ```
 
 # Loading Custom Gems with Bundler in the CLI
