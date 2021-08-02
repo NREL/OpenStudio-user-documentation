@@ -29,3 +29,9 @@
 
 - EnergyPlus 9.5 Support
 - Bug fixes and new features
+
+## OpenStudio SDK 3.3.0 (October 2021)
+
+ - EnergyPlus 9.6 Support
+ - Bug fixes and new features
+~
