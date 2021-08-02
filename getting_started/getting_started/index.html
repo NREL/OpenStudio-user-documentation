@@ -181,8 +181,8 @@
 
 <p>This page walks you through installing OpenStudio and the basic workflow.</p>
 <h2 id="installation-instructions">Installation Instructions</h2>
-<p>OpenStudio SDK is supported on 64-bit versions of Windows 7 &ndash; Windows 10, OS X 10.12 &ndash; 10.14, and Ubuntu 18.04.
-OpenStudio SDK supports the latest EnergyPlus release which is bundled with the OpenStudio SDK installer. The <a href="https://github.com/NREL/OpenStudio/wiki/OpenStudio-Version-Compatibility-Matrix">version compatibility matrix</a> lists specific versions of EnergyPlus and other dependencies for each version of OpenStudio SDK.</p>
+<p>OpenStudio SDK is supported on 64-bit versions of Windows 10, OS X 10.14 &ndash; 10.15, Ubuntu 18.04 and Ubuntu 20.04.
+OpenStudio SDK supports the latest EnergyPlus release which is bundled with the OpenStudio SDK installer. The <a href="https://github.com/NREL/OpenStudio/wiki/OpenStudio-SDK-Version-Compatibility-Matrix">version compatibility matrix</a> lists specific versions of EnergyPlus and other dependencies for each version of OpenStudio SDK.</p>
 <h3 id="installation-steps">Installation Steps</h3>
 <p><strong>Download and install OpenStudio SDK</strong></p>
 <ol>
@@ -199,12 +199,10 @@ OpenStudio SDK supports the latest EnergyPlus release which is bundled with the 
 </ol>
 <p><strong>Optional - Command Line Installation</strong></p>
 <p>The OpenStudio SDK installer is built using the <a href="https://doc.qt.io/qtinstallerframework/index.html">Qt Installer Framework</a>.  Installation of OpenStudio SDK packages can be automated by passing the path to a customizable script to the installer using the <code>--script</code> argument:</p>
-<pre><code>OpenStudio-3.0.0-pre1+5cfb36386f-Windows.exe --script install.qs
+<pre><code>OpenStudio-3.2.0+e11f0a08b2-Windows.exe --script install.qs
 </code></pre>
 
 <p>An <a href="https://raw.githubusercontent.com/NREL/OpenStudio/develop/install.qs">example installation script</a> can be modified to support custom installation.</p>
-<p><strong>Optional - Install PAT</strong></p>
-<p>Instructions coming soon.</p>
 <p><strong>Optional - Setup a Building Component Library (BCL) Account</strong></p>
 <p>The BCL contains many useful measures that can be incorporated into OpenStudio SDK workflows or Parametric Analsysis Tool (PAT) projects. To access the content you will need to create an account:</p>
 <ul>
@@ -220,13 +218,13 @@ OpenStudio SDK supports the latest EnergyPlus release which is bundled with the 
 If you plan to use the OpenStudio SDK Ruby bindings via command prompt, you must install Ruby. Check the <a href="https://github.com/NREL/OpenStudio/wiki/OpenStudio-Version-Compatibility-Matrix">version compatibility matrix</a> to see which version of Ruby is compatible.</p>
 <ol>
 <li>Download the <a href="http://rubyinstaller.org/downloads/">Ruby</a> installer.  If you have the Windows (x64) version of OpenStudio SDK (Help&gt;About&gt;Compiler shows Visual Studio 12 2013 Win64), you'll need the x64 Ruby installer.</li>
-<li>Add <code>C:\ruby-2.5.5-x64-mingw32\bin</code> (or wherever you installed Ruby) to the PATH environment variable. <a href="http://geekswithblogs.net/renso/archive/2009/10/21/how-to-set-the-windows-path-in-windows-7.aspx">Detailed instructions</a>.</li>
+<li>Add <code>C:\ruby-2.7.2-x64-mingw32\bin</code> (or wherever you installed Ruby) to the PATH environment variable. <a href="http://geekswithblogs.net/renso/archive/2009/10/21/how-to-set-the-windows-path-in-windows-7.aspx">Detailed instructions</a>.</li>
 <li>
-<p>Create a text file with the following text inside (modify <code>C:\openstudio-3.0.0</code> based on where your version of OpenStudio SDK is installed):</p>
-<p><code>require 'C:\openstudio-3.0.0\Ruby\openstudio.rb'</code></p>
+<p>Create a text file with the following text inside (modify <code>C:\openstudio-3.2.0</code> based on where your version of OpenStudio SDK is installed):</p>
+<p><code>require 'C:\openstudio-3.2.0\Ruby\openstudio.rb'</code></p>
 </li>
 <li>
-<p>Save the file as <code>openstudio.rb</code> to <code>C:\ruby-2.5.5-x64-mingw32\lib\ruby\site_ruby\openstudio.rb</code> (or wherever you installed Ruby).</p>
+<p>Save the file as <code>openstudio.rb</code> to <code>C:\ruby-2.7.2-x64-mingw32\lib\ruby\site_ruby\openstudio.rb</code> (or wherever you installed Ruby).</p>
 </li>
 <li>Test your installation by opening a command prompt and typing: <code>irb</code> ENTER.  Then, type <code>RUBY_VERSION</code> ENTER.  Ensure that the Ruby correct version is shown.  Then, type <code>require 'openstudio'</code> ENTER.  If you see <code>=&gt; true</code>, it's working.</li>
 </ol>
