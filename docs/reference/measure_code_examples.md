@@ -61,7 +61,7 @@ You can use the `*` (multiply), `/` (divide), and `^` (exponent) operators in th
   </tr>
   <tr>
     <td>Mass</td>
-    <td>"lb_m", "ton"</td>
+    <td>"lb_m"</td>
     <td>"kg"</td>
   </tr>
   <tr>
@@ -81,7 +81,7 @@ You can use the `*` (multiply), `/` (divide), and `^` (exponent) operators in th
   </tr>
   <tr>
     <td>Power</td>
-    <td>"ft\*lb_f/s"</td>
+    <td>"ft\*lb_f/s", "Btu/h", "ton"</td>
     <td>"W"</td>
   </tr>
   <tr>
