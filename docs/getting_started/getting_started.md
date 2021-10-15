@@ -30,17 +30,16 @@ OpenStudio-3.2.0+e11f0a08b2-Windows.exe --script install.qs
 An [example installation script](https://raw.githubusercontent.com/NREL/OpenStudio/develop/install.qs) can be modified to support custom installation.
 
 
-__Optional - Setup a Building Component Library (BCL) Account__
+__Legacy Support - Building Component Library (BCL) key__
 
-The BCL contains many useful measures that can be incorporated into OpenStudio SDK workflows or Parametric Analsysis Tool (PAT) projects. To access the content you will need to create an account:
+The BCL contains many useful measures that can be incorporated into OpenStudio SDK workflows or Parametric Analsysis Tool (PAT) projects. You no longer need to create an account to access content, but certain apps may still ask you for a BCL key.
 
-- Navigate to [Building Component Library (BCL)](https://bcl.nrel.gov/). Create an account if you don't have one. Follow the instructions from the email sent to you upon registration and then login.
+If you are prompted for a key, simply enter 32 Xs as shown below:
 
-BCL content can also be accessed from within PAT. To take advantage of this integration, you will need to follow the steps outlined here to request a BCL key.
+```
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+```
 
-1. Login to [Building Component Library (BCL)](https://bcl.nrel.gov/).
-2. Click on the `My Dashboard` near the top right of the website.
-3. Copy the text after `API v1.1 key`: then paste the key into the PAT. __You only need to configure the key in one place and it will be used globally throughout the OpenStudio SDK tools.__ Additionally, this key will be maintained when you install updates to OpenStudio SDK.
 
 __Optional - Install Ruby__
 If you plan to use the OpenStudio SDK Ruby bindings via command prompt, you must install Ruby. Check the [version compatibility matrix](https://github.com/NREL/OpenStudio/wiki/OpenStudio-Version-Compatibility-Matrix) to see which version of Ruby is compatible.
