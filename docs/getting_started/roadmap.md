@@ -34,4 +34,26 @@
 
  - EnergyPlus 9.6 Support
  - Bug fixes and new features
-~
+
+## OpenStudio SDK 3.4.0 (May 2022)
+
+ - EnergyPlus 22.1.0 Support
+ - Bug fixes and new features
+
+## OpenStudio SDK 3.5.0 (Nov 2022)
+
+ - EnergyPlus 22.2.0 Support
+ - Phase 1 Python Measure Support
+ - Bug fixes and new features
+
+ ## OpenStudio SDK 3.6.0 (May 2023)
+
+ - EnergyPlus 23.1.0 Support
+ - Phase 2 Python Measure Support
+ - Bug fixes and new features
+
+  ## OpenStudio SDK 3.7.0 (Nov 2023)
+
+ - EnergyPlus 23.1.0 Support
+ - Phase 3 (Final) Python Measure Support
+ - Bug fixes and new features
