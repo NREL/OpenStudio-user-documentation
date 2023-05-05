@@ -5,7 +5,7 @@ The [OpenStudio Jupyter Notebooks](https://github.com/NREL/docker-openstudio-jup
 Please see the instructions in the [repo](https://github.com/NREL/docker-openstudio-jupyter) for details on installing Jupyter and related dependencies to run a notebook such as example Baseline model shown below. 
 
 
-### BaselineModel NoteBook Example
+### BaselineModel Notebook Example
 
 To begin, load the 'openstudio' Ruby bindings to the SDK as well as 'fileutils' for basic file/directory manipulation.
 
