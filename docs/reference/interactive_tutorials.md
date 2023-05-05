@@ -1,4 +1,4 @@
-<h1>Interactive Jupyter NoteBook Tutorials</h1>
+<h1>Interactive Jupyter Notebook Tutorials</h1>
 
 The [OpenStudio Jupyter Notebooks](https://github.com/NREL/docker-openstudio-jupyter) is a public GitHub repository with a collection of Jupyter notebooks to help users get started using OpenStudio interactively. These examples include running OpenStudio Workflow (OSW), OpenStudio Analysis jsons (OSA), and URBANopt workflows.
 
