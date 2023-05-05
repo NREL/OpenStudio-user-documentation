@@ -13,6 +13,7 @@ pages:
 
 - [reference/model_objects.md, Reference, OpenStudio Model Objects Overview]
 - [reference/command_line_interface.md, Reference, Command Line Interface]
+- [reference/interactive_tutorials.md, Reference, Interactive Jupyter Notebook Tutorials]
 - [reference/tutorial_bcl.md, Reference, Building Component Library]
 - [reference/parametric_analysis_tool_2.md, Reference, Parametric Analysis Tool (PAT) Interface Guide]
 - [reference/openstudio_results_measure.md, Reference, OpenStudio Results Measure]
