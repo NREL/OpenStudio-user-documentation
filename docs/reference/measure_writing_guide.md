@@ -223,7 +223,7 @@ if !glass_type
 end
 ```
 
-Beyond the standard info, warning, and error messages, three other measure-specific log messages may be issued:  the ```initial condition```, the ```final condition```, and whether the measure was applicable to this particular model (```NotAplicable```).
+Beyond the standard info, warning, and error messages, three other measure-specific log messages may be issued:  the ```initial condition```, the ```final condition```, and whether the measure was applicable to this particular model (```NotApplicable```).
 
 ### Initial Condition (runner.registerInitialCondition)
 The initial condition gives the user a "before" snapshot of the model with respect to what the measure will change.
