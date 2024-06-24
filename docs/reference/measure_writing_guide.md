@@ -332,7 +332,7 @@ This first example is essentially a *validation*, or *quality assurance/quality 
 
 ```ruby
 def run(model, runner, user_arguments)
-  super(model,runner,user_arguments)
+  super(model, runner, user_arguments)
   spaces = model.getSpaces
 
   spaces.each do |space|
