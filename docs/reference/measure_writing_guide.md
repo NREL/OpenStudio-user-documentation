@@ -118,7 +118,7 @@ end
 ```
 
 ### Arguments
-Measure arguments define which -- if any -- input parameters the user may set before running the measure. In our example measure "Add Continuous Insulation to Walls", the thickness of the insulation, and the R-value per inch of thickness, are the user-definable arguments. The measure arguments turn a general measure into a specific measure (describing a building design alternative, for example). Further, these arguments become the variables that are passed to PAT in a parametric analysis.
+Measure arguments define which -- if any -- input parameters the user may set before running the measure. In our example measure "Add Continuous Insulation to Walls", the thickness of the insulation, and the R-value per inch of thickness, are the user-definable arguments. The measure arguments make a general meaure, specific. Further, these arguments become the variables in a parametric analysis that are passed to PAT.
 
 **Usage:**
 
@@ -205,16 +205,16 @@ runner.registerInfo("Added insulation to #{num_surfaces} surfaces.")
 ```
 
 ### Warning (runner.registerWarning)
-Warning messages should inform the user about something that may be critical to the assumptions or that significantly affects how the measure runs. Warning messages do not cause the measure to stop running. e.g., to warn the user of an out of bounds insulation thickness (e.g. > 12 inches) in our example measure:
+Warning messages should inform the user about something that may be critical to the assumptions or that significantly affects how the measure runs. Warning messages do not cause the measure to stop running. e.g., to warn the user of an out of bounds insulation thickness (e.g. > 12) in our example measure:
 
 ```ruby
 if insul_thckns > 12
-  runner.registerWarning("Insulation thickness (#{insul_thckns}) [in] is beyond normal range.")
+  runner.registerWarning("Insulation thickness (#{insul_thckns}) beyond normal range."
 end
 ```
 
 ### Error (runner.registerError)
-Error messages are used when the measure issued a faulty instruction or otherwise cannot continue. Error messages stop the measure from running, and should inform the user of what caused the error condition. For example, if we assume that ```glass_type``` is a variable describing glazing type:
+Error messages are used when the measure issued a faulty instruction or otherwise cannot continue. Error messages stop the measure from running, and should inform the user of what caused the error condition. For example, if we assume that ```v1``` is a fractional value:
 
 ```ruby
 if !glass_type
@@ -233,9 +233,9 @@ runner.registerInitialCondition("Input model had #{num_flrs} floors")
 ```
 
 ### Final Condition (runner.registerFinalCondition)
-The final condition gives the user an "after" snapshot of the model with respect to what the measure changed. 
+The final condition gives the user an "after" snapshot of the model with respect to what the measure changed. Reporting the final condition is optional, but is good practice.
 
-Reporting the initial and final condition is optional, but recommended. These messages can be used in OpenStudio, EnergyPlus, or Reporting measures to explain the specific changes that a measure made to a model.
+Reporting the initial and final conditions is optional, but is recommended practice. These messages together can be used in reporting measures to explain the specific changes the a measure made to a model.
 
 ```ruby
 runner.registerFinalCondition("Model currently has #{num_flrs} floors")
@@ -253,7 +253,7 @@ This example shows how the initial condition, final condition, and applicability
 
 ```ruby
 def run(model, runner, user_arguments)
-  super(model, runner, user_arguments)
+  super(model,runner,user_arguments)
   spaces = model.getSpaces
 
   num_spcs_with_tz = 0
@@ -275,15 +275,15 @@ def run(model, runner, user_arguments)
 
   runner.registerInitialCondition("The model had #{num_spcs_with_tz}
                                   spaces with a thermal zone and
-                                 #{num_spcs_no_tz} without a thermal zone.")
+                                 #{num_spcs_no_tz} without a thermal zone")
 
   runner.registerFinalCondition("#{num_tzs_created} thermal zones were
                                  created. All spaces now have a thermal
-                                 zone.")
+                                 zone")
 
   if num_tzs_created == 0
     runner.registerAsNotApplicable("Not applicable because all spaces
-                                    already had thermal zones assigned.")
+                                    already had thermal zones")
   end
 
   return true
