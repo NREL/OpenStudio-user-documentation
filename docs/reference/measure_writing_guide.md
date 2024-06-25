@@ -118,7 +118,7 @@ end
 ```
 
 ### Arguments
-Measure arguments define which -- if any -- input parameters the user may set before running the measure. In our example measure "Add Continuous Insulation to Walls", the thickness of the insulation, and the R-value per inch of thickness, are the user-definable arguments. The measure arguments make a general meaure, specific. Further, these arguments become the variables in a parametric analysis that are passed to PAT.
+Measure arguments define which -- if any -- input parameters the user may set before running the measure. In our example measure "Add Continuous Insulation to Walls", the thickness of the insulation and the R-value per inch of thickness are the user-definable arguments. The measure arguments turn a general measure into a specific measure. Further, these arguments become the variables that are passed to PAT in a parametric analysis.
 
 **Usage:**
 
@@ -127,7 +127,7 @@ We define a user argument vector and create a single argument for insulation thi
 ```ruby
 def arguments(model)
     args = OpenStudio::Measure::OSArgumentVector.new
-    insl_thckn = OpenStudio::Measure::makeDoubleArgument('insl_thckn',true)
+    insl_thckn = OpenStudio::Measure::makeDoubleArgument('insl_thckn', true)
     insl_thckn.setDisplayName('Insulation Thickness (in)')
     insl_thckn.setDefaultValue(1.5)
     args << insl_thckn
@@ -135,7 +135,7 @@ def arguments(model)
 end
 ```
 
-There is a statement to create a new argument of the type "double" and assign it to the variable "insl_thckn". The "true" at the end of this line indicates that the argument is required. The next line defines the display name of the argument; the user will see this in the GUI (recommended practice dictates we identify the units for the argument inside parentheses at the end of the display name). Lastly, we specify the default value for the argument. This default value is presented initially to the user, but the user can change the value in the GUI.
+This code creates a new argument of type "double" and assigns it to the variable "insl_thckn". The "true" at the end of this line indicates that the argument is required. The next line defines the display name of the argument; the user will see this in the GUI (recommended practice dictates we identify the units for the argument inside parentheses at the end of the display name). Lastly, we specify the default value for the argument. This default value is presented initially to the user, but the user can change the value in the GUI.
 
 #### Argument Types
 
@@ -174,11 +174,11 @@ chs << "Option 2"
 v5 = OpenStudio::Measure::OSArgument::makeChoiceArgument('v5', chs, true)
 ```
 
-Possible values for the choice arguments may also be extracted from the model. For example, the following would give the user a choice of any zones in the model, sorted by zone name.
+Possible values for the choice arguments may also be extracted from the model. For example, the following would give the user a choice of any thermal zones in the model, sorted by zone name.
 
 ```ruby
 v6 = OpenStudio::Measure::makeChoiceArgumentOfWorkspaceObjects
-          ("v6","OS_Thermal_Zone".to_IddObjectType,model,true)
+          ("v6", "OS_Thermal_Zone".to_IddObjectType, model, true)
 ```
 
 ### Run
@@ -198,23 +198,23 @@ The template above will define your measure as "runnable" to the OpenStudio API.
 Log messages may be directed to the GUI, the command line interface, and/or to log streams. The OpenStudio GUI supports three log levels: **Info**, **Warning**, and **Error**.
 
 ### Info (runner.registerInfo)
-Info messages just that, informative in nature. Generally used for passing status or non-failure events to the user, info messages do not cause the measure to fail or stop running. In the "Add Continuous Insulation to Walls" measure example, a successful application of the measure would affect a number of surfaces in the model; the number of surfaces affected could be communicated to the user via an info message.
+Info messages are informative in nature. Generally used for passing status or non-failure events to the user, info messages do not cause the measure to fail or stop running. In the "Add Continuous Insulation to Walls" measure example, a successful application of the measure would affect several surfaces in the model; the number of surfaces affected could be communicated to the user via an info message.
 
 ```ruby
 runner.registerInfo("Added insulation to #{num_surfaces} surfaces.")
 ```
 
 ### Warning (runner.registerWarning)
-Warning messages should inform the user about something that may be critical to the assumptions or that significantly affects how the measure runs. Warning messages do not cause the measure to stop running. e.g., to warn the user of an out of bounds insulation thickness (e.g. > 12) in our example measure:
+Warning messages should inform the user about something that may be critical to the assumptions or that significantly affects how the measure runs. Warning messages do not cause the measure to stop running. e.g., to warn the user of an out of bounds insulation thickness (e.g. > 12 inches) in our example measure:
 
 ```ruby
 if insul_thckns > 12
-  runner.registerWarning("Insulation thickness (#{insul_thckns}) beyond normal range."
+  runner.registerWarning("Insulation thickness (#{insul_thckns} inches) is beyond normal range.")
 end
 ```
 
 ### Error (runner.registerError)
-Error messages are used when the measure issued a faulty instruction or otherwise cannot continue. Error messages stop the measure from running, and should inform the user of what caused the error condition. For example, if we assume that ```v1``` is a fractional value:
+Error messages are used when the measure issued a faulty instruction or otherwise cannot continue. Error messages stop the measure from running, and should inform the user of what caused the error condition. For example, if we assume that ```glass_type``` is a variable describing the type of glazing:
 
 ```ruby
 if !glass_type
@@ -233,16 +233,16 @@ runner.registerInitialCondition("Input model had #{num_flrs} floors")
 ```
 
 ### Final Condition (runner.registerFinalCondition)
-The final condition gives the user an "after" snapshot of the model with respect to what the measure changed. Reporting the final condition is optional, but is good practice.
+The final condition gives the user an "after" snapshot of the model with respect to what the measure changed.
 
-Reporting the initial and final conditions is optional, but is recommended practice. These messages together can be used in reporting measures to explain the specific changes the a measure made to a model.
+Reporting the model's initial and final conditions is an optional but recommended practice. These messages can be used in OpenStudio, EnergyPlus, and/or Reporting measures to explain the specific changes that the measure made to the model.
 
 ```ruby
 runner.registerFinalCondition("Model currently has #{num_flrs} floors")
 ```
 
 ### Not Applicable (runner.registerAsNotApplicable)
-Not all measures are applicable to all models. For example, a measure called "Replace all windows with triple-paned windows" would not be applicable to a building with no windows. This log message simply allows the measure author to register the fact that a measure ran successfully, but made no changes to the model.
+Not all measures are applicable to all models. For example, a measure called "Replace all windows with triple-paned windows" would not be applicable to a building with no windows. This log message allows the measure author to register the fact that a measure ran successfully, but made no changes to the model.
 
 ```ruby
 runner.registerAsNotApplicable("Measure not applicable because [logic!]")
@@ -253,7 +253,7 @@ This example shows how the initial condition, final condition, and applicability
 
 ```ruby
 def run(model, runner, user_arguments)
-  super(model,runner,user_arguments)
+  super(model, runner, user_arguments)
   spaces = model.getSpaces
 
   num_spcs_with_tz = 0
@@ -275,15 +275,15 @@ def run(model, runner, user_arguments)
 
   runner.registerInitialCondition("The model had #{num_spcs_with_tz}
                                   spaces with a thermal zone and
-                                 #{num_spcs_no_tz} without a thermal zone")
+                                 #{num_spcs_no_tz} spaces without a thermal zone.")
 
   runner.registerFinalCondition("#{num_tzs_created} thermal zones were
                                  created. All spaces now have a thermal
-                                 zone")
+                                 zone.")
 
   if num_tzs_created == 0
     runner.registerAsNotApplicable("Not applicable because all spaces
-                                    already had thermal zones")
+                                    already had thermal zones.")
   end
 
   return true
