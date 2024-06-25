@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Interactive Jupyter Notebook Tutorials - OpenStudio<sup>&reg;</sup> SDK User Docs</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    
+    <link href="../../css/bootstrap-3.3.0.min.css" rel="stylesheet">
+    <link href="../../css/font-awesome-4.2.0.min.css" rel="stylesheet">
+    <link href="../../css/prettify-1.0.css" rel="stylesheet">
+    <link href="../../css/base.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+  <nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../.."><img alt="" src="../../img/OS_32x32.png"> OpenStudio<sup>&reg;</sup> SDK User Docs</a>
+      </div>
+      <div class="navbar-collapse collapse">
+        <!-- Main navigation -->
+        <ul class="nav navbar-nav">
+        
+          
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">Getting Started <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+            
+              <li>
+                <a href="../../getting_started/features">Current Features</a>
+              </li>
+            
+              <li>
+                <a href="../../getting_started/roadmap">Planned Features</a>
+              </li>
+            
+              <li>
+                <a href="../../getting_started/getting_started">Installation and Introductory Tutorial</a>
+              </li>
+            
+              <li>
+                <a href="../../getting_started/about_measures">About Measures</a>
+              </li>
+            
+            </ul>
+          </li>
+          
+        
+          
+          <li class="dropdown active">
+            <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">Reference <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+            
+              <li>
+                <a href="../model_objects">OpenStudio Model Objects Overview</a>
+              </li>
+            
+              <li>
+                <a href="../command_line_interface">Command Line Interface</a>
+              </li>
+            
+              <li class="active">
+                <a href=".">Interactive Jupyter Notebook Tutorials</a>
+              </li>
+            
+              <li>
+                <a href="../tutorial_bcl">Building Component Library</a>
+              </li>
+            
+              <li>
+                <a href="../parametric_analysis_tool_2">Parametric Analysis Tool (PAT) Interface Guide</a>
+              </li>
+            
+              <li>
+                <a href="../openstudio_results_measure">OpenStudio Results Measure</a>
+              </li>
+            
+              <li>
+                <a href="../measure_writing_guide">Measure Writer's Reference Guide</a>
+              </li>
+            
+              <li>
+                <a href="../measure_code_examples">Measure Code Examples</a>
+              </li>
+            
+              <li>
+                <a href="../developing_measure_collections">Developing Measure Collections</a>
+              </li>
+            
+              <li>
+                <a href="../geometry_editor">FloorspaceJS</a>
+              </li>
+            
+              <li>
+                <a href="../life_cycle_costing_examples">Life Cycle Cost Analysis</a>
+              </li>
+            
+              <li>
+                <a href="../refguide_radiance">OpenStudio-Radiance Reference Guide</a>
+              </li>
+            
+            </ul>
+          </li>
+          
+        
+          
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">Help <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+            
+              <li>
+                <a href="../../help/best_practices">Modeling Best Practices</a>
+              </li>
+            
+              <li>
+                <a href="../../help/training">Find Training</a>
+              </li>
+            
+              <li>
+                <a href="../../help/software_license">Software License</a>
+              </li>
+            
+            </ul>
+          </li>
+          
+        
+        </ul>
+
+        <!-- Search, Navigation and Repo links -->
+        <ul class="nav navbar-nav navbar-right">
+        
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <div class="bs-docs-sidebar hidden-print affix well" role="complementary">
+  <ul class="nav">
+  
+    <li class="main active"><a href="#baselinemodel-notebook-example">BaselineModel Notebook Example</a>
+      <ul class="nav">
+        
+      </ul>
+    </li>
+  
+  </ul>
+  <div class="home-btn">
+    <a class="btn btn-default" role="button" href="https://www.openstudio.net">Back to OpenStudio.net</a>
+  </div>
+  <div class="home-btn-2">
+    <p >Looking for the OpenStudio Application<sup>&reg;</sup> Version &#8805; 1.2.0 Documentation?</p>
+    <a class="btn btn-default" role="button" href="https://openstudiocoalition.github.io//">Go to the OpenStudio <br/> Application<sup>&reg;</sup> Documentation</a>
+  </div>
+</div>
+        </div>
+        <div class="col-md-9" role="main">
+          <h1>Interactive Jupyter Notebook Tutorials</h1>
+
+<p>The <a href="https://github.com/NREL/docker-openstudio-jupyter">OpenStudio Jupyter Notebooks</a> is a public GitHub repository with a collection of Jupyter notebooks to help users get started using OpenStudio interactively. These examples include running OpenStudio Workflow (OSW), OpenStudio Analysis jsons (OSA), and URBANopt workflows.</p>
+<p>Please see the instructions in the <a href="https://github.com/NREL/docker-openstudio-jupyter">repo</a> for details on installing Jupyter and related dependencies to run a notebook such as example Baseline model shown below. </p>
+<h3 id="baselinemodel-notebook-example">BaselineModel Notebook Example</h3>
+<p>To begin, load the 'openstudio' Ruby bindings to the SDK as well as 'fileutils' for basic file/directory manipulation.</p>
+<pre><code class="ruby">require 'fileutils'
+require 'openstudio'
+</code></pre>
+
+<p>Create a folder named Baseline in the current working directory, and ensures that it only gets created if it does not already exist. The FileUtils.mkdir_p method creates the directory, and the Dir.exist? method checks for its existence before creating it.</p>
+<pre><code class="ruby">project_dir = 'Baseline'
+#create project folder
+FileUtils.mkdir_p(&quot;#{project_dir}&quot;) unless Dir.exist?(&quot;#{project_dir}&quot;)
+</code></pre>
+
+<p>Change the working directory to the Baseline folder to make it the current directory for file operations. The Dir.chdir method sets the current working directory to the specified folder. This is useful when you want to perform file operations in a specific directory, rather than the current working directory.</p>
+<pre><code class="ruby">#change working directory
+Dir.chdir &quot;#{project_dir}&quot;
+</code></pre>
+
+<p>Create an example model using OpenStudio::Model.exampleModel and saves it in the "seeds" directory as an OSM file. The directory is created with FileUtils.mkdir_p if it doesn't exist. The file path is created with OpenStudio::Path.new and the model is saved with model.save, with the second argument 'true' meaning it can overwrite an existing file.</p>
+<pre><code class="ruby">
+# Create the Example Model
+model = OpenStudio::Model.exampleModel()
+
+#create directory for the seed model
+FileUtils.mkdir_p(&quot;seeds&quot;) unless Dir.exist?(&quot;seeds&quot;)
+# Save the model to an OSM file
+osm_path = OpenStudio::Path.new(File.expand_path(&quot;seeds/example_model.osm&quot;))
+model.save(osm_path, true)
+
+</code></pre>
+
+<p>Download the weather file 'USA_CO_Golden-NREL.724666_TMY3.epw' and save it in the "weather" directory, checking first if the file already exists locally to avoid redownloading it.</p>
+<pre><code class="ruby">#get weather file
+require 'open-uri'
+
+# URL of the file to download
+url = 'https://github.com/NREL/OpenStudio/raw/develop/resources/utilities/Filetypes/'
+
+# Local file name
+weather_file_name = 'USA_CO_Golden-NREL.724666_TMY3.epw'
+weather_file_path = &quot;weather/&quot; + weather_file_name
+
+#create directory for the weather file
+FileUtils.mkdir_p(&quot;weather&quot;) unless Dir.exist?(&quot;weather&quot;)
+
+if !File.exist?(weather_file_path)
+    puts &quot;Download the file #{weather_file_name}&quot;
+    URI.open(url + weather_file_name) do |file|
+      File.write(weather_file_path, file.read)
+    end
+else
+    puts 'weather file exists locally'
+end
+
+</code></pre>
+
+<p>Set a weather file in the OSM model.</p>
+<p>Load the weather file into OpenStudio using the OpenStudio::EpwFile.load method and passing the file path, which is constructed using OpenStudio::Path.new and File.expand_path to obtain the absolute path of the weather file.</p>
+<p>The weather file is then set in the model using the OpenStudio::Model::WeatherFile::setWeatherFile method, which takes the model and the weather file as arguments. The code then retrieves the weather file using model.getWeatherFile and assigns it to a variable weatherFile.</p>
+<p>Finally, the code validates the weather file by checking three properties: the checksum, the country, and the state/province/region. The checksum property is compared to the string 'BDF687C1' using puts weatherFile.checksum.get == 'BDF687C1', the country property is compared to the string 'USA' using puts weatherFile.country == 'USA', and the stateProvinceRegion property is compared to the string 'CO' using puts weatherFile.stateProvinceRegion == 'CO'.</p>
+<p>In summary, the code sets a weather file in the OSM model, retrieves it, and validates it by checking three of its properties.</p>
+<pre><code class="ruby">#set the weather file in the OSM
+#use absolute path
+epw_file = OpenStudio::EpwFile.load(OpenStudio::Path.new(File.expand_path(weather_file_path)))
+OpenStudio::Model::WeatherFile::setWeatherFile(model, epw_file.get)
+weatherFile = model.getWeatherFile
+# validate the weather file
+puts weatherFile.checksum.get == 'BDF687C1'
+puts weatherFile.country == 'USA'
+puts weatherFile.stateProvinceRegion == 'CO'
+
+</code></pre>
+
+<p>Use the 'Open3' library to make a system call to the OpenStudio command-line interface (CLI) and check its version. The CLI path is stored in the 'cli' variable and the system call is made using the 'capture3' method of the 'Open3' module, which captures the standard output, standard error, and exit status of the system command. The result of the system call is checked using the 'status.success?' method, and if it is successful, the standard output is printed to the console. If it fails, the standard error is printed instead.</p>
+<pre><code class="ruby">require 'open3'
+
+#get path to OpenStudio CLI
+cli = OpenStudio.getOpenStudioCLI.to_s
+
+# Make a system call to get version
+stdout, stderr, status = Open3.capture3(&quot;#{cli} --version&quot;)
+
+# Check the result
+if status.success?
+  puts &quot;Command executed successfully&quot;
+  puts stdout
+else
+  puts &quot;Command failed&quot;
+  puts stderr
+end
+</code></pre>
+
+<p>Require the "openstudio-calibration" and "openstudio-common-measures" ruby gems. These gems contain pre-written scripts (OpenStudio Measures) that can make programmatic changes to an OpenStudio model, that we want to use in our project. Use the "Gem::Specification" method or the "Gem.find_files" method to find the local path to the /lib folder of the gem which is where the Measures are located. These paths are then stored in the variables "calibration_measures_dir" and "common_measures_dir".</p>
+<pre><code class="ruby">require 'openstudio-calibration'
+require 'openstudio-common-measures'
+
+#find path to the Measures
+puts Pathname.new(Gem.find_files('openstudio-common-measures.rb').first).dirname
+# -or-
+#find path to Measures using gem::spec
+common_measures_dir = Gem::Specification.find_by_name(&quot;openstudio-common-measures&quot;).gem_dir
+calibration_measures_dir = Gem::Specification.find_by_name(&quot;openstudio-calibration&quot;).gem_dir
+</code></pre>
+
+<p>Copy the OpenStudio Measures from the openstudio-common-measures and openstudio-calibration gems into a local project directory called "measures". The purpose of this is to make these scripts available for use in the current project. The measures copied include "openstudio_results", "AddMonthlyJSONUtilityData", "CalibrationReportsEnhanced", and "GeneralCalibrationMeasurePercentChange".</p>
+<pre><code class="ruby">#make measure directories for the project
+
+FileUtils.mkdir_p(&quot;measures&quot;) unless Dir.exist?(&quot;measures&quot;)
+
+#copy measure from gem to local project directory
+FileUtils.cp_r(&quot;#{common_measures_dir}/lib/measures/openstudio_results&quot;, &quot;measures&quot;)
+FileUtils.cp_r(&quot;#{calibration_measures_dir}/lib/measures/AddMonthlyJSONUtilityData&quot;, &quot;measures&quot;)
+FileUtils.cp_r(&quot;#{calibration_measures_dir}/lib/measures/CalibrationReportsEnhanced&quot;, &quot;measures&quot;)
+FileUtils.cp_r(&quot;#{calibration_measures_dir}/lib/measures/GeneralCalibrationMeasurePercentChange&quot;, &quot;measures&quot;)
+</code></pre>
+
+<p>Create a project directory named "data" if it doesn't already exist, and then copies the monthly metered data in the "Data" directory located outside of the project folder to the newly created "data" folder within the project folder. The data that is being copied is in JSON format.</p>
+<pre><code class="ruby">#make directory for the calibration data
+FileUtils.mkdir_p(&quot;data&quot;) unless Dir.exist?(&quot;data&quot;)
+
+#copy JSON data to local project directory
+FileUtils.cp_r(&quot;../Data/.&quot;, &quot;data&quot;)
+</code></pre>
+
+<p>The OpenStudio Workflow (OSW) format is a JSON file format that describes a simulation workflow. In an OpenStudio Workflow, a seed OpenStudio Model is loaded. OpenStudio Model Measures are applied to the seed model. After these measures, the OpenStudio Model is translated to EnergyPlus IDF format. Once in EnergyPlus IDF format, OpenStudio EnergyPlus Measures are applied. After these measures, the EnergyPlus simulation is executed. Once the EnergyPlus simulation is complete, OpenStudio Reporting Measures are applied which generate reports. An error at any point in the workflow will halt the workflow. Once the workflow is completed (successfully or unsuccessfully) an output OSW file is written which contains output related to running the workflow.</p>
+<p>create a WorkflowJSON object which will be turned into our OSW json file.</p>
+<pre><code class="ruby"># Create a new OSW
+osw = OpenStudio::WorkflowJSON.new
+
+</code></pre>
+
+<p>Each step listed in the OSW file describes an OpenStudio Measure to apply. Measures are applied in order and must progress from OpenStudio Model Measures to OpenStudio EnergyPlus Measures to OpenStudio Reporting Measures. Each step lists a measure_dir_name which is the directory name of an OpenStudio Measure to apply. Measures are found at run time according to logic in WorkflowJSON::findMeasure. Each step specifies arguments to be passed to the measure, the measure argument's name is the key and the value to pass is the measure. Optional arguments may be ommitted, default values will be used in this case. The value passed to choice arguments may be either a valid choice value or a valid choice value display name.</p>
+<p>Set up two Model measure steps to be run on our OpenStudio model. The first measure step is to add the electricity bill data from an external JSON file (electric.json) to the OpenStudio model, and the second measure step is to add the gas bill data from another JSON file (natural_gas.json) to the model. The arguments to these measure steps set the details of the data to be added, such as the fuel type, consumption unit, data key name, start and end dates, etc. The measure steps are then set as model measure steps in the OpenStudio Workflow (OSW) object.</p>
+<p>The AddMonthlyJSONUtilityData Measure populates a UtilityBill object in the OpenStudio Model using external JSON data.  The argument called 'json' is the file path, relative to the Measure at runtime, to the json data.  We have previously copied those jsons to the /data project folder.  At runtime there are two case to consider.  The first is if this run is taking place on an OS-Server or (OSAF) instance, where the project data is zipped up into an OSA.zip file and posted to the OS-Server Web node.  In this case, the relative path to the data would be:  </p>
+<p><strong>on the server:</strong> '../../../lib/calibration_data/electric_json.json'</p>
+<p>Since we are running locally using the OpenStudio CLI, the path from the runtime copy of the Measure to the data is:       </p>
+<p><strong>CLI run:</strong> '../../../data/electric.json'</p>
+<p>And that is what we will set the argument 'json' to.  </p>
+<p>In the first application of the Measure, we want to remove any exisitng UtilityBill objects in the model, so we set 'remove_existing_data' to True. We also want to set the Run Period object in the model to the Start and End dates that we have specified in the Measure. Add that MeasureStep to the measure_step array.</p>
+<p>In the second application of the Measure, we do not want to remove the existing UtilityBill object we previously setup, so that argument is now False.  The Run Period object is also already setup, so there is no need to set it since its default value is False. Add that MeasureStep to the measure_step array.</p>
+<p>Finally, add the model measure steps to the OSW (OpenStudio Workflow) object. The measure type is defined as a "ModelMeasure" and the measure steps are passed as arguments to the setMeasureSteps method of the OSW object.</p>
+<pre><code class="ruby"># Define the model measure steps
+measure_steps = []
+
+#add Utility Bill object to model from external JSON file
+os_results = OpenStudio::MeasureStep.new(&quot;measures/AddMonthlyJSONUtilityData&quot;)
+os_results.setArgument(&quot;json&quot;,&quot;../../../data/electric.json&quot;)
+os_results.setArgument(&quot;variable_name&quot;,&quot;Electricity Bill&quot;)
+os_results.setArgument(&quot;fuel_type&quot;,&quot;Electricity&quot;)
+os_results.setArgument(&quot;consumption_unit&quot;,&quot;kWh&quot;)
+os_results.setArgument(&quot;data_key_name&quot;,&quot;tot_kwh&quot;)
+os_results.setArgument(&quot;start_date&quot;,&quot;2013-01-1&quot;)
+os_results.setArgument(&quot;end_date&quot;,&quot;2013-12-31&quot;)
+os_results.setArgument(&quot;remove_existing_data&quot;,TRUE)
+os_results.setArgument(&quot;set_runperiod&quot;,TRUE)
+measure_steps &lt;&lt; os_results
+
+os_results = OpenStudio::MeasureStep.new(&quot;measures/AddMonthlyJSONUtilityData&quot;)
+os_results.setArgument(&quot;json&quot;,&quot;../../../data/natural_gas.json&quot;)
+os_results.setArgument(&quot;variable_name&quot;,&quot;Gas Bill&quot;)
+os_results.setArgument(&quot;fuel_type&quot;,&quot;Gas&quot;)
+os_results.setArgument(&quot;consumption_unit&quot;,&quot;therms&quot;)
+os_results.setArgument(&quot;data_key_name&quot;,&quot;tot_therms&quot;)
+os_results.setArgument(&quot;start_date&quot;,&quot;2013-01-1&quot;)
+os_results.setArgument(&quot;end_date&quot;,&quot;2013-12-31&quot;)
+os_results.setArgument(&quot;remove_existing_data&quot;,FALSE)
+#os_results.setArgument(&quot;set_runperiod&quot;,TRUE)
+measure_steps &lt;&lt; os_results
+
+# Add the measure steps to the OSW
+measure_type = OpenStudio::MeasureType.new(&quot;ModelMeasure&quot;)
+osw.setMeasureSteps(measure_type, measure_steps)
+</code></pre>
+
+<p>Add two reporting measures to be run as part of the OpenStudio Workflow (OSW): "measures/openstudio_results" and "measures/CalibrationReportsEnhanced". These reporting measures are added to the array reporting_steps and then set in the OSW object osw by creating a new MeasureType object with the type "ReportingMeasure" and calling the setMeasureSteps method on osw with this MeasureType object and the reporting_steps array.</p>
+<pre><code class="ruby"># Define the reporting measure steps
+reporting_steps = []
+
+#add openstudio_results to the reporting_steps array
+os_results = OpenStudio::MeasureStep.new(&quot;measures/openstudio_results&quot;)
+reporting_steps &lt;&lt; os_results
+
+os_results = OpenStudio::MeasureStep.new(&quot;measures/CalibrationReportsEnhanced&quot;)
+reporting_steps &lt;&lt; os_results
+
+# Set the measure steps in the OSW
+measure_type = OpenStudio::MeasureType.new(&quot;ReportingMeasure&quot;)
+osw.setMeasureSteps(measure_type, reporting_steps)
+</code></pre>
+
+<p>Add the example_model OSM we generated earlier as the 'seed' model and set the weatherfile in the OSW.
+Also, save the OSW as 'baseline_model.osw' by creating a full, absolute path to the file name and use the .saveAs() method.</p>
+<pre><code class="ruby">#add seed / weatherfile to OSW
+osw.setSeedFile(osm_path)
+osw.setWeatherFile(weather_file_path)
+#save file locally
+osw_path = OpenStudio::Path.new(File.expand_path(&quot;baseline_model.osw&quot;))
+osw.saveAs(osw_path)
+</code></pre>
+
+<p>Since this is in Ruby and the CLI is an executable, to run the workflow using the CLI, we will use the Open3.capture3 method to make a System Call to the CLI, which captures the standard output, standard error, and status code of the CLI command. The CLI command runs the workflow, specifying the workflow file path, and the --debug and --workflow options are passed to the CLI. Finally, the status code of the CLI command is stored in the status variable.</p>
+<pre><code class="ruby">#Run the workflow
+stdout, stderr, status = Open3.capture3(&quot;#{cli} run --debug --workflow #{osw_path}&quot;)
+status
+</code></pre>
+
+<p>To view the results, set the file path to an HTML report generated by the "CalibrationReportsEnhanced" measure and display the contents of the file using IRuby's display method. The argument passed to the display method is the content of the file read using Ruby's File.read method, and the mime type is specified as 'text/html' to indicate that the contents are HTML. This code assumes that the file exists and will raise an error if it cannot be found or read.</p>
+<pre><code class="ruby">file_path = File.expand_path(Dir.pwd + '/run/003_measures/CalibrationReportsEnhanced/report.html')
+
+IRuby.display File.read(file_path), mime: 'text/html'
+</code></pre>
+
+<p>Or launch in an external browser like chrome, etc</p>
+<pre><code class="ruby">Open3.popen3(&quot;start chrome.exe #{file_path}&quot;)
+</code></pre>
+
+
+          <div class="footer">
+  <p class="text-center"><a href="https://unmethours.com/questions/scope:all/sort:activity-desc/tags:openstudio/">Get Help</a> | <a href="https://www.openstudio.net/contact">Contact Us</a></p>
+  <p class="text-center"><a href="https://www.openstudio.net">OpenStudio</a><sup>&reg;</sup> SDK is developed in collaboration by NREL, ANL, LBNL, ORNL, and PNNL.</p>
+  <p class="text-center">OpenStudio<sup>&reg;</sup> is a registered trademark of the Alliance for Sustainable Energy, LLC.</p>
+  <p class="text-center"><a href="http://www.nrel.gov">NREL</a> is a National Laboratory of the U.S. Department of Energy, Office of Energy Efficiency and Renewable Energy, operated by the Alliance for Sustainable Energy, LLC.</p>
+  <p class="text-center"><a href="#">Back to Top</a></p>
+</div>
+        </div>
+      </div>
+    </div>
+    
+
+    <script src="../../js/jquery-2.1.1.min.js"></script>
+    <script src="../../js/bootstrap-3.3.0.min.js"></script>
+    <script src="../../js/bootstrap-hover-dropdown-2.0.11.min.js"></script>
+    <script src="../../js/prettify-1.0.min.js"></script>
+    <script src="../../js/base.js"></script>
+  </body>
+</html>

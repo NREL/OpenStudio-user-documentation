@@ -76,6 +76,10 @@
               </li>
             
               <li>
+                <a href="../../reference/interactive_tutorials">Interactive Jupyter Notebook Tutorials</a>
+              </li>
+            
+              <li>
                 <a href="../../reference/tutorial_bcl">Building Component Library</a>
               </li>
             
@@ -181,16 +185,17 @@
 
 <p>This page walks you through installing OpenStudio and the basic workflow.</p>
 <h2 id="installation-instructions">Installation Instructions</h2>
-<p>OpenStudio SDK is supported on 64-bit versions of Windows 10, OS X 10.14 &ndash; 10.15, Ubuntu 18.04 and Ubuntu 20.04.
+<p>AsOpenStudio SDK is supported on 64-bit versions of Windows 7-11, macOS X 10.15+, 12.1+ arm64 and Ubuntu 20.04,22.04.
 OpenStudio SDK supports the latest EnergyPlus release which is bundled with the OpenStudio SDK installer. The <a href="https://github.com/NREL/OpenStudio/wiki/OpenStudio-SDK-Version-Compatibility-Matrix">version compatibility matrix</a> lists specific versions of EnergyPlus and other dependencies for each version of OpenStudio SDK.</p>
 <h3 id="installation-steps">Installation Steps</h3>
 <p><strong>Download and install OpenStudio SDK</strong></p>
 <ol>
-<li>Login to the <a href="https://www.openstudio.net/downloads">OpenStudio SDK website</a>. Create an account if you don't have one. EnergyPlus and OpenStudio SDK now share a password.</li>
-<li>Click "Downloads" at the top of the page.</li>
-<li>Choose the installer that matches your operating system. The OpenStudio SDK package contains the following components:<ul>
+<li>Open a web browser to the <a href="https://github.com/nrel/openstudios/releases">OpenStudio SDK GitHub Repository</a>. </li>
+<li></li>
+<li>Choose the installer under "Assets" that matches your operating system. The OpenStudio SDK package contains the following components:<ul>
 <li>EnergyPlus</li>
 <li>Ruby API</li>
+<li>Python API</li>
 <li>C# API</li>
 <li>Command Line Interface</li>
 <li>Radiance</li>
@@ -199,29 +204,24 @@ OpenStudio SDK supports the latest EnergyPlus release which is bundled with the 
 </ol>
 <p><strong>Optional - Command Line Installation</strong></p>
 <p>The OpenStudio SDK installer is built using the <a href="https://doc.qt.io/qtinstallerframework/index.html">Qt Installer Framework</a>.  Installation of OpenStudio SDK packages can be automated by passing the path to a customizable script to the installer using the <code>--script</code> argument:</p>
-<pre><code>OpenStudio-3.2.0+e11f0a08b2-Windows.exe --script install.qs
+<pre><code>OpenStudio-3.5.0+7b14ce1588-Windows.exe --script install.qs
 </code></pre>
 
 <p>An <a href="https://raw.githubusercontent.com/NREL/OpenStudio/develop/install.qs">example installation script</a> can be modified to support custom installation.</p>
-<p><strong>Optional - Setup a Building Component Library (BCL) Account</strong></p>
-<p>The BCL contains many useful measures that can be incorporated into OpenStudio SDK workflows or Parametric Analsysis Tool (PAT) projects. To access the content you will need to create an account:</p>
-<ul>
-<li>Navigate to <a href="https://bcl.nrel.gov/">Building Component Library (BCL)</a>. Create an account if you don't have one. Follow the instructions from the email sent to you upon registration and then login.</li>
-</ul>
-<p>BCL content can also be accessed from within PAT. To take advantage of this integration, you will need to follow the steps outlined here to request a BCL key.</p>
-<ol>
-<li>Login to <a href="https://bcl.nrel.gov/">Building Component Library (BCL)</a>.</li>
-<li>Click on the <code>My Dashboard</code> near the top right of the website.</li>
-<li>Copy the text after <code>API v1.1 key</code>: then paste the key into the PAT. <strong>You only need to configure the key in one place and it will be used globally throughout the OpenStudio SDK tools.</strong> Additionally, this key will be maintained when you install updates to OpenStudio SDK.</li>
-</ol>
+<p><strong>Legacy Support - Building Component Library (BCL) key</strong></p>
+<p>The BCL contains many useful measures that can be incorporated into OpenStudio SDK workflows or Parametric Analsysis Tool (PAT) projects. You no longer need to create an account to access content, but certain apps may still ask you for a BCL key.</p>
+<p>If you are prompted for a key, simply enter 32 Xs as shown below:</p>
+<pre><code>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+</code></pre>
+
 <p><strong>Optional - Install Ruby</strong>
 If you plan to use the OpenStudio SDK Ruby bindings via command prompt, you must install Ruby. Check the <a href="https://github.com/NREL/OpenStudio/wiki/OpenStudio-Version-Compatibility-Matrix">version compatibility matrix</a> to see which version of Ruby is compatible.</p>
 <ol>
-<li>Download the <a href="http://rubyinstaller.org/downloads/">Ruby</a> installer.  If you have the Windows (x64) version of OpenStudio SDK (Help&gt;About&gt;Compiler shows Visual Studio 12 2013 Win64), you'll need the x64 Ruby installer.</li>
+<li>Download the <a href="http://rubyinstaller.org/downloads/">Ruby</a> installer.  If you have the Windows (x64) version of OpenStudio SDK (Help&gt;About&gt;Compiler shows Visual Studio 14 2017 Win64), you'll need the x64 Ruby installer.</li>
 <li>Add <code>C:\ruby-2.7.2-x64-mingw32\bin</code> (or wherever you installed Ruby) to the PATH environment variable. <a href="http://geekswithblogs.net/renso/archive/2009/10/21/how-to-set-the-windows-path-in-windows-7.aspx">Detailed instructions</a>.</li>
 <li>
-<p>Create a text file with the following text inside (modify <code>C:\openstudio-3.2.0</code> based on where your version of OpenStudio SDK is installed):</p>
-<p><code>require 'C:\openstudio-3.2.0\Ruby\openstudio.rb'</code></p>
+<p>Create a text file with the following text inside (modify <code>C:\openstudio-3.5.0</code> based on where your version of OpenStudio SDK is installed):</p>
+<p><code>require 'C:\openstudio-3.6.0\Ruby\openstudio.rb'</code></p>
 </li>
 <li>
 <p>Save the file as <code>openstudio.rb</code> to <code>C:\ruby-2.7.2-x64-mingw32\lib\ruby\site_ruby\openstudio.rb</code> (or wherever you installed Ruby).</p>
