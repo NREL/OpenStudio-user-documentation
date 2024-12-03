@@ -1017,7 +1017,7 @@ model.save(output_file_path,true)
 
 ```ruby
 require 'openstudio'
-require 'openstudio/ruleset/ShowRunnerOutput'
+require 'openstudio/measure/ShowRunnerOutput'
 require 'minitest/autorun'
 require_relative '../measure.rb'
 require 'fileutils'
