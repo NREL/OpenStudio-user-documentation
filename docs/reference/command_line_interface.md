@@ -165,11 +165,11 @@ An example OSW is shown below, the meaning of key terms is explained in more det
 
 ## Seed File
 
-The seed file is the file name of the OpenStudio Model to be loaded at the beginning of the simulation workflow.  The seed model may be empty or the memeber may be missing, in this case a newly constructed OpenStudio Model is passed to the first OpenStudio Model Measure.  The seed model is found using the logic documented for `WorkflowJSON::findFile`.
+The seed file is the file name of the OpenStudio Model to be loaded at the beginning of the simulation workflow.  The seed model may be empty or the member may be missing, in this case a newly constructed OpenStudio Model is passed to the first OpenStudio Model Measure.  The seed model is found using the logic documented for `WorkflowJSON::findFile`.
 
 ## Weather File
 
-The weather file is the file name of the EnergyPlus Weather (EPW) file loaded at the beginning of the simulation workflow.  The weather file may be empty or the memeber may be missing.  The weather file is found using the logic documented for `WorkflowJSON::findFile`.  The following logic applies to the weather file during a simulation workflow:
+The weather file is the file name of the EnergyPlus Weather (EPW) file loaded at the beginning of the simulation workflow.  The weather file may be empty or the member may be missing.  The weather file is found using the logic documented for `WorkflowJSON::findFile`.  The following logic applies to the weather file during a simulation workflow:
 
 1. If a weather file is specified in the OSW, that file replaces any weather file specified in the seed OpenStudio Model before measure processing begins.
 2. During OpenStudio Model Measure processing, the weather file may be changed by altering the WeatherFile object in the OpenStudio Model.
