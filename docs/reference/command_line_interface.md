@@ -178,7 +178,7 @@ EnergyPlus measures may change the weather file by copying files on top of in.ep
 
 ## Workflow Steps
 
-Each step listed in the OSW file describes an OpenStudio Measure to apply.  Measures are applied in order and must progress from OpenStudio Model Measures to OpenStudio EnergyPlus Measures to OpenStudio Reporting Measures.  Each step lists a `measure_dir_name` which is the directory name of an OpenStudio Measure to apply. Measures are found at run time according to logic in `WorkflowJSON::findMeasure`.  Each step specifies arguments to be passed to the measure, the measure argument's name is the key and the value to pass is the measure.  Optional arguments may be ommitted, default values will be used in this case.  The value passed to choice arguments may be either a valid choice value or a valid choice value display name.
+Each step listed in the OSW file describes an OpenStudio Measure to apply.  Measures are applied in order and must progress from OpenStudio Model Measures to OpenStudio EnergyPlus Measures to OpenStudio Reporting Measures.  Each step lists a `measure_dir_name` which is the directory name of an OpenStudio Measure to apply. Measures are found at run time according to logic in `WorkflowJSON::findMeasure`.  Each step specifies arguments to be passed to the measure, the measure argument's name is the key and the value to pass is the measure argument.  Optional arguments may be ommitted, default values will be used in this case.  The value passed to choice arguments may be either a valid choice value or a valid choice value display name.
 
 # Environment Variables
 
