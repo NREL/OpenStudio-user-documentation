@@ -896,15 +896,15 @@ ReplaceLightsInSpaceTypeWithLPD.new.registerWithApplication
 <h3 id="require-statements">Require statements</h3>
 <p>The default test that is automatically created when you make a new measure will contain the Ruby Classes and Modules necessary for all measures to function (you may include others here, that your code requires):</p>
 <pre><code class="ruby">require 'openstudio'
-require 'openstudio/ruleset/ShowRunnerOutput'
+require 'openstudio/measure/ShowRunnerOutput'
 require 'minitest/autorun'
 require_relative '../measure.rb'
 require 'fileutils'
 </code></pre>
 
-<h3 id="class-minitestunittestcase">Class - MiniTest::Unit::TestCase</h3>
+<h3 id="class-minitesttest">Class - Minitest::Test</h3>
 <p>The test class name shall take the form "[YourMeasureName]Test". All of measure test code excluding the require statements will be contained within this class. Following this guidance, a test class for a measure named "My Measure" would be initialized:</p>
-<pre><code class="ruby">class MyMeasureTest &lt; MiniTest::Unit::TestCase
+<pre><code class="ruby">class MyMeasureTest &lt; Minitest::Test
 </code></pre>
 
 <h3 id="setup-and-teardown">Setup and Teardown</h3>
@@ -1098,7 +1098,7 @@ model.save(output_file_path,true)
 
 <h2 id="putting-it-all-together-a-complete-measure-test-file">Putting It All Together - A Complete Measure Test File</h2>
 <pre><code class="ruby">require 'openstudio'
-require 'openstudio/ruleset/ShowRunnerOutput'
+require 'openstudio/measure/ShowRunnerOutput'
 require 'minitest/autorun'
 require_relative '../measure.rb'
 require 'fileutils'
