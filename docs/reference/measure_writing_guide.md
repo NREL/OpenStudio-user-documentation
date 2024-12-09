@@ -774,17 +774,17 @@ The default test that is automatically created when you make a new measure will 
 
 ```ruby
 require 'openstudio'
-require 'openstudio/ruleset/ShowRunnerOutput'
+require 'openstudio/measure/ShowRunnerOutput'
 require 'minitest/autorun'
 require_relative '../measure.rb'
 require 'fileutils'
 ```
 
-### Class - MiniTest::Unit::TestCase
+### Class - Minitest::Test
 The test class name shall take the form "[YourMeasureName]Test". All of measure test code excluding the require statements will be contained within this class. Following this guidance, a test class for a measure named "My Measure" would be initialized:
 
 ```ruby
-class MyMeasureTest < MiniTest::Unit::TestCase
+class MyMeasureTest < Minitest::Test
 ```
 
 ### Setup and Teardown
@@ -1017,7 +1017,7 @@ model.save(output_file_path,true)
 
 ```ruby
 require 'openstudio'
-require 'openstudio/ruleset/ShowRunnerOutput'
+require 'openstudio/measure/ShowRunnerOutput'
 require 'minitest/autorun'
 require_relative '../measure.rb'
 require 'fileutils'
