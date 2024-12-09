@@ -46,13 +46,13 @@
  - Phase 1 Python Measure Support
  - Bug fixes and new features
 
- ## OpenStudio SDK 3.6.0 (May 2023)
+## OpenStudio SDK 3.6.0 (May 2023)
 
  - EnergyPlus 23.1.0 Support
  - Phase 2 Python Measure Support
  - Bug fixes and new features
 
-  ## OpenStudio SDK 3.7.0 (Nov 2023)
+## OpenStudio SDK 3.7.0 (Nov 2023)
 
  - EnergyPlus 23.1.0 Support
  - Phase 3 (Final) Python Measure Support
