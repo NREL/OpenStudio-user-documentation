@@ -742,7 +742,7 @@ Example xml:
 <attributes>
   <attribute>
     <name>Intended Use Case</name>
-    <value>Model Articulation"</value>
+    <value>Model Articulation</value>
     <datatype>string</datatype>
   </attribute>
   <attribute>
